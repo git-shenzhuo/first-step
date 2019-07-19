@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        table {
+            /* 
+                border-spacing:单元格与单元格之间的距离，值不能为负数
+                
+                合并相邻单元格之间的边框：
+                border-collapse:collapse(合并) | separate（分开，默认值）
+
+                当单元格没有内容时候的设置
+                empty-cells:show(默认) | hide 
+             */
+            border-spacing: 0px;
+            border-collapse: collapse;
+            empty-cells: hide;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="300" height="150" border="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td>111</td>
+            <td>122</td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

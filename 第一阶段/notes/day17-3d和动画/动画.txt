@@ -1,0 +1,19 @@
+1. animation-name: move; 动画名称
+2. animation-duration: 5s; 执行动画所需要的时间
+3. animation-delay: 1s; 延迟多少时间后去执行这个动画效果
+4. animation-iteration-count: 2 | infinite(无限循环); 执行次数
+5. animation-timing-function: 
+	linear：线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0)
+        ease：平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0)
+        ease-in：由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0)
+        ease-out：由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0)
+        ease-in-out：由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)
+        step-start:马上跳到动画每一结束桢的状态
+6. animation-direction
+        normal：正常方向
+        reverse：反方向运行
+        alternate：动画先正常运行再反方向运行，并持续交替运行
+        alternate-reverse：动画先反运行再正方向运行，并持续交替运行
+7. animation-fill-mode: forwards;属性规定动画在播放之前或之后，其动画效果是否可见。
+        none :默认值，不做任何改变
+        forwards 停留在最后一个步骤

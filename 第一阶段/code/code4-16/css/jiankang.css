@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content {
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+}
+
+/* ----------------header---------------- */
+#jiankang .j-header {
+    width: 100%;
+    height: 540px;
+    background-image: url(../images/79f78c75-d15b-4dc3-8de2-4ba32aa3064c.png);
+    background-position: center center;
+}
+
+#jiankang .j-header .top {
+    height: 60px;
+    /* background: rgba(0, 0 ,255 ,.1); */
+}
+
+#jiankang .j-header .top h1 {
+    text-indent: -9999px;
+    float: left;
+}
+
+#jiankang .j-header .top .logo {
+    float: left;
+    width: 109px;
+    height: 34px;
+    margin-top: 12px;
+    position: relative;
+    /* background-image: url(../images/logo_b.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain; */
+}
+
+#jiankang .j-header .top .logo .i1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+#jiankang .j-header .top .logo .i2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+#jiankang .j-header .top:hover .i2{
+    z-index: 5;
+}
+#jiankang .j-header .top ul {
+    float: right;
+}
+
+#jiankang .j-header .top li {
+    float: left;
+}
+
+#jiankang .j-header .top a {
+    display: block;
+    /* color: #ffffff; */
+    padding: 0 23px;
+    font-size: 12px;
+    line-height: 60px;
+    color: #a29999;
+}
+
+.j-header .top:hover {
+    background: #ffffff;
+}
+
+.nav {
+    width: 100%;
+    height: 100%;
+}
+
+/* .nav:hover p{
+     color: red;
+} */
+
+/* .j-header .top:hover {
+    background-image: url(../images/logo_t.png);
+} */
+
+/* .j-header .top:hover .nav>ul>li>a {
+    color: blue;
+} */
+
+/* ------------------main--------------- */
+.j-main .main1 h2 {
+    font-size: 28px;
+    line-height: 28px;
+    margin: 52px 0 16px 0;
+    text-align: center;
+}
+
+.j-main .main1 h3 {
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 36px;
+    text-align: center;
+    color: #666666;
+}
+
+.j-main .main1 ul {
+    display: grid;
+    grid-template-rows: repeat(2, 238px);
+    grid-template-columns: repeat(4, 280px);
+    grid-gap: 20px;
+}
+
+.j-main .main1 .li1 {
+    grid-column: 1 / 3;
+}
+
+.j-main .main1 .li3 {
+    grid-row: 1 / 3;
+    grid-column: 4 / 5;
+}
+
+.j-main .main1 li img {
+    width: 100%;
+    height: 100%;
+    transition: filter 2s;
+
+}
+
+.j-main .main1 li:hover img {
+    filter: blur(10px);
+}
+
+.j-main .main1 li {
+    position: relative;
+    overflow: hidden;
+}
+
+.j-main .main1 li .dingwei1 {
+    width: 520px;
+    height: 120px;
+    position: absolute;
+    bottom: -80px;
+    left: 30px;
+    transition: bottom 2s;
+}
+
+.j-main .main1 li .dingwei2 {
+    width: 220px;
+    height: 120px;
+    position: absolute;
+    bottom: -80px;
+    left: 30px;
+    transition: bottom 2s;
+}
+
+.j-main .main1 li .dingwei3 {
+    width: 220px;
+    height: 200px;
+    position: absolute;
+    bottom: -160px;
+    left: 30px;
+    transition: bottom 2s;
+}
+
+.j-main .main1 li div h4 {
+    font-size: 24px;
+    line-height: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.j-main .main1 li div p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #ffffff;
+}
+
+.j-main .main1 li:hover div {
+    bottom: 0px;
+}
+
+/* ---------------main2------------- */
+.j-main .main2 h2 {
+    font-size: 28px;
+    line-height: 28px;
+    text-align: center;
+    margin: 70px 0 40px;
+}
+
+.j-main .main2 ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.j-main .main2 ul li {
+    width: 380px;
+    height: 250px;
+    border: 1px solid #f2f2f2;
+    position: relative;
+}
+
+.j-main .main2 ul li img {
+    width: 100%;
+    height: 168px;
+}
+
+.j-main .main2 ul li a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 180px 12px 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.j-main .main2 ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px #115ACD;
+
+}
+
+.j-main .main2 p {
+    margin: 55px 0 105px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ----------------main3------------- */
+.main3 h2 {
+    font-size: 28px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.main3 div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 82px;
+
+}
+
+.main3 div a {
+    width: 278px;
+    height: 178px;
+    border: 1px solid #66a4ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.main3 div a i {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.main3 div a i img {
+    width: 50px;
+    height: 50px;
+}
+
+.main3 div a i .i0 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.main3 div a i .i1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.main3 div a p {
+    z-index: 10;
+}
+
+.main3 div a::before {
+    content: "";
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgb(23, 93, 197);
+    position: absolute;
+    right: 278px;
+    bottom: 178px;
+    transition: all 1s;
+}
+
+.main3 div a::after {
+    content: "";
+    width: 184px;
+    height: 184px;
+    border-radius: 50%;
+    background: rgb(151, 223, 70);
+    position: absolute;
+    left: 278px;
+    top: 178px;
+    transition: all 1s;
+}
+
+.main3 div a:hover::after {
+    left: 200px;
+    top: 100px;
+    filter: blur(5px);
+}
+
+.main3 div a:hover::before {
+    right: 80px;
+    bottom: -5px;
+    filter: blur(5px);
+}
+
+.main3 div a:hover {
+    background: rgb(20, 179, 185);
+    transform: translateY(-5px);
+}
+
+.main3 div a:hover .i1 {
+    z-index: 3;
+}
+
+.main3 div a:hover p {
+    color: #ffffff;
+}
+
+/* --------------footer------------ */
+.j-footer {
+    background-color: #424b61;
+
+}
+
+.j-footer .content {
+    display: flex;
+}
+
+.j-footer h2 {
+    font-size: 18px;
+    margin-top: 64px;
+    color: #ffffff;
+}
+
+.j-footer .left {
+    width: 532px;
+}
+
+.j-footer .left img {
+    width: 114px;
+    height: 38px;
+    margin-top: 64px;
+}
+
+.j-footer .left .p1 {
+    margin-top: 25px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #ffffff;
+}
+
+.j-footer .left .p2 {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #ffffff;
+}
+
+.j-footer .left .p3 {
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #ffffff;
+}
+
+.j-footer .left .p4 {
+    margin-top: 45px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #656c7e;
+    margin-bottom: 26px;
+}
+
+.j-footer .conter {
+    width: 425px;
+}
+
+.j-footer .conter h2 {
+    margin-bottom: 28px;
+}
+
+.j-footer .conter p {
+    font-size: 12px;
+    margin-bottom: 12px;
+    color: #b2b5be;
+}
+
+.j-footer .right {
+    flex: 1;
+}
+
+.j-footer .right li {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+    margin-top: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.j-footer .right li img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+}
+
+.j-footer .right .i1 {
+    z-index: 2;
+}
+
+.j-footer .right .i2 {
+    z-index: 1;
+}
+
+.j-footer .right li:hover .i2 {
+    z-index: 3;
+}
+
+.j-footer .right .erweima {
+    margin-top: 58px;
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.j-footer .right .erweima img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+}
+
+.j-footer .right .erweima:hover .i2 {
+    z-index: 3;
+}

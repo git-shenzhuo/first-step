@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#donghua{
+    width: 9999px;
+    height: 99999px;
+    animation: 8s dddsss infinite alternate;
+}
+#tv{
+    width: 270px;
+    height: 154px;
+    overflow: hidden;
+}
+@keyframes dddsss{
+    0%{};
+    25%{transform: translateX(0px)}
+    35%{transform: translateX(-270px)}
+    50%{transform: translateX(-270px)}
+    60%{transform: translateX(-540px)}
+    75%{transform: translateX(-540px)}
+    85%{transform: translateX(-810px)}
+    100%{transform: translateX(-810px)}
+}

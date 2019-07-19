@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        div {
+            width: 310px;
+            height: 300px;
+            border: 20px solid blue;
+            /* 
+                图片边框：
+                border-image-source：url（图片地址）
+                border-image-slice：value (偏移量，没有单位)
+                border-image-repeat：stretch（拉伸不平铺） | repeat（平铺不拉伸） | round（平铺拉伸）
+                border-image-outset:value+px 在距离盒子value像素去设置图片边框
+                border-image-width：
+                border-image：
+            
+             */
+            border-image-source: url(../images/a.png);
+            border-image-slice: 26;
+            border-image-repeat: round;
+            border-image-outset: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+</body>
+
+</html>

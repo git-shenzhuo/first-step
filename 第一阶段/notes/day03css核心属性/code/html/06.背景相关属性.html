@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        div {
+            /* 
+                1、背景颜色
+                background-color:
+                2、背景图片
+                background-image: url(../images/01.gif);
+                3、背景图片是否平铺
+                background-repeat:repeat(平铺，默认值) | no-repeat(不平铺) | repeat-x(水平方向平铺) | repeat-y(垂直方向平铺)
+                4、背景图片的位置
+                background-position：属性值1  属性值2
+                属性值1：表示水平方向，取值：left | center | right |数值 + px(负数往左移动，整数往右移动)
+                属性值2：表示垂直方向，取值：top | center | bottom |数值 + px(负数往上移动，整数往下移动)
+                *当图片大于容器的时候，使用background-position,是移动图片的位置显示在容器中
+                *当图片小于容器的时候，使用background-posiiton，是移动图片在容器的某一个位置
+
+             */
+            background-color: red;
+            background-image: url(../images/01.gif);
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+</body>
+
+</html>

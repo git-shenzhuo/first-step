@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            border: 1px solid red;
+            height: 218px;
+            width: 352px;
+        }
+
+        .box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .box .img1 {
+            /* 
+                层级关系的设置：
+                属性：z-index
+                取值：value 没有单位
+                注意点：value值越大，元素就在越上面，value的默认值0，可以取负数
+                这个属性只能与定位（absolute 和 fixed,非static）
+             */
+            /* z-index: 1; */
+        }
+
+        .box .img2 {
+            z-index: -1;
+        }
+
+        .list1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            float: left;
+            /* z-index: -9999 */
+        }
+
+        .list2 {
+            width: 200px;
+            height: 200px;
+            background: green;
+            /* z-index: 999999 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img class="img1" src="../images/bus_tu1.jpg" alt="">
+        <img class="img2" src="../images/bus_tu2.jpg" alt="">
+    </div>
+
+    <div class="list1"></div>
+    <div class="list2"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+/* 清除默认样式 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#box .b-header {
+    /* 
+        dpr(像素比) = 物理像素（设计图量出的像素） / 逻辑像素（写在代码中的像素）
+
+        逻辑像素 = 物理像素 / dpr(2)
+        dpr的取值：
+        2------当设计图为640 或者750的时候
+        3------设计图为1080的时候
+    */
+    height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px 0 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.b-header input[type="search"] {
+    height: 29px;
+    width: 315px;
+    border: none;
+    background: #ebebeb;
+    border-radius: 5px;
+    text-align: center;
+    /* 去掉获取焦点时的默认边框 */
+    outline: none
+}
+
+.b-header i {
+    font-size: 22px;
+
+}
+
+
+
+
+
+#box .b-main {
+    /* 表示除了header和footer以外剩下的全部给main */
+    flex: 1;
+    overflow: auto;
+    background: #ddd;
+}
+
+.b-main .main1 {
+    margin-top: 10px;
+    display: flex;
+    height: 76.5px;
+    background: #fff;
+}
+
+.main1 a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/line.png) no-repeat right center;
+    background-size: 1px 20px;
+}
+
+.main1 a:last-child {
+    background: none;
+}
+
+
+
+
+#box .b-footer {
+    height: 49px;
+    border-top: 1px solid #d3d3d3;
+    background: #ebebeb;
+    display: flex;
+}
+
+.b-footer a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.b-footer a i {
+    font-size: 22px;
+    line-height: 22px;
+
+}
+
+.b-footer a span {
+    font-size: 12px;
+    line-height: 12px;
+}

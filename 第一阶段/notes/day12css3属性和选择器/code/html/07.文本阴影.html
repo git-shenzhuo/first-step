@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        div {
+            /* 
+                text-shadow：文字阴影
+                -webkit-text-stroke:文字描边
+                direcition:文字排版
+                    取值：ltr---left to right
+                        rtl----right to left
+                        注意点：必须配合unicode-bidi：bidi-override
+                省略号：
+                1、单行省略号的条件：
+                2、多行省略号的条件：
+
+             */
+            /* text-shadow: 2px 2px 5px red; */
+            font-size: 40px;
+            -webkit-text-stroke: 1px red;
+            /* 
+                right to left
+             */
+            direction: ltr;
+            unicode-bidi: bidi-override;
+        }
+    </style>
+</head>
+
+<body>
+    <div>说不出九点半。</div>
+</body>
+
+</html>

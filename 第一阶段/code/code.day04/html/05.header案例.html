@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .box {
+            width: 1000px;
+            height: 62px;
+            background: #232323;
+            margin: 0 auto;
+        }
+
+        .box .logo {
+            float: left;
+            color: #fff;
+            text-indent: -9999px;
+            /* 
+                设置背景图 和 用img插入图片的区别：
+                如果要给盒子设置背景图，盒子必须要有高度，背景图相当于修饰盒子样式
+                img插入图片，一个元素，在页面由自己的位置空间，会把父元素的宽高撑开
+             */
+            width: 207px;
+            height: 62px;
+            background-image: url(../images/qf_logo.jpg);
+        }
+
+        .box .nav {
+            float: right;
+            /* height: 62px; */
+        }
+
+        /* 想要每个li水平排列 */
+        .box .nav li {
+            /* 给子元素高度，父元素不设置高度，父元素也有高度，因为子元素可以撑开父元素 */
+            height: 62px;
+            float: left;
+            /* 给li左右添加15px的padding值 */
+            padding: 0px 15px;
+            line-height: 62px;
+            /* 右边的边框 */
+            background-image: url(../images/line.png);
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+
+        .box .nav li a {
+            color: #fff;
+        }
+
+        .box .nav li:hover {
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1 class="logo">
+            千锋互联
+            <!-- <img src="../images/qf_logo.jpg" alt=""> -->
+        </h1>
+        <ul class="nav">
+            <li><a href="">首页</a></li>
+            <li><a href="">课程</a></li>
+            <li><a href="">走进千锋</a></li>
+            <li><a href="">前锋教育</a></li>
+            <li><a href="">双选会</a></li>
+            <li style="background-image: none"><a href="">好程序员</a></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

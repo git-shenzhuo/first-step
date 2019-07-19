@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        p {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+
+        /* 作用到页面中所有class的属性值为p3的元素 */
+        .p3 {
+            background: pink;
+        }
+
+        #p2 {
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        选择器的分类：
+        （1）类型选择器（用标签名来作为选择器）
+        （2）class选择器（类选择器）
+            首先给标签添加一个class属性和他的属性值
+            选择器 为 .class属性值
+        例如： <p class="p3">3</p> 
+                .p3{}
+        （3）id选择器
+            首先给标签添加一个id属性和他的属性值
+            选择器 为 #id属性值
+        例如： <p id="p2">2</p>
+                #P2{}
+           注意点：id相当于人的身份证，不会跟别的人有重复，一个元素的id名只能是唯一的，元素之间的id名不能一样
+     -->
+    <p>1</p>
+    <p id="p2">2</p>
+    <p class="p3">3</p>
+    <div class="p3" id="div1"></div>
+
+</body>
+
+</html>

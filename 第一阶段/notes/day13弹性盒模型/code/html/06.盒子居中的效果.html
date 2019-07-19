@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+            display: flex;
+            /* flex-direction: row-reverse; */
+            /* 
+                1、display: flex; 把盒子变成弹性盒模型，下面所有子元素都会按照弹性盒规则来布局
+                
+                2、flex-direction 设置弹性盒模型的主轴方向
+                取值：
+                    row---水平从左到右，默认值
+                    row-reverse----水平从右到左
+                    column---垂直方向从上到下
+                    column-reverse---垂直从下到上
+
+                3、主轴的对齐方式
+                justify-content
+                取值：
+                    center----居中对齐
+                    flex-start---主轴的顶端（起始位置）
+                    flex-end----主轴的末端（结束位置）
+                    space-around----把多余的空白部分自动平分到子元素的两端
+                    space-between---两端对齐，把多余的空白平分到子元素之间
+                4、侧轴的对齐方式（单行对齐方式）
+                align-items
+                取值：
+                    center----居中对齐
+                    flex-start----侧轴的顶端
+                    flex-end----侧轴的末端
+                
+                5、设置主轴方向是否换行
+                flex-wrap
+                取值： 
+                    nowrap----不换行（默认值）
+                    wrap----换行
+                    wrap-reverse---反转换行
+                
+                6、侧轴的多行对齐方式
+                align-content
+                取值：
+                    flex-start---侧轴的顶端
+                    flex-end---侧轴的末端
+                    center----居中
+                    space-between---两端对齐，多余的空间平分到侧轴的行与行之间
+                    space-around---把多余的空间平分每一行的两边
+  
+             */
+            /* justify-content: center; */
+            /* align-items: baseline; */
+
+            flex-wrap: wrap;
+            align-content: space-between
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background: green;
+            /* 
+                默认情况下。主轴为水平方向
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">1</div>
+        <div class="box1">2</div>
+        <div class="box1">3</div>
+        <div class="box1">4</div>
+        <div class="box1">5</div>
+        <div class="box1">6</div>
+        <div class="box1">4</div>
+        <div class="box1">5</div>
+        <div class="box1">6</div>
+    </div>
+
+</body>
+
+</html>

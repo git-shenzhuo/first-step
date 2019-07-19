@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+
+        .top {
+            margin-bottom: 50px;
+            /* 
+                当相邻垂直排列的元素的margin值发生合并的时候。
+                解决：触发其中一个元素为bfc（display：inline-block;）
+             */
+            display: inline-block;
+        }
+
+        .bottom {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top"></div>
+    <div class="bottom"></div>
+
+</body>
+
+</html>

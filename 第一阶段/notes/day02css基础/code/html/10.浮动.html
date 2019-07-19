@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .box {
+            height: 350px;
+            width: 1000px;
+            background: pink;
+        }
+
+        .box .list {
+            width: 240px;
+            height: 280px;
+            background: red;
+            /* 块元素默认占一整行，呈现从上到下排列 */
+
+            /* 
+                浮动的作用：把从上到下的排列的元素改变为从左到右
+                浮动属性：float： left（左浮动） | right（右浮动）
+
+                记住：子元素由浮动，父元素必须设置高度
+             */
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 一起选择多行alt + shift  -->
+        <div class="list">1</div>
+        <div class="list">2</div>
+        <div class="list">3</div>
+        <div class="list">4</div>
+    </div>
+
+</body>
+
+</html>

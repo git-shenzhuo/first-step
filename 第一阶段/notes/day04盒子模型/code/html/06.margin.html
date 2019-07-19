@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            height: 300px;
+        }
+
+        /* 匹配到class名为box下面的class名为list的元素 */
+        .box .list {
+            width: 257px;
+            height: 300px;
+            float: left;
+            /* 
+                外边距：margin
+                作用：主要调节元素（兄弟元素）之间的位置关系
+
+                取值：
+                    （1）margin:属性值  代表给上下左右都添加margin
+                    （2）margin：属性值1 属性值2 ，属性值1表示上下，属性值2表示左右
+                    （3）margin：属性值1 属性值2 属性值3,属性值1表示上，属性值2表示左右，属性值3表示下
+                    （4）margin：属性值1 属性值2 属性值3 属性值4：分别代表上右下左（顺时针）
+                    （5）margin-left|top|right|bottom 单独给某一个方向的外边距
+
+                    注意：margin值可以取负数
+             */
+            /* margin: 20px 30px 40px; */
+            margin-right: 24px;
+        }
+
+        .box .list1 {
+            background-color: pink;
+        }
+
+        .box .list2 {
+            background-color: green;
+        }
+
+        .box .list3 {
+            background-color: #ccc;
+        }
+
+        .box .list4 {
+            background-color: orchid;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        盒模型的组成：content（width，height，子元素，文字内容） + padding（内填充） + border（边框） + margin（外边距）
+
+        元素在页面实际所占的宽高：
+        宽 = content + 左右内填充（padding） +  左右边框（border）
+        高 = content + 上下padding + 上下的border
+     -->
+    <div class="box">
+        <!-- .list$*4 -->
+        <div class="list1 list"></div>
+        <div class="list2 list"></div>
+        <div class="list3 list"></div>
+        <div class="list4 list"></div>
+    </div>
+
+</body>
+
+</html>

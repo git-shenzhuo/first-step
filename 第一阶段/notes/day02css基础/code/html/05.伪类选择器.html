@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            伪类选择器
+        */
+        /* a {
+            font-size: 20px;
+            font-weight: bold;
+        } */
+
+        /*  （1）链接未被访问的时候 */
+        a:link {
+            color: pink;
+        }
+
+        /* （2）链接已经被访问的时候 */
+        a:visited {
+            color: blue;
+        }
+
+        /* （3）鼠标按下，并没有放开 */
+        a:active {
+            color: red;
+        }
+
+        /* （4）鼠标滑过的状态 */
+        a:hover {
+            color: yellow;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+
+        div:active {
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        超链接的四种状态
+        （1）链接未被访问的时候
+        （2）链接已经被访问的时候
+        （3）鼠标按下，并没有放开
+        （4）鼠标滑过的状态
+     -->
+    <a href="01.css语法.html">百度</a>
+
+    <div></div>
+
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ----------------------one--------------------- */
+        .one {
+            display: flex;
+            justify-content: space-around;
+            height: 100px;
+            background-image: url(../images/top-bg.png);
+            background-size: cover;
+        }
+
+        .one h2 {
+            width: 10%;
+            height: 100%;
+            font-size: 20%;
+            color: #cccccc;
+            text-align: center;
+            line-height: 100px;
+            display: none;
+        }
+
+        .logo {
+            width: 30%;
+            height: 100%;
+            background-image: url(../images/logo.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .one ul {
+            width: 50%;
+            height: 100%;
+            display: flex;
+        }
+
+        .one ul li {
+            flex: 1;
+        }
+
+        .one ul li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 20%;
+            line-height: 100px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        @media all and (max-width:700px) {
+            .one ul {
+                display: none;
+            }
+
+            .logo {
+                width: 50%;
+            }
+
+            .one h2 {
+                display: block;
+            }
+        }
+
+        /* ---------------------two-------------------- */
+        .two{
+            display: flex;
+            flex-direction: column;
+        }
+        .two dl{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+        }
+        .two dt{
+            width: 40%;
+            height: 200px;
+            background-image: url(../images/1.jpg);
+            background-size: 100% 100%;
+            border: 1px solid red;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+        .two dd{
+            width: 28%;
+            height: 200px;
+            background-size: 100% 100%;
+            border: 1px solid red;
+            box-sizing: border-box;
+            margin-top: 10px;
+            
+        }
+        .two dd:nth-child(2){
+            
+            background-image: url(../images/1.png);
+            
+        }
+        .two dd:nth-child(3){
+            background-image: url(../images/2.jpg);
+        }
+        .two ul{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .two li{
+            height: 180px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            border: 1px solid red;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+        .two ul li{
+            width: 23%;
+            background-image: url(../images/4.jpg);
+        }
+        @media all and (max-width:900px){
+            .two ul li{
+                width: 31%;
+            }
+        }
+        @media all and (max-width:600px){
+            .two dt{
+                width: 98%;
+                height: 300px;
+            }
+            .two dl dd:nth-child(2){
+                width: 48%;
+            }
+            .two dl dd:nth-child(3){
+                width: 48%;
+            }
+            .two ul li{
+                width: 48%;
+            }
+        }
+        @media all and (max-width:300px){
+            .two ul li{
+                width: 98%;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="one">
+            <h2>more</h2>
+            <div class="logo">
+            </div>
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">介绍</a></li>
+                <li><a href="">文化</a></li>
+                <li><a href="">联系</a></li>
+                <li><a href="">预定</a></li>
+            </ul>
+            <h2>登录</h2>
+        </div>
+        <div class="two">
+            <dl>
+                <dt></dt>
+                <dd></dd>
+                <dd></dd>
+            </dl>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

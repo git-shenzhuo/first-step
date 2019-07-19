@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        ul,
+        li {
+            list-style: none;
+        }
+
+        li {
+            width: 100px;
+            border-bottom: 1px solid #fff;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            background: blue;
+            text-align: center;
+        }
+
+
+
+        /* 
+            li的高度不设置，让子元素撑开
+            子元素：a标签  和 二级导航
+        */
+        li .nav2 {
+            display: none;
+        }
+
+        li:hover .nav2 {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="">信息设备</a>
+            <ul class="nav2">
+                <li>信息设备2</li>
+                <li>信息设备2</li>
+            </ul>
+        </li>
+        <li>
+            <a href="">设备接口</a>
+        </li>
+    </ul>
+
+</body>
+
+</html>

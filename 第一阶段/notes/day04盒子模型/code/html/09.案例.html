@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 100%;
+        }
+
+        .box .content {
+            width: 1100px;
+            /* 把剩下的margin平分到元素的两边，所以元素在水平居中 */
+            margin: 0 auto;
+            background: pink;
+
+            /* 容器溢出隐藏，解决margin塌陷 */
+            overflow: hidden;
+        }
+
+        .box .title {
+            font-size: 32px;
+            font-weight: normal;
+            /* 水平居中 */
+            text-align: center;
+            /* 
+                行高 = 上行间距 + 字体大小 + 下行间距
+             */
+            line-height: 32px;
+            margin-top: 83px;
+
+            /* 设置元素与下面元素的距离 */
+            margin-bottom: 20px;
+        }
+
+        .box h3 {
+            font-size: 18px;
+            color: #8a8a8a;
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 61px;
+        }
+
+        .box .box1 .list {
+            width: 257px;
+            height: 300px;
+
+            /* 使垂直排列的元素水平排列 */
+            float: left;
+            margin-right: 24px
+        }
+
+        .box .box1 .list1 {
+            background-color: #ccc;
+        }
+
+        .box .box1 .list2 {
+            background-color: #222;
+        }
+
+        .box .box1 .list3 {
+            background-color: #666;
+        }
+
+        .box .box1 .list4 {
+            background-color: #999;
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        如果页面宽度很大的情况下，给外层的盒子设置width：100%；
+        给大盒子一个子元素，并且class名为content
+        content设置主要内容的宽度并且居中显示
+     -->
+    <div class="box">
+        <div class="content">
+            <h2 class="title">无敌掌柜四大优势</h2>
+            <h3>助力商家助力商家助力商家助力商家助力商家</h3>
+            <div class="box1">
+                <div class="list1 list"></div>
+                <div class="list2 list"></div>
+                <div class="list3 list"></div>
+                <div class="list4 list"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

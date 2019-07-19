@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 800px;
+            height: 320px;
+            border: 1px solid red;
+            margin: auto;
+            overflow: hidden;
+            transition: width 1s;
+        }
+        i{
+            display: block;
+            float: left;
+            width: 160px;
+            height: 320px;
+            background-position: center center;
+        }
+        .i1{
+            /* width: 640px; */
+            background-image: url(../images/img1.jpg);
+        }
+        .i2{
+            background-image: url(../images/img2.jpg);
+        }
+        .i3{
+            background-image: url(../images/img3.jpg);
+        }
+        .i4{
+            background-image: url(../images/img4.jpg);
+        }
+        .i5{
+            background-image: url(../images/img5.jpg);
+        }
+        div:hover i{
+            width: 40px;
+        }
+        div i:hover{
+            width: 640px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div>
+        <i class="i1"></i>
+        <i class="i2"></i>
+        <i class="i3"></i>
+        <i class="i4"></i>
+        <i class="i5"></i>
+    </div>
+</body>
+</html>

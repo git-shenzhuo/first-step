@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            1、颜色
+                color: red;
+                颜色的取值：
+                （1）颜色的英文单词
+                （2）# + 十六进制（0123456789abcdef）
+                    颜色由三原色（红，绿，蓝）组成
+                    表示颜色由# + 6位十六进制组成
+                    #00（红）00（绿）00（蓝）
+                    #ff0000 ----- 红色
+                    #00ff00 -----绿色
+                    #0000ff -----蓝色
+                    #000000 -----黑色
+                    #ffffff -----白色
+                （3）rgb(red[0-255],green[0-255],blue[0-255])
+                    其中0为最暗，255为最亮
+                    rgb(255,0,0) -----红色
+                    rgb(0,255,0) -----绿色
+                    rgb(0,0,255) -----蓝色
+            2、字体大小
+                font-size: 20px;
+                默认字体为16px
+            
+            3、字体的类型
+            font-family:"宋体","黑体"
+            如果是中文字体 和 多个单词组成的字体，需要加引号，单个单词的字体可加可不加
+           
+            4、倾斜
+            font-style:italic(倾斜) |  normal(正常，不倾斜)
+            
+            5、加粗
+            font-weight:bold(加粗) | normal(正常，不加粗) | bolder
+            另一种取值方式：100-900，其中100-500是正常的，600-900是加粗的
+            注意点：如果使用数字，没有单位
+
+            6、小型的大写字母
+             font-variant: small-caps;
+
+         */
+        div {
+            font-size: 30px;
+            color: rgb(255, 0, 255);
+            font-family: 'Courier New', Courier, monospace;
+            /* border: 1px so red; */
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        i {
+            font-style: normal;
+        }
+
+        span {
+            /*  */
+            font-variant: small-caps;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>先是朋友后是妹，最后变成小宝贝</div>
+    <i>sdfdvdv</i>
+    <span>sdfdvdv</span>
+
+</body>
+
+</html>

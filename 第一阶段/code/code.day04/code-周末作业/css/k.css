@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#k{
+    width: 100%;
+    height: 2100px;
+}
+.content{
+    width: 1100px;
+    height: 2100px;
+    background: #ffffff;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* ---------------------yemei----------------------- */
+.yemei{
+    width: 1100px;
+    height: 36px;
+    background: #ecf0f1;
+}
+.yemei p{
+    font-size: 12px;
+    line-height: 36px;
+    color: #747577;
+    margin-left: 16px;
+    float: left;
+}
+.yemei div{
+    padding-right: 30px;
+}
+.yemei li{
+    height: 36px;
+    line-height: 36px;
+    float: right;
+    /* list-style-type: none; */
+    padding: 0px 8px;
+    list-style: none;
+    background-image: url(../images/ktu2.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.yemei a{
+    color: #78797b;
+    font-size: 11px;
+    text-decoration: none;
+}
+.yemei a:hover{
+    background-color: #eb0814;
+}
+/* ---------------------header----------------------- */
+.header{
+    width: 1100px;
+    height: 110px;
+    /* background: #123687; */
+}
+.header .logo{
+    width: 400px;
+    height: 110px;
+    float: left;
+    text-indent: -99999px;
+    background-image: url(../images/ktu3.png);
+}
+.header .qq{
+    width: 515px;
+    height: 110px;
+    float: left;
+    background-image: url(../images/ktu4.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.header div{
+    width: 185px;
+    height: 110px;
+    float: right;
+}
+.header div h2{
+    font-size: 16px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    line-height: 16px;
+    color: #b4b4b4;
+}
+.header div p{
+    color: #ef4746;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+}
+/* ---------------------nav1----------------------- */
+.nav1{
+    width: 1100px;
+    height: 50px;
+    background: #3598db;
+    padding: 0px 20px;
+}
+.nav1 li{
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    list-style-type: none;
+    padding: 0px 40px;
+    list-style: none;
+}
+.nav1 a{
+    color: #eaf7f0;
+    font-size: 12px;
+    text-decoration: none;
+}
+.nav1 li:hover{
+    background-color: #2980b6;
+}
+/* ---------------------banner-------------------- */
+.banner{
+    width: 1100px;
+    height: 400px;
+    background-image: url(../images/ktu1.png);
+}
+/* ---------------------main1----------------------- */
+.main1{
+    width: 1060px;
+    height: 50px;
+    padding: 30px 20px 20px ;
+}
+.main1 .kuang{
+    width: 1058px;
+    height: 48px;
+    border: 1px solid #d6d6d6;
+}
+.main1 .kuang div{
+    width: 46px;
+    height: 48px;
+    float: left;
+    background-image: url(../images/ktu5.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.main1 .kuang h2{
+    float: left;
+    color: #e14f52;
+    line-height: 48px;
+    font-size: 12px;
+}
+.main1 li{
+    float: left;
+    font-size: 11px;
+    line-height: 48px;
+    list-style-image: url(../images/ktu6.png);
+    list-style-position: inside;
+    margin-left: 20px;
+
+}
+/* ---------------------main2----------------------- */
+.main2{
+    width: 1100px;
+    height: 410px;
+    background: #f8f8f8;
+}
+/* ---------------------main3----------------------- */
+.main3{
+    width: 1100px;
+    height: 350px;
+}
+.main3 .biaoti{
+    height: 50px;
+    padding-left: 20px;
+}
+.main3 .biaoti h2{
+    width: 60px;
+    border-bottom: 3px solid #3697db;
+    font-size: 12px;
+    line-height: 42px;
+    float: left;
+}
+.main3 .biaoti p{
+    float: left;
+    font-size: 9px;
+    line-height: 50px;
+}
+.main3 .tupian{
+    width: 188px;
+    height: 236px;
+    float: left;
+    margin:25px 28px 0 0;
+}
+.tupian1{
+    background-image: url(../images/ktu3-1.png);}
+.tupian2{
+    background-image: url(../images/ktu3-2.png);}
+.tupian3{
+    background-image: url(../images/ktu3-3.png);}
+.tupian4{
+    background-image: url(../images/ktu3-4.png);}
+.tupian5{
+    background-image: url(../images/ktu3-5.png);}
+
+
+/* ---------------------main4----------------------- */
+.main4{
+    width: 1100px;
+    height: 395px;
+    background: #e64513
+}
+/* ---------------------main5----------------------- */
+.main5{
+    width: 1060px;
+    height: 75px;
+    background: #ffffff;
+    border: 1px solid #d8d8d8;
+    margin:0px 20px 30px;
+}
+.main5 div{
+    width: 44px;
+    height: 74px;
+    float: left;
+    background-image: url(../images/ktu19.png);
+    background-repeat: no-repeat;
+}
+.main5 li{
+    height: 73px;
+    line-height: 73px;
+    padding: 0 16px;
+    list-style-type: none;
+    list-style: none;
+    float: left;
+}
+.main5 a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #7d7d7d;
+}
+.main5 a:link{color: red}
+.main5 a:visited{color: #7d7d7d}
+.main5 a:hover{color: blue}
+.main5 a:active{color: rgb(50, 100, 200)}
+
+/* ---------------------nav2----------------------- */
+.nav2{
+    width: 1100px;
+    height: 55px;
+    background: #34495e;
+    padding: 0px 70px;
+}
+.nav2 li{
+    height: 55px;
+    line-height: 55px;
+    float: left;
+    list-style-type: none;
+    padding: 0px 44px;
+    list-style: none;
+    background-image: url(../images/ktu20.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.nav2 a{
+    color: #eaf7f0;
+    font-size: 12px;
+    text-decoration: none;
+}
+.nav2 li:hover{
+    background-color: #2980b6;
+}
+/* ---------------------footer----------------------- */
+.footer{
+    width: 1100px;
+    height: 80px;
+    background: #2d3e50;
+}
+.footer p{
+    font-size: 12px;
+    line-height: 22px;
+    white-space: pre-line;
+    padding: 21px 106px;
+}
+

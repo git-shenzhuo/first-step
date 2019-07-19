@@ -1,0 +1,18 @@
+1、定位
+   取值：
+   （1）static 静态定位，所有元素的默认值，设置static跟没设置之前的效果一样
+   （2）relative 相对定位
+        参考物：元素移动之前的位置
+	特点：移动之后还占据原来的位置，不脱离文档流，灵魂出窍
+    （3）absolute 绝对定位
+	参考物：浏览器的可视窗口 或 最近距离有定位（非static定位）父元素
+	特点：移动之后脱离文档流，不占据原来的位置
+    （4）fixed 固定定位
+ 2、层级关系的设置：
+    属性：z-index
+    取值：value没有单位
+    注意点：value值越大，元素就在越上面，value的默认值0，可以去负数
+    这个属性只能与定位（absolute和fixed，非static）
+
+
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/clear

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7/html5shiv-printshiv.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background: #cccccc;
+        }
+
+        .zuoye {
+            width: 900px;
+            margin: auto;
+            background: #888888;
+            border: 5px solid #ffffff;
+        }
+
+        .clearfix::after {
+            content: "";
+            overflow: hidden;
+            visibility: hidden;
+            height: 0;
+            clear: both;
+            display: block;
+        }
+
+        header {
+            background: #F47D31;
+            height: 80px;
+        }
+
+        h1 {
+            font-size: 72px;
+            line-height: 80px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ffffff;
+            text-align: center;
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        h3 {
+            color: #ffffff;
+            text-align: center;
+            font-size: 18px;
+            line-height: 26px;
+        }
+
+        main {
+            width: 100%;
+            position: relative;
+        }
+
+        nav {
+            float: left;
+            width: 25%;
+            height: 100%;
+
+        }
+
+        ul li {
+            list-style: none;
+            font-size: 12px;
+            line-height: 42px;
+            padding-left: 10px;
+            margin-left: 5px;
+            margin-right: 15px;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        main div {
+            float: left;
+            width: 50%;
+
+        }
+
+        article {
+            /* padding-top: 10px; */
+            background: #ffffff;
+            border: 10px solid #ffffff;
+            margin-top: 10px;
+        }
+
+        article h2 {
+            background: #F47D31;
+            margin-bottom: 10px;
+        }
+
+        article h3 {
+            background: #F47D31;
+            margin-top: 10px;
+        }
+
+        article p {
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 14px;
+        }
+
+        aside {
+            width: 25%;
+            float: left;
+        }
+
+        aside p {
+            color: #ffffff;
+            padding: 0 20px;
+            font-style: italic;
+        }
+
+        footer {
+            height: 50px;
+            margin-top: 10px;
+        }
+
+        footer h3 {
+            background: #F47D31;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="zuoye">
+        <header>
+            <h1>Header</h1>
+        </header>
+        <main class="clearfix">
+            <nav>
+                <h2>Nav</h2>
+                <ul>
+                    <li>link1</li>
+                    <li>link2</li>
+                    <li>link3</li>
+                </ul>
+            </nav>
+            <div>
+                <article>
+                    <h2>Article Header</h2>
+                    <p>Lorem ipsum dolor HTML5 nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est
+                        eros, vel fringilla urna.</p>
+                    <p>Per inceptos himenaeos. Quisque feugiat, justo at vehicula pellentesque, turpis lorem dictum
+                        nunc.</p>
+                    <h3>Article Footer</h3>
+                </article>
+                <article>
+                    <h2>Article Header</h2>
+                    <p>HTML5: "Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est
+                        eros, vel fringilla urna. Pellentesque odio</p>
+                    <h3>Article Footer</h3>
+                </article>
+            </div>
+            <aside>
+                <h2>Aside</h2>
+                <p>HTML5: "Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est
+                    eros, vel fringilla urna. Pellentesque odio rhoncus</p>
+            </aside>
+        </main>
+        <footer>
+            <h3>Footer</h3>
+
+        </footer>
+    </div>
+</body>
+
+</html>

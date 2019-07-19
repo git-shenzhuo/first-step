@@ -1,0 +1,195 @@
+html,body{
+    height: 100%;
+}
+#shouye{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------------header--------------------- */
+#shouye .s-header{
+    height: 1.6rem;
+    display: flex;
+    justify-content: space-around;
+}
+.s-header i{
+    font-size: .533333rem;
+    color: red;
+    margin-top: .2rem;
+}
+.s-header p{
+    font-size: .32rem;
+    margin-top: .2rem;
+}
+.s-header input{
+    width: 6.6rem;
+    height: .733333rem;
+    background-color: #f2f3f7;
+    border-radius: .133333rem;
+    margin-top: .133333rem;
+    text-align: center;
+}
+/* --------------------------main---------------------- */
+#shouye .s-main{
+    flex: 1;
+    overflow: auto;
+}
+.s-main .banner{
+    height: 2.933333rem;
+    overflow: auto;
+}
+.s-main .banner .dongtu{
+    width: 700%;
+    height: 100%;
+}
+.s-main .banner .dongtu img{
+    width: 10rem;
+    height: 2.933333rem;
+    float: left;
+}
+.s-main .banner .dongtu img:hover{
+    transform: translateX(0.8) translateY(1.2)
+}
+/* -------------------nav------------------ */
+.s-main .nav{
+    height: 4.933333rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.s-main .nav a{
+    width: 20%;
+    height: 2.133333rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.s-main .nav a i{
+    width: .733333rem;
+    height: .733333rem;
+    margin-top: .533333rem;
+    margin-bottom: .293333rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.s-main .nav a span{
+    flex:1;
+    text-align: center;
+    font-size: .293333rem;
+    color: #000;
+}
+.s-main .nav a:nth-child(2n+1) i{
+    background-image: url(../images/nav1.png);
+}
+.s-main .nav a:nth-child(2n) i{
+    background-image: url(../images/nav2.png);
+}
+.s-main .nav p{
+    width: .666667rem;
+    height: 0;
+    border: .013333rem solid #acacac;
+    margin-left: calc(50% - .333333rem);
+}
+/* -------------------content--------------- */
+.s-main .content{
+    width: 9.146667rem;
+    margin: 0 auto;
+}
+/* ---------------lvpai-------------- */
+.s-main .content .lvpai{
+    border-top: .013333rem solid #e1e1e1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.s-main .content .biaoti{
+    display: flex;
+    justify-content: space-between;
+}
+.s-main .content .biaoti h2{
+    font-size: .426667rem;
+    line-height: 1.28rem;
+    font-weight: 900;
+}
+.s-main .content .biaoti h4{
+    font-size: .293333rem;
+    line-height: 1.28rem;
+}
+.s-main .content .biaoti h4 a{
+    color: #cccccc;
+}
+.s-main .content .lvpai .tu{
+    display: flex;
+    justify-content: space-between;
+}
+.s-main .content .lvpai .tu img{
+    width: 2.96rem;
+    height: 2.666667rem;
+}
+.s-main .content .lvpai .dizhi{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .133333rem;
+}
+.s-main .content .lvpai .dizhi a{
+    width: 2.2rem;
+    height: .84rem;
+    text-align: center;
+    line-height: .84rem;
+    font-size: .346667rem;
+    color: #676662;
+    border-radius: .133333rem;
+    margin-bottom: .4rem;
+}
+.s-main .content .lvpai .dizhi a:nth-child(1){
+    background-color: #f2f6dd;
+}
+.s-main .content .lvpai .dizhi a:nth-child(2){
+    background-color: #eafcf0;
+}
+.s-main .content .lvpai .dizhi a:nth-child(3){
+    background-color: #faf1e2;
+}
+.s-main .content .lvpai .dizhi a:nth-child(4){
+    background-color: #e4f8f9;
+}
+.s-main .content p{
+    width: .053333rem;
+    height: .373333rem;
+    border: .013333rem solid red;
+    position: absolute;
+    top: .426667rem;
+    left: -0.333333rem;
+}
+.s-main .content .gongju{
+    border-top: .013333rem solid #e1e1e1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+/* -----------------------footer-------------------- */
+#shouye  .s-footer{
+    height: 1.333333rem;
+    display: flex; 
+}
+.s-footer a{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.s-footer a i{
+    font-size: .533333rem;
+    color: #8d8d8d;
+}
+.s-footer a p{
+    font-size: .266667rem;
+    color: #8d8d8d;
+}
+.s-footer a:hover i,.s-footer a:hover p{
+    color: #eb3357;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <table rules="groups">
+        <!-- 
+            表格的列分组：colgroup span="value" 表示value列为一组
+            要分为多少组就要写多少个colgroup标签
+
+            双数行： tr:nth-child(2n){ }
+            单数行： tr:nth-child(2n+1){ }
+            设置单数(odd)单元格的样式和双数(even)单元格的样式
+         -->
+        <!-- <col span="2">
+        <col span="2"> -->
+
+        <!-- <colgroup span="2"></colgroup>
+        <colgroup span="2"></colgroup> -->
+        <thead>
+            <tr>
+                <th>法师</th>
+                <th>技能</th>
+                <th>射手</th>
+                <th>技能</th>
+                <th>刺客</th>
+                <th>技能</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>王昭君</td>
+                <td>寒冰</td>
+                <td>后裔</td>
+                <td>大鸟</td>
+                <td>阿轲</td>
+                <td>闪现</td>
+            </tr>
+            <tr>
+                <td>妲己</td>
+                <td>小心心</td>
+                <td>鲁班</td>
+                <td>大炮</td>
+                <td>韩信</td>
+                <td>跳跳</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</body>
+
+</html>

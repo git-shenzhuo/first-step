@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            用纯css写三角形：
+            元素的宽高设置0，width：0px，height：0px
+            border:10px solid transparent;
+            border-bttom-color:blue;
+        
+         */
+        span {
+            display: block;
+            border: 10px solid transparent;
+            height: 0px;
+            width: 0px;
+            border-right-color: blue;
+            /* border-right-color: transparent;
+            border-bottom-color: transparent; */
+        }
+
+        span:hover {
+            border-top-color: transparent;
+            /* border-bottom-color: blue; */
+        }
+    </style>
+</head>
+
+<body>
+    <span></span>
+
+</body>
+
+</html>

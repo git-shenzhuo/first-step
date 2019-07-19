@@ -1,0 +1,78 @@
+1、padding（内边距）
+   作用：调整元素的内容 或者子元素在容器（父元素）中的文职关系
+	padding只能给父元素添加，并且不能为负数
+    padding的属性值设置：
+    （1）padding：属性值；表示给上下左右都添加padding值
+    （2）padding：属性值1 属性值2；属性值1表示给上下添加padding，属性值2表示给左右添加padding
+    （3）padding：属性值1 属性值2 属性值3；属性值1给上添加padding，属性值2给左右添加padding，属性值3给下添加padding
+    （4）padding：属性值1 属性值2 属性值3 属性值4；分别给上，右，下，左（顺时针方向）
+    （5）padding-left|right|top|bottom：属性值
+
+2、border（边框）
+   （1）边框宽度：border-width，默认的宽度为3px
+   （2）边框样式：border-style：solid（实线）| dashed（虚线）| dotted（点线）|double（双实线）| none（没有）
+	设置边框的时候，样式一定要设置，不然边框不出现
+   （3）边框颜色：border-color：默认的颜色为黑色
+   （4）总写：border：
+   （5）设置某一个方向的边框：border-left |top | right | bottom
+    注意点：给盒子设置了padding值和border值，会导致元素在页面中实际所占宽高增加
+	    想要实线盒子的实际所占宽高不变，必须减掉所增加的padding值和border值
+     盒子在页面中的实际所占的宽高：
+     宽度=content（width）+左右padding+左右的border
+     长度=content（height）+上下padding+上下的border
+
+3、margin（外边距）
+    （1）margin：属性值；表示给上下左右都添加padding值
+    （2）margin：属性值1 属性值2；属性值1表示给上下添加margin，属性值2表示给左右添加margin
+    （3）margin：属性值1 属性值2 属性值3；属性值1给上添加margin，属性值2给左右添加margin，属性值3给下添加padding
+    （4）margin：属性值1 属性值2 属性值3 属性值4；分别给上，右，下，左（顺时针方向）
+    （5）margin-left|right|top|bottom：属性值
+
+4、问题：如果容器的第一个子元素设置margin-top，会错误的把margin值添加给父元素，导致父元素跟着一起往下移动
+   解决办法：
+     （1)给父元素添加border（边框）
+     （2）给父元素添加overflow：hidden
+     （3）浮动（给父元素或者子元素浮动都可以）
+
+5、问题：两个垂直排列的元素，第一个元素设置margin-bottom，第二个元素设置margin-top，这两个属性值不会相加，而是取一个较大的值。
+
+6、容器溢出
+   属性：overflow
+   取值：
+	visible（默认值），容器溢出不会裁剪，也不会出现滚动条
+	hidden：把多余的部分隐藏掉
+	scroll：出现滚动条，不管有没有溢出容器，都会现在滚动条
+	anto:内容溢出就出现滚动条，否则就不出现
+
+7、空白空间的设置
+   属性：white-space
+   取值：
+	（1）normal 正常，多余的空白空间会被忽略，只保留一个空白空间
+	（2）pre 会保留左右的空白空间
+	（3）pre-wrap 会保留所用空白空间，也会正常换行
+	（4）pre-line 合并空白空间，但是正常换行
+	（5）nowrap 合并空白空间，只保留一个，所有文字不换行
+
+
+8、文本溢出设置
+   属性：text-overflow
+   取值：
+	（1）clip 简单的把多余的隐藏掉
+	（2）ellipsis 把多余的不分用省略号代替
+   注意点：文本溢出设置必须配合overflow使用
+
+9、出现单行省略号的条件
+	（1）容器要有width
+	（2）给容器设置overflow：hidden
+	（3）text-overflow：ellipsis；
+	（4）强制文字不换行
+
+10、出行多行省略号的条件
+	（1）容器必须有宽度width
+	（2）给容器设置overflow：hidden
+	（3）text-overflow：ellipsis；
+	（4）display：-webkit-box;
+	（5）-webkit-line-clamp：4;
+	（6）-webkit-box-orient:vertical;
+
+

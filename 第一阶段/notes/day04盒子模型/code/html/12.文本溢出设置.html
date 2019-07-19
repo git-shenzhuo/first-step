@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            border: 1px solid red;
+            height: 30px;
+            /* 
+                文本溢出设置
+                属性：text-overflow
+                    取值：
+                        clip 简单的把多余的隐藏掉
+                        ellipsis 把多余的部分用省略号代替
+                注意点：文本溢出设置必须配合overflow使用
+
+                出现单行省略号的条件：
+                    （1）容器要有 width
+                    （2）给容器设置overflow：hidden
+                    （3）text-overflow: ellipsis;
+                    （4）强制文字不换行
+                多行文本出现省略号的条件：
+                    （1）容器必须有宽度 width
+                    （2）给容器设置overflow：hidden
+                    （3）text-overflow: ellipsis;
+                    （4）display: -webkit-box;
+                    （5）-webkit-line-clamp: 4;
+                    （6）-webkit-box-orient: vertical;
+             */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        p {
+            width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            /* 
+                
+            
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <div>jsadb sjns d,jdsnc kdscdjc dkcjsadb sjns d,jdsnc kdscdjc dkcjsadb sjns d,jdsnc kdscdjc dkc </div>
+    <p>
+        多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号多行文本出现省略号
+    </p>
+</body>
+
+</html>

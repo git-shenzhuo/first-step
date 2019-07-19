@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.tengxun {
+    width: 100%;
+    border: 1px solid red;
+}
+
+.content {
+    width: 1190px;
+    margin: 0 auto;
+
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+/* ------------------------header------------------------ */
+.header {
+    width: 100%;
+}
+
+/* ------------logo------------ */
+.header h1 {
+    text-indent: -9999px;
+}
+
+.header .logo {
+    width: 310px;
+    height: 78px;
+    float: left;
+    /* margin-right: 59px; */
+    background-image: url(../images/logo.png);
+}
+
+/* ------------nav------------- */
+.header .nav li {
+    height: 78px;
+    margin-right: 1px;
+    float: left;
+    background-image: url(../images/nav\ \(2\).png);
+}
+
+.header .nav li:nth-child(2) {
+    background-position: -91px 0px;
+}
+
+.header .nav li:nth-child(3) {
+    background-position: -205px 0px;
+}
+
+.header .nav li:nth-child(4) {
+    background-position: -340px 0px;
+}
+
+.header .nav li:nth-child(5) {
+    background-position: -447px 0px;
+}
+
+.header .nav li:nth-child(6) {
+    background-position: -560px 0px;
+}
+
+.header .nav li:nth-child(7) {
+    background-position: -672px 0px;
+}
+
+.header .nav li:hover {
+    background-position: 0 -90px;
+}
+
+.header .nav li:nth-child(2):hover {
+    background-position: -91px -90px;
+}
+
+.header .nav li:nth-child(3):hover {
+    background-position: -205px -90px;
+}
+
+.header .nav li:nth-child(4):hover {
+    background-position: -340px -90px;
+}
+
+.header .nav li:nth-child(5):hover {
+    background-position: -447px -90px;
+}
+
+.header .nav li:nth-child(6):hover {
+    background-position: -560px -90px;
+}
+
+.header .nav li:nth-child(7):hover {
+    background-position: -672px -90px;
+}
+
+.header .nav i {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-top: 25px;
+    /* margin-left: 20px; */
+    padding-right: 20px;
+    border-right: 1px solid #e5e5e5;
+}
+
+.header .nav b {
+    width: 30px;
+    height: 47px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+/* ------------------------banner----------------- */
+.banner .tu {
+    width: 100%;
+    height: 356px;
+    background-image: url(../images/banner.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.banner dt {
+    float: left;
+    margin: 8px 10px 8px 120px;
+}
+
+.banner dd {
+    font-size: 12px;
+    line-height: 38px;
+}
+
+/* -----------------------main------------------- */
+.main {
+    width: 100%;
+    background-color: #d6dae3;
+
+}
+
+/* -------------left----------- */
+.main .left {
+    width: 780px;
+    float: left;
+    margin-left: 57px;
+    margin-right: 18px;    
+}
+.main .left .one,.main .left .two{
+    background-color: #f2f1ef;
+    margin-top: 20px;
+}
+
+.main .left img {
+    float: left;
+    padding: 20px 10px 20px 20px;
+}
+
+.main .left h2 {
+    font-size: 20px;
+    line-height: 20px;
+    padding: 20px 0;
+    float: left;
+    width: 500px;
+    font-weight: normal;
+
+}
+
+.main .left h6 {
+    font-size: 8px;
+    line-height: 8px;
+    float: right;
+    padding-top: 32px;
+    padding-right: 20px;
+    color: #888888;
+}
+
+/* -----------one------------ */
+.main .left .one dl {
+    width: 226px;
+    float: left;
+    background-color: #fff;
+    margin-bottom: 20px;
+    height: 273px;
+}
+
+.main .left .one .dl1 {
+    margin: 0 31px 0 20px;
+}
+
+.main .left .one .dl3 {
+    margin: 0 20px 0 31px;
+}
+
+.main .left .one .dl1::before {
+    content: url(../images/main-left-one1.png)
+}
+
+.main .left .one .dl2::before {
+    content: url(../images/main-left-one2.png)
+}
+
+.main .left .one .dl3::before {
+    content: url(../images/main-left-one3.png)
+}
+
+.main .left .one dt {
+    font-size: 13px;
+    line-height: 13px;
+    margin-top: 18px;
+    margin-left: 12px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 192px;
+}
+
+.main .left .one dd {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 8px;
+    margin-left: 12px;
+    color: #888888;
+    width: 192px;
+    overflow: hidden;
+    text-overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+/* ----------two-------- */
+.main .left .two{
+    width: 100%;
+}
+.main .left .two li{
+    width: 740px;
+    height: 125px;
+    margin:0 20px 20px 20px ;
+    background-color: #fff;
+    overflow: hidden;
+}
+.main .left .two li i{
+    display: block;
+    margin: 20px;
+    width: 122px;
+    height: 85px;
+    background-image: url(../images/main-left-two123.png);
+}
+
+.main .left .two li i:nth-child(2){
+    background-position: -85px -85px;
+}
+/* -------------right----------- */
+.main .right {
+    width: 266px;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 20px;
+        }
+
+        body {
+            font-size: 14px;
+        }
+
+        .box1 {
+            /* 
+                em 是一个单位，相对于盒子本身的font-size 或者 父元素font-size的大小来定义
+
+                rem 是一个单位，相对于根元素（html）的font-size来定义大小的
+                html{
+                    font-size:16px
+                }
+                div{
+                    width:10rem; 相当于 16 *10 = 160px
+                }
+                em 和 rem的区别：
+
+             */
+            font-size: 15px;
+            width: 10rem;
+            height: 10rem;
+            background: red;
+            float: left;
+        }
+
+        .box2 {
+            width: 120px;
+            height: 100px;
+            background: green;
+            float: left;
+        }
+
+        @media all and (max-width:320px) {
+            .box1 {
+                width: 9rem;
+            }
+
+            .box2 {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>

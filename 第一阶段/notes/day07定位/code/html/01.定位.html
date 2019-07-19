@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 
+            定位：属性 position
+            注意：定位一定要配合left,right,top,bottom 这四个属性去使用，才会有效果
+
+            取值：
+                1、static 静态定位,所有元素的默认值，设置static跟没设置之前效果一样
+
+                2、relative 相对定位
+                参考物：元素移动之前的位置
+                特点：移动之后还占据原来的位置，不脱离文档流，灵魂出窍
+
+                3、absolute 绝对定位
+                参考物：浏览器的可视窗口 或 最近有定位（非static定位）父元素
+
+                特点：移动之后脱离文档流，不占据原来的位置
+        
+         */
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: red;
+            /* position: relative;
+            left: -100px;
+            top: 100px; */
+        }
+
+        .box1 {
+            position: relative;
+            left: 300px;
+        }
+
+        .box2 {
+            background: green;
+            /* position: relative;
+            top: 100px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+</body>
+
+</html>

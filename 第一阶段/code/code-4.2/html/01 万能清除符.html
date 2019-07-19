@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .clearfix::after{
+        content :'';
+        display: block;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        clear: both;
+    }
+    .yemian{
+        width: 500px;
+        border: 1px solid red;
+    }
+    .header{
+        height: 60px;
+        background-color: #cccccc;
+        text-align: center;
+        line-height: 60px;
+    }
+    .nav li{
+        width: 40px;
+        padding: 0 20px;
+        border-right: 1px solid blue;
+        float: left;
+        list-style: none;
+    }
+    .main div{
+        float: left;
+        width: 100px;
+        height: 200px;
+        background-color: green;
+        margin-right: 50px;
+    }
+    </style>
+</head>
+<body>
+    <div class="yemian">
+        <div class="header">
+            <h1>logo</h1>
+        </div>
+        <div class="nav clearfix">
+            <ul>
+                <li>首页</li>
+                <li>课程</li>
+                <li>简介</li>
+                <li>登录</li>
+                <li>充值</li>
+            </ul>
+        </div>
+        <div class="main clearfix">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>

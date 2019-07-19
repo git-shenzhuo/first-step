@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .box {
+            height: 100%;
+            display: flex;
+            /* 
+                弹性盒模型的默认主轴方向是水平方向（从左到右）
+
+                2、flex-direction 设置弹性盒模型的主轴方向
+                取值：
+                    row---水平从左到右，默认值
+                    row-reverse----水平从右到左
+                    column---垂直方向从上到下
+                    column-reverse---垂直从下到上
+
+             */
+            flex-direction: column-reverse
+        }
+
+        .box .top {
+            width: 100%;
+            height: 100px;
+            background: red;
+        }
+
+        .box .bottom {
+            flex: 1;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+
+</body>
+
+</html>

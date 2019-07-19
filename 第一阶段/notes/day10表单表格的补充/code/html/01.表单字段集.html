@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        legend {
+            border: 1px solid red;
+        }
+
+        label {
+            /* label 是行内元素，不可以设置宽高，
+                要想设置宽高：display：block | inline-block;
+             */
+            display: inline-block;
+            width: 200px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        是要书写表单，就要有表单标签form
+     -->
+    <form action="" method="GET">
+        <!-- 
+            表单字段集：fieldset
+            作用：对表单中的元素进行分组
+            fieldset可以嵌套使用
+
+            字段集标题：legend
+            必须是fieldset下面的第一个子元素
+            
+            提示信息：label 
+            属性：for="控件的id属性值（名）"
+         -->
+        <fieldset>
+            <fieldset>
+
+                <legend>用户登录</legend>
+                <p>
+                    <label for="username">用户名</label>
+                    <input id="username" type="text">
+                </p>
+                <p>
+                    <label for="">密码</label>
+                    <input type="password">
+                </p>
+
+
+            </fieldset>
+            <fieldset>
+                用户注册
+            </fieldset>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .box {
+            width: 400px;
+            margin: 100px auto;
+        }
+
+        .box div {
+            margin-bottom: 10px;
+        }
+
+        .box .tleit {
+            display: block;
+            height: 40px;
+            background: #ccc;
+            border-radius: 5px;
+            line-height: 40px;
+            padding-left: 10px;
+            width: 400px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* 实现三角形 */
+        .box .tleit::after {
+            content: "";
+            display: block;
+            width: 0px;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: #fff;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -5px;
+        }
+
+        .box p {
+            height: 0;
+            overflow: hidden;
+            transition: height 1s
+        }
+
+        .box div:target p {
+            height: 150px;
+            overflow: auto;
+        }
+
+        .box div:target a {
+            background: blue;
+        }
+
+        .box div:target .tleit::after {
+            border-left-color: #fff;
+            border-top-color: transparent;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="list1">
+            <a class="tleit" href="#list1">list1</a>
+            <p>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+        <div id="list2">
+            <a class="tleit" href="#list2">list2</a>
+            <p>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+        <div id="list3">
+            <a class="tleit" href="#list3">list3</a>
+            <p>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

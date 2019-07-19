@@ -1,0 +1,79 @@
+1.字体相关属性
+    （1）字体大小
+	font-size:20px;
+	默认字体为16px
+    （3）字体颜色
+	color：
+    （2) 字体的类型
+	font-family:"黑体","宋体"
+	如果是中文字体和多个单词组成的字体，需要加引号，单个单词的字体可加可不加
+    （3）倾斜
+	font-style:italic(倾斜）| normal（正常）
+    （4）加粗
+	font-weight:bold(加粗）| normal（正常）| bolder
+	另一种取值凡是：100-900，其中100-500是正常的，600-900是加粗的
+	注意点：如果使用数字，没有单位。
+
+2、文本相关属性
+   （1）文本的水平对其方式
+	text-align: left | center | right
+   （2）行高
+	line-height：数值+px
+   （3）行内元素垂直对其方式
+	vertical-align：top | middle | baseline | bottom
+    注意点：
+	（1）只有两个以上的行内元素才有对比效果，才会使用这个属性
+	（2）对比的元素都有添加vertical-align，才会有效果
+
+3、文本修饰
+    text-decoration：none（没有）| underline（下划线| overline（上划线）| line-through（删除线）
+
+4、控制文本大小写
+   text-transform：uppercase（把所有的字母都变成大写）| lowercase（把所有的字母都变成小写）| capitalize（把首字母变成大写）
+
+5、首行缩进
+   text-indent
+   注意点：可以去负数，一般在h1中隐藏标题文字
+   em：是一个单位，根据当前元素 或者 父元素的字体大小（font-size）的倍数
+
+6、字符间距
+   letter-spacing：数值+px
+   英文单词中字母之间也会添加距离
+
+7、词间距
+   word-spacing:数值+px
+   以空格为标识去添加距离
+
+8、列表样式的符号
+   list-style-type：dics（实心圆，默认值）| circle（空心园）| square（实心方块）| none（没有）
+
+9、用图片作为列表项目符号
+   list-style-image：url（图片的路径）；
+
+10、列表项目符号的位置
+   list-style-position：inside（在里面）| outside（在外面，默认值）
+
+11、复合属性，简写
+   list-style：type | image position；
+   一般用来清楚ul>li和 ol>li的默认样式
+   list-style:none
+
+12、背景颜色
+   background-color：
+
+13、背景图片
+   background-image：url（图片的路径)
+
+14、背景图片是否平铺
+   background-repeat：repeat（平铺，默认值）| no-repeat（不平铺）、 repeat-x（水平方向平铺）| repeat-y（方向平铺垂直）
+
+15、背景图片的位置
+   background-position：属性值1  属性值2
+   属性值1：水平方向，取值 left | center | right | 数值 + px
+   属性值2：垂直方向，取值 top | center | bottom | 数值 + px
+
+16、背景图片的固定
+   background-attachment：fixed（固定）| scroll(滚动）
+
+17、浮动
+   float：left | right | none 

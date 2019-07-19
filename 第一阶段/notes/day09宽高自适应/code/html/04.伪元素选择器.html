@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            伪元素（对象）选择器
+            1、选择器::after{
+                content:"文字内容" | content:url(图片路径)
+                必须要配合content属性一起使用
+            }
+            给元素添加最后一个子元素
+
+            2、选择器::before{
+                content:""
+                必须要配合content属性一起使用
+                给元素添加第一个子元素
+            }
+
+            3、选择器::first-letter{
+                color:red;
+            }
+            改变元素中第一个字符的样式（只能用于块级元素）
+
+            4、选择器::first-line{
+                background:pink;
+            }
+            改变元素中第一行的样式（只能用于块级元素）
+            
+         */
+        div::after {
+            content: "";
+            /* content: url(../images/1.jpg); */
+        }
+
+        div::before {
+            content: "我在最前面"
+
+        }
+
+        div::first-letter {
+            color: red;
+        }
+
+        div::first-line {
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+        <span>收假你们就要收心</span>
+    </div>
+</body>
+
+</html>

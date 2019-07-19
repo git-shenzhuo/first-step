@@ -1,0 +1,451 @@
+#chaofankeji {
+    width: 100%;
+    height: 5300px;
+}
+
+.content {
+    width: 1140px;
+    height: 100%;
+    /* background: pink; */
+    margin: auto;
+}
+
+/* -------------------header------------------ */
+.header {
+    width: 100%;
+    height: 83px;
+    background-color: #fff;
+}
+
+.header h1 {
+    text-indent: -99999px;
+}
+
+.header .logo {
+    float: left;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    width: 420px;
+    height: 80px;
+}
+
+.header li {
+    width: 90px;
+    height: 83px;
+    float: left;
+    display: inline-table;
+}
+
+.header a {
+    font-size: 12px;
+    color: #333333;
+    display: block;
+    line-height: 83px;
+    text-align: center;
+}
+
+/* .header li:hover{
+    background-color: #006bcf;
+} */
+.header li:hover .zhongwen {
+    display: none;
+}
+
+.header li:hover .yinwen {
+    display: block;
+}
+
+.header .yinwen {
+    display: none;
+}
+
+/* ----------------banner------------------- */
+.banner {
+    width: 100%;
+    height: 450px;
+    background-color: #00a3f2;
+    position: relative;
+    background-image: url(../images/569f97276ac58.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.banner li {
+    float: left;
+    width: 20px;
+    height: 10px;
+    margin-right: 4px;
+
+}
+
+.banner ul {
+    width: 120px;
+    height: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    padding-left: -60px;
+}
+
+.banner a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.banner a:active {
+    background: blue;
+}
+
+/* -----------------main--------------------- */
+.main {
+    width: 100%;
+    height: 3884px;
+    /* background-color: pink; */
+}
+
+.main h2 {
+    width: 250px;
+    height: 45px;
+    margin: auto;
+    margin-top: 42px;
+}
+
+.main h3 {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    white-space: pre-line;
+    font-weight: normal;
+    padding-top: 22px;
+    padding-bottom: 56px;
+}
+
+/* ----------b----------- */
+.main .b {
+    overflow: hidden;
+    width: 100%;
+    height: 725px;
+    /* background: #cccccc; */
+}
+
+.main .b .tu1 {
+    width: 351px;
+    height: 218px;
+    float: left;
+    margin-right: 43px;
+    margin-bottom: 4px;
+    background: #ffffff;
+    position: relative;
+}
+
+.b .tu1 span {
+    width: 228px;
+    height: 71px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -114px;
+    margin-top: -35.5px;
+    text-align: center;
+    color: #fff;
+    line-height: 71px;
+}
+
+/* -----------c------------ */
+.main .c {
+    overflow: hidden;
+    width: 100%;
+    height: 762px;
+    background: #ebeff1;
+}
+
+.main .c li {
+    width: 283px;
+    height: 166px;
+    background: #fff;
+    float: left;
+    border: 1px solid #ebeff1;
+    position: relative;
+}
+
+.main .c .tu2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main .c li .tu2 {
+    display: none;
+}
+
+.main .c li:hover .tu1 {
+    display: none;
+}
+
+.main .c li:hover .tu2 {
+    display: block;
+}
+
+/* ------------w------------- */
+.main .w {
+    overflow: hidden;
+    width: 100%;
+    height: 682px;
+    /* background: green; */
+}
+
+.main .w li {
+    width: 283px;
+    height: 211px;
+    border: 1px solid #fff;
+    float: left;
+}
+
+.main .w li img {
+    width: 100%;
+    height: 100%;
+}
+
+/* -------------n------------ */
+.main .n {
+    overflow: hidden;
+    width: 100%;
+    height: 800px;
+    background-color: #1b87a4;
+}
+
+.main .n h3 {
+    color: #fff;
+}
+
+.main .n li {
+    width: 550px;
+    height: 166px;
+    float: left;
+    background: #fff;
+    margin-right: 40px;
+    margin-bottom: 15px;
+}
+
+.main .n .tupian {
+    width: 170px;
+    height: 166px;
+    float: left;
+}
+
+.main .n .wenzi {
+    height: 110px;
+    width: 323px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 37px;
+}
+
+.main .n h4 {
+    font-size: 15px;
+    line-height: 44px;
+    text-align: left;
+    margin-top: 13.5px;
+    color: #333333
+}
+
+.main .n .wenzi p {
+    font-size: 12px;
+    line-height: 21px;
+    text-align: left;
+    color: #777777;
+    margin-bottom: 0px;
+    width: 330px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+}
+
+.main .n h5 {
+    float: left;
+    font-size: 9px;
+    margin-top: 14px;
+    color: #d5cccf;
+}
+
+.main .n h6 {
+    float: right;
+    font-size: 9px;
+    margin-top: 14px;
+    color: #d5cccf;
+}
+
+/* -----------e------------- */
+.main .e {
+    width: 100%;
+    height: 912px;
+
+}
+
+.main .e ul {
+    width: 100%;
+    height: 130px;
+    border-bottom: 2px solid #ccc;
+}
+
+.main .e ul li {
+    width: 285px;
+    height: 100%;
+    float: left;
+    position: relative;
+
+}
+
+.main .e a {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+
+.main .e ul li i {
+    position: absolute;
+    left: 50%;
+    margin-left: -40px;
+    width: 80px;
+    height: 80px;
+    background-image: url(../images/exp_xtb.png);
+}
+
+.main .e ul li p {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 17px;
+    text-align: center;
+    color: #b2b9ce;
+}
+
+.main .e ul li:nth-child(2) i {
+    background-position: 0 -80px;
+}
+
+.main .e ul li:nth-child(3) i {
+    background-position: 0 -160px;
+}
+
+.main .e ul li:nth-child(4) i {
+    background-position: 0 -240px;
+}
+
+.main .e ul li:nth-child(1):hover i {
+    background-position: -80px 0;
+}
+
+.main .e ul li:nth-child(1):hover {
+    border-bottom: 2px solid #319acd;
+}
+
+.main .e ul li:nth-child(2):hover i {
+    background-position: -80px -80px;
+}
+
+.main .e ul li:nth-child(2):hover {
+    border-bottom: 2px solid #e76c9a;
+}
+
+.main .e ul li:nth-child(3):hover i {
+    background-position: -80px -160px;
+}
+
+.main .e ul li:nth-child(3):hover {
+    border-bottom: 2px solid #7cbfed;
+}
+
+.main .e ul li:nth-child(4):hover i {
+    background-position: -80px -240px;
+}
+
+.main .e ul li:nth-child(4):hover {
+    border-bottom: 2px solid #a2c92b;
+}
+.main .e .tu{
+    width: 1140px;
+    height: 460px;
+    margin-top: 74px;
+}
+.main .e .tu img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ----------------link------------------- */
+.link {
+    width: 100%;
+    height: 224px;
+    background-color: #006bcf;
+    position: relative;
+}
+
+.link span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #006bcf;
+    position: absolute;
+    top: 89px;
+}
+
+.link dl {
+    width: 378px;
+    height: 132px;
+    border-right: 1px solid #0052a7;
+    float: left;
+    margin-top: 46px;
+}
+
+.link dt {
+    padding-top: 11px;
+    padding-bottom: 33px;
+    font-size: 67px;
+    color: #fff;
+    line-height: 67px;
+    text-align: center;
+}
+
+.link dd {
+    font-size: 15px;
+    color: #fff;
+    line-height: 15px;
+    text-align: center;
+}
+
+/* -----------------footer------------------ */
+.footer {
+    width: 100%;
+    height: 662px;
+    background-image: url(../images/footer_bj.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.footer h2 {
+    font-size: 45px;
+    line-height: 45px;
+    padding-top: 42px;
+    padding-bottom: 43px;
+    color: #fff;
+    text-align: center;
+    font-weight: normal;
+}
+
+.footer h3 {
+    font-size: 24px;
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+    font-weight: normal;
+    padding-bottom: 54px;
+}

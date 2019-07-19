@@ -1,0 +1,25 @@
+1、meter标签
+   （1）high----较高值
+   （2）low-----较低值
+   （3）max-----最大值
+   （4）min-----最小值
+   （5）value---当前值
+   （6）optimum-最佳值
+
+    颜色：红 黄 绿
+    颜色显示规则：根据最佳值（optimum）
+    如果optimum的值大于high的值，表示值越大越好，value的值在low以下显示红色，value的值在low-high之间就显示黄色，value的值在high以上就显示绿色
+   如果optimum的值小于low的值，表示值越小越好，value的值在low以下显示绿色，value的值在low-high之间就显示黄色，value的值在high以上就显示红色
+
+2、video视频标签
+  属性：
+	（1）autoplay---自动播放
+	（2）controls---播放控制条
+	（3）poster-----等待播放时的画面
+	（4）loop-------循环播放
+	video支持的格式：ogg、webM、MP4
+  audio视频标签
+  属性：
+	（1）autoplay---自动播放
+	（2）controls---播放控制条
+	（3）loop-------循环播放

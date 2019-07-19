@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            想要实现box1 在box中水平垂直居中
+         */
+
+        /* 
+            盒子在页面中中实际所占的宽高：
+            宽度 = content（width） + 左右padding + 左右的border
+            高度 = content（height） + 上下padding + 上下的border
+         
+          */
+        .box {
+            /* width: 400px;
+            height: 400px; */
+
+            /* 
+                给盒子设置了padding值和border值，会导致元素在页面中实际所占宽高增加
+                想要实现盒子的实际所占宽高不变，必须减掉所增加的padding值 和 border值
+             */
+            width: 198px;
+            height: 198px;
+            border: 1px red solid;
+            /* padding的作用：
+                调节子元素 或者 内容在容器（父元素）中的位置关系
+            */
+            padding: 100px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1"></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+#wolong {
+    width: 100%;
+    height: 1500px;
+}
+
+#wolong .content {
+    width: 1000px;
+    height: 100%;
+    margin: auto;
+    /* background: green; */
+}
+
+/* ------------header头部-------- */
+
+#wolong .header {
+    height: 100px;
+    width: 100%;
+    /* background: pink; */
+}
+
+.header .logo {
+    width: 246px;
+    height: 22px;
+    background-image: url(../images/logo.png);
+    text-indent: -999px;
+    margin-top: 42px;
+
+}
+
+.header .search {
+    width: 227px;
+    height: 28px;
+    background-image: url(../images/search.png);
+    margin-top: 39px;
+}
+
+/* -----------------nav导航------------------- */
+#wolong .nav {
+    width: 100%;
+    height: 56px;
+    background: #2d2d2d;
+}
+
+.nav ul,
+.nav ul li {
+    height: 100%;
+}
+
+.nav ul li {
+    /* 行高不能设置100% */
+    line-height: 56px;
+    width: 119px;
+    border-right: 1px solid #494949;
+    text-align: center;
+}
+
+.nav ul li a {
+    /* 
+        a标签是行内元素，行内元素不可以设置宽高
+     */
+    /* 想要给行内元素设置宽高，用display属性，属性值为block | inline-block */
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* 鼠标滑过改变背景色 */
+.nav ul li:hover {
+    background: orange;
+}
+
+/* ----------------banner 轮播图------------ */
+#wolong .banner {
+    width: 100%;
+    height: 466px;
+    background-image: url(../images/banner.jpg);
+    background-position: center center;
+}
+
+
+/* ------main主要内容--------- */
+#wolong .main {
+    width: 100%;
+    height: 546px;
+}
+
+/* main1的样式 */
+.main .main1 {
+    height: 242px;
+}
+
+.main1 .main1-left {
+    width: 500px;
+    height: 100%;
+}
+
+/* .main1 .main1-left h2 {
+    font-size: 17px;
+    line-height: 17px;
+    margin-top: 37px;
+    margin-bottom: 29px;
+} */
+/* 因为main1下面的h2的样式一样 */
+.main1 h2 {
+    font-size: 17px;
+    line-height: 17px;
+    margin-top: 37px;
+    margin-bottom: 29px;
+}
+
+.main1 .main1-left li {
+    list-style: disc inside;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 13px;
+}
+
+.main1 .main1-left li .span1 {
+    /* 出现省略号的条件
+        1、宽度width（行内元素不能设置宽高，想要设置宽高，使用display属性，属性值block 或者inline-block）
+        2、overflo：hidden
+        3、text-overflow:ellipsis
+        4、white-space:nowrap
+    */
+    display: inline-block;
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.main1 .main1-left li .span2 {
+    margin-right: 25px;
+    color: #969696;
+}
+
+.main1 .main1-center {
+    width: 195px;
+    height: 100%;
+    background: #f1f1f1;
+    padding-left: 25px;
+    padding-right: 20px;
+}
+
+.main1-center .p1 {
+    font-size: 12px;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+
+.main1-center .p2 {
+    font-size: 12px;
+    line-height: 24px;
+    color: #949494;
+    /* 
+        多行省略号的条件
+        1、 width: 100%;
+        2、overflow: hidden;
+        3、text-overflow: ellipsis;
+        4、display: -webkit-box;
+        5、-webkit-line-clamp: 2;
+        6、-webkit-box-orient: vertical;
+    */
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+}
+
+.main1 .main1-right {
+    width: 221px;
+    height: 100%;
+    padding-left: 24px;
+    background-image: url(../images/icon.png);
+    background-repeat: no-repeat;
+    background-position: right 120px;
+}
+
+
+/* -----main2的样式------- */
+.main .main2 {
+    height: 245px;
+    /* background: #ccc; */
+    margin-top: 28px;
+}
+
+.main2 h2 {
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 17px;
+
+}
+
+.main2 .box {
+    height: 200px;
+    width: 100%;
+}
+
+.main2 .box dl {
+    width: 210px;
+    height: 100%;
+    float: left;
+    margin-right: 40px;
+}
+
+.main2 .box dl dd {
+    font-size: 12px;
+    line-height: 25px;
+    /* width: 100%; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: 12px;
+    padding: 0 3px;
+}
+
+
+/* ------------link -------------- */
+#wolong .link {
+    width: 100%;
+    height: 250px;
+    background: #e5e5e5;
+}
+
+/* link下面的h2 */
+.link h2 {
+    font-size: 15px;
+    margin-top: 31px;
+    border-bottom: 1px solid #c2c2c2;
+    padding-bottom: 11px;
+    padding-left: 12px;
+}
+
+.link .link-left {
+    width: 453px;
+    height: 100%;
+
+}
+
+.link .link-center {
+    width: 153px;
+    height: 100%;
+
+    margin: 0 50px;
+}
+
+.link .link-right {
+    width: 257px;
+    height: 100%;
+
+}
+
+/* --------------footer 底部 -----------*/
+#wolong .footer {
+    width: 100%;
+    height: 81px;
+    background: pink;
+}

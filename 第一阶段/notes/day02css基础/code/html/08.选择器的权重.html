@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+           内联样式 > id选择器  > 类选择器（class） > 类型选择器 > 通配符选择器
+        
+        */
+
+        /* id选择器 */
+        /* #box1 {
+            width: 200px;
+            height: 200px;
+            background: pink;
+        } */
+
+
+        /* class选择器，类选择器 */
+        /* .box {
+            width: 200px;
+            height: 200px;
+            background: green;
+        } */
+
+        /* 类型选择器 */
+        /* div {
+            width: 200px;
+            height: 200px;
+            background: red;
+        } */
+
+        /* * {
+            background: yellow;
+        } */
+
+        /* 
+            有几种方式可以改变字体颜色
+        */
+        /* 1、类型选择器 */
+        /* p {
+            color: red;
+        } */
+
+        /* 2、class选择器 */
+        /* .p1 {
+            color: green;
+        } */
+
+        /* 3、id选择器 */
+        /* #p2 {
+            color: blue;
+        } */
+
+        /* 4、通配符 */
+        /* * {
+            color: yellow;
+        } */
+
+        /* 5、包含选择器 
+            权重 = 选择器之和
+        */
+        /* div p {
+            color: lightskyblue;
+        } */
+
+        /* 
+           内联样式(1000) > id选择器(0100)  > 类选择器（class）(0010) > 类型选择器(0001) > 通配符选择器(0000) > 继承
+        
+        */
+        * {
+            color: pink !important;
+        }
+
+        div {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box1">
+        <p class="p1" id="p2" style="color: blue">早，谢老师</p>
+    </div>
+</body>
+
+</html>

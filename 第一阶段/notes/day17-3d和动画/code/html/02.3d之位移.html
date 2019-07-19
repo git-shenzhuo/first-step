@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            /* 
+                把容器设置为3d空间，里面子元素才可以进行3d转换  
+                transform-style:preserve-3d：
+             */
+            transform-style: preserve-3d;
+        }
+
+        .box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .box img:nth-child(1) {
+            transform: translate3d(100px, 100px, 100px);
+        }
+
+        .box img:nth-child(2) {
+            transform: translateZ(-100px)
+        }
+
+        .box:hover img:nth-child(1) {
+            transform: translate3d(100px, 100px, 100px) scale3d(.5, .5, .5)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../images/1-1.jpg" alt="">
+        <img src="../images/2-1.jpg" alt="">
+    </div>
+
+</body>
+
+</html>

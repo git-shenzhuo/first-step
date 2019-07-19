@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            1、E[attr] 找到拥有attr属性的E元素
+            input[checked] 找到拥有checked的input元素
+            2、E[attr="value"] 找到拥有attr属性，并且属性值为value的E元素
+            3、E[attr~="value"] 找到拥有attr属性，并且属性值拥有value词的E元素
+            4、E[attr^="value"] 找到拥有attr属性，并且属性值以value开头的E元素
+            5、E[attr$="value"] 找到拥有attr属性，并且属性值以value结尾的E元素
+            6、E[attr*="value"] 找到拥有attr属性，并且属性值中包含有value的E元素
+            7、E[attr|="value"] 找到拥有attr属性，并且属性值中只有value或者value-xx(ee-xt)的E元素
+        
+         */
+        input[checked]+label {
+            color: red;
+        }
+
+        input[type|="ee"] {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="ee-xt">
+        <label for="">用户名</label>
+        <hr>
+        <input type="kwertee">
+        <label for="">密码</label>
+        <hr>
+        <input type="numeeber">
+        <label for="">年龄</label>
+        <hr>
+        <input type="telee">
+        <label for="">邮箱</label>
+        <hr>
+        <input type="radio" checked>
+        <label for="">男</label>
+
+    </form>
+
+</body>
+
+</html>

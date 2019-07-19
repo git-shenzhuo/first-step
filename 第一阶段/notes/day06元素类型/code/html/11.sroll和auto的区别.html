@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+        
+            scroll 和 auto的区别;
+                scroll 无论内容超不超出都会出现滚动条
+                auto 内容溢出就出现滚动条，否则不出现
+
+            overflow-x:
+            overflow-y:
+         */
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            overflow: auto;
+            overflow-y: hidden;
+            scrollbar-face-color: red;
+        }
+
+        .box1 {
+            width: 400px;
+            height: 400px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1"></div>
+    </div>
+
+</body>
+
+</html>

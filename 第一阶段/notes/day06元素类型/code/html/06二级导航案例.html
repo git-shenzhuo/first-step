@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .nav1 {
+            height: 40px;
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        /* 
+            ul>li 表示li是ul的第一级子元素
+         */
+
+        .nav1>li {
+            float: left;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background: #444;
+            border-right: 1px solid #ccc;
+        }
+
+        .nav1>li>a {
+            color: #fff;
+            display: block;
+            font-size: 12px;
+
+        }
+
+        .nav1 .nav2 {
+            background: #ccc;
+            display: none
+        }
+
+        /* 鼠标滑过，让二级导航显示出来 */
+        .nav1>li:hover .nav2 {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav1">
+        <li>
+            <a href="">首页</a>
+            <ul class="nav2">
+                <li><a href="">首页1</a></li>
+                <li><a href="">首页2</a></li>
+                <li><a href="">首页3</a></li>
+                <li><a href="">首页4</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">产品中心</a>
+            <ul class="nav2">
+                <li><a href="">首页1</a></li>
+                <li><a href="">首页2</a></li>
+                <li><a href="">首页3</a></li>
+                <li><a href="">首页4</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">客户服务</a>
+            <ul class="nav2">
+                <li><a href="">首页1</a></li>
+                <li><a href="">首页2</a></li>
+                <li><a href="">首页3</a></li>
+                <li><a href="">首页4</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">练习我们</a>
+            <ul class="nav2">
+                <li><a href="">首页1</a></li>
+                <li><a href="">首页2</a></li>
+                <li><a href="">首页3</a></li>
+                <li><a href="">首页4</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+
+</html>

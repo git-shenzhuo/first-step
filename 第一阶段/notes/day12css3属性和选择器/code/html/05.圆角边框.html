@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background: pink;
+            /* 
+                圆角边框：border-radius
+                取值写法：
+                    border-radius：属性值（四个角都添加一样的圆角值）
+                    border-radius：属性值1（给左上角，右下角） 属性值2（右上角，左下角）
+                    border-radius：属性值1（左上角） 属性值2（右上和左下） 属性值3（右下角）
+                    border-radius：属性值1 属性值2 属性值3 属性值4（分别是左上，右上，右下，左下）
+                    border-top-left:属性值---给左上角
+                    border-bottom-left:-----左下角
+                    border-top-right: -----右上角
+                    border-bottom-right:-----右下角
+
+                    border-radius:x1 x2 x3 x4 / y1 y2 y3 y4;
+             */
+            border-radius: 100px 120px 130px 140px / 140px 130px 120px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+</body>
+
+</html>

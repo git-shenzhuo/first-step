@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../iconfont/iconfont.css"> -->
+    <style>
+        @font-face {
+            font-family: "iconfont";
+            src: url('../iconfont/iconfont.eot');
+            src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('../iconfont/iconfont.svg#icomoon') format('svg'),
+                url('../iconfont/iconfont.woff') format('woff'),
+                url('../iconfont/iconfont.ttf') format('truetype');
+        }
+
+        .iconfont {
+            font-family: iconfont;
+        }
+
+        .gouwuche::after {
+            content: "\e600";
+            /* font-family: iconfont; */
+        }
+
+        .saoyisao::after {
+            content: "\e673";
+            /* font-family: iconfont */
+        }
+
+        /* 
+            使用字体图标的方法：
+            1、@font-face{
+                font-family："字体图标的名称";
+                src:url(字体路径引入)
+            }
+            直接在标签字体编码<span>&#xe600;</span>
+            span{
+                font-family:字体图标对应的名称
+            }
+            2、@font-face{
+                font-family："字体图标的名称";
+                src:url(字体路径引入)
+            }
+            利用伪元素选择器
+            span::after{
+                content:"\e673"
+                font-family:"字体图标对应的名称"
+            }
+            3、使用往上下载好的css
+            用link标签引入iconfont.css，找到对应的class名
+        */
+    </style>
+</head>
+
+<body>
+    <span class="iconfont gouwuche"></span>
+    <span class="iconfont saoyisao"></span>
+
+    <!-- <span class="iconfont icon-xiaoxi"></span> -->
+
+
+</body>
+
+</html>

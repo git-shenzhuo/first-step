@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* display:block */
+        .span1 {
+            vertical-align: middle;
+        }
+
+        .span2 {
+            /* 
+                把行内元素（span）转为行内块，
+                目的：想要给span设置宽高
+                display: inline-block;
+             */
+            display: inline-block;
+            height: 100px;
+            border: 1px solid red;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="span1">
+        <img src="../images/list.png" alt="">
+    </span>
+    <span class="span2">
+        7年时间
+    </span>
+
+</body>
+
+</html>

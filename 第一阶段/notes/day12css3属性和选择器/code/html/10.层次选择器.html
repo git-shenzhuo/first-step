@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        ul {
+            height: 100px;
+        }
+
+        ul>li {
+            float: left;
+        }
+
+        dl dd {
+            display: none
+        }
+
+        dl p {
+            display: none
+        }
+
+        /* 
+            E+F 作用于F元素，E元素和F为相邻的兄弟元素
+            E~F 作用于F元素，F元素时E元素后面所有兄弟元素
+         */
+
+        dl dt:hover~p {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2
+            <ol>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ol>
+        </li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+    <dl>
+        <dt>水果</dt>
+        <dd>苹果</dd>
+        <dd>香蕉</dd>
+        <dd>雪梨</dd>
+        <p>sdvfdv</p>
+    </dl>
+
+</body>
+
+</html>

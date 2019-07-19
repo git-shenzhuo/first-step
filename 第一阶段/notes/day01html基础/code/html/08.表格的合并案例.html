@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        表格的合并：
+            （1）行合并：rowspan="value" 把value行合并成一行，删除value-1行对应td
+            （2）列合并：colspan="value",把value列合并成为1列，在本行下面删除value-1个td
+
+            注意点：无论是行合并还是列合并，都是给td添加的
+     -->
+    <table width="200" height="100" border="1" cellspacing="0">
+        <tr>
+            <td rowspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!-- <td></td> -->
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <!-- 
+        表格的列合并：
+     -->
+    <table width="200" height="100" border="1" cellspacing="0">
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <!-- <td></td> -->
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 
+            问题：如果容器的第一个子元素设置margin-top,会错误的把margin值添加给父元素，导致父元素跟着一起往下移动
+
+            解决办法：
+                （1）给父元素添加border（边框）
+                （2）给父元素添加overflow：hidden
+                （3）浮动（给父元素或者子元素浮动都可以）
+         */
+        .box {
+            width: 400px;
+            height: 400px;
+            background: red;
+            /* border: 1px solid pink; */
+            /* overflow: hidden; */
+
+        }
+
+        .box .box1 {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            margin-top: 100px;
+            /* float: left; */
+        }
+
+        .box .box2 {
+            width: 100px;
+            height: 100px;
+            background: yellowgreen;
+            /* margin-top: 100px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>

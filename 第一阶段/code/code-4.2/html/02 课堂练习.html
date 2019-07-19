@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .yemian {
+            width: 100%;
+
+        }
+
+        .content {
+            width: 782px;
+            margin: auto;
+            background-color: #d6dae2;
+            overflow: hidden;
+        }
+
+        .clearfix::after {
+            content: '';
+            height: 0;
+            display: block;
+            clear: both;
+            overflow: hidden;
+            visibility: hidden;
+        }
+        .one{
+            background-color: #fff;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 20px;
+            line-height: 20px;
+            padding: 20px 0 20px 30px;
+            float: left;
+            width: 600px;
+            margin-left: 20px;
+            background-image: url(../images/02ketang-h2-1.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+            font-weight: normal;
+
+        }
+
+        h6 {
+            float: right;
+            font-size: 8px;
+            line-height: 8px;
+            padding-top: 32px;
+            padding-right: 20px;
+            color: #888888;
+        }
+        .one .dl1 {
+            float: left;
+            margin-left: 20px;
+            margin-right: 31px;
+
+        }
+
+        .one .dl2 {
+            float: left;
+
+        }
+
+        .one .dl3 {
+            float: left;
+            margin-left: 31px;
+            margin-right: 20px;
+
+        }
+
+        .one .dl1::before {
+            content: url(../images/02ketang-1.png)
+        }
+
+        .one .dl2::before {
+            content: url(../images/02ketang-2.png)
+        }
+
+        .one .dl3::before {
+            content: url(../images/02ketang-3.png)
+        }
+
+        .one dt {
+            font-size: 12px;
+            margin-top: 18px;
+            margin-left: 12px;
+            text-align: center;
+            white-space: nowrap;
+            width: 192px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .one dd {
+            font-size: 12px;
+            line-height: 20px;
+            margin-left: 12px;
+            margin-top: 8px;
+            margin-bottom: 32px;
+            color: #888888;
+            width: 192px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="yemian">
+        <div class="content">
+            <div class="one clearfix">
+                <h2>热门课程</h2>
+                <h6>more</h6>
+                <dl class="dl1">
+                    <dt>马化腾：腾讯将专注于做互联公益事业等等</dt>
+                    <dd>11月19日，世界互联网大会在乌镇举行。腾讯公司董事会主席兼CEO马化腾在大会上</dd>
+                </dl>
+                <dl class="dl2">
+                    <dt>腾讯CXO David：探索未来等等等顶顶顶顶</dt>
+                    <dd>2014年10月21日 - 奇点大学联合创始人、Moon Express公司首席执行官Bob Richards在大会上分享了他对于...·腾讯WE大会召开 揭太空旅行等五大科技趋势
+                        ·2014腾讯WE大会在北京举行 ·2014...
+                    </dd>
+                </dl>
+                <dl class="dl3">
+                    <dt>飞利浦科特勒经典分享--展望未来</dt>
+                    <dd>网页布局中经常要定义元素的宽和高。但很多时候我们希望元素的大小能够根据窗口或子元素自动调整，这就是自适应。
+                        自适应的优点：
+                        元素自适应在网页布局中非常重要，它能够使网页显示更灵活，可以适应在不同设备、不同窗口和不同分辨率下显示。
+                    </dd>
+                </dl>
+            </div>
+            <div class="two">
+                <h2>干货分享</h2>
+                <h6>more</h6>
+            </div>
+            <div class="three"></div>
+        </div>
+    </div>
+</body>
+
+</html>

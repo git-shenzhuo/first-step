@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    #zhong{
+        width: 300px;
+        height: 300px;
+        border: 2px solid red;
+        border-radius: 50%;
+        margin: 100px auto;
+        position: relative;
+    }
+    .xian{
+        width: 6px;
+        height: 300px;
+        background-color: #666666;
+        position: absolute;
+        top: 0;
+        left: 147px;
+    }
+    .xian2{
+        transform: rotate(30deg);
+    }
+    .xian3{
+        transform: rotate(60deg);
+    }
+    .xian4{
+        transform: rotate(90deg);
+    }
+    .xian5{
+        transform: rotate(120deg);
+    }
+    .xian6{
+        transform: rotate(150deg);
+    }
+    .yuan{
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        /* background: #ffffff; */
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: radial-gradient(120px 120px , #444444 10%,#ffffff 10%)
+    }
+    .h{
+        width: 6px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        top: 50px;
+        left: 147px;
+        border-radius: 3px;
+        transform-origin: center bottom;
+        animation: moveh 43200s steps(11,end) infinite;
+    }
+    @keyframes moveh{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(330deg);
+        }
+    }
+    .m{
+        width: 4px;
+        height: 115px;
+        background-color: blue;
+        position: absolute;
+        top: 35px;
+        left: 148px;
+        border-radius: 2px;
+        transform-origin: center bottom;
+        animation: movem 3600s steps(59,end) infinite;
+    }
+    @keyframes movem{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(354deg);
+        }
+    }
+    .s{
+        width: 2px;
+        height: 130px;
+        background-color: #000000;
+        position: absolute;
+        top: 20px;
+        left: 149px;
+        border-radius: 1px;
+        transform-origin: center bottom;
+        animation: moves 60s steps(59,end) infinite;
+    }
+    @keyframes moves {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(354deg);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="zhong">
+        <div class="xian xian1"></div>
+        <div class="xian xian2"></div>
+        <div class="xian xian3"></div>
+        <div class="xian xian4"></div>
+        <div class="xian xian5"></div>
+        <div class="xian xian6"></div>
+        <div class="yuan"></div>
+        <div class="h"></div>
+        <div class="m"></div>
+        <div class="s"></div>
+
+    </div>
+</body>
+</html>

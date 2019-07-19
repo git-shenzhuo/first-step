@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            语言伪类选择器
+            添加一个<q>fvfdvf</q>
+            表示给这个段文字添加符号（默认情况下是双引号）
+
+            想要改变符号样式，给q标签添加一个lang属性，属性值为no
+            <q lang="no">fvfdvf</q>
+            在css样式里面q:lang(no){
+                "想要的符号" "想要的符号"
+            }
+        
+         */
+        q:lang(no) {
+            quotes: "@""~"
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">生前何必久长<q lang="no">睡</q>，死后必会久长眠</div>
+
+</body>
+<script>
+    // var div = document.getElementById("div1");
+    // div.innerHTML = '生前何必久长<q lang="no">睡</q>，死后必会久长眠'
+</script>
+
+</html>

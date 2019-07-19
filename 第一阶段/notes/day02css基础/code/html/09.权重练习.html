@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .box .box2 {
+            color: red;
+        }
+
+        /*  #box #box1 对于box2来讲，这个属于继承，继承的权重最小 */
+        /* #box #box1 {
+            color: blue;
+        } */
+        #box .box1 .box2 {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <div class="box1" id="box1">
+            <div class="box2" id="box2">早，谢老师,猜猜我是什么颜色</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

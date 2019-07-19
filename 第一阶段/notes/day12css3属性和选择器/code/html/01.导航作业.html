@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .nav {
+            width: 1002px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* 子元素浮动，父元素高度塌陷，没有高度 */
+        .nav li {
+            float: left;
+            height: 40px;
+            width: 100px;
+            border-right: 1px dashed #ccc;
+            box-sizing: border-box;
+            line-height: 40px;
+            /* padding-left: 30px; */
+            /* background-image: url(../images/360bg.png);
+            background-repeat: no-repeat; */
+        }
+
+        .nav li::before {
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 16px;
+            background-image: url("../images/360bg.png");
+            background-repeat: no-repeat;
+            background-position: 5px -68px;
+            vertical-align: middle;
+            transition: background-position .5s;
+        }
+
+        .nav li:nth-child(2)::before {
+            background-position: 5px -144px;
+        }
+
+        .nav li:nth-child(1):hover::before {
+            background-position: 5px -106px;
+        }
+
+        .nav li:nth-child(2):hover::before {
+            background-position: 5px -185px;
+        }
+
+        .nav li a {
+            font-size: 12px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav clearfix">
+        <li><a href="">我的主页</a></li>
+        <li><a href="">新闻头条</a></li>
+        <li><a href="">我的主页</a></li>
+        <li><a href="">我的主页</a></li>
+        <li><a href="">我的主页</a></li>
+        <li><a href="">我的主页</a></li>
+        <li><a href="">我的主页</a></li>
+        <li><a href="">我的主页</a></li>
+        <li><a href="">我的主页</a></li>
+        <li><a href="">我的主页</a></li>
+    </ul>
+
+</body>
+
+</html>

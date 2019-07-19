@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 650px;
+            height: 700px;
+            background: pink;
+            margin: auto;
+        }
+
+        .box dl {
+            width: 200px;
+            height: 300px;
+            border-right: 1px solid red;
+            border-bottom: 1px solid red;
+            float: left;
+        }
+
+        .box dl dt {
+            text-align: center;
+            height: 280px;
+            border-bottom: 1px solid green;
+            background: #999;
+        }
+
+        .box dl dt img {
+            /* 
+                行内元素的垂直对齐方法
+                注意点：只有两个以上的元素才有对比效果
+
+             */
+            vertical-align: middle;
+        }
+
+        .box dl dt span {
+            vertical-align: middle;
+            display: inline-block;
+            height: 100%;
+            width: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <dl>
+            <dt>
+                <img src="../images/list4.png" alt="">
+                <span></span>
+            </dt>
+            <dd></dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd></dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd></dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd></dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd></dd>
+        </dl>
+    </div>
+
+</body>
+
+</html>

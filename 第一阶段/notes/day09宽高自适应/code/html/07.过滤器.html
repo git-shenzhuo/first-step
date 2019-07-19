@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            1、下划线_ 过滤器（只有ie6识别）
+                在属性前面添加
+                
+            2、!important (ie6不识别，其他浏览器都是别)
+                在属性值后面添加，与 属性值之间有空格
+
+            3、* 号过滤器（ie7及以下浏览器识别）
+                在属性前面添加
+
+            4、 \9(ie浏览器识别，其他浏览器不识别)
+                在属性值后面添加，与 属性值之间有空格
+
+            5、\0(ie浏览器中ie8及以上浏览器识别，其他浏览器都不识别)
+                在属性值后面添加，与 属性值之间有空格
+        
+         */
+        div {
+            width: 200px;
+            height: 200px;
+            /* _background: red; */
+            /* background: green !important; */
+            /* *background: red; */
+            background: red \0;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 
+            移动端布局：
+            1、媒体查询 + rem + 弹性盒模型
+                媒体查询改变根节点的字体大小
+                rem做页面的所有单位布局
+                弹性盒模型布局页面的整体结构
+            
+            2、rem + vw + 弹性盒模型
+                vw 改变HTML（根节点）的字体大小，会随着页面的变化，字体的大小也会跟着变化
+                rem作页面所有的单位布局
+                弹性盒模型布局页面的整体结构
+        
+         */
+        @media all and (max-width:414px) {
+            html {
+                font-size: 20.7px;
+            }
+        }
+
+        @media all and (max-width:375px) {
+            html {
+                font-size: 18.75px;
+            }
+        }
+
+        @media all and (max-width:320px) {
+            html {
+                font-size: 16px;
+            }
+        }
+
+        .box1 {
+            width: 10rem;
+            height: 10rem;
+            background: red;
+            float: left;
+        }
+
+        .box2 {
+            width: 10rem;
+            height: 10rem;
+            background: green;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        媒体查询：查询设备的特征，设置不同样式
+        @media all and （条件）{
+
+        }
+
+        rem :一个单位，相对于根元素的font-size的大小来定义的单位
+
+     -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+</body>
+
+</html>

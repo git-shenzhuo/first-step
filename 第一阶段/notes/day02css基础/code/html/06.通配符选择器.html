@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            通配符选择器，表示作用到页面中的所有元素
+            用*号作为选择器
+            *{}
+        
+        */
+        * {
+            border: 1px solid red;
+        }
+
+        /* 
+            群组选择器
+            语法：选择器1,选择器2,选择器3...{}
+            表示给选择器1，选择器2..都添加同样的样式
+        */
+        div,
+        p,
+        h1,
+        h2 {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+    <p></p>
+    <h1></h1>
+    <h2></h2>
+
+</body>
+
+</html>

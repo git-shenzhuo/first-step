@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 600px;
+            border: 1px solid red;
+        }
+
+        .box div {
+            width: 201px;
+            height: 200px;
+            background: pink;
+            float: left;
+        }
+
+        .box p {
+            background: green;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!--    
+        浮动：float：left（左浮动） | right（右浮动）| none
+        作用：想要把 垂直的元素实现 水平排列，就可使用浮动
+
+        浮动的区域：在父元素里面
+
+        特点：浮动之后，脱离文档流，
+        子元素浮动，父元素一定要设置高度
+        只要是想水平排列的元素都要添加浮动
+     -->
+    <div class="box">
+        <div>1</div>
+        <p>2</p>
+        <!-- <div>3</div>
+        <div>4</div> -->
+    </div>
+
+
+</body>
+
+</html>

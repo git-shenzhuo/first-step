@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        /* 
+            子元素浮动，父元素高塌陷
+
+            触发一个bfc来解决高度塌陷
+            1、给父元素添加overflow：hidden
+            2、给父元素浮动
+         */
+        ul {
+            float: left;
+        }
+
+        li {
+            float: left;
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+</body>
+
+</html>

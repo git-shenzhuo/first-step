@@ -1,0 +1,55 @@
+1、弹性模型
+  （1）display
+     把盒子变成弹性盒模型，下面所有子元素都会按照弹性盒模型的规则来布局
+   （2）flex-direction
+      设置弹性盒模型的主轴方向
+      取值：
+	row---水平方向从左到右，默认值
+ 	row-reverse----水平方向从右到左
+	column---垂直方向从上到下
+	column-reverse---垂直方向从下到上
+   （3）主轴的对齐方式
+      justify-content
+      取值：
+	center---居中对齐
+	flex-start---主轴的顶端（起始位置）
+	flex-end-----主轴的底端（结束位置）
+	space-around---把多余的空白部分自动平分到子元素的两端
+	space-between---两端对齐，把多余的空白分到子元素之间
+   （4）测轴的对齐方式
+      align-items
+      取值：
+	center---居中对齐
+	flex-start---侧轴的顶端
+	flex-end-----侧轴的底端
+   （5）设置主轴方式是否换行
+      flex-wrap
+      取值：
+	nowrap----不换行（默认值）
+	wrap----换行
+	wrap-reverse---反转换行
+   （6）侧轴的多行对齐方式
+      align-content
+      取值：
+	flex-start---侧轴的顶端
+	flex-end-----侧轴的底端
+        center---居中
+	space-around---把多余的空白部分自动平分到子元素的两端
+	space-between---两端对齐，把多余的空白分到子元素之间
+
+2、多列布局
+   （1）把盒子分为几列
+	column-count：value  把盒子分为value列
+   （2）规定列与列之间的间距
+	column-gap：value+px
+   （3）设置列与列之间的分割线
+	column-rule：
+	column-rule-style：
+	column-rule-color：
+	column-rule-width：
+   （4）设置每一列的高度是否统一
+	column-fill：balance | auto 
+   （5）设置对象是否横跨所有列
+	column-span：all | none
+   （6）设置每一列的最小高度
+	column-width

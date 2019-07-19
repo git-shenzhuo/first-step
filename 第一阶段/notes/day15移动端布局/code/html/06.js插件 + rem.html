@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <!-- 
+        利用js插件 +rem +弹性盒模型
+        步骤：
+            1、利用script标签把rem.js引入到页面
+            2、在rem.js中18行，把数字改为设计图的宽度
+            3、需要装cssrem插件（重启编辑器），文件--首选项--设置，搜索cssrem，改变rootfont-size：设计图的宽度 / 10（重启编辑器）
+            4、逻辑像素（我们写在页面中的值），在设计图上量出多少就写多少（会自动换算成rem的值）
+     -->
+    <script src="../js/rem.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            max-width: 750px;
+        }
+
+        #zhifubao {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #zhifubao .header {
+            height: 4.133333rem;
+            background: pink;
+        }
+
+        #zhifubao .main {
+            flex: 1;
+        }
+
+        #zhifubao .footer {
+            height: 1.333333rem;
+            background: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="zhifubao">
+        <div class="header"></div>
+        <div class="main"></div>
+        <div class="footer"></div>
+    </div>
+
+</body>
+
+</html>

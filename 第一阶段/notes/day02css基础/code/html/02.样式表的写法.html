@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* css 层叠样式表 */
+
+        /*  @import url("../css/index.css"); 导入样式表 */
+
+        /* @import url("../css/index.css"); */
+
+        /* 
+            url 和 href 的区别：
+            url  是导入文件
+            href 是引用文件
+        */
+    </style>
+    <link rel="stylesheet" href="../css/index.css">
+
+</head>
+
+<body>
+    <!-- 
+        样式表的三种写法：
+        一、内部样式
+        在HTML页面中的head里面添加一个style标签，在标签里面写css的语法
+        <style>
+            div {
+                width: 100px;
+            }
+        </style>
+        代码缩进：按tab键 
+        往前走，shift + tab
+
+        二、外部样表
+            1、先在css文件夹里面创建一个css文件，在css文件里面写css的语法
+            2、在HTML页面用link标签引入css文件样式，最好在head里面引入
+            link的属性：
+                rel="" 表示引入的文件的类型
+                href="文件的路径"
+        
+        三、内联样式表
+        在标签上添加一个style属性，他的属性值为css的声明
+
+     -->
+    <div style="background: red;"></div>
+
+</body>
+
+</html>

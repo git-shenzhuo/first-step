@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #xin{
+            width: 450px;
+            height: 450px;
+            border: 1px solid red;
+            margin: 100px auto;
+            position: relative;
+        }
+        .yuan1{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            left: 40px;
+            top: 50px;
+        }
+        .yuan2{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            right: 40px;
+            top: 50px;
+        }
+        .ke{
+            width: 450px;
+            height: 300px;
+            position: absolute;
+            top: 200px;
+            overflow: hidden;
+        }
+        .jian{
+            width: 230px;
+            height: 230px;
+            background:red;
+            transform: rotate(45deg);
+            position: absolute;
+            top: -102px;
+            left: 110px;
+            /* opacity: .5; */
+        }
+    </style>
+</head>
+<body>
+    <div id="xin">
+        <div class="yuan1"></div>
+        <div class="yuan2"></div>
+        <div class="ke">
+            <div class="jian"></div>
+        </div>
+    </div>
+</body>
+</html>

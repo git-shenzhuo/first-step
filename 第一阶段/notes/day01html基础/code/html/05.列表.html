@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        列表：
+        1、有序列表----ol(ordered list) > li(list item)
+        2、无序列表----ul(unordered list) > li(list item)
+        3、自定义列表--dl(definition list) > dt + dd
+     -->
+    <!-- 
+         1、有序列表----ol(ordered list) > li(list item)
+
+         改变有序列表的列表项目符号使用type属性
+         type="1 | a | A | i | I"
+
+         start 规定有序列表开始的点，取值必须是数字
+      -->
+    <ol type="1" start="6">
+        <li>苹果春季发布会</li>
+        <li>英失去脱欧控制权</li>
+    </ol>
+
+    <!-- 
+        2、无序列表----ul(unordered list) > li(list item)
+     -->
+    <ul>
+        <li>苹果春季发布会</li>
+        <li>英失去脱欧控制权</li>
+    </ul>
+
+    <!-- 
+        3、自定义列表--dl(definition list) > dt + dd
+        注意点：dt 和 dd是dl的子元素，dt 和 dd兄弟元素
+        一个dl里面只能有一个dt,但是可以有多个dd
+    -->
+    <dl>
+        <dt>水果</dt>
+        <dd>苹果</dd>
+        <dd>香蕉</dd>
+        <dd>橘子</dd>
+    </dl>
+    <dl>
+        <dt>蛋糕</dt>
+        <dd>奶油蛋糕</dd>
+        <dd>慕斯蛋糕</dd>
+        <dd>芝士蛋糕</dd>
+    </dl>
+
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+#wudizhanggui {
+    width: 100%;
+    height: 3437px;
+    /* background: pink; */
+}
+
+.content {
+    width: 1100px;
+    height: 100%;
+    /* background: #000; */
+    margin: auto;
+}
+
+/* ------------------header--------------------- */
+.header {
+    width: 100%;
+    height: 70px;
+    background: #ffffff;
+}
+
+.header h1 {
+    text-indent: -9999px;
+}
+
+.header .logo {
+    width: 319px;
+    height: 24px;
+    background-image: url(../images/wudi-logo.png);
+    background-repeat: no-repeat;
+    margin-top: 24px;
+    float: left;
+    padding-right: 260px;
+}
+
+.header li {
+    float: left;
+    line-height: 70px;
+    width: 100px;
+    height: 70px;
+    text-align: center;
+}
+
+.header a {
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.header li:hover {
+    background-color: #4b8ef7;
+}
+
+/* -----------------------banner----------------- */
+.banner {
+    width: 100%;
+    height: 420px;
+    background: #027ce1;
+    background-image: url(../images/wudi1.png);
+    background-position: center center;
+}
+
+/* -----------------------link--------------------- */
+.link {
+    width: 100%;
+    height: 152px;
+    background: #003e71;
+}
+
+.link .link1 p {
+    float: left;
+    font-size: 32px;
+    line-height: 32px;
+    width: 150px;
+    height: 36px;
+    background-image: url(../images/wudi-link.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-top: 45px;
+    margin-right: 268px;
+    text-indent: 20px;
+    color: #fffffb;
+}
+
+.link .link1 p sub {
+    font-size: 24px;
+
+}
+
+/* ----------------------main------------------------ */
+.main {
+    width: 100%;
+    height: 2535px;
+    background: #ffffff;
+}
+
+.main .dabiao {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 83px 0 21px;
+    color: #000000;
+}
+
+.main .xiaobiao {
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #727272;
+    padding-bottom: 62px;
+}
+
+/* -------- box1------ */
+.main .box1 {
+    width: 100%;
+    height: 480px;
+    margin-bottom: 112px;
+}
+
+.tupian .tu1 {
+    float: left;
+    width: 257px;
+    height: 165px;
+    background: #000;
+    margin-right: 24px;
+}
+
+.main .tupian .dd1 {
+    font-size: 18px;
+    line-height: 18px;
+    color: #616161;
+    padding-top: 26px;
+    text-align: center;
+
+}
+
+.main .tupian .dd2 {
+    font-size: 12px;
+    line-height: 20px;
+    color: #9b9b9b;
+    padding: 21px 25px 0 13px;
+}
+
+/* ---------box2-------- */
+.box2 {
+    width: 100%;
+    height: 650px;
+}
+
+.box2 .tupian1 {
+    width: 100%;
+    height: 170px;
+}
+
+.box2 .tu2 {
+    width: 230px;
+    height: 165px;
+    float: left;
+    margin-right: 163px;
+}
+
+.box2 .tupian1 dt,
+.box2 .tupian2 dt {
+    width: 100%;
+    height: 60px;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.box2 .dd1 {
+    font-size: 19px;
+    margin-top: 35px;
+    line-height: 19px;
+    color: #010101;
+    text-align: center;
+}
+
+.box2 .dd2 {
+    font-size: 12px;
+    line-height: 20px;
+    color: #bbbbbb;
+    margin: 16px 10px 60px;
+
+}
+
+.box2 .tupian2 {
+    margin-top: 56px;
+    width: 100%;
+    height: 157px;
+}
+
+/* --------box3--------- */
+.box3 {
+    width: 100%;
+    height: 738px;
+}
+
+.box3 .tu3 {
+    width: 252px;
+    height: 215px;
+    /* background-color: pink; */
+    float: left;
+    margin-right: 24px;
+    margin-bottom: 24px;
+}
+
+.box3 .tupian3 dt,
+.box3 .tupian4 dt {
+    width: 100%;
+    height: 147px;
+}
+
+.box3 .tu3 dd {
+    width: 228px;
+    height: 68px;
+    background-repeat: no-repeat;
+    background-position: 11px center;
+    text-align: right;
+    font-size: 14px;
+    line-height: 68px;
+    padding: 0 12px;
+}
+
+/* --------------box4--------------- */
+
+.box4 .tu {
+    width: 220px;
+    height: 120px;
+    float: left;
+    position: relative;
+}
+
+.box4 .div img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ------------------------footer-------------------------- */
+.footer {
+    width: 100%;
+    height: 258px;
+    background: #35414d;
+}
+/* ----------lianxi----------- */
+.footer .lianxi {
+    width: 100%;
+    height: 199px;
+    border-bottom: 1px solid #5b626a;
+}
+
+.footer .left {
+    margin-left: 80px;
+    height: 119px;
+}
+
+.footer h3 {
+    font-size: 15px;
+    line-height: 15px;
+    padding-top: 43px;
+    padding-bottom: 24px;
+    color: #fff;
+}
+
+.footer h4 {
+    font-size: 28px;
+    line-height: 28px;
+    padding-bottom: 26px;
+    color: #fff;
+}
+
+.footer h5 {
+    font-size: 12px;
+    line-height: 12px;
+    padding-bottom: 16px;
+    color: #fff;
+}
+
+.footer h6 {
+    font-size: 12px;
+    line-height: 12px;
+    padding-bottom: 28px;
+    color: #fff;
+}
+
+.footer .center1,
+.footer .center2 {
+    width: 180px;
+    height: 100%;
+    position: relative;
+}
+
+.footer img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footer .right{
+   margin-right: 80px;
+   margin-top: 40px;
+}
+.footer .lianxi p {
+    width: 138px;
+    height: 35px;
+    border: 1px solid #d5dce2;
+    line-height: 35px;
+    margin: 16px 0;
+}
+
+.footer a {
+    display: block;
+    width: 138px;
+    height: 35px;
+    text-align: center;
+    color: #fff;
+}
+/* -------------banquan---------------- */
+.footer .banquan{
+    width: 1100px;
+}
+.footer .banquan p{
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+}

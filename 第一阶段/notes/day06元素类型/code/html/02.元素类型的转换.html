@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        /* 
+            a标签是行内元素，行内元素不可以设置宽高，宽高由内容撑开
+            想要给a标签设置宽高，必须把a标签转换为块级元素，拥有块级元素的特点
+            元素类型的转换:
+            属性：display 共有18个属性值
+            取值：
+                （1）block :将行内元素转换为块级元素，转换之后拥有块级元素的特点
+                    *也是块级元素的默认值,但是li的默认值是list-item
+                （2）inline：将块级元素转换为行内元素，转换之后拥有行内元素的特点
+                    *也是行内元素的默认值，但是img，input，select的默认值是inline-block
+                （3）inline-block 将行内元素或者块级元素设置成行内块，拥有行内元素不独占一整行 和块级元素可以设置宽高的特点
+                    注意点：给元素设置display：inline-block之后，元素之间会存在缝隙
+                    产生缝隙的原因：元素之间的换行造成
+                    解决办法：
+                        （1）把所有元素写在同一行显示(不推荐，结构太乱)
+                        （2）给父元素设置font-size：0（子元素必须自己设置font-size值）
+                （4）none：隐藏元素
+         */
+        a {
+            display: block;
+            text-decoration: none;
+            width: 100px;
+            height: 40px;
+        }
+
+        ul {
+            height: 42px;
+            font-size: 0;
+        }
+
+        li {
+            /* float: left; */
+            display: inline-block;
+            width: 100px;
+            font-size: 16px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid red;
+        }
+
+        div {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="">首页1</a>
+            <!-- <a href="">首页2</a> -->
+        </li>
+        <li><a href="">首页1</a></li>
+        <li><a href="">首页1</a></li>
+        <li><a href="">首页1</a></li>
+    </ul>
+    <div>我要变成行内元素</div>
+    <div>我要变成行内元素</div>
+</body>
+
+</html>

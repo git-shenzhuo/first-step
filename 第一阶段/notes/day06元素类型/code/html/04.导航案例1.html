@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            /* 解决li之间的缝隙 */
+            font-size: 0px;
+        }
+
+        ul li {
+            display: inline-block;
+            font-size: 16px;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        ul li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 默认让英文的隐藏掉 */
+        ul li .yingwen {
+            display: none
+        }
+
+        /* 鼠标滑过让中文隐藏 */
+        ul li:hover .zhongwen {
+            display: none;
+        }
+
+        /* 鼠标滑过让英文显示 */
+        ul li:hover .yingwen {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a class="zhongwen" href="">首页</a>
+            <a class="yingwen" href="">home</a>
+        </li>
+        <li>
+            <a class="zhongwen" href="">首页</a>
+            <a class="yingwen" href="">home</a>
+        </li>
+        <li>
+            <a href="">课程</a>
+        </li>
+        <li>
+            <a href="">课程</a>
+        </li>
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            border: 1px solid red;
+            /* 
+                空白空间的设置
+                属性：white-space
+                取值：
+                    （1）normal，正常，多余的空白空间会被忽略，只保留一个空白空间
+                    （2）pre 会保留左右的空白空间
+                    （3）pre-wrap 会保留所用空白空间，也会正常换行
+                    （4）pre-line 合并空白空间，但是正常换行
+                    （5）nowrap 合并空白空间，只保留一个，所有文字不换行
+            
+             */
+            white-space: nowrap
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">会保留所用空白空间，也会正常换行会保留所用空白空间，也会正常换行会保留所用空白空间，也会正常换行会保留所用空白空间，也会正常换行</div>
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#wolong{
+    width: 100%;
+    height: 1500px;
+}
+.content{
+    width: 1000px;
+    height: 100%;
+    margin:  auto;
+    overflow: hidden;
+}
+/* --------------------header---------------------- */
+.header{
+    width: 100%;
+    height: 100px;
+    /* background: #f6b8b8; */
+}
+.header .logo{
+    width: 300px;
+    height: 100px;
+    float: left;
+    text-indent: -9999px; 
+    background-image: url(../images/wolong-logo.png);
+}
+.header .sousuo{
+    width: 300px;
+    height: 100px;
+    float: right;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-image: url(../images/wolongsousuo.png);
+}
+/* ----------------------nav----------------------- */
+.nav{
+    width: 100%;
+    height: 60px;
+    background: #303030
+}
+.nav li{
+    width: 119px;
+    height: 60px;
+    line-height: 60px;
+    float: left;
+    /* list-style-type: none; */
+    /* padding: 0px 36px; */
+    border-right: 1px solid #4a4a4a;
+    /* list-style: none; */
+    text-align: center;
+}
+.nav a{
+    color: #fcffff;
+    font-size: 12px;
+    /* text-decoration: none; */
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+.nav li:hover{
+    background-color: #f15a23;
+}
+/* ---------------------banner------------------- */
+.banner{
+    width: 100%;
+    height: 465px;
+    background-image: url(../images/wolong2.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+/* ------------------main1------------------------ */
+.main1{
+    width: 100%;
+    height: 250px;
+    /* background: #d6251d */
+}
+.main1 .q1{
+    width: 456px;
+    height: 206px;
+    /* background: #10cf22; */
+    float: left;
+    padding: 22px;
+}
+.main1 h2{
+    font-size: 18px;
+    line-height: 64px;
+    color: #1d1d1d;
+}
+.q1 li{
+    font-size: 12px;
+    line-height: 24px;
+    color: #525252;
+    list-style-position: inside;
+}
+.q1 p{
+    float: right;
+    font-size: 9px;
+    color: #a7a7a7;
+}
+.main1 .q2{
+    width: 206px;
+    height: 206px;
+    background: #f1f1f1;
+    float: left;
+    padding: 22px;
+}
+.q2 .p1{
+    font-size: 12px;
+    line-height: 25px;
+    color: #565656;
+    margin-bottom: 14px;
+    white-space: pre-line;
+}
+.q2 .p2{
+    font-size: 11px;
+    line-height: 24px;
+    color: #a4a4a4;
+}
+.main1 .q3{
+    width: 206px;
+    height: 206px;
+    /* background: #10cf22; */
+    float: left;
+    padding: 22px;
+}
+.q3 p{
+    font-size: 12px;
+    line-height: 25px;
+    color: #565656;
+    white-space: pre-line
+}
+.q3{
+    background-image: url(../images/wolongtu1.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+/* -------------------main2---------------------- */
+
+.main2{
+    width: 100%;
+    height: 300px;
+    /* background: #2399d1 */
+}
+.main2 h2{
+    font-size: 18px;
+    line-height: 64px;
+    color: #1d1d1d;
+    padding: 0px 22px;
+}
+.main2 .content div{
+    width: 210px;
+    height: 236px;
+    background-repeat: no-repeat;
+    padding: 0px 20px;
+    float: left;
+}
+.main2 p{
+    font-size: 11px;
+    line-height: 22px;
+    color: #535353;
+    margin-top: 12px;
+}
+/* ----------------------main3---------------------- */
+.main3{
+    width: 100%;
+    height: 250px;
+    background: #e5e5e5;
+}
+.main3 .a1{
+    width: 460px;
+    height: 210px;
+    /* background: #595d5f; */
+    float: left;
+    padding: 20px;
+}
+.main3 .a1 .k1{
+    width: 140px;
+    height: 210px;
+    float: left;
+    margin-top: 15px;
+}
+.main3 .a1 .k2{
+    width: 180px;
+    height: 210px;
+    float: left;
+    margin-top: 15px;
+}
+.main3 .a1 .k3{
+    width: 140px;
+    height: 210px;
+    float: left;
+    margin-top: 15px;
+}
+.a1 li,.a2 li{
+    list-style: none;
+    list-style-position: inside;
+    list-style-image: url(../images/wolongtu6.png);
+    font-size: 12px;
+    line-height: 24px;
+    color: #636363
+}
+.main3 .a2{
+    width: 160px;
+    height: 210px;
+    /* background: #e98956; */
+    float: left;
+    padding: 20px;
+}
+.a2 div{
+    margin-top: 15px;
+}
+.main3 .a3{
+    width: 260px;
+    height: 210px;
+    /* background: #dadada; */
+    float: left;
+    padding: 20px;
+    background-image: url(../images/wolongtu7.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.main3 div h2{
+    font-size: 15px;
+    line-height: 26px;
+    color: #5a5a5a;
+    border-bottom: 1px solid #c2c2c2;
+}
+/* --------------------footer------------------ */
+.footer{
+    width: 100%;
+    height: 64px;
+    margin-bottom: 21px;
+    /* background: #141914 */
+}
+.nav2 li{
+    width: 58px;
+    height: 64px;
+    line-height: 64px;
+    float: left;
+    list-style-type: none;
+    text-align: center;
+    /* padding: 0px 8px; */
+    list-style: none;
+    background-image: url(../images/wolongtu9.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.nav2 a{
+    color: #9d9d9d;
+    font-size: 9px;
+    /* text-decoration: none; */
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.nav2 li:hover{
+    background-color: #630af1;
+}
+.footer .fenxiang p{
+    height: 64px;
+    line-height: 64px;
+    color: #9d9d9d;
+    font-size:9px; 
+    float: left;
+    margin-left: 60px;
+}
+.footer .fenxiang div{
+    width: 130px;
+    height: 60px;
+    float: left;
+    background-image: url(../images/wolongtu8.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+}

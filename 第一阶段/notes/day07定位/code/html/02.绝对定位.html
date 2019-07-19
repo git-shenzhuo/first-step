@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .yeye {
+            width: 600px;
+            height: 600px;
+            background: #ccc;
+            position: relative;
+        }
+
+        .baba {
+            width: 400px;
+            height: 400px;
+            background: #666;
+            position: static;
+        }
+
+        .erzi {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            /* 绝对定位 position：absolute */
+            /* 
+                绝对定位的参考物：浏览器的可视窗口 或 最近有定位（非static定位）父元素
+
+                特点：移动之后脱离文档流，不占据原来的位置
+            
+             */
+            position: absolute;
+        }
+
+        .nver {
+            width: 100px;
+            height: 100px;
+            background: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="yeye">
+        <div class="baba">
+            <div class="erzi"></div>
+            <div class="nver"></div>
+        </div>
+    </div>
+</body>
+
+</html>

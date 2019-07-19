@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        /* 
+            弹性盒模型中，子项目默认会挤压（容器的空间不足的时候，子元素会等比例缩小）
+            如果想要项目不会挤压（缩小），使用flex-shrink 属性
+            取值：  
+                    1-----默认值（空间不足会压缩）
+                    0-----子元素不会被压缩
+
+            出现滚动条，把滚动条隐藏，但是仍然可以滚动
+            方法一、
+            ul::-webkit-scrollbar {
+                display: none
+            } 
+
+            方法二：适应所有浏览器
+            在容器的外层嵌套一个盒子，盒子要有固定的宽高，给这个元素添加overflow：hidden
+            容器设置的高度比外层的盒子稍微大一点，设置overflow：auto
+        
+         */
+
+        div {
+            width: 400px;
+            height: 30px;
+            overflow: hidden;
+            border: 1px solid red;
+        }
+
+        ul {
+            width: 400px;
+            height: 35px;
+            display: flex;
+            overflow: auto;
+        }
+
+        /* ul::-webkit-scrollbar {
+            display: none
+        } */
+
+        ul li {
+            width: 25%;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>

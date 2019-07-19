@@ -1,0 +1,89 @@
+/* 
+    dpr-----像素比（2,3）
+    设计图为750,640的时候，那么dpr的取值---2
+    设计图为1080的时候，那么取值为----3
+
+    逻辑像素 = 物理像素 / dpr(2)
+
+    用vw + rem单位 + 弹性盒模型实现移动端布局
+
+
+*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    /* 
+        如果直接使用默认字体大小16px，布局中使用rem计算比较麻烦，浏览器中最小的字体只能为12，不能取1也不能取10
+        取一个整数100
+    */
+    font-size: 26.67vw;
+    /* 
+        设计图为750px------对应的手机屏幕375px
+        100vw = 375px
+        26.67vw = 100px
+        那么HTML的font-zise：
+        font-size: 26.67vw;
+
+        设计图为640px-------对应的手机屏幕320px
+        100vw = 320px
+        31.25vw = 100px
+        那么HTML的font-zise：
+        font-size: 31.25vw;
+
+        设计图为1080 ------ 对应的手机屏幕360px
+        100vw = 360px
+        27.78vw = 100px;
+        那么HTML的font-zise：
+        font-size: 27.78vw;
+    */
+}
+
+@media all and (min-width:750px) {
+    html {
+        font-size: 100px;
+
+    }
+}
+
+
+/* 
+   重置页面中所有的默认字体 
+*/
+body {
+    font-size: 16px;
+    max-width: 750px;
+    margin: auto
+}
+
+#zhifubao {
+    height: 100%;
+    background: pink;
+    display: flex;
+    flex-direction: column;
+}
+
+#zhifubao .z-header {
+    /* 
+        155 / 16 = 9.6875
+    */
+    height: 1.55rem;
+    background: #3f454f;
+}
+
+#zhifubao .z-main {
+    flex: 1;
+    background: green
+}
+
+#zhifubao .z-footer {
+    height: 0.5rem;
+    background: #999;
+}

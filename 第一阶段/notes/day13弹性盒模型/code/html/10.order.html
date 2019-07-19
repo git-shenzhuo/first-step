@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        ul {
+            width: 550px;
+            height: 100px;
+            display: flex;
+            justify-content: space-around
+        }
+
+        ul li {
+            flex: 1;
+            background: pink;
+        }
+
+        ul li:nth-child(3) {
+            /* 
+                order---改变子项目的顺序
+                取值：number 没有单位，可以为负数
+                number的默认值是0，值越大越在后面，
+            
+             */
+            order: 0
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+</body>
+
+</html>

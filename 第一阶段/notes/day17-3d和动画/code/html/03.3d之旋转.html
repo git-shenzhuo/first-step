@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        .box {
+            transform-style: preserve-3d;
+            width: 300px;
+            border: 1px solid red;
+
+            /* 
+                perspective:景深，设置观察的位置
+                值一般比容器要大
+             */
+            perspective: 1000px;
+        }
+
+        .box img {
+            transition: transform 2s;
+        }
+
+        .box:hover img {
+            /* 
+                rotateX（valuedeg） 绕着X轴旋转
+                rotateY(valuedeg) 绕着y轴旋转
+                rotateZ（） 绕着Z 轴旋转
+                rotate3d(x,y,z,valuedeg)
+                x,y,z的取值为0 或者 1
+                为0的时候表示这个轴不旋转，为1 表示旋转，角度只有一个
+             */
+            transform: rotate3d(0, 1, 0, 180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../images/y.jpg" alt="">
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 
+        body::-webkit-scrollbar {
+            display: none
+        } */
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        ul li {
+            height: 300px;
+            width: 23%;
+            box-sizing: border-box;
+            border: 1px solid red;
+            margin-top: 10px;
+        }
+
+        @media all and (min-width:600px) and (max-width:1000px) {
+            ul li {
+                width: 31%;
+            }
+        }
+
+        @media all and (min-width:400px) and (max-width:600px) {
+            ul li {
+                width: 48%;
+            }
+        }
+
+        @media all and (max-width:400px) {
+            ul li {
+                width: 98%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        利用媒体查询和弹性盒布局显示以下要求;
+            1、当页面大于1000页面呈现4列布局
+            2、当页面在600-1000之间呈现3列布局
+            3、当页面在400-600之间呈现2列布局
+            4、当页面小于400，呈现1列布局
+     -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.xitong {
+    height: 100%;
+}
+
+.clearfix::after {
+    content: "";
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    display: block;
+}
+
+/* ---------------------header---------------------- */
+.header {
+    height: 87px;
+    background-color: #7ab5e9;
+    border-bottom: 3px solid blue;
+}
+
+h1 {
+    font-size: 24px;
+    color: #ffffff;
+    padding-top: 30px;
+    padding-left: 30px;
+    float: left;
+    width: 460px;
+   
+}
+
+.header ul li {
+    float: right;
+    position: relative;
+    margin-top: 37px;
+    /* width: 10%; */
+}
+
+.header li i {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    background-image: url(../images/header-ul.png);
+}
+
+.header li:nth-child(2) i {
+    background-position: 0 -30px;
+}
+
+.header li:nth-child(3) i {
+    background-position: 0 -60px;
+}
+
+.header li:nth-child(4) i {
+    background-position: 0 -90px;
+}
+
+.header li:nth-child(5) i {
+    background-position: 0 -120px;
+}
+
+.header li:nth-child(6) i {
+    background-position: 0 -150px;
+}
+
+.header li:nth-child(7) i {
+    background-position: 0 -180px;
+}
+
+.header li:hover {
+    background: #4d91df;
+    border: 2px solid #275ea7;
+    border-radius: 10%;
+}
+
+.header li:nth-child(1) i:hover {
+    background-position: -30px 0;
+}
+
+.header li:nth-child(2) i:hover {
+    background-position: -30px -30px;
+}
+
+.header li:nth-child(3) i:hover {
+    background-position: -30px -60px;
+}
+
+.header li:nth-child(4) i:hover {
+    background-position: -30px -90px;
+}
+
+.header li:nth-child(5) i:hover {
+    background-position: -30px -120px;
+}
+
+.header li:nth-child(6) i:hover {
+    background-position: -30px -150px;
+}
+
+.header li:nth-child(7) i:hover {
+    background-position: -30px -180px;
+}
+
+.header li a {
+    color: #ffffff;
+    font-size: 14px;
+    display: block;
+    padding: 30px 22px 0;
+    /* width: 10%; */
+}
+
+/* ---------------------main---------------------- */
+.main {
+    height: calc(100% - 90px);
+    width: 100%;
+}
+
+.main .left {
+    height: 100%;
+    width: 197px;
+    background-color: #417ec8;
+    float: left;
+    overflow: hidden;
+
+}
+
+
+
+/* ---------------left---------------- */
+.main .left>ul>li {
+    margin-left: 3px;
+    border-top: 1px solid #2869bd;
+}
+
+.main .left ul li img {
+    margin-left: 10px;
+    margin-right: 7px;
+}
+
+.main .left ul li a {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    line-height: 32px;
+    color: #ffffff;
+}
+
+.main .left ul .erji a {
+    font-size: 12px;
+    line-height: 30px;
+    display: block;
+    margin-left: 30px;
+    padding-left: 10px;
+    background-image: url(../images/jiao.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.main .left ul .erji a {
+    display: none;
+}
+
+.main .left ul li:hover .yiji {
+    background: #ffffff;
+    color: #000;
+}
+
+.main .left ul li:hover .erji a {
+    display: block;
+
+}
+
+/* -------------right----------- */
+.main .right {
+    height: 100%;
+    width: calc(100% - 202px);
+    float: left;
+    border-left: 5px solid #d1cfdc;
+    position: relative;
+}
+.main .right p {
+    margin-left: 14px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.main .right p span {
+    font-size: 12px;
+    line-height: 24px;
+    color: #636363;
+    margin-left: 10px;
+}
+
+.main .right form {
+    margin-top: 11px;
+    margin-bottom: 14px;
+    margin-left: 14px;
+}
+.main .right form label{
+    margin-left: 18px;
+}
+.main .right form input {
+    border: 1px solid #e3e3e3;
+    width: 120px;
+    height: 24px;
+}
+.main .right caption{
+    /* width: calc(100% - 2px); */
+    height: 32px;
+    border: 1px solid #e3e3e3;
+    text-align: right;
+}
+.main .right table {
+    width:calc(100% - 27px);
+    border: 1px solid #e3e3e3;
+    border-spacing: 0;
+    margin: auto;
+}
+.main .right thead tr{
+    background: #f1f1f1;
+}
+.main .right tbody tr:nth-child(2n) {
+    background: #f1f1f1;
+}
+.main .right table td{
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+}
+.main .right .fanye{
+    position: absolute;
+    right: 20px;
+}

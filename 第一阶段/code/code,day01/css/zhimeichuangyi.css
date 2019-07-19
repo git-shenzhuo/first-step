@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0
+}
+.zhimeichuangyi{
+    width: 950px;
+    height: 1800px;
+    background: #2d3236
+}
+/* ---------------tel----------------- */
+.tel{
+    width: 950px;
+    height: 35px;
+    background: #b6d31a
+}
+/* ---------------header-------------- */
+.header{
+    width: 950px;
+    height: 100px;
+    background: #ef0c62
+}
+.logo{
+    width: 250px;
+    height: 100px;
+    background: #e0b1a3
+}
+.nav{
+    width: 700px;
+    height: 100px;
+    background: #b6d31a
+}
+/* ---------------banner---------------- */
+.banner{
+    width: 950px;
+    height: 400px;
+    background: #b6d31a
+}
+/* ---------------main1---------------- */
+.main1{
+    width: 950px;
+    height: 225px;
+    background: #192de0
+}
+.o1{
+    width: 190px;
+    height: 225px;
+    background: #b6d31a;
+    float: left
+}
+.o2{
+    width: 190px;
+    height: 225px;
+    background: #192de0;
+    float: left
+}
+.o3{
+    width: 190px;
+    height: 225px;
+    background: #b6d31a;
+    float: left
+
+}
+.o4{
+    width: 190px;
+    height: 225px;
+    background: #192de0;
+    float: left
+}
+.o5{
+    width: 190px;
+    height: 225px;
+    background: #b6d31a;
+    float: left
+}
+/* ---------------main2---------------- */
+.main2{
+    width: 950px;
+    height: 35px;
+    background: #fe0000
+}
+/* ---------------main3---------------- */
+.main3{
+    width: 950px;
+    height: 415px;
+    background: #192de0
+}
+.f1{
+    width: 190px;
+    height: 415px;
+    background: #192de0;
+    float: left
+}
+.f2{
+    width: 190px;
+    height: 415px;
+    background: #b6d31a;
+    float: left
+}
+.f3{
+    width: 190px;
+    height: 415px;
+    background: #192de0;
+    float: left
+}
+.f4{
+    width: 190px;
+    height: 415px;
+    background: #b6d31a;
+    float: left
+}
+.f5{
+    width: 190px;
+    height: 415px;
+    background: #192de0;
+    float: left
+}
+/* ---------------main4---------------- */
+.main4{
+    width: 950px;
+    height: 35px;
+    background: #fe0000
+}
+/* ---------------main5---------------- */
+.main5{
+    width: 950px;
+    height: 215px;
+    background: #192de0
+}
+/* ---------------main6---------------- */
+.main6{
+    width: 950px;
+    height: 35px;
+    background: #fe0000
+}
+/* ---------------main7---------------- */
+.main7{
+    width: 950px;
+    height: 215px;
+    background: #192de0
+}
+/* ---------------footer---------------- */
+.footer{
+    width: 950px;
+    height: 120px;
+    background: #b6d31a
+
+}

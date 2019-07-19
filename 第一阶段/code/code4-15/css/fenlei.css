@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+#fenlei{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* --------------header------------- */
+#fenlei .f-header{
+    height: 2.533333rem;
+    background: #ffffff;
+    border-bottom: .013333rem solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+}
+#fenlei .f-header h2{
+    text-align: center;
+    font-size: .453333rem;
+    line-height: 1.2rem;
+}
+#fenlei .f-header input{
+    height: .986667rem;
+    width: 9.333333rem;
+    margin-left: .333333rem;
+    border-radius: .266667rem;
+    background: #ededed;
+    text-align: center;
+    margin-top: .16rem;
+}
+/* --------------main--------------- */
+#fenlei .f-main{
+    flex: 1;
+    display: flex;
+    overflow: auto;
+}
+/* -----------nav---------- */
+#fenlei .f-main nav{
+    width: 2.373333rem;
+    background: #f8f8f8;
+}
+#fenlei .f-main nav ul{
+    width: 100%;
+    height: 100%;
+}
+#fenlei .f-main nav ul li{
+    height: 1.4rem;
+}
+#fenlei .f-main nav ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: .4rem;
+    line-height: 1.4rem;
+    color: #58595b;
+}
+#fenlei .f-main nav ul li:active{
+    border-left: .133333rem solid #e02e24;
+}
+#fenlei .f-main nav ul li:active a{
+    color: #e02e24;
+}
+/* ----------aside--------- */
+#fenlei .f-main aside{
+    flex: 1;
+}
+
+/* --------------footer------------ */
+#fenlei .f-footer{
+    height: 1.306667rem;
+    border-top: .013333rem solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#fenlei .f-footer a{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#fenlei .f-footer a i{
+    font-size: .613333rem;
+    color: #666666;
+}
+#fenlei .f-footer a p{
+    font-size: .266667rem;
+    color: #666666;
+}
+#fenlei .f-footer a:active i,#fenlei .f-footer a:active p{
+    color: #e02e24;
+}

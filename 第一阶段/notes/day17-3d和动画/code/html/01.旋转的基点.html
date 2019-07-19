@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            transition: transform 2s;
+            /* 
+                trasnform-origin:旋转的基点
+                取值：trasnform-origin：x y
+                x---水平的位置，left，center，right，百分比，数值 + 单位
+                y---垂直的位置，top，center，bottom，百分比，数值 + 单位
+             */
+            transform-origin: 20px bottom;
+        }
+
+        div:hover {
+            transform: rotate(60deg)
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+</body>
+
+</html>

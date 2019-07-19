@@ -1,0 +1,76 @@
+1、高度自适应：
+   （1）父元素不设置高度，高度由子元素撑开
+   （2）高度自适应窗口
+	必须设置html，body｛height：100%｝
+   （3）最小高度min-height
+	如果元素的实际内容的高度小于最小高度的时候，显示的是最小高度
+	实际内容的高度大于最小高度，显示的是实际内容的高度
+   （4）最大高度max-height
+	如果元素内容的实际高度大于最大高度，显示的最大高度
+	实际内容小于最大高度，显示的是内容实际高度
+	
+	兼容IE6浏览器的最小高度
+	在IE6浏览器中height为最小高度，但是高版本浏览器height为固定高度
+	是实现兼容IE6的最小高度
+ 	   （1）使用_过滤器，只有IE6识别
+		min-height:value + px 高版本的最小高度
+		_height:value + px IE6的最小高度
+	   （2）使用关键字！important来兼容（除了IE6浏览器以外，所有浏览器都识别）
+		min-height：400px；高版本的最小高度
+		height：anto ！important；设置除了IE6以外所有浏览器的高度为height:anto height:400px;ie 6的最小高度
+	
+2、高度塌陷：
+    如果我们使用高度自适应（父元素的高度由子元素撑开） 子元素浮动，脱离文档流，不能撑开父元素的高度
+
+   解决高度塌陷的方法：
+   （1）给父元素设置overflow：hidden（触发一个bfc）
+	缺点：会隐藏掉一些定位在元素以外的内容
+   （2）给浮动元素的下方添加一个空的div，并且给这个空的div添加｛clear: both;height: 0;overfolw:hidden;｝
+	缺点:增加一些没有内容的空的div，增加代码结构，解析结构时间，内存增加
+   （3）万能清除浮动法
+	高度塌陷的元素::after{
+	content:"";
+	clear:both;
+	display:block;
+	height:0;
+	overflow:hidden;
+	visibility:hidden;
+	}
+
+3、伪元素（对象）选择器
+   （1）选择器::after{
+	content:"文字内容" | content:url(图片路劲)	
+	｝
+	必须要配合content属性一起使用
+	给元素添加最后一个子元素
+   （2）选择器::before{
+	content:""	
+	}
+	必须要配合content属性一起使用
+	给元素添加一个子元素
+   （3）选择器::first-letter{
+	color:red;
+	}
+	改变元素中第一个字符的样式（只能用于块级元素）
+	｝
+   （4）选择器::first-line{
+	backgound:pink;
+	}
+	改变元素中第一行的样式（只能用于块级元素）
+
+4、过滤器
+   （1）只有下划线_ 过滤器（IE6识别）
+	在属性前面添加
+   （2）！important（ie6不识别，其他浏览器都识别）
+	在属性后面添加，与 属性值之间有空格
+   （3）* 号过滤器（IE7及以下浏览器识别）
+	在属性前面添加
+   （4）\9（IE浏览器识别，其他浏览器不识别）
+	在属性值后面添加，与 属性值之间空格
+   （5）\0（IE浏览器中IE8及以上浏览器识别，其他浏览器都不识别）
+	在属性值后面添加，与 属性值之间有空格
+
+5、visibility:none（隐藏元素） 和 display:none 的区别
+	display:none 元素隐藏之后不占据位置
+	visibility:hidden 元素隐藏后还会占据原来的位置
+

@@ -1,0 +1,72 @@
+1、用纯css写三角形：
+   元素的宽高设置0，width：0px；height：0px
+   border：10px soild transparent；
+   border-bottom-color：blue；
+
+2、box-sizing:
+   content-box(设置的宽度（width：height）=content），正常的盒子模型
+   border-box(设置宽高（width：height）=content+border+padding），怪异盒模型
+
+3、作用：做浏览器兼容的
+   -webkit-:谷歌浏览器，国内浏览器
+   -o-：Opera浏览器
+   -moz-：火狐浏览器
+   -ms-：ie浏览器
+
+4、过渡动画：transition：all 3s
+   transition-property----过渡的属性
+   transition-duration----过渡的持续时间
+   transition-delay-------延迟多少时间去执行过渡动画
+   transition-timing-function：过渡曲线
+   取值：linear | ease | ease-in | ease-out |ease-in-out  
+   transition：过渡属性  过渡时间 延迟时间 过渡曲线
+
+5、图片边框：
+   border-image-source：url（图片地址）
+   border-image-slice：value（偏移量，没有单位）
+   border-image-repeat：stretch（拉伸 不平铺）| repeat（平铺不拉伸）| round（平铺拉伸）
+   border-image-outset：value+px 在距离盒子value像素去设置图片边框
+   border-image-width：
+   border-image：总写
+
+6、边框阴影：
+   box-shadow：在水平的方向移动距离（正值往右，负值往左）垂直方向的移动距离（正值往下，负值往上）模糊程度（模糊距离）阴影的宽高 颜色 inset
+
+7、圆角边框：border-radius
+   取值写法：
+   border-radius：属性值（四个角都添加一样的圆角值）
+   border-radius：属性值1（给左上角，右下角） 属性值2（右上角，左下角）
+   border-radius：属性值1（左上角） 属性值2（右上角和左下角）属性值3（右下角）
+   border-radius：属性值1（左上角） 属性值2（右上角）属性值3（右下角）属性值4（左下角）
+   border-radius：x1 x2 x3 x4 / y1 y2 y3 y4;
+
+8、text-shadow：文字阴影
+   -webkit-text-stroke:文字描边
+   direcition:文字排版
+	取值：lrt---left to ritht
+	      rtl---right to left
+		注意点：必须配合Unicode-bidi-override
+
+9、background-size：背景图片的大小
+   取值：
+    （1）数值+单位  缺点：图片会变形
+    （2）百分比 按照盒子的宽高来计算   缺点会变形
+    （3）auto（默认值）图片不会压缩也不会拉伸
+    （4）cover覆盖，如果图片大于容器的时候，图片会等比例缩小，直到图片某一边完全显示在盒子中就停止缩放
+         如果图片小于容器的时候，图片会等比例放大，直到图片某一边完全覆盖容器的时候，就停止放大     缺点：图片显示不完全   优点：图片
+不会变形
+     （5）contain包含，如果图片比容器小的时候，图片会等比例放大，直到图片某一边完全显示在盒子中就停止放大
+         如果图片比容器大的时候，图片会等比例缩小，直到图片某一边完全覆盖容器的时候，就停止缩小     缺点：图片不会变形   优点：图片
+可能留白
+
+10、背景图图片默认情况下，从padding位置开始摆放
+   background-origin 从盒子的什么位置开始摆放背景图片
+   取值：
+	border-box---表示背景从盒子的border位置开始摆放
+	padding-box--表示背景从盒子的padding位置开始摆放
+	content-box--表示背景从盒子的content位置开始摆放
+   background-clip背景显示的区域
+   取值：
+	border-box---表示背景显示border以内的位置
+	padding-box--表示背景显示padding以内的位置
+	content-box--表示背景显示content以内的位置

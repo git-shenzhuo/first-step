@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        ul {
+            width: 805px;
+            border: 1px solid red;
+        }
+
+        ul li {
+            float: left;
+            width: 160px;
+            border-right: 1px solid #ccc;
+            height: 320px;
+            transition: width .5s;
+        }
+
+        ul li:nth-child(1) {
+            background: url(../images/img1.jpg);
+        }
+
+        ul li:nth-child(2) {
+            background: url(../images/img2.jpg);
+        }
+
+        ul li:nth-child(3) {
+            background: url(../images/img3.jpg);
+        }
+
+        ul li:nth-child(4) {
+            background: url(../images/img4.jpg);
+        }
+
+        ul li:nth-child(5) {
+            background: url(../images/img5.jpg);
+        }
+
+        /*  鼠标滑过ul改变下面所有li元素的宽度 */
+        ul:hover li {
+            width: 40px;
+        }
+
+        /* 鼠标滑过li改变当前li的宽度*/
+        ul li:hover {
+            width: 640px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="clearfix">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>

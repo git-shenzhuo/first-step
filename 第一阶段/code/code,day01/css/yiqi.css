@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.yiqi{
+    width: 1100px;
+    height: 2100px;
+    background: #1194ed
+}
+/* ---------------------yemei----------------------- */
+.yemei{
+    width: 1100px;
+    height: 30px;
+    background: #123456
+}
+/* ---------------------header----------------------- */
+.header{
+    width: 1100px;
+    height: 115px;
+    background: #123687;
+}
+/* ---------------------nav----------------------- */
+.nav1{
+    width: 1100px;
+    height: 50px;
+    background: #065648;
+}
+/* ---------------------banner-------------------- */
+.banner{
+    width: 1100px;
+    height: 400px;
+    background: #e84613
+}
+/* ---------------------main1----------------------- */
+.main1{
+    width: 1100px;
+    height: 100px;
+    background: #514faf;
+}
+/* ---------------------main2----------------------- */
+.main2{
+    width: 1100px;
+    height: 410px;
+    background: #34495e
+}
+/* ---------------------main3----------------------- */
+.main3{
+    width: 1100px;
+    height: 350px;
+    background: #0e0e0e
+}
+/* ---------------------main4----------------------- */
+.main4{
+    width: 1100px;
+    height: 395px;
+    background: #e64513
+}
+/* ---------------------main5----------------------- */
+.main5{
+    width: 1100px;
+    height: 105px;
+    background: #34495e
+}
+/* ---------------------main6----------------------- */
+.nav2{
+    width: 1100px;
+    height: 55px;
+    background: #dedde2;
+    
+}
+/* ---------------------footer----------------------- */
+.footer{
+    width: 1100px;
+    height: 80px;
+
+}
+

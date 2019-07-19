@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        ul {
+            /* overflow: hidden; */
+        }
+
+        /* 
+            高度塌陷：
+            如果我们使用高度自适应（父元素的高度由子元素撑开）
+            子元素浮动，脱离文档流，不能撑开父元素的高度
+
+            解决高度塌陷的方法：
+            （1）给父元素设置overflow：hidden（触发一个bfc）
+                缺点：会隐藏掉一些定位在元素以外的内容
+            （2）给浮动元素的下方添加一个空的div,并且给这个空的div添加{clear: both;height: 0;overflow: hidden;}
+                缺点：增加一些没有内容的空的div，增加代码结构，解析结构时间，内存增加
+            （3）万能清除浮动法
+                高度塌陷的元素::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                    height: 0;
+                    overflow: hidden;
+                    visibility: hidden;
+                }
+         */
+
+        li {
+            list-style: none;
+            float: left;
+        }
+
+        ul::after {
+            content: '';
+            display: block;
+            clear: both;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        /* ul div {
+            clear: both;
+            height: 0;
+            overflow: hidden;
+
+        } */
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>sdgfddf</li>
+        <li>sdgfddf</li>
+        <li>dgfdhgf</li>
+        <!-- <div></div> -->
+    </ul>
+
+</body>
+
+</html>

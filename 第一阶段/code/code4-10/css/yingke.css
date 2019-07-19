@@ -1,0 +1,717 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.yingke {
+    width: 100%;
+    position: relative;
+}
+
+.content {
+    width: 1200px;
+    margin: auto;
+}
+
+.clearfix::after {
+    content: "";
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    display: block;
+}
+
+/* ------------------------header----------------- */
+header {
+    width: 100%;
+    height: 80px;
+    background: #100c09;
+}
+
+/* ------------logo----------- */
+h1 {
+    text-indent: -99999px;
+}
+
+header .logo {
+    width: 257px;
+    height: 80px;
+    float: left;
+    background-image: url(../images/index-logo.png);
+    background-repeat: no-repeat;
+    background-position: 0 center;
+}
+
+/* -----------nav----------- */
+header .nav {
+    float: left;
+    margin-left: 20px;
+}
+
+ul li {
+    float: left;
+}
+
+header .nav a {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 80px;
+    padding: 0 15px;
+    display: block;
+}
+
+header .nav a span {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top-color: #666666;
+}
+
+/* header a:hover{
+    background: #ffffff;
+    color: #000;
+
+} */
+/* ----------denglu--------- */
+header .denglu {
+    /* width: 118px;
+    height: 28px; */
+    float: left;
+    margin-top: 23px;
+}
+
+.denglu a {
+    display: inline-block;
+    border: 1px solid #ffffff;
+    border-radius: 10px/10px;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 28px;
+    padding: 0 20px;
+}
+
+header a:hover {
+    color: #000;
+    background: #ffffff;
+}
+
+/* -------------------------banner--------------------- */
+.banner {
+    width: 100%;
+    height: 620px;
+    background-image: url(../images/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* ------------------------main----------------------- */
+main {
+    width: 100%;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 98px;
+    margin-bottom: 19px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 16px;
+    margin-bottom: 26px;
+    text-align: center;
+    color: #9999a2;
+}
+
+h6 {
+    width: 46px;
+    height: 1px;
+    border: 1px solid red;
+    background: red;
+    position: absolute;
+    left: 50%;
+    margin-left: -24px;
+}
+
+/* ------------one------------ */
+.one {
+    width: 100%;
+    /* background: #f1f1f1; */
+}
+
+figure {
+    float: left;
+    width: 190px;
+    margin: 45px 5px 90px;
+    background: #ffffff;
+    border-radius: 10px/10px;
+    box-shadow: 0px 0px 0px 5px #f1f1f1;
+}
+
+.one h4 {
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 84px;
+    text-align: center;
+}
+
+.one p {
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 16px;
+    text-align: center;
+    color: #99a2c2;
+
+}
+
+.one a {
+    display: block;
+    width: 148px;
+    height: 38px;
+    margin: 37px 20px 39px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 38px;
+    border: 1px solid red;
+    color: red;
+    border-radius: 5px/5px;
+
+}
+
+.one a:hover {
+    color: #ffffff;
+    background: red;
+}
+
+/* -----------two----------- */
+main .two {
+    width: 100%;
+    background-image: url(../images/feature_bg.jpg);
+    position: relative;
+}
+
+/* main .two h2{
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 98px;
+    margin-bottom: 19px;
+    text-align: center;
+}
+main .two h3{
+    font-size: 16px;
+    margin-bottom: 26px;
+    text-align: center;
+    color: #9999a2;
+}
+main .two h6{
+    width: 46px;
+    height: 1px;
+    border: 1px solid red;
+    background: red;
+    position: absolute;
+    left: 50%;
+    margin-left: -24px;
+} */
+main .two .tu1 {
+    margin-top: 80px;
+    margin-bottom: 90px;
+    width: 1200px;
+    height: 600px;
+    background-image: url(../images/feature.jpg);
+}
+
+main .two .tu1 h4 {
+    font-size: 28px;
+    line-height: 28px;
+    margin-top: 38px;
+    margin-bottom: 28px;
+    text-align: center;
+    font-weight: 900;
+}
+
+main .two .tu1 p {
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 14px;
+    text-align: center;
+    color: #666666;
+}
+
+main .two .tu1 h5 {
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    margin-bottom: 32px;
+    font-weight: 900;
+}
+
+main .two .tu1 a {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 48px;
+    border: 1px solid red;
+    color: red;
+    padding: 0 48px;
+    margin-left: 58px;
+    border-radius: 24px/24px;
+}
+
+main .two .tu1 a:hover {
+    background: red;
+    color: #ffffff;
+}
+
+main .two .tu1 .wenzi1 {
+    width: 300px;
+    height: 300px;
+    margin-left: 300px;
+    float: left;
+}
+
+main .two .tu1 .wenzi2 {
+    width: 300px;
+    height: 300px;
+    margin-right: 300px;
+    float: left;
+}
+
+/* -----------three--------- */
+main three {
+    width: 100%;
+}
+
+/* main .three h2{
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 98px;
+    margin-bottom: 19px;
+    text-align: center;
+}
+main .three h3{
+    font-size: 16px;
+    margin-bottom: 26px;
+    text-align: center;
+    color: #9999a2;
+}
+main .three h6{
+    width: 46px;
+    height: 1px;
+    border: 1px solid red;
+    background: red;
+    position: absolute;
+    left: 50%;
+    margin-left: -24px;
+} */
+main .three .tu {
+    margin-top: 80px;
+}
+
+main .three .tu div {
+    width: 362px;
+    height: 560px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+main .three .tu .t1 {
+    background-image: url(../images/f1.jpg);
+}
+
+main .three .tu .t2 {
+    margin: 0 40px;
+    background-image: url(../images/f2.jpg);
+}
+
+main .three .tu .t3 {
+    background-image: url(../images/f3.jpg);
+}
+
+main .three .tu .wenzi1 {
+    width: 100%;
+    height: 115px;
+    position: absolute;
+    bottom: 0;
+    background: red;
+}
+
+main .three .tu .wenzi1 h4 {
+    font-size: 24px;
+    line-height: 24px;
+    margin-top: 25px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 900;
+}
+
+main .three .tu .wenzi1 h5 {
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: 16px;
+    color: #ffffff;
+    text-align: center;
+}
+
+main .three .tu .wenzi2 {
+    background: #000;
+    /* display: none; */
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    bottom: 0;
+}
+
+main .three .tu .wenzi2 p {
+    margin: 40px 10px 0;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+main .three .tu .t:hover .wenzi1 {
+    bottom: 200px;
+    transition: bottom 2s;
+
+}
+
+main .three .tu .t:hover .wenzi2 {
+    /* display: block; */
+    height: 200px;
+    transition: height 2s;
+}
+
+/* -------------four------------- */
+main .four {
+    margin-top: 90px;
+    width: 100%;
+    background-image: url(../images/feature_bg.jpg);
+}
+
+main .four .content figure {
+    float: left;
+    width: 332px;
+    height: 408px;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    margin: 55px 30px 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+main .four figure div {
+    position: absolute;
+    top: 0;
+}
+
+main .four figure figcaption {
+    width: 170px;
+    height: 170px;
+    margin: 45px 81px 60px;
+    border-radius: 50%;
+    background: red;
+}
+
+main .four figure figcaption img {
+    width: 100%;
+    height: 100%;
+}
+
+main .four figure h4 {
+    font-size: 24px;
+    color: red;
+    line-height: 24px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 24px;
+
+}
+
+main .four figure p {
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 14px;
+    text-align: center;
+    color: #666666;
+}
+
+main .four figure .f1 {
+    position: absolute;
+    bottom: -242px;
+    /* display: none; */
+
+}
+
+main .four figure:hover .f1 {
+    bottom: 0;
+    transition: bottom 1s;
+    /* display: block; */
+}
+
+main .four figure:hover div {
+    top: -224px;
+    transition: top 1s;
+}
+/* ------------five----------- */
+main .five{
+    width: 100%;
+}
+main .five ul{
+    margin-top: 80px;
+    margin-bottom: 45px;
+}
+
+main .five ul li{
+    width: calc(50% - 50px);
+    float: left;
+    margin-left: 50px;
+    position: relative;
+}
+main .five a{
+    font-size: 16px;
+    line-height: 30px;
+    color: #000;
+}
+main .five h5{
+    display: inline-block;
+    font-size: 12px;
+    color: #cccccc;
+    position: absolute;
+    right: 50px;
+}
+/* -------------six------------ */
+main .six{
+    width: 100%;
+    margin-bottom: 111px;
+}
+main .six ul li{
+    float: left;
+    width: 158px;
+    height: 58px;
+    border: 1px solid #dadada;
+    margin: 0 5px;
+}
+main .six ul li:nth-child(1){
+    background-image: url(../images/new1.jpg);
+}
+main .six ul li:nth-child(2){
+    background-image: url(../images/new2.jpg);
+}
+main .six ul li:nth-child(3){
+    background-image: url(../images/new3.jpg);
+}
+main .six ul li:nth-child(4){
+    background-image: url(../images/new4.jpg);
+}
+main .six ul li:nth-child(5){
+    background-image: url(../images/new5.jpg);
+}
+main .six ul li:nth-child(6){
+    background-image: url(../images/new6.jpg);
+}
+main .six ul li:nth-child(7){
+    background-image: url(../images/new7.jpg);
+}
+
+/* ----------------------footer----------------- */
+/* -----------footer1------------ */
+footer .footer1{
+    width: 100%;
+    background: #424242;
+    /* height: 230px; */
+}
+/* ----------left---------- */
+footer .footer1 .left{
+    float: left;
+    width: 320px;
+    margin-top: 40px;
+    margin-left: 10px;
+}
+footer .footer1 .left div{
+    width: 58px;
+    height: 58px;
+    float: left;
+    border-radius: 50%;
+    background-image: url(../images/foot-phone.png);
+}
+footer .footer1 .left dl{
+    width: 220px;
+    float: left;
+    margin-left: 35px;
+}
+footer .footer1 .left dl dt{
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+footer .footer1 .left dl dd{
+    font-size: 12px;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+footer .footer1 .left dl a{
+    display: block;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    color: #ffffff;
+    width: 130px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+}
+/* ------------center------------ */
+footer .footer1 .center{
+    width: 420px;
+    float: left;
+    margin-left: 80px;
+}
+footer .footer1 .center dl{
+    width: 140px;
+    float: left;
+    margin-top: 30px;
+}
+footer .footer1 .center dt{
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 28px;
+    color: #ffffff;
+    text-align: center;
+}
+footer .footer1 .center a{
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    color: #b7b7b7;
+    text-align: center;
+    margin-top: 28px;
+}
+/* ----------right---------- */
+footer .footer1 .right{
+    width: 250px;
+    float: right;
+    margin-right: 50px;
+}
+footer .footer1 .right figure{
+    float: left;
+    width: 100px;
+    margin: 0 10px;
+    background: none;
+    box-shadow: none;
+    border-radius: none;
+    margin-top: 55px;
+    margin-bottom: 40px;
+}
+footer .footer1 .right p{
+    width: 100%;
+    text-align: center;
+    color: #b7b7b7;
+    margin-bottom: 15px;
+}
+footer .footer1 .right .e1{
+    width: 100px;
+    height: 100px;
+    background-image: url(../images/wx-code.png);
+    background-size: contain;
+}
+footer .footer1 .right .e2{
+    width: 100px;
+    height: 100px;
+    background-image: url(../images/app-code.png);
+    background-size: contain;
+}
+/* -------------footer2------------ */
+footer .footer2{
+    width: 100%;
+    background: #3c3c3c;
+}
+footer .footer2 ul{
+    width: 100%;
+    margin-top: 40px;
+}
+footer .footer2 li{
+    float: left;
+    width: 124px;
+    height: 47px;
+    margin: 0 25px 25px 0 ;
+}
+footer .footer2 li:nth-child(1){
+    background-image: url(../images/cert1.png);
+}
+footer .footer2 li:nth-child(2){
+    background-image: url(../images/cert2.png);
+}
+footer .footer2 li:nth-child(3){
+    background-image: url(../images/cert3.png);
+}
+footer .footer2 li:nth-child(4){
+    background-image: url(../images/cert4.png);
+}
+footer .footer2 li:nth-child(5){
+    background-image: url(../images/cert5.png);
+}
+footer .footer2 li:nth-child(6){
+    background-image: url(../images/cert6.png);
+}
+footer .footer2 li:nth-child(7){
+    background-image: url(../images/cert7.png);
+}
+footer .footer2 li:nth-child(8){
+    background-image: url(../images/cert8.jpg);
+}
+footer .footer2 p{
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 14px;
+    text-align: center;
+    color: #cccccc;
+}
+/* ----------------------guding--------------- */
+.guding{
+    width: 50px;
+    height: 290px;
+    /* background: red; */
+    position: fixed;
+    top: 50%;
+    margin-top: -150px;
+    right: 10px;
+
+}
+.guding a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: red;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.guding a:nth-child(1){
+    background-image: url(../images/customer.png);   
+}
+.guding a:nth-child(2){
+    background-image: url(../images/min.png);
+}
+.guding a:nth-child(3){
+    background-image: url(../images/wechat.png);
+}
+.guding a:nth-child(4){
+    background-image: url(../images/phone.png);
+}
+.guding a:nth-child(5){
+    background-image: url(../images/top.png);
+}
+
+div #er2{
+    width: 200px;
+    height: 150px;
+    background: red;
+    position: fixed;
+    right: 70px;
+    top: 50%;
+    margin-top: -150px;
+}

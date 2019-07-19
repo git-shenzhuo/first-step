@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            /* font-size: 0px; */
+            border-bottom: 8px  #db4e18 solid;
+            padding-left: 10px;
+        }
+
+        ul li {
+            font-size: 16px;
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        ul li a {
+            display: block;
+            width: 100px;
+            height: 50px;
+
+        }
+
+        ul li .zhongwen {
+            display: none;
+        }
+        ul li .yingwen{
+            background: #dfdfdf;
+        }
+
+        ul li:hover .yingwen {
+            display: none;
+        }
+
+        ul li:hover .zhongwen {
+            display: block;
+            background: #db4e18;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a class="zhongwen" href="">首页</a>
+            <a class="yingwen" href="">Home</a>
+        </li>
+        <li>
+            <a class="zhongwen" href="">课程</a>
+            <a class="yingwen" href="">Blog</a>
+        </li>
+        <li>
+            <a class="zhongwen" href="">练习</a>
+            <a class="yingwen" href="">geustbook</a>
+        </li>
+        <li>
+            <a class="zhongwen" href="">回顾</a>
+            <a class="yingwen" href="">pickbar</a>
+        </li>
+        <li>
+            <a class="zhongwen" href="">登录</a>
+            <a class="yingwen" href="">fansir</a>
+        </li>
+    </ul>
+</body>
+
+</html>

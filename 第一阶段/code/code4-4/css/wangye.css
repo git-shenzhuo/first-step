@@ -1,0 +1,599 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wangye {
+    width: 100%;
+    height: 3156px;
+
+}
+
+.content {
+    width: 1240px;
+    height: 100%;
+    /* background: pink; */
+    margin: auto;
+}
+
+/* -------------------------header----------------------- */
+.header {
+    width: 100%;
+    height: 116px;
+    /* background: #109e29; */
+}
+
+/* -------------logo-------------- */
+.header h1 {
+    text-indent: -9999px;
+}
+
+.header .logo {
+    width: 140px;
+    height: 45px;
+    float: left;
+    margin-top: 30px;
+    margin-left: 240px;
+}
+
+/* -------------sousuo-------------- */
+.header .sousuo {
+    width: 525px;
+    height: 60px;
+    float: left;
+    margin-left: 40px;
+    margin-top: 34px;
+}
+
+.header .sousuo dt {
+    width: 522px;
+    height: 36px;
+    border: 1px solid #23ac38;
+
+}
+
+.header .sousuo dd {
+    float: left;
+    font-size: 12px;
+    margin-right: 17px;
+}
+
+/* -------------denglu-------------- */
+.header .denglu {
+    width: 290px;
+    height: 100%;
+    float: left;
+}
+
+.header .denglu li {
+    float: left;
+    margin-top: 45px;
+    padding: 0 9px;
+}
+
+.header .denglu li a {
+    font-size: 12px;
+    color: #999999;
+    line-height: 12px;
+}
+
+.header .denglu li a:hover {
+    color: blue;
+}
+
+/* --------------------------nav------------------------- */
+.nav {
+    width: 100%;
+    height: 64px;
+    /* background: #e6897d; */
+}
+
+.nav li {
+    float: left;
+    height: 100%;
+
+}
+
+.nav a {
+    font-size: 15px;
+    padding: 0 30px;
+    line-height: 64px;
+}
+
+.nav a:hover {
+    color: #23ac38;
+}
+
+/* -------------------------banner----------------------- */
+.banner {
+    width: 100%;
+    height: 391px;
+    background: #ccc;
+    background-image: url(../images/banner1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* -----------------------main--------------------------- */
+.main {
+    width: 100%;
+    height: 2385px;
+}
+
+.main h2 {
+    font-size: 17px;
+    line-height: 18px;
+    border-left: 2px solid #01bb50;
+    margin-top: 34px;
+    margin-bottom: 20px;
+    padding-left: 8px;
+    /* float: left; */
+}
+
+/* .main h3{
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 34px;
+    margin-bottom: 20px;
+    float: right;
+} */
+
+/* ----------one--------------- */
+.main .one {
+    width: 100%;
+    height: 107px;
+    border-bottom: 1px solid #ccc;
+}
+
+.main .one ul {
+    width: 100%;
+    height: 107px;
+}
+
+.main .one li {
+    width: 412px;
+    height: 79px;
+    margin-top: 25px;
+    float: left;
+    /* border-right: 1px solid #eeeeee; */
+    position: relative;
+}
+
+.main .one i {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-image: url(../images/logos.png);
+    margin-left: 76px;
+}
+
+.main .one ul li:nth-child(2) i {
+    background-position: 0px -70px;
+}
+
+.main .one ul li:nth-child(3) i {
+    background-position: 0px -140px;
+}
+
+.main .one ul li:hover {
+    border-bottom: 3px solid #19d96e;
+}
+
+.main .one h3 {
+    font-size: 15px;
+    line-height: 15px;
+    padding-bottom: 9px;
+    color: #333333;
+    position: absolute;
+    left: 155px;
+    top: 12px;
+
+}
+
+.main .one p {
+    font-size: 12px;
+    line-height: 12px;
+    color: #999999;
+    position: absolute;
+    left: 155px;
+    top: 35px;
+}
+
+/* ------------two------------- */
+.main .two {
+    width: 100%;
+    height: 280px;
+
+}
+
+.main .two1 {
+    width: 912px;
+    height: 280px;
+    float: left;
+}
+
+.main .two1 dl {
+    width: 290px;
+    height: 206px;
+    border: 1px solid #e5e5e5;
+    float: left;
+    margin-right: 11px;
+}
+
+.main .two1 dt {
+    width: 100%;
+    height: 162px;
+    background-image: url(../images/main-two.png);
+    background-repeat: no-repeat;
+}
+
+.main .two1 dl:nth-child(2) dt {
+    background-position: 0 0;
+}
+
+.main .two1 dl:nth-child(3) dt {
+    background-position: 0 -162px;
+}
+
+.main .two1 dl:nth-child(4) dt {
+    background-position: 0 -325px;
+}
+
+.main .two1 dd {
+    font-size: 12px;
+    color: #333333;
+    line-height: 44px;
+    text-align: center;
+}
+
+.main .two2 {
+    width: 328px;
+    height: 100%;
+    float: left;
+
+}
+
+.main .two2 dl {
+    width: 108px;
+    height: 103px;
+    float: left;
+    border-top: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+    position: relative;
+}
+.main .two2 dt{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 50%;
+    top: 14px;
+    margin-left: -12px;
+    background-image: url(../images/main-two2.png);
+}
+.main .two2 dl:nth-child(2) dt{
+    background-position: 0 0;
+}
+.main .two2 dl:nth-child(3) dt{
+    background-position: -25px 0;
+}
+.main .two2 dl:nth-child(4) dt{
+    background-position: -50px 0;
+}
+.main .two2 dl:nth-child(5) dt{
+    background-position: 0 -25px;
+}
+.main .two2 dl:nth-child(6) dt{
+    background-position: -25px -25px;
+}
+.main .two2 dl:nth-child(7) dt{
+    background-position: -50px -25px;
+}
+.main .two2 .dd1{
+    font-size: 14px;
+    line-height: 14px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 48px;
+    text-align: center;
+} 
+.main .two2 .dd2{
+    width: 40px;
+    height: 17px;
+    border: 1px solid #e5e5e5;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    margin-left: -20px;
+}
+.main .two2 .dd2 a{
+    font-size: 12px;
+    line-height: 17px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+/* -----------three------------ */
+.main .three{
+    width: 100%;
+    height: 170px;    
+}
+.main .three dl{
+    width: 390px;
+    height: 140px;
+    border: 1px solid #e5e5e5;
+    float: left;
+    margin-right: 22px;
+    position: relative;
+}
+.main .three dt{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    float: left;
+    top: 20px;
+    left: 30px;
+    background-image: url(../images/main-three.png);
+}
+.main .three dl:nth-child(2) dt{
+    background-position: 0 0;
+}
+.main .three dl:nth-child(3) dt{
+    background-position: -97px 0;
+}
+.main .three dl:nth-child(4) dt{
+    background-position: -197px 0;
+}
+.main .three dd{
+    width: 197px;
+    height: 100%;
+    float: right;
+    margin-right: 49px;
+}
+.main .three dd h3{
+    font-size: 16px;
+    line-height: 16px;
+    padding-top: 34px;
+    color: #333333;
+}
+.main .three dd p{
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 11px;
+    color: #8a8aa7;
+}
+/* ----------four----------- */
+.main .four{
+    width: 100%;
+    height: 812px;
+}
+.main .four .four1{
+    width: 605px;
+    height: 100%;
+    float: left;
+}
+.main .four .four1 .neirong{
+    width: 100%;
+    height: 734px;
+    border: 1px solid #e5e5e5;
+}
+.main .four .four1 .neirong dl{
+    width: 302px;
+    height: 140px;
+    float: left;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+.main .four1 .neirong dt{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 31px;
+    top: 40px;
+    background-image: url(../images/main-four1.png);
+}
+.main .four1 .neirong dl:nth-child(2) dt{
+    background-position: -60px 0;
+}
+.main .four1 .neirong dl:nth-child(3) dt{
+    background-position: 0 -60px;
+}
+.main .four1 .neirong dl:nth-child(4) dt{
+    background-position: -60px -60px;
+}
+.main .four1 .neirong dl:nth-child(5) dt{
+    background-position: 0 -120px;
+}
+.main .four1 .neirong dl:nth-child(6) dt{
+    background-position: -60px -120px;
+}
+.main .four1 .neirong dl:nth-child(7) dt{
+    background-position: 0 -180px;
+}
+.main .four1 .neirong dl:nth-child(8) dt{
+    background-position: -60px -180px;
+}
+.main .four1 dd{
+    width: 192px;
+    height: 100%;
+    float: right;
+}
+.main .four1 dd h3{
+    font-size: 16px;
+    line-height: 16px;
+    padding-top: 43px;
+    color: #333333;  
+}
+.main .four1 dd span a{
+    display: block;
+    width: 68px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 10%;
+
+}
+.main .four ul{
+    width: 605px;
+    height: 30px;
+    float: left;
+}
+.main .four li{
+    float: left;
+    height: 30px;
+}
+.main .four1 li .tu{
+    width: 30px;
+    height: 30px;
+    float: left;
+    padding-left: 35px;
+    background-image: url(../images/main-four2.png);
+}
+.main .four ul a{
+    font-size: 12px;
+    line-height: 30px;
+    padding: 0 15px;
+    color: #333333;
+    border-right: 1px solid #e5e5e5;
+}
+.main .four .four2{
+    float: right;
+    width: 606px;
+    height: 812px;
+}
+.main .four .four2 .neirong{
+    width: 606px;
+    height: 734px;
+    border: 1px solid #e5e5e5;
+}
+.main .four .four2 .neirong dl{
+    width: 302px;
+    height: 140px;
+    float: left;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+.main .four .four2 .neirong dt{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    margin-top: -60px;
+    background-image: url(../images/main-four4.png);
+}
+.main .four .four2 .neirong dl:nth-child(3) dt{
+    background-position: -120px 0;
+}
+.main .four .four2 .neirong dl:nth-child(4) dt{
+    background-position: 0 -120px;
+}
+.main .four .four2 .neirong dl:nth-child(5) dt{
+    background-position: -120px -120px;
+}
+.main .four .four2 .neirong .dd1{
+    position: absolute;
+    left: 40px;
+    top: 50px;
+    font-size: 14px;
+    line-height: 14px;
+    color: #2a2a2a;
+}
+.main .four .four2 .neirong .dd2{
+    position: absolute;
+    left: 43px;
+    top: 76px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #e76625;
+}
+/* --------------five------------ */
+.main .five{
+    width: 100%;
+    height: 180px;
+}
+.main .five li{
+    width: 50%;
+    height: 24px;
+    float: left;
+}
+.main .five li a{
+    font-size: 12px;
+    line-height: 24px;
+    padding-left: 24px;
+}
+/* ------------six----------- */
+.main .six{
+    width: 100%;
+    height: 415px;
+}
+.main .six div{
+    width: 298px;
+    height: 100%;
+    float: left;
+    margin-right: 12px;
+}
+.main .six ul{
+    width: 100%;
+    height: 375px;
+    border: 1px solid #e5e5e5;
+}
+.main .six ul li{
+    list-style-type: square;
+    list-style-position: inside;
+    margin-top: 12px;
+    margin-left: 20px;
+    width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.main .six li a{
+    font-size: 12px;
+    line-height: 12px;
+}
+/* -------------seven------------ */
+.main .seven{
+    width: 100%;
+    height: 300px;
+    background-color: #f6f6f6;
+    margin-top: 50px;
+}
+.main .seven dl{
+    width: 190px;
+    float: left;
+    position: relative;
+    border-left: 1px solid #e5e5e5;
+}
+.main .seven dt{
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 18px;
+    color: #000;
+}
+.main .seven dd{
+    font-size: 14px;
+    margin-bottom: 16px;
+    margin-left: 20px;
+}
+
+/* -----------------------footer------------------------ */
+.footer {
+    width: 100%;
+    height: 204px;
+}
+.footer p{
+    text-align: center;
+    font-size: 12px;
+    color: #b299b2;
+    line-height: 12px;
+}

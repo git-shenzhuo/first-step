@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            border: 1px solid red;
+            height: 2000px;
+            position: relative;
+        }
+
+        .box .header {
+            height: 100px;
+            width: 100px;
+            background: pink;
+            /* 
+                (4)fixed 固定定位
+                参考物：浏览器的可视窗口
+                特点：固定定位脱离文档流，不占据原来的位置
+             */
+            position: fixed;
+            left: 10px;
+        }
+
+        .box .main {
+            height: 300px;
+            width: 100%;
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="header"></div>
+        <div class="main"></div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+fknzy 15:32:15
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        ul li{list-style: none;}
+        *{
+            margin: 0;padding: 0;
+        }
+        html,body{
+            height: 100%;
+            background-color: #000000;
+        }
+        .box{
+            height: 800px;
+            width: 800px;
+            background-color: #000000;
+            position: relative;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            animation: run 6s infinite ;
+        }
+        .yuan{
+            height: 800px;
+            width: 800px;
+            border-radius: 50%;
+            border: 1px solid gold;
+            position: absolute;
+        }
+        .yuan2{
+            transform: rotateY(22.5deg);
+            border: 1px solid rgb(0, 255, 64);
+        }
+        .yuan3{
+            transform: rotateY(45deg);
+            border: 1px solid rgb(4, 0, 255);
+        }
+        .yuan4{
+            transform: rotateY(67.5deg);
+            border: 1px solid gold;
+        }
+        .yuan5{
+            transform: rotateY(90deg);
+            border: 1px solid rgb(0, 255, 157);
+        }
+        .yuan6{
+            transform: rotateY(-67.5deg);
+            border: 1px solid rgb(35, 199, 98);
+        }
+        .yuan7{
+            transform: rotateY(-45deg);
+            border: 1px solid rgb(255, 0, 212);
+        }
+        .yuan8{
+            transform: rotateY(-22.5deg);
+            border: 1px solid rgb(255, 0, 0);
+        }
+        @keyframes run{
+            0%{
+                transform: rotate3d(1,1,1,0deg);
+            }
+            20%{transform: rotate3d(1,0,1,72deg);}
+            40%{transform: rotate3d(1,0,1,144deg);}
+            60%{transform: rotate3d(1,0,1,216deg);}
+            80%{transform: rotate3d(1,0,1,288deg);}
+            100%{transform: rotate3d(1,0,1,360deg);}
+        }
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li class="yuan yuan1"></li>
+        <li class="yuan yuan2"></li>
+        <li class="yuan yuan3"></li>
+        <li class="yuan yuan4"></li>
+        <li class="yuan yuan5"></li>
+        <li class="yuan yuan6"></li>
+        <li class="yuan yuan7"></li>
+        <li class="yuan yuan8"></li>
+    </ul>
+</body>
+</html>

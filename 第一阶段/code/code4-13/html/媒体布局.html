@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        ul{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        li{
+            width: 23%;
+            height: 100px;
+            background: red;
+            margin-top: 20px;
+
+        }
+        @media all and (min-width:600px) and (max-width:1000px) {
+            li{
+                width: 30%;
+            }
+        }
+        @media all and (min-width:400px) and (max-width:600px) {
+            li{
+                width: 48%;
+            }
+        }
+        @media all and (max-width:400px) {
+            li{
+                width: 97%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>

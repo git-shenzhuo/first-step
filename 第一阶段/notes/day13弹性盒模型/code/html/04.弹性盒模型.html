@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            自适应窗口
+            .left固定宽度为200px
+            .right随浏览器的宽度变化而变化
+         */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .box {
+            height: 100%;
+            /* 
+                display: flex; 把盒子变成弹性盒模型，下面所有子元素都会按照弹性盒规则来布局
+             */
+            display: flex;
+        }
+
+        .box .left {
+            width: 100px;
+            height: 100%;
+            background: red;
+        }
+
+        .box .right {
+            /* 
+            position: absolute;
+            left: 100px;
+            top: 0;
+            right: 0px;
+            bottom: 0;
+           
+            width: calc(100% - 100px);
+            height: 100%;
+            float: left;
+            background-color: green;
+            */
+            flex: 1;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+</body>
+
+</html>

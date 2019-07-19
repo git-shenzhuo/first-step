@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            （1）E:checked 选中状态伪类选择器
+            （2）E:enable 启用input的状态
+            （3）E:disabled input被禁用时候的状态
+         */
+
+        /* 选中input改变他后面兄弟元素label的样式 */
+        input:checked+label {
+            background: red;
+        }
+
+        input:enabled {
+            background: yellow;
+        }
+
+        input:disabled {
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="radio" name="sex">
+    <label for="">男</label>
+    <input type="radio" name="sex">
+    <label for="">女</label>
+
+    <input type="text" disabled>
+
+</body>
+
+</html>

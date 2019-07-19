@@ -1,0 +1,169 @@
+*{margin: 0;
+padding: 0}
+.wolong{
+    width: 1000px;
+    height: 1500px;
+    background: black
+}
+/* -----------header-------------  */
+.header{
+    width: 1000px;
+    height: 100px;
+    background: #f6b8b8;
+}
+.header .logo{
+    width: 300px;
+    height: 100px;
+    background: #10cf22;
+    float: left
+}
+.header .nav{
+    width: 300px;
+    height: 100px;
+    background: #2399d1;
+    float: right
+}
+/* ------------main1--------------- */
+.main1{
+    width: 1000px;
+    height: 60px;
+    background: #313131
+}
+.main1 .f1{
+    width: 125px;
+    height: 60px;
+    background: #d6251d;
+    float: left
+}
+.main1 .f2{
+    width: 125px;
+    height: 60px;
+    background: #313131;
+    float: left
+}
+.main1 .f3{
+    width: 125px;
+    height: 60px;
+    background: #d6251d;
+    float: left
+}
+.main1 .f4{
+    width: 125px;
+    height: 60px;
+    background: #313131;
+    float: left
+}
+.main1 .f5{
+    width: 125px;
+    height: 60px;
+    background: #d6251d;
+    float: left
+}
+.main1 .f6{
+    width: 125px;
+    height: 60px;
+    background: #313131;
+    float: left
+}
+.main1 .f7{
+    width: 125px;
+    height: 60px;
+    background: #d6251d;
+    float: left
+}
+.main1 .f8{
+    width: 125px;
+    height: 60px;
+    background: #313131;
+    float: left
+}
+/* -------------banner--------------- */
+.banner{
+    width: 1000px;
+    height: 465px;
+    background: #1e1e2a
+}
+/* -------------main2---------------- */
+.main2{
+    width: 1000px;
+    height: 250px;
+    background: #d6251d
+}
+.main2 .q1{
+    width: 500px;
+    height: 250px;
+    background: #10cf22;
+    float: left
+}
+.main2 .q2{
+    width: 250px;
+    height: 250px;
+    background: #d6251d;
+    float: left
+}
+.main2 .q3{
+    width: 250px;
+    height: 250px;
+    background: #10cf22;
+    float: left
+}
+/* -------------main3------------------ */
+.main3{
+    width: 1000px;
+    height: 300px;
+    background: #2399d1
+}
+.main3 .w1{
+    width: 250px;
+    height: 300px;
+    background: #141914;
+    float: left
+}
+.main3 .w2{
+    width: 250px;
+    height: 300px;
+    background: #2399d1;
+    float: left
+}
+.main3 .w3{
+    width: 250px;
+    height: 300px;
+    background: #141914;
+    float: left
+}
+.main3 .w4{
+    width: 250px;
+    height: 300px;
+    background: #2399d1;
+    float: left
+}
+/* -------------main4--------------------- */
+.main4{
+    width: 1000px;
+    height: 250px;
+    background: #10cf22
+}
+.main4 .a1{
+    width: 500px;
+    height: 250px;
+    background: #595d5f;
+    float: left
+}
+.main4 .a2{
+    width: 200px;
+    height: 250px;
+    background: #e98956;
+    float: left
+}
+.main .a3{
+    width: 300px;
+    height: 250px;
+    background: #dadada;
+    float: left
+}
+/* -----------------footer---------------- */
+.footer{
+    width: 1000px;
+    height: 75px;
+    background: #141914
+}

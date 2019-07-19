@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            background-image: url(../images/img1.jpg);
+            background-repeat: no-repeat;
+            /* 
+                background-size:背景图片的大小
+                取值：
+                    1、数值 + 单位 缺点：图片会变形
+                    2、百分比 按照盒子的宽高来计算 缺点：图片会变形
+                    3、auto(默认值) 图片不会压缩也不会拉伸
+                    4、cover 覆盖，如果图片大于容器的时候，图片会等比缩小，直到图片某一边完全显示在盒子中就停止缩放
+                    如果图片小于容器的时候，图片会等比例放大，直到图片完全覆盖容器的时候，就停止放大
+                    缺点：图片显示不完全  优点：图片不会变形
+                    5、contain 包含，如果图片比容器小的时候，等比放大，直到某一边完全覆盖就停止放大
+                    如果图片比容器大的时候，图片等比例缩小，直到图片完全显示在容器中，就停止缩小
+                    有点：图片不会变形 缺点：容器可能有留白
+             */
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1、当图片的大小与盒子的大小一样的时候，图片完全现实中挨盒子中，不会平铺
+        2、当背景图片大于盒子的之后，只显示盒子因内的图片内容
+        3、当背景图片小于盒子大小的时候，默认情况图片会平铺，知道铺满整个盒子为止
+     -->
+    <div></div>
+
+</body>
+
+</html>

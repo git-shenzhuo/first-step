@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .box {
+            width: 600px;
+            border: 1px solid red;
+        }
+
+        .header h1 {
+            height: 60px;
+        }
+
+        .nav {
+            background: #ccc;
+        }
+
+        /* 
+            子元素浮动导致父元素高度塌陷
+            解决父元素的高度塌陷：
+
+            页面当中有很多浮动的地方，为了减少代码的重复性，我们给清除浮动的元素统一class名为clearfix
+
+            只要子元素有浮动，就给父元素添加clearfix这个class名
+         */
+        .clearfix::after {
+            content: '';
+            clear: both;
+            height: 0;
+            display: block;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .nav li {
+            float: left;
+            height: 40px;
+            width: 100px;
+            border-right: 1px solid blue;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        /* .main::after {
+            content: '';
+            clear: both;
+            height: 0;
+            display: block;
+            overflow: hidden;
+            visibility: hidden;
+        } */
+
+        .main .list1 {
+            height: 200px;
+            width: 200px;
+            background: pink;
+            float: left;
+        }
+
+        .main .list2 {
+            height: 200px;
+            width: 200px;
+            background: green;
+            float: left;
+        }
+
+        .main .list3 {
+            height: 200px;
+            width: 200px;
+            background: blue;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        实现高度自适应（父元素不设置高度，高度由子元素撑开）
+     -->
+    <div class="box">
+        <div class="header">
+            <h1>logologologologologo</h1>
+        </div>
+        <ul class="nav clearfix">
+            <li>首页1</li>
+            <li>首页2</li>
+            <li>首页3</li>
+            <li>首页4</li>
+            <li>首页5</li>
+        </ul>
+        <div class="main clearfix">
+            <div class="list1"></div>
+            <div class="list2"></div>
+            <div class="list3"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            /* 
+            容器溢出：
+                属性：overflow
+                取值：
+                    visible(默认值),容器溢出不会裁剪，也不会出现滚动条
+                    hidden:把多余的部分隐藏掉
+                    scroll:出现滚动条,不管有没有溢出容器，都会出现滚动条
+                    auto:内容溢出就出现滚动条，否则就不出现
+             */
+            overflow: auto;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            color: #fff;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">wefergcfewefergfe wefergfewefergd fewefergf ewefergfewe fergfe</div>
+    </div>
+    <div class="box2">wefergfe</div>
+
+</body>
+
+</html>

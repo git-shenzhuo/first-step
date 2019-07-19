@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+    <style>
+        /* 
+            样式表的优先级：
+            内联样式表的优先级最高
+            内部样式表和外部样式表，谁在后面执行，谁的优先级高些（后面的代码覆盖前面的代码）
+            
+            内联样式：只作用于元素本身
+            内部样式样：作用于HTML整个页面
+            外部样式表：作用引入外部样式的HTML页面
+        */
+        div {
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="../css/样式表的优先级.css"> -->
+
+</head>
+
+<body>
+    <div>2</div>
+    <div>1</div>
+</body>
+
+</html>

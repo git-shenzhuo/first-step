@@ -1,0 +1,50 @@
+1、语言伪类选择器
+   添加一个<q>..</q>
+   表示给这个段文字添加符号（默认情况不是双引号）
+   想要改变符号样式，给q标签添加一个lang属性，属性值为no
+   <q lang="no">..</q>
+   在css样式里面q：lang(no){"想要的符号" "想要的符号"}
+
+2、
+   （1）E：checked 选中状态伪类选择器
+   （2）E：enable 启用input的状态
+   （3）E：disabled input被禁用时候的状态
+
+3、目标伪类选择器.html#a1
+   div：target{}
+   表示找到页面id名为a1的div元素
+
+4、结构伪类选择器
+   （1）F E:first-child 满足为F第一个元素，同时要满足为指定类型的标签
+   （2）E:last-child 满足为F最后一个子元素，同时要满足为指定类型的标签
+   （3）F E:nth-child(n) 找到F下面的第n元素，而且这个元素要为E元素
+   （4）F E:nth-child(2n) 找到F下面的偶数的子元素，这个元素要为E元素
+   （5）F E:nth-child(2n+1|2n-1) 找到F下面的奇数的子元素，这个元素要为E元素
+   （6）F E:nth-child(-n+x) 找到F元素下面1----x的子元素
+这些元素要为E元素
+   （7）E:nth-last-child(n): 同E:nth-child(n) 相似，只是倒着计算
+   （8）F E:nth-of-type(n) 找到F元素下面类型为E的元素第n个
+   （9）F E:nth-last-of-type(n) 找到F元素下面类型为E的元素倒数第n个
+   （10）E:empty 选中没有任何子节点的E元素空格也算子节点
+   （11）F E:only-child 其父元素只有唯一一个节点，且唯一节点要满足为E
+   （12）F E:only-of-type 其父元素中E元素类型只有一个
+
+5、否定选择器
+   （1）F:not(E) 选择所有的F元素（除了F别名为E元素）
+
+6、伪元素选择器
+   （1）选择器::after 
+   （2）选择器::before
+   （3）选择器::first-letter
+   （4）选择器::first-line
+   （5）E::selection 选中E元素文字的状态
+注意点：在IE浏览器中不识别::,一般我们写:
+
+7、属性选择器
+   （1）E[attr] 表示匹配的拥有attr属性的E元素
+   （2）E[attr=“value”] 表示匹配的到拥有attr属性，并且属性值为value的E元素
+   （3）E[attr~=“value”] 表示匹配的拥有attr属性，并且属性值中包含一个value词的E元素
+   （4）E[attr^=“value”] 表示拥有attr属性，并且属性值值以value开头的E元素
+   （5）E[attr$=“value”] 表示拥有attr属性，并且属性值以value结尾的E元素
+   （6）E[attr*=“value”] 表示拥有attr属性，并且属性值中包含value的E元素
+   （7）E[attr|=“value”] 表示拥有attr属性，并且属性值仅是value 或者 以value-开头的（例如main-left）

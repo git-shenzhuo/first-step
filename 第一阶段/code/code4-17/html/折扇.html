@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        ul,li{
+            list-style: none;
+        }
+        ul{
+            width: 50px;
+            height: 200px;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            /* border-radius: 20px;
+            overflow: hidden; */
+        }
+        ul li{
+            width: 50px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-origin: center bottom;
+            transition: transform 3s;
+        }
+        li:nth-child(2n+1){
+            background: red;
+        }
+        li:nth-child(2n){
+            background: green;
+        }
+        /* ul:hover{
+            overflow: visible;
+        } */
+        ul:hover li:nth-child(1){
+            transform: rotate(-90deg) scale(2);
+        }
+        ul:hover li:nth-child(2){
+            transform: rotate(-80deg) scale(2);
+        }
+        ul:hover li:nth-child(3){
+            transform: rotate(-70deg) scale(2);
+        }
+        ul:hover li:nth-child(4){
+            transform: rotate(-60deg) scale(2);
+        }
+        ul:hover li:nth-child(5){
+            transform: rotate(-50deg) scale(2);
+        }
+        ul:hover li:nth-child(6){
+            transform: rotate(-40deg) scale(2);
+        }
+        ul:hover li:nth-child(7){
+            transform: rotate(-30deg) scale(2);
+        }
+        ul:hover li:nth-child(8){
+            transform: rotate(-20deg) scale(2);
+        }
+        ul:hover li:nth-child(9){
+            transform: rotate(-10deg) scale(2);
+        }
+        ul:hover li:nth-child(10){
+            transform:scale(2);
+        }
+        ul:hover li:nth-child(11){
+            transform: rotate(10deg) scale(2);
+        }
+        ul:hover li:nth-child(12){
+            transform: rotate(20deg) scale(2);
+        }
+        ul:hover li:nth-child(13){
+            transform: rotate(30deg) scale(2);
+        }
+        ul:hover li:nth-child(14){
+            transform: rotate(40deg) scale(2);
+        }
+        ul:hover li:nth-child(15){
+            transform: rotate(50deg) scale(2);
+        }
+        ul:hover li:nth-child(16){
+            transform: rotate(60deg) scale(2);
+        }
+        ul:hover li:nth-child(17){
+            transform: rotate(70deg) scale(2);
+        }
+        ul:hover li:nth-child(18){
+            transform: rotate(80deg) scale(2);
+        }
+        ul:hover li:nth-child(19){
+            transform: rotate(90deg) scale(2);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

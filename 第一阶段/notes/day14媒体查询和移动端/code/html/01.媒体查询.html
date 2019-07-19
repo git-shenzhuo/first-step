@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            background: red;
+            width: 187.25px;
+            height: 200px;
+            float: left;
+        }
+
+        /* 
+            媒体查询的语法：
+            @media all(设备，all代表所有设置) and(关键字) (表达式){
+                如果满足以上的表示，就会执行这里的代码
+                css语法由选择器 和声明(属性和属性值组成)
+                div{}
+            }
+            如果表达式用min-width作为条件的时候，值小的放在前面
+            如果用max-width作为条件的时候，值大的放在前面
+             注意点：默认样式一定要放在最前面
+        
+        
+         */
+
+
+
+        @media all and (max-width:375px) {
+            div {
+                width: 187.25px;
+                background: green
+            }
+        }
+
+        @media all and (max-width:320px) {
+            div {
+                width: 160px;
+                background: yellow;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+
+</body>
+
+</html>

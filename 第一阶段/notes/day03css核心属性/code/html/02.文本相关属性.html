@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 200px;
+            border: 1px solid red;
+            /* 
+                文本相关属性
+                1、文本的水平对齐方式
+                texta-align:left(左对齐，默认值) | center（居中对齐） | right（右对齐）
+                2、行高
+                    line-height:数值 + px
+
+                3、行内元素垂直对齐方式
+                vertical-align：top（顶部） | middle（居中对齐） | baseline（基线，默认值） | bottom（底部对齐）
+
+                注意点：
+                    （1）只有两个以上的行内元素才有对比效果，才会使用这个属性
+                    （2）对比的元素都要添加vertical-align，才会有效果
+            
+             */
+            text-align: right;
+            line-height: 200px;
+        }
+
+        .span1 {
+            font-size: 40px;
+        }
+
+        span {
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div>先是朋友后是妹，最后变成小宝贝</div> -->
+    <!-- <img src="../images/list.png" alt=""> -->
+    <span class="span1">sdsfdj</span>
+    <span>rbbbbb</span>
+
+</body>
+
+</html>

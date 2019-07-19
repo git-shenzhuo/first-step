@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <style>
+       .fieldset1{
+           width: 490px;
+            margin: 0 auto;
+
+       } 
+       legend{
+           padding: 0 20px;
+           color: #507683;
+           border: 1px solid #000;
+       }
+       label{
+           display: inline-block;
+           width: 142px;
+           text-align: right;
+           margin-right: 10px;
+       }
+    </style>
+</head>
+<body>
+    <fieldset class="fieldset1">
+        <p style="font-size: 14px;font-weight: 900;">已注册用户登录</p>
+        <form action="">
+            <fieldset>
+                <legend>用户登录</legend>
+                <p>
+                    <label for="ming1">用户名</label>
+                    <input id="ming1" type="text" placeholder="请输入用户名" autofocus required>
+                </p>
+                <p>
+                    <label for="mima1">密码</label>
+                    <input id="mima1" type="password" placeholder="请输入密码" required>
+                </p>
+                <p>
+                    <label for="tijiao1">
+                       <input type="checkbox"><a href="">记住我</a>
+                    </label>
+                    
+                    <input id="tijiao1" type="submit" value="登录" style="width: 62px;background-color: #d0f0fd;">
+                </p>
+                <p><a href="">忘记密码？</a></p>
+            </fieldset>
+        </form>
+        <p style="font-size: 14px;font-weight: 900;">未注册创建账户</p>
+        <form action="">
+            <fieldset>
+                <legend>用户注册</legend>
+                <p style="font-size: 12px;color: #507683;line-height: 12px;width: 440px;"><b style="font-size: 14px;color: #507683;line-height: 14px;">*您的电子邮箱不会被公布出去，但是必须填写。</b>在您注册之前请认真阅读服务条款</p>
+                <p>
+                    <label for="main2">用户名</label>
+                    <input id="main2" type="text" placeholder="请设置用户名" required>
+                    <span>*(最多30个字符)</span>
+                </p>
+                <p>
+                    <label for="youxiang">电子邮箱</label>
+                    <input id="youxiang" type="email" placeholder="输入邮箱地址" required>
+                    <span>*</span>
+                </p>
+                <p>
+                    <label for="mima2">密码</label>
+                    <input id="mima2" type="password" style="width: 113px;" placeholder="请设置密码" required>
+                    <span>*（最多15个字符）</span>
+                </p>
+                <p>
+                    <label for="mima3">重复密码</label>
+                    <input id="mima3" type="password" style="width: 113px;" placeholder="重复上面密码" required>
+                    <span>*</span>
+                </p>
+                <p>
+                    <label for="fuwu">同意服务条款</label>
+                    <input id="fuwu" type="checkbox"><a href="">先看看条款</a>
+                    <span>*</span>
+                </p>
+                <p>
+                    <input type="submit" style="margin-left: 155px;width: 62px;background-color: #d0f0fd;">
+                    <input type="reset" style="width: 62px;background-color: #d0f0fd;">
+                </p>
+                <p style="font-size: 12px;color: #507683;line-height: 12px;"><strong>*在提交您的注册信息时，我们认为您已经同意了我们的服务条款。</strong></p>
+                <p style="font-size: 12px;color: #507683;line-height: 12px;"><strong>*这些条款可能会在未经您同意时进行修改。</strong></p>
+            </fieldset>
+        </form>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,80 @@
+1、表单
+  作用：收集用户信息
+  标签：form
+    属性：
+    （1）action="提交信息的地址"
+    （2）method="get | post" 提交信息的方式
+  输入框：input
+    属性：
+     （1）type="text" 文本输入框
+     （2）type="password" 密码输入框
+     （3）type="submit" 提交按钮（会刷新页面）
+     （4）type="radio" 单选按钮，用name属性，并且属性值一样关联为一组
+     （5）type="checkbox" 多选框，复选框
+     （6）type="reset" 重置按钮，只能丛宏志手动输入的内容
+     （7）type="button" 普通按钮，不会刷新页面
+	value：输入框的内容
+	checked 选中
+	下拉菜单：select > option
+	属性：selected 默认选中
+  	文本域：textarea
+  
+
+2、表单字段集：fieldset
+   作用：对表单中的元素进行分组
+   fieldset可以嵌套使用
+
+   字段集标题：legend
+   必须是fieldset下面的第一个子元素
+
+   提示信息：label
+   属性：for="控件的id属性值（名）"
+
+3、input的新增输入类型
+   （1）color---颜色选择器
+   （2）email---邮箱输入框，有验证
+   （3）number--数字输入框，只能输入数字
+   （4）tel-----电话
+   （5）url-----网站，必须有协议头
+   （6）search--搜索输入框
+   （7）range---特定范围的选择，min：最小值，max：最大值，value：当前值
+   （8）date----日期输入框，显示年月日
+   （9）month---月输入框，显示年月
+   （10）week---周输入框
+   （11）time---时间输入框
+   （12）file---上传文件
+
+4、表单的新增属性
+   （1）placeholder--占位符
+   （2）autofocus----自动获取焦点
+   （3）multiple-----选择多个上传文件
+   （4）required-----必填，否则不可以提交
+   （5）pattern------正则
+   （6）novalidate---取消验证
+   （7）disabled-----禁用
+
+5、表格的新增属性
+   （1）border-spacing：单元格与单元格之间的距离，值不能为负数
+   （2）合并相邻单元格之间的边框：
+	border-collapse（合并）| separate（分开，默认值）
+   （3）当单元格没有内容时候的设置
+	empty-cells：show（默认）| hide
+   （4）th----单元格标题	
+	caption--表格标题
+	caption-side：top | bottom | right | left，其中left和right只有火狐浏览器识别
+   （5）表格定位行分组
+	thead---表头
+	tbody---表体
+	tfoot---表尾
+一个table中，只能包含一个thead，一个tfoot，可有多个tbody
+   （6）表格的列分组：colgroup span="value" 表示value列为一组要分为多少组就要写多少个colgroup标签
+   （7）双数行:tr:nth-child(2n){ }
+	单数行:tr:nth-child(2n+1){ }
+	设置单数(odd)单元格的样式和双数(even)单元格的样式
+
+6、给表格添加分割线rules
+   （1）rows-----给行与行之间添加分割线
+   （2）cols-----给列与列之间添加分割线
+   （3）all------在行与行和列与列之间添加分割线
+   （4）none-----不添加，默认值
+   （5）groups---在行组和列组之间添加分割线

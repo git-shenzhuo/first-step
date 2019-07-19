@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 10px solid red;
+            /* 
+                背景图图片默认情况下，从padding位置开始摆放
+
+                background-origin 从盒子的什么位置开始摆放背景图片
+                取值：
+                    border-box----表示背景从盒子的border位置开始摆放
+                    padding-box---表示背景从盒子的padding位置开始摆放
+                    content-box---表示背景从盒子的内容位置开始摆放
+                
+                background-clip 背景显示的区域
+                取值：
+                    border-box---表示背景显示border以内的区域
+                    padding-box---表示背景只显示padding以内的区域
+                    content-box----表示背景只显示content区域
+             */
+            padding: 20px;
+            background-image: url(../images/1.png);
+            /* background-color: green; */
+            background-repeat: no-repeat;
+            /* background-origin: content-box; */
+            background-clip: padding-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+</body>
+
+</html>

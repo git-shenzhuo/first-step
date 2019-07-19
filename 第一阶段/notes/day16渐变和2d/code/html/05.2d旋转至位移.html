@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: red;
+            transition: left 1s;
+            /* 
+                transform ----- 转换的属性
+                取值：
+               1、translate（x，y）;
+                x-----水平方向移动的距离，为正值往右边移动，为负值往左边移动
+                y-----垂直方向的移动距离，为正值往下移动，为负值往上移动
+                translateX（）----只有水平方向移动距离
+                translateY（）----只有垂直方向移动距离
+            
+             */
+            transform: translateY(50%)
+        }
+
+        /* div:hover {} */
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+</body>
+
+</html>

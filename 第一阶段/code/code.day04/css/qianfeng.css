@@ -1,0 +1,198 @@
+*{margin: 0;
+padding: 0;}
+#qianfeng{
+    width: 1000px;
+    height: 1400px;
+    background: #242424;
+    margin: 0 auto
+}
+ul，li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/*-------------- 头部，header--------------- */
+#qianfeng .header{
+  width: 1000px;
+  height: 62px;
+  background: #232323;
+}
+.header .logo{
+    width: 207px;
+    height: 62px;
+    background: #ed0e1e;
+    float: left;
+    text-indent: -99999px;
+    background-image: url(../images/qf_logo.jpg);
+}
+.header .nav{
+    /* width: 720px; */
+    height: 62px;
+    /* background: #fee65e; */
+    float: right;
+}
+/* .header .logo{
+    text-indent: -99999px
+} */
+.header .nav li{
+    /* width: 80px; */
+    height: 62px;
+    line-height: 62px;
+    float: left;
+    list-style-type: none;
+    padding: 0px 15px;
+    background-image: url(../images/shubiao1.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    /* text-align: center */
+}
+.nav a{
+    /* list-style-type: none; */
+    color: #fcffff;
+    font-size: 14px;
+}
+.nav li:hover{
+   background-color: #f15a23
+}
+/* ---------------轮播图，banner---------- */
+#qianfeng .banner{
+    width: 1000px;
+    height: 420px;
+    background: #c4e8f6;
+}
+/* -------------------main1-------------- */
+#qianfeng .main1{
+    width: 1000px;
+    height: 350px;
+    background: #f5f7f8;
+    text-align: center;
+}
+.main1 h2{
+   font-size: 21px;
+   line-height: 28px;
+   color: #232d46
+}
+.main1 h3{
+    font-size: 12px;
+    line-height: 43px;
+    color: #6fb0d8
+}
+.main1 p{
+    font-size: 14px;
+    color: #acb9cc;
+    line-height: 19px;
+}
+.main1 .main11{
+    width: 250px;
+    height: 350px;
+    /* background: #a9d7f9; */
+    float:left
+}
+
+.main1 .main12{
+    width: 250px;
+    height: 350px;
+    /* background: #f00b0b; */
+    float:left
+}
+.main1 .main13{
+    width: 250px;
+    height: 350px;
+    /* background: #10fc86; */
+    float:left
+}
+.main1 .main14{
+    width: 250px;
+    height: 350px;
+    /* background: #c5f009; */
+    float:left
+}
+/* ------------------main2--------------- */
+#qianfeng .main2{
+    width: 1000px;
+    height: 310px;
+    background: #ffffff
+}
+.main2 .main21{
+    width: 300px;
+    height: 310px;
+    /* background:#0c1b52; */
+    float: left;
+    background-image: url(../images/main5.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+.main2 .main22{
+    width: 400px;
+    height: 310px;
+    /* background:#15120f; */
+    float: left
+}
+.konghe1{
+    height: 40px;
+}
+.main221{
+    width: 400px;
+    height: 110px;
+    /* background: #10fc86 */
+}
+.main221 h2{
+    font-size: 18px;
+    line-height: 34px;
+    color: #202930
+}
+.main221 h3{
+    font-size: 15px;
+    line-height: 29px;
+    color: #3d493b
+}
+.main221 p{
+    font-size: 12px;
+    line-height: 18px;
+    color: #979797;
+    text-indent: 2em;
+
+}
+.main222{
+    width: 400px;
+    height: 160px;
+    background: #14255d
+}
+.main2 .main23{
+    width: 300px;
+    height: 310px;
+    background:#e90d41;
+    float: left
+}
+/* -------------------main3-------------------- */
+#qianfeng .main3{
+    width: 1000px;
+    height: 215px;
+    background: #222222
+}
+.main3 .main31{
+    width: 500px;
+    height: 215px;
+    background: #10fc86;
+    float:left
+}
+.main3 .main32{
+    width: 300px;
+    height: 215px;
+    background:#f00b0b;
+    float: left
+}
+.main3 .main33{
+    width: 200px;
+    height: 215px;
+    background: #518ebd;
+    float: left
+}
+/* -----------------------footer---------------- */
+#qianfeng .footer{
+    width: 1000px;
+    height: 43px;
+    background: #14255d
+}

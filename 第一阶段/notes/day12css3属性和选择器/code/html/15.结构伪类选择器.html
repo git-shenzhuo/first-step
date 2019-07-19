@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        ul {
+            width: 300px;
+            margin: 100px auto;
+            /* border-left: 1px solid red; */
+            /* border-top: 1px solid red; */
+        }
+
+        li {
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 100px;
+            border-left: 1px solid red;
+            border-bottom: 1px solid red;
+            float: left;
+        }
+
+        /* ul li:first-child {
+            background: pink;
+        }
+
+        ul li:last-child {
+            background: green;
+        } */
+
+        /*  ul li:nth-of-type(-n+3) 找到li元素类型的第1--3个li元素  */
+        ul li:nth-of-type(-n+3) {
+            /* background: green; */
+            border-top: 1px solid red;
+        }
+
+        ul li:nth-of-type(3n) {
+            /* 
+                给3的倍数的元素添加样式
+             */
+            border-right: 1px solid red;
+        }
+
+        /* ul li:nth-last-child(2) {
+            background: yellow;
+        } */
+
+
+        ul li:nth-of-type(1) {
+            background: pink;
+        }
+
+        /* ul li:nth-child(1) {
+            background: pink;
+        } */
+
+        /* 
+            E:nth-child(n) 和 E:nth-of-type(n)的区别：
+            E:nth-child(n) E为元素下面的n个子元素
+            E:nth-of-type(n) E为元素下面了E类型元素的第n个
+         */
+        ul li:nth-last-of-type(1) {
+            background: green;
+        }
+
+        ul li:empty {
+            background: yellowgreen;
+        }
+
+        /* 
+            表示父元素下面只有一个子元素才能有效果
+            div p:only-child {
+                color: red;
+            } 
+        */
+
+
+        /* 
+            表示父元素下面p标签的元素类型只有一个
+            div p:only-of-type {
+                color: red;
+            }
+            其他类型的元素个数不限制
+         */
+    </style>
+</head>
+
+<body>
+    <ul class="clearfix">
+        <p>0</p>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li></li>
+        <li>9</li>
+        <p>0</p>
+    </ul>
+    <div>
+        <p>sdcsdvcfd</p>
+        <h1>dfdsvgfgf</h1>
+        <h1>dfdsvgfgf</h1>
+        <h1>dfdsvgfgf</h1>
+        <h1>dfdsvgfgf</h1>
+        <h1>dfdsvgfgf</h1>
+        <h1>dfdsvgfgf</h1>
+
+    </div>
+
+</body>
+
+</html>

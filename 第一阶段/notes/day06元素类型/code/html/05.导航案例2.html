@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav {
+            height: 40px;
+            width: 500px;
+            margin: 100px auto;
+            padding-left: 100px;
+            /* border-top: 1px solid red; */
+            border-bottom: 1px solid #ccc;
+            /* 
+                鼠标滑过li元素的时候，不能去掉父元素的padding-top
+                没有办法根据子元素来改变父元素的样式
+             */
+            /* padding-top: 5px; */
+        }
+
+        .nav li {
+            float: left;
+            width: 72px;
+            height: 35px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            margin-right: 11px;
+            margin-top: 4px;
+            line-height: 35px;
+        }
+
+        .nav li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+
+        }
+
+        .nav li:hover {
+            margin-top: 0;
+            padding-top: 4px;
+            /* 
+                想要改变一个元素的整体高度，
+                    1、给元素的height增加
+                    2、给元素添加上下的padding值
+                    height: 39px;
+                    line-height: 43px;
+             */
+            border-bottom: 1px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li><a href="">one</a></li>
+        <li><a href="">two</a></li>
+        <li><a href="">three</a></li>
+        <li><a href="">four</a></li>
+    </ul>
+</body>
+
+</html>

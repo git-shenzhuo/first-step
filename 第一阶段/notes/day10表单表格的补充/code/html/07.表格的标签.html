@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            height: 200px;
+            border-spacing: 0;
+            border-collapse: collapse;
+            border: 1px solid blue;
+        }
+
+        table td {
+            text-align: center;
+        }
+
+        tbody tr:nth-child() {
+            background: pink;
+        }
+
+        caption {
+            caption-side: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        border-spacing:单元格与单元格之间的距离，值不能为负数
+               
+        合并相邻单元格之间的边框：
+        border-collapse:collapse(合并) | separate（分开，默认值）
+
+        当单元格没有内容时候的设置
+        empty-cells:show(默认) | hide 
+
+        th----单元格标题
+        caption----表格标题
+            caption-side:top|bottom|left|right,其中left和right只有火狐浏览器识别
+
+        表格的行分组：
+            thead----表头
+            tbody----标体
+            tfoot----表尾
+        一个Table中，只能包含一个thead,一个tfoot,但可包含多个tbody。
+说明：
+     -->
+    <table width="300" height="150">
+        <caption>成绩单</caption>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>语文</th>
+                <th>数学</th>
+                <th>英语</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>张三</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">备注：。。。。。。。。</td>
+                <!-- <td></td>
+                <td></td>
+                <td></td> -->
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            font-size: 12px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        li {
+            width: 100px;
+            height: 50px;
+            border: 1px solid blue;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        div {
+            width: 800px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid red;
+        }
+
+        .nav1 {
+            width: 100px;
+            height: 300px;
+            position: relative;
+        }
+
+        .nav1>li {
+            background-color: pink;
+        }
+
+        .nav2 {
+            width: 100px;
+            height: 300px;
+            position: absolute;
+            left: 100px;
+            top: 0;
+            /* position: relative; */
+            display: none;
+        }
+
+        .nav2>li {
+            background: yellow;
+        }
+
+        .nav1>li:hover>.nav2 {
+            display: block;
+        }
+
+        .nav3 {
+            width: 600px;
+            height: 50px;
+            position: absolute;
+            left: 100px;
+            top: 0;
+            display: none;
+        }
+
+        .nav3>li {
+            float: left;
+            background: green;
+        }
+
+        .nav2>li:hover>.nav3 {
+            display: block;
+        }
+
+        .nav4 {
+            width: 100px;
+            height: 200px;
+            position: absolute;
+            top: -150px;
+            left: 0;
+            display: none;
+        }
+
+        .nav4>li {
+            background: #642b72;
+        }
+
+        .nav3>li:hover>.nav4 {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul class="nav1">
+            <li><a href="">一级导航1</a>
+                <ul class="nav2">
+                    <li><a href="">二级导航11</a>
+                        <ul class="nav3">
+                            <li><a href="">三级导航111</a>
+                                <ul class="nav4">
+                                    <li><a href="">四级导航1111</a></li>
+                                    <li><a href="">四级导航1111</a></li>
+                                    <li><a href="">四级导航1111</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                        </ul>
+
+                    </li>
+                    <li><a href="">一级导航11</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航11</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航11</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航11</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                            <li><a href="">一级导航111</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">一级导航2</a>
+                <ul class="nav2">
+                    <li><a href="">一级导航22</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航22</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航22</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航22</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航22</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                            <li><a href="">一级导航222</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">一级导航3</a>
+                <ul class="nav2">
+                    <li><a href="">一级导航33</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航33</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航33</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航33</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航33</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                            <li><a href="">一级导航333</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">一级导航4</a>
+                <ul class="nav2">
+                    <li><a href="">一级导航44</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航44</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航44</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航44</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航44</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                            <li><a href="">一级导航444</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">一级导航5</a>
+                <ul class="nav2">
+                    <li><a href="">一级导航55</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航55</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航55</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航55</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">一级导航55</a>
+                        <ul class="nav3">
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a></li>
+                            <li><a href="">一级导航555</a>
+                                <ul class="nav4">
+                                    <li><a href="">四级导航5555</a></li>
+                                    <li><a href="">四级导航5555</a></li>
+                                    <li><a href="">四级导航5555</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

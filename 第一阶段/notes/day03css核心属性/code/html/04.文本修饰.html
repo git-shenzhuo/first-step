@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        u {
+            /* 
+                1、文本修饰
+                text-decoration:none(没有) | underline(下划线) | overline(上划线) | line-through(删除线)
+               
+                2、控制文本大小写
+                text-transform：uppercase（把所有的字母都变成大写） | lowercase（把所有的字母都变成小写）| capitalize(把首字母变成大写)
+                
+                3、首行缩进：
+                text-indent
+                注意点：可以取负数，一般在h1中隐藏标题文字
+                em:是一个单位，根据当前元素 或者 父元素的字体大小（font-size）的倍数
+                1em = 24px; 2em = 48px
+    
+                4、字符间距：
+                letter-spacing:数值 + px
+                英文单词中字母之间也会添加距离
+
+                5、词间距：
+                word-spacing：数值 + px
+                以空格为标识去添加距离
+
+             */
+            text-decoration: line-through;
+        }
+
+        body {
+            font-size: 21px;
+        }
+
+        p {
+            font-size: 24px;
+            /* 
+                首行缩进：
+                text-indent
+
+                注意点：可以取负数，一般在h1中隐藏标题
+                em:是一个单位，根据当前元素 或者 父元素的字体大小（font-size）的倍数
+                1em = 24px;
+                2em = 48px
+
+             */
+            text-indent: -2em;
+            /* 
+                字符间距：
+                letter-spacing:数值 + px
+                英文单词中字母之间也会添加距离
+             */
+            /* letter-spacing: 10px; */
+
+            /* 
+            词间距：
+                word-spacing：数值 + px
+                以空格为标识去添加距离
+             */
+            word-spacing: 10px;
+        }
+
+        span {
+            /* 
+                控制文本大小写
+                text-transform：uppercase（把所有的字母都变成大写） | lowercase（把所有的字母都变成小写）| capitalize(把首字母变成大写)
+             */
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+    <u>sjscsdcj</u>
+    <p>环球网综合报道】 英国脱欧僵局仍在持续。27 日，英国下议院就脱欧选项举行指示性投票（indicative
+        votes），议会未能就首相特雷莎·梅的脱欧计划达成任何替代方案，8项脱欧方案均遭否决。</p>
+    <span>ni hao ma</span>
+
+</body>
+
+</html>

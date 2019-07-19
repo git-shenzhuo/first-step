@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #daohang {
+            width: 700px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 100px auto;
+        }
+
+        .yiji {
+            width: 700px;
+            height: 50px;
+            position: relative;
+        }
+
+        #daohang .yiji>li {
+            float: left;
+            width: 130px;
+            height: 50px;
+            border: 1px solid blue;
+            background: pink;
+        }
+
+        a {
+            display: block;
+            color: #000;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .erji {
+            width: 700px;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            display: none;
+        }
+
+        .erji li {
+            float: left;
+            width: 130px;
+            height: 50px;
+            background-color: yellow;
+            border: 1px solid blue;
+            text-align: center;
+        }
+        .yiji>li:hover>.erji{
+            display: block;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="daohang">
+        <ul class="yiji">
+            <li class="li1">
+                <a class="a1" href="">一级导航1</a>
+                <ul class="erji">
+                    <li><a href="">二级导航11</a></li>
+                    <li><a href="">二级导航12</a></li>
+                    <li><a href="">二级导航13</a></li>
+                    <li><a href="">二级导航14</a></li>
+                    <li><a href="">二级导航15</a></li>
+                </ul>
+            </li>
+            <li class="li2">
+                <a class="a1" href="">一级导航2</a>
+                <ul class="erji">
+                    <li><a href="">二级导航21</a></li>
+                    <li><a href="">二级导航22</a></li>
+                    <li><a href="">二级导航23</a></li>
+                    <li><a href="">二级导航24</a></li>
+                    <li><a href="">二级导航25</a></li>
+                </ul>
+            </li>
+            <li class="li3">
+                <a class="a1" href="">一级导航3</a>
+                <ul class="erji">
+                    <li><a href="">二级导航31</a></li>
+                    <li><a href="">二级导航32</a></li>
+                    <li><a href="">二级导航33</a></li>
+                    <li><a href="">二级导航34</a></li>
+                    <li><a href="">二级导航35</a></li>
+                </ul>
+            </li>
+            <li class="li4">
+                <a class="a1" href="">一级导航4</a>
+                <ul class="erji">
+                    <li><a href="">二级导航41</a></li>
+                    <li><a href="">二级导航42</a></li>
+                    <li><a href="">二级导航43</a></li>
+                    <li><a href="">二级导航44</a></li>
+                    <li><a href="">二级导航45</a></li>
+                </ul>
+            </li>
+            <li class="li5">
+                <a class="a1" href="">一级导航5</a>
+                <ul class="erji">
+                    <li><a href="">二级导航51</a></li>
+                    <li><a href="">二级导航52</a></li>
+                    <li><a href="">二级导航53</a></li>
+                    <li><a href="">二级导航54</a></li>
+                    <li><a href="">二级导航55</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

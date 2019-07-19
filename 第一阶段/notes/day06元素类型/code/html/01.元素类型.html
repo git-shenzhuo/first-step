@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        div {
+
+            background: red;
+            /* margin: 100px; */
+        }
+
+        p {
+            width: 200px;
+            background: green;
+        }
+
+        span {
+            /* border: 1px solid red; */
+            /* padding: 100px; */
+            /* margin: 100px; */
+        }
+
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        元素根据css的表现可以分为：块级元素 和 行内元素
+        块级元素的特点：
+            1、两个块级元素一般情况下，不会出现水平排列
+            2、块级元素默认情况会独占一整行
+            3、块级元素可以设置宽高
+            4、块级元素可以作为所有行内元素和部分块级元素（除了p标签不能作为块级元素容器）的容器
+        块级元素：div,h1-h6,p,ol,ul,li,dl,dt,dd,hr,table
+
+        行内元素的特点：
+            1、不独占一行，一行显示多个
+            2、行内元素不能设置宽高，宽高由内容撑开
+            3、行内元素也遵循盒模型，但是padding-top | padding-bottom | margin-top | margin-bottom没有效果
+        行内元素：a,span,i,b,strong,em,del,img,input,br,
+
+        盒子模型的组成：内容（content） + 内边距（padding） + 边框（border） + 外边距（margin）
+     -->
+    <div>
+        sdvgfvfb fv
+    </div>
+    <!-- 
+        p标签不能作为所有块级元素的容器
+     -->
+    <!-- <p>
+        <div>元素根据css的表现可以分为：块级元素 和 行内元素</div>
+    </p> -->
+    <hr>
+    <hr>
+    <span>sdsdfd1111</span>
+    <a href="">sdsdfd22221</a>
+
+    <!-- 
+        有些行内元素但是可以设置宽高，原因是因为这些元素时置换元素
+        置换元素：根据标签的属性来显示具体的内容
+            img：根据src属性来显示具体内容
+            input： 根据value属性来显示内容
+            select：value
+     -->
+    <img src="../images/01.gif" alt="">
+    <input type="text" value="wdf">
+
+</body>
+
+</html>

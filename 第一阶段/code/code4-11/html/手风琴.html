@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <style>
+        .box{
+            width: 745px;
+            /* height: 360px; */
+            /* background: red; */
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            width: 701px;
+            height: 50px;
+            margin: 12px;
+            background: #b1b1b1;
+            border-radius: 5px;
+            font-size: 18px;
+            line-height: 50px;
+            padding-left: 20px;
+            color: #333333;
+            text-shadow: 1px 1px 1px #000;
+        }
+        span{
+            display: block;
+            width: 0;
+            height: 0;
+            margin:15px;
+            float: right;
+            border: 8px solid transparent;
+            border-top-color: #ffffff
+        }
+        .box div{
+            width: 690px;
+            height: 140px;
+            overflow: auto;
+            margin-left: 25px;
+            display: none;
+        }
+        .box div:target{
+            display: block;
+        }
+        a:hover{
+            color: #ffffff;
+            background: #4da0f0;
+        }
+        a:hover span{
+            border-top-color: transparent;
+            border-left-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="#brand">Brand
+            <span></span>
+        </a>
+        <div id="brand">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <a href="#promotion">Promotion
+            <span></span>
+        </a>
+        <div id="promotion">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <a href="#event">Event
+            <span></span>
+        </a>
+        <div id="event">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 600px;
+            border: 2px solid red;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background: green;
+            /* 
+                animation 和 transition的区别：
+                transition需要一个事件触发才开始执行这个动画
+                animation不需要事件，自动执行动画
+            
+             */
+            /* animation: move 5s; */
+            /* animation-name: move;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-direction: normal;
+            animation-fill-mode: forwards; */
+
+            animation: move 3s 1s linear 2 normal forwards;
+        }
+
+        /* 
+            1、用  @keyframes 定义动画名称
+
+         */
+        @keyframes move {
+            0% {
+                transform: translate(0px, 0px);
+            }
+
+            /* 25% {
+                transform: translate(500px, 0px);
+            }
+
+            50% {
+                transform: translate(500px, 500px);
+            }
+
+            75% {
+                transform: translate(0px, 500px);
+            } */
+
+            100% {
+                transform: translate(500px, 500px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        动画
+     -->
+    <div class="box">
+        <div class="box1"></div>
+    </div>
+
+</body>
+
+</html>

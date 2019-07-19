@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 300px;
+            margin: 50px auto;
+            background: pink;
+            position: relative;
+        }
+
+        .box .left {
+            position: absolute;
+            width: 150px;
+            top: 0;
+            bottom: 0;
+            background: #ccc;
+        }
+
+        .box .right {
+            position: absolute;
+            left: 150px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background: blue;
+            overflow: hidden;
+        }
+        .box .left a{
+            text-decoration: none;
+            display: block;
+            color: #ffffff;
+            font-size: 12px;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-bottom: 1px solid #000;
+        }
+        ul li{
+            width: 100%;
+            height: 50px;
+            list-style: none;
+
+        }
+        .right{
+
+        }
+        .right ul{
+            height: 100%;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">
+            <a href="#yule">娱乐新闻</a>
+            <a href="#tiyu">体育新闻</a>
+            <a href="#shehui">社会新闻</a>
+        </div>
+        <div class="right">
+            <ul id="yule">
+                <li>点击刷新，将会有未读推荐热点要闻.</li>
+                <li>微视频《闪亮的名字》 今天，英雄回家！</li>
+                <li>理上网来 【央视快评】突出“三个聚焦”</li>
+                <li>在西柏坡，接受一次“赶考”的洗礼   增进民生福祉</li>
+            </ul>
+            <ul id="tiyu">
+                <li>寻找英雄 迎回589具在韩志愿军烈士遗骸</li>
+                <li>寻找英雄  走进北京世园会</li>
+                <li>媒体行动    体现生态文明建设最新成果</li>
+                <li>专题 十九届中央第三轮巡视全部进驻</li>
+            </ul>
+            <ul id="shehui">
+                <li>在北京，新西兰女总理说为这件事“感到自2020</li>
+                <li>赵立新发表日本侵华相关言论后，连续两次声明</li>
+                <li>自己"爱国"外资正在买下北上广深？一大波外资</li>
+                <li>豪”开启买买买模式吴敦义：将当面邀请韩国瑜参选</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

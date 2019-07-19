@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        /* 
+            url地址：目标伪类选择器.html#a1
+             div:target{}
+            表示找到页面中id名为a1的div元素
+        */
+        div:target {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#a1">aaaaa</a>
+    <a href="#a2">bbbbb</a>
+    <a href="#a3">ccccc</a>
+    <div id="a1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+    <div id="a2">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+    <div id="a3">cccccccccccccccccccccccccccccccccccccccc</div>
+
+</body>
+
+</html>

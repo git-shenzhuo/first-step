@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 
+            子绝父相（子元素绝对定位，父元素相对定位）
+         */
+
+        .box {
+            width: 352px;
+            position: relative;
+        }
+
+        .box span {
+            position: absolute;
+            display: block;
+            /* top: 50%; 向下移动父元素高度的一半，left: 50%;向右移动父元素宽度的一半 */
+            top: 50%;
+            left: 50%;
+            /* 
+                margin-top: -35.5px;
+                margin-left: -114px;
+             */
+            margin-top: -35.5px;
+            margin-left: -114px;
+            width: 228px;
+            height: 71px;
+            background: blue;
+            text-align: center;
+            line-height: 71px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../images/bus_tu1.jpg" alt="">
+        <span>营销网站建设</span>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+
+        div span {
+            display: none;
+        }
+
+        div p {
+            display: none;
+        }
+
+
+        div:hover span {
+            display: inline;
+        }
+
+        div:hover p {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>鼠标滑过显示div下面的p标签的内容</h2>
+    <div>
+        <p>鼠标滑过我才显示</p>
+        <span>鼠标滑过我才显示</span>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+</body>
+
+</html>

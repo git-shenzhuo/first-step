@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        /* 
+            盒子居中的方法：
+            1、利用定位 和 2d转换
+            给父元素相对定位（position：relative），子元素设置绝对定位（position：absolute，top:50%，left:50%,transform:translate(-50%,-50%)）
+
+            2、弹性盒模型
+            给父元素设置display：flex，justify-content：center；align-items：center
+
+            3、利用vertical-align：middle 和 display：inlin-block
+            给要居中的元素设置display：inline-block，vertical-align：middle
+            然后给有父元素设置text-align：center（使子元素水平居中）
+            再给父元素添加一个伪元素
+            父元素选择器::after {
+                content:"";
+                display:inline-block;
+                height:100%;
+                width:0px;
+                vertical-align:middle;
+            }
+            
+         */
+        .box {
+            width: 500px;
+            height: 605px;
+            border: 1px solid red;
+            position: relative;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 201px;
+            background: green;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* margin-left: -100px;
+            margin-top: -102px; */
+            transform: translate(-50%, -50%)
+        }
+
+        .div1 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            text-align: center
+        }
+
+        .div1::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 0px;
+            vertical-align: middle;
+        }
+
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">
+        <div class="box1"></div>
+    </div> -->
+    <div class="div1">
+        <div class="div2"></div>
+    </div>
+
+
+</body>
+
+</html>

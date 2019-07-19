@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            /* position: relative; */
+            transition: transform 2s;
+        }
+
+        div:hover {
+            /* 
+                2、scale（x,y）
+                 x-----水平方向的缩放倍数，默认1(不缩放)，0-1位缩小，1以后就是放大
+                y-----垂直方向的缩放倍数，默认1(不缩放)，0-1位缩小，1以后就是放大
+                scaleX（） | scaleY（）
+            
+             */
+            transform: scaleX(1.5)
+                /* left: -50px;
+            top: -50px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+</body>
+
+</html>
