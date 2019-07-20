@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        td,th{
+            width: 200px;
+            height: 30px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="">用户名：</label>
+    <input type="text" id="rowID">
+    <label for="">留言：</label>
+    <input type="text" id="colID">
+    <button id="btnID">添加一行</button>
+    <div id="boxID">
+        <table>
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>用户名</th>
+                    <th>留言</th>
+                </tr>
+            </thead>
+            <tbody id="tbdID">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var oRow = document.getElementById("rowID");
+        var oCol = document.getElementById("colID");
+        var oBtn = document.getElementById("btnID");
+        var oBox = document.getElementById("boxID");
+        var oTbd = document.getElementById("tbdID");
+        var num = 1;
+        oBtn.onclick = function () {
+            var row = oRow.value;
+            var col = oCol.value;
+            if (oRow && oCol) {
+                var result = "<tr><td>" + (num++) + "</td><td>" + row + "</td><td>" + col + "</td></tr>";
+                // oTbd.innerHTML += result;
+                oTbd.innerHTML  = result + oTbd.innerHTML;
+            }
+        }
+    </script>
+</body>
+
+</html>

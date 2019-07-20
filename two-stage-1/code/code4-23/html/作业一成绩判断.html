@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="result">
+    <button id="btnID">检测</button>
+    <script>
+        var oInput = document.getElementById("result");
+        var btn = document.getElementById("btnID");
+        btn.onclick = function(){
+            var input = oInput.value;
+            if (input >85) {
+                alert("优秀");
+            }else if(input>=75 && input<=85){
+                alert("良好");
+            }else if(input>=60 && input<75){
+                alert("及格");
+            }else if(input<60){
+                alert("不及格");
+            }
+        }
+    </script>
+</body>
+</html>

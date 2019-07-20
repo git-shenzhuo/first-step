@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+
+<script>
+
+  $(function () {
+
+    /*02-jQuery工具方法-map*/
+    $("div").map(function (index,value) {
+      console.log(index, value);
+    })
+
+    //map方法也可以用来遍历对象|数组|jQ
+    var res = $.map(["demoA","demoB",123,34,88],function (value,index) {
+      console.log(index, value);
+      if (typeof value == "number")
+      {
+        return value;
+      }
+    })
+
+    console.log(res);
+
+    /*03-jQuery工具方法-trim*/
+    console.log($.trim("   acac  df  "));
+
+    /*04-jQuery工具方法-toArray*/
+    console.log($("div"));
+    console.log($("div").toArray());
+  })
+
+</script>
+</body>
+</html>

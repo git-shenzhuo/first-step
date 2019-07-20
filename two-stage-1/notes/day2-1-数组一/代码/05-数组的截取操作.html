@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*数组的截取操作
+  * 方法：arr.slice(start,end)
+  *     [start , end)   包含开始位置，不包含结尾位置。
+  *
+  * */
+
+  /*01-数组的截取*/
+  var arr = ["C罗", "卡卡", "萨拉赫", 2015, "英超","曼联"];
+  console.log(arr[0]);                //"C罗"
+  console.log(arr[arr.length - 1]);   //"英超"
+  console.log(arr[6]);                //undefined
+
+  /*从数组中索引为2的位置开始截取元素直到索引为4(不包含)为止，把截取的元素保存到新数组中返回*/
+  var arr1 = arr.slice(2,4);
+  console.log(arr);                   //["C罗", "卡卡", "萨拉赫", 2015, "英超", "曼联"]
+  console.log(arr1);                  //["萨拉赫", 2015]
+
+
+  /*02-备注*/
+  /*02-A 没有传递参数:截取数组中所有的元素保存到新数组中的返回*/
+  var arr2 = arr.slice();
+  console.log(arr);
+  console.log(arr2);
+  console.log(arr == arr2);         //false
+
+  /*02-B 仅传递一个参数：从指定位置开始截取数组元素直到数组的末尾，把截取的元素保存到新数组中返回*/
+  var arr3 = arr.slice(3);
+  console.log(arr);
+  console.log(arr3);
+
+  /*03-C 如果参数是负数：length + 参数值 ex 6 + (-2) = 4 arr.slice(4)*/
+  var arr4 = arr.slice( -2 );
+  console.log("___");
+  console.log(arr);               // ["C罗", "卡卡", "萨拉赫", 2015, "英超", "曼联"]
+  console.log(arr4);              // ["英超", "曼联"]
+
+
+</script>
+</body>
+</html>

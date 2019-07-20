@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button>按钮</button>
+<script>
+  /*事件处理程序的第三种方式：addEventListener*/
+  /*语法：ele.addEventListener(type,handle,isCapturing)*/
+  /*参数：
+  * type    事件的类型
+  * handle  事件处理函数：当事件发生后要做什么
+  * isCapturing 是捕获还是冒泡，是否是事件捕获 true/false
+  * */
+
+  var oBtn = document.getElementsByTagName("button")[0];
+
+  /*01-注册监听的方式*/
+  /*01-1 第一种写法*/
+  // oBtn.addEventListener("click",function () {
+  //   console.log("按钮被点击了--A");
+  // })
+
+  /*01-2 第二种写法*/
+  // oBtn.addEventListener("click",listener);
+  //
+  // function listener(){
+  //   console.log("按钮被点击了--B");
+  // }
+
+  /*02-addEventListener支持给标签注册多个同类型的事件监听*/
+  function handle() {
+    console.log("按钮被点击了--A");
+  }
+  oBtn.addEventListener("click",handle)
+
+  oBtn.addEventListener("click",function () {
+    console.log("按钮被点击了--B");
+  })
+
+  oBtn.addEventListener("click",function () {
+    console.log("按钮被点击了--C");
+  })
+
+  /*03-移除标签注册监听的事件*/
+  /*语法：ele.removeEventListener(type,handle)
+  * 注意：需要确保移除的事件处理函数和注册时候的事件处理函数是同一个(地址相同)
+  * */
+  oBtn.removeEventListener("click",handle);
+
+  /*04-兼容性问题处理 IE8-*/
+  /*在IE8-没有add/removeEventListener方法，IE中提供了自己的注册监听方法*/
+  /*语法：attachEvent("on"+type,handle)  detachEvent("on"+type,handl)
+  * */
+  // oBtn.attachEvent("onclick",function () {
+  //   console.log("点击事件");
+  // })
+
+  /*jQuery*/
+
+</script>
+</body>
+</html>

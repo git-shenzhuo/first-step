@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    span{
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      background: orange;
+      display: inline-block;
+      margin: 5px;
+      text-align: center;
+    }
+
+    span:hover{
+      background: #195;
+    }
+  </style>
+</head>
+<body>
+<script>
+  /*010-打印九九乘法表*/
+  /*
+  * 1 x 1 = 1
+  * 1 x 2 = 2
+  * */
+
+  var content = "";
+  for (var x = 1;x<=9;x++)
+  {
+    for (var y = 1;y<=x;y++)
+    {
+      content += "<span>"+ y + "x" + x +"=" + y *x + "</span>";
+    }
+
+    content += "<br>";
+  }
+
+  /*
+  * x = 1
+  *   y = 1
+  * x = 2
+  *   y = 1
+  *   y = 2
+  * x = 3
+  *   y = 1
+  *   y = 2
+  *   y = 3
+  * */
+
+  // console.log(content)
+  document.body.innerHTML = content;
+</script>
+</body>
+</html>

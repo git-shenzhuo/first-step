@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  var obj = (function () {
+    var age = 123;
+    var name = "张三";
+
+    return {
+      getAge:function() {
+        return age;
+      },
+      setAge:function(_age){
+        if (_age)
+        {
+          age = _age;
+        }
+      },
+      getName:function() {
+        return name;
+      },
+      setName:function(_name){
+        if (_name)
+        {
+          name = _name;
+        }
+      },
+    }
+  })();
+
+  console.log(obj.getName());
+  obj.setName("李四");
+  console.log(obj.getName());
+
+  /*备注*/
+  /*函数：默认函数执行完毕后，函数内部所有的局部数据都会被释放和销毁*/
+  /*闭包的特点：闭包可以延长局部作用域中变量的生命周期*/
+  /*问题：性能问题(闭包)*/
+  /*内存管理：垃圾回收机制(当前数据是否被引用-这个数据还有没有被其它方法使用的可能)*/
+
+  function fn() {
+    var a = 123;
+    console.log(a);
+  }
+
+  fn();
+  fn();
+
+</script>
+</body>
+</html>

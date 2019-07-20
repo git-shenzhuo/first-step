@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 算术运算符
+  * 加法
+  * 减法
+  * 乘法
+  * 除法
+  * 模(取余数)
+  * */
+
+  /*基本使用*/
+  var num1 = 27,num2 = 20;
+  console.log(num1 + num2);
+  console.log(num1 - num2);
+  console.log(num1 * num2);
+  console.log(num1 / num2);
+  console.log(num1 % num2);
+
+  /*注意点*/
+  /*01-字符串参与运算*/
+  console.log("12"  / 3);        //4
+  console.log("12a" / 3);        //NaN
+  console.log("12" *  2);        //24
+  console.log("12a" * 2);        //NaN
+
+  /*02-模运算有符号的*/
+  console.log(12  %  5);          //2
+  console.log(-12 %  5);          //-2
+  /*模运算结果正负关系跟第一个操作数保持一致*/
+  console.log(-12 % -5);          //-2
+  console.log( 12 % -5);          //2
+
+  /*03-关于0 做除数*/
+  console.log( 1  / 0);            //Infinity
+  console.log( -1 / 0);            //-Infinity
+
+  /*04-加法运算的注意点*/
+  /*04-a 两个操作数都是字符串*/
+  console.log("Hi!" + "Miaoxia");
+  /*04-b 两个操作数都是数字*/
+  console.log(12 + 34);
+  /*04-c 两个操作数中如果有一个字符串，其它的类型不确定*/
+  console.log("Hi!" + 123 + 234);     //hi！123234
+  console.log(123 + 234 + "xiaoxia"); //357xiaoxia
+  /*04-d 两个操作数中既不全是字符串，也不全是数字，也没有字符串*/
+  /*把所有的操作数都转换为数字 执行加法计算*/
+  console.log(true + true);          //2
+  console.log(null + true);          //1
+  console.log(undefined + true);     //NaN  ！！！
+  console.log(true + 2 + null);      //3
+
+</script>
+</body>
+</html>

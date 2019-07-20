@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./src/md5.js"></script>
+</head>
+<body>
+<script>
+    /*01-单向散列函数计算(消息摘要算法  哈希算法  指纹算法)
+    特点
+      [1] 加密过程是单向的，可以加密但是不可以解密
+      [2] 加密速度快，性能好
+      [3] 对任意数据加密得到的密文都是定长的(固定长度)
+      [4] 如果明文相同，那么密文一定相同
+      [5] 如果明文不同，那么密文一定不同
+
+    经典算法
+
+      MD4 MD5 消息摘要算法第五个版本
+      Sha1 sha256 sha512..
+
+    典型应用
+        (1) 文件的完整性验证 | 版权验证
+        (2) 云盘秒传
+        (3) 文件匹配(校对)
+        (4) 注册功能
+            提交参数给服务器(POST)
+            username=zs password=123456
+            username=zs password=e10adc3949ba59abbe56e057f20f883e
+            服务器端的数据库中其实并没有用户的密码原文
+    $ echo -n "Love it" | md5
+    md5     4efbb66bba0616b6314fafaf9d6ec0a4  32
+    sha1    7d4a3de0f7ba4544d8a720555a6d127efd41c09b 40
+    sha256  f77124c3df5ebac375adbc9686260d132f30796647a3d3dae761d51db6bd832d 64
+    sha512 1214f6bd7ec007a126767a5b6e89a03dff448124a4da0df47ddc065e1aa25bf9d464970640249336d4a5f831492c3b86fb95769d9482a535ee3d88381d989b58  128
+    */
+    console.log(md5("Love it"))  //4efbb66bba0616b6314fafaf9d6ec0a4
+
+</script>
+</body>
+</html>

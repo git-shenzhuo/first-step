@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>发送GET请求</button>
+    <script>
+        //在某些浏览器中(IE)如果发现你对着同一个url发送了多次网络请求，那么可能会把上一次网络请求的结果(缓存)返回给你
+        //如果服务器端的数据是随时变化的，那么我们发送请求的时候可能需要禁止使用缓存。
+        //问题产生的原因：每次请求的路径都一样
+        //解决问题的方案：每次请求的路径都不一样(附加的参数：随机数|时间戳)
+
+        let oBtn = document.querySelector("button");
+        /*02-给按钮添加点击事件*/
+        oBtn.onclick = function() {
+            /*03-发起AJax网络请求*/
+            /*[1] 创建请求对象*/
+            let xhr = new XMLHttpRequest();
+            //let queryString = "?t=" + Math.random();
+            let queryString = "?t=" + (new Date()).getTime();
+            /*[2] 设置请求对象*/
+            xhr.open("get", "http://localhost:8888/code/day02/server/05-ajax-get.php" + queryString, true);
+
+            /*[3] 发送网络请求*/
+            xhr.send();
+
+            /*[4] 监听请求状态的改变:当网络请求的状态发生改变就会执行该函数*/
+            /* readyState 标明当前请求处于啥状态？*/
+            xhr.onreadystatechange = function() {
+                console.log(xhr.readyState);
+                if (xhr.readyState == 4) {
+                    console.log(xhr.status, xhr.statusText);
+                    if (xhr.status == 200) {
+                        /*[5] 解析服务器返回的数据*/
+                        console.log(xhr.responseText);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

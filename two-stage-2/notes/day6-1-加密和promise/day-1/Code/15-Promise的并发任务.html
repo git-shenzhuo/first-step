@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  //(1,2,3)-4
+
+  Promise.all([
+      new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          console.log("task----1");
+          resolve("name=zs");
+        },1)
+      }),
+      new Promise(function (resolve,reject) {
+        setTimeout(function () {
+          console.log("task----2");
+          resolve("age=18");
+        },200)
+      }),
+      new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          console.log("task----3");
+          resolve("address=北京");
+        },100)
+      })
+  ]).then(function (successArrData) {
+    console.log("task----4");
+    console.log(successArrData);  //["name=zs", "age=18", "address=北京"]
+  }).catch(function (error) {
+    console.log("catch----");
+  })
+
+  /*必须要前三个任务都执行完毕(都成功)才会执行第四个任务*/
+  /**/
+
+</script>
+</body>
+</html>

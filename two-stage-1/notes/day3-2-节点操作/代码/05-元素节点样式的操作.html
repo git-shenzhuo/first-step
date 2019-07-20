@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box{width: 200px;height: 40px}
+  </style>
+</head>
+<body>
+<div class="box" style="background: red;height: 100px">我是div</div>
+<script>
+  /*元素节点样式相关的操作 读取标签的样式 + 设置标签的样式*/
+  var oDiv = document.getElementsByClassName("box")[0];
+
+  /*01-通过style只可以访问和设置内联样式*/
+  console.log(oDiv.style.background);   //red
+  console.log(oDiv.style.width);        //""
+  console.log(oDiv.style.height);       //""
+
+  oDiv.style.border = "1px solid #000";
+
+  /*02-getComputedStyle*/
+  /*getComputedStyle(ele, 伪元素)  获取指定元素的样式 返回的是对象*/
+  var styleObj = window.getComputedStyle(oDiv);
+  console.log("宽度:",styleObj["width"]);
+  console.log("高度:",styleObj["height"]);
+  console.log("颜色:",styleObj.background);
+
+  /*注意：不能通过这种方式来设置样式 property is read-only.*/
+  styleObj["width"] = "400px";
+
+  /*03-IE8-获取样式的方法 currentStyle*/
+
+  // getComputedStyle(oDiv)["width"];
+  // oDiv.currentStyle["width"]
+
+
+</script>
+</body>
+</html>

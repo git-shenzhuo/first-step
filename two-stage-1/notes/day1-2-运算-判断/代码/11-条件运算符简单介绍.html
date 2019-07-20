@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" id="inputID">
+<button id="btnID">判断季节</button>
+<script>
+  /*条件运算符
+  * 别名：三元运算符
+  * 符号：操作数1 ？操作数2 ： 操作数3
+  * 规则：如果操作数1为真，那么就返回操作数2，否则就返回操作数3
+  * */
+
+  var oBtn = document.getElementById("btnID");
+  oBtn.onclick = function () {
+
+    var mon = document.getElementById("inputID").value * 1;
+    var str = "季节：";
+
+    /*春季：2，3，4*/
+
+    str += (mon >=2 && mon <=4) ? "春季":"其它季节";
+
+    /*演示mon为8的时候代码执行情况*/
+    //str += (true && mon <=4) ? "春季":"其它季节";
+    //str += (true && false) ? "春季":"其它季节";
+    //str += false ? "春季":"其它季节";
+    //str += "其它季节";
+
+    alert(str);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div>我是div</div>
+<script>
+  /*事件处理程序的第二种方式：先获取标签对象，然后通过标签对象的事件属性来添加事件*/
+  var oDiv = document.getElementsByTagName("div")[0];
+  console.dir(oDiv);
+
+  /*类似是onclick这样的是标签的事件属性|方法*/
+
+  /*01-如何通过事件属性来给标签绑定事件*/
+  /*第一种写法*/
+  // oDiv.onclick = function () {
+  //   console.log(this);      /*this-->当前的标签(oDiv)*/
+  // }
+
+  /*第二种写法*/
+  // function handle() {
+  //   console.log(this);
+  // }
+  // oDiv.onclick = handle;
+
+
+  /*02-通过事件属性方式绑定事件，一个标签只能绑定一个同类型的事件(覆盖)*/
+  oDiv.onclick = function () {
+    console.log(this,1);      /*this-->当前的标签(oDiv)*/
+  }
+
+  oDiv.onclick = function () {
+    console.log(this,2);      /*this-->当前的标签(oDiv)*/
+
+    /*03-移除事件*/
+    /*当点击按钮的时候，把鼠标输入事件删除*/
+    oDiv.onmouseenter = null;
+  }
+
+  oDiv.onmouseenter = function () {
+    console.log("鼠标移入事件");
+  }
+
+
+</script>
+</body>
+</html>

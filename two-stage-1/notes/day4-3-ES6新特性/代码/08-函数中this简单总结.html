@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*函数中this的指向问题-this指向谁由函数的调用方法决定*/
+  /*01-普通函数调用  this->window*/
+  function f() {
+    console.log("f",this);
+    this.message = "msg";
+  }
+  f();
+
+  /*02-对象方法调用  this->o*/
+  var o = {};
+  o.f = f;
+  o.f();
+
+  /*03-以构造函数方式调用 this->构造函数内部新创建的对象*/
+  new f();
+
+  /*04-以apply或者是call或者是bind方法调用 函数上下文调用  this->第一个参数*/
+
+  /*05-箭头函数 this->取决于外层最近的this*/
+
+</script>
+</body>
+</html>

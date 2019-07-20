@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*01-值类型和引用类型的赋值
+  * 赋值：把右边保存的内容拷贝一份给左边保存起来
+  *
+  * 02-引用类型的比较(相等比较)
+  * */
+  var name1 = "文顶顶";
+  var name2;
+  console.log(name1);
+  console.log(name2);
+
+  name2 = name1;
+  console.log(name1);   //"文顶顶"
+  console.log(name2);   //"文顶顶"
+  name1 = "光头强";
+  console.log(name1);
+  console.log(name2);
+
+  console.log("----");
+  var p1 = {name1:"zs"};
+  var p2;
+  p2 = p1;
+  console.log(p1.name1);  //"zs"
+  console.log(p2.name1);  //"zs"
+
+  p1.name1 = "ls";
+  console.log(p1.name1);  //"ls"
+  console.log(p2.name1);  //"ls"
+
+  /*备注：值类型的数据赋值后他们是相互独立的，修改其中某个值对其它的值不影响
+  * 备注：引用类型的数据赋值后他们是共享的，修改其中某个值，其它共享的对象也会受到影响
+  * */
+
+  /*02*/
+  var str1 = "123";
+  var num1 = 123;
+  console.log(str1 == num1);    //true
+  console.log(str1 === num1);   //false
+  var obj1 = {name1:"zs"};
+  var obj2 = {name1:"zs"};
+
+  console.log(obj1 === obj2); //false
+  console.log(obj1 == obj2); //false
+  var arr1 = [1,2,3];
+  var arr2 = [1,2,3];
+  console.log(arr1 === arr2); //false
+  console.log(arr1 == arr2);  //false
+  console.log(arr1);
+
+  /*总结：值类型保存的内容是具体的值(数据)，引用类型保存的是引用(地址)，通过这个地址可以找到对应的那些值*/
+
+</script>
+</body>
+</html>

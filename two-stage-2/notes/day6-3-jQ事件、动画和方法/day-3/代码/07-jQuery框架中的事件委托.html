@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<ul class="list">
+  <li>1</li>
+  <li class="box">2</li>
+  <li class="box">3</li>
+</ul>
+<script>
+
+  $(function () {
+
+    /*事件委托：委托ul标签给内部的li标签添加点击事件*/
+    // $(".list").on("click","li",function () {
+    //     console.log(this);
+    //     alert($(this).text());
+    // })
+
+    $(".list").on("click",".box",function () {
+      console.log(this);
+      alert($(this).text());
+    })
+
+    // $("li").click(function () {
+    //   alert($(this).text());
+    // })
+
+    /*创建新的li标签*/
+    //$("<li>我是新来的</li>").appendTo($(".list"));
+    $("<li>我是新来的</li>").appendTo(".list");
+
+    //$(".list").append($("<li>我是新来的</li>"))
+
+  })
+
+</script>
+</body>
+</html>

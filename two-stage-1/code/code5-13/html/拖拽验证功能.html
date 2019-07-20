@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pc-class {
+            width: 400px;
+            height: 20px;
+            border: 1px solid #666666;
+            background-color: #aaa9a9;
+            font-size: 0;
+        }
+        .pc-class-span1{
+            display: inline-block;
+            height: 20px;
+            background-color: rgb(6, 247, 6);
+        }
+        .pc-class-span2 {
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            background-color: #f30814;
+            position: relative;
+        }
+
+        .mobile-class {
+            width: 400px;
+            height: 20px;
+            border: 1px solid #666666;
+            margin-top: 300px;
+        }
+
+        .mobile-class-span {
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            background-color: #9e9a9a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pc-class">
+        <span class="pc-class-span1"></span>
+        <span class="pc-class-span2"></span>
+    </div>
+    <div class="mobile-class"><span class="mobile-class-span"></span></div>
+    <script>
+        window.onload = function () {
+            var oDiv1 = document.querySelector(".pc-class");
+            var oDiv2 = document.querySelector(".mobile-class");
+            var spans = document.querySelector(".pc-class-span1");
+            var span1 = document.querySelector(".pc-class-span2");
+            var span2 = document.querySelector(".mobile-class-span");
+            span1.onmousedown = function (evenr) {
+                var evenr = evenr || window.evenr;
+                var offsetX = evenr.offsetX;
+                document.onmousemove = function (evenr) {
+                    var evenr = evenr || window.evenr;
+                    var pageX = evenr.pageX;
+                    var left = pageX - offsetX;
+                    if (left > 370) {
+                        left = 370;
+                    }
+                    if (left < 0) {
+                        left = 0;
+                    }
+                    // span1.style.left  = left + "px";
+                    spans.style.width = left + "px";
+                }
+
+            }
+            document.onmouseup = function () {
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+
+</html>

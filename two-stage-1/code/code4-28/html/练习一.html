@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputID">
+    <button>算一下咯</button>
+    <script>
+        var oInput = document.getElementById("inputID");
+        var oBtn = document.getElementsByTagName("button")[0];
+        oBtn.onclick = function() {
+            var num  = oInput.value;
+            var arr2 = [];
+            for (var i = 1; i <= num; i++) {
+                arr2.push(2 * i);
+            }
+            alert("得数:"+arr2);
+            var arr3 = [];
+            for (var n = 5, les = arr2.length; n <= les; n += 5) {
+                var result = 0;
+                for (var j = n - 5; j < n; j++) {
+                    result += arr2[j];
+                }
+                arr3.push(result / 5);
+            }
+            alert("平均数:"+arr3);
+        }
+    </script>
+</body>
+
+</html>

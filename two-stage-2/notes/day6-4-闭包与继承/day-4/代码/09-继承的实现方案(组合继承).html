@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*Animal 父构造函数*/
+  function Animal(color,address) {
+    this.color = color;
+    this.address = address
+  }
+
+  Animal.prototype.move = function () {
+    console.log("动物开始移动了");
+  }
+  Animal.prototype.type = "动物";
+
+
+  /*Person 子构造函数*/
+  function Person(name,age,color,address) {
+    this.name = name;
+    this.age  = age;
+
+    /*[1] 通过借用构造函数来获取实例成员*/
+    Animal.call(this,color,address);
+  }
+
+  /*[2] 通过原型式继承来获取原型成员*/
+  Person.prototype = Animal.prototype;
+  Person.prototype.run = function () {
+    console.log("人可以跑路");
+  }
+
+  var p1 = new Person("小明",89,"red","北京站");
+  var p2 = new Person("萧红",18,"yellow","广州站");
+
+  console.log(p1);
+  console.log(p2);
+
+</script>
+</body>
+</html>

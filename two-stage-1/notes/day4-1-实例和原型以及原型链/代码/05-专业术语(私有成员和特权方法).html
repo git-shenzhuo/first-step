@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+   * 【1】专业术语掌握
+   *    成员     对象的属性和方法，我们统称为对象的成员。
+   *    实例对象(p1) | 原型对象(Person.prototype/p1.__proto__)|构造函数(Person)
+   *
+   *    实例成员  实例对象的属性和方法(name age showName showAge)
+   *    原型成员  原型对象的属性和方法(info showInfo)
+   *    静态成员  构造函数的属性(静态属性)和方法(静态方法)  (des showDes)
+   *         构造函数本身是函数，函数是特殊的对象，因此函数也可以有属性和方法
+   *
+   * 【2】访问规则
+   *   实例对象  访问  实例成员 + 原型成员
+   *   原型对象  访问  原型成员
+   *   构造函数  访问  静态成员
+   *
+   * 【3】 私有成员  私有的变量和函数(className address getClassNameAndAddress) 在外部不可以被访问
+   * 【4】 特权方法  可以访问私有成员的实例方法
+   */
+
+  function Person(name,age) {
+
+    this.name = name;
+    this.age = age;
+    this.showAge = function () {
+      console.log("年龄 " + this.age);
+    }
+    this.showName = function () {
+      console.log("姓名 " + this.name);
+    }
+    this.showClassWithAddress = function () {
+      console.log("班级 " + className + " 地址 " + address);
+    }
+    /*声明变量*/
+    var className = "二胡";
+    var address   = "护驾山";
+
+    /*声明函数*/
+    function getClassNameAndAddress() {
+      return className + address;
+    }
+
+    console.log(getClassNameAndAddress());
+  }
+
+  var p1 = new Person("老张",12);
+  console.log(p1.className);     //undefined
+  p1.showClassWithAddress();
+</script>
+</body>
+</html>

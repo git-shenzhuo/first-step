@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+  <style>
+    .box{
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      background: orange;
+      margin: 5px;
+    }
+
+    .box1{
+      border: 5px solid red;
+    }
+
+    .box2{
+      border: 5px solid #000;
+    }
+
+    .box3{
+      width: 600px;
+    }
+  </style>
+</head>
+<body>
+<div class="box box2">我是div1</div>
+<div class="box box2 box3">我是div2</div>
+<script>
+
+  $(function () {
+    //class的基本操作
+    //addClass 添加样式
+    // var divs = document.getElementsByTagName("div");
+    // for (var i = 0 ;i <divs.length;i++)
+    // {
+    //   divs[i].className = "box";
+    // }
+
+    /*001-addClass*/
+    /*01-实现方案(1)*/
+    //$("div").addClass("box");  //给页面中选中的两个div标签添加box这个class
+    //$("div").addClass("box1");
+
+    /*02-实现方案(2) 链式编程*/
+    //$("div").addClass("box").addClass("box1");
+
+    /*03-实现方案(3)*/
+    //$("div").addClass("box box2 box3");
+
+
+    /*002-removeClass*/
+    /*删除单个样式*/
+    //$("div").removeClass("box");
+    /*删除多个样式(1)*/
+    // $("div").removeClass("box");
+    // $("div").removeClass("box2");
+    /*删除多个样式(2)*/
+    //$("div").removeClass("box").removeClass("box2");
+    /*删除多个样式(3)*/
+    //$("div").removeClass("box box3");
+
+    /*003-hasClass*/
+    /*检查所有选中标签中是否存在指定的样式，如果存在那么就返回true,如果所有标签中都没有找到指定的样式返回false*/
+    // console.log($("div").hasClass("box"));  //true
+    // console.log($("div").hasClass("box3")); //true
+    // console.log($("div").hasClass("box4")); //false
+
+    /*004-toggleClass*/
+    /*切换样式：如果该标签中存在指定的样式那么就删除之，如果不存在那么就添加之。*/
+    $("div").toggleClass("box3");
+  })
+</script>
+</body>
+</html>

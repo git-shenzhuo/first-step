@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button>按钮</button>
+<script>
+
+  var oBtn = document.getElementsByTagName("button")[0];
+
+  /*01-事件触发的时候会产生很多和事件相关的详细信息 譬如事件类型 点击的位置 点击的目标 这些信息统统被保存到一个叫做事件对象的家伙中*/
+
+  /*02-事件对象在哪里？表示：event | evt | e   默认事件处理函数的第一个参数是事件对象*/
+
+  /*03-事件对象存在兼容性问题 IE老版本*/
+
+  // oBtn.onclick = function (event) {
+  //   console.log(event);
+  //
+  //   // window.event  IE中获取事件对象
+  // }
+
+  // oBtn.onmouseenter = function (event) {
+  //   console.log("---");
+  // }
+
+
+  /*兼容性处理*/
+  oBtn.onclick = function (e) {
+    var event = e || window.event;   //如果e为真，返回e,否则就返回window.event;
+  }
+</script>
+</body>
+</html>

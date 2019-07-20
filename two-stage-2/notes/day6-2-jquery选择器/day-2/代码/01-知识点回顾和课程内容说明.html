@@ -1,0 +1,35 @@
+001-数据安全技术
+  [1] 对敏感数据加密处理
+      001-Base64编码
+      002-散列函数(哈希算法 消息摘要算法) MD4 MD5 SHA1 SHA256 ...
+      003-对称加密算法                 DES 2DES 3DES AES  算法模式：(流 分组-ECB CBC..)
+      004-非对称加密算法               RSA
+      005-数字签名 + 公钥 = 证书
+
+  [2] HTTPS
+      思考：HTTPS访问过程？
+
+002-Promise代码
+  [1] 提供了一种异步任务的解决方案。
+  [2]
+
+<script>
+  //状态：未完成  成功  失败
+  //第一个阶段：没完成(未完成)
+  //第二个阶段：已完成(成功 | 失败)
+  //未完成->成功  未完成->失败
+
+  new Promise(function (resolve, reject) {
+    //resolve();
+    //reject();
+
+    // setTimeout(function () {
+    //   console.log("--");
+    //
+    // },3000)
+
+    $.ajax();
+
+  }).then().catch();
+
+</script>

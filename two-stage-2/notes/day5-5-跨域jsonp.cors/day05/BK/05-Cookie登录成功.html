@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>登录成功 欢迎来到新世界！</div>
+    <span></span>
+    <button>注销</button>
+    <script src="./src/Cookie.js"></script>
+    <script>
+        //拿到用户名和密码显示在页面中
+        window.onload = function() {
+            let queryString = window.location.search.substr(1);
+            console.log(queryString);
+            let span = document.getElementsByTagName("span")[0];
+            span.innerHTML = "帐号信息为：" + queryString;
+
+            let btn = document.querySelector("button");
+            btn.onclick = function() {
+                Cookie.clear();
+                console.log("---");
+            }
+        }
+    </script>
+</body>
+
+</html>

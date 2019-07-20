@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .star{
+      width: 200px;
+      height: 29px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .star li{
+      width: 27px;
+      height: 28px;
+      float: left;
+      background: url("img/star.gif") no-repeat 0 0;
+    }
+
+    .star .active{
+      background-position: 0 -29px;
+    }
+  </style>
+  <script src="src/jquery-3.4.1.js"></script>
+</head>
+<body>
+<ul class="star">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<div class="info"></div>
+<script>
+  $(function () {
+
+    let text = ["差评","一般","良好","基本满意","十分满意"];
+    let flag = false;
+    $("li").hover(function () {
+      if (flag) return;
+      let index = $(this).index();
+      /*设置标签选中*/
+      $(`li:lt(${index + 1})`).addClass("active");
+    },function () {
+      if (!flag){
+        $("li").removeClass("active");
+      }
+    })
+
+    /*点击的时候确定评价等价*/
+    $("li").click(function () {
+      flag = true;
+      let index = $(this).index();
+
+      $(`li:lt(${index + 1})`).addClass("active");
+      $(`li:gt(${index})`).removeClass("active");
+      $(".info").text(text[index]);
+    })
+
+  })
+</script>
+</body>
+</html>

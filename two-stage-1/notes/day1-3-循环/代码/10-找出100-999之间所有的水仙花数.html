@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*三个数的立方和等于该数字本身 100-999
+  * 示例：153 = 1(1^3) + 125(5^3) + 27(3^3)
+  * */
+
+  for (var i = 100;i<=999;i++)
+  {
+    /*01-拿到个位数*/
+    /*02-拿到十位数*/
+    /*03-拿到百位数*/
+
+    /*924*/
+    var g = i % 10 ;
+    var s = parseInt(i / 10) % 10;
+    var b = parseInt(i / 100);
+
+    /*注意：不要写一个等号*/
+    if (i == g * g *g + s * s * s + b * b * b)
+    {
+      console.log(i);
+    }
+
+  }
+</script>
+</body>
+</html>

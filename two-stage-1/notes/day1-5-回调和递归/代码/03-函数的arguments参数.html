@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*需求：累加和 1，2  1，2，3 ，3 4 5 6*/
+
+  /*01-计算两个参数的累加和*/
+  // function add(num1,num2) {
+  //   return num1 + num2;
+  // }
+  // console.log(add(1, 2));
+
+  /*02-计算三个参数的累加和*/
+  // function add(num1,num2,num3) {
+  //   return num1 + num2 + num3;
+  // }
+  // console.log(add(1, 2,10));
+
+
+  /*03-计算五个参数的累加和*/
+  // function add(num1,num2,num3,num4,num5) {
+  //   return num1 + num2 + num3 + num4 + num5;
+  // }
+  // console.log(add(1, 2,10,20,21));
+
+  /*04-计算的参数个数是不确定的
+   *
+   * 函数默认为我们提供了一个隐藏的参数：arguments
+   * arguments参数用来接受函数调用时传递进来的实际参数
+   * arguments是一个类似于数组的结构，很像数组但又不是数组 == 伪数组
+   * arguments有length属性，记录的是实际参数的个数
+   *
+   * 补充：可以通过Array.isArray()来检查数据是否是数组类型。
+   * */
+
+  function add() {
+    // console.log(Array.isArray(arguments));
+    // console.log(arguments);
+
+    // console.log(arguments[0]);
+    // console.log(arguments[1]);
+    // console.log(arguments[2]);
+
+    var total = 0;
+    for (var i = 0;i < arguments.length;i++)
+    {
+      //console.log(arguments[i]);
+      total +=  arguments[i]
+    }
+    return total;
+  }
+
+  console.log(add(1, 2));
+  console.log(add(1, 2,20,30,41,34,134));
+
+  //var arr = [1,23];
+  //console.log(Array.isArray(arr));
+
+</script>
+</body>
+</html>

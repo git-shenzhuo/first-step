@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .one-list{
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            margin: 100px 300px;
+            overflow: hidden;
+        }
+        li{
+            width: 300px;
+            background-color: #ccc;
+            border-bottom: 2px solid #000;
+            padding-left: 30px;
+            font-size: 24px;    
+        }
+        span{
+            display: inline-block;
+            list-style: 40px;
+            vertical-align: middle;
+        }
+        .jt{
+            font-size: 30px;
+            color: #fff;
+            margin-top: 0;
+            margin-left: 100px;
+        }
+        .two-list{
+            display: none;
+            margin-left: -30px;
+        }
+        .two-list > li{
+            background-color: #999;
+
+        }
+    </style>
+</head>
+<body>
+    <ul class="one-list">
+        <li>
+            <span>精品视频</span>
+            <span class="jt">></span>
+            <ul class="two-list">
+                <li>精品视频1</li>
+                <li>精品视频2</li>
+                <li>精品视频3</li>
+                <li>精品视频4</li>
+                <li>精品视频5</li>
+                <li>精品视频6</li>
+                <li>精品视频7</li>
+            </ul>
+        </li>
+        <li>
+            <span>有趣玩法</span>
+            <span class="jt">></span>
+            <ul class="two-list">
+                <li>有趣玩法1</li>
+                <li>有趣玩法2</li>
+                <li>有趣玩法3</li>
+                <li>有趣玩法4</li>
+                <li>有趣玩法5</li>
+                <li>有趣玩法6</li>
+                <li>有趣玩法7</li>
+            </ul>
+        </li>
+        <li>
+            <span>脑洞大开</span>
+            <span class="jt">></span>
+            <ul class="two-list">
+                <li>脑洞大开1</li>
+                <li>脑洞大开2</li>
+                <li>脑洞大开3</li>
+                <li>脑洞大开4</li>
+                <li>脑洞大开5</li>
+                <li>脑洞大开6</li>
+                <li>脑洞大开7</li>
+            </ul>
+        </li>
+        <li>
+            <span>头脑风暴</span>
+            <span class="jt">></span>
+            <ul class="two-list">
+                <li>头脑风暴1</li>
+                <li>头脑风暴2</li>
+                <li>头脑风暴3</li>
+                <li>头脑风暴4</li>
+                <li>头脑风暴5</li>
+                <li>头脑风暴6</li>
+                <li>头脑风暴7</li>
+            </ul>
+        </li>
+        <li>
+            <span>合作企业</span>
+            <span class="jt">></span>
+            <ul class="two-list">
+                <li>合作企业1</li>
+                <li>合作企业2</li>
+                <li>合作企业3</li>
+                <li>合作企业4</li>
+                <li>合作企业5</li>
+                <li>合作企业6</li>
+                <li>合作企业7</li>
+            </ul>
+        </li>
+        <li>
+            <span>商业洽谈</span>
+            <span class="jt">></span>
+            <ul class="two-list">
+                <li>商业洽谈1</li>
+                <li>商业洽谈2</li>
+                <li>商业洽谈3</li>
+                <li>商业洽谈4</li>
+                <li>商业洽谈5</li>
+                <li>商业洽谈6</li>
+                <li>商业洽谈7</li>
+            </ul>
+        </li>
+        <li>
+            <span>全国分区</span>
+            <span class="jt">></span>
+            <ul class="two-list">
+                <li>全国分区1</li>
+                <li>全国分区2</li>
+                <li>全国分区3</li>
+                <li>全国分区4</li>
+                <li>全国分区5</li>
+                <li>全国分区6</li>
+                <li>全国分区7</li>
+            </ul>
+        </li>
+        <li>
+            <span>项目解释</span>
+            <span class="jt">></span>
+            <ul class="two-list">
+                <li>项目解释1</li>
+                <li>项目解释2</li>
+                <li>项目解释3</li>
+                <li>项目解释4</li>
+                <li>项目解释5</li>
+                <li>项目解释6</li>
+                <li>项目解释7</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        $(function(){
+            $("li").mouseenter(function(){
+                $(this).children("ul").stop().slideDown(1000);
+                $(this).children(".jt").css("transform","rotateZ(90deg)");
+            })
+            $("li").mouseleave(function(){
+                $(this).children("ul").stop().slideUp(1000);
+                $(this).children(".jt").css("transform","rotateZ(0)");
+            })
+        })
+    </script>
+</body>
+</html>

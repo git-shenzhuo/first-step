@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*01-字面量的方式来创建对象*/
+  /*说明：简单直接，不适合用来批量的创建多个同类型对象*/
+
+  var book1 = {
+    name:"黄金时代",
+    auther:"王小波",
+    press:"湖南文艺出版集团",
+    price:"24.00",
+    pages:320,
+    count:"20万4千",
+    showInfo:function () {
+      console.log("书名：" + this.name + " 作者:" + this.auther + " 出版社:" + this.press);
+    }
+  }
+
+  var book2 = {
+    name:"悟空传",
+    auther:"今何在",
+    press:"湖南文艺出版集团",
+    price:"25.00",
+    pages:450,
+    count:"20万4千",
+    showInfo:function () {
+      console.log("书名：" + this.name + " 作者:" + this.auther + " 出版社:" + this.press);
+    }
+  }
+
+  var book3 = {
+    name:"美人鱼",
+    auther:"周星星",
+    press:"湖南文艺出版集团",
+    price:"24.00",
+    pages:10,
+    count:"20万4千",
+    showInfo:function () {
+      console.log("书名：" + this.name + " 作者:" + this.auther + " 出版社:" + this.press);
+    }
+  }
+
+  console.log(book1);
+  console.log(book2);
+  console.log(book3);
+
+  book1.showInfo();
+  book2.showInfo();
+  book3.showInfo();
+</script>
+</body>
+</html>

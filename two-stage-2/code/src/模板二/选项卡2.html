@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        div {
+            width: 500px;
+            height: 600px;
+            border: 1px solid blue;
+            margin: 0 auto;
+            border-radius: 25px;
+            background: radial-gradient(red, yellow, blue, green, orange);
+        }
+
+        div img {
+            width: 450px;
+            height: 300px;
+            margin: 25px;
+        }
+
+        li {
+            width: 100px;
+            height: 50px;
+            float: left;
+            margin: 25px 0 25px 20px;
+            background-color: blue;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: 900;
+            /* 可以点击，改变鼠标样式手柄状 */
+            cursor: pointer;       
+        }
+
+        .class-color {
+            background-color: red;
+            color: #195;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../images/mn1.jpg" alt="">
+        <ul>
+            <li class="class-color">1号嘉宾</li>
+            <li>2号嘉宾</li>
+            <li>3号嘉宾</li>
+            <li>4号嘉宾</li>
+            <li>5号嘉宾</li>
+            <li>6号嘉宾</li>
+            <li>7号嘉宾</li>
+            <li>8号嘉宾</li>
+        </ul>
+    </div>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementsByTagName("div")[0];
+            var oImg = document.getElementsByTagName("img")[0];
+            var oLis = document.getElementsByTagName("li");
+            var arr = ["../images/mn1.jpg", "../images/mn2.jpg", "../images/mn3.jpg", "../images/mn4.jpg",
+                "../images/mn5.jpg", "../images/mn6.jpg", "../images/mn7.jpg", "../images/mn8.jpg"
+            ];
+            var len = oLis.length;
+            for (var i = 0; i < len; i++) {
+                // 拿到索引
+                oLis[i].index = i;
+                oLis[i].onclick = function () {
+                    // 排空，所有按钮回到原始状态
+                    for (var j = 0; j < len; j++) {
+                        oLis[j].className = "";
+                    }
+                    // 当前点击元素添加class
+                    this.className = "class-color";
+                    oImg.src = arr[this.index];
+                    // 渐变色随机变
+                    function lq() {
+                        var r = parseInt(Math.random() * 256);
+                        var g = parseInt(Math.random() * 256);
+                        var b = parseInt(Math.random() * 256);
+                        return "rgb(" + r + "," + g + "," + b + ")";
+                    }
+                    // 记得字符串拼接
+                    oDiv.style.background = "radial-gradient(" + lq() + "," + lq() + "," + lq() + "," + lq() + "," + lq() + ")";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

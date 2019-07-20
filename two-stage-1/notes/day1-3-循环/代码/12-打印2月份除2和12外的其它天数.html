@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*假设2月份有28天：打印2月份除了2号和12号之外所有的天数*/
+  for (var i = 1;i <= 28;i++)
+  {
+    if (i == 2 || i == 12)
+    {
+      continue;
+    }
+    console.log("2月份的第 "+i+" 天");
+  }
+
+</script>
+</body>
+</html>

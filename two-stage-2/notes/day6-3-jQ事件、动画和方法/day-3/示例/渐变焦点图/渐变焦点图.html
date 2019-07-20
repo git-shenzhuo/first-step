@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>渐变焦点图</title>
+	<style>
+	    * {
+	    	margin:0;
+	    	padding: 0;
+	    }
+		.slider {
+			width:700px;
+			height:350px;
+			background:#f08;
+			overflow:hidden;
+			position:relative;
+			border:5px solid #fff;
+			border-radius:25px;
+			margin:100px auto;
+		}
+		.slider_box {
+			width:2800px;
+			position:relative;
+			overflow:hidden;
+		}
+		.slider_box p {
+			width:700px;
+			height:350px;
+			float:left;
+		}
+		.slider_box p img {
+			width:100%;
+			height: 100%;
+		}
+		.slider_control {
+			width: 100%;
+			height:100%;
+		}
+		.slider_control a {
+			display:block;
+			width:45px;
+			height: 45px;
+			position: absolute;
+			top:50%;
+			margin-top: -22.5px;
+			color:#fff;
+			font-size: 38px;
+		}
+		.slider_control a.prev {
+			left:10px;
+		}
+		.slider_control a.next {
+			right:10px;
+		}
+		
+		.slider_nav {
+			position:absolute;
+			right:10px;
+			bottom:10px;
+			z-index:5;
+		}
+		.slider_nav span {
+			display:inline-block;
+			width:20px;
+			height:20px;
+			line-height:20px;
+			background:#979797;
+			z-index:5;
+			text-align:center;
+			font-size: 14px;
+			color:#fff;
+			border-radius:10px;
+			cursor:pointer;
+			margin-left:10px;
+		}
+		.slider_nav span.active {
+			background:#f69c09;
+		}
+	</style>
+</head>
+<body>
+	<div class="slider">
+		<div class="slider_box">
+			<p><img src="images/01.jpeg" alt=""></p>
+			<p><img src="images/02.jpeg" alt=""></p>
+			<p><img src="images/03.jpeg" alt=""></p>
+			<p><img src="images/04.jpeg" alt=""></p>
+			<p><img src="images/05.jpeg" alt=""></p>
+			<p><img src="images/06.jpeg" alt=""></p>
+			<p><img src="images/07.jpeg" alt=""></p>
+			<p><img src="images/06.jpeg" alt=""></p>
+			<p><img src="images/07.jpeg" alt=""></p>
+			<!--<p><img src="images/08.jpeg" alt=""></p>-->
+		</div>
+		<div class="slider_control">
+			<a class="prev">&lt;</a>
+			<a class="next">&gt;</a>
+		</div>
+		<div class="slider_nav"></div>
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+
+		    //说明[001]
+		    //如果jQ对象在多个地方要用到，建议使用变量来保存
+			//因为每次使用jQ选择器的时候都需要遍历整个DOM，使用变量来保存利于提升性能
+            var timer;
+            var imgIndex = 0;
+            var oSlider = $(".slider");
+            var oBox = $(".slider_box");
+            var oNav = $(".slider_nav");
+
+            //拷贝第一张图片放到最后
+            oBox.append(oBox.children("p").first().clone());
+
+            //获取页面 p标签(图片)的个数
+            var length = oBox.children("p").length;
+            //设置oBox的宽度(根据图片的张数来动态设置标签的宽度)
+			oBox.css("width",parseInt(oSlider.width()) * length);
+
+			//根据图片的张数来创建1，2，3...小图标
+			for(var i = 0;i< length -1;i++) oNav.append('<span>'+(i +1)+'</span>');
+
+			//拿到所有的span小图标标签
+			var oSpan = oNav.children("span");
+
+            //设置让第一个小图标默认选中
+            oSpan.first().addClass("active");
+
+            // 鼠标移入图片数字导航切换图片
+            oSpan.mouseenter(function(){
+
+                //调整imgIndex的值
+                imgIndex = $(this).index();
+
+                //设置让当前的图标为选中状态(切换)
+			    $(this).addClass("active").siblings("span").removeClass("active");
+
+				//计算图片移动的距离 span的索引 * 一个图片的宽度
+				var imgLeft = $(this).index() * parseInt(oBox.children("p").width());
+
+				//如果当鼠标放在小图标上面的时候，不想要图片跳转而只需要显示对应图片可以考虑css方法
+                oBox.css({"left":-imgLeft + "px"});
+			});
+
+            //自动播放切换图片
+            sliderAutoPlay();
+
+			//鼠标移入、移除|停止、开始轮播
+            oSlider.hover(function(){
+				clearInterval(timer);
+			},sliderAutoPlay);
+
+			//下一张
+			$(".next").click(next);
+			//上一张
+			$(".prev").click(prev);
+
+			//功能性方法
+            function sliderAutoPlay(){
+                timer = setInterval(next,2000)
+            }
+
+            //切换显示下一张图片的方法
+            function next(){
+                imgIndex++;
+
+                if(imgIndex >= length){
+                    //重置标签的位置和索引
+                    oBox.css({"left":"0"});
+                    imgIndex = 1;
+                }
+                //设置动画切换
+                oBox.stop().animate({"left":-(imgIndex * 700) + "px"});
+
+                //数字导航根据图片切换自动选定
+                var numIndex = imgIndex;
+                //判断数字导航的位置
+                if(numIndex == length -1) numIndex = 0;
+                //设置选中状态
+                oSpan.eq(numIndex).addClass("active").siblings("span").removeClass("active");
+            }
+
+            //切换显示上一张图片的方法
+            function prev(){
+                imgIndex--;
+                if(imgIndex <  0){
+
+                    oBox.css({"left":-((length -1)* 700) + "px"});
+                    imgIndex = length - 2;
+                }
+                oBox.stop().animate({"left":-(imgIndex * 700) + "px"});
+                //数字导航根据图片切换自动选定
+                oSpan.eq(imgIndex).addClass("active").siblings("span").removeClass("active");
+            }
+		})
+	</script>
+</body>
+</html>

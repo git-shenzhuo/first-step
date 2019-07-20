@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>POST发送请求</button>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+    </ul>
+
+    <!-- <script src="./src/$Ajax.js"></script> -->
+    <script src="./src/jquery-3.4.1.js"></script>
+    <script>
+        window.onload = function() {
+            let oBtn1 = document.querySelector("button");
+            oBtn1.onclick = function() {
+                console.log($ == jQuery);
+
+                $.post({
+                    url: "http://localhost:8888/code/day03/server/03-ajax.php",
+                    // data: {
+                    //     name: "zzzz",
+                    //     age: 111
+                    // },
+                    data: "name=zsss&age=123",
+                    success(responseText) {
+                        console.log("成功-", responseText);
+                    },
+                    error(xhr) {
+                        console.log("失败-", xhr.statusText);
+                    }
+                });
+            }
+
+            $("li").click(function() {
+                console.log($(this).text());
+            })
+        }
+    </script>
+</body>
+
+</html>

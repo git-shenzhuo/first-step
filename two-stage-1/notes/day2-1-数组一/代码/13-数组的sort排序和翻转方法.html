@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*数组的排序
+  * sort()
+  * 注意点：在原数组基础上直接处理(排序),默认以字母顺序来排序。
+  * */
+
+  /*01-排序的方法*/
+  var arr = [1,2,44,3,23,12,56,6];    //[1,2,44,3,23,12,56,6]
+  //arr.sort();
+  //console.log(arr);                   //[1, 12, 2, 23, 3, 44, 56, 6]
+
+  /*按照大小排序 升序|降序排序*/
+  arr.sort(function (a,b) {
+    //console.log("a = "+a+" b = "+b);
+    return b - a;
+  })
+  console.log(arr);
+
+
+  /*02-数组的翻转*/
+  var data = [1, 2, 3, 4, "光头强"];
+  console.log(data.reverse());
+</script>
+</body>
+</html>

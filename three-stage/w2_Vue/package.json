@@ -1,0 +1,24 @@
+{
+  "name": "w2_Vue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animate": "^1.0.0",
+    "animate.css": "^3.7.2",
+    "animated": "^0.2.2",
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "http-server": "^0.11.1",
+    "vue": "^2.6.10"
+  }
+}

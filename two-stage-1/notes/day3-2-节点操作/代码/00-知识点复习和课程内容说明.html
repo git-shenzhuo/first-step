@@ -1,0 +1,24 @@
+DOM
+[1] DOM是：文档对象模型(javaScript操作页面的API) DOM-Tree
+[2] Node(节点) 页面中所有的组成部分都是不同类型的节点，类型不同，节点功能以及操作也不同。
+[3] 节点类型：         nodeType    nodeName          nodeValue
+    元素节点(标签)      1           tagName(DIV)      空
+    属性节点           2           属性名 id/class    属性值
+    文本节点           3           #text             文本值本身
+[4] 节点操作(创建和插入)
+    (1) createElement("div")
+    (2) createAttribute()
+    (3) createTextNode()
+    (4) appendChild()
+    (5) insertBefore(new,target)
+[5] 节点操作(获取)
+    (1) getElementById()
+    (2) getElementsByTagName()
+    (3) getElementsByClassName()
+    (4) getElementsByName()      了解
+    (5) querySelector()     第一个标签
+    (6) querySelectorAll("#id | .class | tagName")  所有的标签
+[6] 节点的关系
+    父子关系        parentNode  parentElementNode childNodes  firsChild lastChild
+    兄弟关系        上一个兄弟节点  下一个兄弟节点
+    祖先-子孙关系

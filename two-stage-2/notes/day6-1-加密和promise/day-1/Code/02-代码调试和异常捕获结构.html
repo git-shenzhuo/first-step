@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*异常捕获结构*/
+    var a = 1;
+    var b = 2;
+    console.log(a + b);
+
+    //如果代码在执行中途发生了错误那么代码将进入到中断状态(停止执行)
+    //开发中我们可以对某些可能出错的代码进行异常捕获，应用了该结构之后，当异常发生了那也不会影响后续代码的执行
+
+    try {
+        //试着执行该代码块中的内容
+        console.log(a);
+    }catch (e)
+    {
+        //如果try语句中的代码出错了，那么就会执行catch代码块中的语句
+        //如果try语句中的代码正常执行，那么该语句块将不会执行
+        console.log(e); //ReferenceError: c is not defined
+
+        //抛出异常：
+        //throw "报错信息"+e;
+
+    }finally
+    {
+        //无论try语句中的代码是否出错，该代码块中的语句都会被执行
+        //变量清理操作 o = null;
+        console.log("__finally__")
+    }
+
+    console.log("____end_____");
+    console.log(e);
+
+    // var o = {"code":100,"msg":"登录失败","status":"error"};
+    // var error = new Error("错误提示信息:该变量没有被定义");
+    // throw error;
+    // throw new Error(o.code);
+
+    //let   JavaScript本身没有块级作用(例外-try..catch)
+    // for(var i = 0; i<4;i++)
+    // {
+    //     console.log(i);
+    // }
+    //
+    // console.log(i,"______");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            font-size: 0;
+        }
+
+        span {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid pink;
+            box-sizing: border-box;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divID">
+        <span id="span1ID"></span>
+        <span id="span2ID"></span>
+        <span id="span3ID"></span>
+        <span id="span4ID"></span>
+        <span id="span5ID"></span>
+        <span id="span6ID"></span>
+        <span id="span7ID"></span>
+        <span id="span8ID"></span>
+        <span id="span9ID"></span>
+    </div>
+    <script>
+        var oDiv   = document.getElementById("divID");
+        var oSpan1 = document.getElementById("span1ID");
+        var oSpan2 = document.getElementById("span2ID");
+        var oSpan3 = document.getElementById("span3ID");
+        var oSpan4 = document.getElementById("span4ID");
+        var oSpan5 = document.getElementById("span5ID");
+        var oSpan6 = document.getElementById("span6ID");
+        var oSpan7 = document.getElementById("span7ID");
+        var oSpan8 = document.getElementById("span8ID");
+        var oSpan9 = document.getElementById("span9ID");
+        oDiv.onclick = function () {
+            oSpan1.style.backgroundColor = lq();
+            oSpan2.style.backgroundColor = lq();
+            oSpan3.style.backgroundColor = lq();
+            oSpan5.style.backgroundColor = lq();
+            oSpan6.style.backgroundColor = lq();
+            oSpan7.style.backgroundColor = lq();
+            oSpan8.style.backgroundColor = lq();
+            oSpan9.style.backgroundColor = lq();
+            oSpan4.style.backgroundColor = lq();
+
+            function color1() {
+                //   var r = parseInt(Math.random()*226);
+                //   var g = parseInt(Math.random()*226);
+                //   var b = parseInt(Math.random()*226);
+                //   return "rgb(" + r + "," + g + "," + b +")";
+            }
+            function color2() {
+                //   var r = parseInt(Math.random()*226);
+                //   var g = parseInt(Math.random()*226);
+                //   var b = parseInt(Math.random()*226);
+                //   return "rgb(" + r + "," + g + "," + b +")";
+            }
+            function color3() {
+                //   var r = parseInt(Math.random()*226);
+                //   var g = parseInt(Math.random()*226);
+                //   var b = parseInt(Math.random()*226);
+                //   return "rgb(" + r + "," + g + "," + b +")";
+            }
+            function color4() {
+                //   var r = parseInt(Math.random()*226);
+                //   var g = parseInt(Math.random()*226);
+                //   var b = parseInt(Math.random()*226);
+                //   return "rgb(" + r + "," + g + "," + b +")";
+            }
+        }
+        function lq() {
+            var r = parseInt(Math.random() * 256);
+            var g = parseInt(Math.random() * 256);
+            var b = parseInt(Math.random() * 256);
+            return "rgb(" + r + "," + g + "," + b + ")";
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*要求：查找数组中小于10的数字，把它们保存到新的数组中返回*/
+
+  var arr = [12,3,4,true,22,{name:"zs"},66,324,6,23,9,0,"熊大"];
+
+  /*实现思路
+  * [1] 遍历数组(for... forEach)
+  * [2] 每循环一次就拿到当前的元素和10比较，如果＜10那么就保存起来  注意类型
+  * */
+
+  /*01-for*/
+  // var res = [];
+  // for (var i = 0,len = arr.length;i < len;i++)
+  // {
+  //   var ele = arr[i];
+  //   if (typeof ele == "number" && ele <10)
+  //   {
+  //     res.push(ele);
+  //   }
+  // }
+  // console.log(res);
+
+  /*02-forEach*/
+  var res = [];
+  arr.forEach(function (ele,index) {
+    if (typeof ele == "number" && ele < 10){
+      res.push(ele);
+    }
+  })
+
+  console.log(res);
+
+</script>
+</body>
+</html>

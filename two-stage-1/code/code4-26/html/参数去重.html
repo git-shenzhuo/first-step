@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function qc(){
+            for(y = 0 ; y < arguments.length; y++){
+                // var num = arguments[y];
+                console.log(arguments[y]);
+                for(e = arguments.length; e > 0;e--){
+                    if(arguments[y] == arguments[e]){
+                        delete arguments[e];
+                    }
+                }    
+            }
+        }
+        qc(223,334,445,556,223,556,223,445,234,878567,223,223,447,448)
+    </script>
+</body>
+</html>

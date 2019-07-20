@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*混入式继承 : for   Object.assign 浅拷贝 */
+  var o = {name:"zs",age:19,car:{color:"red"}};
+  var t = {};
+
+  // for (var key in o)
+  // {
+  //   t[key] = o[key];
+  // }
+  // console.log(t);
+
+  Object.assign(t,o);
+  console.log(t);
+
+</script>
+</body>
+</html>

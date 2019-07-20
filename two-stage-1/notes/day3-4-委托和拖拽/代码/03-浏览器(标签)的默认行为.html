@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<a href="http://wendingding.com">我是跳转链接</a>
+<form action="http://www.baidu.com">
+  <label for="username"></label><input type="text" placeholder="请输入用户名" id="username">
+  <input type="submit" value="提交" id="submitID">
+</form>
+
+<script>
+  /*需求：点击a的时候，打印一行消息：a被点击了*/
+  /*现象：当点击a的时候，确实打印了消息，但是页面马上就跳转到另一个页面*/
+  /*要求：a标签点击后不跳转*/
+  /*说明：浏览器的默认行为有时候是很有用也很有必要的，但是在某些特定的情况下，我们可能需要需要阻止默认行为*/
+
+  /*在html中，有些标签存在默认的行为，比如a标签，点击的时候会跳转到href地址 表单标签，点击的时候提交到action*/
+  var a     = document.querySelector("a");
+  a.onclick = function (event) {
+    console.log("a被点击了");
+
+    var event = event || window.event;
+    event.preventDefault()
+  }
+
+
+  /*要求：弹出消息 不要跳转  解决方案：event.preventDefault()*/
+  /*给提交按钮添加点击事件*/
+  var oSubmit = document.querySelector("#submitID");
+  oSubmit.onclick = function (event) {
+    alert("点击了提交按钮");
+    var event = event || window.event;
+    event.preventDefault()
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1ID">
+    <select name="" id="secID">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="input2ID">
+    <button id="btnID">计算</button>
+    <div id="divID">结果为：</div>
+    <script>
+        var oNum1 = document.getElementById("input1ID");
+        var oNum2 = document.getElementById("input2ID");
+        var btn   = document.getElementById("btnID");
+        var div   = document.getElementById("divID");
+        var sec1  = document.getElementById("secID");
+        btn.onclick = function(){
+            // var res = 0;
+            var num1 = oNum1.value * 1;
+            var num2 = oNum2.value * 1;
+            var sec = sec1.value;
+            console.log(num1);
+            console.log(num2);
+            if (sec == "+") {
+                res = num1 + num2;                 
+            }else if (sec == "-") {
+                res = num1 - num2;
+            }else if (sec == "*") {
+                res = num1 * num2;
+            }else if (sec == "/") {
+                res = num1 / num2;
+            }else {
+                res = num1 % num2;
+            }
+            div.innerHTML = "结果为：" + res;
+        }
+    </script>
+
+</body>
+</html>

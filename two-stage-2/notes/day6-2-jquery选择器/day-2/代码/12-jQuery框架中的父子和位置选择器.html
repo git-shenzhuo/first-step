@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<div id="demoID">我拥有id
+  <span>哈哈哈哈</span>
+  <div>div1</div>
+  <div class="box3">div2
+    <span>spanD</span>
+    <div>我是div------</div>
+    <div>我也是div+++++</div>
+  </div>
+  <span>特殊的哪一个</span>
+  <div>div3</div>
+  <div>div4</div>
+  <p>我是p</p>
+  <div>div5</div>
+</div>
+<div class="box1">我拥有class-box1</div>
+<div class="box1">我拥有class-box1</div>
+<div class="box2">我拥有class-box2</div>
+<span>spanA</span>
+<span>spanB</span>
+<span>spanC</span>
+<p>我是段落标签</p>
+
+<script>
+
+  $(function () {
+    /*001-父子关系选择器*/
+
+    var target = $(".box3");
+
+    /*A-获取父标签*/
+    console.log($(".box3").parent());
+
+    /*B-获取祖先节点*/
+    console.log($(".box3").parents());
+
+    /*C-获取祖先节点..直到某个节点*/
+    console.log($(".box3").parentsUntil("html"));
+
+    /*D-获取子节点*/
+    console.log($(".box3").children());
+    console.log($(".box3").children("span"));
+
+    /*002-兄弟关系选择器*/
+    /*A-获取当前标签的兄弟节点(前面-后面)*/
+    console.log($(".box3").siblings());
+    console.log($(".box3").siblings("div"));
+
+    /*B-后面的第一个兄弟节点*/
+    console.log($(".box3").next());
+
+    /*C-后面的所有兄弟节点*/
+    console.log($(".box3").nextAll());
+
+    /*D-后面的所有兄弟节点...直到*/
+    console.log($(".box3").nextUntil("p"));
+
+    /*E-前面的兄弟节点*/
+    $(".box3").prevAll("span").css("background","#80f");
+  })
+
+</script>
+</body>
+</html>

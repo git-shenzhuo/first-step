@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*01-提供构造函数*/
+  function Person(name,age) {
+    this.name = name;
+    this.age  = age;
+  }
+
+  /*02-设置构造函数的原型对象*/
+  Person.prototype.showName = function () {
+    console.log("姓名 = " + this.name);
+  }
+  Person.prototype.showAge = function () {
+    console.log("年龄 = " + this.age);
+  }
+
+  /*03-通过new调用构造函数创建对象*/
+  var p1 = new Person("范冰冰",39);
+  var p2 = new Person("范丞丞",20);
+  console.log(p1);
+  console.log(p2);
+
+  /*
+  * 实例对象         p1 和 p2是构造函数Person创建出来的实例对象。
+  * 实例化          构造函数Person创建p1和p2这两个实例对象的过程，我们称为实例化。
+  * 构造函数         Person
+  * 构造函数的原型对象 Person.prototype
+  * */
+</script>
+</body>
+</html>

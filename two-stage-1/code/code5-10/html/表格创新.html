@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 5px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            width: 140px;
+            border: 1px solid #666;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="resname">姓名</label>
+    <input type="text" id="resname" class="resname">
+    <label for="school">学校</label>
+    <input type="text" id="school" class="school">
+    <label for="classname">班级</label>
+    <input type="text" id="classname" class="classname">
+    <label for="qqcom">QQ</label>
+    <input type="text" id="qqcom" class="qqcom">
+    <label for="address">地址</label>
+    <input type="text" id="address" class="address">
+    <button>生成表格</button>
+    <table>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>学校</th>
+                <th>班级</th>
+                <th>QQ</th>
+                <th>地址</th>
+                <th>删除</th>
+                <th>复制</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>1</td>
+                <td>武大郎</td>
+                <td>水浒传</td>
+                <td>卖烧饼</td>
+                <td>154</td>
+                <td>青牛镇</td>
+                <td><button>删除</button></td>
+                <td><button>复制</button></td>
+            </tr> -->
+        </tbody>
+    </table>
+    <script>
+        window.onload = function () {
+            var oInput = document.getElementsByTagName("input");
+            var resname = document.getElementById("resname");
+            var school = document.getElementById("school");
+            var classname = document.getElementById("classname");
+            var qqcom = document.getElementById("qqcom");
+            var address = document.getElementById("address");
+            var btn = document.getElementsByTagName("button")[0];
+            var Tbody = document.getElementsByTagName("tbody")[0];
+            var num = 0;
+            btn.onclick = function () {
+                num++;
+                var html = "<td>" + num + "</td>" +
+                    "<td>" + resname.value + "</td>" +
+                    "<td>" + school.value + "</td>" +
+                    "<td>" + classname.value + "</td>" +
+                    "<td>" + qqcom.value + "</td>" +
+                    "<td>" + address.value + "</td>" +
+                    "<td><button class='delete-lick'>删除</button></td>" +
+                    "<td><button class='copy-lick'>复制</button></td>";
+                var tr = document.createElement("tr");
+                tr.innerHTML = html;
+
+                // // 清空文本框的值;
+                // // oInput.value = "";
+                // // 找到要点击的按钮  
+                // var remove = tr.querySelectorAll(".click");
+                // // 点击删除操作
+                // remove[0].onclick = function(){
+                //     var temp = remove[0].parentNode.parentNode;
+                //     Tbody.removeChild(temp);
+                // }
+                // // 点击复制操作
+                // remove[1].onclick = function(){
+                //     var temp  = remove[1].parentNode.parentNode;
+                //     var clone = temp.cloneNode(true);
+                //     Tbody.appendChild(clone);
+                // }                
+                Tbody.appendChild(tr);
+            }
+            Tbody.onclick = function(event){
+                var event = event || window.event;
+                var target = event.target;
+                if(target.className == "delete-lick"){
+                    var temp = target.parentNode.parentNode;
+                    if(confirm("小哥哥，你真的不要我了吗？")){
+                        Tbody.removeChild(temp);
+                    }
+                    Tbody.removeChild(temp);
+                }
+                if(target.className == "copy-lick"){
+                    var temp  = target.parentNode.parentNode;
+                    var clone = temp.cloneNode(true);
+                    Tbody.insertBefore(clone,temp.nextElementSibling);
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

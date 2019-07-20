@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+  <style>
+
+    body{
+      height: 1000px;
+    }
+    .span-class{
+      border: 2px solid #444;
+      background: #eee;
+      width: 150px;
+      height: 300px;
+      display: inline-block;
+      position: fixed;
+      top: 50%;
+      margin-top: -150px;
+    }
+
+    .close{
+      width: 10px;
+      height: 10px;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+<span class="span-class"><img src="src/close.png" class="close"></span>
+<script>
+  $(function () {
+
+    /*需求：当点击关闭标签的时候把广告隐藏*/
+    /*01 先获取页面中指定的标签 */
+    let oClose = $(".close");
+
+    /*02 给标签添加点击事件*/
+    oClose.on("click",function () {
+
+      /*03 把广告隐藏*/
+      console.log(this);
+
+      //$(this).parent().css("display","none");
+      $(this).parent().hide(3000);
+    })
+  })
+</script>
+</body>
+</html>

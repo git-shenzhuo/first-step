@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+  <style>
+    div{
+      width: 200px;
+      height: 300px;
+      background: #ff0088;
+    }
+  </style>
+</head>
+<body>
+
+<div>我是div</div>
+<button>展开</button>
+<button>收起</button>
+<button>切换</button>
+
+<script>
+
+  /*展开和收起动画实现原理：修改标签的样式(高度)*/
+  /*方法：$().slideDown(speed,fn)  $().slideUp(speed,fn) $().slideToggle(speed,fn)*/
+  /*参数：speed 动画的速度(单位是毫秒) fn 当动画执行完毕就调用*/
+  /*速度：我们的第一个参数可以传递 “slow” “normal” “fast” 对应0.6 - 0.4 - 0.2*/
+  $(function () {
+
+    let oDiv = $("div");
+    /*01-展开*/
+    $("button").first().click(function () {
+      oDiv.slideDown(5000,function () {
+        console.log("展开");
+      });
+    })
+
+    /*02-收起*/
+    $("button").eq(1).click(function () {
+      oDiv.slideUp(2000,function () {
+        console.log("收起");
+      });
+    })
+
+    /*03-切换*/
+    $("button").last().click(function () {
+      oDiv.slideToggle(1000,function () {
+        console.log("切换");
+      });
+    })
+
+  })
+
+</script>
+</body>
+</html>

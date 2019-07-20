@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="box">
+  <div class="div-class"></div>
+  <span>spanA</span>
+  <span>spanB</span>
+
+</div>
+
+<script>
+  /*01-元素节点的复制 cloneNode*/
+  var oBox = document.querySelectorAll(".box")[0];
+  var oDiv = document.querySelectorAll(".div-class")[0];
+
+  /*参数：true(深复制) | false(默认)*/
+  var oEle = oDiv.cloneNode(true);
+
+  oBox.appendChild(oEle);
+
+  /*02-节点的删除 remove*/
+  var oSpanB = oBox.children[2];
+  //oSpanB.remove();
+  /*删除：需要通过父元素来删除*/
+  oBox.removeChild(oSpanB);
+
+  /*03-检查元素中是否存在节点 元素节点 文本节点 ...*/
+  console.log(oDiv.hasChildNodes());    //false
+  console.log(oBox.hasChildNodes());    //true
+
+  /*04-替换元素  需要通过父元素来替换  newChild: oldChild*/
+  oBox.replaceChild(document.createElement("p"),oDiv);
+
+</script>
+</body>
+</html>

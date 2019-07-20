@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+  <style>
+    .box1{
+      width: 300px;
+      height: 200px;
+      background: red;
+      position: relative;
+    }
+    .box2{
+      width: 50px;
+      height: 50px;
+      background: #0b97c4;
+      position: absolute;
+      left: 50px;
+      top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="box1">
+  <div class="box2" style="border: 1px solid #ccc">你好啊 李银河<span>嗨！</span></div>
+</div>
+<script>
+  $(function () {
+
+    /*01-获取标签位置相关的信息*/
+    console.log($(".box2").offset().left);    /*相对于窗口的位移信息*/
+    console.log($(".box2").position().left);  /*相对于父标签的位移信息*/
+
+    /*02-获取样式CSS方法*/
+    console.log($(".box2").css("background"));
+    console.log($(".box2").css("left"));
+    console.log($(".box2").css("border"));
+
+    /*03-获取|设置标签的宽高*/
+    /*03-1 如果没有参数，那么表示获取标签的宽度或高度*/
+    console.log($(".box2").width());
+    console.log($(".box2").height());
+
+    /*03-2 如果没有参数，那么表示获取标签的宽度或高度*/
+    console.log($(".box2").width(160));
+    console.log($(".box2").height(32));
+
+    /*04-操作标签的内容*/
+    /*04-1 innerText - text()*/
+    /*如果没有参数，表示获取标签的文本内容，假如存在子标签那么会抽取子标签的文本拼接返回*/
+    // console.log($(".box2").text());
+    // console.log($(".box2").text("爱你就像爱生命"));
+    // console.log($(".box2").text("<h1>爱你就像爱生命</h1>"));
+
+    /*04-2 innerHTML - html()*/
+    /*如果没有参数，表示获取标签的节点内容，假如存在子标签那么会直接拼接返回*/
+    //console.log($(".box2").html());
+    //console.log($(".box2").html("爱你就像爱生命"));
+    console.log($(".box2").html("<h1>爱你就像爱生命</h1>"));
+
+  })
+
+</script>
+</body>
+</html>

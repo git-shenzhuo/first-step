@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<div id="demoID">我拥有id
+  <div>div1</div>
+  <div class="box3">div2
+    <span>spanD</span>
+    <div>我是div------</div>
+    <div>我也是div+++++</div>
+  </div>
+  <div>div3</div>
+  <div>div4</div>
+</div>
+<div class="box1">我拥有class-box1</div>
+<div class="box1">我拥有class-box1</div>
+<div class="box2">我拥有class-box2</div>
+<span>spanA</span>
+<span>spanB</span>
+<span>spanC</span>
+<p>我是段落标签</p>
+<script>
+  /*001-基本选择器*/
+  /*01-ID选择器    #id名   */
+  /*02-类选择器    .class名*/
+  /*03-标签选择器          */
+  /*04-并集选择器          */
+  /*05-通配符选择器  *     */
+
+  /*002-层级选择器*/
+  /*01-子孙节点  空格*/
+  /*02-子节点    >  */
+  /*03-获取当前标签后面的第一个兄弟节点 */
+  /*03-获取当前标签后面的所有的兄弟节点 */
+  $(function () {
+    //$("#demoID").css("background","#184");
+    //$(".box1").css("background","red");
+    //$("div").css("background","red");
+    //$("span").css("background","#923");
+    //$("#demoID,.box2,p").css("background","#3f3");
+    //$("*").css("background","#ccc");
+
+
+    /*获取id为demoID标签的子孙节点中的所有div标签*/
+    //$("#demoID div").css("background","#209");
+    //$("#demoID > div").css("background","#099");
+    //$(".box3 + div").css("background","#099");
+    $(".box3 ~ div").css("background","#409");
+  })
+</script>
+</body>
+</html>

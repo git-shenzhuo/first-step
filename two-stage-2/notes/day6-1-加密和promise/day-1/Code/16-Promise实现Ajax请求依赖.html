@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="./src/jquery-3.4.1.js"></script>
+    <script>
+        Promise.all([
+            new Promise(function (resolve, reject) {
+                $.ajax({
+                    type:"get",
+                    url:"http://localhost:8888/week-6/day-1/Code/api/01-name.php",
+                    success:function (res) {
+                        resolve(JSON.parse(res));
+                    }
+                })
+            }),
+            new Promise(function (resolve, reject) {
+                $.ajax({
+                    type:"get",
+                    url:"http://localhost:8888/week-6/day-1/Code/api/02-className.php",
+                    success:function (res) {
+                        resolve(JSON.parse(res));
+                    }
+                })
+            }),
+            new Promise(function (resolve, reject) {
+                $.ajax({
+                    type:"get",
+                    url:"http://localhost:8888/week-6/day-1/Code/api/03-address.php",
+                    success:function (res) {
+                        resolve(JSON.parse(res));
+                    }
+                })
+            }),
+
+        ]).then(function (datas) {
+            console.log(datas);
+            var res = "";
+            datas.forEach(function (ele) {
+                for (var key in ele)
+                {
+                    res += `${key}=${ele[key]}&`;
+                }
+            })
+            res = res.slice(0,-1);
+            $.ajax({
+                type:"get",
+                url:"http://localhost:8888/week-6/day-1/Code/api/04-ajax.php",
+                data:res,
+                success:function (res) {
+                    console.log(res);
+                }
+            })
+
+        }).catch(function (error) {})
+    </script>
+</body>
+
+</html>

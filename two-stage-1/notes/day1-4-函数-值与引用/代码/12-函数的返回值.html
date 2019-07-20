@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*函数的返回值
+  * 在函数体中通过return返回数据
+  * 注意点1：在执行函数体中代码的时候，只要遇到return语句函数就执行结束就返回。
+  * 注意点2：如果函数中没有return语句，那么函数会执行完所有的代码，并且返回一个undefined
+  *
+  * 重点：函数执行完总是会返回一个值，要么是return语句后面的值，要么为undefined.
+  * */
+
+  // function sum(a,b) {
+  //   console.log("----start---");
+  //    a + b;
+  //   console.log("----end---");
+  // }
+  //
+  // var result1 = sum(1,2);
+  // var result2 = sum(11,22);
+
+  function mul(a,b,c){
+    return a * b *c;
+  }
+
+  /*把两个数据的和计算完之后输出到页面中*/
+  document.write("计算的结果为：" + mul(2,3,4));
+  document.write("计算的结果为：" + mul(10,20,2));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box1{width: 600px;height: 350px;background: #669999}
+    .box2{position: fixed;left: 0;bottom: 0;background: #efefef;width: 300px;height: 100px}
+
+  </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<script>
+
+  // document.onmousemove = function (e) {
+  //   console.log("onmousemove");
+  // }
+
+  var oBox1 = document.getElementsByClassName("box1")[0];
+  var oBox2 = document.getElementsByClassName("box2")[0];
+
+  oBox1.onmousemove = function (e) {
+    var e = e || window.event;
+    console.log(e.clientX, e.clientY);
+    console.log(e.pageX, e.pageY);
+    console.log(e.screenX, e.screenY);
+
+    var res1 = "e.clientX : "+e.clientX+" e.clientY:"+e.clientY;
+    var res2 = "e.pageX : "+e.pageX+" e.pageY:"+e.pageY;
+    var res3 = "e.screenX : "+e.screenX+" e.screenY:"+e.screenY;
+
+    var res = [res1, res2,res3].join("<br>");
+    oBox2.innerHTML = res;
+  }
+
+
+
+</script>
+</body>
+</html>

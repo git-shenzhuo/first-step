@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <product id='fz'>
+        <title>大牌女装</title>
+        <des>只要998，好穿不贵@</des>
+        <src>./img/1.png</src>
+    </product>
+    <product id="bb">
+        <title>品牌包包</title>
+        <des>降价清仓，只要10000块</des>
+        <src>./img/2.png</src>
+    </product>
+    <product id="ydx">
+        <title>精品男鞋</title>
+        <des>黄鹤和小姨子跑路了，降价出售！</des>
+        <src>./img/3.png</src>
+    </product>
+</root>

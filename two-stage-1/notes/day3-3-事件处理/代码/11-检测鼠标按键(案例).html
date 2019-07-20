@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #demoID{width: 400px;height: 50px;background: orange}
+  </style>
+</head>
+<body>
+<div id="demoID"></div>
+<script>
+  var oDiv = document.getElementById("demoID");
+  oDiv.onclick = function (e) {
+    var e = e || window.event;
+
+    /*01-如果发现点击的是鼠标左键 那么就显示机枪扫射*/
+    /*02-如果发现点击的是鼠标滚轮 那么就显示1000倍镜观察战场*/
+    /*03-如果发现点击的是鼠标右键 那么就喝药补充生命值*/
+    console.log(e.target);
+    console.log(e.currentTarget);
+    console.log(e);
+
+    /*button -- 0  左键
+    * button -- 1  滚轮
+    * button -- 2 右键
+    * */
+
+    /*比较重要的属性：
+    * type  事件的类型
+    * currentTarget  事件作用在哪个标签身上
+    * altKey      是否按下alt键
+    * controlKey  是否按下control键
+    * */
+  }
+</script>
+</body>
+</html>

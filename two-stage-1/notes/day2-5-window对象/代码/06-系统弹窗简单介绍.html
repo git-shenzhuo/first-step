@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*01-系统弹窗[1] alert*/
+  //var res1 = alert("欢迎");    /*弹出对话框，有确定按钮*/
+  //console.log(res1);          //undefined
+
+  /*02-系统弹窗[2]*/
+  //var res2 = confirm("您确定要删除这些数据");              /*弹出对话框，有确定和取消按钮*/
+  //console.log(res2);                                   /*确定返回true,取消返回false*/
+
+  /*03-系统弹窗[3]*/
+  /*
+  语法：prompt(msg,default)
+  参数说明： msg 提示信息 default 输入框中默认的内容
+  返回值：   如果点击了确定，返回输入框中的内容，如果点击了取消，那么就返回null
+  */
+  // prompt("好汉，请留下尊姓大名！","元始天尊");
+  var res3 = prompt("好汉，请留下尊姓大名！");
+  console.log(res3);
+
+  /*04-打开浏览器窗口*/
+  /*
+  * 方法：open(url,name,options)
+  * 参数：url 网页的地址 name 名字 options配置项(宽度 高度 位置....)
+  * */
+  //window.open("http://www.wendingding.com");
+  var res4 = window.open("http://www.wendingding.com","wendingding","width=400,height=100");
+
+  console.log(res4,"++");
+
+  // for (var i = 0;i<20;i++)
+  // {
+  //   var h = Math.random() * 1000;
+  //   var w = Math.random() * 1000;
+  //   var t = Math.random() * 500;
+  //   var l = Math.random() * 800;
+  //   window.open("http://www.wendingding.com","haha"+i,"width="+w+",height="+h+",top="+t+",left="+l);
+  //
+  // }
+
+  /*05-close方法关闭窗口的*/
+</script>
+</body>
+</html>

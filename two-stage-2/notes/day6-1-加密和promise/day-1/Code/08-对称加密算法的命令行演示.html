@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*命令行演示*/
+  /*算法模式  流模式 + 块模式*/
+  /*DES和AES 算法都是块模式加密算法*/
+  /*块模式加密 算法：ECB CBC ....*/
+  /*命令行 */
+
+  //$ openssl enc -des-ecb -K 616263 -nosalt  -in 123.txt -out 123.bin
+  //$ openssl enc -des-ecb -K 616263 -nosalt  -in 123.bin -out msg.txt -d
+
+  //vim
+  //vim txt.txt
+  //i  进入到插入编辑模式
+  //输入文本编辑文本
+  //esc + shift + : wq  保存退出
+  //$ openssl enc -des-cbc -K 616263 -iv 0102030405060708 -nosalt -in txt.txt -out 1.bin
+
+
+</script>
+</body>
+</html>

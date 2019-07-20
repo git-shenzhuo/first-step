@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*01-创建对象-字面量(直接量)*/
+  var person = {name:"zs"};
+
+  /*02-创建对象-使用构造函数来创建对象*/
+  var book   = new Object();
+  console.log(person);
+  console.log(book);
+
+  /*03-操作(添加|修改|查询|删除)对象*/
+  /*目标：操作对象的时候，操作的是对象的成员(属性|方法)*/
+  /*方式：添加|修改|查询|删除*/
+
+  /*03-A 添加*/
+  /*两种方式：点语法 + []语法*/
+  book.pages     = 720;
+  book.author    = "冯唐";
+  book["price"]  = 18.00;
+  book.showInfo  = function(){
+    console.log("_____info_____");
+  }
+
+  console.log(book);
+
+  /*03-B 查询*/
+  console.log(book.author);
+  console.log(book.price);
+
+  /*03-C 修改*/
+  /*如果数据存在那么就是修改*/
+  book.price = 17.9;
+  console.log(book);
+
+  /*03-  删除*/
+  /*语法：delete 对象.属性*/
+  delete book.pages;
+  console.log("删除了pages属性");
+  console.log(book);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*订阅者：*/
+  let tom  = {
+    name:"tom",
+    rose_eat:function () {
+      console.log("已经做好一份热气腾腾的兰州拉面--tom");
+    },
+    rose_sleep:function () {
+      console.log("晚安--tom");
+    },
+    jim_run:function () {
+      console.log("小姐姐，带带我--tom");
+    }
+  }
+
+  let jack = {
+    name:"jack",
+    rose_sleep:function () {
+      console.log("希尔顿六楼-606--jack");
+    },
+    jim_run:function () {
+      console.log("我在看台给你加油！--jack");
+    }
+  }
+
+  let jon = {
+    name:"jon",
+    jim_run:function () {
+      console.log("我和你一起--jon");
+    }
+  }
+
+  /*发布者：订阅者列表  注册订阅者  取消订阅  发布状态*/
+  function Publisher(name,user){
+    this.name = name;
+    this.user = user || {};
+  }
+  Publisher.prototype = {
+    constructor:Publisher,
+    addObserver(type,observer){
+      this.user[type] = this.user[type] || [];
+      this.user[type].push(observer);
+      console.log("说明：注册了订阅者");
+    },
+    removeObserver(type,observer){
+      var index = this.user[type].indexOf(observer);
+      if (index != -1)
+      {
+        this.user[type].splice(index,1);
+        console.log("说明：取消了订阅者");
+      }
+    },
+    publish(type){
+      for (let observer of this.user[type])
+      {
+        observer();
+      }
+    }
+  }
+
+  /*创建发布者对象*/
+  let rose   = new Publisher("rose");
+  rose.eat = function(){
+    console.log("宝宝饿了----"+this.name);
+    this.publish("eat");
+  }
+  rose.sleep = function(){
+    console.log("宝宝困了----"+this.name);
+    this.publish("sleep");
+  }
+
+  let jim = new Publisher("jim");
+  jim.run = function(){
+    console.log("今晚八点，运动场不见不散"+this.name);
+    this.publish("run");
+  }
+
+  /*注册订阅者*/
+  rose.addObserver("eat",tom.rose_eat);
+
+  rose.addObserver("sleep",tom.rose_sleep);
+  rose.addObserver("sleep",jack.rose_sleep);
+
+  jim.addObserver("run",tom.jim_run);
+  jim.addObserver("run",jack.jim_run);
+  jim.addObserver("run",jon.jim_run);
+
+
+</script>
+</body>
+</html>

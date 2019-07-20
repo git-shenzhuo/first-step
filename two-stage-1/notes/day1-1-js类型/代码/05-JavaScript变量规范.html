@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*type属性可以省略，默认就是"text/javascript"*/
+
+  /*01-值
+  * JavaScript语言中常见的单独的值：数字 和 字符串
+  * 在代码中，某些数据是需要经常使用的，而且会使用多次，像这样的数据我们需要给他一个名字
+  **/
+
+  /*02-变量
+  * 声明：var 关键字声明(variable)
+  * 声明[3]
+  * */
+
+  /*03-变量规范
+  * [1] 变量名中只能出现数字、字母、下划线和$。
+  * [2] 变量名不能以数字开头。
+  * [3] 变量区分大小写的。
+  * [4] 变量名不能使用系统的关键字和保留字。
+  * */
+
+  /*04-变量命名的约定
+  * [1] 在语句后面加上分号(建议)
+  * [2] 命名的风格：驼峰标识(camel-case)
+  *     特点：多个单词组合成一个标识符(变量名)的时候，每个单词的首字母大写(第一个单词除外)
+  * [3] 命名的时候尽量使用有意义的名字
+  * [4] 写代码的时候要注意缩进和对齐
+  * */
+
+  // 123;                    //没有意义
+
+  // var age = 123;          //给数据起一个名字,方便后续使用
+  // console.log(age);
+  // console.log(age);
+  // console.log(age + 1);
+
+  /*02-A 变量声明*/
+  var age;                  //先声明一个名字
+  age = 18;                 //再赋值
+
+  /*02-B 声明的时候直接赋值*/
+  var name = "张三";
+
+  /*02-C 可以一次性声明多个变量*/
+  //var className,address,id;
+
+  var className = "H5-1904",address = "广州市",id = 9578;
+
+  console.log(className);
+  console.log(address);
+  console.log(id);
+
+  /*03-变量规范*/
+  var a_test$123 = "str";
+  var a_test$123 = "haha";
+
+  /*变量名区分大小写*/
+  var test1  = "测试1";
+  var Test1  = "测试2";
+  console.log(test1);
+  console.log(Test1);
+
+  /*变量名不能使用关键字*/
+  //var for = "1214";
+
+  /*变量名最好遵循驼峰标识风格*/
+  var backgroundColor = "red";      //(1)驼峰标识风格 建议的写法
+  var background_color = "red";     //(2)下划线连接风格
+
+  /*变量名尽可能有意义*/
+  var color = "green";
+
+  /*代码需要注意缩进和对齐*/
+      var res=1 +   2;
+
+
+</script>
+</body>
+</html>

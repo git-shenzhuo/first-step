@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #000;
+        }
+        #box{
+            width: 540px;
+            height: 540px;
+            margin: 60px auto;
+            border-radius: 50%;
+            border: 1px dashed red;
+            /* background: radial-gradient(#f00,#ff0,#800080); */
+            /* background-color: yellow; */
+            position: relative;
+        }
+        .sun{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 220px;
+            left: 220px;
+            box-shadow: 0 0 200px 50px yellow;
+        }
+        .rod1{
+            width: 2px;
+            height: 270px;
+            position: relative;
+            position: absolute;
+            left: 269px;
+            top: 270px;
+            transform-origin: 1px 0;
+            /* transform: rotateZ(); */
+
+        }
+        
+        .revolution{
+            width: 180px;
+            height: 180px;
+            border: 1px dashed blue;
+            border-radius: 50%;
+            position: absolute;
+            left: -89px;
+            top: 180px;
+            position: relative;
+
+        }
+        .earth{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 65px;
+            left: 65px;
+
+        }
+        .rod2{
+            width: 2px;
+            height: 90px;
+            position: relative;
+            position: absolute;
+            top: 90px;
+            left: 89px;
+            transform-origin:1px 0;
+
+        }
+        .moon{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #999;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -10px;
+            left: -9px;
+            box-shadow: 0 0 100px 10px #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <span class="sun"></span>
+        <div class="rod1">
+            <div class="revolution">
+                <span class="earth"></span>
+                <div class="rod2">
+                    <span class="moon"></span>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <script>
+        window.onload=()=>{
+            let rod1   = document.querySelector(".rod1");
+            let rod2   = document.querySelector(".rod2");
+            let speed1 = 1;
+            let speed2 = 10;
+            let R      = 0;
+            let r      = 0;
+            setInterval(()=>{
+                R -= speed1;
+                rod1.style.transform = `rotateZ(${R}deg)`
+            },100)
+            setInterval(()=>{
+                r += speed2;
+                rod2.style.transform = `rotateZ(${r}deg)`
+            },30)
+        }
+    </script>
+</body>
+</html>

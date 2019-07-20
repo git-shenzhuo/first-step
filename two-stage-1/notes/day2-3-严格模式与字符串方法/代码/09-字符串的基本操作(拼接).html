@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  "use strict";
+  /*
+  * 字符串的拼接
+  * [1] 可以使用 +
+  * [2] 可以使用concat方法
+  *     语法 str.concat(str1,str2....)
+  * */
+
+  var str1 = "世间安得双全法 , ";
+  var str2 = "不负如来不负卿 ";
+
+  /*01-使用+号来拼接*/
+  console.log(str1 + str2 + "——仓央嘉措");
+
+
+  /*02-使用concat来拼接*/
+  var res = str1.concat(str2, "——仓央嘉措");
+
+  /*重点：字符串是不可变的，字符串本身是不可以被修改。*/
+  console.log(str1);    //世间安得双全法 ,
+  console.log(res);     //世间安得双全法 , 不负如来不负卿 ——仓央嘉措
+
+
+  console.log(res[0]);
+  console.log(res[1]);
+
+  /*Uncaught TypeError:
+   Cannot assign to read only property '1' of string '世间安得双全法 , 不负如来不负卿 ——仓央嘉措'*/
+  res[1] = "666";     //这行代码没有意义是无效的。
+  console.log(res[1]);
+  console.log(res);
+
+</script>
+</body>
+</html>

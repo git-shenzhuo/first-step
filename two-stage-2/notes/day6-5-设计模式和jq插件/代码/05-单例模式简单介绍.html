@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*单例模式：在典型面向对象语言中(class),我们在调用指定类的时候，返回的总是同一个对象。*/
+  /*单例模式：在JavaScript语言，单例模式更多指的是有一个构造函数，每次调用该构造函数返回的都是同一个实例对象*/
+  function Person() {
+    this.name = "默认的姓名";
+  }
+
+  var p1 = new Person();
+  var p2 = new Person();
+  var p3 = new Person();
+
+  console.log(p1 == p2);  //false
+</script>
+</body>
+</html>

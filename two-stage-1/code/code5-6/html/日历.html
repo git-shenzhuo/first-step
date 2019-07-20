@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 350px;
+            background-color: #ccc;
+            border: 1px solid red;
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        dl {
+            width: 60px;
+            height: 60px;
+            background-color: pink;
+            text-align: center;
+            padding-top: 10px;
+            box-sizing: border-box;
+            /* border-radius: 50%; */
+            color: #119955;
+
+        }
+        p{
+            width: 180px;
+            height: 80px;
+            background-color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <dl>
+            <dt>1</dt>
+            <dd>Jan</dd>
+        </dl>
+        <dl>
+            <dt>2</dt>
+            <dd>Feb</dd>
+        </dl>
+        <dl>
+            <dt>3</dt>
+            <dd>Mar</dd>
+        </dl>
+        <dl>
+            <dt>4</dt>
+            <dd>Apr</dd>
+        </dl>
+        <dl>
+            <dt>5</dt>
+            <dd>May</dd>
+        </dl>
+        <dl>
+            <dt>6</dt>
+            <dd>June</dd>
+        </dl>
+        <dl>
+            <dt>7</dt>
+            <dd>July</dd>
+        </dl>
+        <dl>
+            <dt>8</dt>
+            <dd>Aug</dd>
+        </dl>
+        <dl>
+            <dt>9</dt>
+            <dd>Sept</dd>
+        </dl>
+        <dl>
+            <dt>10</dt>
+            <dd>Oct</dd>
+        </dl>
+        <dl>
+            <dt>11</dt>
+            <dd>Nov</dd>
+        </dl>
+        <dl>
+            <dt>12</dt>
+            <dd>Dec</dd>
+        </dl>
+        <p></p>
+    </div>
+    <script>
+        window.onload = function(){
+            var oDl = document.getElementsByTagName("dl");
+            var oP  = document.getElementsByTagName("p")[0];
+            for(var i = 0,len = oDl.length;i < len;i++){
+                (function(j){
+                    oDl[j].onclick = function(){
+                        for(var n = 0;n < len;n++){
+                            oDl[n].style.backgroundColor = "pink";
+                            oDl[n].style.color = "#119955";
+                        }
+                        oDl[j].style.backgroundColor = "blue";
+                        oDl[j].style.color = "#fff";
+                        oP.innerHTML = j + 1 + "月你好" + "<br>" + "你若安好，便是晴天,你若狂风，我便暴雨"
+                        
+                    }
+                })(i)
+            }
+        }
+    </script>
+</body>
+
+</html>

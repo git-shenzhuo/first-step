@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*需求:给定数组，检查数组中是否存在指定的元素*/
+
+  var str  = "小明";
+  var data = ["小明","甄姬","妲己","陈咬金"];
+
+  // function has(data,str) {
+  //   var flag = false;
+  //   for (var i = 0,len = data.length;i<len;i++)
+  //   {
+  //     if (str == data[i])
+  //     {
+  //       flag = true;
+  //       break;
+  //     }
+  //   }
+  //
+  //   return flag;
+  // }
+  //
+  // console.log(has(data, str));
+
+  /*indexOf 从左向右搜索数组中是否存在指定的元素，如果存在那么就返回对应的索引，如果不存在，就固定返回-1*/
+  console.log(data.indexOf(str));
+
+  /*lastIndexOf 查找的时候从右往左*/
+  var arr = ["小明","嘿嘿","甄姬","妲己","陈咬金",18,"嘿嘿","呵呵"];
+  console.log(arr.indexOf("嘿嘿"));     //1
+  console.log(arr.lastIndexOf("嘿嘿")); //6
+
+  /*需求：检查数组中是否存在妲己，有|只有一个 */
+  if (arr.indexOf("妲己") != -1 && arr.indexOf("妲己") == arr.lastIndexOf("妲己"))
+  {
+
+  }
+</script>
+</body>
+</html>

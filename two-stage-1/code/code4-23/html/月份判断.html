@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="tex">
+    <button id="btn">提交</button>
+    <div id="output"></div>
+    <script>
+        var oTex = document.getElementById("tex");
+        var oBtn = document.getElementById("btn");
+        var oDiv = document.getElementById("output");
+        oBtn.onclick = function() {
+            var num = oTex.value * 1;
+            switch(num){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    oDiv.innerHTML = num + "月有31天。"
+                    break;
+                case 2:
+                    oDiv.innerHTML = num + "月有28天。"
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    oDiv.innerHTML = num + "月有30天。"
+                    break;
+                case "":
+                    alert("请您输入月份！！");
+                default:
+                    alert("请输入正确月份");
+            }
+        }
+    </script>
+</body>
+</html>

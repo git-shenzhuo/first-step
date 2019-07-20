@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*需求：创建数组，数组中包含50个元素，每个元素都应该是三位数的随机数 100~999*/
+  /*思路：
+  * [1] 需要先生成50个随机的三位数
+  *     (1) 确定随机数的范围 [100,999]
+  *     (2) 如何生成随机数：Math.random() [0,1] 还需要处理
+  *     (3) 通过循环自行50次生成50个数字
+  * [2] 把50位数据存放到数组中
+  *     (1) var arr = [];
+  *     (2) push() | splice()
+  * */
+
+
+  //var num = Math.random() * 100;
+  /*0-1(默认)
+   * 00-100 parseInt(Math.random() * (100 + 1))
+   *
+   * 00-999 parseInt(Math.random() * (999 + 1))
+   * 10-100 parseInt(Math.random() * (100 -10 + 1)) + 10
+   * 推导
+   * min-max parseInt(Math.random() * (max -min + 1)) + min
+   * */
+  // var min = 100;
+  // var max = 999;
+  // var arr = [];
+  // for (var i = 0; i < 50;i++)
+  // {
+  //   var num = parseInt(Math.random() * (max -min + 1)) + min;
+  //   console.log("i="+i+" vlaue = "+num);
+  //   arr.push(num);
+  // }
+  //
+  // console.log(arr);
+
+
+  function getArrWithMinAndMax(min,max,n) {
+    var arr = [];
+    for (var i = 0; i < n;i++)
+    {
+      var num = parseInt(Math.random() * (max -min + 1)) + min;
+      arr.push(num);
+    }
+    return arr;
+  }
+</script>
+</body>
+</html>

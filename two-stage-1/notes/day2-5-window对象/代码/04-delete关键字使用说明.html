@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // "use strict";
+
+  /*delete关键字
+  * 作用：删除对象中的成员(属性|方法)
+  * 语法：delete 对象.成员 | 对象[成员]
+  * 属性：name age   保存的是数据，其实本质上是变量  描述信息
+  * 方法：showName() 本质上是函数                行为
+  * 返回值：true / false
+  * */
+
+
+  /*01-delete关键字复习*/
+  var o = {
+    name:"zs",
+    age:18,
+    showName:function () {
+      console.log(this.name);
+    },
+    showAge:function () {
+      console.log(this.age);
+    }
+  }
+
+  console.log(o.name);
+  o.showName();
+
+  console.log(delete o.age);            //true
+  console.log(delete o.showAge);        //true
+
+  console.log(delete o["name"]);       //true
+  console.log(delete o["showName"]);   //true
+  console.log(o);
+
+  /*02-delete关键删除全局变量*/
+  /*注意点1：不能使用delete关键字来直接删除使用var声明的全局变量*/
+  /*注意点2：如果开启严格模式，直接报错Uncaught TypeError: Cannot delete property 'a' of #<Window>*/
+  var a = 123;                    //window.a = 123;
+  console.log(delete window.a);   //false
+  console.log(window.a);          //123
+
+  /*03-delete可以删除通过代码添加到window的成员*/
+  window.b = "我是小贝三";
+  console.log(window.b);          //我是小贝三
+  console.log(delete window.b);   //true
+  console.log(window.b);          //undefined
+</script>
+</body>
+</html>

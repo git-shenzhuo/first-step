@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*Object原型对象上面的成员：Object原型对象上面所有的成员都可以被任意对象访问*/
+  console.dir(Object.prototype);
+  /*
+    constructor: ƒ Object()               构造器属性
+    hasOwnProperty: ƒ hasOwnProperty()    检查指定的属性是否是实例成员
+    isPrototypeOf: ƒ isPrototypeOf()      检查该对象是否在指定对象的原型链上
+    propertyIsEnumerable: ƒ propertyIsEnumerable()  检查指定的属性是否是可枚举(for..in循环中能够打印出来)的
+    toLocaleString: ƒ toLocaleString()
+    toString: ƒ toString()                [类型 构造函数]
+    valueOf: ƒ valueOf()                  普通对象返回this,基本包装类型的对象返回基本值，如果是日期对象，返回时间戳
+  */
+
+  function Person() {
+    this.name = "哈哈"
+  }
+  var p = new Person();
+  console.log(p);
+  console.log(p.hasOwnProperty("name"));    //true
+  console.log(p.hasOwnProperty("age"));     //false
+
+  console.log(Person.prototype.isPrototypeOf(p));  //true
+  console.log(Object.prototype.isPrototypeOf(p));  //true
+  console.log([].isPrototypeOf(p));                //false
+
+  console.log(p.propertyIsEnumerable("name"));      //true
+  var o = Object.create(Person.prototype,{className:{value:"一年一班",enumerable:true}});
+  console.log(o);
+  console.log(o.propertyIsEnumerable("className")); //false
+
+  /*Object.prototype.toString   [类型 构造函数]*/
+  console.log(p.toString());    //[object Object]        类型 构造函数
+  console.log(p.toString == Object.prototype.toString);
+
+  var arr = ["天王盖地虎","小鸡炖蘑菇","宝塔镇河妖",123];
+  console.log(arr.toString());  //天王盖地虎,小鸡炖蘑菇,宝塔镇河妖,123
+  console.log(arr.toString == Object.prototype.toString);
+  console.log(arr.toString == Array.prototype.toString);
+
+  var num = 123;
+  console.log(num.toString());    //123
+
+  /*问题：数字/数组/别的..  它们要调用Object.prototype.toString方法 如何调用？*/
+  function f() {}
+  console.log(f.toString());      //function f() {}
+
+  console.log(Object.prototype.toString.call(f));     //[object Function]
+  console.log(Object.prototype.toString.call(arr));   //[object Array]
+  console.log(Object.prototype.toString.call(num));   //[object Number]
+  console.log(Object.prototype.toString.call(p));     //[object Object]
+
+  /*总结：如果是普通对象返回this,如果是基本包装类型的对象返回基本值，如果是日期对象，返回时间戳*/
+  var objNum = new Number(123);
+  console.log(objNum.valueOf());        //123
+  var objStr = new String("我是王大锤");
+  console.log(objStr.valueOf());        //我是王大锤
+  console.log(p.valueOf());             //Person {name: "哈哈"} this
+  var date = new Date();
+  console.log(date.valueOf());          //1557975004566
+
+</script>
+</body>
+</html>

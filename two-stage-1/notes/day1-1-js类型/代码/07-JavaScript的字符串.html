@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*
+  *
+  * php:世界上最好的编程语言。
+  * python:世界上最简单的编程语言。
+  * JavaScript：世界上最灵活的编程语言。
+  *
+  * 字符串类型(string)简单介绍
+  * [1] 定义：由一系列(N >= 0)字符组成在一起就构成了字符串,字符串需要使用引号包裹。
+  * [2] 引号：单引号或者是双引号，注意不能交叉。
+  * [3] 长度：length
+  * [4] 拼接：+
+  * */
+
+  var str1 = "张三丰";
+  var str2 = '广州市';
+  var num1 = 18;
+
+  console.log(typeof str1);
+  console.log(typeof str2);
+
+  console.log(str1.length);   //2
+  console.log(str2.length);   //3
+
+  /*输出：我的名字叫做张三，住在广州市，今年18岁。*/
+  var result = "我的名字叫做" + str1 + "，住在" + str2 + "，今年" + num1 + "岁。";
+  document.write(result);
+
+</script>
+</body>
+</html>

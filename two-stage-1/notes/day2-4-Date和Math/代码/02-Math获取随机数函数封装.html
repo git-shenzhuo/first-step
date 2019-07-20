@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 随机数
+  * Math.random()  0-1
+  * 00-10随机数     Math.random() * 10
+  * 00-03随机整数
+  *       parseInt(Math.random() * 3)      0 1 2 不可能包含3
+  *       parseInt(Math.random() * 3) + 1  1 2 3  错误
+  *       parseInt(Math.random() * (3 + 1))0 1 2 3
+  * 00-100随机整数   parseInt(Math.random() * (100 + 1))
+  * 00-max随机整数   parseInt(Math.random() * (max + 1))
+  * 10-100随机整数   00-90 基础上 + 10
+  *     parseInt(Math.random() * (90 + 1)) + 10
+  * min-100随机整数
+  *      parseInt(Math.random() * (100 - min + 1)) + min
+  * min-max随机整数 parseInt(Math.random() * (max - min + 1)) + min
+  * */
+
+  console.log(Math.random());
+  console.log(Math.random() * 10);
+  console.log("____");
+  console.log(Math.random() * 3);
+  console.log(parseInt(Math.random() * 3));
+
+
+  function getRandom(min,max,isFloat) {
+    /*如果传递了两个参数：区间值*/
+    /*如果传递了一个参数：0-参数*/
+    if (arguments.length == 1) {
+      max = arguments[0];
+      min = 0;
+    }
+
+    if (isFloat)
+    {
+      return Math.random() * (max - min) + min;
+    }else
+    {
+      return parseInt(Math.random() * (max - min + 1)) + min;
+    }
+  }
+
+  // console.log(getRandom(0, 100));
+  // console.log(getRandom(1, 5));
+  //
+  // // console.log(getRandom(5));
+
+  console.log(getRandom(1, 3,true));
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*01-提供书单管理的构造函数*/
+  function ManagerBookList() {
+    this.bookList = null;
+  }
+
+  /*02-设置原型对象*/
+  ManagerBookList.prototype = {
+    constructor:ManagerBookList,
+    init:function(bookList){
+      var defaultData = [
+        {name:"玻璃球游戏",price:"39.00",author:"赫尔曼·黑塞"},
+        {name:"你好忧愁",price:"1.0",author:"弗朗索瓦丝·萨冈"},
+        {name:"人间失格",price:"29.3",author:"太宰治"},
+        {name:"双城记",price:"30.5",author:"查尔斯·狄更斯"},
+      ];
+      this.bookList = bookList || defaultData;
+    },
+    getBook:function (name) {
+      for (var i = 0 ;i < this.bookList.length; i++)
+      {
+        var book = this.bookList[i];
+        if (book.name == name)
+        {
+          return book;
+        }
+      }
+    },
+    updateBook:function (name,price) {
+      var book = this.getBook(name);
+      if (book) {
+        book.price = price;
+      }
+      return book;
+    },
+    addBook:function(book){
+      this.bookList.push(book);
+    },
+    removeBook:function (name) {
+      var book  = this.getBook(name);
+      var index = this.bookList.indexOf(book);
+      if (index != -1) this.bookList.splice(index,1)
+    }
+  }
+
+  /*03-实例对象*/
+  var me = new ManagerBookList();
+  me.init();
+  console.log(me.getBook("人间失格"));
+  console.log(me.updateBook("人间失格","0.1"));
+  console.log(me.removeBook("你好忧愁"));
+  console.log(me.bookList);
+
+  var you = new ManagerBookList();
+  you.init([{name:"存在与虚无",price:"10.0",author:"冈"}]);
+  you.addBook({name:"形而上学",price:"100.0",author:"哈哈"})
+  console.log(you.bookList);
+
+
+</script>
+</body>
+</html>

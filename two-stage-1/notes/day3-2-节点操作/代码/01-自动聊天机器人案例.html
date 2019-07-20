@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{list-style: none}
+    .box{margin: 50px auto;width: 600px;position: relative}
+    .msg-list{border: 2px solid #cccccc;min-height: 200px;max-height: 400px;padding: 5px}
+    textarea{width: 100%;min-height: 50px;}
+    li{
+      padding: 0 8px;
+      line-height: 2;
+      background: #ccc;
+      border-radius: 8px;
+      float: left;
+      clear: both;
+    }
+    .my-msg{
+      background: #58bc58;
+      color: #fff;
+      float: right;
+    }
+
+    .status{position: absolute;left: 0;bottom: 0;right: 0;color: #888;text-align: center;display: none}
+  </style>
+</head>
+<body>
+<div class="box">
+  <ul class="msg-list">
+    <li class="my-msg">在吗？</li>
+    <li>你好，我没在。</li>
+    <li class="my-msg">在吗？</li>
+    <li>你好，我没在。</li>
+  </ul>
+  <textarea></textarea>
+  <button>发送消息</button>
+  <div class="status">对方正在输入....</div>
+</div>
+</body>
+</html>

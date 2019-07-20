@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div></div>
+<script>
+
+  /*要求：在页面中显示当前的时间 时间的格式：年-月-日 时：分：秒  2019-5-5 14：54：23*/
+  var date = new Date();
+
+  /*01-演示时间转换为字符串输出的N种方式*/
+  console.log(date);                        //Sun May 05 2019 14:55:16 GMT+0800 (中国标准时间)
+  console.log(date.toString());             //Sun May 05 2019 14:56:56 GMT+0800 (中国标准时间)
+
+  console.log(date.toLocaleDateString());   //2019/5/5
+  console.log(date.toISOString());          //2019-05-05T06:56:56.976Z
+  console.log(date.toUTCString());          //Sun, 05 May 2019 06:56:56 GMT
+  console.log(date.toTimeString());         //14:56:56 GMT+0800 (中国标准时间)
+  console.log(date.toLocaleTimeString());   //下午2:56:56
+
+  /*02-自己拼接指定格式的字符串*/
+  var year  = date.getFullYear();      //年
+  var month = date.getMonth();         //月 0-11
+  var days  = date.getDate();          //日
+
+  var h     = date.getHours();         //小时
+  var m     = date.getMinutes();       //分钟
+  var s     = date.getSeconds();       //秒
+  var ms    = date.getMilliseconds();  //秒
+
+  var temp  = "日一二三四五六";
+
+  var week  = date.getDay();           //0~6
+
+  // var res   = "当前的时间：" + year + "-" + (month +1) + "-" + days + " " + h + ":" + m + ":"+ s;
+
+  var res   = "当前的时间：" + year + "年" + (month +1) + "月" + days + "日 " + h + "点" + m + "分"+ s + "秒" + ms + "毫秒  星期" + temp[week];
+
+  var oDiv  = document.getElementsByTagName("div")[0];
+  oDiv.innerHTML = res;
+
+  /*2019年5月5日 15点15分21秒200毫秒 星期日*/
+
+  /*03-星期的说明 0-6 0表示星期日 1表示星期一*/
+  console.log(date.getDay());
+</script>
+</body>
+</html>

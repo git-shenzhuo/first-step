@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload=()=>{
+            let arr1 = ["光头强","熊大","熊二","吉吉","凯特"];
+            let str1 = {name:"光头强",age:23,car:"凯特"};
+            let {name:ming,age:nian,car:mao} = str1;
+            console.log(ming,nian,mao);
+            let [name1,name2,name3,name4,name5,name6] = arr1;
+            console.log(name1,name2,name3,name4,name5,name6);
+            let a = 104;
+            let b = 401;
+            let c = 410;
+            let d = 140;
+            [a,b,c,d] = [d,c,b,a];
+            console.log(a,b,c,d);
+            [a,b,c,d] = [b,d,a,c];
+            console.log(a,b,c,d);
+            fn=({x,y,z})=>{
+                console.log(x,y,z);  
+            }
+            fn({x:10,y:100,z:1000})    
+        }
+    </script>
+</body>
+</html>

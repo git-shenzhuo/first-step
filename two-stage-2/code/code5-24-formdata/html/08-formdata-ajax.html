@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <form action="" name="ffff">
+        <input type="text" placeholder="请输入数字" name="num">
+        <input type="text" placeholder="请输入汉字" name="cha">
+        <input type="text" placeholder="请输入英文" name="eng">
+    </form>
+    <button>提交</button>
+    <script>
+        window.onload = () => {
+            // document.images   =   拿到页面中所有的  img  标签
+            // document.links    =   拿到页面中所有的  a    标签
+            // document.forms    =   拿到页面中的所有  form 标签  通过 .namedItem 拿到name关联的form
+            let btn = $("button")[0];
+            let url = "http://localhost/second%20stage/code/code5-24/php/07-formdata-ajax.php";
+            console.log(btn);
+
+            btn.onclick = () => {
+                let data = new FormData(document.forms.namedItem("ffff"));
+                data.forEach((value, index) => {
+                    console.log(index, value);
+
+                });
+                let xhr = new XMLHttpRequest;
+                xhr.open("post",url,true);
+                xhr.send(data);
+                xhr.onload=()=>{
+                    if(xhr.status){
+                        console.log(xhr.responseText);
+                    }
+                }
+                // $.post({
+                //     url: "http://localhost/second%20stage/code/code5-24/php/07-formdata-ajax.php",
+                //     data: new FormData(document.forms.namedItem("ffff")),
+                //     success(responseText) {
+                //         console.log(responseText);
+
+                //     }
+                // })
+            }
+        }
+    </script>
+</body>
+
+</html>

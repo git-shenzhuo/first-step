@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 三角函数：正玄函数 余玄函数 正切函数
+  * 注意点:  参数都是弧度而不是角度
+  *
+  * 弧度 ？ 角度
+  * 2π  = 360° π = 180°    1° = π / 180°
+  * 公式：弧度 = 角度 * π / 180
+  * */
+
+  /*sin(𝜃) 正玄函数 = 对边 / 斜边  sin(30) = 1/2  */
+  /*cos(𝜃) 余玄函数 = 邻边 / 斜边  cos(30) = √3/2 */
+  /*tan(𝜃) 正切函数 = 对边 / 邻边  tan(30) = √3/3 */
+
+  console.log(Math.sin(30 * Math.PI / 180).toFixed(2));
+  console.log(Math.cos(30 * Math.PI / 180).toFixed(2)); //0.87
+  console.log(Math.tan(30 * Math.PI / 180).toFixed(2)); //0.58
+
+</script>
+</body>
+</html>

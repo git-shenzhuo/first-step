@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #div1 {
+            width: 304px;
+            height: 222px;
+            position: relative;
+            margin: 30px auto 0px;
+        }
+
+        #div1 img {
+            width: 300px;
+            height: 220px;
+        }
+
+        #div1 span {
+            width: 100px;
+            height: 100px;
+            background: red;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            display: none;
+            /* filter: alpha(opacity(20)); */
+            opacity: 0.2;
+        }
+
+        .show {
+            width: 100%;
+            height: 100%;
+            background: red;
+            position: absolute;
+            z-index: 10px;
+            /* filter: alpha(opacity(10)); */
+            opacity: 0.1;
+            left: 0px;
+            top: 0px;
+        }
+
+        #div2 {
+            width: 300px;
+            height: 220px;
+            position: relative;
+            display: none;
+            overflow: hidden;
+            margin: 0px auto 0px;
+        }
+
+        #div2 img {
+            width: 900px;
+            height: 660px;
+        }
+
+        #img1 {
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="div1">
+        <img src="../images/mn1.jpg" />
+        <span></span>
+        <div class="show"></div>
+    </div>
+    <div id="div2">
+        <img id="img1" src="../images/mn1.jpg" />
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var oShow = oDiv.getElementsByTagName('div')[0];
+            var oSpan = oDiv.getElementsByTagName('span')[0];
+            var oImg = document.getElementById('img1');
+            oShow.onmouseover = function () {
+                oSpan.style.display = 'block';
+                oImg.parentNode.style.display = 'block';
+            };
+            oShow.onmouseout = function () {
+                oSpan.style.display = 'none';
+                oImg.parentNode.style.display = 'none';
+            };
+            oShow.onmousemove = function (ev) {
+                var oEvent = ev || event;
+                var x = oEvent.clientX - oDiv.offsetLeft - oSpan.offsetWidth / 2;
+                var y = oEvent.clientY - oDiv.offsetTop - oSpan.offsetHeight / 2;
+
+                if (x < 0) {
+                    x = 0;
+                } else if (x > oShow.offsetWidth - oSpan.offsetWidth) {
+                    x = oShow.offsetWidth - oSpan.offsetWidth;
+                }
+                if (y < 0) {
+                    y = 0;
+                } else if (y > oShow.offsetHeight - oSpan.offsetHeight) {
+                    y = oShow.offsetHeight - oSpan.offsetHeight
+                }
+
+                oSpan.style.left = x + 'px';
+                oSpan.style.top = y + 'px';
+                var percentX = x / (oShow.offsetWidth - oSpan.offsetWidth);
+                var percentY = y / (oShow.offsetHeight - oSpan.offsetHeight);
+                var oImgparent = oImg.parentNode;
+                oImg.style.left = -percentX * (oImg.offsetWidth - oImgparent.offsetWidth) + 'px';
+                oImg.style.top = -percentY * (oImg.offsetHeight - oImgparent.offsetHeight) + 'px';
+            };
+        };
+    </script>
+</body>
+
+</html>

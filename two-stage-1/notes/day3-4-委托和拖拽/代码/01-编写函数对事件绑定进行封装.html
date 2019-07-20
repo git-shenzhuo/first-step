@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div>我是div</div>
+<script>
+  /*01-给标签绑定事件*/
+  var oDiv = document.getElementsByTagName("div")[0];
+  // oDiv.onclick = function (event) {
+  //   var event = event || window.event;
+  //
+  //   /*type是事件的类型 target是事件的目标(事件真正的发生在谁身上)*/
+  //   console.log("div---被点击了--1",event.type,event.target);
+  // }
+  //
+  // /*兼容性*/
+  // oDiv.addEventListener("click",function (event) {
+  //   var event = event || window.event;
+  //   console.log("div---被点击了--2",event.type,event.target);
+  // })
+  //
+  // oDiv.addEventListener("click",function (event) {
+  //   var event = event || window.event;
+  //   console.log("div---被点击了--3",event.type,event.target);
+  // })
+
+  /*IE attachEvent()*/
+
+  /*封装通用的方法：给标签绑定事件(兼容性)*/
+  function event(ele,type,handle) {
+    if (ele.addEventListener)
+    {
+      ele.addEventListener(type,handle);
+    }else if (ele.attachEvent)
+    {
+      ele.attachEvent("on"+type,handle);
+    }else
+    {
+      ele["on"+type] = handle;
+    }
+  }
+
+  event(oDiv,"click",function (event) {
+    var event = event || window.event;
+    console.log("div---被点击了--1",event.type,event.target);
+  })
+
+  event(oDiv,"mouseenter",function (event) {
+    var event = event || window.event;
+    console.log("div---鼠标移入--1",event.type,event.target);
+  })
+</script>
+</body>
+</html>

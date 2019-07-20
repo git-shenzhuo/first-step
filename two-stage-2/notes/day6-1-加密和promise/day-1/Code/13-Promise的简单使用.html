@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*01-Promise 承诺 保证 */
+  /*02-Promise 异步任务的解决方案*/
+  /*03-按顺序执行异步任务：task1 -> task2 -> task3  回调函数嵌套*/
+  /*如果要执行的异步任务非常的多，使用回调函数嵌套会导致代码结构很复杂，出现回调地狱。*/
+
+  // console.log("--start---");
+
+  /*01-Promise基本使用(1)*/
+  // new Promise(function (resolve, reject) {
+  //   //执行异步任务
+  //   setTimeout(function () {
+  //     console.log("task---1");
+  //     //异步任务执行完存在两种可能：成功 | 失败
+  //     //如果任务成功：resolve();
+  //     //如果任务失败: reject();
+  //     //resolve();
+  //     //reject();
+  //
+  //     //resolve("异步任务执行后要传递给then回调的参数");
+  //     reject("异步任务执行失败后要传递给then回调的参数");
+  //   },1000)
+  //
+  // }).then(function (success) {
+  //   //当Promise回调函数中调用resolve()那么就执行这里的第一个回调函数
+  //   console.log("then---1",success);
+  // },function (error) {
+  //   //当Promise回调函数中调用reject()那么就执行这里的第二个回调函数
+  //   console.log("then---2",error);
+  // })
+  // console.log("--end---");
+
+
+  /*02-Promise基本使用(2)*/
+  // new Promise(function (resolve, reject) {
+  //   /*执行异步任务*/
+  //   setTimeout(function () {
+  //     console.log("task---1");
+  //
+  //     //resolve("异步任务成功");
+  //     reject("异步任务失败");
+  //   },1000)
+  // }).then(function (success) {
+  //   /*异步任务执行完后，调用resolve()方法执行该函数*/
+  //   console.log("then--",success);
+  //
+  // }).catch(function (error) {
+  //   /*异步任务执行完后，调用reject()方法执行该函数*/
+  //   console.log("catch--",error);
+  // })
+  //
+
+
+
+  /*03-Promise基本使用(3) 箭头函数*/
+  new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      console.log("task---1");
+      resolve();
+    },1000);
+  }).then(success=>{
+    console.log("then");
+  }).catch(error=>{
+    console.log("catch");
+  })
+
+
+</script>
+</body>
+</html>

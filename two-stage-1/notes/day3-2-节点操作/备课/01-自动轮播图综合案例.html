@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{margin: 0;padding: 0;list-style: none}
+    .box{border: 1px solid #cccccc;width: 750px;height:315px;margin: 50px auto;position: relative}
+    .ul{position: relative;z-index: 1}
+    .ul-list{position: absolute;}
+    .ol{position: absolute;bottom: 10px;right: 10px;z-index: 2;}
+    .ol-list{float: left;width: 25px;height: 25px;margin-right: 10px;background: #aaa;text-align: center;line-height: 25px}
+    .active{background: red;color: #fff}
+  </style>
+</head>
+<body>
+<script>
+
+
+  var currentIndex = 0;
+  /*01-先创建页面中需要的标签*/
+  var oBox = document.createElement("div");
+  oBox.className = "box";
+
+  /*创建ul标签*/
+  var oUl = document.createElement("ul");
+  /*创建4个img标签*/
+  for (var i = 0 ;i < 4;i++)
+  {
+
+    var oLi  = document.createElement("li");
+    var oImg = document.createElement("img");
+    oImg.src = "src/"+(i+1)+".jpg";
+    oLi.appendChild(oImg);
+    oLi.className = "ul-list";
+    if (i != 0 ) oImg.style.display = "none";
+    oUl.appendChild(oLi);
+  }
+  oUl.className = "ul";
+  oBox.appendChild(oUl);
+
+  /*创建ol标签*/
+  var oOl = document.createElement("ol");
+
+  /*创建4个li标签*/
+  for (var i = 0 ;i < 4;i++)
+  {
+
+    var oLi  = document.createElement("li");
+    oLi.innerText = i + 1;
+    oLi.className = "ol-list";
+    if (i == 0) oLi.className += " active";
+    oOl.appendChild(oLi);
+  }
+  oOl.className = "ol";
+  oBox.insertBefore(oOl,oUl);
+  document.body.appendChild(oBox);
+
+
+  /*02-当鼠标移入到指定索引的时候切换图片*/
+  var indes = oOl.children;
+  var imgs  = document.getElementsByTagName("img");
+  for (var i = 0;i<indes.length;i++)
+  {
+    (function (j) {
+      indes[j].onmouseenter = function () {
+       /*找到对应的那张图片，让那张图片显示*/
+        for (var x = 0 ;x < imgs.length;x++)
+        {
+          imgs[x].style.display = (x == j) ? "block" :"none";
+          console.log(x, j);
+          this.className = (x == j) ? "ol-list active" : "ol-list";
+        }
+      }
+    })(i)
+  }
+</script>
+</body>
+</html>

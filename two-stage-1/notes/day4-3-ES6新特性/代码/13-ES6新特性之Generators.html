@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*Generators 生成器函数*/
+  /*调用生成器函数的时候，函数并不会被马上执行，需要调用next方法开始执行*/
+  /*当函数执行到 yield 会暂停，当函数执行到return的时候会结束*/
+  function * task() {
+    console.log("将要开始执行任务");
+    yield "a";
+    console.log("执行Task1---");
+    yield "b";
+    console.log("执行Task2---");
+    yield "c";
+    console.log("执行Task3---");
+    return "___";
+    yield "d";
+    console.log("执行Task4---");
+  }
+
+  var generator = task();
+  generator.next();
+  generator.next();
+  generator.next();
+  generator.next();
+  generator.next();
+
+  /*应用场景：游戏新手向导 */
+  function * doTask(n) {
+    if (n == 1)
+    {
+      console.log("去新手村找王铁匠");
+      yield "---1---";
+      console.log("和王铁匠学习如何打铁！！");
+      yield "---2---";
+      console.log("给神雕大侠打造一把玄铁神兵");
+      yield "---3---";
+      console.log("把打铁铺卖了去旅行");
+    }else if (n == 2)
+    {
+      console.log("去李家沟找张寡妇");
+      yield "---1---";
+      console.log("问她今天月亮圆吗？");
+      yield "---2---";
+      console.log("问她心上人在哪儿？");
+      yield "---3---";
+      console.log("含着眼泪 呼喊着撤出该任务");
+    }else
+    {
+      console.log("去何家堡卖装备");
+      yield "---1---";
+      console.log("被其它玩家打死！！");
+    }
+  }
+
+  var t = doTask(1);
+  t.next();
+
+
+</script>
+</body>
+</html>

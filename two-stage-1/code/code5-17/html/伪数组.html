@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload=()=>{
+            let listarr1 = {0:"hahaha",1:"345",2:"qunima",length:3};
+            let listarr2 = {0:'zs',1:"18",2:"北京",length:3};
+            let listarr3 = {0:"123",1:"234",2:"345",length:3}
+            console.log(listarr1);
+            console.log(listarr2);
+            // listarr.push("yanmu");
+            // console.log(listarr);
+            // let list = Array.from(listarr);
+            // console.log(listarr);
+            console.log(Array.from(listarr1));
+            console.log(Array.from(listarr2));
+            // 参数转换为数组
+            let arr1 = Array.of(4);
+            let arr2 = Array.of(4,3,4,6);
+            let arr3 = Array.of(4,"fff",3,"5555");
+            console.log(arr1);
+            console.log(arr2);
+            console.log(arr3);
+            // 查找满足条件的第一个元素
+            let arr4 = [34,"光头强",45,7,1,-78,"倚天屠龙记"];
+            let res1 = arr4.find((value,index)=>value == 45);
+            let res2 = arr4.findIndex((value,index)=>value == 45);
+            let res3 = arr4.find((value,index)=>value < 45);
+            let res4 = arr4.findIndex((value,index)=>value > 45);
+            console.log(res1);
+            console.log(res2);
+            console.log(res3);
+            console.log(res4);
+            console.log(arr4.includes("倚天屠龙记"));
+            console.log(arr4.includes("郭靖"));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*01-字符串转换的方法*/
+  var  arr = ["嘿嘿","呵呵","嘻嘻",18,{name:"zs"}];
+
+  /*[1] 把数组中每一项都转换为字符串(如果本身就是字符串那么不用转换)然后拼接(使用，号)在一起返回*/
+  /*[2] toString 和 toLocaleString等价的*/
+  console.log(arr.toLocaleString());    //嘿嘿,呵呵,嘻嘻,18,[object Object]
+  console.log(arr.toString());          //嘿嘿,呵呵,嘻嘻,18,[object Object]
+
+  /*对象的toString方法本身比较特殊  [类型 构造函数名称]*/
+
+  console.log(({name: "zs"}).toString());           //[object Object]
+  console.log(Object.prototype.toString.call(arr)); //[object Array]
+
+  /*02-数组元素连接成字符串的方法 join*/
+  console.log(arr.join("#"));
+</script>
+</body>
+</html>

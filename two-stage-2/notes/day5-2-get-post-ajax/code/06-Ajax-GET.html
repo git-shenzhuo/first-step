@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="GET">
+        <label for="username">用户名</label>
+        <input type="text" placeholder="请输入用户名" id="username" name="usm">
+        <label for="password">密码</label>
+        <input type="text" placeholder="请输入密码" id="password" name="pwd">
+        <label for="phone">手机号码</label>
+        <input type="text" placeholder="请输入手机号码" id="phone" name="phoneText">
+        <label for="email">电子邮箱</label>
+        <input type="text" placeholder="请输入电子邮箱" id="email" name="emailText">
+    </form>
+    <button>发送GET请求</button>
+    <script>
+        /*01-先获取页面中对应的标签*/
+        let oBtn = document.querySelector("button");
+        let oUsername = document.querySelectorAll("#username")[0];
+        let oPassword = document.querySelectorAll("#password")[0];
+        let oPhone = document.querySelectorAll("#phone")[0];
+        let oEmail = document.querySelectorAll("#email")[0];
+
+        /*02-给按钮添加点击事件*/
+        oBtn.onclick = function() {
+            let username = oUsername.value;
+            let password = oPassword.value;
+            let phone = oPhone.value;
+            let email = oEmail.value;
+            let queryString = `?username=${username}&password=${password}&phone=${phone}&email=${email}`;
+
+            /*03-发起AJax网络请求*/
+            /*[1] 创建请求对象*/
+            let xhr = new XMLHttpRequest();
+            let url = "./server/04-ajax-get.php" + queryString;
+            console.log("转码前：", url);
+            url = encodeURI(url);
+
+            /*如果URL路径中存在中文，那么需要对中文转码*/
+            console.log("转码后：", url);
+            /*[2] 设置请求对象*/
+            xhr.open("get", url, true);
+
+            /*[3] 发送网络请求*/
+            xhr.send();
+
+            /*[4] 监听请求状态的改变:当网络请求的状态发生改变就会执行该函数*/
+            /* readyState 标明当前请求处于啥状态？*/
+            xhr.onreadystatechange = function() {
+                console.log(xhr.readyState);
+                if (xhr.readyState == 4) {
+                    console.log(xhr.status, xhr.statusText);
+                    if (xhr.status == 200) {
+                        /*[5] 解析服务器返回的数据*/
+                        console.log(xhr.responseText);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

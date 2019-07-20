@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var arr = [1,2001,3,32,90,123,23,12000];
+
+  /*Math.max(参数1，参数2，参数3)*/
+  console.log(Math.max(1,2001,3,32,90,123));   /*2001*/
+  console.log(Math.min(1,2001,3,32,90,123));   /*1*/
+  console.log(Math.max(arr));                  /*错误的演示*/
+
+  /*使用apply方法来实现*/
+  //var max = Math.max.call(null,1,2001,3,32,90,123);  //arr.max()
+  //var max = Math.max.apply(null,[1,2001,3,32,90,123]);
+
+  var max = Math.max.apply(null,arr);
+  var min = Math.min.apply(null,arr);
+  console.log(max);
+  console.log(min);
+
+  /*ES6提供新特性：扩展运算符(把数组展开为参数列表)*/
+  console.log(arr);
+  console.log(arr.join(","));     /*字符串*/
+  console.log(...arr);            /*展开为参数列表*/
+  console.log(Math.max(...arr));
+
+  /*典型应用*/
+  /*01-合并数组*/
+  var arr1 = ["demo1","demo2",123];
+  var arr2 = ["哈哈","呵呵","呱呱"];
+  var arr3 = ["嘿嘿","嘻嘻"];
+  var arr4 = arr1.concat(arr2, arr3);
+  console.log(arr4);
+  var arr5 = [...arr1, ...arr2,...arr3];
+  console.log(arr5);
+
+  /*02-把数组的元素全部添加到另一个数组的后面*/
+  /*02-1 实现方案1*/
+  // for(let i = 0;i<arr2.length;i++)
+  // {
+  //   arr1.push(arr2[i]);
+  // }
+  // console.log(arr1);
+
+  /*02-2 实现方案2*/
+  // Array.prototype.push.apply(arr1, arr2);   //arr1.push(arr2[0],arr2[1]...)
+  // console.log(arr1);
+
+  /*02-3 实现方案3*/
+  arr1.push(...arr2);
+  console.log(arr1);
+
+  /*03-把字符串转换为数组*/
+  var str = "I like u";   //["I","","l","i","k","e","","u"];
+  /*03-1 通过遍历来实现*/
+  // var resArr = [];
+  // for (let i = 0;i <str.length;i++)
+  // {
+  //   resArr.push(str.charAt(i))
+  // }
+  // console.log(resArr);
+
+  /*03-2 通过扩展运算符来实现*/
+  var resArr = [...str,..."黄潇潇"];
+  console.log(resArr);
+</script>
+</body>
+</html>

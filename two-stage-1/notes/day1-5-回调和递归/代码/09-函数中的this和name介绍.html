@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * [1] this : 自身
+  * [2] 函数中可以使用this
+  * [3] this通常来说指向的是一个对象，具体指向什么对象需要看函数的调用方法
+  * [4] ? 函数有哪些调用方法
+  *     (1) 普通调用  f();         函数中的this指向的是全局对象window
+  *     (2) 对象方法  obj.f();     函数中的this指向的是当前的对象
+  * */
+  //
+  // function f() {
+  //   console.log("---f---");
+  //   console.log(this);
+  // }
+  //
+  // /*01-普通函数调用*/
+  // f();
+  //
+  // /*02-对象方法*/
+  // var o = {name:"zs"};
+  // o.fn = f;         //给对象添加添加一个方法
+  //
+  // o.fn();
+
+  /*花边*/
+  /*[1] 函数是特殊(创建作用域 | 可以被调用 )的对象
+  * [2] 函数的length属性 该函数形参的个数
+  *     arguments的length属性，函数调用时实际参数的个数
+  * [3] 函数可以像对象一样来进行操作
+  * [4] 函数有名字，可以通过函数的name属性来获取  该属性不能被修改
+  * */
+  function f(a,b,c,d) {}
+
+  // console.dir(f);
+  // console.log(f.length);
+  // f.a = "我是a";
+  // f["b"] = "我是b";
+  // console.log(f.a);
+  // console.log(f.b);
+  //
+  // f.fn = function () {
+  //   console.log("fn---");
+  // }
+  // f["fn"]();
+
+  console.log(f.name);
+  f.name = "xxxx";
+  console.log(f.name);
+
+</script>
+</body>
+</html>

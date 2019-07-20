@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function js(a, b) {
+            var n = 0;
+            // var result = 0;
+            for (var i = (a < b ? a : b); i <= b; i++) {
+                for (var j = (a < b ? a : b); j <= b; j++) {
+                    if (j != i) {
+                        var num = "" + i + j;
+                        
+                        if (num % 2 == 1) {
+                            n++
+                            console.log(num);
+                        }
+                    }
+                }
+                // result += n;
+            }
+            console.log("奇数共有  " + n + " 个。");
+        }
+        js(4, 9)
+        // js(0,3);
+        // console.log(js);
+        // function js(a, b) {
+        //     var n = 0;
+        //     var result = 0;
+        //     for (var i = (a < b ? a : b); i <= b; i++) {
+        //         for (var j = (a < b ? a : b); j <= b ; j++) {
+        //             var num = ""+ i + j;
+        //             console.log(num);
+        //             if (num % 2 == 1) {
+        //                 n++
+        //             }
+        //         }
+        //         result += n;
+
+        //     }
+        //     return result
+        // }
+
+        // console.log(js(0, 3));
+    </script>
+</body>
+
+</html>

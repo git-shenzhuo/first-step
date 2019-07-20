@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      list-style: none;
+    }
+    .book-class
+    {
+      border: 1px solid #000;
+      background: #efefef;
+      margin: 10px;
+      width: 220px;
+      padding: 10px;
+    }
+
+    li{
+      float: left;
+      border: 1px solid #000;
+      margin: 3px;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <ul class="book-list">
+    <!--<li>-->
+      <!--<img src="img/1.jpg" alt="" class="image-class">-->
+      <!--<div class="book-class">-->
+        <!--<div>白夜行</div>-->
+        <!--<div>作者：东野圭吾</div>-->
+        <!--<div>价格：$ 41.10</div>-->
+        <!--<div>出版社：新经典文化</div>-->
+      <!--</div>-->
+    <!--</li>-->
+    <!--<li>-->
+      <!--<img src="img/2.jpg" alt="" class="image-class">-->
+      <!--<div class="book-class">-->
+        <!--<div>白夜行</div>-->
+        <!--<div>作者：东野圭吾</div>-->
+        <!--<div>价格：$ 41.10</div>-->
+        <!--<div>出版社：新经典文化</div>-->
+      <!--</div>-->
+    <!--</li>-->
+  </ul>
+</div>
+<script>
+
+  /*00-先获取标签*/
+  var bookList = document.getElementsByClassName("book-list")[0];
+
+  /*01-提供数据*/
+  var data = [
+    {
+      name:"白夜行（2017版）",
+      price:"￥41.10",
+      press:"新经典文化",
+      author:"东野圭吾",
+      src:"1.jpg"
+    },
+    {
+      name:"黄金时代",
+      price:"￥26.2",
+      press:"新经典文化",
+      author:"王小波",
+      src:"2.jpg"
+    },
+    {
+      name:"挪威的森林",
+      price:"￥30.7",
+      press:"上海译文出版社",
+      author:"村上春树",
+      src:"3.jpg"
+    },
+    {
+      name:"黄河青山",
+      price:"￥45.70",
+      press:"三联书店",
+      author:"黄仁宇",
+      src:"4.jpg"
+    }];
+
+  /*02-根据数据生成标签拼接*/
+  var liArr = data.map(function (item,index) {
+    var html =   '<li>'+
+                 '<a href="#">'+
+                 '<img src='+"img/"+item.src+' alt="" class="image-class">'+
+                    '<div class="book-class">'+
+                    '<div>'+item.name+'</div>'+
+                    '<div>作者：'+item.author+'</div>'+
+                 '<div>价格：$ '+item.price+'</div>'+
+                 '<div>出版社：'+item.press+'</div>'+
+                 '</div>'+
+                 '</a>'+
+                 '</li>';
+    return html;
+  })
+
+  /*03-设置UI*/
+  var liHtml = liArr.join("");
+  bookList.innerHTML = liHtml;
+
+
+  /*04-获取页面中所有的a标签 添加点击事件*/
+  var links = document.getElementsByTagName("a");
+  for (var i = 0; i < links.length;i++)
+  {
+    (function (j) {
+      links[j].onclick = function () {
+        // console.log("---");
+        // console.log(j);
+        // console.log(data[j]);
+        var currentBook = data[j];
+        /*05-处理跳转到详情页*/
+        // console.log(this);
+
+        /*06-把对象转换为查询字符串的结构*/
+        /*name=黄金时代&author=王小波&press=...*/
+        var res = "";
+        for (var key in currentBook)
+        {
+          res += key + "=" + currentBook[key]+"&";
+        }
+        res = res.slice(0,-1);
+        console.log(res);
+        this.href = "http://localhost:63342/1904/%E7%AC%AC%E4%BA%8C%E5%91%A8/%E7%AC%AC%E4%BA%94%E5%A4%A9/%E4%BB%A3%E7%A0%81/bookDetail.html?" + res;
+      }
+    })(i);
+  }
+
+</script>
+</body>
+</html>

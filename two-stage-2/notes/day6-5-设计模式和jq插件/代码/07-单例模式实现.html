@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*单例模式：在典型面向对象语言中(class),我们在调用指定类的时候，返回的总是同一个对象。*/
+  /*单例模式：在JavaScript语言，单例模式更多指的是有一个构造函数，每次调用该构造函数返回的都是同一个实例对象*/
+
+  /*思路：当第一次创建对象后把该对象保存起来，以后需要对象的时候总是先检查对象是否已经存在了，如果已经存在了那么就直接返回，否则就创建一个并且保存起来。*/
+
+
+  /*方案(2) 把实例对象保存在构造函数(静态属性)*/
+  /*构造函数的静态成员也有可能被修改*/
+  function Person() {
+    if (Person._instance)
+    {
+      console.log("发现对象已存在，直接返回不再新建")
+      return Person._instance;
+    }
+
+    this.name = "默认的姓名";
+    Person._instance = this;
+    console.log("创建对象");
+  }
+  var p1 = new Person();
+  var p2 = new Person();
+
+  Person._instance = "嘻嘻嘻";
+
+  var p3 = new Person();
+
+
+</script>
+</body>
+</html>

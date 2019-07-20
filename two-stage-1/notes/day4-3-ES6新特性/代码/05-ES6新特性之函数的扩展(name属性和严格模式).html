@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*[01]-总结函数的name属性*/
+  /*01-函数声明*/
+  function f1() {
+    var a = 12;
+  };
+
+  f1();
+  console.log(f1.name);         //"f1"
+
+  /*02-字面量创建函数(匿名函数)*/
+  var f2 = function () {}
+  console.log(f2.name);         //"f2"
+
+  /*03-字面量创建函数(命名|具名函数)*/
+  var f3 = function test() {};
+  console.log(f3.name);         //"test"
+
+  /*04-通过构造函数创建的实例对象*/
+  console.log((new Function()).name);  //"anonymous"
+
+  /*05-通过bind返回的新函数*/
+  console.log((f2.bind({name: "zs"})).name);  //"bound f2"
+
+  /*[02]-函数内部显示的来声明严格模式*/
+  /*注意点：如果函数应用了默认参数或者是剩余参数，那么在函数内部就不能再显示的声明严格模式*/
+  function f(...rest) {
+    "use strict";
+  }
+
+  f();
+</script>
+</body>
+</html>

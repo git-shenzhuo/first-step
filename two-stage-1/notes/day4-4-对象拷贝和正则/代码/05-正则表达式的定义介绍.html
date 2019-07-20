@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*01-字面量方式创建*/
+  // let reg1 = /华为/g;           /*普通的文本，匹配华为这两个文字*/
+  // let reg2 = /javaScript/i;
+  // let reg3 = /^javaScript/gi;   /*i 忽略大小写*/
+  // let reg4 = /^javaScript/gim;  /*m 多行匹配，^在匹配的时候，字符串的开头 + 每行开头位置*/
+  // let reg5 = /.com/gi;
+
+  /*01-构造函数创建*/
+  let reg1 = new RegExp("华为","g");
+  let reg2 = new RegExp("javaScript","i");
+  let reg3 = new RegExp("^javaScript","gi");
+  let reg4 = new RegExp("^javaScript","mgi");
+
+  /*02-正则表达式测试*/
+  console.log(reg1.test("华-为荣耀"));
+  let str = "华为最新款的华为P30手机比你这个手机好用多了，便宜又可以看月亮";
+  console.log(str.replace(reg1, "***"));
+
+  console.log(reg2.test("ios java javascript C++"));  //true
+  console.log(reg3.test("javascript ios java javascript C++"));
+
+  /*str.match 把所有匹配到的内容都返回 数组*/
+  console.log(`javascript ios java \njavascript C++`.match(reg3));
+  console.log(`javascript ios java \njavascript C++`.match(reg4));
+
+  console.log(reg5.test("baidu.com"));        //true
+  console.log(reg5.test("wendingding.com"));  //true
+  console.log(reg5.test("baiducom"));         //false
+
+  console.log("---");
+  /*正则表达式元字符简单说明*/
+  console.log(/d/.test("abcd"));              //true  匹配d这个字符
+  console.log(/\d{5}[a-z]/.test("13323b"));   //true
+</script>
+</body>
+</html>

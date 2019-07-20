@@ -1,0 +1,167 @@
+1. 什么数据库？
+    按照数据结构来组织、存储、管理数据的仓库
+
+2. 数据库分类
+    1）关系型数据库
+        代表： mysql 
+        数据库 => 表 => 行（行里面是字段 字段存储对应数据）
+
+    2）文档型数据库
+        代表： mongodb
+        数据库 => 集合 => 文档（json结构的数据）
+
+
+3. mysql常用术语
+    1） 数据库（database） （常用）
+    2)  表（table）   数据库 由表组成 （常用）
+    3)  行（row） 列（column）  数据表 由行和列组成
+    4） 记录（Record） 一行数据 就是一个记录
+    5） 字段（Field） 一行数据 由多个字段组成
+    6） 关系（relational）
+
+    结构化查询语言SQL（Structured query language)，
+    操作关系数据库的通用语言，用于执行数据的检索和其他操作。
+
+
+4. 安装mysql 和 apache集成环境 phpstudy
+    1) 下一步安装
+    2）安装完成mysql默认3306端口
+    备注： 操作mysql要确定数据库已经启动在提供服务
+
+5. 连接mysql数据库
+    mysql -h主机名 -u用户名 -p密码
+    例如： mysql -hlocalhost -uroot -p 
+
+    显示当前有哪些数据库：
+        show databases;
+
+
+6. mysql 数据库相关操作（***）
+    1） 连接数据库
+        mysql -hlocalhost -uroot -p
+
+    2) 显示数据库列表（目前有多少数据库都显示出来）
+        show databases;
+
+    3） 创建数据库
+        create database 数据库名
+
+    4) 使用数据库 切换数据库
+        use 数据库的名字
+
+    5）删除数据库
+        drop database 数据库名
+
+
+    补充： 显示建数据库语句
+        show create database 数据库名
+        修改数据库编码
+        alter database `数据库名字` charset=utf8;
+
+7. mysql数据表的基本操作（***）
+    1） 创建表
+        create table 表的名字 (
+            字段名称1 数据类型和长度1 修饰符1,
+            字段名称2 数据类型和长度2 修饰符2
+        )[表选项]
+
+
+        例子：
+        create table stu (
+            id int primary key auto_increment,
+            name varchar(50),
+            age int,
+            gender varchar(10),
+            createtime timestamp default current_timestamp
+        );
+
+    2) 查看表(目前这个数据库里面的所有的表 都显示出来)
+        show tables;
+
+    3） 查询表结构
+        desc 表名
+
+    4） 删除表
+        drop table [if exists] 表名
+
+    
+    补充：查看建表语句
+        show create table 表名
+
+        修改表（一般改表的编码）
+        alter table 表名 charset=utf8
+
+
+8. 记录（一行数据就是一个记录）的操作（******）
+    1）增加记录（新增一行数据）
+        语法：
+            insert into 表名（字段列表）values（值列表）
+            备注： 如果设置了主键id，可以不在字段列表里面列出来
+
+            例子： insert into stu(name, age, gender) values('李寻欢', 88, '男');
+
+            也可以简写如下，但是字段名和数据必须一一对应：
+                insert into stu values(null,'文顶顶', 18, '男');
+                insert into stu values(default,'李艳红', 19, '女');
+                insert into stu values(default,'刘易', 18, '女');
+                insert into stu values(default,'胡一菲', 28, '女');
+            备注： 在插入数据之前，先设置编码 set names gbk;
+
+    2) 查看记录
+        语法：
+            a) 查询所有字段
+                select * from 表的名字;
+                例子： select * from stu;
+
+            b）查询特定的字段
+                select 字段名 from 表的名字;
+                例子： select name from stu;
+
+            c) 查询多个字段
+                select 字段名1，字段名2 from 表的名字;
+                例子： select name, age from stu;
+
+            d)  查询的时候，取别名
+                select 字段原来的名字 as 取的名字 from stu;
+
+            e)  带条件的查询
+                select * from 表的名字 where 条件表达式
+                例子： select * from stu where age > 18;
+
+        补充： where条件表达式的操作符：
+            =	等于
+            <>	不等于
+            >	大于
+            <	小于
+            >=	大于等于
+            <=	小于等于
+            BETWEEN	      在某个范围内 包含着两个值    select * from stu where age BETWEEN 10 AND  30;  
+            LIKE	      搜索某种模式
+              select * from stu where name LIKE '胡%';  以胡开头的
+              select * from stu where name LIKE '%胡';  以胡开头的
+              select * from stu where name LIKE '%文%';  包含文的
+
+            备注： 还有一个反过来的 NOT LIKE
+
+
+    3） 删除记录（数据）
+        语法：
+            delete from 表名 where [表达式] 
+            例子： delete from class                       // 删除class表里面的所有数据
+                  delete  from stu where gender='女';      // 删除stu表里面性别是女的
+                  delete from stu where age = 18;          // 删除stu表里面 年龄为18的
+                  delete from stu where name LIKE '%文%';
+
+    4) 修改记录（数据）
+        update 表名 set 字段=新的值， 字段=新的值 [where 条件表达式]
+        update stu set age=25 where name='灰太狼';  // 把名字为灰太狼的年龄改为25
+        update stu set name='小李' where name LIKE '李%';
+
+    补充： sql语法的增删改查
+        数据的操作： Insert（增）， delete（删），update（改），select（查）
+
+    数据库的增删改查：
+        C(create)  R（retrieve）U(update)  D(delete)
+
+PHP操作数据库自学网站：
+ 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*对象的拷贝|复制|克隆*/
+  var o = {
+    name:"zs",
+    age:18,
+    car:{
+      type:"校车",
+      number:"粤A66666",
+      color:"yellow"
+    }
+  }
+
+  var t = {};
+
+  /*操作：让t拥有o对象所有的成员*/
+  /*01-赋值   完全共享*/
+  // t = o;
+  // t.name = "ls";
+  // console.log(t);
+  // console.log(o);
+  // console.log(t === o);   //true
+
+  /*02-通过for循环来拷贝*/
+  // t.name = o.name;
+  // t.age  = o.age;
+  // t.car  = o.car;
+
+  // function copy(target,source){
+  //   for (var key in source)
+  //   {
+  //     if (source.hasOwnProperty(key))
+  //     {
+  //       target[key] = source[key];
+  //     }
+  //   }
+  //   return target;
+  // }
+
+  // let copy = (target,source)=>{
+  //     for (var key in source)
+  //     {
+  //       if (source.hasOwnProperty(key))
+  //       {
+  //         target[key] = source[key];
+  //       }
+  //     }
+  //     return target;
+  // }
+  // copy(t, o);
+  // console.log(t);
+  // console.log(t === o);   //false
+  // t.name = "文顶顶";
+  //
+  // /*因为o对象中的car是引用类型的数据，所以还是会存在共享的问题*/
+  // t.car.type = "公交车"
+  // console.log(t);
+  // console.log(o);
+
+  /*03-通过Object.assign*/
+  Object.assign(t, o);
+  t.name      = "刘能";
+  t.car.color = "red";
+  console.log(t);
+  console.log(o);
+
+  /*总结：通过for循环拷贝或者是Object.assign方法都是浅拷贝，还是会存在共享的问题*/
+</script>
+</body>
+</html>

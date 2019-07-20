@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box
+    {
+      width: 400px;
+      height: 200px;
+      border: 1px solid #cccccc;
+      position: relative;
+    }
+
+    .div-class{
+      width: 100px;
+      height: 50px;
+      margin-top: 30px;
+      background: #4183c4;
+      border: 5px solid red;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <div class="div-class">我是div</div>
+</div>
+<script>
+
+  /*盒子模型：margin + border + padding + content*/
+  /*重要属性：offsetWidth offsetHeight offsetLeft offsetTop */
+  /*offsetWidth = border + padding + content*/
+
+  var oDiv = document.getElementsByClassName("div-class")[0];
+  console.log(oDiv.offsetWidth);
+  console.log(oDiv.offsetHeight);
+
+  /*参考标签：默认参考的是根节点  参考是最近的一个定位父元素*/
+  console.log(oDiv.offsetLeft);
+  console.log(oDiv.offsetTop);
+</script>
+</body>
+</html>

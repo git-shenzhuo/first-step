@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*ES6特性：箭头函数*/
+  // var add  = function (a,b) {
+  //   console.log(a+b);
+  // }
+  // add(1,2);
+
+  /*箭头函数*/
+  // const add = (a,b) => {
+  //   return a + b;
+  // }
+  // console.log(add(1, 30));
+
+  /*省略写法*/
+  /*01-如果函数体只有一行语句，那么可以把{}以及return省略*/
+  const add = (a,b) => a + b;
+  console.log(add(10, 30));
+
+  /*02-如果函数只有一个形参，那么()可以被省略*/
+  //const log = (str) => console.log(str+"!!!");
+  const log = str => console.log(str+"!!!");
+  log("春天来了，动物们又到了交配的季节");
+
+  /*注意：如果没有参数，那么就写()  const log = ()=>...*/
+  const computed = (a,b) => a * b;
+  console.log(computed(20, 3));
+
+  /*03-箭头函数主要应用在回调函数*/
+  // setInterval(function () {
+  //   console.log("春天来啦");
+  // },1000)
+
+  setInterval(()=>console.log("春天已经走啦"),1000);
+
+  var arr = [1,2,3,"demoA","demoB"];
+  // arr.forEach(function (value, index, array) {
+  //
+  // })
+
+  arr.forEach((value,index)=>console.log(index,value));
+
+</script>
+</body>
+</html>

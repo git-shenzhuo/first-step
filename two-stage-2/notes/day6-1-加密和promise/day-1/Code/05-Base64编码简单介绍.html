@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*01-Base64编码方案*/
+    /*特点
+    * [1] Base64编码 可以把任意的数据转换成文本
+    * [2] Base64编码之后可以转码
+    * [3] Base64编码之后文件的体积可能会更大一些  1/3
+    * */
+
+    /*02-Base64的基本操作*/
+    /*02-1 命令行操作：字符串 + 文件*/
+    /*
+      $ echo -n "Love It" | base64           =》   TG92ZSBJdA==
+      $ echo -n "TG92ZSBJdA==" | base64 -D   =》   Love it
+
+      $ base64 Snip20190528_25.png -o 123.txt
+      $ base64 123.txt -o xx.png -D
+    */
+
+    console.log(window.btoa("Love It"));          //TG92ZSBJdA==  编码
+    console.log(window.atob("TG92ZSBJdA=="));     //Love It
+</script>
+</body>
+</html>

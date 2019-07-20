@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+   * [1] 所有的对象都是由构造函数创建出来的。  var o = new Object()  var arr = new Array()
+   * [2] 所有的构造函数都有与之相关联的原型对象，该对象默认是空对象。
+   * [3] 原型对象本身也是对象，因此原型对象也有自己的构造函数。
+   * [4] 原型对象的构造函数默认也有一个与之相关联的对象，原型对象的构造函数的原型对象也是对象。
+   * [5] 以上 就会形成一种链式的访问结构，称为原型链。
+   * 很多条原型链交织在一起就形成了一张网。   生活  网。
+   * */
+
+  /*原型链访问规则*/
+  /*原则：就近原则  当对象访问成员的时候，优先检查自己的成员，如果存在那么就直接使用，否则向原型链的上一层继续查找，如果找到那么就直接使用，否则继续向上一层原型链查找，找到就用，没找到就重复这个过程....直到找到为止或者到达原型链的终点。*/
+
+  // function Person() {}
+  // var p1 = new Person();
+  //p1 有构造函数  Person
+  //构造函数            有原型对象  Person.prototype
+  //Person.prototype  有构造函数
+  //Person.prototype的构造函数  也有关联的原型对象
+
+  function Person() {}
+  var p = new Person();
+
+  /*01-打印p这个实例对象的原型对象*/
+  console.log(p.__proto__);                         //空对象
+  console.log(Person.prototype);                    //空对象
+  console.log(p.__proto__ === Person.prototype);    //true
+  console.log(p.__proto__.constructor);             //打印p的构造函数
+
+  /*02-打印原型对象的构造函数*/
+  console.log(Person.prototype.__proto__.constructor);
+  console.log(Person.prototype.__proto__);         //打印Person.prototype对象的原型对象
+  console.log(Person.prototype.__proto__.constructor.prototype);
+  console.log(Person.prototype.__proto__ === Person.prototype.__proto__.constructor.prototype);
+
+  /*03-打印Object.prototype的原型对象*/
+  console.log(Object.prototype.__proto__);
+
+
+  /*数组*/
+  console.log(Array.prototype);
+  Array.prototype.show = function () {
+    console.log("---show---");
+  }
+
+  var arr1 = new Array("demoa","demob");
+  var arr2 = new Array("123","345");
+  console.log(arr1, arr2);
+  console.log(arr1.join("--"));
+  arr2.splice(1);
+
+  arr1.show();
+  arr2.show();
+</script>
+</body>
+</html>

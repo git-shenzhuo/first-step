@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .box{
+      width: 350px;
+      /*height: 480px;*/
+      border: 1px solid #ccc;
+      margin: 50px auto;
+    }
+    .content{
+      display: none;
+      overflow: hidden;
+    }
+
+    h2{
+      color: #e84a7e;
+      font-size: 25px;
+      padding-left: 20px;
+      height: 40px;
+      line-height: 40px;
+    }
+    li{
+      border-top:1px dashed #ccc;
+      /*height: 35px;*/
+      line-height: 35px;
+    }
+
+    span{
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      background: #ccc;
+      display: inline-block;
+      margin: 5px;
+    }
+
+    li:nth-child(-n+3) span
+    {
+      background: #e84a7e;
+      color: #fff;
+    }
+
+    .content img{
+      width: 80px;
+      height: 110px;
+      margin: 10px;
+      float: left;
+    }
+
+    .content p{
+      width: 230px;
+      line-height: 20px;
+      font-size: 12px;
+      margin: 10px;
+      float: left;
+    }
+
+    .current .content
+    {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <h2>电影风云榜</h2>
+  <ul class="list">
+    <li class="current">
+      <p><span>1</span>复仇者联盟4：终局之战</p>
+      <div class="content">
+        <img src="src/1.jpg" alt="">
+        <p>
+          《复仇者联盟4：终局之战》（Avengers: Endgame）是安东尼·罗素和乔·罗素执导的美国科幻电影，改编自美国漫威漫画，漫威电影宇宙（Marvel Cinemati…
+
+        </p>
+      </div>
+    </li>
+    <li>
+      <p><span>2</span>大侦探皮卡丘</p>
+      <div class="content">
+        <img src="src/2.jpg" alt="">
+        <p>
+          《大侦探皮卡丘》是由传奇影业、华纳兄弟影片公司联合出品的电影，由罗伯·莱特曼执导，瑞安·雷诺兹配音出演，贾斯提斯·史密斯、凯瑟琳·纽顿、苏琪·…
+        </p>
+      </div>
+    </li>
+    <li>
+      <p><span>3</span>钢铁侠3</p>
+      <div class="content">
+        <img src="src/3.jpg" alt="">
+        <p>
+          《钢铁侠3》是《钢铁侠》系列电影第三部，是由美国漫威影业公司出品的科幻动作电影，由沙恩·布莱克执导，小罗伯特·唐尼、格温妮丝·帕特洛、唐·…
+
+        </p>
+      </div>
+    </li>
+    <li>
+      <p><span>4</span>比悲伤更悲伤的故事</p>
+      <div class="content">
+        <img src="src/4.jpg" alt="">
+        <p>
+          《比悲伤更悲伤的故事》是由林孝谦执导，刘以豪、陈意涵、张书豪、陈庭妮、吴映洁、禾浩辰主演的爱情电影。该片讲述了唱片制作人张哲凯因重病…
+        </p>
+      </div>
+    </li>
+    <li>
+      <p><span>5</span>惊奇队长</p>
+      <div class="content">
+        <img src="src/5.jpg" alt="">
+        <p>
+          《惊奇队长》是由美国漫威影业公司出品的科幻电影，由安娜·波顿、瑞安·弗雷克联合执导，布丽·拉尔森、塞缪尔·杰克逊、本·门德尔森、裘德·洛、…
+        </p>
+      </div>
+    </li>
+    <li>
+      <p><span>6</span>调音师</p>
+      <div class="content">
+        <img src="src/6.jpg" alt="">
+        <p>
+          《调音师》是由斯里兰姆·拉格万执导，阿尤斯曼·库拉纳、塔布 拉迪卡·艾普特、安尔·德霍万联合主演的悬疑电影，于2018年10月5日在印度上映，20…
+        </p>
+      </div>
+    </li>
+    <li>
+      <p><span>7</span>流浪地球</p>
+      <div class="content">
+        <img src="src/7.jpg" alt="">
+        <p>
+          《流浪地球》是由中国电影股份有限公司、北京京西文化旅游股份有限公司、北京登峰国际文化传播有限公司、郭帆文化传媒（北京）有限公司出品的…
+        </p>
+      </div>
+    </li>
+    <li>
+      <p><span>8</span>何以为家</p>
+      <div class="content">
+        <img src="src/8.jpg" alt="">
+        <p>
+          《何以为家》是由黎巴嫩、法国、美国制作的剧情片，由黎巴嫩导演娜丁·拉巴基执导，赞恩·阿尔·拉菲亚、约丹诺斯·希费罗联合主演。该片于2019年4月29…
+        </p>
+      </div>
+    </li>
+    <li>
+      <p><span>9</span>末日之战</p>
+      <div class="content">
+        <img src="src/9.jpg" alt="">
+        <p>
+          《末日之战》改编自迈克斯·布鲁克斯的同名科幻小说，是由马克·福斯特执导，布拉德·皮特、米瑞·伊诺丝主演的一部惊悚科幻片。影片讲述了联合国战…
+        </p>
+      </div>
+    </li>
+    <li>
+      <p><span>10</span>最佳女婿</p>
+      <div class="content">
+        <img src="src/10.jpg" alt="">
+        <p>
+          《最佳女婿》是一部由黄华麒执导的喜剧电影，由周星驰、张学友、张敏等领衔主演，并于1988年12月8日在香港上映。影片主要讲述了三个男人为了…
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+<script>
+  /**/
+</script>
+</body>
+</html>

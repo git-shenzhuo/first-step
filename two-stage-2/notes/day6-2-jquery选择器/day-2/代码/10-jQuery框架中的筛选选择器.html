@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<ul>
+  <li>li1</li>
+  <li>li2</li>
+  <li>li3</li>
+  <li>li4</li>
+  <li>li5</li>
+  <li>li6</li>
+  <li>li7</li>
+  <li>li8</li>
+  <li>li9</li>
+</ul>
+<script>
+
+  /*001-筛选选择器*/
+  $(function () {
+
+    /*[1] 获取所有的li标签*/
+    //$("li").css("background","#f03");
+
+    /*[2] 获取第一个li标签*/
+    //$($("li")[0]).css("background","#f03");
+    //$($("li").get(0)).css("background","#f03");
+    //$("li:first").css("background","#f03");
+
+    /*[3] 获取最后一个li标签*/
+    //$("li:last").css("background","#f03");
+
+    /*[4] 获取索引值小于4的所有标签*/
+    //$("li:lt(4)").css("background","#f03");
+
+    /*[5] 获取索引值大于4的所有标签*/
+    //$("li:gt(4)").css("background","#f03");
+
+    /*[6] 获取索引值为偶数所有标签*/
+    //$("li:even").css("background","#ccc");
+
+    /*[7] 获取索引值为奇数所有标签*/
+    //$("li:odd").css("background","#f03");
+
+    /*[8] 获取所有的标签 除了最后一个*/
+    //$("li:not(:last)").css("background","#f03");
+
+    /*[9] 获取索引值等于某个特定值的标签*/
+    $("li:eq(8)").css("background","#f03");
+
+
+    /*
+    * :first 第一个
+    * :last  最后一个
+    * :eq(index)    等于...
+    * :lt(index)    小于...
+    * :gt(index)    大于...
+    * :even         偶数
+    * :odd          奇数
+    * not(...)      排除...
+    * */
+  })
+
+
+</script>
+</body>
+</html>

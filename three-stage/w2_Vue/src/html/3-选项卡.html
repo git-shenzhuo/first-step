@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            height: 0;
+        }
+        #box{
+            width: 300px;
+            height: 400px;
+            margin: 50px auto;
+            position: relative;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        ul{
+            position: absolute;
+            width: 100px;
+            height: 20px;
+            bottom: 30px;
+            left: 100px;
+            z-index: 4;
+            list-style: none;
+            padding: 0;
+        }
+        li{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+            float: left;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- 用 v-show 来实现选显卡 -->
+    <!-- <div id="box">
+        <img src="../../../w1-NodeJs/day1/src/img/g1.jpg" alt="" v-show='num ==1'>
+        <img src="../../../w1-NodeJs/day1/src/img/g2.jpg" alt="" v-show='num ==2'>
+        <img src="../../../w1-NodeJs/day1/src/img/g3.jpg" alt="" v-show='num ==3'>
+        <img src="../../../w1-NodeJs/day1/src/img/g4.jpg" alt="" v-show='num ==4'>
+        <img src="../../../w1-NodeJs/day1/src/img/g5.jpg" alt="" v-show='num ==5'>
+        <ul>
+            <li v-on:click='sh1'>1</li>
+            <li v-on:click='sh2'>2</li>
+            <li v-on:click='sh3'>3</li>
+            <li v-on:click='sh4'>4</li>
+            <li v-on:click='sh5'>5</li>
+        </ul>
+    </div> -->
+
+    <!-- 用v-if 实现选项卡 -->
+    <!-- <div id="box">
+        <img src="../../../w1-NodeJs/day1/src/img/g1.jpg" alt="" v-if='num ==1'>
+        <img src="../../../w1-NodeJs/day1/src/img/g2.jpg" alt="" v-else-if='num ==2'>
+        <img src="../../../w1-NodeJs/day1/src/img/g3.jpg" alt="" v-else-if='num ==3'>
+        <img src="../../../w1-NodeJs/day1/src/img/g4.jpg" alt="" v-else-if='num ==4'>
+        <img src="../../../w1-NodeJs/day1/src/img/g5.jpg" alt="" v-else='num ==5'>
+        <ul>
+            <li v-on:click='sh1'>1</li>
+            <li v-on:click='sh2'>2</li>
+            <li v-on:click='sh3'>3</li>
+            <li v-on:click='sh4'>4</li>
+            <li v-on:click='sh5'>5</li>
+        </ul>
+    </div> -->
+   
+    <script src="../js/vue.js"></script>
+    <script>
+        // 创建Vue作用域
+        let box = new Vue({
+            el:'#box',
+            data:{
+                num:1
+            },
+            methods:{
+                sh1(){this.num = 1},
+                sh2(){this.num = 2},
+                sh3(){this.num = 3},
+                sh4(){this.num = 4},
+                sh5(){this.num = 5}
+            }
+        })
+    
+    </script>
+</body>
+</html>

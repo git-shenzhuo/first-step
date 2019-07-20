@@ -1,0 +1,56 @@
+知识点复习
+001-jQuery简单介绍
+    jQuery是JavaScript库(框架)，DOM操作，Ajax操作，可靠的事件处理机制，动画特效，工具方法。
+    jQuery优点：开源免费的 完善的文档 简单DOM操作 优雅的调用方式(链式风格)
+    jQuery版本：1.xx 2.xx 3.xx
+    jQuery链式调用(风格)        $("div").css().width().text().appendTo()
+
+002-jQuery基本操作
+    jQuery对象和DOM对象对比：区分 JQ-([index] .get(index))-DOM
+    jQuery冲突处理：
+    jQuery操作样式：
+      css("key")  css("key","value")  css({key:"value",key:"value"})
+      addClass("box box1")
+      hasClass()   true | false
+      removeClass("box box2")
+      toggleClass("box box2")
+    jQuery操作内容：
+      text() innerText
+      html() innerHTML
+    jQuery操作标签的位置：
+      offset() position()
+      width()  height()
+
+003-jQuery选择器
+    基本选择器：#id .class tagName *
+    层级选择器：后代选择器( )  直接后代选择器( > ) 后面的第一个兄弟节点(+) 后面所有的兄弟节点(~)
+    筛选选择器：first last eq odd even not gt lt ...
+    属性选择器：$("a[属性名='值'][属性名]")
+    父子选择器：children() siblings() next() nextAll() prev() prevAll() ...
+
+004-jQuery框架DOM操作
+    创建标签 $("<div></div>")
+    插入标签 append prepend
+    复制标签 clone(true)
+    删除标签 remove()
+    清空标签 empty()
+    获取标签的角标 index()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

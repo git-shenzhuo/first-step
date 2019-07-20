@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*发布者*/
+  var zs = {
+    name:"zs",
+    publish:function () {
+      console.log("---我今天头痛---zs");
+      ll.publish_response();
+      lw.publish_response();
+    }
+  }
+
+  /*观察者|订阅者*/
+  var ll = {
+    name:"ll",
+    publish_response:function () {
+      console.log("---熬汤---ll");
+    }
+  }
+
+  var lw = {
+    name:"lw",
+    publish_response:function () {
+      console.log("---买点药送到家门---lw");
+    }
+  }
+  zs.publish();
+
+
+</script>
+</body>
+</html>

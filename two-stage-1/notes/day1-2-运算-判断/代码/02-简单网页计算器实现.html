@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" id="num1ID">
+<span>+</span>
+<input type="text" id="num2ID">
+<button id="btnID" onclick="f();">计算</button>
+<span id="spanID">结果：</span>
+<script>
+
+  /*实现思路
+  * [1] 先获取页面中指定的标签     两个输入框 + 按钮 + 显示结果
+  * [2] 给按钮添加点击事件
+  * [3] 当按钮被点击了，需要拿到两个输入框中的值，然后加起来
+  * [4] 把结果输出到页面中
+  * */
+
+  /*01-先获取页面中的标签*/
+  var input1 = document.getElementById("num1ID");
+  var input2 = document.getElementById("num2ID");
+  var btn    = document.getElementById("btnID");
+  var spa    = document.getElementById("spanID");
+
+  console.log(input1);
+  console.log(input2);
+
+  /*函数声明*/
+  function f() {
+    /*03-按钮被点击了，获取两个输入框中值*/
+    /*我们从输入框中获取的值其实是一个字符串 "12" "50"*/
+    console.log("第一个输入框的值",input1.value);
+    console.log("第二个输入框的值",input2.value);
+
+    /*把两个值相加*/
+    //var result = input1.value * 1 + input2.value * 1;
+    var result = Number(input1.value) + Number(input2.value);
+
+    /*04-输出结果到页面中*/
+    /*操作标签的内容：innerhtml*/
+    spa.innerHTML = "结果：" + result;
+
+  }
+
+  /*函数调用*/
+  //f();
+
+</script>
+</body>
+</html>

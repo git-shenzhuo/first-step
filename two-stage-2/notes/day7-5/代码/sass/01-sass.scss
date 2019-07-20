@@ -1,0 +1,20 @@
+/*01-变量 变量声明语法：$变量名：变量值*/
+$bgc:#eee;
+$fontSize:40px;
+
+body{
+  background: $bgc;
+}
+
+div{
+  background: $bgc;
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000;
+  font-size: $fontSize;
+}
+
+p{
+  background: #0b97c4;
+  font-size: $fontSize;
+}

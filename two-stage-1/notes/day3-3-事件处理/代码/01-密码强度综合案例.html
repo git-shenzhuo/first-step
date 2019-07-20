@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .form{position: absolute;width: 250px}
+    .level{position: absolute;left:250px;width: 210px;height:26px;border: 3px solid #efefef;border-radius: 10px}
+    .pwd-level-text{position: absolute;left: 480px;height: 30px;line-height: 30px}
+    .pwd-level{width: 60px;height: 16px;background: #efefef;display: inline-block;margin-top: 5px;margin-left: 5px;}
+    #pwd{padding: 5px;}
+  </style>
+
+</head>
+<body>
+<div class="form">
+  <label for="pwd">密码</label>
+  <input type="text" id="pwd" placeholder="请输入密码" size="30">
+</div>
+
+<div class="level">
+  <span class="pwd-level"></span>
+  <span class="pwd-level"></span>
+  <span class="pwd-level"></span>
+</div>
+
+<span class="pwd-level-text"></span>
+<script>
+  /*1. 输入框中输入的密码可以是数字和字母(区分大小写)*/
+  /*2. 如果是纯数字或者是纯大写字母或者是纯小写字母 弱*/
+  /*3. 如果有两种 数字 和大写字母               中*/
+  /*4. 包含三种字符                           强*/
+
+  /*01-监听输入框的输入事件*/
+  var pwd = document.getElementById("pwd");
+  var out = document.getElementsByClassName("pwd-level-text")[0];
+  var spans = document.getElementsByClassName("pwd-level");
+
+  pwd.oninput = function () {
+    console.log(this.value);
+
+    /*02-先获取用户输入的信息*/
+    var oText = this.value.trim();
+    if (oText.length == 0) return;
+
+    /*03-对用户输入的信息进行匹配 ： 弱  中 强*/
+    var hasNum   = false;
+    var hasCharA = false;     /*小写*/
+    var hasCharB = false;     /*大写*/
+
+    for (var i = 0,len = oText.length;i<len;i++)
+    {
+      var codeIndex = oText.charCodeAt(i);
+      if (codeIndex >= 48 && codeIndex <= 57)
+      {
+        /*是数字*/
+        hasNum = true;
+        continue;
+      }
+
+      if (codeIndex >= 65 && codeIndex <= 90)
+      {
+        /*是大写字母*/
+        hasCharB = true;
+        continue;
+      }
+
+      if (codeIndex >= 97 && codeIndex <= 122)
+      {
+        /*是小写字母*/
+        hasCharA = true;
+        continue;
+      }
+    }
+
+    console.log(hasNum, hasCharA, hasCharB);
+
+    if (hasNum && hasCharA && hasCharB)
+    {
+      /*密码强度：强*/
+      out.innerHTML = "强";
+      spans[0].style.background = "red";
+      spans[1].style.background = "green";
+      spans[2].style.background = "orange";
+
+    }else if (hasNum && hasCharA || hasNum && hasCharB || hasCharA && hasCharB)
+    {
+      /*密码强度：中*/
+      out.innerHTML = "中";
+      spans[0].style.background = "red";
+      spans[1].style.background = "green";
+      spans[2].style.background = "#efefef";
+    }else
+    {
+      /*密码强度：弱*/
+      out.innerHTML = "弱";
+      spans[0].style.background = "red";
+      spans[1].style.background = "#efefef";
+      spans[2].style.background = "#efefef";
+    }
+
+
+  }
+
+</script>
+</body>
+</html>

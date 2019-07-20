@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<div id="boxId">我是boxID</div>
+<span>我是spanA</span>
+<span>我是spanB</span>
+
+<script>
+
+  /*监听页面的加载*/
+  window.onload = function () {
+    /*先获取页面的标签*/
+    var oDiv = document.getElementById("boxId");
+    /*获取标签的内容并且打印*/
+    console.log(oDiv.innerText,"DOM");
+    console.log("DOM",oDiv);
+    //console.log($(oDiv).text());
+  }
+
+  /*监听DOM加载*/
+  $(function () {
+
+    /*先获取页面的标签*/
+    var oDiv_jQ = $("#boxId");
+    /*获取标签的内容并且打印*/
+    console.log(oDiv_jQ.text(),"jQ");  //undefined
+    console.log("jQ",oDiv_jQ);
+
+    console.log(oDiv_jQ[0],"JQ->DOM");
+    console.log(oDiv_jQ.get(0),"JQ->DOM");
+  })
+
+  /*oDiv是一个DOM标签，因此可以访问DOM操作的属性和方法，但是不能直接访问jQuery框架中的属性和方法*/
+  /*oDiv_jQ是JQ类型的对象，因此可以访问jQuery框架中的属性和方法，但是不能直接访问DOM的属性和方法*/
+  /*DOM标签和jQ对象关系 DOM标签可以作为某个key对应的value保存在jquery对象中*/
+  //DOM   <div id=​"boxId">​我是boxID​</div>​
+  //jQ    jQuery.fn.init [div#boxId]
+
+  /*DOM->jQ */
+  //$(dom)
+
+  /*JQ ->DOM */
+  //[1] 通过下标来获取
+  //[2] 通过get(index)
+
+  console.log($("span"));
+
+</script>
+</body>
+</html>

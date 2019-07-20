@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div></div>
+<script>
+
+  /*01-延迟函数和定时器*/
+
+  /*01-延迟执行函数
+  * 语法：setTimeout(handle,timeout,args...)
+  * 参数：handle事件处理程序(函数) timeout延迟的时间 单位 毫秒 args传递给事件处理程序的实参
+  * */
+
+  // console.log("start-", new Date());
+  //
+  // // /*1秒之后再执行函数中的任务(Task)*/
+  // // setTimeout(function (a,b) {
+  // //   console.log("--setTimeout--",new Date());
+  // //   console.log(a, b);
+  // // },2000,100,200);
+  // //
+  // // console.log("end");
+  //
+  // /*02-定时器函数*/
+  // /*每隔固定的时间就执行一次*/
+  // // setInterval(function () {
+  // //   console.log("--setInterval--",new Date());
+  // // },1000);
+  //
+  // function handle() {
+  //   console.log("--setInterval--",new Date());
+  // }
+  // setInterval(handle,1000);
+  //
+
+
+  var oDiv = document.getElementsByTagName("div")[0];
+
+  /*02-实时显示当前的时间*/
+  setInterval(function () {
+    var date = new Date();
+    var year  = date.getFullYear();      //年
+    var month = prefix(date.getMonth() + 1);     //月 0-11
+    var days  = prefix(date.getDate());          //日
+
+    var h     = prefix(date.getHours());         //小时
+    var m     = prefix(date.getMinutes());       //分钟
+    var s     = prefix(date.getSeconds());       //秒
+
+    var res   = "当前的时间：" + year + "年" + (month) + "月" + days + "日 " + h + "点" + m + "分"+ s + "秒";
+    oDiv.innerHTML = res;
+  },1000);
+
+  /*03-补零的操作*/
+  /*封装函数*/
+  function prefix(num) {
+    // if (num < 10)
+    // {
+    //   num = "0" + num;
+    // }
+    // return num;
+
+    /*00014*/
+    var res = "000"+num;
+    return res.slice(-2);
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+继承
+[1] 混入式继承  浅拷贝
+[2] 原型式继承  子构造函数.原型对象 = 父构造函数.prototype   无法获取实例成员
+[3] 原型链继承  子构造函数.原型对象 = 父构造函数的实例对象     实例对象成员会共享
+[4] 借用构造函数继承 在子构造函数中(函数上下文)调用父构造函数   无法获取原型成员
+[5] 组合继承    借用构造函数继承 + 原型式继承
+
+[作业] Class继承
+闭包：特点(通过闭包可以间接的访问局部作用域中的私有数据)
+<script>
+
+  /*01-即时函数可以接收参数(值类型|函数)*/
+  (function (i) {
+    console.log("a");
+    i();
+  })(function () {
+    console.log("----");
+  })
+
+  /*02-即时函数可以有返回值 返回值可以是函数*/
+  // var res = (function () {
+  //   console.log("b");
+  //   return "666";
+  // })();
+  // console.log(res);
+  // var fn = (function () {
+  //
+  //   console.log("b");
+  //
+  //   return function () {
+  //     console.log("+++");
+  //   }
+  // })();
+  //
+  // fn();
+
+
+
+  /*03-其它写法*/
+  /*03-1 */
+  // (function () {
+  //   console.log("b");
+  // }())
+
+  // !function () {
+  //   console.log("c");
+  // }();
+
+  // -function () {
+  //   console.log("d");
+  // }();
+
+  // +function () {
+  //   console.log("e");
+  // }();
+
+  // /function () {
+  //   console.log("f");
+  // }();
+</script>

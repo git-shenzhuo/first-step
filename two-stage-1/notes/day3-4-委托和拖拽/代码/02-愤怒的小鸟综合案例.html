@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{overflow: hidden}
+    img{position: absolute;top: 0;left: 0;width: 100px;}
+    .right{transform: rotateY(180deg)}
+    .top{transform: rotateZ(45deg)}
+    .bottom{transform: rotateZ(-45deg)}
+  </style>
+</head>
+<body>
+<img src="img/bird.jpg" alt="">
+<script>
+
+  /*00-监听页面的加载*/
+  window.onload = function () {
+
+    /*01-获取需要的标签*/
+    var oImg = document.getElementsByTagName("img")[0];
+
+    /*02-获取用户按下了键盘的哪个键*/
+    document.onkeydown = function (e) {
+      var e    = e || window.event;
+      var key  = e.keyCode || e.which;
+      console.log(key);    /*左37 上38 右39 下40*/
+
+      var left    = oImg.offsetLeft;
+      var top     = oImg.offsetTop;
+      var offset  = 20;
+      console.log(left, top);    //(0,0)
+
+      /*03-根据用户按键情况来执行动画*/
+      switch (key) {
+        case 37:
+          console.log("按下了键盘上的左方向键，需要控制向左运动");
+          //oImg.style.left = left - offset + "px";
+            left -= offset;
+          oImg.className = "";
+          break;
+        case 38:
+          console.log("按下了键盘上的上方向键，需要控制向上运动");
+          top -= offset;
+          oImg.className = "top";
+          break;
+        case 39:
+          console.log("按下了键盘上的右方向键，需要控制向右运动");
+          //oImg.style.left = left + offset + "px";
+          left += offset;
+          oImg.className = "right";
+          break;
+        case 40:
+          console.log("按下了键盘上的下方向键，需要控制向下运动");
+          top += offset;
+          oImg.className = "bottom";
+          break;
+        default:
+          console.log("按下了其它无关键");
+          break;
+      }
+
+      /*设置临界值检测*/
+      if (left >= window.innerWidth)
+      {
+        left = - oImg.offsetWidth;
+      }else if (left <= - oImg.offsetWidth)
+      {
+        left = window.innerWidth;
+      }
+
+      if (top >= window.innerHeight)
+      {
+        top = - oImg.offsetHeight;
+      }else if (top <= - oImg.offsetHeight)
+      {
+        top = window.innerHeight;
+      }
+
+      /*设置标签的样式 - 控制移动*/
+      oImg.style.left = left + "px";
+      oImg.style.top  = top + "px";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        th,
+        td {
+            width: 100px;
+            height: 20px;
+            border: 1px solid #333333;
+            text-align: center;
+            line-height: 20px;   
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>学号</th>
+                <th>语文</th>
+                <th>数学</th>
+                <th>外语</th>
+                <th>总成绩</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody id="tbdID">
+            
+        </tbody>
+    </table>
+
+    <script>
+        var oTbd = document.getElementById("tbdID");
+        var arr = [
+            {num: 1,   China: 105,    Math: 62,   English: 118}, 
+            {num: 2,   China: 89,     Math: 78,   English: 120},
+            {num: 3,   China: 86,     Math: 64,   English: 80 },
+            {num: 4,   China: 78,     Math: 99,   English: 91 },
+            {num: 5,   China: 107.5,  Math: 97,   English: 70 },
+            {num: 6,   China: 112,    Math: 61,   English: 92 },
+            {num: 7,   China: 101,    Math: 79,   English: 104},
+            {num: 8,   China: 71,     Math: 72,   English: 105},
+            {num: 9,   China: 56,     Math: 68,   English: 61 },
+            {num: 10,  China: 98,     Math: 83,   English: 77 }
+        ];
+        // 遍历，添加总分；
+        arr.forEach(function(value){
+            value.total = value.China + value.Math + value.English;
+            })
+            console.log(arr);
+            // 各科成绩排序；
+        var arrChina = arr.sort(function(a,b){
+                return b.China - a.China;    
+            })
+            // console.log(arrChina);
+            arrChina[0].res = "语文成绩最高";
+            // console.log("语文成绩最高值： "+ arrChina[0].China + " 学号是：" + arrChina[0].num);  
+        var arrMath = arr.sort(function(a,b){
+                return b.Math - a.Math;    
+            })
+            // console.log(arrMath);
+            arrMath[0].res = "数学成绩最高";
+            // console.log("数学成绩最高值： "+ arrMath[0].Math + " 学号是：" + arrMath[0].num);
+        var arrEgnlish = arr.sort(function(a,b){
+                return b.English - a.English;
+            })
+            // console.log(arrEgnlish);
+            arrEgnlish[0].res = "英语成绩最高";
+            // console.log("英语成绩最高值： "+ arrEgnlish[0].English + " 学号是：" + arrEgnlish[0].num);
+             // 总分排序；
+        var arrtotal = arr.sort(function(a,b){
+                return b.total - a.total;
+            })
+            console.log(arrtotal);
+        var html = arrtotal.map(function(value){
+            if(value.res == undefined){
+                return "<tr><td>" + value.num + "</td><td>" + value.China + "</td><td>" + value.Math + "</td><td>" + value.English + "</td><td>" + value.total + "</td><td>" +""+ "</td></tr>";
+            }
+                return "<tr><td>" + value.num + "</td><td>" + value.China + "</td><td>" + value.Math + "</td><td>" + value.English + "</td><td>" + value.total + "</td><td>" + value.res + "</td></tr>";
+        }).join("");
+        oTbd.innerHTML = html;
+            
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+知识点复习
+面向过程和面向对象：都是解决问题的方式。
+  面向过程：关注的解决问题需要的每一个具体的步骤，顺序非常重要。
+  面向对象：关注的解决问题需要的合适的对象。
+  面向对象其实是对面向过程的封装。
+面向对象编程核心概念：对象[具体] 组成[静态的描述信息-属性]+[动态的行为-方法] | JavaScript-面向对象(对象)
+
+对象的创建：
+  [1] 字面量      var o = {};
+  [2] 内置构造函数 var o = new Object() o.|o[.]
+  [3] 工厂函数    存在问题：无法区分对象的类型
+  [4] 自定义构造函数
+      (1) 提供构造函数(首字母大写)
+      (2) 使用new 调用构造函数创建对象
+      (3) 构造函数内部通过this来设置属性和方法
+  [5] 自定义构造函数(属性) + 原型对象(共享)
+
+原型对象
+  [1] 构造函数的另一半(指腹为婚)  所有的构造函数默认都有一个相关联的原型对象，默认是空对象。
+  [2] 访问原型对象
+      构造函数.prototype
+      实例对象.__proto__
+      实例对象.__proto__ === 构造函数.prototype   //true
+  [3] 原型对象的性质：原型对象上面的成员可以被所有的实例对象访问。
+
+
+
+function createPhone(type,price,color){
+  var phone = new Object();
+  phone.type = "华为";
+  phone.price = 12000;
+  phone.color = "red";
+  return phone;
+}
+
+
+function Phone(type,price,color){
+  this.type = type;
+  this.price = price
+  this.color = color;
+}
+
+Phone.protype.showInfo = function (){....}
+var p = new Phone("华为",1000,"red");

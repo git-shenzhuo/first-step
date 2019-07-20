@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tab标签切换</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+    <h1>tab标签切换</h1>
+    <div id="box">
+        <div class="tabs">
+            <ul class="nav nav-tabs">
+                <li class="nav-item" v-for='(tab,index) in title' @click='idx(index)' >
+                    <!-- <a class="nav-link" href="#" v-bind:class='{active: activeidx == index}'>{{tab.name}}</a> -->
+                    <!-- <a class="nav-link" href="#" v-bind:class='activeidx == index ? active : ""'>{{tab.name}}</a> -->
+                    <a class="nav-link" href="#" :class='{active: activeidx == index}'>{{tab.name}}</a>
+
+
+                </li>
+            </ul>
+            <div class="content">
+                <div class="py-5 px-2 border" v-for='(tab,index) in title' v-show='activeidx == index'>{{index + 1}}.{{tab.tabal}}</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let box = new Vue({
+            el:'#box',
+            data:{
+                title:[{
+                    name:'laoxie',
+                    tabal:'laoxie爱唱跳'
+                },{
+                    name:'jingjing',
+                    tabal:'jingjing爱打王者'
+                },{
+                    name:'dingding',
+                    tabal:'dingding爱飙车'
+                },{
+                    name:'lili',
+                    tabal:'lili爱男'
+                }],
+                activeidx:0
+            },
+            methods:{
+                idx(num){
+                    this.activeidx = num;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

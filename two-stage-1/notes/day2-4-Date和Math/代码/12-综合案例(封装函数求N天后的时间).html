@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*给定时间 2019-05-30 12：00：00 求3天后的时间*/
+
+  function afterDate(n) {
+    var date = new Date(2019,4,5,8,8,8);
+    console.log(date);                    //Sun May 05 2019 08:08:08 GMT+0800 (中国标准时间)
+
+    date.setDate(date.getDate() + n);
+    console.log(date);
+    return date;
+  }
+
+  console.log(afterDate(30));
+
+</script>
+</body>
+</html>

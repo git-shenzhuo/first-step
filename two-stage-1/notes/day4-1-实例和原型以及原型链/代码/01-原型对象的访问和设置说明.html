@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  window.onload = function () {
+
+    /*原型对象的访问和设置*/
+    /*设置原型的时候有两种方法*/
+    /*[1]-直接在原有原型对象的基础上添加方法*/
+    /*Perosn.prototype.showName = fn Perosn.prototype.showAge = fn*/
+
+    /*01-提供构造函数*/
+    // function Perosn(name,age) {
+    //   this.name = name;
+    //   this.age  = age;
+    // }
+
+    /*02-设置原型对象*/
+    // Perosn.prototype.showName = function () {
+    //   console.log("姓名 + " + this.name);
+    // }
+    //
+    // Perosn.prototype.showAge = function () {
+    //   console.log("年龄 + " + this.age);
+    // }
+    //
+    //
+    // /*思考：为什么Perosn.prototype.showName函数中，可以用this直接访问name*/
+    // /*this指向谁-得看这个函数怎么调用？*/
+    //
+    // /*03-创建实例对象*/
+    // var p1 = new Perosn("张老汉",99);
+    // //p1.showName();    /*以对象的方法调用-this指向的调用该方法的对象-->p1*/
+    // //Perosn.prototype.showName();
+
+
+    /*[2]-直接使用新的对象来把原本的原型对象替换*/
+    /*Perosn.prototype = {showName：fn,showAge:fn}*/
+
+
+    /*01-提供构造函数*/
+    function Perosn(name,age) {
+      this.name = name;
+      this.age  = age;
+    }
+
+    /*02-设置原型对象(替换)*/
+    // Perosn.prototype.showInfo = function (){
+    //   console.log("----");
+    // }
+
+    /*如果直接替换原型对象，确实很方便，但是构造器属性会丢失*/
+    Perosn.prototype = {
+      constructor:Perosn,
+      showName:function () {
+          console.log("姓名 + " + this.name);
+      },
+      showAge:function () {
+          console.log("年龄 + " + this.age);
+      }
+    }
+
+    /*03-创建实例对象*/
+    var p1 = new Perosn("张三",12);
+    var p2 = new Perosn("张四",11);
+    // p1.showName();
+    // p1.showInfo();
+
+    /*p1访问constructor的时候，自己身上没有，查找原型对象Perosn.prototype(新)，该对象身上也没有构造器属性，继续查找Perosn.prototyp的原型对象(Perosn.prototyp.__proto__),找到了 指向的Object*/
+
+    console.log(p1.constructor);    //Object
+    console.log(p2.constructor);    //Object
+
+    // var o = {}; //new Object()
+    // console.log(o);
+
+    console.log(Perosn.prototype);
+    console.log(p1.constructor);
+    console.log(p2.constructor);
+  }
+
+
+  /*总结：设置原型对象
+  * [1] 直接在原来原型对象的基础上 添加方法...   麻烦
+  * [2] 直接使用新的对象来替换以前的原型对象     修正(添加)构造器属性
+  * */
+
+  /*注意代码的位置和顺序*/
+  var Car = function () {}
+
+  Car.prototype = {
+    constructor:Car,
+    showInfo:function () {
+      console.log("info--");
+    }
+  }
+  var car1 = new Car();    //旧的的原型对象
+  /*报错：Uncaught TypeError: car1.showInfo is not a function*/
+  car1.showInfo();
+</script>
+</body>
+</html>

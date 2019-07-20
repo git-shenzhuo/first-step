@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*变量-作用(起作用，有效)域(区域-范围)
+  * 概念：变量起作用的范围。
+  * JavaScript作用域：全局作用域 | 局部作用域
+  * 函数的一个非常重要的特征：可以创建(局部)作用域
+  * 变量在全局作用域中声明，那么它就是全局变量，全局变量意味着它在全局范围内都有效。
+  * 变量在局部作用域中声明，那么它就是局部变量，局部变量意味着它只在局部范围内都有效。
+  *
+  * 私有数据
+  * 作用域中变量的访问规则：先在当前作用域中查找是否存在指定的变量，如果存在那么就直接使用，如果不存在那么就向上一层作用域查找，如果找到那么就直接使用，没有找到那么就继续向上一层查找，重复这个过程，直到找到为止 | 或者是到最外层(全局作用域)也没有找到，那么就报错。
+  * */
+  var a = 123;
+
+  function f() {
+
+    var i = 10;
+    var s = "嘿嘿";
+
+    console.log("-------f--------");
+    console.log(i, s);
+
+    function f1() {
+
+      var i = 100;
+      console.log("---f1----");
+      //console.log("f1", i, s,a,b);
+    }
+
+    f1();
+  }
+
+  f();
+
+  //console.log(i);       // Uncaught ReferenceError: i is not defined
+  //console.log(s);       // Uncaught ReferenceError: i is not defined
+
+
+</script>
+</body>
+</html>

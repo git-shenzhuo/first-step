@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*splice数组的删除、插入以及替换
+  * 语法：arr.splice(start,count,...items[])
+  * */
+
+  /*01-数组的删除操作*/
+  var arr1 = ["梅西","鲁尼","内马尔","苏亚雷斯"];
+
+  /*表示从索引为1的位置开始删除，删除2个元素*/
+  var arr2 = arr1.splice(1,2);
+  console.log(arr1);              //["梅西", "苏亚雷斯"] 在原数组上进行操作
+  console.log(arr2);              //["鲁尼", "内马尔"]   返回被删除的元素组成的新数组
+
+  /*实现pop()方法*/
+  var arr3 = [1,2,3,"光头强","叮当猫","汤姆"];
+  var arr4 = arr3.splice(arr3.length -1 ,1);
+  console.log(arr3);              //[1, 2, 3, "光头强", "叮当猫"]
+  console.log(arr4);              //["汤姆"]
+
+  /*实现shift()*/
+  var arr5 = arr3.splice(0,1);
+  console.log(arr3);              //[2, 3, "光头强", "叮当猫"]
+  console.log(arr5);              //[1]
+
+
+  /*02-数组元素的替换*/
+  var arr6 = ["梅西","鲁尼","内马尔","苏亚雷斯","博格巴",2019,"卡瓦尼"];
+  //var arr7 = arr6.splice(5,1,"格列兹曼");
+  var arr7 = arr6.splice(5,1,"格列兹曼","亚亚图雷");
+  console.log(arr6);    //["梅西", "鲁尼", "内马尔", "苏亚雷斯", "博格巴", "格列兹曼", "卡瓦尼"]
+  console.log(arr7);    //[2019]
+
+  /*03-数组元素的插入(添加)*/
+  var arr8 = [1, 2, 3, "光头强", "叮当猫"];
+  var arr9 = arr8.splice(3,0,4);    /*注意插入索引的位置*/
+  console.log(arr8);    //[1, 2, 3, 4, "光头强", "叮当猫"]
+  console.log(arr9);    //[]
+
+  var arr10 = [1, 2, 3, 4, "光头强", "叮当猫"]
+  var arr11 = arr10.splice(4,0,"demo1","demo2");
+  console.log(arr10);   //[1, 2, 3, 4, "demo1", "demo2", "光头强", "叮当猫"]
+  console.log(arr11);   //[]
+
+  /*push() unshift()*/
+
+  /*
+  * 删除：splice(start,count)
+  * 替换：splice(start,1,value1,...)
+  * 插入：splice(start,0,value1,...)
+  * */
+</script>
+</body>
+</html>

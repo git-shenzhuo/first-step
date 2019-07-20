@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        div{
+            display: flex;
+        }
+        ul{
+            width: 135px;
+            height: 27px;
+        }
+        li{
+            width: 27px;
+            height: 27px;
+            float: left;
+            background-image: url(../images/star.gif);
+        }
+        .mouse{
+           background-position: 0 27px; 
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h4>物流服务</h4>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <span></span>
+    </div>
+    <script>
+        $(function(){
+            let state = false;
+            // 评分数组
+            let text = ["1分","2分","3分","4分","5分"];
+            // 划过添加class
+
+            $("li").hover(function(){
+                let index = $(this).index();
+                if(!state){
+                    $(`li:lt(${index + 1})`).addClass("mouse");
+                }
+                // $("span").text(text[index]);
+            },function(){
+                if(!state){
+                    $(`li`).removeClass("mouse");
+                    $("span").text("");
+                }
+            })
+
+            // 点击固定
+            $("li").click(function(){
+                state = true;
+                let index = $(this).index();
+                $(`li:lt(${index + 1})`).addClass("mouse");
+                $(`li:gt(${index})`).removeClass("mouse");
+                $("span").text(text[index]);
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

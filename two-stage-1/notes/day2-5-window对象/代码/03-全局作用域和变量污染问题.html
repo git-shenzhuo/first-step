@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<iframe src="http://www.baidu.com"></iframe>
+<iframe src="http://www.jd.com"></iframe>
+<script>
+
+  /*JavaScript代码的作用域分成：全局作用域 和 局部作用域(函数内部)*/
+  /*在浏览器环境中，全局作用域中有一个全局对象 window window也是BOM的核心*/
+  /*默认我们所有的全局变量和函数都会成为window的成员*/
+  /*我们在写代码的时候，变量命名的时候注意：覆盖 | 污染*/
+  /*其实我们之前在开发中经常使用的方法 alert console.log Object Array 都是window的成员*/
+  /*我们在使用这些方法的时候可以省略window前缀*/
+  /*不建议使用的变量名：name length status scrollX scrollY top等等*/
+  /*全局变量会越来越多 冲突 覆盖 ... 污染*/
+  /*通常解决的方式：[1]匿名函数闭包  [2]模块化开发 [3] 命名空间模式-把全局变量和函数封装到对象中*/
+
+  // var a = "我是a";
+  // function f() {
+  //   console.log("f");
+  // }
+  //
+  //
+  // console.log(a == window.a);     //true
+  // console.log(f == window.f);     //true
+  // console.log(window);
+  // //
+  // // var console = "123";
+  // console.log('____');
+  //
+  // window.alert("弹出对话框");
+  // window.console.log("++++",window.console.log == console.log);  //true
+
+  // var name = "zs";
+  // //window.name = "zs";   //默认window.name = ""  window的name属性被修改
+  // var length = 100;
+  // //window.length = 100;
+
+  // var scrollX = 2300;
+
+
+  /*把全局变量变成局部变量*/
+  (function () {
+    var a = 123;
+    var b = "我是b"
+
+  })();
+
+
+  (function () {
+   var a = 321;
+   var b = "哈哈";
+
+
+  })();
+
+
+  /*命名空间模式：把页面需要用到的所有全局变量都写到某个特定的对象中去*/
+  /*缺点：如果层次结果比较深，那么在访问的时候前缀可能会特别的长*/
+  // var name = "张三";
+  // var age = 18;
+  // var des = "描述信息";
+  //
+  // var MO = {
+  //   name:"张三"
+  //   car:{
+  //     desc:{
+  //       info:{}
+  //     }
+  //   }
+  // }
+  //
+  // MO.car.desc.info
+
+</script>
+</body>
+</html>

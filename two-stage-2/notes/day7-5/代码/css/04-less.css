@@ -1,0 +1,30 @@
+/*01-声明变量，变量名@bgc 变量值 #195*/
+/*02-混入Mixin - 函数*/
+body {
+  background: #ffc0cb;
+}
+div {
+  background: #ffc0cb;
+  color: #119955;
+  width: 500px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid #119955;
+  margin-bottom: 15px;
+}
+h1 {
+  font-size: 30px;
+  color: #119955;
+  text-align: center;
+}
+span {
+  width: 50px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  display: inline-block;
+  background: #119955;
+  color: #fff;
+}
+/*# sourceMappingURL=04-less.css.map */

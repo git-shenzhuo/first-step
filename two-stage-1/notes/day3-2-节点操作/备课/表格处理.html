@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    table{border: 1px solid #ccc;width: 600px;margin-top: 20px;border-collapse: collapse}
+    th{border: 1px solid #ccc}
+    td{border: 1px solid #ccc;text-align: center}
+
+  </style>
+
+</head>
+<body>
+<label for="username">姓名</label>
+<input id="username" type="text" name="username">
+<label for="className">班级</label>
+<input id="className" type="text" name="className">
+<label for="address">地址</label>
+<input id="address" type="text" name="address">
+<button id="addBtn">新增</button>
+<div class="list">
+  <table>
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>班级</th>
+        <th>地址</th>
+        <th>删除</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <!--<td>1</td>-->
+        <!--<td>文顶顶</td>-->
+        <!--<td>修仙二阶段</td>-->
+        <!--<td>北京市</td>-->
+      </tr>
+    </tbody>
+  </table>
+</div>
+<script>
+
+window.onload = function () {
+  /*01-获取页面中对应的标签*/
+  var username  = document.getElementById("username");
+  var className = document.getElementById("className");
+  var address   = document.getElementById("address");
+  var addBtn    = document.getElementById("addBtn");
+  var tbody     = document.getElementsByTagName("tbody")[0];
+
+  var index     = 0;
+  addBtn.onclick = function () {
+    index++;
+    /*获取页面中的数据并根据数据来生成tr标签*/
+    var html =     "<td>"+index+"</td>"+
+        "<td>"+username.value+"</td>"+
+        "<td>"+className.value+"</td>"+
+        "<td>"+address.value+"</td>"+
+        "<td><div class='delete'>删除</div></td>";
+    var tr   = document.createElement("tr");
+    tr.innerHTML = html;
+
+    var deteBtn = tr.querySelector(".delete");
+    deteBtn.onclick = function (){
+      console.log(this);
+      tbody.removeChild(this.parentElement.parentElement)
+    }
+    tbody.appendChild(tr);
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 200px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: #ccc;
+            display: none;
+
+        }
+        
+        span{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            font-size: 12px;
+            text-align: center;
+            line-height: 10px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>x</span>
+    </div>
+    <script>
+        $(function(){
+            $("div").slideDown(500).fadeOut(100).fadeIn(100).delay(3000).slideUp(500);
+            
+        })
+    </script>
+</body>
+</html>

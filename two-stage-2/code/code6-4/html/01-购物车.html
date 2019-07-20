@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            border: 1px solid #000;
+            margin: 100px auto;
+            width: 750px;
+            /* height: 300px; */
+        }
+
+        table {
+            border-spacing: 20px;
+            text-align: center;
+        }
+
+        .num span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+
+        .rmv {
+            color: red;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .good-rmv{
+            color: red;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="check-inp"></td>
+                    <td>西瓜</td>
+                    <td class="price">￥ 99.99</td>
+                    <td class="num">
+                        <span class="num-cut">-</span>
+                        <input type="text" value="1" class="num-num" data-i="8">
+                        <span class="num-add">+</span>
+                    </td>
+                    <td class="price-nums">￥ 99.99</td>
+                    <td class="rmv">删除</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="check-inp"></td>
+                    <td>荔枝</td>
+                    <td class="price">￥ 55.99</td>
+                    <td class="num">
+                        <span class="num-cut">-</span>
+                        <input type="text" value="1" class="num-num" data-i="10">
+                        <span class="num-add">+</span>
+                    </td>
+                    <td class="price-nums">￥ 55.99</td>
+                    <td class="rmv">删除</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="check-inp"></td>
+                    <td>芒果</td>
+                    <td class="price">￥ 65.99</td>
+                    <td class="num">
+                        <span class="num-cut">-</span>
+                        <input type="text" value="1" class="num-num" data-i="6">
+                        <span class="num-add">+</span>
+                    </td>
+                    <td class="price-nums">￥ 65.99</td>
+                    <td class="rmv">删除</td>
+                </tr>
+                <tr class="good">
+                    <td><input type="checkbox" class="good-check-inp"></td>
+                    <td>全选</td>
+                    <td class="good-rmv">删除</td>
+                    <td class="good-num">已选0件商品</td>
+                    <td>总计（不含运费）：</td>
+                    <td class="good-price">￥ 0.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(function(){
+            // 点击的时候数量改变
+            $("#box").on("click","span",function(){
+                
+                if($(this).hasClass("num-cut")){
+                    let num = $(this).next().val();
+                    num--;
+                    if(num < 1){
+                        num = 1;
+                    };
+                    $(this).next().val(num);
+                    // let price = $(this).parent().prev().text().slice(2);
+                    // let xiaoji = (price * num).toFixed(2);
+                    // $(this).parent().next().text(`￥ ${xiaoji}`);
+                    calculate($(this));
+                }else{
+                    let num = $(this).prev().val();
+                    num++;
+                    if(num >= $(this).prev().data("i")){
+                        num = $(this).prev().data("i");
+                    };
+                    $(this).prev().val(num);
+                    // let price = $(this).parent().prev().text().slice(2);
+                    // let xiaoji = (price * num).toFixed(2);
+                    // $(this).parent().next().text(`￥ ${xiaoji}`);
+                    calculate($(this));
+                }       
+            });
+
+            // 手动改变
+            $("#box").on("input",".num-num",function(){
+                let num = $(this).val();
+                if(num < 1){
+                    num = 1;
+                };
+                if(num >= $(this).data("i")){
+                    num = $(this).data("i")
+                };
+                $(this).val(num);
+                calculate($(this));
+
+            })
+            // 封装小计计算
+            function calculate(now){
+                let num = $(now).parent().find(".num-num").val();
+                let price = $(now).parent().prev().text().slice(2);
+                let xiaoji = (price * num).toFixed(2);
+                $(now).parent().next().text(`￥ ${xiaoji}`);
+            }
+            
+            // 删除操作
+            $("#box").on("click",".rmv",function(){
+                $(this).parent().remove();
+            })
+
+            // 全选
+            $("#box").on("click",".good-check-inp",function(){
+                let isok = $(this).prop("checked");
+                $(".check-inp").prop("checked",isok);
+                zongji();
+            })
+
+            // 封装总计
+            let arr = [];
+            function zongji(){
+                $(".check-inp").each(function(i,ele){
+                    if($(ele).prop("checked")){
+                        arr.push(ele);
+                    }
+                });
+                
+                // 遍历计算总量
+                let num = 0;
+                let price = 0;
+                arr.forEach(function(ele,i){
+                    num += $(".num-num").eq(i).val() * 1;
+                    price += $(".price-nums").eq(i).text().slice(2) * 1;
+                    
+                });
+                console.log(num,price);
+                
+                // 结果渲染到页面中
+                $(".good-num").text(`已选${num}件商品`);
+                $(".good-price").text(`￥ ${price.toFixed(2)}`);
+            }
+        })
+    </script>
+</body>
+
+</html>

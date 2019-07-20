@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    window.onload=()=>{
+        add=(...rest)=>{console.log(rest);
+        }
+        add(23);
+        add(3,4,5);
+        add("fff","ggg","rrr",23);
+        ass=(x,y,z="文顶顶")=>{console.log(x+y+z);
+        };
+        ass("你好","亲爱的","朋友");
+        ass("夏天","在河边");
+        ass("为什么");
+        console.log(add.length);
+        console.log(ass.length);
+
+    }
+    </script>
+</body>
+</html>

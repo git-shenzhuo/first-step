@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <form action="">
+        <input type="text" placeholder="请输入数字" name="num">
+        <input type="text" placeholder="请输入汉字" name="cha">
+        <input type="text" placeholder="请输入英文" name="eng">
+    </form>
+    <button>提交</button>
+    <script>
+        /*[1] 把表单数据转换为查询字符串的方法 $().serialize()*/
+        /*[2] 把表单数据转换为对象数组        $().serializeArray()*/
+        /*[3] 把对象转换为查询字符串的方法     $.param()*/
+        let btn = $("button")[0];
+        btn.onclick = function(){
+            $.ajax({
+                url:"http://localhost/second%20stage/code/code5-24/php/06-form-jquery.php",
+                data:$("form").serialize(),
+                success(text){
+                    console.log(text);
+                    
+                }
+            })
+        }
+    </script>
+</body>
+</html>

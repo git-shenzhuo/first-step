@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/cookie-zsgc.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <style type="text/css">
+        body {
+            background-color: rgb(177, 208, 224);
+            font: normal 12px Trebuchet MS;
+            color: #000;
+        }
+
+        form {
+            width: 220px;
+            padding: 10px;
+            background-color: #DDEEF6;
+            box-shadow: 0px 0px 10px 0px #888888;
+            border: 1px solid #DDEEF6;
+            border-radius: 6px;
+            margin: auto;
+        }
+
+        .roundedCorners-textbox {
+            border: 1px solid #999;
+            width: 160px;
+        }
+
+        .checkbox {
+            margin-left: 30px;
+            border: 1px solid #999;
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label>账号</label>
+        <input id="username" name="username" type="text" />
+        <br>
+        <br>
+        <label>密码</label>
+        <input id="password" name="password" type="text" />
+        <br>
+        <br>
+        <input id="checkbox" type="checkbox" class="checkbox" />7天免登录
+        <br>
+        <br>
+        <input type="submit" value="确定" id="btnSubmit" />
+        <input type="reset" value="清空" />
+    </form>
+    <script>
+        window.onload =function(querts){
+            // 封装跳转请求的函数
+            function newpage(querts){
+                $.get({
+                    url:"../php/02-login.php",
+                    data:querts,
+                    success(xhr){
+                        if(xhr.judge == "success"){
+                            window.location.href = "./05-success.html";
+                        }else{
+                            cookie.clear();
+                            alert(xhr.msg);
+                        }
+                    }
+                })
+            }
+            let sub = document.querySelector("#btnSubmit");
+            let username = document.querySelector("#username");
+            let password = document.querySelector("#password");
+            sub.onclick = function(e){
+                // 阻止submit标签的默认刷新
+                e.preventDefault();
+                // 拿到输入框的数据
+                let user = username.value.trim();
+                let pass = password.value.trim();
+                newpage(`username=${user}&password=${pass}`);
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

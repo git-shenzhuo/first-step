@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li v-for='a in arr'>{{a}}</li>
+            <li v-for='b in arr2'>{{b.name}}</li>
+            <li v-for='b in arr2'>{{b.name}} <span v-for='c in b.ps' v-if='c=="js"'>{{c}}</span></li>
+            <li v-for='b in arr2' v-show='b.name=="xie"'>{{b.name}} <span v-for='c in b.ps'>{{c}}</span></li>
+
+        </ul>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        let box = new Vue({
+            el:'#box',
+            data:{
+                arr:[1,2,3,4,5,6,7],
+                arr2:[{
+                    name:'xie',
+                    ps:['ps','js','vue','css']
+                },{
+                    name:'yao',
+                    ps:['ps','vs','js']
+                },{
+                    name:'jing',
+                    ps:['html','css']
+                }]
+            }
+        })
+    </script>
+</body>
+</html>

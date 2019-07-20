@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*Animal 父构造函数*/
+  function Animal(color,address) {
+    this.color = color;
+    this.address = address
+  }
+
+  Animal.prototype.move = function () {
+    console.log("动物开始移动了");
+  }
+  Animal.prototype.type = "动物";
+
+
+  /*Person 子构造函数*/
+  function Person(name,age,color,address) {
+    this.name = name;
+    this.age  = age;
+
+    /*借用构造函数继承：在子构造函数中通过call|apply调用父构造函数，绑定父构造函数中的this为当前的实例对象*/
+    /*问题：可以获取父构造函数实例对象的成员 但是无法获取到原型成员*/
+    Animal.call(this,color,address);
+    // this.color = "red";
+    // this.address = "教室里面";
+  }
+
+  Person.prototype.run = function () {
+    console.log("人可以跑路");
+  }
+
+  var p1 = new Person("小明",89,"red","北京站");
+  var p2 = new Person("萧红",18,"yellow","广州站");
+
+  console.log(p1);
+  console.log(p2);
+
+</script>
+</body>
+</html>

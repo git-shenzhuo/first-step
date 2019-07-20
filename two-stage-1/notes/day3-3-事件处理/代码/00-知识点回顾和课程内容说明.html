@@ -1,0 +1,51 @@
+DOM
+DOM:文档对象模型(文本文件->浏览器解析  映射成树DOM-tree) 提供了操作网页的一套API。
+Node:网页中所有的内容都是节点，很多类型的节点，不同类型的节点它们的作用和操作方式都不一样。
+
+元素节点 elementNode      nodeType(1)  nodeName - nodeValue
+属性节点 attributeNode    nodeType(2)
+文本节点 textNode         nodeType(3)
+
+节点的创建
+  createElement("div")       元素节点
+  createAttribute("id")      属性节点    设置属性值：attr.nodeValue
+  createTextNode("内容")      文本节点
+
+节点的插入
+  ele.appendChild()
+  ele.insertBefore()
+
+元素节点的获取
+  var ele  = getElementById("divID");
+  var eles = getElementsByClassName("box");
+  var eles = getElementsByTagName("span");
+  var eles = getElementsByName("form-name");
+  var list = querySelectorAll("#id" | ".class" | "div");
+  var ele  = querySelector("#id" | ".class" | "div");
+
+节点的关系：父子关系  兄弟关系
+  parentNode parentElement
+  childNodes children
+  firstChild  firstElementChild   lastChild  lastElementChild
+  previousElementSibling  previousSibling(节点)  nextElementSibling  nextSibling(节点)
+
+节点的其它操作
+  复制：cloneNode(true)
+  替换：replaceChild()
+  删除：removeChild()
+  检查：hasChildNodes()
+
+
+节点的盒模型属性：
+  offsetWidth/Height/top/left
+
+节点的样式：
+  style.属性 | window.getComputedStyle(ele)[属性] | getCurrentStyle
+
+标签的属性和属性节点：区分 | 操作( get/set/removeAttribute )
+自定义属性节点：data-index = "1"  div.dataset.index
+
+
+
+点击事件/鼠标移入...
+

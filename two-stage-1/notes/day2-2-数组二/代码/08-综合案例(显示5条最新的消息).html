@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      list-style: none;
+      margin: 10px;
+    }
+
+    .new-list
+    {
+      width: 650px;
+      height: 200px;
+      border: 2px solid #aaa;
+      border-radius: 15px;
+    }
+
+    input{
+      width: 300px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="new-list">
+  <h4>本报讯.记者文顶顶前方来电最新消息：</h4>
+  <ul id="ulID">
+    <li><a href="#"> 文顶顶今天看到神仙啦！</a></li>
+    <li><a href="#"> 文顶顶今天看到神仙啦！</a></li>
+    <li><a href="#"> 文顶顶今天看到神仙啦！</a></li>
+    <li><a href="#"> 文顶顶今天看到神仙啦！</a></li>
+    <li><a href="#"> 文顶顶今天看到神仙啦！</a></li>
+  </ul>
+</div>
+<div>
+  <input type="text" placeholder="请输入最新的新闻" id="inputID">
+  <button id="addBtn">添加新闻</button>
+</div>
+<script>
+  var newList = ["好消息！明天放假了！","放假的时间为1年！","长隆水上乐园不要钱，免费玩","文婧小姐姐结束20年单身生活","文顶顶被打成脑残！"];
+
+  /*01-获取页面中对应的标签*/
+  var oUl     = document.getElementById("ulID");
+  var oBtn    = document.getElementById("addBtn");
+  var oInput  = document.getElementById("inputID");
+
+  /*02-给按钮添加点击事件*/
+  oBtn.onclick = function(){
+
+    /*03-获取输入框中的内容*/
+    var content = oInput.value;
+    if (content.length == 0)
+    {
+      alert("文本框中没有输入，请查看！");
+      return;
+    }
+
+    /*04-把数据添加到数组的开头*/
+    newList.unshift(content);
+
+    /*05-保证只有5条新闻*/
+    newList.length = 5;   //设置数组的长度为5，如果超过那么会自动删除。
+    renderNew();
+
+    /*06-清理输入框*/
+    oInput.value = "";
+  }
+
+
+  renderNew();
+
+  /*封装函数：根据数据展示UI，遍历新闻数组，根据他们来生成li标签拼接设置到页面中*/
+  function renderNew() {
+    var res = newList.map(function (value,index,array) {
+      return '<li><a href="#"> '+(index + 1) +". "+value+'</a></li>';
+    }).join("");
+    oUl.innerHTML = res;
+  }
+
+</script>
+</body>
+</html>

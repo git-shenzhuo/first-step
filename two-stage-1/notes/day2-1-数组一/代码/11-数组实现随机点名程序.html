@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" id="inputID">
+<button>随机点名</button>
+<script>
+  /*思路
+  * [1] 获取页面中的标签
+  * [2] 给按钮添加点击事件
+  * [3] 当点击按钮的时候要得到随机的姓名
+  *     (1) 准备所有同学的姓名
+  *     (2) 需要获取指定范围内的随机数
+  * [4] 把结果显示在输入框中
+  * */
+
+  /*01-准备数据*/
+  var arr = ["莫孪","梁剑锋","林惠宇","刘鹏程","熊小超","谢祥锋","罗志杰","韦家振","蒋宽","沈卓","吴鑫杰","何新建","阳长志","王剑锋","汤志聪","梁大志","邓聪","黄其杰","简丽琼","梁先文","邵展荣","邢福谦","何启维","李思鑫","马振伟","	兰青","蔡显文","罗振洲","何辉鸿","程健","杨玉宁","金鹏","张志杰","叶群","陈金明","詹逸敏","黄常平"	,"阳灿","黄楚燕","刘健","梁智钊","陈城","黄林芳","李朗庆","韦宝彪","韦露","潘颖俊","黄浩","谢加财"	,"刘智","刘强","吉江辉","崔晓韩","陈观钦"	,"黎剑锋","喻佳佳","徐沛权","龚志清","龙利成"];
+
+  /*min-max parseInt(Math.random() * (max -min + 1)) + min*/
+  /*随机数的范围：0 ~ arr.length-1*/
+
+  /*02-获取标签*/
+  var oInput = document.getElementById("inputID");
+  var oBtn   = document.getElementsByTagName("button")[0];
+
+  /*03-注册事件*/
+  oBtn.onclick = function () {
+    /*04-生成一个指定范围内的随机数*/
+    var min   = 0;
+    var max   = arr.length - 1;
+    var index = parseInt(Math.random() * (max -min + 1)) + min;
+
+    /*05-根据该随机数来获取姓名*/
+    var name = arr[index];
+
+    /*06-展示在页面中*/
+    oInput.value = name;
+  }
+
+</script>
+</body>
+</html>

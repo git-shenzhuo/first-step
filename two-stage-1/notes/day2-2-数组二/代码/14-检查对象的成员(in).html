@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*对象
+  * 对象：键值对(key-value)的集合。
+  * 对象可以有属性和方法。
+  * */
+
+  var person = {name:"zs",age:18,className:"html5",address:undefined,car:null};
+
+  /*
+  * 01-补充的知识点 对象中的key是字符串
+  * 02-in关键字
+  *   [1] for..in循环遍历对象
+  *   [2] 检查对象中是否存在指定的成员 "属性"  in 对象
+  * */
+
+  /*检查person对象中是否存在address属性，如果存在那么就返回true,否则就返回false*/
+  // console.log(address in person);   错误的演示
+  console.log("address" in person);
+  console.log("phone" in person);
+
+</script>
+</body>
+</html>

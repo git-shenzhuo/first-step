@@ -1,0 +1,38 @@
+body {
+  background: #eee;
+}
+body .box {
+  width: 600px;
+  height: 400px;
+  background: #ccc;
+  font-size: 30px;
+  border: 1px solid #000;
+}
+body .box .content {
+  width: 400px;
+  height: 200px;
+  background: #ccc;
+  padding: 50px;
+}
+body .box .content .first {
+  background: #195;
+}
+body .box .content .first li {
+  width: 100px;
+  height: 44px;
+  background: #ccc;
+  line-height: 44px;
+  color: #000;
+}
+body .box .content .second {
+  background: red;
+}
+body .box .content .second li {
+  width: 200px;
+  height: 44px;
+  background: #ccc;
+  line-height: 44px;
+  font-size: 14px;
+  color: #000;
+}
+/*# sourceMappingURL=05-less.css.map */

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*混入*/
+/*01-固定(没有参数) 语法 .混入名{样式}   @extend .混入名*/
+/*02-参数         语法 @mixin 混入名(参数1,参数2){}  @inculde 混入名(参数1，参数2)*/
+body { background: #eee; }
+body .box { background: #eee; width: 800px; height: 400px; border: 2px solid #000; }
+body .box .header { background: #eee; width: 600px; height: 200px; border: 2px solid #000; }
+body .box .header p { background: #0e90d2; }
+body .box .header span { background: #00d6b2; }
+body .box .footer { background: #eee; width: 600px; height: 100px; border: 2px solid #000; margin-top: 20px; }
+
+/*# sourceMappingURL=02-sass.css.map */

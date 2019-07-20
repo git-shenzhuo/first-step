@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>生命周期钩子</title>
+</head>
+<body>
+    <div id="box">
+        <p>{{username}}</p>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        let box = new Vue({
+            el:'#box',
+            data:{
+                username:'laoxie'
+            },
+            // 创建前
+            beforeCreate(){
+                console.group('CREATE')
+                    console.group('beforeCreate')
+                        console.log(this.$el)
+                        console.log(this.$data)
+                    console.groupEnd()
+            },
+            // 创建完成
+            created(){
+                    console.group('created')
+                        console.log(this.$el)
+                        console.log(this.$data)
+                    console.groupEnd()
+                console.groupEnd()
+            },
+            // 挂载前
+            beforeMount(){
+                console.group('MOUNT')
+                    console.group('beforeMount')
+                        console.log(this.$el)
+                        console.log(this.$data)
+                    console.groupEnd()
+            },
+            // 挂载完成
+            mounted(){
+                    console.group('mounted')
+                        console.log(this.$el)
+                        console.log(this.$data)
+                    console.groupEnd()
+                console.groupEnd()
+            },
+            // 更新前
+            beforeUpdate(){
+                console.group('UPDATE')
+                    console.group('beforeUpdate')
+                        console.log(this.$el)
+                        console.log(this.$data)
+                    console.groupEnd()
+            },
+            // 更新完成
+            updated(){
+                    console.group('updated')
+                        console.log(this.$el)
+                        console.log(this.$data)
+                    console.groupEnd()
+                console.groupEnd()
+            },
+            // 销毁前
+            beforeDestroy(){
+                console.group('DESTROY')
+                    console.group('brforeDestroy')
+                        console.log(this.$el)
+                        console.log(this.$data)
+                    console.groupEnd()
+            },
+            // 销毁完成
+            destroyed(){
+                    console.group('destroyed')
+                        console.log(this.$el)
+                        console.log(this.$data)
+                    console.groupEnd()
+                console.groupEnd()
+            }
+        })
+
+
+
+
+        // let arr = [1,3,4,3,5,6,4,6,7,43,3]
+        // let res = Array.from(new Set(arr));
+        
+    </script>
+</body>
+</html>

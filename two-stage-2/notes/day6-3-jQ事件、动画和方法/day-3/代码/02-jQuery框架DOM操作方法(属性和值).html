@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<div CLASS="box" id="demoID" title="我是标题">我是div</div>
+<input type="text" id="inputID">
+<button>按钮</button>
+<script>
+
+  $(function () {
+    /*01-jQuery操作标签的属性节点*/
+    // var oDiv = document.getElementsByTagName("div")[0];
+    // console.dir(oDiv);
+    // console.log(typeof oDiv);                           //object
+    // console.log(Object.prototype.toString.call(oDiv));  //[object HTMLDivElement]
+    //
+    // /*DOM标签也是对象 因此性质同对象一致*/
+    // oDiv.s = function () {
+    //   console.log("我是s");
+    // }
+    // oDiv.s();
+
+    /*01-A 先获取标签中指定的属性节点*/
+    console.log($(".box").attr("class"));
+
+    /*02-B 修改标签中指定的属性节点*/
+    console.log($(".box").attr("title","谁是大雄鹰"));
+
+    /*03-C 添加新的属性节点*/
+    console.log($(".box").attr("xxx","---"));
+    console.log($(".box").attr({"A":"A","abcB":"B"}));
+
+    /*备注：标签属性节点的属性名是不区分大小写*/
+    console.log($(".box").attr("ABCB"));   //B
+
+    /*04-D 删除属性节点*/
+    console.log($(".box").removeAttr("title"));
+
+    /*02-jQuery操作标签的属性-prop*/
+    $(".box").prop("a","哈哈哈");
+    $(".box").prop("a","嘿嘿嘿");
+    console.log($(".box").prop("a"));
+
+    $(".box").removeProp("a");
+    console.log($(".box"));
+
+    /*03-jQuery操作输入框的value*/
+    $("button").click(function () {
+      //console.log($("#inputID").get(0).value);
+
+      /*03-A 获取输入框的内容*/
+      console.log($("#inputID").val());
+
+      /*03-B 设置输入框的内容*/
+      console.log($("#inputID").val("我是内容"));
+    })
+  })
+
+</script>
+</body>
+</html>

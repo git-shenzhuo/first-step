@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 分支语句的语法：
+  * switch(n){case 1:}
+  * */
+
+  console.log("----start----");
+
+  var n = 12;
+
+  /*
+  * 01-基本使用
+  * 使用n和case后面的值进行匹配(比较)
+  * 如果相等，就会执行case下面的语句，在执行的过程中如果遇到break那么就结束执行
+  * 如果都不匹配，那么就执行default后面的语句
+  *
+  * 02-在进行匹配的时候使用的是全等(===)判断
+  * 03-补充知识点default这部分是可以省略的 + default顺序并非一定要写在最后但是建议这样写。
+  * */
+  switch (n) {
+    case 1:
+      console.log("1----");
+      break;
+    case 2:
+      console.log("2----");
+      break;
+    case 3:
+      console.log("3----");
+      break;
+    default:
+      console.log("other----");
+      break;
+  }
+
+  console.log('-------end----');
+
+</script>
+</body>
+</html>

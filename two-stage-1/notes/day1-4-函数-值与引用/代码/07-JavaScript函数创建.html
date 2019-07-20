@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 函数创建(定义)
+  * [1] 直接声明 function 函数名(参数){ ...函数体... }
+  * [2] 以字面量的方式来创建
+  *     a 匿名函数字面量 var f = function(){...}
+  *     b 命名函数字面量 var f = function name(){...}
+  * [3] 使用Function 构造函数来创建函数(了解)
+  *
+  * */
+
+  var a = 10;
+  /*01-直接声明函数*/
+  function sum() {
+    console.log(1 + 2);
+  }
+
+  sum();
+
+  /*02-以字面量的方式来创建函数*/
+  var obj1 = {name:"zs"};
+  var log = function () {
+    console.log("--log--");
+  }
+
+  log();
+
+  var write = function t() {
+    console.log("---t---");
+  }
+
+  write();
+  /*t()?*/
+  //t();
+
+  /*03-构造函数来创建*/
+  var obj2 = new Object();
+  var f    = new Function('console.log("--function--");');    //function f(){}
+  console.log(typeof sum);
+  console.log(typeof f);
+  f();
+
+
+</script>
+</body>
+</html>

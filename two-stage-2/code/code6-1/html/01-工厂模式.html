@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+
+            // 生成函数
+            function Bulid(){};
+            // 添加原型对象
+            Bulid.prototype = {
+                constructor:Bulid,
+                addren:"奥比利亚萨马奇",
+                setname(){console.log("萨莫迪");},
+                getname(){console.log("为神马");}
+            }
+            // 给构造函数添加方法
+            Bulid.iphone = function(){
+                this.name  = "iphone";
+                this.color = "骚气红";
+                this.width = 805;
+                this.height = 1550;
+            };
+            Bulid.oppn = function(){
+                this.name  = "oppn";
+                this.color = "纯洁白";
+                this.width = 750;
+                this.height = 1350;
+                
+            };
+            Bulid.mi = function(){
+                this.name  = "mi";
+                this.color = "曜石黑";
+                this.width = 927;
+                this.height = 1420;
+                
+            };
+            Bulid.vivo = function(){
+                this.name  = "vivo";
+                this.color = "土豪金";
+                this.width = 680;
+                this.height = 1750;
+                
+            }
+            // 建造工厂
+            Bulid.factory = function(type){
+                // 判断工厂是否有这条流水线
+                if(!Bulid[type]){
+                    console.log("不拿钱还想要货？");
+                }
+                Bulid[type].prototype = Bulid.prototype;
+                return new Bulid[type]();
+            }
+
+
+            // 开始实例化生产
+            let iphone1 = Bulid.factory("iphone");
+            console.log(iphone1);
+            iphone1.setname();
+            iphone1.getname();
+            let mi = Bulid.factory("mi");
+            console.log(mi);
+            mi.setname();
+
+        }    
+    </script>
+</body>
+</html>

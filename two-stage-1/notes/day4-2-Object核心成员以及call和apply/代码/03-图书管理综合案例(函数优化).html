@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*01-商品列表(对象数组)*/
+  var bookList = [
+    {name:"玻璃球游戏",price:"39.00",author:"赫尔曼·黑塞"},
+    {name:"你好忧愁",price:"1.0",author:"弗朗索瓦丝·萨冈"},
+    {name:"人间失格",price:"29.3",author:"太宰治"},
+    {name:"双城记",price:"30.5",author:"查尔斯·狄更斯"},
+  ]
+
+  /*02-查询操作 name*/
+  function getBook(name) {
+    for (var i = 0 ;i <bookList.length; i++)
+    {
+      var book = bookList[i];
+      if (book.name == name)
+      {
+        return book;
+      }
+    }
+  }
+
+  /*03-修改操作*/
+  function updateBook(name,price) {
+    var book = getBook(name);
+    if (book) {
+      book.price = price;
+    }
+    return book;
+  }
+
+  /*04-添加操作*/
+  function addBook(book){
+    bookList.push(book);
+  }
+
+  /*05-删除操作*/
+  function removeBook(name) {
+    var book  = getBook(name);
+    var index = bookList.indexOf(book);
+    if (index != -1) bookList.splice(index,1)
+  }
+
+
+  console.log(getBook("双城记"));
+  console.log(getBook("你好忧愁"));
+
+  console.log(updateBook("双城记", "10000"));
+  removeBook("双城记");
+  console.log(bookList);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+        }
+        div img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/mn1.jpg" alt="">
+
+    </div>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementsByTagName("div")[0];
+            var oImg = document.getElementsByTagName("img")[0];
+            var arr  = ["../images/mn1.jpg","../images/mn2.jpg","../images/mn3.jpg","../images/mn4.jpg","../images/mn5.jpg","../images/mn6.jpg","../images/mn7.jpg","../images/mn8.jpg"];
+            var n    = 0;
+            var temp = "";
+            function activ(){
+                temp = setInterval(function(){
+                n++;    
+                if(n >= arr.length){   //判断n的值，方便使之一直循环
+                    n = 0;
+                }
+                oImg.src = arr[n];
+            },2000)
+            }
+            activ();
+            oDiv.onmouseenter = function(){  //鼠标进入就停止滚动
+                clearInterval(temp);
+            }
+            oDiv.onmouseleave = function(){  //鼠标出来继续开始滚动
+                activ();
+            }
+        }
+    
+    </script>
+</body>
+</html>

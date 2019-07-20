@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box{margin-top: 20px}
+    table{border: 1px solid #cccccc;width: 600px;border-collapse: collapse}
+    th{border: 1px solid #ccc}
+    td{border: 1px solid #ccc;text-align: center}
+  </style>
+</head>
+<body>
+<!--01-表单和输入框-->
+<label for="username">姓名</label>
+<input type="text" id="username" class="username">
+<label for="school">学校</label>
+<input type="text" id="school" class="school">
+<label for="className">班级</label>
+<input type="text" id="className" class="className">
+<label for="address">地址</label>
+<input type="text" id="address" class="address">
+
+<button class="add">添加信息</button>
+
+<!--02-表格-->
+<div class="box">
+  <table>
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>学校</th>
+        <th>班级</th>
+        <th>地址</th>
+        <th>删除</th>
+        <th>复制</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--<tr>-->
+        <!--<td>1</td>-->
+        <!--<td>胡瓜</td>-->
+        <!--<td>天天乐园</td>-->
+        <!--<td>小红帽1班</td>-->
+        <!--<td>北京市</td>-->
+        <!--<td><button>删除</button></td>-->
+      <!--</tr>-->
+    </tbody>
+  </table>
+</div>
+<script>
+
+  var index = 0;
+  /*01-获取页面中对应的标签*/
+  var username = document.getElementById("username");
+  var school   = document.getElementById("school");
+  var className= document.getElementById("className");
+  var address  = document.getElementById("address");
+  var addBtn   = document.getElementsByClassName("add")[0];
+  var tbody    = document.getElementsByTagName("tbody")[0];
+  /*02-给按钮添加点击事件*/
+  addBtn.onclick = function () {
+
+    index++;
+
+    /*03-根据表单数据来创建标签*/
+    var html = "<td>"+index+"</td>"+
+               "<td>"+username.value+"</td>"+
+               "<td>"+school.value+"</td>"+
+               "<td>"+className.value+"</td>"+
+               "<td>"+address.value+"</td>"+
+               "<td><button class='delete-class'>删除</button></td>"+
+               "<td><button class='clone-class'>复制</button></td>";
+    var tr = document.createElement("tr");
+    tr.innerHTML = html;
+
+    /*04-获取当前添加的这个删除按钮*/
+    // var deBtn = tr.querySelectorAll(".delete-class")[0];
+    // deBtn.onclick = function(){
+    //   console.log(this);
+    //   /*获取要删除的标签*/
+    //   var node = this.parentElement.parentElement;
+    //   tbody.removeChild(node);
+    // }
+    //
+    //
+    // var clBtn = tr.querySelectorAll(".clone-class")[0];
+    // clBtn.onclick = function(){
+    //   /*先复制一行*/
+    //   var currentTr = (this.parentElement.parentElement);
+    //   var node = currentTr.cloneNode(true);
+    //   /*插入到表格中  insertBefore(new,old)*/
+    //   tbody.insertBefore(node,currentTr.nextElementSibling);
+    // }
+
+
+    tbody.appendChild(tr);
+  }
+
+
+  tbody.onclick = function (e) {
+    var e = e || window.event;
+    var target = e.target || e.srcElement;
+    if (target.className == "delete-class")
+    {
+      /*删除按钮*/
+      var node = target.parentElement.parentElement;
+      if (confirm("小哥哥，确定要把我删除吗? 你会想我吗？"))
+      {
+        tbody.removeChild(node);
+      }
+    }
+
+    if (target.className == "clone-class")
+    {
+        /*复制按钮*/
+        var currentTr = (target.parentElement.parentElement);
+        var node = currentTr.cloneNode(true);
+        /*插入到表格中  insertBefore(new,old)*/
+        tbody.insertBefore(node,currentTr.nextElementSibling);
+    }
+  }
+</script>
+</body>
+</html>

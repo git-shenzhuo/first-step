@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="divID">
+  <span>spanQ</span>
+  <p>我是p</p>
+  <div></div>
+</div>
+<script>
+  var oSpan = document.querySelector("span");
+  console.log(oSpan.parentElement);
+  console.log(oSpan.parentNode);
+
+  console.log(oSpan.parentElement.childNodes);
+  console.log(oSpan.parentElement.children);
+
+  var oDiv = oSpan.parentElement;
+  console.log(oDiv.firstChild);
+  console.log(oDiv.firstElementChild);
+
+
+  oDiv.firstElementChild.nextSibling;
+  oDiv.firstElementChild.nextElementSibling;
+
+  oDiv.firstElementChild.previousSibling;
+  oDiv.firstElementChild.previousElementSibling;
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*01-工厂函数创建对象*/
+  function createDog(name,age) {
+
+    /*[1]-创建空的对象*/
+    var o = new Object();
+    /*[2]-设置对象的属性和方法*/
+    o.name = name;
+    o.age  = age;
+    o.showName = function () {
+      console.log("姓名：" + this.name);
+    }
+    o.showAge  = function () {
+      console.log("年龄：" + this.age);
+    }
+
+    /*[3]-把新创建的对象返回*/
+    return o;
+  }
+
+  /*[4]-创建对象*/
+  var d1 = createDog("旺财",2);
+  console.log(d1);
+
+
+
+  /************************/
+  /*02-自定义构造函数*/
+  /*[1]-提供构造函数*/
+  function Person(name,age) {
+
+    //var o = new Object();
+    //this = o;
+
+    /*[3]-设置对象的属性和方法*/
+    this.name = name;
+    this.age  = age;
+    this.showName = function () {
+      console.log("姓名：" + this.name);
+    }
+    this.showAge  = function () {
+      console.log("年龄：" + this.age);
+    }
+    //return this;
+  }
+
+  /*[2]-创建对象*/
+  var p1 = new Person("光头强",23);
+  console.log(p1);
+
+
+  /*内部的实现细节
+  * 当我们使用new来调用一个函数的时候
+  * (1) 默认会在函数内部先创建一个空的对象  var o = new Object()
+  * (2) 默认会把新创建出来的对象赋值给this this  = o;
+  * (+) 设置this的原型对象为当前构造函数相关联的原型对象 this.__proto__ = Person.prototype
+  * (3) 我们在函数中可以通过this来设置属性和方法
+  * (4) 默认会在最后把心创建出来的对象返回  return this;
+  * */
+
+</script>
+</body>
+</html>

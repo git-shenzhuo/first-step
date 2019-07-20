@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*创建对象的第五种方式：Object.create()*/
+  /*语法：Object.create(object|null) | Object.create(object|null,properties)
+  * 作用：创建空对象，并且设置该对象的原型对象为参数
+  * */
+
+  var t = {name:"zs",showName:function () {
+      console.log(this.name);
+    }}
+
+  /*01-创建空的对象，并且设置该对象的原型对象为t*/
+  /*var o = new Object(); o.__proto__ = t;*/
+  var o = Object.create(t);
+  console.log(o);
+
+  /*02-创建没有原型对象的空对象*/
+  // var obj = {};
+  // console.log(obj);
+  var obj = Object.create(null);
+  console.log(obj);
+
+  /*03-创建对象并且设置原型对象*/
+  var obj2 = Object.create(t, {"age":{value:18},"className":{value:"修神"}});
+  console.log(obj2);
+  /*创建出来的对象，里面的属性age 不可以修改|不可以被枚举(循环中)|不可以被删除的*/
+  console.log(obj2.age);
+
+  /*不可修改*/
+  obj2.age = 19;
+  console.log(obj2.age);
+
+  /*不可枚举*/
+  for (var key in obj2)
+  {
+    console.log(key, obj2[key]);
+  }
+
+  /*不可删除*/
+  delete obj2.age;
+  console.log(obj2.age);        //18
+</script>
+</body>
+</html>

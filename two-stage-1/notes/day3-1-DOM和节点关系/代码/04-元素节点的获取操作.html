@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="demoID">通过ID来获取
+  <span>哈哈</span>
+  <span>呵呵</span>
+  <span class="span-class">嘿嘿</span>
+</div>
+
+<div class="box">通过className来获取1</div>
+<div class="box">通过className来获取2</div>
+
+<span>spanA</span>
+<span>spanB</span>
+<span class="span-class">嘻嘻</span>
+
+<p name="hehe">我是个屁</p>
+<p name="hehe">我也是个屁</p>
+
+<!--<form action="" name=""></form>-->
+<script>
+  /*01-通过ID来获取*/
+  var ele1 = document.getElementById("demoID");
+  console.log(ele1);
+
+  /*02-通过className来获取*/
+  var eles = document.getElementsByClassName("box");
+  console.log(eles);    /*HTMLCollection集合 类数组|伪数组*/
+  var ele2 = eles[0];
+  var ele3 = eles[1];
+  console.log(ele2, ele3);
+
+  /*03-通过标签的名称(类型)来获取*/
+  var spans = document.getElementsByTagName("span");
+  var spanA = spans[0];
+  console.log(spanA);
+
+  /*04-通过标签的name属性来获取*/
+  /*备注：该方法很少使用，主要用在表单中*/
+  var ele4 = document.getElementsByName("hehe");
+  console.log(ele4);    /*NodeList 列表  类数组|伪数组*/
+
+  /*05-两个非常强大的方法*/
+  /*querySelectorAll方法获取的是当前页面中所有匹配的标签*/
+  /*querySelector方法获取的是当前页面中所有匹配标签中的第一个标签*/
+  var ele5 = document.querySelectorAll("#demoID");
+  var ele6 = document.querySelectorAll(".box");
+  var ele7 = document.querySelectorAll("span");
+  console.log(ele5, ele6,ele7);
+
+  var ele8 = document.querySelector(".box");
+  var ele9 = document.querySelector("span");
+  console.log(ele8,ele9);
+
+
+  /*补充：可以由元素节点来调用的*/
+  var temp   = ele1.getElementsByClassName("span-class");
+  console.log(temp);
+
+</script>
+</body>
+</html>

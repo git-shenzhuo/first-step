@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .first-list{
+      width: 600px;
+      height: 44px;
+      line-height: 44px;
+      background: #0b97c4;
+    }
+
+    .first-list > li{
+      float: left;
+      width: 150px;
+      text-align: center;
+    }
+    .first-list > li:hover{
+      background: #ff0088;
+    }
+
+    .second-list{
+      display: none;
+    }
+
+    .second-list > li{
+      width: 150px;
+      background: #ccc;
+    }
+
+  </style>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<ul class="first-list">
+  <li>视频教程<ul class="second-list">
+    <li>java视频</li>
+    <li>设计师视频</li>
+    <li>前端视频</li>
+    <li>移动端开发视频</li></ul></li>
+  <li>经典教材<ul class="second-list">
+    <li>语文</li>
+    <li>数学</li>
+    <li>新概念</li>
+    <li>唐诗三百首</li></ul></li>
+  <li>合作交流<ul class="second-list">
+    <li>登月计划</li>
+    <li>欧洲访问</li></ul></li>
+  <li>联系我们<ul class="second-list">
+    <li>电话联系</li>
+    <li>微信联系</li>
+    <li>QQ联系</li>
+    <li>登门拜访</li></ul></li>
+</ul>
+<script>
+  $(function () {
+
+    // /*01-当鼠标移入到li标签的时候，展开对应的二级菜单*/
+    // $(".first-list >li").mouseenter(function () {
+    //   /*02-展开二级菜单*/
+    //   $(this).children("ul").slideDown();
+    // })
+    //
+    // /*03-当鼠标移出到li标签的时候，收起对应的二级菜单*/
+    // $(".first-list >li").mouseleave(function () {
+    //   /*04-收起二级菜单*/
+    //   $(this).children("ul").slideUp();
+    // })
+
+    /*语法：$().hover(f1,f2)  当鼠标移入执行f1,当鼠标离开执行f2*/
+    /*语法：$().hover(fn)     当鼠标移入或者是移除，都会执行fn*/
+    // $(".first-list >li").hover(function () {
+    //   console.log("--鼠标移入--");
+    // },function () {
+    //   console.log("--鼠标移出--");
+    // })
+
+    $(".first-list >li").hover(function () {
+      $(this).children("ul").stop(true,true).slideToggle();
+    })
+
+    /*补充：hover + 动画队列*/
+
+  })
+</script>
+</body>
+</html>

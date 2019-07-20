@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        td{
+            width: 200px;
+            height: 30px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <label for="">行数：</label>
+    <input type="text" id="rowID">
+    <label for="">列数：</label>
+    <input type="text" id="colID">
+    <button id="btnID">生成表格</button>
+    <div id="boxID">
+        <!-- <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table> -->
+    </div>
+    <script>
+        var  oRow = document.getElementById("rowID");
+        var  oCol = document.getElementById("colID");
+        var  oBtn = document.getElementById("btnID");
+        var  oBox = document.getElementById("boxID");
+        var  result = "";
+        oBtn.onclick = function(){
+            var row    = oRow.value * 1;
+            var col    = oCol.value * 1;
+            result += "<table>";
+            for(var i = 1;i <= row;i++){
+                result += "<tr>";
+                for(var n = 1;n <= col;n++){
+                    result += "<td>"+i+n+"</td>";
+                }
+                result += "</tr>";
+            }
+            result += "</table>";
+            oBox.innerHTML = result;       
+        }
+        
+    </script>
+</body>
+</html>

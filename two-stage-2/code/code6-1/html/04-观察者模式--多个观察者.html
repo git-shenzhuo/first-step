@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            // 多个订阅者，需要用一个数组保存
+            // 发布者
+            let person = {
+                name:"rose",
+                arrs:[],
+                // 添加订阅者
+                addpublish(observer){
+                    console.log("添加了订阅者----");
+                    this.arrs.push(observer);       
+                },
+                // 删除订阅者
+                removepublish(observer){
+                    
+                    if(this.arrs.indexOf(observer) != -1){
+                        this.arrs.splice(this.arrs.indexOf(observer),1);
+                        console.log("删除了订阅者----");
+                    }   
+                },
+                eat(){
+                    // 发布者的状态
+                    console.log("包包坏啦----rose");
+                    for(let observer of this.arrs){
+                        observer();
+                    }
+                }
+            };
+
+            // 订阅者
+            let tom = {
+                name:"tom",
+                reply(){
+                    console.log("再给你买一个更漂亮的------tom");
+                    
+                }
+            };
+            let jake = {
+                name:"jake",
+                reply(){
+                    console.log("想要哪一个，自己选好来找我-----jake");   
+                }
+            };
+
+
+
+            // 注册订阅者
+            person.addpublish(tom.reply);
+            person.addpublish(jake.reply);
+
+            // 发布者改变
+            person.eat();
+        }    
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 对象.isPrototypeOf(实例对象)  检查对象是否在实例对象的原型链上  原型对象-实例对象
+  * 实例对象 instanceof 构造函数   检查构造函数的原型对象是否在实例对象的原型链上面
+  * */
+
+  function Person() {}
+  var p = new Person();
+  console.log(Person.prototype.isPrototypeOf(p)); //true
+  console.log({}.isPrototypeOf(p));               //false
+  console.log(Object.prototype.isPrototypeOf(p)); //true
+
+
+
+  console.log(p instanceof Person);   //true Person.prototype 是否在p的原型链上面
+  console.log(p instanceof Object);   //true Object.prototype 是否在p的原型链上面
+
+  Person.prototype = {};
+  console.log(p instanceof Person);   //false
+
+</script>
+</body>
+</html>

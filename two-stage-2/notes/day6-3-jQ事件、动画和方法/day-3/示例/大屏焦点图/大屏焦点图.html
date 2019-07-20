@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .box
+    {
+      width: 100%;
+      height: 365px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      position: relative;
+
+    }
+
+    ul{
+      width: 500%;
+      height: 365px;
+      position: absolute;
+    }
+
+    li{
+      width: 20%;
+      height: 365px;
+      float: left;
+    }
+
+    img
+    {
+      width: 100%;
+      height: 365px;
+    }
+
+    p{
+      width: 80%;
+      height: 100px;
+      line-height: 100px;
+      /*background: red;*/
+      position: absolute;
+      left: 50%;
+      margin-left:-40% ;
+      margin-top: 200px;
+      font-size: 100px;
+      color: #fff;
+      z-index: 2;
+    }
+
+    span:nth-child(2)
+    {
+      float: right;
+    }
+  </style>
+  <script src="src/jquery-3.4.1.js"></script>
+</head>
+<body>
+<div class="box">
+  <p><span>&lt;</span><span>&gt;</span></p>
+  <ul>
+    <li><img src="img/01.jpeg"></li>
+    <li><img src="img/02.jpeg"></li>
+    <li><img src="img/03.jpeg"></li>
+    <li><img src="img/04.jpeg"></li>
+    <li><img src="img/01.jpeg"></li>
+  </ul>
+</div>
+<script>
+
+  $(function () {
+
+    var timer;
+    var index = 0;
+    var length = $("li").length;
+    autoPlayer();
+
+    //下一张
+    $("span:last").click(next)
+
+    //上一张
+    $("span:first").click(prev)
+
+    //当鼠标移入的时候,停止自动播放,否则恢复
+    $(".box").hover(function () {
+      clearInterval(timer);
+    },function () {
+      autoPlayer();
+    });
+
+    function next(){
+      index ++;
+      if(index >= length)
+      {
+        $("ul").css("left",0);
+        index = 1;
+      }
+      $("ul").stop().animate({
+        "left":-(index *100) +"%"
+      })
+    }
+
+    function prev(){
+      index --;
+      if(index < 0)
+      {
+        $("ul").css("left",-((length-1) *100) +"%");
+        index = length -2;
+      }
+      $("ul").stop().animate({
+        "left":-(index *100) +"%"
+      })
+    }
+    function autoPlayer() {
+      timer = setInterval(function () {
+        next();
+      },2000)
+    }
+  })
+</script>
+</body>
+</html>

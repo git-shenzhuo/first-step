@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{
+      background: #000;
+    }
+    .sun{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-left: -50px;
+        margin-top: -50px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 200px #501,0 0 0 201px #fff;
+    }
+
+    .earth{
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: blue;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+<div class="sun"></div>
+<div class="earth"></div>
+<script>
+  /*01-先获取页面中的标签*/
+  var oEarth = document.getElementsByClassName("earth")[0];
+  /*获取圆心坐标*/
+  var center = {x:window.innerWidth/2,y:window.innerHeight/2};
+  /*圆的半径*/
+  var R      = 50 + 200;
+  var r      = 25;
+
+  /*02-设置地球的位置*/
+  oEarth.style.left = center.x + R - r + "px";
+  oEarth.style.top  = center.y - r + "px";
+  var deg = 0;
+  setInterval(function () {
+    /*03-设置让地球转动*/
+     deg -= 5;
+
+    /*把角度转换成弧度*/
+    var rad  = deg * Math.PI / 180;
+    var top  = center.y - Math.sin(rad) * R - r;
+    var left = center.x + Math.cos(rad) * R - r;
+
+    oEarth.style.top  = top + "px";
+    oEarth.style.left = left + "px";
+  },30)
+
+</script>
+</body>
+</html>

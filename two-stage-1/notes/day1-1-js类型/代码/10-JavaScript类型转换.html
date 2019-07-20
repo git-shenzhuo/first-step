@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * (5)类型转换
+  * [1]说明：我们在写代码的时候经常需要涉及到类型转换，类型转换分成两种，一种是系统默认转换，主动转换。
+  *
+  * [2]主动转换
+  * String() toString() 把其他类型的数据转换为字符串
+  * Number()            把其他类型的数据转换为数字
+  * Boolean()           其他类型的数据转换为布尔值
+  *
+  * [3] parseInt() parseFloat()
+  * */
+  var str = "Hi! Nice ~" + 123;
+  var res1 = "17" + 12;      //注意点：在处理字符串相关类型转换的时候，只要有字符串那么其他的都转成字符串
+  var res2 = 12 + 3 + "17" + 5;
+  var res3 = "1234" * 1;
+
+  console.log(str)
+  console.log(res1);         //1712
+  console.log(res2);         //15175
+  console.log(res3);         //1234
+
+
+  /*数据转换01-String()|toString() 原样输出*/
+  console.log(String(123));         //"123"
+  console.log((123).toString());
+
+  console.log(String(true));       //"true"
+  console.log(String(false));
+  console.log(true.toString());
+  console.log(false.toString());
+
+  console.log(String(null));
+  console.log(String(undefined));
+
+  /*数据转换02-Number()*/
+  console.log(Number("123.5"));       //123.5
+  console.log(Number("123.5 Reb"));   //NaN  特殊(1)
+  console.log(Number("Reb 123.5"));   //NaN
+
+  console.log(Number(true));          //1
+  console.log(Number(false));         //0
+  console.log(Number(null));          //0
+  console.log(Number(undefined));     //NaN  特殊(2)
+
+  /*数据转换02-Boolean()*/
+  /*字符串只要不为空，那么就返回true*/
+  console.log(Boolean(""));           //false
+  console.log(Boolean("---"));        //true
+
+  /*只要数字不是0，那么都返回true*/
+  console.log(Boolean(123));          //true
+  console.log(Boolean(0));            //false
+  console.log(Boolean(-1));           //true
+
+  console.log(Boolean(null));         //false
+  console.log(Boolean(undefined));    //false
+
+  /*parseInt()基本使用*/
+  console.log(parseInt(12.34));           //12
+  console.log(parseInt("123.456"));       //123
+  console.log(parseInt("123.456 red"));   //特殊(3)  123
+
+
+</script>
+</body>
+</html>

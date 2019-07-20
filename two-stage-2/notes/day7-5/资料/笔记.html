@@ -1,0 +1,70 @@
+1.什么是less？
+    less是css的一门预处理语言，对css功能的扩展。
+    注意： name.less文件是不能直接被浏览器解析的，需要编译成css文件后才能使用。
+
+2.less的作用？
+    相当于是css的模块化开发，可以定义变量、定义混合（类似于函数）、模式匹配（类似于多分支条件语句）、嵌套css的层级关系。
+    提高代码的维护性，同时提高开发效率。
+
+3.如何使用less？
+3-1. 建立less文件 01-less.less
+3-2. 编译less文件为css文件
+    a)全局安装less命令 npm i -g less
+    b)使用lessc命令编译 语法： lessc 源文件.less>目标文件.css 比如：lessc 01-less.less > 01-less.css
+3-3. 使用生成的css文件
+
+4. 其他less编译工具【推荐使用】 koala考拉
+4-1. 官网：http://koala-app.com/index-zh.html
+koala是一个前端预处理器语言图形编译工具，支持Less、Sass、Compass、CoffeeScript，帮助web开发者更高效地使用它们进行开发。
+
+4-2. 下载和安装
+
+4-3. 使用koala工具编译less 自动编译、资源地图、css压缩
+
+5. 如果使用webstrom的同学，可以File Watchers文件观察者实现
+    file》settings》tools》File Watchers》+新增一个观察者
+
+--------------------
+Less的语法-注释
+1. 单行注释 //注释的内容
+
+2. 多行注释 /*注释的内容*/
+
+1) 压缩css文件，所有的注释全部清除
+2) 如果不压缩css文件，单行注释清除，多行注释保留
+
+Less的语法-变量
+1. 如何定义变量？ js: var / let
+less定义变量的语法： @变量名称: 变量的值 比如：定义一个颜色变量 @colorRed: #ff0000;
+2. 如何使用变量？
+    body{
+    background-color: @colorRed;
+    }
+3. 哪些场景下使用变量？ 只有需要重复使用的才定义为变量。
+
+Less的语法-混入
+1. 什么是混入？封装一段可以重用的css代码，类似于js中的函数。
+2. 混入的作用？可以多次调用，提高代码重用性和维护性。
+3. 如何定义混入和使用混入？
+
+3-1. 定义混入
+.函数名(@参数名称: 参数的默认值){
+    函数体
+}
+
+3-2. 使用混入
+css选择器{
+//调用
+.函数名();
+.函数名(参数的值);
+}
+
+Less的语法-颜色函数
+
+lighten(@color, 10%);  //变亮
+darken(@color, 10%);   //变暗
+saturate(@color, 10%);   //变浓
+desaturate(@color, 10%);   /变淡 
+spin(@color, 10);   //色相值增加
+spin(@color, -10);  //色相值减少  
+mix(@color1, @color2);  //混合两种颜色

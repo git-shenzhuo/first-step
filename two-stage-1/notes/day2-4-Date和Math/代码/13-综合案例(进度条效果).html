@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #loading{
+      width: 0;
+      height: 10px;
+      background: #119955;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #precent{
+      position: absolute;
+      top: 15px;
+      left: 50%;
+    }
+  </style>
+</head>
+<body>
+<div id="loading"><span id="precent">100</span></div>
+<script>
+
+  /*思路
+  * 进度计算：标签的宽度 / 页面的宽度
+  * 加载过程：不断的更改标签宽度  让标签的宽度越来越大
+  * */
+
+  var oDiv  = document.getElementsByTagName("div")[0];
+  var oSpan = document.getElementById("precent");
+
+  var width = 0;
+  var pageW = window.innerWidth;
+  var timer = setInterval(function () {
+    width  += 10;
+    if (width >= pageW)
+    {
+      /*清空定时器*/
+      clearInterval(timer);
+
+      /*设置标签的宽度最大等于页面的宽度*/
+      width  = pageW;
+    }
+    oDiv.style.width = width + "px";
+    oSpan.innerHTML  = ((width / pageW) * 100).toFixed(2)+ "%";
+  },30);
+
+
+</script>
+</body>
+</html>

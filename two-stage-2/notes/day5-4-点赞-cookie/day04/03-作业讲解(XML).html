@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin: 50px auto;
+        }
+        
+        h3,
+        h4 {
+            text-align: center;
+        }
+        
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+        }
+        
+        .box>div {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3>标题</h3>
+        <h4>信息</h4>
+        <img src="./img/0.png" alt="">
+        <div id="btn">
+            <button name="fz">服装</button>
+            <button name="bb">包包</button>
+            <button name="ydx">运动鞋</button>
+        </div>
+    </div>
+    <script>
+        //XML数据的组成：文档声明 + 标签(元素) + 内容
+        //XML数据的处理：
+        //[1] 在php后端设置header("Content-Type:text/xml;charset=UTF-8");
+        //[2] 在前端页面中通过xhr.responseXML获取
+        //01-先获取页面中对应的标签
+        var oDiv = document.getElementById("btn");
+        var oH3 = document.getElementsByTagName("h3")[0];
+        var oH4 = document.getElementsByTagName("h4")[0];
+        var oImg = document.getElementsByTagName("img")[0];
+
+        //02-通过事件委托的方式来注册事件
+        oDiv.onclick = function(e) {
+            //03-获取当前点击的按钮
+            var e = e || window.event;
+            var target = e.target;
+
+            var type = target.getAttribute("name");
+            //04-发送网络请求
+            var xhr = new XMLHttpRequest;
+            xhr.open("get", "./server/02-getXMLData.php", true);
+            xhr.send();
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    //请求成功----更新UI
+                    //JSON->JS对象
+                    console.log(xhr.responseXML);
+                    var doc = xhr.responseXML;
+                    var pro = doc.getElementById(type);
+
+                    oH3.innerText = pro.getElementsByTagName("title")[0].innerHTML;
+                    oH4.innerText = pro.getElementsByTagName("des")[0].innerHTML;
+                    oImg.setAttribute("src", pro.getElementsByTagName("src")[0].innerHTML);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

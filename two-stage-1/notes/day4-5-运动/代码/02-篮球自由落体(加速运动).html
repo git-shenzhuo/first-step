@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{
+      background: #000;
+    }
+    .basketball-class{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+<img src="img/basketball.jpg" class="basketball-class">
+<script>
+  /*01-先获取页面中标签*/
+  var oBasketball = document.getElementsByClassName("basketball-class")[0];
+  var speed  = 5;
+  var target = window.innerHeight - oBasketball.offsetHeight;
+
+  /*02-设置让标签加速运动*/
+  var timer = setInterval(function () {
+    var top = oBasketball.offsetTop;
+        speed  = speed + 1;
+        top    = top + speed;
+        if (top >= target)
+        {
+          top = target;
+          clearInterval(timer)
+        }
+        oBasketball.style.top = top + "px";
+  },30);
+
+</script>
+</body>
+</html>

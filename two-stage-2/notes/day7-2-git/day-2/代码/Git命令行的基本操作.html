@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * Git仓库的基本操作
+  * [1] 仓库初始化   git init
+  * [2] 配置账户      git config --global user.name "xx"
+  *                 git config --global user.email "xx"
+  * [3] 创建文件     touch 1.txt 备注:新创建的文件默认不会被管理
+  * [4] 把文件提交到git的暂缓区  git add 文件
+  * [5] 把暂缓区的内容提交到仓库  git commit -m "注释"
+  * */
+
+  /*
+  * Git文件夹的结构
+  * (1) 工作区
+  * (2) 暂缓区
+  * (3) 版本库
+  *
+  * 默认仓库文件路径是工作区
+  * 当我们使用add命令的时候,会把工作区的修改提交到暂缓区
+  * 当我们使用commit命令的时候,会把暂缓区的内容提交的版本库
+  * */
+
+  /*
+  * Git版本信息  git log | git reflog
+  * Git版本回退  git reset --hard 版本记录值(哈希值)
+  * Git查看分支  git branch
+  * Git创建分支  git branch     分支名
+  * Git切换分支  git checkout   分支名
+  * Git合并分支  git merge      分支名
+  * Git删除分支  git branch -d  分支名
+  * */
+
+  /*
+  * Git团队开发的工作流
+  * [1] 项目负责人先在服务器上面初始化一个远程仓库 git init --bare
+  * [2] 项目的团队成员需要先获取远程服务器端的仓库 git clone 路径
+  * [3] 项目的团队成员在本地的仓库开始开发 git add . | git commit -m "注释"
+  * [4] 项目的团队成员把本地的仓库提交(推送)到远程的共享仓库  git push
+  * [5] 项目新加入了新的成员,新成员需要先获取远程的仓库  git clone 路径
+  *
+  * [6] 张三开发,老王也在开发
+  *     (1) 张三新建 zs.txt 修改文件 在本地仓库提交  推送到远程仓库 / 经常性的更新获取最新的仓库信息
+  *     (2) 老王新建 lw.txt 修改文件 在本地仓库提交  推送到远程仓库 / 经常性的更新获取最新的仓库信息
+  * [7] 冲突的出现和解决
+  *     如果多个项目的团队成员修改了同一个文件,那么就可能产生冲突
+  *     张三 修改lw.txt git commit 提交到本地仓库,然后再git push到远程仓库
+  *     老王 修改lw.txt git commit 提交到本地仓库,然后再git push到远程仓库 报错(X)
+  *     解决:
+  *     (1) 先更新获取最新的仓库信息  git pull
+  *     (2) 打开发生冲突的文件手动的进行处理(覆盖|合并)
+  *     (3) 老王需要先add到暂缓区,然后commit到本地版本库,再推送到远程的仓库  git push
+  *     (4) 张三需要更新获取最新的仓库信息保持同步  git pull
+  * */
+
+
+
+
+</script>
+</body>
+</html>

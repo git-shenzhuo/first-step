@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*ES6新特性之Map映射  很像对象，特点：允许对象作为key*/
+
+  /*01-对象的属性只能是字符串*/
+  var s = "哈哈";
+  var o = {title:"我是标题"};
+  var t = {
+    name:"zs",
+    age:18,
+    [s]:"测试的value值",
+    [o]:"测试对象作为key"   //[object Object]
+    //o                   //"o":{title:"我是标题"}
+  }
+  console.log(t);
+
+  /*02-Map基本操作(创建)*/
+  var dataMap = new Map();
+
+  /*03-Map基本操作(添加|修改)*/
+  dataMap.set("name","zs");
+  dataMap.set("age",18);
+  dataMap.set("color","red");
+  dataMap.set(o,"测试对象作为key");
+  dataMap.set(t,"兔兔兔兔图");
+
+  /*04-Map基本操作(获取)*/
+  console.log(dataMap.get("name"));
+  console.log(dataMap.get(o));
+  console.log(dataMap.get(t));
+
+
+  /*05-Map基本操作(其它 删除 | 清空 | 检查)*/
+  dataMap.delete(t);
+  console.log(dataMap.has(o));
+  //dataMap.clear();
+  console.log(dataMap);
+
+
+  /*06-映射的遍历操作*/
+  dataMap.forEach((value,kye,map)=>{
+    console.log(value, kye, map);
+  })
+
+  console.log("_____");
+  for (let [key,value] of dataMap)
+  {
+    //console.log(item[0],item[1]);
+    //console.log(...item);
+    //console.log(key, value);
+  }
+
+</script>
+</body>
+</html>

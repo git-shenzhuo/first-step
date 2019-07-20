@@ -1,0 +1,38 @@
+.base(@w,@h){
+  width: @w;
+  height: @h;
+  background: #ccc;
+}
+body{
+  background: #eee;
+  .box{
+
+    .base(600px,400px);
+    font-size: 30px;
+    border: 1px solid #000;
+
+    .content{
+      .base(400px,200px);
+      padding: 50px;
+
+      .first{
+        background: #195;
+        li{
+          .base(100px,44px);
+          line-height: 44px;
+          color: #000;
+        }
+      }
+
+      .second{
+        background: red;
+        li{
+          .base(200px,44px);
+          line-height: 44px;
+          font-size: 14px;
+          color: #000;
+        }
+      }
+    }
+  }
+}

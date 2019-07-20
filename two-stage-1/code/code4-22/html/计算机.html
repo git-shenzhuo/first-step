@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+   <input type="text" id="one">
+   <select name="" id="jisuan">
+       <option value="+">+</option>
+       <option value="-">-</option>
+       <option value="*">*</option>
+       <option value="/">/</option>
+   </select>
+   <input type="text" id="two">
+   <b>=</b>
+   <input type="text" id="jieguo">
+   <input type="button" value="计算" id="but">
+   <script>
+       var One     = document.getElementById('one');
+       var Two     = document.getElementById('two');
+       var Jisuan  = document.getElementById('jisuan');
+       var Jieguo  = document.getElementById('jieguo');
+       var But     = document.getElementById('but');
+        But.onclick = function(){
+            switch(Jisuan.value){
+                case'+':Jieguo.value =parseFloat(One.value) + parseFloat(Two.value);
+                break;
+                case'-':Jieguo.value = One.value - Two.value;
+                break;
+                case'*':Jieguo.value = One.value * Two.value;
+                break;
+                case'/':Jieguo.value = One.value / Two.value;
+                break;
+            }
+        }
+
+   </script>
+</body>
+
+</html>

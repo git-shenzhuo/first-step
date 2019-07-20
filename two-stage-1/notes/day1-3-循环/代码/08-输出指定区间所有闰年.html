@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .span-class{
+      width: 100px;
+      height: 20px;
+      display: inline-block;
+      text-align: center;
+      background: #195;
+      margin: 10px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+<script>
+
+  /*1000-2020   把他们之间的闰年都输出到页面中*/
+
+  /*01-找出1000-2020之间所有的闰年*/
+  /*02-以特殊的格式把它们输出到页面中*/
+  for (var year = 1000 ,i = 0;year <= 2020;year++)
+  {
+    /*闰年的判断：能够被4整除但是不能被100整除 或者可以被400整除*/
+    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+    {
+      document.write("<span class='span-class'>"+year+"</span>");
+
+      i++;    /*通过i这个变量记录当前是第几次循环*/
+
+      //console.log("当前是第 "+i+" 次循环")
+      if (i % 8 == 0)
+      {
+        document.write("<br>")
+      }
+    }
+  }
+</script>
+</body>
+</html>

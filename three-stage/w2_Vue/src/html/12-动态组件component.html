@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+    <h1>动态组件component</h1>
+    <div id="box">
+        <ul class="nav nav-tabs">
+            <li class="nav-item" v-for="item in navs" @click='activename(item.name)'>
+                <a class="nav-link" href="#" :class='{active:active==item.name}'>{{item.title}}</a>
+            </li>
+        </ul>
+        <component :is="active"></component>
+    </div>
+    <template>
+        
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:'#box',
+            data:{
+                navs:[{
+                    title:'首页',
+                    name:'Home',
+                    path:'/home'
+                },{
+                    title:'发现',
+                    name:'Discover',
+                    path:'/discover'
+                },{
+                    title:'我的',
+                    name:'Mine',
+                    path:'/mine'
+                }],
+                active:'Home'
+            },
+            components:{
+
+            },
+            methods:{
+                // 设置方法，点击改变 active 的值，从而改变标签属性
+                activename(name){
+                    this.active = name
+                }
+            },
+            created(){
+                // 设置导航对应的组件
+                let components = {}
+                // 循环 navs ，遍历创建组件
+                this.navs.forEach(element => {
+                    components[element.name] = {
+                        template:`<div>
+                                    ${element.title}-${element.name}
+                                </div>`
+                    }
+                });
+
+                // 后期设置Vue的配置参数
+                this.$options.components = components;
+            }
+        })
+    </script>
+</body>
+</html>

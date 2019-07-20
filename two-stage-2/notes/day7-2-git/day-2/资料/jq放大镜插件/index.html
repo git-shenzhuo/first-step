@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/magnifier.css">
+		<style type="text/css">
+			/*.magnifier-btn span{
+				/*添加样式修改成你要的效果*/
+				/*background: red !important;*/
+			/*}*/
+		</style>
+		<title>放大镜效果</title>
+	</head>
+
+	<body>
+
+		<div class="magnifier" id="magnifier1">
+			<div class="magnifier-container">
+				<div class="images-cover"></div>
+				<!--当前图片显示容器-->
+				<div class="move-view"></div>
+				<!--跟随鼠标移动的盒子-->
+			</div>
+			<div class="magnifier-assembly">
+				<div class="magnifier-btn">
+					<span class="magnifier-btn-left">&lt;</span>
+					<span class="magnifier-btn-right">&gt;</span>
+				</div>
+				<!--按钮组-->
+				<div class="magnifier-line">
+					<ul class="clearfix animation03">
+						<li>
+						<div class="small-img">
+							<img src="images/1.jpg" />
+						</div>
+					</li>
+						<li>
+						<div class="small-img">
+							<img src="images/2.jpg" />
+						</div>
+					</li>
+					<li>
+						<div class="small-img">
+							<img src="images/3.jpg" />
+						</div>
+					</li>
+					<li>
+						<div class="small-img">
+							<img src="images/4.jpg" />
+						</div>
+					</li>
+					<li>
+						<div class="small-img">
+							<img src="images/1.jpg" />
+						</div>
+					</li>-->
+					</ul>
+				</div>
+				<!--缩略图-->
+			</div>
+			<div class="magnifier-view"></div>
+			<!--经过放大的图片显示容器-->
+		</div>
+	</body>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/magnifier.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// $.ajax({
+			// 	type: "get",
+			// 	url: "api/getimg.php",//获取图片url
+			// 	async: true,
+			// 	success: function(str) {
+			// 		console.log(str);//[{"id":"1","url":"h_1.jpg&2.jpg&3.jpg&4.jpg&1.png&2.png&3.png&4.png"}]
+			// 		var arr = JSON.parse(str)[0].url.split('&');//切割得到一组图片路径 ['h_1.jpg', '2.jpg', '3.jpg', '4.jpg', 'h_1.jpg', '2.png', '3.png', '4.png']
+			// 		//渲染数据到节点
+			// 		$res = arr.map(function(item) {
+			// 			return `<li>
+			// 						<div class="small-img">
+			// 							<img src="images/${item}" />
+			// 						</div>
+			// 					</li>`;
+			// 		}).join('');
+			//
+			// 		$('.animation03').html($res);
+			//
+			//放大镜插件使用：先渲染再调用插件
+
+
+
+
+			var magnifierConfig = {
+				magnifier: "#magnifier1", //最外层的大容器
+				width: 400, //承载容器宽
+				height: 400, //承载容器高
+				moveWidth: null, //如果设置了移动盒子的宽度，则不计算缩放比例
+				zoom: 5 //缩放比例
+			};
+
+			var _magnifier = magnifier(magnifierConfig);
+		});
+
+	</script>
+
+</html>

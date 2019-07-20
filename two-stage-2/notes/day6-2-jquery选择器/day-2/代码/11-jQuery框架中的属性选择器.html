@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<a>啥也没有的a标签</a>
+<br>
+<a href="http://www.baidu.com">http://www.baidu.com</a>
+<br>
+<a href="http://www.jd.com">http://www.jd.com</a>
+<br>
+<a href="http://www.qq.com">http://www.qq.com</a>
+<br>
+<a href="http://www.baidu.cn">http://www.baidu.cn</a>
+<br>
+<a href="http://bbs.baidu.com">http://bbs.baidu.com</a>
+<br>
+<a href="http://bbs.baidu.com?t=3247945738923">http://bbs.baidu.com</a>
+<br>
+<a href="http://bbs.baidu.com?t=3247945738923" title="标题">http://bbs.baidu.com</a>
+
+<script>
+
+  $(function () {
+    /*属性选择器：根据属性节点的情况来选择标签*/
+
+    /*001-拥有href属性节点*/
+    //$("a[href]").css("background","red");
+
+    /*002-拥有href属性节点并且值等于特定值*/
+    //$("a[href='http://www.baidu.com']").css("background","red");
+
+    /*003-指定属性节点值不等于某个特定值*/
+    //$("a[href!='http://www.baidu.com']").css("background","red");
+
+    /*004-指定属性节点值中拥有特定字符串(子串)*/
+    //$("a[href *='qq']").css("background","red");
+
+    /*005-指定属性节点值以特定的字符串开头*/
+    //$("a[href ^='http://bbs']").css("background","red");
+
+    /*006-指定属性节点值以特定的字符串结尾*/
+    //$("a[href $='cn']").css("background","red");
+
+    $("a[href='http://bbs.baidu.com?t=3247945738923'][title]").css("background","red");
+  })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // sessionStorage       会话存储
+        // console.log(sessionStorage);
+        // https://www.baidu.com/s?wd=%20%20&req=2&csor=2&pwd=%20&cb=jQuery110205202756320648827_1558944536060&_=1558944536066
+        let xhr = new XMLHttpRequest;
+        xhr.open("get","https://www.baidu.com/s?wd=%20%20&req=2&csor=2&pwd=%20&cb=jQuery110205202756320648827_1558944536060&_=1558944536066",true);
+        xhr.send();
+        xhr.onload=()=>{
+            if(xhr.status == 200){
+                console.log(xhr.responseText);
+                
+            }
+        }
+            
+    </script>
+</body>
+</html>

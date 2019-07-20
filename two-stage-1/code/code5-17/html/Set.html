@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    window.onload=()=>{
+        let date = new Set();
+        date.add(123);
+        date.add(333);
+        date.add("fff");
+        date.add("ig");
+        date.add("tm");
+        console.log(date);
+        console.log(date.size);
+        date.delete(333);
+        console.log(date);
+        console.log(date.has("ig"));
+        date.clear();
+        console.log(date);
+        
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Cookie知识点
+        //001-Cookie技术解决了什么问题：客户端身份认证 , 存储数据
+        //002-Cookie主要应用：商品加入购物车 | 记住密码  | 免登录 | 广告的精准投放
+        //003-Cookie基本操作
+        //读取Cookie数据 document.cookie 得到的是字符串
+        //设置Cookie数据 document.cookie = 'name=value[;domain=域名][;expires=date]'
+        //004-Cookie使用注意事项
+        //(1) Cookie在每次网络请求的时候都会被提交到服务器端，服务器端可以通过$_COOKIE获取对应的值
+        //(2) Cookie数据在使用的时候有大小的限制：4KB
+        //(3) Cookie数据在使用的时候有个数的限制：单个网页不能超过(50个 建议<20) 网站<200个
+        //(4) Cookie数据存在有效期，默认有效期是当前的会话，可以设置有效期(过期时间)
+        //(5) Cookie数据在相同的域中是可以被共享的，Cookie数据不可以被跨域访问。
+        //(6) Cookie数据不能跨浏览器访问(共享)。
+
+        //001-设置Cookie
+        document.cookie = "name=zs";
+        document.cookie = "age=18";
+
+        // //002-过期时间：默认Cookie的有效期是当前会话
+        var date = new Date();
+        date.setDate(date.getDate() + 8);
+        document.cookie = "className=H5;expires=" + date;
+        console.log(document.cookie);
+    </script>
+</body>
+
+</html>

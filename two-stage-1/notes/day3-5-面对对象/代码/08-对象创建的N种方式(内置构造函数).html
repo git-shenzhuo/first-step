@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*02-内置构造函数来创建对象*/
+  var book1  = new Object();
+  book1.name   = "黄金时代";
+  book1.auther = "王小波";
+  book1.press  = "湖南文艺出版集团";
+  book1.price  = "24.00";
+  book1.pages  = 320;
+  book1.count  = "20万4千";
+  book1.showInfo = function () {
+    console.log("书名：" + this.name + " 作者:" + this.auther + " 出版社:" + this.press);
+  }
+
+
+  var book2  = new Object();
+  book2.name   = "悟空戳转";
+  book2.auther = "王小波";
+  book2.press  = "湖南文艺出版集团";
+  book2.price  = "24.00";
+  book2.pages  = 320;
+  book2.count  = "20万4千";
+  book2.showInfo = function () {
+    console.log("书名：" + this.name + " 作者:" + this.auther + " 出版社:" + this.press);
+  }
+
+  var book3  = new Object();
+  book3.name   = "你好啊 忧愁";
+  book3.auther = "王小波";
+  book3.press  = "湖南文艺出版集团";
+  book3.price  = "24.00";
+  book3.pages  = 320;
+  book3.count  = "20万4千";
+  book3.showInfo = function () {
+    console.log("书名：" + this.name + " 作者:" + this.auther + " 出版社:" + this.press);
+  }
+
+
+  console.log(book1);
+  console.log(book2);
+  console.log(book3);
+
+  book2.showInfo();
+
+
+
+  /*工厂函数*/
+  function createBook(name,auther,press,price,count) {
+
+    /*创建空的对象*/
+    var book  = new Object();
+    /*设置属性*/
+    book.name   =  name;
+    book.auther = auther;
+    book.press  = press;
+    book.price  = price;
+    book.pages  = 320;
+    book.count  = count;
+    /*设置方法*/
+    book.showInfo = function () {
+      console.log("书名：" + this.name + " 作者:" + this.auther + " 出版社:" + this.press);
+    }
+    return book;
+  }
+
+  var book4 = createBook("白银时代","王小波","百花洲出版社",34,3453563654);
+  var book5 = createBook("老虎老虎","哈哈","百花洲出版社",34,21);
+  console.log(book4);
+  console.log(book5);
+
+  function createPerson(name,age) {
+    var person = new Object();
+    person.name = name;
+    person.age  = age;
+    return person;
+  }
+
+  var p1  = createPerson("张三",12);
+
+  function createDog(name,age) {
+    var dog = new Object();
+    dog.name = name;
+    dog.age  = age;
+    return dog;
+  }
+
+  /*工厂函数创建对象解决批量创建同类型对象的问题，但是我们无法区分不同对象的类型*/
+  var d1  = createDog("旺财",2);
+  console.log(p1, d1);
+
+  /*p1 d1 */
+
+
+</script>
+</body>
+</html>

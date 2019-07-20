@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*正则表达式实例属性*/
+  let reg = /小青蛙/gmi;
+
+  /*转义*/
+  let reg1 = new RegExp("^\\s+|\\s+$","g");
+  let reg2 = /^\s+|\s+$/g;
+
+  console.log(reg);
+
+  console.log(reg.global);    /*检查正则表达式中是否应用了全局匹配 true/false -g*/
+  console.log(reg.ignoreCase);/*检查正则表达式中是否忽略大小写    -i*/
+  console.log(reg.multiline); /*检查正则表达式中是否应用了多行匹配 -m*/
+  console.log(reg.source);    /*获取正则表达式本身*/
+  console.log(reg.flags);     /*获取应用的参数  gim*/
+
+  console.log(reg1.source);
+  console.log(reg2.source);
+  console.log(reg1.source == reg2.source);
+</script>
+</body>
+</html>

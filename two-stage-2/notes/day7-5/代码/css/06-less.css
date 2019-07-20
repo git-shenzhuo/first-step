@@ -1,0 +1,52 @@
+body {
+  background: #eee;
+}
+body div {
+  text-align: center;
+  margin-bottom: 10px;
+  border: 1px solid #0a0a0a;
+  background: red;
+}
+body div:nth-of-type(1) {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  background: #660000;
+}
+body div:nth-of-type(2) {
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  background: #ff6666;
+}
+body div:nth-of-type(3) {
+  width: 300px;
+  height: 30px;
+  line-height: 30px;
+  background: #ff9999;
+}
+body div:nth-of-type(4) {
+  width: 400px;
+  height: 30px;
+  line-height: 30px;
+  background: #ffcccc;
+}
+body div:nth-of-type(5) {
+  width: 500px;
+  height: 30px;
+  line-height: 30px;
+  background: #ff8000;
+}
+body div:nth-of-type(6) {
+  background: #00ffff;
+}
+/*
+lighten(@color, 10%);      //变亮
+darken(@color, 10%);       //变暗
+saturate(@color, 10%);     //变浓
+desaturate(@color, 10%);   /变淡 
+spin(@color, 10);         //色相值增加
+spin(@color, -10);        //色相值减少  
+mix(@color1, @color2);    //混合两种颜色
+*/
+/*# sourceMappingURL=06-less.css.map */

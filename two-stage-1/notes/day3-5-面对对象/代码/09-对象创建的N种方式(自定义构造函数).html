@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*自定义构造函数来创建对象*/
+
+  /*01-提供构造函数*/
+  function Person(name,age) {
+
+    /*03-通过this来设置对象的属性和方法*/
+    this.name = name;
+    this.age  = age;
+    this.showInfo = function () {
+      console.log(this.name + this.age);
+    }
+  }
+
+  /*02-通过new调用构造函数创建对象*/
+  var p1 = new Person("张三",19);
+  var p2 = new Person("李四",99);
+
+  console.log(p1);
+  console.log(p2);
+
+  /*对比自定义构造函数创建对象-工厂函数创建对象*/
+  /*[1] 使用new来调用函数
+  * [2] 在函数中不需要通过new Object的方法来创建空对象
+  * [3] 在函数中直接通过this来设置属性和方法
+  * [4] 在函数体中不需要主动的return
+  * */
+</script>
+</body>
+</html>

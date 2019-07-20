@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./src/$Ajax.js"></script>
+</head>
+
+<body>
+    <button>GET发送请求1</button>
+    <button>POST发送请求2</button>
+    <script>
+        /*01-先获取页面的标签，给它们注册点击事件*/
+        let oBtn1 = document.querySelector("button");
+        let oBtn2 = document.querySelectorAll("button")[1];
+
+        oBtn1.onclick = function() {
+            $.get({
+                url: "http://localhost:8888/code/day03/server/01-ajax.php",
+                success(xhr) {
+                    console.log("成功-", xhr.responseText);
+                },
+                error(xhr) {
+                    console.log("失败-", xhr.statusText);
+                }
+            });
+        }
+
+        oBtn2.onclick = function() {
+            $.post({
+                url: "http://localhost:8888/code/day03/server/01-ajax.php",
+                success(xhr) {
+                    console.log("成功-", xhr.responseText);
+                },
+                error(xhr) {
+                    console.log("失败-", xhr.statusText);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

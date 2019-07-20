@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*自定义构造函数创建对象的返回值问题
+  * [1] 默认总是会把新创建出来的对象返回给我们 return this
+  * [2] 如果我们在构造函数中主动的(显示的)return
+  *     (1) 值类型的数据(布尔值 字符串 数字)  忽略  返回内部心创建的对象
+  *     (2) 引用类型的数据(数组 对象 函数)    直接返回
+  *
+  * 构造函数说明：
+  *   [1] 构造函数和普通函数没有本质的区别
+  *   [2] 因为构造函数的主要作用是创建对象，因此我们约定构造函数的名字首字母大写
+  *   [3] 构造函数总是以new来调用，不要以普通函数的方式来调用
+  * */
+
+  function Person(name,age) {
+    this.name = name;
+    this.age  = age;
+    this.showName = function () {
+      console.log("姓名：" + this.name);
+    }
+    this.showAge  = function () {
+      console.log("年龄：" + this.age);
+    }
+
+    //return "我是字符串";
+  }
+
+  var p1 = new Person("光头强",23);
+
+  /*构造函数可以直接调用：把属性和方法都添加到window*/
+  // console.log(Person("哈哈", 19));
+
+
+  function Cat(name,age) {
+    this.name = name;
+    this.age  = age;
+    this.showName = function () {
+      console.log("姓名：" + this.name);
+    }
+    this.showAge  = function () {
+      console.log("年龄：" + this.age);
+    }
+  }
+  var cat = new Cat("凯特",99);
+  console.log(p1);
+  console.log(cat);
+
+  /*属性：构造器属性*/
+  console.log(p1.constructor == Person);  //人
+  console.log(p1.constructor == Cat);     //false
+  console.log(cat.constructor == Cat);    //猫咪
+
+
+
+</script>
+</body>
+</html>

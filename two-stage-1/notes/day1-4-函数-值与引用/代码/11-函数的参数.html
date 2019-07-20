@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*函数的参数
+  * 函数是比较灵活的，可以通过传递参数的方式来确定函数体。
+  * 函数声明 function f(s,n){...}
+  * 函数调用 f("走在拉萨的街头，我是世间最美的晴朗",10);
+  *
+  * s n                                        形式参数(占位用的变量)  形参
+  * "走在拉萨的街头，我是世间最美的晴朗",10  特定的值  实际参数              实参
+  *
+  * function 函数名(形参1，形参2...){...}
+  * 函数名(实参1，实参2...)
+  *
+  * */
+
+  function f(str,n) {
+    for (var i = 0;i< n;i++)
+    {
+      //console.log("住进布达拉宫");
+      //console.log("我是雪域最大的王");
+
+      console.log(str);
+    }
+  }
+
+  f("住进布达拉宫",3);
+
+  console.log("___");
+  f("我是雪域最大的王",5);
+
+  console.log("___");
+  f("走在拉萨的街头，我是世间最美的晴朗",10);
+
+</script>
+</body>
+</html>

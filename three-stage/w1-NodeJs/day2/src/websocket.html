@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多人聊天室</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #chat{
+            width: 500px;
+            margin: 50px auto;
+            /* border: 1px solid #000; */
+        }
+        .login{
+            margin-left: 250px;
+        }
+        .login input{
+            width: 150px;
+            height: 20px;
+        }
+        ul{
+            width: 100%;
+            min-height: 200px;
+            max-height: 400px;
+            overflow: auto;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        li{
+            width: 150px;
+            background-color: #aaa;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            clear:both;
+            /* float: left; */
+            /* 英文没有空格不会自动换行，添加css样式 */
+            word-wrap:break-word;
+        }
+        li h4{
+            text-align: center;
+        }
+        li p{
+            text-align: right; 
+        }
+        .right{
+            float: right;
+            background-color: pink;
+        }
+        textarea{
+            width: 100%;
+        }
+        .tet{
+            display: none;
+            display: inline-block;
+            width: 400px;
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>多人聊天室</h1>
+    <div id="chat">
+        <div class="login">
+            <input type="text">
+            <button class="btn-login">进入</button>
+            <button class="btn-logout">离开</button>
+        </div>
+        <ul>
+            <!-- <li>
+                <h4>laoxie</h4>
+                <div>qwertywertyuytrewertyhbgvfvgbggu</div>
+                <p>156</p>
+            </li>
+            <li class="right">
+                <h4>laozhang</h4>
+                <div>rerewqrqrqqqreqrerewrerrerwerq</div>
+                <p>4567</p>
+            </li> -->
+        </ul>
+        <textarea></textarea>
+        <div class="tj">
+            <button class="btn-tj">提交</button>
+            <span class="tet"></span>
+        </div>
+    </div>
+
+    <script>
+        // 拿到标签
+        let chat = document.querySelector("#chat");
+        let input = document.querySelector('input');
+        let btnLogin = document.querySelectorAll('button')[0];
+        let btnLogout = document.querySelectorAll('button')[1];
+        let btnTj = document.querySelectorAll('button')[2];
+        let ulList = document.querySelector('ul');
+        let textarea = document.querySelector('textarea');
+        let span = document.querySelector('.tet');
+        
+
+        // 命名变量
+        let socket,
+            // 访问服务器的路径
+            wsurl = 'ws://localhost:1904',
+            // 存放用户发送的信息
+            datalist = [];
+        
+        // 当点击进入按钮时发送消息
+        btnLogin.onclick = ({target})=>{
+            // {target} = e.target
+            // 如果input里面没有昵称，提示输入昵称并获得焦点
+            if(input.value == ''){
+                // span标签显示
+                span.style.display = 'block';
+                span.innerHTML = '请输入一个昵称';
+                // 获取焦点并退出函数
+                input.focus();
+                return;
+            }
+
+            // 连接ws服务器
+            socket = new WebSocket(wsurl);
+
+            // 当服务器连接成功之后执行 onopen 事件处理函数
+            socket.onopen = ({target:{url}})=>{
+                // {target:{url}} = e.target.url
+                span.style.display = 'block';
+                span.innerHTML = wsurl + '服务器已连接';
+                // 锁定 input 避免多次登录
+                input.disabled = true;
+
+                // 发送消息给服务器，让服务器广播登录消息
+                let data = {
+                    status : 1,
+                    data:{
+                        name : input.value
+                    }
+                }
+                socket.send(JSON.stringify(data));
+            }
+
+
+            // 接收服务端消息
+            socket.onmessage = ({data})=>{
+                // 获取消息并解析
+                let res = JSON.parse(data);
+
+                // 判断状态
+                switch(res.status){
+                    case 0:
+                        span.innerHTML = res.data.name + '离开聊天室....'
+                        break;
+                    case 1:
+                        span.innerHTML = res.data.name + '进入聊天室....'
+                        break;
+                    case 2:
+                        datalist.push(res.data);
+                        // 调用方法，渲染出去
+                        result();
+                }
+            }
+        }
+
+        btnLogout.onclick = ()=>{
+            // 先判断是否登录
+            if(!socket){
+                span.innerHTML = '请先进入';
+                input.focus();
+                return
+            }
+            let data = {
+                status : 0,
+                data : {
+                    name : input.value
+                }
+            }
+            socket.send(JSON.stringify(data));
+            input.disabled = false;
+            // 关闭服务器
+            setTimeout(()=>{
+                socket.close();
+                socket = null;
+            },500)
+        }
+
+
+        // 发送消息
+        btnTj.onclick = ()=>{
+            // 判断是否已经进入
+            if(!socket){
+                span.style.display = 'block';
+                span.innerHTML = '需要进入才能发表言论';
+                input.focus();
+                textarea.value = '';
+                return
+            }
+            let time = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
+            let data = {
+                status : 2,
+                data : {
+                    name : input.value,
+                    content : textarea.value,
+                    time : time
+                }
+            }
+            socket.send(JSON.stringify(data));
+            // 清空输入框内容，并给与焦点
+            textarea.value = '';
+            textarea.focus();
+        }
+
+
+
+
+
+        // 封装渲染方法
+        // 原始方法
+        // function result(datalist){
+        //     let html = '';
+        //     for(let i = 0;i < datalist.length;i++){
+        //         html += `<li ${datalist[i].name == input.value ? "class='right'" : ''}>
+        //                     <h4>${datalist[i].name}</h4>
+        //                     <div>${datalist[i].content}</div>
+        //                     <p>${datalist[i].time}</p>
+        //                 </li>`
+        //     }
+        //     ulList.innerHTML = html;
+        // }
+        // map方法
+        function result(){
+            ulList.innerHTML = datalist.map(item=>
+                `<li ${item.name == input.value ? "class='right'" : ''}>
+                    <h4>${item.name}</h4>
+                    <div>${item.content}</div>
+                    <p>${item.time}</p>
+                </li>`
+            ).join('');
+        }
+    </script>
+</body>
+</html>

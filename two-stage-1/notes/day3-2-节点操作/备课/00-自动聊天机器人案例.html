@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{list-style: none;}
+    .box
+    {
+      width: 600px;
+      margin: 50px auto;
+      position: relative;
+    }
+
+    .msg-list{
+      border: 2px solid #efefef;
+      min-height: 200px;
+      max-height: 400px;
+      padding: 0px;
+      overflow-y: auto;
+    }
+
+    li{
+      line-height: 2;
+      background: #cccccc;
+      float: left;
+      border-radius: 8px;
+      padding: 0 10px;
+      margin:5px;
+      clear: both;
+    }
+
+    .my-msg
+    {
+      background: #58bc58;
+      color: #fff;
+      float: right;
+    }
+    textarea{
+      min-height: 50px;
+      width: 100%;
+    }
+
+    .status{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      color: #cccccc;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <ul class="msg-list">
+  </ul>
+  <textarea></textarea>
+  <button>发送消息</button>
+  <div class="status">对方正在输入...</div>
+</div>
+<script>
+
+  var s = ["在吗？","我想你了","吃饭了没","最近怎么样","晚安"];
+  var a = ["亲，在的！","亲，我也想你哟","宝宝没钱吃饭","最近回老家陪爷爷采茶叶了","晚安"];
+
+  /*01-获取页面中对应的标签*/
+  var oText = document.getElementsByTagName("textarea")[0];
+  var oBtn  = document.getElementsByTagName("button")[0];
+  var oUl   = document.getElementsByClassName("msg-list")[0];
+  var oDiv  = document.getElementsByClassName("status")[0];
+
+  /*02-给发送按钮注册点击事件*/
+  oBtn.onclick = function () {
+    var oTextValue = oText.value;
+
+    /*创建消息并显示在界面中*/
+    var oMyLi = document.createElement("li");
+    oMyLi.innerText = oTextValue;
+    oMyLi.className = "my-msg";
+    oUl.appendChild(oMyLi);
+
+    oDiv.style.display = "block";
+
+    var index = s.indexOf(oTextValue);
+    /*创建回复的消息并显示在界面中*/
+    var oAwLi = document.createElement("li");
+    oAwLi.innerText = a[index] ? a[index] : "亲，买点茶叶吧？";
+
+    setTimeout(function () {
+      oDiv.style.display = "none";
+      oUl.appendChild(oAwLi);
+
+    },1000)
+
+    oText.value = "";
+    oText.focus();
+  }
+</script>
+</body>
+</html>

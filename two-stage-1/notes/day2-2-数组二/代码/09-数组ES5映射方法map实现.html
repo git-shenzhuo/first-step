@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var arr = [1,"光头强",34,true,"毛毛","吉吉","熊大",18,2019];
+
+  // var res = arr.map(function (value, index, array) {
+  //   console.log(index, value, array);
+  //   return value + "BBB";
+  // });
+  //
+  // console.log(res);
+
+
+  /*思考：map是怎么实现的？*/
+  function map(callBack) {
+
+    var temp = [];
+    for (var i = 0 ,len = arr.length ;i<len;i++)
+    {
+      /*每循环一次就调用一次回调函数，并且传递当前的数据|索引|数组本身*/
+      var result = callBack(arr[i],i, arr);
+      temp.push(result);
+    }
+
+    return temp;
+  }
+
+  var t = map(function (value,index,array) {
+    console.log(index, value, array);
+    return value + "BBB";
+  })
+
+  console.log(t);
+</script>
+</body>
+</html>

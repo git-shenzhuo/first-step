@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 函数参数的传递
+  * [1] 实参和形参的个数匹配
+  * [2] 函数的参数可以是任意类型的数据
+  *
+  * */
+
+  // /*01-函数声明*/
+  // function add(a,b,c) {
+  //   return a * 2 + b * 3 + c * 4;
+  // }
+  //
+  // /*02-函数调用*/
+  // console.log(add(1, 2, 3));
+  // console.log(add(20, 23, 24));
+
+
+  /*03-演示函数参数没有完全匹配的情况*/
+  function f(a,b,c) {
+    // var a;
+    // var b;
+    // var c;
+
+    console.log("a=",a);
+    console.log("b=",b);
+    console.log("c=",c);
+  }
+
+  /*03-A 实参和形参匹配*/
+  f("哈哈",123,"呵呵");
+
+  /*03-B 实参少*/
+  /*在调用函数的时候会把实参按顺序赋值给形参 a = "嘿嘿" b = 321 ，c = undefined*/
+  f("嘿嘿",321);
+
+  /*03-C 实参多 超出的实参会被忽略*/
+  f("嘻嘻",32,true,55);
+
+  console.log("----------");
+
+  /*04-函数的参数可以是任意类型的数据*/
+  var obj = {name:"zs"}
+  f("嘻嘻",32,null);
+  f("嘻嘻",32,undefined);
+  f("嘻嘻",32,obj);
+  f("嘻嘻",32,{age:19});
+  f("嘻嘻",32,["demo1","demo2"]);
+  function temp(){}
+  f("嘻嘻",32,temp);
+
+  f("嘻嘻",32,function () {
+    console.log("---");
+  });
+
+</script>
+</body>
+</html>

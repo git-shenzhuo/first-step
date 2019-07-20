@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            // 为了每次实例化生成的对象都是同一个，在外面用一个变量接收第一次生成的对象
+            let _indexobj = null;
+
+            function person() {
+                if (_indexobj) {
+                    return _indexobj
+                }
+                this.name = "谁谁谁";
+                // _indexobj 保存
+                _indexobj = this;
+            }
+            // 这种方法因为使用的是全局变量，容易出错
+
+
+            //把生成的对象保存在原型对象中
+            function person() {
+                if (person_indexobj) {
+                    return person_indexobj
+                }
+                this.name = "谁谁谁";
+                // this  保存
+                person_indexobj = this;
+            }
+            // 虽然比较保险，但是原型对象的成员也有可能被更改
+
+
+            // 使用闭包
+            let person = (function () {
+                let _indexobj = null;
+                return function () {
+                    if (_indexobj) {
+                        return _indexobj
+                    }
+                    this.name = "谁谁谁";
+                    // _indexobj 保存
+                    _indexobj = this;
+                }
+            })();
+
+        }
+    </script>
+</body>
+
+</html>

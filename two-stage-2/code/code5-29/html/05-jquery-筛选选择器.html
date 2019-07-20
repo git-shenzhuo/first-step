@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+    <script>
+        $(function(){
+            // 获得第一个li标签       :first
+            console.log($("li:first"));
+            console.log($("li:first").text());
+
+            // 获得最后一个li标签     :last
+            console.log($("li:last"));
+            console.log($("li:last").text());
+            
+            // 获得索引值小于 n 的所用li     :lt()
+            console.log($("li:lt(4)"));
+            console.log($("li:lt(4)").text());
+
+            // 获得索引值大于 n 的所有li     :gt()
+            console.log($("li:gt(3)"));
+            console.log($("li:gt(3)").text());
+
+            // 获取索引值为奇数的标签       :even
+            $("li:even").css("background","pink");
+
+            // 获取索引值为偶数的标签       :odd
+            $("li:odd").css("background","blue");
+
+            // 获取索引值为 n 的标签        :eq()
+            $("li:eq(5)").css("background","yellow");
+
+            // 获取除了 not条件的满足其它条件的标签  排除   :not()
+            console.log($("li:even:not(:eq(3))").text());
+            
+            // $("li:even:not(7)").css("background","red")
+        })
+    </script>
+</body>
+</html>

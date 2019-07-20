@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*Promise链式调用*/
+        /*场景：按顺序执行4个异步任务 task1234*/
+        new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    console.log("task---1");
+
+                    resolve();
+                }, 1000);
+
+            })
+            .then(function() {
+                console.log("then---1");
+                return new Promise(function(resolve, reject) {
+                    setTimeout(function() {
+                        console.log("task---2");
+                        resolve();
+                    }, 1000);
+                });
+            })
+            .then(function() {
+                console.log("then---2");
+                return new Promise(function(resolve, reject) {
+                    setTimeout(function() {
+                        console.log("task---3");
+                        resolve();
+                    }, 1000);
+                });
+            })
+            .then(function() {
+                console.log("then---3");
+            })
+
+    </script>
+</body>
+
+</html>

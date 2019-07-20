@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSX</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+<body>
+    <h1>JSX</h1>
+    <div id="box">
+        
+    </div>
+
+    <script type="text/babel">
+
+        let username = 'jingjing';
+        ReactDOM.render(
+            // 渲染内容
+            <div className='centend'>
+                <h4>用户名：{username}</h4>
+                <ul>
+                    <li>123</li>
+                    <li>456</li>
+                </ul>
+            </div>
+            ,
+            // 挂载目标
+            document.getElementById('box')
+            );
+    </script>
+</body>
+</html>

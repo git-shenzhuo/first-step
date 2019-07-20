@@ -1,0 +1,37 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+</head>
+<body>
+    <h1>React</h1>
+    <div id="box">
+
+    </div>
+
+    <script>
+        ReactDOM.render(
+            // 数据
+            React.createElement('div',{className:'cuntent'},
+                React.createElement('h4',null,'react初体验'),
+                React.createElement('ul',null,
+                    React.createElement('li',null,'第一天'),
+                    React.createElement('li',null,'第二天')
+                ),
+                React.createElement('span',null,'面试题'),
+                React.createElement('span',null,'created'),
+            )
+            , 
+            // 挂载目标
+            document.getElementById('box')
+            );
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- *以下是某班级一次考试的成绩表。请计算每个学生总成绩，并按总成绩排名。统计各单科成绩第一名，输出其成绩与学号。
+
+    学号	语文	数学	英语	总成绩	备注
+    1		105		62		118
+    2		89		78		120
+    3		86		64		80
+    4		78		99		91
+    5		107.5	97		70
+    6		112		61		92
+    7		101		79		104
+    8		71		72		105
+    9		56		68		61
+    10		98		83		77
+
+
+    1）先计算每个学生的总成绩
+    2）根据总成绩排名
+    3）计算单科第一名，并输出学号 -->
+    <script>
+        var arr = [
+            [1, 105, 62, 118],
+            [2, 89, 78, 120],
+            [3, 86, 64, 80],
+            [4, 78, 99, 91],
+            [5, 107.5, 97, 70],
+            [6, 112, 61, 92],
+            [7, 101, 79, 104],
+            [8, 71, 72, 105],
+            [9, 56, 68, 61],
+            [10, 98, 83, 77]
+        ];
+        for (var i = 0, arr1 = [], len = arr.length; i < len; i++) {
+            var temp = [arr[i][0], arr[i][1], arr[i][2], arr[i][3], arr[i].reduce(function (x, y) {
+                return x + y
+            }) - arr[i][0]];
+            temp.reverse();
+            arr1.push(temp);
+            // console.log(arr1);
+            
+            console.log(arr1);
+        }
+        // console.log(arr1);
+        // temp.reverse();
+        // console.log(arr1);
+
+
+        // console.log(arr2);
+        // (arr1.sort(function(a,b){return a - b})).forEach(function(value,index){
+        //     console.log(value,index);
+        // });
+        // for(var i = 0,len = arr1.length;i < len;i++){
+        //     for(var j = 0;j < len;j++){
+        //         if(arr1){
+
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

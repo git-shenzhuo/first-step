@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  // function f(a) {
+  //   console.log("--f--");
+  //   a(100,200);
+  // }
+  //
+  // function f1(i,j) {
+  //   console.log("---f1---",i, j);
+  // }
+  //
+  // f(f1);
+  /*
+  * [1] 会先在f中声明变量a  var a ;
+  * [2] 把实际参数的值赋值给形参 a[地址] = f1[地址];
+  * [3] 执行函数体
+  *     console.log("--f--");
+  *     a(); == f1();
+  *       [1] 会先在f1中声明变量 没有变量所以忽略  var i,j;
+  *       [2] 把实际参数的值赋值给形参 调用的时候没有传递参数 所以忽略 i = 100;j=200
+  *       [3] 执行函数体
+  *            console.log("---f1---");
+  * */
+
+  // function f(a) {
+  //   console.log("--f--");
+  //   a(100,200);
+  // }
+  //
+  // f(function (i,j) {
+  //   console.log("---f1---", i, j);
+  // });
+
+
+  setTimeout(function () {
+
+  },1000);
+
+</script>
+</body>
+</html>

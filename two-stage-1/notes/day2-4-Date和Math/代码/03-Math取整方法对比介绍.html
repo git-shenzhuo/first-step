@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 取整：会进行四舍五入。
+  * */
+
+  /*01-round方法  正常的四舍五入*/
+  console.log(Math.round(1.1));   //1
+  console.log(Math.round(1.5));   //2
+  console.log(Math.round(1.8));   //2
+
+  console.log(Math.round(-1.1));  //-1
+
+  /*特殊：*/
+  console.log(Math.round(-1.5));  //-1 看谁更大就等于谁 -1 > -2
+  console.log(Math.round(-1.8));  //-1 ? -2
+
+
+  /*02-floor方法 获取的是小于当前值的最大整数*/
+  console.log(Math.floor(1.1));
+  console.log(Math.floor(1.5));
+  console.log(Math.floor(8.6));
+  console.log(Math.floor(-1.1));  //-2
+  console.log(Math.floor(-1.5));  //-2
+  console.log(Math.floor(-1.6));  //-2
+
+  /*03-ceil方法  获取的是大于当前值的最小整数*/
+  console.log(Math.ceil(1.1));    //2
+  console.log(Math.ceil(1.5));    //2
+  console.log(Math.ceil(8.6));    //9
+  console.log(Math.ceil(-1.1));   //-1
+  console.log(Math.ceil(-1.5));   //-1
+  console.log(Math.ceil(-1.6));   //-1
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/*01-声明变量，变量名@bgc 变量值 #195*/
+@bgc:pink;
+@color:#195;
+
+/*02-混入Mixin - 函数*/
+.baseStyle(@w,@h){
+  width: @w;
+  height: @h;
+  line-height: @h;
+  text-align: center;
+}
+
+body{
+  background: @bgc;
+}
+
+div{
+  background: @bgc;
+  color: @color;
+  .baseStyle(500px,50px);
+  border: 1px solid @color;
+  margin-bottom: 15px;
+}
+
+h1{
+  font-size: 30px;
+  color: @color;
+  text-align: center
+}
+
+span{
+  .baseStyle(50px,44px);
+  display: inline-block;
+  background: @color;
+  color: #fff;
+}

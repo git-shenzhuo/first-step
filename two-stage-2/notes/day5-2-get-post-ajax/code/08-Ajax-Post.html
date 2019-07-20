@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>POST请求</button>
+    <script>
+        let oBtn = document.querySelector("button");
+
+        oBtn.onclick = function() {
+
+            /*0 准备参数*/
+            let username = "zs";
+            let age = 18;
+            let queryStr = `name=${username}&age=${age}`;
+
+            console.log(queryStr);
+            /*1 创建请求对象*/
+            let xhr = new XMLHttpRequest();
+
+            /*2 设置请求对象*/
+            xhr.open("post", "http://localhost:8888/code/day02/server/07-Ajax-post.php", true);
+            /* 设置请求头信息*/
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            /*3 发送请求*/
+            xhr.send(queryStr);
+
+            /*4 监听网络请求的状态*/
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        console.log("成功", xhr.responseText);
+                    } else {
+                        console.log("失败", xhr.statusText);
+                    }
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

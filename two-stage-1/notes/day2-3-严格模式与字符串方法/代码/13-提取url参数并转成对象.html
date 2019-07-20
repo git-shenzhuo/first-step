@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*案例：提取url路径中的参数
+  * url:https://www.baidu.com/s?name=zs&age=18&className=html5&rsv_idx=1&tn=baidu&wd=王宝强
+  *
+  * url:统一资源定位符
+  * 协议(https)
+  * 域名(www.baidu.com) 主机地址(ip地址)  10.3.141.38::8080  DNS域名解析服务
+  * 资源的路径(/s)
+  * 分隔符(?)
+  * 查询字符串(name=zs&age=18&className=html5&rsv_idx=1&tn=baidu&wd=王宝强)
+  *   参数：
+  *     name=zs
+  *     age=18
+  *     className=html5
+  *     rsv_idx=1
+  *     tn=baidu
+  *     wd=王宝强
+  *
+  * 要求：提取url中的参数保存到对象中
+  *     {name:"zs",age:18....}
+  * */
+
+  var url = "https://www.baidu.com/s?name=zs&age=18&className=html5&rsv_idx=1&tn=baidu&wd=王宝强";
+
+  /*01-先截取url中的查询字符串*/
+  var index = url.indexOf("?") + 1;
+  console.log(index);             //23
+
+  var str = url.slice(index);
+  console.log(str);               //name=zs&age=18&className=html5&rsv_idx=1&tn=baidu&wd=王宝强
+
+  /*02-把查询字符串中的参数全部分开*/
+  var arr = str.split("&");
+  console.log(arr);               //["name=zs", "age=18", "className=html5", "rsv_idx=1", "tn=baidu", "wd=王宝强"]
+
+  /*03-把参数(name=zs)分开*/
+  /*04-把这些数据组装到对象中*/
+  var o = {};
+  arr.forEach(function (value,index) {
+    var tempArr = value.split("=");
+    console.log(tempArr);   //["name","zs"] ["age",18]
+
+    /*当前的key：tempArr[0]*/
+    /*当前的value:tempArr[1]*/
+    // var key = tempArr[0];
+    // var valueT = tempArr[1];
+
+    // o[key] = valueT;
+
+    o[tempArr[0]] =  tempArr[1];
+  })
+  console.log(o);
+
+
+
+  /*对象访问的补充*/
+  var obj = {};
+
+  /*访问对象有两种方式
+  * [1] 点语法
+  * [2] []语法
+  *
+  * 通常大多数情况下它们是等价
+  * 在具体使用的时候，某些地方只能使用[]语法
+  * */
+
+  // obj.name   = "zs";
+  // obj["age"] = 18;
+  //
+  // /*如果[]中的内容不是字符串，那么就会把它当做变量的处理，获取变量的值*/
+  // var className  = "classNameT";
+  // obj[className] = 18;      //obj["classNameT"] = 18;   obj.classNameT = 18;
+  //
+  // console.log(obj);
+
+
+  /*只能使用o[key] 不能使用o.key*/
+  for (var key in o)
+  {
+    console.log("当前的key = " + key + " 当前的value = " + o.key);
+
+    /*
+    * var key ;
+    * key = "name"
+    *
+    * var key ;
+    * key = "age"
+    * */
+  }
+
+
+  obj["background color"] = "red";
+  console.log(obj);
+  console.log(obj["background color"]);
+
+</script>
+</body>
+</html>

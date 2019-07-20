@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 200px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="./src/Cookie.js"></script>
+    <div class="box"><img src="./img/cookie.png" alt=""></div>
+    <script>
+        window.onload = function() {
+
+            //00-先获取页面中对应的标签
+            let oBox = document.querySelector(".box");
+
+            //01-页面加载完毕的时候，尝试获取Cookie中的数据设置样式
+            let left = COOKIE.getItem("left");
+            let top = COOKIE.getItem("top");
+            if (left && top) {
+                oBox.style.left = left + "px";
+                oBox.style.top = top + "px";
+            }
+
+            //02-处理标签的拖拽事件
+            oBox.onmousedown = function(e) {
+                //计算鼠标按下的点距离盒子的位移
+                let offsetX = e.clientX - oBox.offsetLeft;
+                let offsetY = e.clientY - oBox.offsetTop;
+
+                document.onmousemove = function(event) {
+                    oBox.style.left = event.pageX - offsetX + "px";
+                    oBox.style.top = event.pageY - offsetY + "px"
+                }
+            };
+
+            document.onmouseup = function() {
+                document.onmousemove = null;
+
+                //03-把标签的位置信息保存到Cookie中
+                COOKIE.setItem("left", oBox.offsetLeft);
+                COOKIE.setItem("top", oBox.offsetTop);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+<div id="divID">
+  <div class="nodeA">nodeA</div>
+  <div class="nodeB">nodeB</div>
+  <div class="nodeC">nodeC</div>
+</div>
+<script>
+  /*父子关系  兄弟关系  祖先-子孙关系*/
+  window.onload = function () {
+
+    /*01-父子关系*/
+    var oDiv = document.getElementById("divID");
+
+    /*node-节点  element元素节点*/
+    /*获取父节点*/
+    console.log(oDiv.parentNode);
+    /*获取父元素节点*/
+    console.log(oDiv.parentElement);
+
+    /*获取子节点*/
+    console.log(oDiv.childNodes);   /*把空格这些也算进去了 nodeList[7]*/
+    /*获取子元素节点*/
+    console.log(oDiv.children);    /*HTMLCollection[3]*/
+
+    /*02-兄弟关系*/
+    var nodeB = oDiv.children[1];
+
+    /*前一个兄弟节点*/
+    console.log(nodeB.previousSibling);
+    /*前一个兄弟元素*/
+    console.log(nodeB.previousElementSibling);
+
+    /*后一个兄弟节点*/
+    console.log(nodeB.nextSibling);
+    /*后一个兄弟元素*/
+    console.log(nodeB.nextElementSibling);
+
+
+    /*第一个和最后一个*/
+    console.log(oDiv.firstChild);
+    console.log(oDiv.firstElementChild);
+
+    console.log(oDiv.lastChild);
+    console.log(oDiv.lastElementChild);
+  }
+</script>
+</body>
+</html>

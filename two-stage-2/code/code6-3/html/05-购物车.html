@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .itme {
+            width: 200px;
+            border: 1px solid #666;
+            padding-top: 20px;
+            position: absolute;
+        }
+
+        .itme-img {
+            width: 200px;
+            height: 200px;
+        }
+
+        p {
+            margin-left: 10px;
+        }
+
+        .itme-price {
+            color: red;
+            font-size: 24px;
+        }
+
+        .itme-name {
+            color: #888;
+        }
+
+        .itme-discuss {
+            font-size: 14px;
+            color: #2f6fad;
+        }
+
+        .itme-press {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .itme-shop {
+            margin: 10px;
+            height: 30px;
+            border: 1px solid #999;
+            display: flex;
+        }
+
+        .itme-shop-cart {
+            width: 30px;
+            height: 30px;   
+        }
+        .itme-shop span{
+            display: inline-block;
+            margin-left: 20px;
+            line-height: 30px;   
+        }
+        .itme-shop:hover{
+            border-color: red;
+        }
+
+        /* 购物车 */
+        .cart{
+            width: 180px;
+            border: 1px solid #777;
+            position: absolute;
+            right: 10px;
+
+        }
+        h4{
+            text-align: center;
+            line-height: 30px;
+            border-bottom: 1px solid #555;
+        }
+        .cart p {
+            text-align: center;
+            line-height: 25px;
+            border-top: 1px solid #555;
+            margin: 0;
+            cursor: pointer;
+        }
+        li{
+            width: 100%;
+            height: 90px;
+            position: relative;
+        }
+        li img{
+            width: 60px;
+            height: 60px;
+        }
+        li .cart-press{
+            color: red;
+            font-size: 24px;
+        }
+        li h6{
+            font-size: 12px;
+            color: #666;
+            /* line-height: 20px; */
+        }
+        li .cart-x{
+            position: absolute;
+            top: 0;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.js"></script>
+
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="cart">
+        <h4>购物车列表</h4>
+        <ul>
+            
+        </ul>
+        <p>点击结算</p>
+    </div>
+    <script>
+        $(function () {
+            let data = [{
+                    id: "1904-1",
+                    name: "Java编程思想（第4版）",
+                    price: "99.4",
+                    src: "1.jpg",
+                    press: "机械工业出版社",
+                    discuss: "11万+条评价"
+                },
+                {
+                    id: "1904-2",
+                    name: "深入理解计算机系统",
+                    price: "127.9",
+                    src: "2.jpg",
+                    press: "机械工业出版社",
+                    discuss: "3万+条评价"
+                },
+                {
+                    id: "1904-3",
+                    name: "算法导论",
+                    price: "117.8",
+                    src: "3.jpg",
+                    press: "机械工业出版社",
+                    discuss: "11万+条评价"
+                },
+                {
+                    id: "1904-4",
+                    name: "复盘",
+                    price: "48.7",
+                    src: "4.jpg",
+                    press: "机械工业出版社",
+                    discuss: "4.2万+条评价"
+                },
+                {
+                    id: "1904-5",
+                    name: "TCP/IP详解",
+                    price: "222.600",
+                    src: "5.jpg",
+                    press: "机械工业出版社",
+                    discuss: "2.8万+条评价"
+                },
+                {
+                    id: "1904-6",
+                    name: "Python学习手册",
+                    price: "201.50",
+                    src: "6.jpg",
+                    press: "机械工业出版社",
+                    discuss: "1.2万+条评价"
+                },
+                {
+                    id: "1904-7",
+                    name: "机器学习实战",
+                    price: "109.50",
+                    src: "7.jpg",
+                    press: "机械工业出版社",
+                    discuss: "8200+条评价"
+                },
+                {
+                    id: "1904-8",
+                    name: "JavaScript权威指南",
+                    price: "127.90",
+                    src: "8.jpg",
+                    press: "机械工业出版社",
+                    discuss: "2.2万+条评价"
+                },
+                {
+                    id: "1904-9",
+                    name: "编译原理",
+                    price: "81.90",
+                    src: "9.jpg",
+                    press: "机械工业出版社",
+                    discuss: "1.1万+条评价"
+                },
+                {
+                    id: "1904-10",
+                    name: "设计模式",
+                    price: "32.20",
+                    src: "10.jpg",
+                    press: "机械工业出版社",
+                    discuss: "1.4万+条评价"
+                }
+            ];
+            // 创建标签，并插入页面中
+            $(data).each(function(i,ele){
+                let html = `<div class="itme" data-index="${i}">
+                                <img class="itme-img" src="../images/${ele.src}" alt="">
+                                <p class="itme-price">￥${ele.price}</p>
+                                <p class="itme-name">${ele.name}</p>
+                                <p class="itme-discuss">${ele.discuss}</p>
+                                <p class="itme-press">${ele.press}</p>
+                                <div class="itme-shop">
+                                    <img class="itme-shop-cart" src="../images/cart.png" alt="">
+                                    <span>添加购物车</span>
+                                </div>
+                            </div>`
+                $(".box").append(html);  
+            });
+            // 瀑布流布局
+            // 封装函数
+            function waterfall(){
+                let offsetwidth = $(".itme").width();
+                let offsetheight = $(".itme").height() + 20;
+                let margin = 10;
+                let len = Math.floor(($(window).width() - 200) / (offsetwidth + margin));
+                for(let i = 0;i < $(".itme").length;i++){
+                    let itmeLine = i % len;
+                    let itemColumn = Math.floor(i / len);
+                    let itmeleft = margin + itmeLine * (margin + offsetwidth);
+                    let itmetop  = margin + itemColumn * (margin + offsetheight);
+                    $(".itme").eq(i).css({
+                        left:itmeleft + "px",
+                        top:itmetop + "px"
+                    })
+                }  
+            };
+            waterfall();
+            // 监听页面变化
+            $(window).resize(waterfall);
+
+            // 点击添加
+            let itmeList = [];
+            $(".box").on("click",".itme-shop",function(){
+                let ind = $(this).parent().data("index");
+                itmeList.push(data[ind]);
+                console.log(data[ind]);
+                 
+                // 在购物列表中渲染出来
+                for(let n = 0;n < itmeList.lenght;n++){
+                    let lis = `<li>
+                                    <img src="../images/${itmeList[n].src}" alt="">
+                                    <span class="cart-press">￥${itmeList[n].price}</span>
+                                    <h6>${itmeList[n].name}</h6>
+                                    <span class="cart-x">X</span>
+                                </li>`
+                    console.log(itmeList[n]);
+                    
+                    console.log(lis);
+                    
+                    $("ul").html(lis);
+                }               
+            });
+            
+            
+        })
+    </script>
+</body>
+
+</html>

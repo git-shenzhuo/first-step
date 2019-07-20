@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <goodslist></goodslist>
+        <!-- <goodslist></goodslist>
+        <goodslist></goodslist>
+        <goodslist></goodslist> -->
+
+        <list></list>
+
+        <jingjing></jingjing>
+
+    </div>
+
+
+    <!-- 组件的内容 -->
+    <template id="goodslist">
+        <div>
+            <p>年龄：{{age}}</p>
+            <button @click='ages'>又一年</button>
+        </div>
+    </template>
+    <template id="list">
+        <div>
+            <div class="btn-group">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>10</button>
+            </div>
+        </div>
+    </template>
+    <template id="jingjing">
+        <div>
+            <p>{{username}}年龄：{{age}}</p>
+            <button @click='aged'>又一年</button>
+        </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+
+        // 全局组件
+        Vue.component('goodslist', {
+            data(){
+                return {
+                    age:18
+                }
+            },
+            methods:{
+                ages(){
+                    this.age = this.age + 1
+                }
+            },
+            template:'#goodslist'
+        })
+
+        Vue.component('list', {
+            data() {
+                return {
+                    
+                }
+            },
+            template:'#list'
+        })
+
+
+        // 挂载实例
+        let vm = new Vue({
+            el:'#box',
+            data:{
+
+            },
+            // 方法
+            methods: {
+                
+            },
+            // 计算
+            computed: {
+                
+            },
+            // 局部组件
+            components:{
+                jingjing:{
+                    data() {
+                        return {
+                            username:'jingjing',
+                            age:36
+                        }
+                    },
+                    methods: {
+                        aged(){
+                            this.age = this.age - 1
+                        }
+                    },
+                    template:'#jingjing'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

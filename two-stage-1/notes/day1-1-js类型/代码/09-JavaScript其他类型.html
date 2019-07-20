@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * string      "xx" "Hi" .......无数的值
+  * number      12 18.2   .......无数的值
+  *
+  * Null        null(唯一)
+  * Undefined   undefined(唯一)
+  * boolean     true | false (唯二)
+  *
+  * 注意点：null 和 undefined 有什么区别？
+  * null 表示为空。
+  * undefined 表示未定义。
+  *
+  * 思考：变量的值什么时候为null,什么时候为undefined？
+  * 当我们声明了一个变量，但是却没有赋值的时候，该变量的值为undefined。
+  * 变量的值永远不会自己为null,除非我们主动指定为null
+  *
+  * 注意：null == undefined
+  * */
+
+  var str = "雨过天晴";
+  var test;                         //undefined
+  test = null;                      //null
+
+  console.log(undefined == null);   //true
+
+
+</script>
+</body>
+</html>

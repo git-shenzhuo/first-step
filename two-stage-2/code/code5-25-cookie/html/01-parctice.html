@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 400px;
+            height: 530px;
+            margin: 50px auto;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        h3{
+            font-size: 24px;
+            height: 40px;
+            line-height: 40px;
+        }
+        h4{
+            font-size: 16px;
+            height: 40px;
+            line-height: 40px;
+        }
+        img{
+            width: 340px;
+            height: 400px;
+        }
+        button{
+            /* display: inline-block; */
+            width: 50px;
+            height: 30px;
+            margin: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h3>标题</h3>
+        <h4>描述</h4>
+        <img src="../img/0.png" alt="">
+        <div class="btn">
+            <button name="fz">衣服</button>
+            <button name="bb">包包</button>
+            <button name="ydx">鞋子</button>
+        </div>
+    </div>
+    <script>
+        window.onload=()=>{
+            // 拿到标签
+            let btn = document.querySelector(".btn");
+            let h3  = document.querySelector("h3");
+            let h4  = document.querySelector("h4");
+            let img = document.querySelector("img");
+            let url = "http://localhost/second%20stage/code/code5-25/php/01-parctice.php";
+            // 点击事件
+            btn.onclick = (e)=>{
+                let target = e.target || window.event.target;
+                // 建立请求
+                let xhr = new XMLHttpRequest;
+                xhr.open("get",url+"?type="+target["name"],true);
+                xhr.send();
+                xhr.onload=()=>{
+                    if(xhr.status == 200){
+                        console.log(xhr.responseText);
+                        let a = JSON.parse(xhr.responseText);
+                        h3.innerHTML = a.title;
+                        h4.innerHTML = a.des;
+                        img.src      = a.src;
+                        
+                    }
+                }                
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // function Person(name) {
+  //   this.name = name;
+  // }
+  //
+  // Person.prototype.showName = function () {
+  //   console.log("姓名 " + this.name);
+  // }
+  //
+  // var p1 = new Person("zs");
+
+
+  /*ES6 Class*/
+  // class Person{
+  //   constructor(name){
+  //     this.name = name;
+  //   }
+  //   showName(){
+  //     console.log("姓名 " + this.name);
+  //   }
+  //   static logDes(){
+  //     console.log("Person--");
+  //   }
+  // }
+  // var  p1 = new Person("李四");
+  // console.log(p1);
+  //
+
+  /*Class继承 */
+  /*动物类 : color eat*/
+  /*人类   ：color eat name  age  sleep */
+  /*学生类 ： color eat name  age  sleep study*/
+  /*狗类   : color eat bite  */
+
+  /*关系：
+  *     动物类
+  *    /   \
+  *   人    狗
+  *  /    /   \        \
+  * 学生 哈士奇 金毛  拉布拉多
+  * */
+  class Animal{
+    constructor(color){
+      this.color = color;
+    }
+    eat(){
+      console.log("吃");
+    }
+    static log(){
+      console.log("我是动物的静态方法");
+    }
+  }
+
+  class Person extends Animal{
+    constructor(color,name,age){
+      super(color);
+      this.name = name;
+      this.age  = age;
+    }
+    sleep(){
+      console.log("睡");
+    }
+  }
+
+  var p1 = new Person("黑","小强",33);
+  console.log(p1);
+
+  class Dog extends Animal{
+    constructor(color){
+      super(color);
+    }
+    bite(){
+      console.log("咬人");
+    }
+  }
+
+  var d = new  Dog("黄");
+  console.log(d);
+
+  class Student extends Person{
+    constructor(color,name,age){
+      super(color,name,age)
+    }
+    study(){
+      console.log("学习");
+    }
+  }
+
+  var s = new Student("黄","黄浩",18);
+  console.log(s);
+
+  /*class实现继承的时候，会把父类的静态方法也一起继承*/
+  Animal.log();
+</script>
+</body>
+</html>

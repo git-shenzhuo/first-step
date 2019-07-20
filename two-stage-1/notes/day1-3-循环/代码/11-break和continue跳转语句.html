@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*需求：查找字符串中是否存在指定的字符，如果存在那么就打印一个true，不存在打印false*/
+  /*字符串：sudsidfusofqdfx   查找的字符 o*/
+  /*备注：可以使用str[index]方法获取指定位置对应的字符 也可以str.charAt(index)方式*/
+
+  /*break   作用：结束整个循环
+  * continue作用：结束当前循环，继续执行下一次循环
+  * */
+
+  var str = "sudsidfusofqdfx";
+  for (var i = 0;i <= str.length;i++)
+  {
+    if ("u" == str[i])
+    {
+      console.log("true");
+      //break;
+      continue;
+    }
+
+
+    console.log("第"+i+"匹配");
+  }
+
+
+</script>
+</body>
+</html>

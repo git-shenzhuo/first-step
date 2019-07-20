@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            // 普通继承
+            // 被继承的母体
+            // animal构造函数
+            // function animal(address,color){
+            //     this.address = address;
+            //     this.color   = color;
+            // }
+            // // 给animal添加原型对象成员
+            // animal.prototype.move = function(){
+            //     console.log("我可开始动了");
+            // }
+            // animal.prototype.speed = function(){
+            //     console.log("你可够快的");
+            // }
+
+            // // 要继承的子体
+            // // person构造函数
+            // function person(name,age){
+            //     this.name = name;
+            //     this.age  = age;
+            // }
+            // // 给原型对象添加成员
+            // person.prototype.temp = function(){
+            //     console.log("你在想写什么呢");               
+            // }
+
+            // -----------------继承----------------
+            // 混入式继承----for循环浅拷贝
+
+            // 原型式继承----可以访问母体原型对象上的成员，但是实例成员无法访问
+            // person.prototype = animal.prototype;
+            // let p1 = new person();
+            // p1.move();            //我可开始动了
+            // p1.color = "red";
+            // console.log(p1);
+            
+
+            // 原型链继承----都可以访问，但是animal的实例成员变成了person的原型成员，有共享的问题
+            // person.prototype = new animal();
+
+            // 借用继承，call、apply----解决了共享，但是无法访问animal的原型成员
+            // function person(name,age){
+            //     this.name = name;
+            //     this.age  = age;
+            //     animal.call(this,parameter1,parameter2);
+            // }
+            // 组合继承----原型式继承和借用继承一起使用，完美解决
+            // function person(name,age){
+            //     this.name = name;
+            //     this.age  = age;
+            //     animal.call(this,parameter1,parameter2);
+            // }
+            // person.prototype = animal.prototype;
+
+
+            // ----------------------------------------------------
+            // class继承
+            class person{
+                constructor(name){
+                    this.name = name
+                };
+                setname(){
+                    console.log("hello",this.name);                    
+                }
+
+            }
+            let p1 = new person("王五");
+            console.log(p1);
+            p1.setname();
+            //  animal 也是用   class 生成，extends-----表示原型链来自   person
+            class animal extends person{
+                constructor(name,age){
+                    // super-----调用父类
+                    super(name);
+                    this.age = age;
+                };
+                getage(){
+                    console.log("今年年芳",this.age);                    
+                }
+            }
+            let a1 = new animal("阿花",18);
+            console.log(a1);
+            a1.setname();
+            a1.getage();
+            
+        }    
+    </script>
+</body>
+</html>

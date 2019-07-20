@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*01-多维数组*/
+  var arr = [1,2,"demo",[15,16,17],["张三","李四",[20,21,22]]];
+  console.log(arr[3][0],arr[3][1],arr[3][2]);
+  console.log(arr[4][2][1]);
+
+  /*02-创建一个5x5的数组，把1~25保存在里面*/
+  //var data = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20],[21,22,23,24,25]];
+
+  /*02-1 先初始化一个空的数组*/
+  var data = [];
+  /*02-2 遍历1-25*/
+  for (var  i = 1;i<=25;i++)
+  {
+    /*02-3 检查是否需要创建新的数组*/
+    if (i % 5 == 1)
+    {
+      var temp = [];
+      data.push(temp);
+    }
+    temp.push(i);
+  }
+
+  console.log(data);
+</script>
+</body>
+</html>

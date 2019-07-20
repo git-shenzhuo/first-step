@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*数组的基本操作
+  * [1] 概念：元素 | 索引(位置|下标 是0开始编号) | 长度(length的值) 最大索引：length-1
+  * [2] 访问：arr[index]
+  * [3] 修改：arr[index] = value;
+  * [4] 追加：arr.push(value1,...)
+  * [5] 移除：arr.pop()
+  * [6] 添加到数组的前端：arr.unshift()
+  * [7] 从数组的前端移除：arr.shift();
+  * */
+
+  /*01-创建数组*/
+  var arr = ["C罗","卡卡","罗纳尔多",2015];
+
+  /*02-访问数组的元素*/
+  console.log(arr[0]);              //"C罗" 获取arr数组中索引为0的这个元素
+  console.log(arr[1]);              //"卡卡"
+  console.log(arr[arr.length - 1]); //2015
+
+  /*03-修改数组的元素*/
+  arr[2] = "萨拉赫";
+  console.log(arr);                //["C罗", "卡卡", "萨拉赫", 2015]
+
+  /*04-追加数组的元素*/
+  console.log(arr.push("英超"));    //push方法用来在数组的最后添加元素，并且返回更新后的数组长度值
+  console.log(arr);                //["C罗", "卡卡", "萨拉赫", 2015, "英超"]
+  arr.push(2019,"梅西",[1,2,3]);
+  console.log(arr);                //["C罗", "卡卡", "萨拉赫", 2015, "英超", 2019, "梅西", Array(3)]
+
+  /*05-删除数组的元素*/
+  console.log(arr.pop());          //[1,2,3]  pop方法删除数组中的最后一个元素并且把该元素返回。
+  console.log(arr);                //["C罗", "卡卡", "萨拉赫", 2015, "英超", 2019, "梅西"]
+  console.log(arr.pop());          //"梅西"
+  console.log(arr);                //["C罗", "卡卡", "萨拉赫", 2015, "英超", 2019]
+
+  /*06-在数组的开始位置添加元素*/
+  arr.unshift("西甲");
+  console.log(arr);               //["西甲","C罗", "卡卡", "萨拉赫", 2015, "英超", 2019]
+  arr.unshift("哈哈",true,18);
+  console.log(arr);               //["哈哈",true,18,"西甲","C罗", "卡卡", "萨拉赫", 2015, "英超", 2019]
+
+  /*07-从数组的开始位置移除元素*/
+  console.log(arr.shift());       //"哈哈"  会把移除的元素返回
+  console.log(arr);               //[true,18,"西甲","C罗", "卡卡", "萨拉赫", 2015, "英超", 2019]
+
+</script>
+</body>
+</html>

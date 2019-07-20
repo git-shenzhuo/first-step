@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  1-函数的参数可以是任意类型的
+  2-函数的参数可以是函数，像这样函数作为其它函数的参数，我们称为回调函数
+  */
+
+  function f(a) {
+    console.log("f---");
+    console.log(a);
+    a();
+  }
+
+  // f("我是字符串");
+  // f({name:"zs"});
+
+  function f1() {
+    console.log("f1---");
+    return 123;
+  }
+
+  /*注意：函数作为其它函数的参数传递时，不能加上()，加上()表示要把这个函数执行的结果作为参数传递了*/
+  f(f1);/*f1是f这个函数的回调函数*/
+
+
+
+</script>
+</body>
+</html>

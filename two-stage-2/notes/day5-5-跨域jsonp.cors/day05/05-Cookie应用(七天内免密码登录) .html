@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            background-color: rgb(177, 208, 224);
+            font: normal 12px Trebuchet MS;
+            color: #000;
+        }
+        
+        form {
+            width: 220px;
+            padding: 10px;
+            background-color: #DDEEF6;
+            box-shadow: 0px 0px 10px 0px #888888;
+            border: 1px solid #DDEEF6;
+            border-radius: 6px;
+            margin: auto;
+        }
+        
+        .roundedCorners-textbox {
+            border: 1px solid #999;
+            width: 160px;
+        }
+        
+        .checkbox {
+            margin-left: 30px;
+            border: 1px solid #999;
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label>账号</label>
+        <input id="username" name="username" type="text" /><br /><br />
+        <label>密码</label>
+        <input id="password" name="password" type="text" /><br /><br />
+        <label><input id="checkbox" type="checkbox" class="checkbox" />
+                        7天免登录</label>
+        <br/><br/>
+        <input type="submit" value="确定" id="btnSubmit" />
+        <input type="reset" value="清空" />
+    </form>
+    <script src="./src/Cookie.js"></script>
+    <script src="./src/jquery-3.4.1.js"></script>
+    <script>
+        //001-当页面加载完，检查Cookie中是否保存登录数据
+        //如果Cookie保存了登录的帐号信息，那么就发请求登录
+        //如果Cookie中没有登录的帐号信息，那么就让用户来填写表单登录
+        let username = COOKIE.getItem("username");
+        let password = COOKIE.getItem("password");
+        if (username && password) {
+            let o = {
+                username,
+                password
+            };
+            netWork($.param(o));
+        } else {
+            //获取页面中对应的标签
+            let oUsername = document.querySelector("#username");
+            let oPassword = document.querySelector("#password");
+            let oSubmit = document.querySelector("#btnSubmit");
+            let oCheckBox = document.querySelector("#checkbox");
+
+            oSubmit.onclick = function(e) {
+                //禁用sumit按钮的默认提交行为
+                e.preventDefault();
+                let usm = oUsername.value.trim();
+                let pwd = oPassword.value.trim();
+                if (usm.length == 0 || pwd.length == 0) {
+                    alert("请输入完整的帐号信息");
+                    return;
+                } else {
+
+                    //检查是否选中免密登录
+                    if (oCheckBox.checked) {
+                        //把数据保存到Cookie中
+                        COOKIE.setItem("username", usm, 7);
+                        COOKIE.setItem("password", pwd, 7);
+                    }
+                    netWork(`username=${usm}&password=${pwd}`);
+                }
+
+            }
+        }
+
+        //002-封装网络请求的方法
+        //请求成功(拿到服务器返回的数据 [1]登录成功 [2]登录失败)和失败(错误，网络请求本身出错，url路径不对，没有网络)
+        function netWork(queryString) {
+            $.get({
+                url: "./server/api/01-login.php",
+                data: queryString,
+                success(res) {
+                    console.log(res);
+                    //如果登录成功，跳转到成功的页面
+                    //如果登录失败，弹框提示用户失败的信息
+                    if (res.status == "success") {
+                        window.location.href = "./05-success.html"
+                    } else {
+                        COOKIE.clear();
+                        alert(res.msg);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

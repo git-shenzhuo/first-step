@@ -1,0 +1,7 @@
+
+{
+    "PORT":1904,
+    "mongodb":"mongodb://localhost:27017",
+    "dbname":"xiangmu",
+    "pKey":"dingding"
+}

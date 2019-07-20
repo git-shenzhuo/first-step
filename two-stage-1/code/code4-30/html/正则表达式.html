@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*01-先拿到标签*/
+        var oBtn = document.getElementsByTagName("button")[0];
+        var oInuput = document.getElementById("inputID");
+        var oOut = document.getElementById("outID");
+        /*02-给按钮添加事件*/
+        oBtn.onclick = function () {
+            /*03-对用户输入的消息进行过滤*/
+            var text = oInuput.value.trim();
+            if (text.length == 0) {
+                alert("没有任何内容");
+                return;
+            }
+            var res = "";
+            var targets = ["fuck", "sb", "反清复明", "金三胖", "垃圾", "辣鸡", "牛逼"];
+            /*04-把结果显示在页面中*/
+            // "你很厉害啊 垃圾 ！垃圾 ！垃圾" => "你很厉害啊 ** !"
+            targets.forEach(function (value, index) {
+                // value 数组中当前的敏感词
+                var reg = new RegExp(/垃圾/, "g");
+                res = text.replace(reg, "**");
+                console.log(res);
+            })
+            console.log(res);
+        }
+    </script>
+</body>
+
+</html>

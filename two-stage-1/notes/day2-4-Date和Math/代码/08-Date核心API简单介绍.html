@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*01-打印并查看Date的核心API */
+  /*API：application programming interface 应用程序接口-函数*/
+  console.dir(Date);
+  /*
+  * [1] Date.xx()
+  * Date.now()     得到的是当前的时间
+  * Date.parse()   把时间戳转换为时间字符串
+  *
+  * [2] var date = new Date(); date.xxx();
+  * (1) date.getxxxx()      读取时间信息
+  *          date.getYYY()        本地时间
+  *          date.getUTCYYY()     世界时间
+  * (2) date.setxxxx()      设置时间信息
+  *          date.setYYY()        本地时间
+  *          date.setUTCYYY()     世界时间
+  * (3) date.toxxxString()  字符串处理的
+  * */
+
+  console.log(Date.now());            //得到当前的时间 1557037991252
+  console.log(new Date());            //得到当前的时间 Sun May 05 2019 14:33:42 GMT+0800 (中国标准时间)
+  console.log((new Date()).getTime());//1557038053314
+
+  /**/
+
+  var date = new Date();
+  /*02-核心方法(get)*/
+
+  var year  = date.getFullYear();      //年
+  var month = date.getMonth();         //月 0-11
+  var days  = date.getDate();          //日
+  var hours = date.getHours();         //小时
+  var m     = date.getMinutes();       //分钟
+  var s     = date.getSeconds();       //秒
+  var ms    = date.getMilliseconds();  //毫秒
+  console.log(year, month,days,hours,m,s, ms);  //2019 4 + 1 5 14 49 5 679
+
+  /*03-核心方法(set)*/
+  console.log(date);                  //Sun May 05 2019 14:50:19 GMT+0800 (中国标准时间)
+  date.setFullYear(2020)              /*年份是必传的，其它的参数是可选的*/
+  console.log(date);
+
+</script>
+</body>
+</html>

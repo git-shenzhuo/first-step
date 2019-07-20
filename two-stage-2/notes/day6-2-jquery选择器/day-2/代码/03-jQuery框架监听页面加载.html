@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+
+
+<script>
+  /*监听页面的加载--*/
+
+  /*监听页面的加载，等页面加载完(HTML文件 && CSS && JavaScript && src)成后再执行函数中的代码*/
+  /*01-原生方式监听N次，仅仅执行1次(覆盖)*/
+  /*02-监听的时机 页面加载完(HTML文件 && CSS && JavaScript && src)  Load*/
+  // window.onload = function () {
+  //   console.log("window--1");
+  // }
+  //
+  // window.onload = function () {
+  //   console.log("window--2");
+  // }
+  //
+  // window.onload = function () {
+  //   console.log("window--3");
+  // }
+
+  /*JQuery监听页面的加载*/
+  /*01-jQuery方式监听N次，执行N次*/
+  /*02-监听的时机 DOM加载完毕 DOMContentLoaded*/
+  /*03-简写方式*/
+  $(document).ready(function () {
+    console.log("jQuery--1");
+  })
+
+  // $(document).ready(function () {
+  //   console.log("jQuery--2");
+  // })
+  //
+  // $(document).ready(function () {
+  //   console.log("jQuery--3");
+  // })
+
+  /*03-1 简写方式(1) 省略document参数*/
+  $().ready(function () {
+    console.log("jQuery--2");
+  })
+
+  /*03-02 简写方式(2) 省略ready方法*/
+  $(function () {
+    console.log("jQuery--3");
+    console.log(document.getElementsByTagName("div")[0]);
+  })
+
+
+</script>
+
+<div></div>
+</body>
+</html>

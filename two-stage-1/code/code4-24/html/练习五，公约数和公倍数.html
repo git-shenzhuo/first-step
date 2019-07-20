@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 求两个数的最大公约数(10和32的最小公约数为2)
+        *    提示：1）先找出两个数中最小的那个数,
+                  2）最小数不断递减, 找出能被两个数同时整除的数，并退出循环 -->
+    <input type="text" id="input1ID">
+    <input type="text" id="input2ID">
+    <button id="btn1ID">公约</button>
+    <button id="btn2ID">公倍</button>
+    <div id="divID"></div>
+    <script>
+        var oInput1 = document.getElementById("input1ID");
+        var oInput2 = document.getElementById("input2ID");
+        var oBtn1   = document.getElementById("btn1ID");
+        var oBtn2   = document.getElementById("btn2ID");
+        var oDiv    = document.getElementById("divID");
+        oBtn1.onclick = function(){
+            var a = oInput1.value * 1;
+            var b = oInput2.value * 1;
+            if(a > b){
+                for(var i = b;i >= 2; i--){
+                    if(a % i == 0 && b % i == 0){
+                        oDiv.innerHTML = i;
+                        break;
+                    } 
+                }
+            }else{
+                for(var i = a;i >= 2; i--){
+                    if(a % i == 0 && b % i == 0){
+                        oDiv.innerHTML = i;
+                        break;
+                    }
+                }
+            }
+        }
+        oBtn2.onclick = function(){
+            var a = oInput1.value * 1;
+            var b = oInput2.value * 1;
+            if(a > b){
+                for(var i = a;i >= 1; i++){
+                    if(i % a == 0 && i % b == 0){
+                        oDiv.innerHTML = i;
+                        break;
+                    }
+                }
+            }else{
+                for(var i = b;i >= 1; i++){
+                    if(i % a == 0 && i % b == 0){
+                        oDiv.innerHTML = i;
+                        break;
+                    }    
+                }
+            }
+        }
+    </script>
+</body>
+</html>

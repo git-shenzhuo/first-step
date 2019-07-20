@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload=()=>{
+            /*  全局变量可以被所有作用域调用，但局部变量却只能被他所在的局部作用域调用
+                为了在局部作用域外面也能调用里面的变量，所以闭包
+            */  
+            // 可访问返回的一个元素,但其它元素无法访问
+            // function fn(){
+            //     let a = 123;
+            //     let b = "我是字符串"
+            //     // console.log(b,a);
+            //     return a 
+            // }
+            // console.log(fn())
+            // console.log(fn() == fn());
+
+
+
+            // 用对象返回，点语法访问 
+            // function fn(){
+            //     let a = 234;
+            //     let b = "我是字符串";
+            //     function f1(){
+            //         return a
+            //     };
+            //     function f2(){
+            //         return b
+            //     };
+            //     return {f1:f1,f2:f2}
+            // }
+            // console.log(fn().f1());                 //234     
+            // console.log(fn().f1() == fn().f1());    //true
+            // console.log(fn().f2());                 //我是字符串
+            
+
+            // 用对象返回，点语法访问 
+            // function fn(){
+            //     let a = 234;
+            //     let b = "我是字符串";
+            //     function f1(){
+            //         return a
+            //     };
+            //     function f2(){
+            //         return b
+            //     };
+            //     return {f1:f1,f2:f2}
+            // }
+            // let obj = fn()
+            // console.log(obj.f1());                234     
+            // console.log(obj.f1() == obj.f1());    true
+            // console.log(obj.f2());                我是字符串
+
+
+
+            // 最终版  ()()及时调用函数
+            let obj = (function(){
+                let name = "张思睿";
+                let age  = 13;
+                return {
+                    getname:function(){
+                        return name;
+                    },
+                    setname:function(newname){
+                        name = newname;
+                    },
+                    getage:function(){
+                        return age;
+                    },
+                    setage:function(newage){
+                        age = newage;
+                    }
+                }
+            })();
+            console.log(obj.getname());
+            obj.setname("赵大");
+            console.log(obj.getname());
+            console.log(obj.getage());
+            obj.setage(23);
+            console.log(obj.getage());
+            
+            
+            
+            
+            
+        }    
+    </script>
+</body>
+</html>

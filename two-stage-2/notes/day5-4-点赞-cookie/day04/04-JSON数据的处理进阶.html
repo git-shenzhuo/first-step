@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //JSON处理
+        var json = '{"name":"zs","age":18,"height":155,"car":{"color":"red","id":"12345A"}}';
+
+        /*01-JSON全局对象中parse方法解析*/
+        console.log(JSON.parse(json));
+
+        /*02-eval函数来解析:会把字符串转换为js代码并且马上执行*/
+        eval("var a = 10;");
+        console.log(a);
+
+        //02-1 赋值给1个变量
+        eval("var obj =" + json);
+        console.log(obj);
+
+        //02-2 包装成表达式
+        var jsonObj = eval("(" + json + ")");
+        console.log(jsonObj);
+
+        // "ssdsf";
+        // 1244;
+        // [1, 2, 3, 4];
+        // Uncaught SyntaxError: Unexpected token :
+        // ({
+        //     "name": "zs",
+        //     age: 19
+        // });
+
+
+        /*
+        语法：JSON.parse(json,fn)  
+        参数：第一个参数是要解析的json字符串，第二个参数是用来过滤的函数
+        用法：如果在函数中return undefined那么表示该键值对将不会被解析成对象的内容
+        */
+        var target = JSON.parse(json, function(key, value) {
+            console.log(key, value);
+            if (key === "car") {
+                return undefined;
+            } else if (typeof value == "number") {
+                return value * 2;
+            } else {
+                return value;
+            }
+        })
+        console.log("-----");
+        console.log(target);
+
+        /*
+        语法：JSON.stringify(obj,fn|arr,space)
+        参数：第一个参数是要转换为json的对象
+             第二个参数是函数或者是数组，如果是函数那么可以通过函数来控制转换的细节
+             第三个参数是控制缩进的 可以传递数字或者是字符
+        */
+        console.log(JSON.stringify(jsonObj));
+        console.log(JSON.stringify(jsonObj, null, 4));
+        console.log(JSON.stringify(jsonObj, null, "-+-+--+-+--+-+--+-+--+-+-"));
+        console.log(JSON.stringify(jsonObj, ["height", "car"], 4));
+        console.log(JSON.stringify(jsonObj, function(key, value) {
+            if (key == "age") {
+                return value + 100;
+            } else if (key == "height") {
+                return undefined;
+            } else {
+                return value;
+            }
+        }, 4));
+    </script>
+</body>
+
+</html>

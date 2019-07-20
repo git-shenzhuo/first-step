@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>商品详情页面</h1>
+<div>
+  商品的名称：
+</div>
+<script>
+  /*根据url路径来获取对应的信息*/
+  var search = window.location.search.slice(1);
+  console.log(search);
+
+  /*把查询字符串转换乘对象*/
+  var data = {};
+  //name=%E9%BB%84%E6%B2%B3%E9%9D%92%E5%B1%B1&price=%EF%BF%A545.70&press=%E4%B8%89%E8%81%94%E4%B9%A6%E5%BA%97&author=%E9%BB%84%E4%BB%81%E5%AE%87&src=4.jpg
+  var arr = search.split("&");
+  console.log(arr);
+  for (var i= 0 ;i<arr.length;i++)
+  {
+    var current = arr[i].split("=");
+    console.log(current[0],current[1]);
+    var key   = current[0];
+    var value = current[1];
+    data[key] = value;
+  }
+
+  console.log(data);
+
+  var oDiv = document.getElementsByTagName("div")[0];
+  oDiv.innerHTML += decodeURI(data.name);
+
+
+  /*url编码：url不允许存在中文*/
+  /*url编码转换：encodeURI decodeURI*/
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            // 把重复代码添加到原型对象上
+            function person(name, arrs) {
+                this.name = name;
+                this.arrs = arrs || [];
+            }
+
+            person.prototype = {
+                constructor: person,
+                addpublish(observer) {
+                    this.arrs.push(observer);
+                },
+                removepublish(observer) {
+                    if (this.arrs.indexOf(observer) != -1) {
+                        this.arrs.splice(this.arrs.indexOf(observer), 1);
+                    }
+                },
+                eat() {
+                    console.log("好无聊");
+                    for (let observer of this.arrs) {
+                        observer();
+                    }
+
+                }
+            }
+
+
+
+            // 生成发布者
+            let rose = new person("rose");
+            let lucy = new person("lucy");
+
+
+            // 创建观察者
+            let tom = {
+                name: "tom",
+                response_task: function () {
+                    console.log("我已经帮你订好一份外卖，五分钟到门口---tom");
+                },
+                response_task_lucy: function () {
+                    console.log("我已经帮你订好10份外卖，五分钟到门口，需不需要一起吃---tom");
+                },
+            }
+            let jack = {
+                name: "jack",
+                response_task: function () {
+                    console.log("我已经做好了一桌满汉全席---等你哟---jack");
+                }
+            }
+
+            // 注册订阅者
+            rose.addpublish(tom.response_task);
+            lucy.addpublish(tom.response_task_lucy);
+            rose.addpublish(jack.response_task);
+
+
+            rose.eat();
+            lucy.eat();
+
+        }
+    </script>
+</body>
+
+</html>

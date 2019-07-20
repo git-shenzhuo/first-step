@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 60px;
+            background-color: pink;
+            color: #fff;
+        }
+    
+    </style>
+</head>
+<body>
+    <div>
+        <!-- <img src="../images/1.png" alt="">
+        <img src="../images/2.png" alt="">
+        <img src="../images/3.png" alt="">
+        <img src="../images/4.png" alt="">
+        <img src="../images/5.png" alt="">
+        <img src="../images/6.png" alt=""> -->
+    </div>
+    <script>
+        var oDiv = document.getElementsByTagName("div")[0];
+        setInterval(function(){
+            var date  = new Date();
+            var hours = date.getHours();
+            var mins  = date.getMinutes();
+            var secs  = date.getSeconds();
+            // console.log(hours,mins,secs);
+            var tapy  = function(num){
+                if(num < 10){
+                    return "0" + num;
+                }else{
+                    return "" + num;
+                }
+            }
+            var res   = tapy(hours) + tapy(mins) + tapy(secs);
+            // console.log(res);
+            for(var i = 0,html = "",n = 0,len = res.length;i < len;i++){
+                n++;
+                html +=  '<img src="../images/'+res[i]+'.png" alt="">';
+                if(n % 2 == 0){
+                    html += ":";
+                }
+            }
+            oDiv.innerHTML = html.slice(0,-1);
+        },1000)
+    </script>
+</body>
+</html>

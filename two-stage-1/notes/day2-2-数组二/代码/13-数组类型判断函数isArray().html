@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*数组类型的判断*/
+  console.log(typeof [1, 2, 3]);    //object
+
+  console.log(Object.prototype.toString.apply([1, 3, 4]));  //[object Array]
+  // if (Object.prototype.toString.apply(arr) == "[object Array]")
+  // {
+  //   console.log("是数组");
+  // }
+
+  /*ES5推出新的方法Array.isArray()*/
+  console.log(Array.isArray([1, 2, 3]));    //true
+  console.log(Array.isArray(true));         //false
+
+  /*兼容方案*/
+  function isArray(arr) {
+    if (Array.isArray)
+    {
+      return Array.isArray(arr);
+    }else
+    {
+     return Object.prototype.toString.apply(arr) == "[object Array]";
+    }
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>{{name}}</p>
+        <p>{{age}}</p>
+        <p>{{price}}</p>
+        <p>年龄：<span id="age"></span></p>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        let data = {
+            name:'laoxie123',
+            age:'36',
+            price:'123456'
+        }
+        // 创建vue作用域
+        let vm = new Vue({
+            el:'#box',
+            data
+        })
+
+
+        // 存储器属性
+        let jingage = 18;
+        let proset = {
+            // getter 赋值
+            get age(){
+                return jingage
+            },
+            // setter 修改
+            set age(num){
+                jingage = num;
+                document.querySelector('#age').innerHTML = jingage;
+            }
+        }
+        document.querySelector('#age').innerHTML = jingage;
+        
+    </script>
+</body>
+</html>

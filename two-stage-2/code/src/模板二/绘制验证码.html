@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>画布</title>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            width: 200px;
+            height: 60px;
+            background-color: pink;
+            margin: 100px 300px;
+        }
+     */
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="100px" height="40px"></canvas>
+    <script>
+        window.onload = function(){
+
+            
+            function drawFill(){
+                // 拿到标签
+                let canvas = document.getElementById("myCanvas");
+                console.log(canvas);
+                
+                // 获取画布2D
+                let cantxt = canvas.getContext("2d");
+
+                // 画布填充色
+                cantxt.fillStyle = "pink";
+
+                // 确定画布在父元素中的位置，画布大小默认300 x 150
+                cantxt.fillRect(0,0,canvas.width,canvas.height);
+
+                // 划线，设置路径
+                    // // 开启路径------可省略
+                    // cantxt.beginPath();
+                    // // 设置起点
+                    // cantxt.moveTo(50,50);
+                    // // 设置终点
+                    // cantxt.lineTo(200,100);
+                    // // 设置颜色  stroke--------用笔画...
+                    // cantxt.strokeStyle = "red";
+                    // // 绘制线条
+                    // cantxt.stroke();
+
+                function drawText(color,size,num,x,y){
+                    // 生成随机五位验证码
+                    // 设置字体
+                    cantxt.fillStyle = color;
+                    cantxt.font = size + "px Arial";
+                    // 随机生成
+                    let str = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLMNBVCXZ";
+                    for(let i = 0;i < num;i++){
+                        let text = str[parseInt(Math.random() * str.length)];
+                        let pw    = i * x + 10;
+                        let ph    = Math.random() * y + 20;
+                        cantxt.fillText(text,pw,ph);   
+                    };
+                };
+
+                // 随机数
+                drawText("blue",24,5,15,20);
+                //画 3 条线
+                for(let n = 0;n < 3;n++){
+                    drawLine(canvas,cantxt);
+                };
+
+                // 画 30 点
+                for(let m = 0;m < 30;m++){
+                    drawPoint(canvas,cantxt);
+                };
+            };
+            drawFill();
+
+
+            
+            // 封装划线函数
+            function drawLine(canvas,cantxt){
+                // 生成随机数
+                let moveX = Math.random() * canvas.width;
+                let lineX = Math.random() * canvas.width;
+                let moveY = Math.random() * canvas.height;
+                let lineY = Math.random() * canvas.height;
+                // 设置起点和终点
+                cantxt.moveTo(moveX,moveY);
+                cantxt.lineTo(lineX,lineY);
+                // 设置线条宽度
+                cantxt.lineWidth = Math.random();
+                // 设置线条颜色
+                cantxt.strokeStyle = "red";
+                // 绘制线条
+                cantxt.stroke();
+            };
+
+            // 封装画点函数，像素较小的线条
+            function drawPoint(canvas,cantxt){
+                // 生成随机数
+                let pX = Math.random() * canvas.width;
+                let pY = Math.random() * canvas.height;
+                let pw = Math.random();
+                // 设置起点和终点
+                cantxt.moveTo(pX,pY);
+                cantxt.lineTo(pX + pw,pY + pw);
+                // 设置线条宽度
+                cantxt.lineWidth = pw;
+                // 设置线条颜色
+                // cantxt.strokeStyle = "#000";
+                // 绘制线条
+                cantxt.stroke();
+            };
+
+
+            
+
+            
+
+            
+
+        }
+    </script>
+</body>
+</html>

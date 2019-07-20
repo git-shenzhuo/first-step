@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*Animal 父构造函数*/
+  function Animal() {
+    this.color = "red";
+    this.address = "教室里面";
+  }
+  Animal.prototype.move = function () {
+    console.log("动物开始移动了");
+  }
+  Animal.prototype.type = "动物";
+
+  /*Person 子构造函数*/
+  function Person(name,age) {
+    this.name = name;
+    this.age  = age;
+  }
+
+  /*原型链继承：设置子构造函数的原型对象为父构造函数的实例对象*/
+  /*原型链继承特点：可以获取父构造函数的原型成员 + 实例成员*/
+  /*问题：继承来的实例成员存在共享的问题*/
+  Person.prototype = new Animal();
+  Person.prototype.run = function () {
+    console.log("人可以跑路");
+  }
+  var p1 = new Person("小明",89);
+  var p2 = new Person("萧红",18);
+
+  console.log(p2);
+
+  //p1.address = "在厕所";
+  p1.__proto__.address = "在厕所";
+  console.log(p1);
+</script>
+</body>
+</html>

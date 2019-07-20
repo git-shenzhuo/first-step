@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*ES6新特性之对象字面量增强写法*/
+
+  let des = "className";
+  let age = 18;
+
+  /*01-以字面量方式创建对象的典型写法*/
+  // let o = {
+  //   name:"zs",
+  //   showName:function () {
+  //     console.log(this.name);
+  //   },
+  //   [des]:"哈哈哈",
+  //   age            /*"age":18*/
+  // };
+
+  /*02-增强写法(属性)*/
+  // let o = {age};   //let o = {"age":18}
+  // console.log(o);
+
+  /*03-增强写法(方法)*/
+  let o = {
+    name:"zs",
+    age,
+    showName() {
+      console.log(this.name);
+    },
+    showAge(){
+      console.log(this.age);
+    }
+  }
+
+  o.showName();
+  o.showAge();
+
+  var res = a =>console.log("箭头函数",a);
+  res("江安河哈哈");
+
+  var res = function () {
+    console.log("箭头函数");
+  }
+</script>
+</body>
+</html>

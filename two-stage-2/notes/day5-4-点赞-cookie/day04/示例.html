@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>微博点赞</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            padding: 50px;
+            background: #000;
+        }
+        
+        li {
+            list-style: none;
+            background: #fff;
+            width: 600px;
+            height: 100px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        li .title {
+            padding: 5px;
+            font-size: 14px;
+            /* font-weight: lighter; */
+            color: #666
+        }
+        
+        li .name {
+            color: #ccc;
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        
+        li .good {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 12px
+        }
+        
+        li .good span {
+            display: block;
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+            color: #fff;
+            margin-right: 10px;
+            float: left;
+            border-radius: 20px;
+        }
+        
+        li .good span:nth-child(1) {
+            background: lightblue;
+        }
+        
+        li .good span:nth-child(2) {
+            background: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <!-- <li data-id="">
+            <h3 class="title">说三条支撑你活下去的理由？因为我胡三六条，可是六条被人杠了……</h3>
+            <p class="name">malin</p>
+            <p class="good">
+                <span class="dianzan">点赞 15</span>
+                <span class="dis">评论 22</span>
+            </p>
+        </li> -->
+    </ul>
+    <script src="./src/jquery-3.4.1.js"></script>
+    <script>
+        var oList = document.querySelector("#list");
+        //01-先发请求获取数据来生成页面
+        $.get({
+            url: "./server/weibo.json",
+            cache: false,
+            success(data) {
+                var res = "";
+                data.forEach((element) => {
+                    res += `<li data-id="${element.id}">
+                            <h3 class="title">${element.content}</h3>
+                            <p class="name">${element.username}</p>
+                            <p class="good">
+                                <span class="dianzan">点赞 ${element.good}</span>
+                                <span class="dis">评论 ${element.con}</span>
+                            </p>
+                            </li>`;
+
+                });
+                // console.log(res);
+                oList.innerHTML = res;
+            }
+        })
+
+
+        //02-点赞功能的实现
+        oList.onclick = function(e) {
+            if (e.target.className == "dianzan") {
+                console.log(e.target);
+                console.log();
+                var index = e.target.parentElement.parentElement.getAttribute("data-id");
+                // 03-获取索引后发起网络请求，修改JSON数据的内容
+                $.get({
+                    url: "./server/test.php?id=" + index,
+                    success(data) {
+                        console.log(data);
+                        //根据数据来更新UI界面
+                        e.target.innerHTML = "点赞" + data;
+                    }
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

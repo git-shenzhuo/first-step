@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        div {
+            margin: 20px;
+        }
+
+        h3 {
+            width: 120px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: blue;
+            border: 1px solid #000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        ul {
+            height: 0;
+            overflow: hidden;
+            transition: height,1s;
+        }
+
+        li {
+            width: 120px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: pink;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>新闻</h3>
+        <ul>
+            <li>新闻1</li>
+            <li>新闻2</li>
+            <li>新闻3</li>
+            <li>新闻4</li>
+            <li>新闻5</li>
+        </ul>
+        <h3>军事</h3>
+        <ul>
+            <li>军事1</li>
+            <li>军事2</li>
+            <li>军事3</li>
+            <li>军事4</li>
+            <li>军事5</li>
+        </ul>
+        <h3>政治</h3>
+        <ul>
+            <li>政治1</li>
+            <li>政治2</li>
+            <li>政治3</li>
+            <li>政治4</li>
+            <li>政治5</li>
+        </ul>
+    </div>
+    <script>
+        window.onload = function () {
+            var btns = document.getElementsByTagName("h3");
+            var ullist = document.getElementsByTagName("ul");
+            var len = btns.length;
+            for (var i = 0; i < len; i++) {
+                btns[i].istrue = true;
+                btns[i].onclick = function () {
+                    if (this.istrue) {
+                        this.nextElementSibling.style.height = "150px";
+                    }else{
+                        this.nextElementSibling.style.height = "0";
+                    }
+                    
+                    this.istrue = !this.istrue;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

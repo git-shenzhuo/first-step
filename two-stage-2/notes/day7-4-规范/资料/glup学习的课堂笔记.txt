@@ -1,0 +1,111 @@
+
+步骤：
+
+gulp技术：自动化构建工具
+
+作用：压缩css、js、img，合并文件，改名字，编译sass，拷贝
+
+使用步骤：
+
+1.安装node环境，下一步，下一步，安装C盘；
+
+2.在你的根目录下，在地址栏输入cmd回车；
+
+3.检测node和npm是否成功：
+
+  node -v 出现版本号，证明成功了
+  nmp -v  出现版本号，证明成功了
+
+4.安装gulp：
+
+  方法一：安装gulp再安装依赖插件：一个个单独安装；
+ 全局安装：npm install gulp -g
+ 局部安装：npm install gulp --save -dev
+
+ 安装插件：
+   npm install --save -dev gulp-sass
+   npm install --save -dev gulp-cssmin
+   ……
+ 
+ 方法二：一次性安装gulp和依赖的插件：
+ 
+ 把package.json包放到根目录下：
+ 写指令： npm install(一般没有出现红色err就成功了)
+ 
+ 指令检测：gulp -v ，证明成功了
+ 
+ 5.使用gulp，进行任务的执行：先写任务，再执行任务
+ 
+ 写任务：创建gulpfile.js文件，放在根目录下；
+ 打开命令行执行任务：gulp 任务名称
+ 
+ 6.常见的任务：
+
+// 1.编译sass
+var sass = require('gulp-sass');
+gulp.task('sass',function(){
+  return gulp.src('src/lib/style.scss')
+  			 .pipe(sass())
+  			 .pipe(gulp.dest('dist/lib'));
+});
+
+
+//2.布置任务：压缩css文件
+var cssmin=require('gulp-cssmin');
+gulp.task('cssmin',function(){
+  return gulp.src('src/lib/css.css')
+  			 .pipe(cssmin())
+  			 .pipe(gulp.dest('dist/css'));
+});
+
+
+//3.重命名
+var rename=require('gulp-rename');
+gulp.task('rename',function(){
+  return gulp.src('src/lib/css.css')
+  			 .pipe(cssmin())
+  			 .pipe(rename('css.min.css'))
+  			 .pipe(gulp.dest('dist/css'));
+});
+
+//4.压缩js并重命名:先转成es5再压缩
+var uglify=require('gulp-uglify');
+
+gulp.task('uglify',function(){
+  return gulp.src('src/js/common.js')
+  			 .pipe(uglify())
+  			 .pipe(rename('common.min.js'))
+  			 .pipe(gulp.dest('dist/js'));
+});
+
+
+//5.合并文件
+var concat=require('gulp-concat');
+gulp.task('concat',function(){
+  return gulp.src(['dist/css/aa.css','dist/css/bb.css'])
+  			 .pipe(concat('all.css'))
+  			 .pipe(gulp.dest('dist/css'));
+});
+
+
+//6.压缩图片
+var imagemin=require('gulp-imagemin');
+
+gulp.task('imgmin',function(){
+  return gulp.src('src/img/*')
+  			 .pipe(imagemin())
+  			 .pipe(gulp.dest('dist/img'));
+});
+
+ 
+//7.将es6转成es5
+
+安装babel：
+全局安装babel：npm install -g babel-cli
+本地安装：npm install --save-dev babel-preset-es2015 babel-cli 
+把.babelrc文件拷贝到根目录下，写指令开始转es5
+
+//es6转成es5指令：
+babel es6文件路径 -o 转成功后保存的路径
+babel src/js/es6.js -o dist/js/es5.js
+

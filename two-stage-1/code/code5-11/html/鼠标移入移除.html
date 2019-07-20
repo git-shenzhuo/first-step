@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 300px;
+            height: 400px;
+            margin: 100px auto;
+            border: 3px solid #336699;
+        }
+        .gril img{
+            width: 280px;
+            height: 280px;
+            margin: 10px;
+        }
+        ul{
+            width: 280px;
+            margin: 20px 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        li{
+            width: 60px;
+            height: 60px;
+            box-sizing: border-box;
+        }
+        .list{
+            border: 3px solid red;
+        }
+        li img{
+            width: 100%;
+            height: 100%;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="gril"><img src="../images/01.png" alt=""></div>
+        <ul>
+            <li><img src="../images/01.png" alt=""></li>
+            <li><img src="../images/02.png" alt=""></li>
+            <li><img src="../images/03.png" alt=""></li>
+            <li><img src="../images/04.png" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        window.onload = function(){
+            var gril = document.getElementsByClassName("gril")[0];
+            var img  = gril.children[0];            
+            var List = document.getElementsByTagName("li");
+            var arrset = ["../images/01.png","../images/02.png","../images/03.png","../images/04.png"];
+            for(var i = 0 , len = List.length ; i < len; i++){
+                List[i].index = i;
+                List[i].onmouseenter = function(){
+                    img.src = arrset[this.index];
+                    List[i].className = "list";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .one-list{
+            width: 450px;
+            height: 44px;
+            margin: 100px auto;
+            border: 1px solid red;
+        }
+        .one-list>li{
+            float: left;
+            background-color: pink;
+        }
+        li{
+            width: 150px;
+            height: 44px;
+            text-align: center;
+            line-height: 44px;
+           
+        }
+        .two-list{
+            display: none;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <ul class="one-list">
+        <li>
+            <span>视频教材</span>
+            <ul class="two-list">
+                <li>Java视频</li>
+                <li>云计算视频</li>
+                <li>H5视频</li>
+                <li>Python视频</li>
+                <li>会员视频</li>
+            </ul>
+        </li>
+        <li>
+            <span>合作企业</span>
+            <ul class="two-list">
+                <li>黑马</li>
+                <li>达内</li>
+                <li>潭州</li>
+                <li>TBA</li>
+                <li>360</li>
+            </ul>
+        </li>
+        <li>
+            <span>项目开发</span>
+            <ul class="two-list">
+                <li>动画</li>
+                <li>网页</li>
+                <li>游戏</li>
+                <li>其它</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        $(function(){
+            // 01------------------
+            // $(".one-list>li").mouseenter(function(){
+            //     $(this).children(".two-list").slideDown("slow");
+            // })
+            // $(".one-list>li").mouseleave(function(){
+            //     $(this).children(".two-list").slideUp("slow");
+            // })
+
+            // 02-----------------
+            // $(".one-list>li").hover(function(){
+            //     // 鼠标移入
+            //     $(this).children(".two-list").slideDown("slow");
+            // },function(){
+            //     // 鼠标移出
+            //     $(this).children(".two-list").slideUp("slow");
+            // })
+
+            // 03-----------------
+            $(".one-list>li").hover(function(){
+                // stop()  清空动画排队，直接显示最后结果
+                $(this).children(".two-list").stop().slideToggle("slow");
+            })
+
+
+            // $().slideDown()-----------展开
+            // $().slideUp()-------------折叠
+            // $().slideToggle()---------切换
+            // $().delay()---------------延迟
+        })
+    </script>
+</body>
+</html>

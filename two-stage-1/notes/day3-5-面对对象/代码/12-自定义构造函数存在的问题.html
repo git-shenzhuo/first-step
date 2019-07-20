@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  // /*01-提供构造函数*/
+  // function showName() {
+  //   console.log("姓名：" + this.name);
+  // }
+  // function showAge() {
+  //   console.log("年龄：" + this.age);
+  // }
+  //
+  //
+  // function Person(name,age) {
+  //
+  //   /*通过this来设置属性和方法*/
+  //   this.name = name;
+  //   this.age  = age;
+  //
+  //   this.showName = showName;
+  //   this.showAge  = showAge;
+  // }
+  //
+  //
+  // /*02-调用构造函数创建对象*/
+  // var p1 = new Person("光头强",98);
+  // /*执行Person函数 内部新创建空对象 赋值给this 通过this来设置属性和方法  最后返回*/
+  // var p2 = new Person("小浩浩",23);
+  // /*执行Person函数 内部新创建空对象 赋值给this 通过this来设置属性和方法  最后返回*/
+  //
+  // var p3 = new Person("小灰灰",2);
+  // /*执行Person函数 内部新创建空对象 赋值给this 通过this来设置属性和方法  最后返回*/
+  // var p4 = new Person("小灰灰",2);
+  // console.log(p3 == p4);         //false
+  //
+  // /*如果创建大量的对象，需要给每个对象中的方法都分配空间 浪费性能*/
+  // showName = function () {
+  //   console.log("---");
+  // }
+  //
+  // showAge = 123;
+  //
+  /*解决方案：
+  * [1] 把方法提取到构造函数的外面去-共享  引入了新的问题(可能会被随意的修改 + 破坏了封装性)  不建议
+  * [2] JavaScript基于原型对象的语言  把需要共享的成员写在构造函数的原型对象。
+  * */
+
+
+  /*01-提供构造函数*/
+  function Person(name,age) {
+    this.name = name;
+    this.age  = age;
+  }
+
+  /*02-设置构造函数的原型对象*/
+  Person.prototype.showName = function () {
+    console.log("姓名 = " + this.name);
+  }
+  Person.prototype.showAge = function () {
+    console.log("年龄 = " + this.age);
+  }
+
+  /*03-通过new调用构造函数创建对象*/
+  var p1 = new Person("范冰冰",39);
+  var p2 = new Person("范丞丞",20);
+  console.log(p1);
+  console.log(p2);
+</script>
+</body>
+</html>

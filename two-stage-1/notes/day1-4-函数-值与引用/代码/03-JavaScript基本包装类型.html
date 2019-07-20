@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*思考：数字、字符串、布尔值它们是简单数据类型，我们知道对象有属性和方法，而且只有对象才有属性和方法？为什么数字或字符串它们也能访问属性和调用方法呢？*/
+
+  /*关键：JavaScript为了方便我们操作简单数据类型，所以为我们提供另外三种数据类型：字符串对象类型(String) 数字对象类型(Number) 布尔值对象类型(Boolean)*/
+
+  /*
+  * string  - String
+  * number  - Number
+  * boolean - Boolean
+  * 当基本数据类型的值在访问属性或者是调用方法的时候，JavaScript内部会自动的将他们转换为对象类型，这就好像是对基本的数据类型值进行了一层包装，所以我们也叫做包装类型。
+  * */
+
+  var str = "哈哈";
+  var num = 123.345;
+  console.log(str);
+  console.log(num);
+
+  /*当基本数据类型值访问成员的时候，内部会先根据当前的基本数据来创建一个对应的对象类型
+  * 通过该对象来访问属性或者是调用方法
+  * 当操作执行完，把结果返回给基本数据类型的变量
+  * 然后把创建的对象销毁。
+  * */
+  var len = str.length;
+  console.log(len);
+  /*
+  * [1] var _str = new String("哈哈");
+  * [2] _str.length
+  * [3] len = 2
+  * [4] _str = null;
+  * */
+  console.log(str.charAt(1));
+
+  /*对比string和String*/
+  console.log(str);
+  console.log(new String("哈哈"));
+
+
+  /*基本包装类型使用注意*/
+  /*备注：临时对象在把数据返回后随即就被销毁。*/
+  var test = "我是字符串";
+  console.log(test.name);       //undefined
+  test.name = "我是name";
+  console.log(test.name);       //"我是name" ？ undefined[正确]
+
+
+  /*Number-Boolean*/
+  var i  = 123;
+  var iO = new Number(123);
+  console.log(typeof i);
+  console.log(typeof iO);
+  console.log(i);
+  console.log(iO);
+
+  var b  = true;
+  var bO = new Boolean(true);
+  console.log(typeof b);
+  console.log(typeof bO);
+  console.log(b, bO);
+
+</script>
+</body>
+</html>

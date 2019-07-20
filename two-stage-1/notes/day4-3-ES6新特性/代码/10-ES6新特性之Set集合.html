@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*Set集合类型 很像数组，特点：集合中数据必须是唯一的*/
+
+  let arr = [1,2,3,4,4,3,2,1,5];
+
+  /*Set集合的基本操作*/
+  /*01-创建得到集合*/
+  let dataSet = new Set();
+  console.log(dataSet);
+
+  /*02-往集合中添加数据*/
+  dataSet.add(10);
+  dataSet.add(20);
+  dataSet.add(30);
+  dataSet.add({name:"zs"});
+  dataSet.add([1,2,34]);
+  console.log(dataSet.length);    //undefined  错误的演示
+  console.log(dataSet.size);      //5
+
+  /*03-删除集合中的数据*/
+  dataSet.delete(20);
+
+  /*04-检查集合中是否存在指定的数据*/
+  console.log(dataSet.has(10));
+
+  /*05-清空集合*/
+  dataSet.clear();
+  console.log(dataSet);
+
+  /*06-和数组结合实用，通过数组来创建集合*/
+  let set = new Set(arr);          //数组去重
+  let res = Array.from(set);
+  console.log(set);
+  console.log(res);
+
+
+</script>
+</body>
+</html>

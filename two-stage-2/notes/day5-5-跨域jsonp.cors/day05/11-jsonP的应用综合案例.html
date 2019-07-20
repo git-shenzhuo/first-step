@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入搜索的内容">
+    <script>
+        //https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=26525,1441,21122,18560,29064,28518,29099,28834,28584,29071&wd=w&req=2&bs=%E6%AF%9B%E6%A6%82&pbs=%E6%AF%9B%E6%A6%82&csor=3&pwd=%E6%AF%9B%E6%A6%82&cb=fn
+        function callBack(obj) {
+            let list = obj["g"];
+            let oUl = document.getElementsByTagName("ul")[0] || document.createElement("ul");
+            oUl.innerHTML = "";
+            list.forEach(element => {
+                let oLi = document.createElement("li");
+                oLi.innerText = element["q"];
+                oUl.appendChild(oLi);
+            });
+            document.body.appendChild(oUl);
+        }
+    </script>
+    <script>
+        let oInput = document.querySelector("input");
+        oInput.onkeyup = function() {
+            let text = oInput.value;
+            //当监听到输入框内容变化，我们就创建script标签设置src属性发送请求
+            let oScript = document.createElement("script");
+            oScript.setAttribute("src", `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=26525,1441,21122,18560,29064,28518,29099,28834,28584,29071&wd=${text}&req=2&bs=%E6%AF%9B%E6%A6%82&pbs=%E6%AF%9B%E6%A6%82&csor=3&pwd=%E6%AF%9B%E6%A6%82&cb=callBack`)
+            document.body.appendChild(oScript);
+        }
+    </script>
+</body>
+
+</html>

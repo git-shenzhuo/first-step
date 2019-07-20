@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  "use strict";
+
+  /*01-注意点 在严格模式下this*/
+  var o1 = {
+    name:"老张",
+    show:function () {
+      console.log(this);
+    }
+  }
+
+  var o2 = {
+    name:"老王"
+  }
+
+  /*默认 如果没有传递参数 | null | undefined，那么this默认指向window*/
+  /*严格模式下，如果没有传递参数|undefined，那么this默认指向undefined,如果传递的是null，那么this指向null*/
+  o1.show.call();
+  o1.show.call(null);
+  o1.show.call(undefined);
+
+  /*02-简单的应用*/
+  var likeArray = {0:"zs",1:"北京",2:"H5",length:3};
+  var arr = ["zs","北京","H5"];
+  console.log(arr, likeArray);
+
+  /*Array.prototype.push()*/
+  arr.push("前端开发");
+  console.log(arr);
+
+  /*likeArray能够支持添加元素*/
+  //likeArray.push("Java开发");
+  //Array.prototype.push.apply(likeArray,["java开发"]);   //likeArray.push("java开发")
+
+  [].push.apply(likeArray,["java开发","iOS开发"]);
+  console.log(likeArray);
+
+
+</script>
+</body>
+</html>

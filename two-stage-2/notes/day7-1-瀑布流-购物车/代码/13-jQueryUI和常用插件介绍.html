@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="src/jquery-ui.css">
+  
+  <!--01-导入jQuery框架-->
+  <!--02-导入jQuery-UI的js文件-->
+  <!--03-导入jQuery-UI的css文件-->
+  <script src="src/jquery-3.4.1.js"></script>
+  <script src="src/jquery-ui.js"></script>
+  <style>
+    img{
+      height: 100px;
+    }
+
+    .box{
+      width: 400px;
+      height: 400px;
+      border: 2px solid #ccc;
+    }
+  </style>
+  
+</head>
+<body>
+
+<div class="box">
+  <img src="img/0.jpg" alt="">
+</div>
+
+<div id="resizable" class="ui-widget-content">
+  <h3 class="ui-widget-header">Resizable</h3>
+</div>
+
+<script>
+  $(function () {
+    // $("img").draggable();
+    // $("img").draggable({axis:"x"});
+    // $("img").draggable({axis:"y"});
+    // $("img").draggable({containment:".box"});
+    $("#resizable").resizable();
+  })
+</script>
+</body>
+</html>

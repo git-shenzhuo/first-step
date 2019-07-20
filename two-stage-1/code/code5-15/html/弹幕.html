@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #barrage{
+            width: 800px;
+            height: 350px;
+            margin: 0 auto;
+            background-color: #aaa;
+            position: relative;
+            overflow: hidden;
+        }
+        .span{
+            position: absolute;
+            white-space: nowrap;
+            left: 800px;
+        }
+        #video{
+            width: 100%;
+            height: 300px;
+            background-color: #000;
+        }
+        #input{
+            width: 400px;
+            height: 30px;
+            margin: 10px;
+        }
+        #btn{
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="barrage">
+        <div id="video"></div>
+        <input type="text" id="input">
+        <button id="btn">发送</button>
+    </div>
+    <script>
+        window.onload = function(){
+            var page = {
+                div : "#video",
+                input : "#input",
+                button : "#btn",
+                inif : function(){
+                    // 拿到标签
+                    this.div    = document.querySelector(this.div);
+                    this.input  = document.querySelector(this.input);
+                    this.button = document.querySelector(this.button);
+                    // 给this定义，方便后面好使用
+                    var self = this;
+                    // 按钮点击事件
+                    this.button.onclick = function (){
+                        // 拿到input里面的内容
+                        var mag = self.input.value;
+                        // 发送弹幕
+                        (new Barrage()).init(mag);
+                        // 清空输入框内容
+                        self.input.value = "";
+                        // 选定输入框
+                        self.input.focus();
+                    }
+                }
+            }
+            page.inif();
+            // 随机数生成函数
+            function numRandom(max,min){
+                return parseInt(Math.random() * (max - min + 1) + min)
+            }
+            // 构造函数，提供弹幕样式
+            function Barrage(){
+                // 随机颜色
+                var r = parseInt(Math.random() * 256);
+                var g = parseInt(Math.random() * 256);
+                var b = parseInt(Math.random() * 256);
+                this.color = "rgb(" + r + "," + g + "," + b + ")";
+                // 随机字体大小
+                this.fontsize = numRandom(10,30);
+                // 随机位置
+                this.top = numRandom(10,260);
+                // 随机移动速度
+                this.seelt = numRandom(-10,-1);
+                // 命名空的变量，准备装标签
+                this.ele = null;
+            }
+            // 相同样式装在原型对象中
+            Barrage.prototype = {
+                constructor:Barrage,
+                init:function(mag){
+                    // 创建弹幕并且设置样式
+                    var item = document.createElement("span");
+                    item.className      = "span";
+                    item.innerText      = mag;
+                    item.style.color    = this.color;
+                    item.style.fontSize = this.fontsize + "px";
+                    item.style.top      = this.top + "px";
+                    // 输出到页面
+                    page.div.appendChild(item);
+                    this.ele            = item;
+                    this.move()
+                },
+                move:function(){
+                    var self = this;
+                    var time = setInterval(function(){
+                        var left = self.ele.offsetLeft + self.seelt;
+                        self.ele.style.left = left + "px";
+                        // 判断移动距离
+                        if(left <= -self.ele.offsetWidth){
+                            // 如果达到左边并走完，停止定时器，清除标签
+                            self.remove();
+                            clearInterval(time);
+                        }
+                    },30)
+                },
+                remove:function(){
+                    this.ele.parentNode.removeChild(this.ele);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

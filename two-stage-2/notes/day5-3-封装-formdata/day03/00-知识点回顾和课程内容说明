@@ -1,0 +1,39 @@
+课程内容：
+[1] 网络请求的封装
+[2] jQuery中Ajax模块
+[3] JSON和XML数据解析
+[4] Ajax2.0相关的知识(fromData)
+[5] 抓包工具的使用
+
+知识点复习：
+[1] Ajax 
+    Ajax: Async javaScript and XML 异步网络请求的技术，主要特点(发送请求刷新页面的局部)。
+    优点|缺点 
+
+[2] Ajax发送GET请求
+    (1) 获取请求对象 new XMLHttpRequest  
+    (2) 设置请求对象 open
+        001-请求路径(url?查询字符串)
+        002-请求方法(post)
+        003-异步请求|同步请求
+        004-参数
+    (3) 发起网络请求  send
+    (4) 监听网络请求状态  onreadystatechange
+    (5) 解析服务器返回的数据(JSON | XML)-根据数据处理业务逻辑|更新UI
+
+[3] Ajax发送POST请求
+    (1) 获取请求对象 new XMLHttpRequest  
+    (2) 设置请求对象 open
+        001-请求路径(url)
+        002-请求方法(post)
+        003-异步请求|同步请求
+    (+) 设置请求头信息
+    (3) 发起网络请求     send(查询字符串)
+    (4) 监听网络请求状态  onreadystatechange
+    (5) 解析服务器返回的数据(JSON | XML)-根据数据处理业务逻辑|更新UI
+
+
+GET请求和POST请求
+001-参数处理方式不同，GET请求参数以查询字符串的方式跟在URL的后面,POST请求参数放在请求体
+002-安全性差异，GET请求安全性很差，POST请求相对安全(HTTP协议-明文传输)。
+002-大小限制，浏览器的限制(2KB),文件上传应该使用POST请求。

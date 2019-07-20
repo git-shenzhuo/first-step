@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #header{
+            width: 100%;
+            height: 300px;
+            background-color: #ccc;
+        }
+        #nav{
+            width: 100%;
+            height: 100px;
+            background-color: pink;
+        }
+        #main{
+            width: 100%;
+            height: 3000px;
+            background-color: #666;
+        }
+        #footer{
+            width: 100%;
+            height: 200px;
+            background-color: #119955;
+        }
+        /* #gg{
+            width: 900px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: red;
+            display: none;
+        } */
+        .fix{
+            width: 900px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: red;
+            position: fixed;
+            bottom: 0;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="nav"></div>
+    <div id="main"></div>
+    <div id="footer"></div>
+    <div id="gg"></div>
+    <script>
+        window.onload = function(){
+            var oDiv1 = document.getElementById("header");
+            var oDiv2 = document.getElementById("nav");
+            var oDiv3 = document.getElementById("main");
+            var oDiv4 = document.getElementById("footer");
+            var oDiv5 = document.getElementById("gg");
+            var les   = (oDiv1.offsetHeight + oDiv2.offsetHeight + oDiv3.offsetHeight + oDiv4.offsetHeight) / 4;
+            window.onscroll = function(){
+                var height = window.scrollY;
+                if(height >= les){
+                    oDiv5.className = "fix";
+                }else{
+                    oDiv5.className = "";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

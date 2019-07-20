@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*ES6新特性之Class的基本语法  类*/
+  /*JavaScript原本没有类的概念，面向对象基于构造函数和原型对象来实现  语法糖*/
+  // function Person(name,age) {
+  //   this.name = name;
+  //   this.age  = age;
+  // }
+  //
+  // Person.prototype = {
+  //   constructor:Person,
+  //   showName:function () {
+  //     console.log(this.name);
+  //   },
+  //   showAge:function () {
+  //     console.log(this.age);
+  //   }
+  // }
+  //
+  // var p = new Person("zs",19);
+  // console.log(p);
+
+  class Person{
+    constructor (name,age){
+      this.name = name;
+      this.age  = age;
+    }
+    showName(){
+      console.log("姓名 " + this.name);
+    }
+    showAge(){
+      console.log("年龄 " + this.age);
+    }
+    static showInfo(){
+      console.log("info+++ " + this);
+    }
+  }
+
+  var p1 = new Person("老王",99);
+  var p2 = new Person("张老汉",23);
+  console.log(p1);
+  console.log(p2);
+  Person.showInfo();
+
+</script>
+</body>
+</html>

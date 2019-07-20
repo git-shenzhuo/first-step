@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*
+  * 函数和变量声明的提升
+  * javaScript的代码在执行的时候，[1]先执行预解析的操作，[2]然后再按顺序从上向下执行
+  * 预解析的时候主要工作
+  * (1) 把代码中所以的变量和函数声明提升到当前作用域的最顶端
+  * (2) 对代码进行优化
+  * */
+
+  // var a ;
+  // console.log(a);     //undefined
+  // a = 123;
+  // console.log(a);     //123
+
+
+  /*01-变量声明的提升*/
+  // console.log(b);     //? 为什么它没有报错
+  // var b = 234;
+  // console.log(b);     //234
+
+  /*
+  * var b;
+  * console.log(b);
+  * b = 234;
+  * console.log(b);
+  * */
+
+  /*02-函数声明的提升*/
+  f();
+
+  function f() {
+    console.log("---f--");
+  }
+
+  /*
+   * function f() {
+      console.log("---f--");
+    }
+  * f();
+  * */
+
+</script>
+</body>
+</html>

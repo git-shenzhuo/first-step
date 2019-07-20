@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 640px;
+            height: 380px;
+            margin: 50px auto;
+        }
+
+        img {
+            width: 640px;
+            height: 380px;
+        }
+
+        button {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div><img src="../images/img/0.jpg" alt=""></div>
+    <button>自定播放</button>
+    <script>
+        window.onload = function () {
+            var div = document.getElementsByTagName("div")[0];
+            var img = div.children[0];
+            var btn = document.getElementsByTagName("button")[0];
+            var num = 0;
+            var temp;
+            btn.onclick = function () {
+                if (temp) {
+                    img.src = '../images/img/' + num + '.jpg';
+                    clearInterval(temp);
+                    temp = undefined;
+                    return;
+                }
+                temp = setInterval(function () {
+                    if (num > 76) {
+                        num = 1;
+                    }
+                    img.src = '../images/img/' + num + '.jpg';
+                    num++;
+                }, 30)
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 500px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .msg-list{
+            width: 100%;
+            border: 2px solid red;
+            min-height: 200px;
+            max-height: 350px;
+            overflow: auto;
+        }
+        li{
+            height: 30px;
+            background-color: #cccccc;
+            border-radius: 8px;
+            line-height: 30px;
+            margin: 5px;
+            padding: 0 5px;
+            float: left;
+            clear: both;            
+        }
+        .lest-right{
+            float: right;
+            color: #fff;
+            background-color: #119955;
+        }
+        textarea{
+            width: 100%;
+            height: 50px;
+            margin: 20px 0;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+        }
+        .gret{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            line-height: 30px;
+            color: #ccc;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="msg-list">
+            <!-- <li class="lest-right">你好</li>
+            <li>你也好</li> -->
+        </ul>
+        <textarea></textarea>
+        <button>发送</button>
+        <div class="gret">对方正在输入...</div>
+    </div>
+    <script>
+        window.onload = function(){
+            var MsgList = document.getElementsByClassName("msg-list")[0];
+            var oText   = document.getElementsByTagName("textarea")[0];
+            var oBtn    = document.getElementsByTagName("button")[0];
+            var oDiv    = document.getElementsByClassName("gret")[0];
+            var arrWen  = ["你好","小姐姐干嘛呢","我去找你啊","今天天气怎么样","你做好准备了吗","我喜欢你"]
+            var arrDa   = ["你好我就好","采茶呢","好啊，过来一起玩撒","晴空万里，风起云涌","你在说些什么哟","你是个好人"]
+            // 点击的时候进行
+            oBtn.onclick = function(){
+                // 拿到输入框的文本
+                var text  = oText.value;
+                // 生成新的li标签
+                var MyMag = document.createElement("li");
+                MyMag.className = "lest-right";
+                // 给标签插入文本
+                MyMag.innerHTML = text;
+                // 把新标签加入ul中
+                MsgList.appendChild(MyMag);
+                // 生成回答的标签
+                var AiMag = document.createElement("li");
+                // 比较决定文本
+                var index = arrWen.indexOf(text);
+                var AiText = arrDa[index] ? arrDa[index] : "山里信号差，消息不见啦";
+                AiMag.innerHTML = AiText;
+                // 延时执行
+                var time = 1000 + Math.random() * 2000;
+                // oDiv.style.display = "none";
+                setInterval(function(){
+                    MsgList.appendChild(AiMag);
+                    // oDiv.style.display = "block";
+                },time)
+                
+                
+            }
+        } 
+       
+
+    
+    </script>
+</body>
+</html>

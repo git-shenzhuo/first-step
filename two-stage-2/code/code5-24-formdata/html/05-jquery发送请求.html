@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <button>发送请求</button>
+    <script>
+        window.onload = function(){
+            // 拿到标签
+            let btn = $("button")[0];
+            console.log(btn);
+            let url1 = "http://localhost/second%20stage/code/code5-24/php/05-jquery-ajax.php";
+            let url2 = "http://localhost/second%20stage/code/code5-24/php/03-ajax2-1.php";
+            let url3 = "http://localhost/second%20stage/code/code5-24/php/04-ajax2-2.php"
+            // 点击事件
+            btn.onclick =function(){
+                // 创建ajax请求
+                $.ajax({url:url1,
+                    data:{name:"张思锐",
+                    age:14   
+                    },
+                    success(responseText){
+                    let span = document.createElement("span");
+                    span.innerText = responseText;
+                    document.body.appendChild(span);
+                    },
+                    error(xhr){
+                        let span = document.createElement("span");
+                        span.innerText = xhr.statusText;
+                        document.body.appendChild(span);
+                    }
+                });
+                $.get({url:url2,
+                    data:{name:"张思锐",
+                    age:14   
+                    },
+                    success(responseText){
+                    let span = document.createElement("span");
+                    span.innerText = responseText;
+                    document.body.appendChild(span);
+                    },
+                    error(xhr){
+                        let span = document.createElement("span");
+                        span.innerText = xhr.statusText;
+                        document.body.appendChild(span);
+                    }
+                });
+                $.post({url:url3,
+                    data:{name:"张思锐",
+                    age:14   
+                    },
+                    success(responseText){
+                    let span = document.createElement("span");
+                    span.innerText = responseText;
+                    document.body.appendChild(span);
+                    },
+                    error(xhr){
+                        let span = document.createElement("span");
+                        span.innerText = xhr.statusText;
+                        document.body.appendChild(span);
+                    }
+                })
+            }
+            
+        }
+    </script>
+</body>
+</html>

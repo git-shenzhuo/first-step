@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*[1] 注意同名的情况
+  *     (1) 变量同名
+  *     (2) 函数同名(覆盖)
+  *     (3) 变量和函数同名  ---- 仅仅提升函数的声明，变量声明忽略处理(优先级)
+  *
+  * [2] 字面量方式创建函数声明的提升
+  * */
+  console.log(a);
+  var a = 123;
+  console.log(a);
+  var a = 111;
+  console.log(a);
+
+  /*
+  * var a;
+  * console.log(a);
+  * a = 123;
+  * console.log(a);
+  * a = 111;
+  * console.log(a);
+  * */
+
+  f1();
+  function f1() {
+    console.log("1");
+  }
+
+  f1();
+  function f1() {
+    console.log("2")
+  }
+  f1();
+
+  function f1() {
+    console.log("3")
+  }
+  f1();
+  /*
+  *
+  * function f1() {
+      console.log("3");
+    }
+  * f1();
+  * f1();
+  * f1();
+  * f1();
+  *
+  * */
+
+  console.log(t);
+  var t = "我是t";
+
+  console.log(t);
+
+
+  function t() {
+    console.log("----");
+  }
+  console.log(t);
+  /*
+  * function t() {
+      console.log("----");
+    }
+  * console.log(t);
+  * console.log(t);
+  * t = "我是t";
+  * console.log(t);
+  * */
+
+  /* 错误的理解
+  * function t() {
+      console.log("----");
+    }
+  * console.log(t);
+  * t = "我是t";
+  * console.log(t);
+  * console.log(t);
+  * */
+
+  /* 错误的理解
+    var t
+  * console.log(t);
+  * console.log(t);
+  * t = "我是t";
+  * console.log(t);
+  * */
+
+  console.log("-------");
+  /*02-字面量方法*/
+
+  test();
+  var test = function () {
+    console.log("--test---");
+  }
+
+  /*
+  * var test;
+  * test();
+  * test = function () {
+      console.log("--test---");
+  * }
+  * */
+
+
+  // test();
+  // function test() {
+  //   console.log("+++test+++");
+  // }
+</script>
+</body>
+</html>

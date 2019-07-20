@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid red;
+            border-spacing: 0;
+        }
+        tr:nth-child(2n){
+            background-color: #119955;
+        }
+        td {
+            width: 200px;
+            height: 50px;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    行：<input type="text">
+    列：<input type="text">
+    <button>生成</button>
+    <table>
+
+    </table>
+    <script>
+        window.onload = function () {
+            var oInput1 = document.getElementsByTagName("input")[0];
+            var oInput2 = document.getElementsByTagName("input")[1];
+            var oBtn = document.getElementsByTagName("button")[0];
+            var oTab = document.getElementsByTagName("table")[0];
+            var result = "";
+            oBtn.onclick = function () {
+                var hang = oInput1.value * 1;
+                var lie = oInput2.value * 1;
+                for (var i = 0; i < hang; i++) {
+                    result += "<tr>";
+                    for (var j = 0; j < lie; j++) {
+                        result += "<td>" + "表格编号：" + i + "-" + j + "</td>";
+                    }
+                    result += "</tr>";
+                }
+                oTab.innerHTML = result;
+            }
+        }
+    </script>
+</body>
+
+</html>

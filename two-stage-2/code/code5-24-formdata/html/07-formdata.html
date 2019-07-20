@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+        window.onload =()=>{
+            let data = new FormData();
+            // 增   set
+            data.set("name","王五");
+            data.set("age",35);
+            data.set("city","北京");
+            data.set("addres","白云区");
+            // 如果想要一个key带多个value值，可以用追加的写法   append
+            data.append("city","上海");
+            data.append("city","广州");
+            data.append("city","乌鲁木齐");
+            // 删除delete
+            data.delete("addres","白云区");
+            // 查询   get
+            console.log(data.get("city"));
+            console.log(data.getAll("city"));
+            // 检查是否有某个数据    has
+            console.log(data.has("age"));
+            console.log(data.has("fff"));
+            
+            
+            // 访问data里面的数据需要遍历之后才能打印出来
+            data.forEach((value,index)=>{
+                console.log(index,value);
+                
+            })
+            console.log(data);
+            
+        }
+    </script>
+</body>
+</html>

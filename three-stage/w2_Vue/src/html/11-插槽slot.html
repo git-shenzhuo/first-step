@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>插槽slot</title>
+</head>
+<body>
+    <h1>插槽slot</h1>
+    <div id="box">
+        <mynav>
+            <template v-slot:slot1>第一个插槽</template>
+            <template v-slot:slot2>第二个插槽</template>
+            <template v-slot:default='obj'>
+                <ul>
+                    <li v-for='nav in navs' :class='{carrey:obj.active==nav.name.toLowerCase()}'>{{nav.title}}</li>
+                </ul>
+            </template>
+            
+        </mynav>
+    </div>
+
+    <template id="mynav">
+        <div>
+            <h2><slot name='slot1'></slot></h1>
+            <h4><slot name='slot2'></slot></h4>
+            <slot :active='active'></slot>
+        </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:'#box',
+            data:{
+                navs:[{
+                    title:'首页',
+                    name:'Home',
+                    path:'/home'
+                },{
+                    title:'发现',
+                    name:'Discover',
+                    path:'/discover'
+                },{
+                    title:'我的',
+                    name:'Mine',
+                    path:'/mine'
+                }]
+            },
+            components:{
+                mynav:{
+                    data() {
+                        return {
+                            active:'home'
+                        }
+                    },
+                    template:'#mynav'
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

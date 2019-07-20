@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload = () => {
+            let reg = {
+                // 邮箱
+                email(str){return /\b\w+@\w+\.[a-zA-Z]+\b/.test(str);},
+                // 手机号
+                phone(str){return /\b1[3-9]\d{9}\b/.test(str);},
+                // QQ号
+                qq(str){return /\b[1-9]\d{4,11}\b/.test(str);},
+                // 身份证号
+                card(str){return /\b\d{15}|\d{18}|\d{14}X|\d{17}X\b/.test(str);},
+                // 座机区号
+                landline(str){return /\b(\d{3,4}-)\d{6,8}(-\d{3,6})\b/.test(str);},
+                // 整数
+                int(str){return /\b\d*\b/.test(str);},
+                // 小数
+                float(str){return /\b\d+\.\d+\b/.test(str);},
+                // 负数,包括整数和小数
+                negative(str){return /\b-\d+|-\d+\.\d+\b/.test(str);},
+                // 长度为6-18的密码,长度在6~18之间，只能包含字母、数字和下划线
+                password(str){return /\b\w{6,18}\b/.test(str);},
+                // 账号(字母开头，允许5-16字节，允许字母数字下划线)
+                account(str){return /\b[a-zA-Z]\w{4,15}\b/.test(str);},
+                // 日期格式
+                deta(str){return /\b\d{4}[-./]([1-9]|1[012])[-./](0[1-9]|[12][0-9]|3[01])\b/.test(str);},
+                // ￥数
+                money(str){return /\b[1-9]\d*(\.\d{2})?\b/.test(str);},
+                // 邮编
+                code(str){return /\b[1-9]\d{5}\b/.test(str);},
+                // ip
+                ipA(str){return /\b([1-9]|[1-9]\d|1[0-2][0-6])\.(\d|[1-9]\d|[12][0-5][0-5])\.(\d|[1-9]\d|[12][0-5][0-5])\.(\d|[1-9]\d|[12][0-5][0-5])\b/.test(str);},
+                ipB(str){return /\b(1[2-8][0-9]|19[01])\.(\d|[1-9]\d|[12][0-5][0-5])\.(\d|[1-9]\d|[12][0-5][0-5])\.(\d|[1-9]\d|[12][0-5][0-5])\b/.test(str);},
+                ipC(str){return /\b(19[2-9]|2[01][0-9]|22[0-3])\.(\d|[1-9]\d|[12][0-5][0-5])\.(\d|[1-9]\d|[12][0-5][0-5])\.(\d|[1-9]\d|[12][0-5][0-5])\b/.test(str);},
+                
+            }
+    }
+    </script>
+</body>
+</html>

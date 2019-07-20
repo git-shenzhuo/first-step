@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*案例：提取url路径中的参数
+  * url:https://www.baidu.com/s?name=zs&age=18&className=html5&rsv_idx=1&tn=baidu&wd=王宝强
+  *
+  * url:统一资源定位符
+  * 协议(https)
+  * 域名(www.baidu.com) 主机地址(ip地址)  10.3.141.38::8080  DNS域名解析服务
+  * 资源的路径(/s)
+  * 分隔符(?)
+  * 查询字符串(name=zs&age=18&className=html5&rsv_idx=1&tn=baidu&wd=王宝强)
+  *   参数：
+  *     name=zs
+  *     age=18
+  *     className=html5
+  *     rsv_idx=1
+  *     tn=baidu
+  *     wd=王宝强
+  *
+  * 要求：提取url中的参数保存到对象中
+  *     {name:"zs",age:18....}
+  * */
+        var url = "https://www.baidu.com/s?name=zs&age=18&className=html5&rsv_idx=1&tn=baidu&wd=王宝强";
+        var arr1 = url.split("?");
+        console.log(arr1);
+        arr1.shift();
+        console.log(arr1);
+        var arr2 = arr1.join("").split("&");
+        console.log(arr2);
+        var obj = {};
+        arr2.forEach(function(value,index){
+            var temp = value.split("=");
+            console.log(temp);
+            obj[temp[0]] = temp[1];  
+        })
+        console.log(obj);
+    </script>
+</body>
+</html>

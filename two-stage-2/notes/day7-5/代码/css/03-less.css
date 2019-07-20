@@ -1,0 +1,20 @@
+/*01-声明变量，变量名@bgc 变量值 #195*/
+body {
+  background: #ffc0cb;
+}
+div {
+  background: #ffc0cb;
+  color: #ff0000;
+  width: 100px;
+  height: 44px;
+  line-height: 44px;
+  border: 1px solid #ff0000;
+  margin-bottom: 15px;
+  text-align: center;
+}
+h1 {
+  font-size: 30px;
+  color: #ff0000;
+  text-align: center;
+}
+/*# sourceMappingURL=03-less.css.map */

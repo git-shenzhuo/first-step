@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*
+  * [1] 大小写转换的方法
+  * [2] 处理字符串前后空格的方法 trim
+  * [3] 字符串匹配和替换的方法
+  * */
+
+  var str = "Hi Nice to meet u!  Nice";
+
+  /*01-把字符串转换为小写*/
+  console.log(str.toLowerCase());         //hi nice to meet u!
+  console.log(str.toLocaleLowerCase());   //hi nice to meet u!
+
+
+  /*02-把字符串转换为大写*/
+  console.log(str.toUpperCase());       //HI NICE TO MEET U!
+  console.log(str.toLocaleUpperCase()); //HI NICE TO MEET U!
+
+  /*03-清理字符串前面或者是后面的N个空格*/
+  /*说明：trim方法是ES5的方法 --- jQuery.trim()*/
+  var temp = " 哈哈 嘿嘿  呵呵   ";
+  console.log(temp);                    //" 哈哈 嘿嘿  呵呵   "
+  console.log(temp.trim());             //"哈哈 嘿嘿  呵呵"
+
+  /*04-替换字符串*/
+  /*
+  str.replace(string,value)
+  str.replace(RegExp,value)
+  * */
+  var res = str.replace("Nice","测试");
+  console.log(res);
+</script>
+</body>
+</html>

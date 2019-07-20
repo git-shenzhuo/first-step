@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<div id="boxID">我是div标签</div>
+<span>我是span1</span>
+<span>我是span2</span>
+<p>我是个p</p>
+
+<script>
+  $(function () {
+    /*需求：设置div标签背景颜色 宽度 高度*/
+    /*实现方式(1)*/
+    // $("#boxID").css("background","#195");
+    // $("#boxID").css("width","200px");
+    // $("#boxID").css("height","50px");
+
+    /*实现方式(2)  链式编程的风格*/
+    /*链式编程内部实现原理：每次在调用完方法后都把当前正在操作的对象返回*/
+    //$("#boxID").css("background","red").css("width","200px").css("height","50px");
+
+    /*实现方式(3) 通过对象来设置多个样式*/
+    $("#boxID").css({
+      "background":"#ccc",
+      "width":"300px",
+      "height":"100px",
+      "border":"1px solid red"
+    })
+
+    $("span").css("background","#834")
+  })
+</script>
+</body>
+</html>

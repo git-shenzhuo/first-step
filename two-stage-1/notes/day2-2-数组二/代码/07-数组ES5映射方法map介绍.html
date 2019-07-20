@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*数组映射的方法-map
+  * 语法：arr.map(callback(value,index,arrT){...})
+  * 备注：map是更高级的forEach 对数组的元素进行操作(拼接 | 放大)，返回一个新的数组
+  * */
+
+  var arr = [1,"光头强",34,true,"毛毛","吉吉","熊大",18,2019];
+
+  /*01-对比forEach*/
+  // arr.forEach(function (value, index, array) {
+  //   console.log(index, value, array);
+  // })
+  //
+  // console.log("______________");
+  // arr.map(function (value, index, array) {
+  //   console.log(index, value, array);
+  // })
+
+  /*02-map对数组元素的操作*/
+  var res = arr.map(function (value, index, array) {
+
+    console.log(index, value, array);
+
+    /*[1]每循环一次就拿到当前的元素来进行检查，如果该元素时数字那么就x2，如果是其他数据类型的值那么就原样返回，所有返回的数据都会被添加到一个新的数组中.
+    * [2]如果在回调函数中没有主动的return返回，那么默认总是返回undefined，这些undefined也都会被添加到新数组中。
+    * */
+    if (typeof value == "number")
+    {
+     return value * 2;
+    }else if(typeof value == "string")
+    {
+      return "动物：" + value;
+    }
+    else
+    {
+      return value;
+    }
+  })
+
+  console.log(res);
+
+</script>
+</body>
+</html>

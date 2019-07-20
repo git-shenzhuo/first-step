@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./src/Cookie.js"></script>
+    <style>
+        .box {
+            position: absolute;
+            top: 50;
+            left: 50;
+            width: 150px;
+            padding: 20px;
+            border: 1px solid #ccc
+        }
+        
+        img {
+            width: 150px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./img/cookie.png" alt="">
+    </div>
+    <script>
+        //01-处理图片的拖拽功能
+        let oImg = document.getElementsByClassName("box")[0]
+
+        oImg.onmousedown = function(event) {
+            //获取按下位置的坐标
+            console.log(event.clientX);
+            var offsetX = event.clientX - oImg.offsetLeft;
+            var offsetY = event.clientY - oImg.offsetTop;
+
+            document.onmousemove = function(e) {
+                oImg.style.left = e.pageX - offsetX + "px";
+                oImg.style.top = e.pageY - offsetY + "px";
+            }
+
+        }
+        document.onmouseup = function() {
+            document.onmousemove = null;
+
+            //把数据保存到Cookie中
+            Cookie.setItem("left", oImg.offsetLeft);
+            Cookie.setItem("top", oImg.offsetTop);
+        }
+
+        if (Cookie.hasItem("left")) {
+            //设置标签的位置
+            let left = Cookie.getItem("left");
+            let top = Cookie.getItem("top");
+            oImg.style.left = left + "px";
+            oImg.style.top = top + "px";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  *     输入两个数n，a
+  *     如输入的是 n=3， a=2；则输出 2 + 22 + 222 的值。
+        如输入的是 n=4， a=3；输出 3 + 33 + 333 + 3333的值。
+        提示:
+         + n = 3,相加三次,每次相加比前一次相加的数,多一位
+         + 每次多的这个位数的值为a, 如果a为2则 2*10+2, 22*10+2
+  * */
+
+  var n = 3;
+  var a = 2;
+  var total = 0;
+
+  for (var i = 0;i < n; i++)
+  {
+    total = total + a;
+    a = a * 10 + a % 10;
+  }
+
+  console.log(total);
+
+  /*
+  * i = 0;total = 2 a = 22
+  * i = 1;total = 2 + 22  a = 222
+  * i = 2;total = 2 + 22 + 222; a = 2220 + 2
+  * */
+</script>
+</body>
+</html>

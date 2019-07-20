@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="item">
+        <input type="file" name="filename">
+    </form>
+    <input type="button" value="上传">
+    <script>
+        window.onload=()=>{
+            let btn = document.querySelectorAll("input")[1];
+            let url = "http://localhost/second%20stage/code/code5-24/php/08-formdata.php";
+            btn.onclick=()=>{
+                let data = new FormData(document.forms.namedItem("itme"));
+                let xhr = new XMLHttpRequest;
+                xhr.open("post","http://localhost/second%20stage/code/code5-24/php/08-formdata.php",true);
+                xhr.send(data);
+                xhr.onload=()=>{
+                    if(xhr.status == 200){
+                        console.log("上传成功");
+                        
+                    }
+                } 
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 手机号码：11位数字，第一位必须是1，第二位是3-9之间的数
+  * qq号码： 10000    5~12位数字，第一位不能为0
+  * 座机：区号(3-4)-电话号码(6-8)-分机号(3-6) 区号和分机号可以有1个也可以没有，电话号码不能0开头
+  * 邮箱地址:前缀可以是1个或者多个数字、字母、下划线以及-+&%等特殊符号，邮箱所属公司可以是1个或者多个数字、字母、下划线以及-+&%等特殊符号，后缀可以是1个或者多个字母(包括大小写)
+  * love@163.com
+  */
+
+  let phoneReg = /^1[3-9]\d{9}$/;
+  let qqReg    = /^[1-9]\d{4,11}$/;
+  let numberReg= /^(\d{3,4}-)?[1-9]\d{5,7}(-\d{3,6})?$/;
+  let emailReg = /^[\w-+&%]+@[\w-+&%]+\.[a-zA-Z]+$/;
+
+  console.log(phoneReg.test("18987411125"));
+  console.log(qqReg.test("10000"));           //true
+  console.log(qqReg.test("00001"));           //false
+  console.log(qqReg.test("704905290"));       //true
+  console.log(qqReg.test("704905290123"));    //true
+
+  console.log(numberReg.test("020-123456-520"));      //true
+  console.log(numberReg.test("020-123456-5201314"));  //false
+  console.log(numberReg.test("020-123456-52013"));    //true
+  console.log(numberReg.test("020-123456"));          //true
+  console.log(numberReg.test("123456-52013"));        //true
+  console.log(numberReg.test("12345678"));            //true
+
+  console.log(emailReg.test("love@126.com"));
+  console.log(emailReg.test("@126.com"));             //false
+  console.log(emailReg.test("love@126com"));          //false
+  console.log(emailReg.test("love@+.com"));           //true
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{list-style: none}
+    .box{margin: 50px auto;width: 600px;position: relative}
+    .msg-list{border: 2px solid #cccccc;min-height: 200px;max-height: 400px;padding: 5px;overflow-y: auto}
+    textarea{width: 100%;min-height: 50px;}
+    li{
+      padding: 0 8px;
+      line-height: 2;
+      background: #ccc;
+      border-radius: 8px;
+      float: left;
+      clear: both;
+    }
+    .my-msg{
+      background: #58bc58;
+      color: #fff;
+      float: right;
+    }
+
+    .status{position: absolute;left: 0;bottom: 0;right: 0;color: #888;text-align: center;display: none}
+  </style>
+</head>
+<body>
+<div class="box">
+  <ul class="msg-list">
+    <!--<li class="my-msg">在吗？</li>-->
+    <!--<li>你好，我没在。</li>-->
+    <!--<li class="my-msg">在吗？</li>-->
+    <!--<li>你好，我没在。</li>-->
+  </ul>
+  <textarea></textarea>
+  <button>发送消息</button>
+  <div class="status">对方正在输入....</div>
+</div>
+<script>
+
+  /*00-价值2个亿的数组*/
+  var s = ["在吗","你好","我喜欢你","我真的喜欢你","怎么这么久不回复我？","最近去哪了"];
+  var a = ["亲，没在！","大家好才是真的好！","...","恩，我真的觉得你挺好的..","刚刚洗澡去了","我回乡下陪爷爷采茶去了！"];
+
+  /*01-先获取页面中指定的标签*/
+  var oSend = document.getElementsByTagName("button")[0];
+  var oText = document.getElementsByTagName("textarea")[0];
+  var oList = document.getElementsByClassName("msg-list")[0];
+  var oStat = document.getElementsByClassName("status")[0];
+
+  /*02-给按钮添加点击事件*/
+  oSend.onclick = function () {
+    /*02-1 获取输入框的内容*/
+    var text = oText.value;
+    console.log(text);
+
+    /*02-2 根据输入的内容创建一条消息*/
+    var oMyMsg = document.createElement("li");
+    oMyMsg.className = "my-msg";
+    oMyMsg.innerHTML =  text;
+    console.log(oMyMsg);
+
+    /*02-3 把自己的消息插入到页面*/
+    oList.appendChild(oMyMsg);
+
+    /*03-处理自动回复的消息*/
+    /*03-1 先检查对方发来的消息是否已有对应的回复*/
+    var index = s.indexOf(text);   /*索引 | -1*/
+    var anStr = a[index] ? a[index] : "风很大，我听不到你在说什么...";
+
+    /*03-2 根据回复的消息创建标签*/
+    var oAnMsg = document.createElement("li");
+    oAnMsg.innerHTML = anStr;
+
+    oStat.style.display = "block";
+    var timer = 1000 + Math.random() * 2000;
+    setTimeout(function () {
+
+      oStat.style.display = "none";
+
+      /*03-3 把消息插入到页面中并显示出来*/
+      oList.appendChild(oAnMsg);
+
+    },timer);
+  }
+
+</script>
+</body>
+</html>

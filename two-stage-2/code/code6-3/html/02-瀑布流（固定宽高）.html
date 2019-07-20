@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100%;
+            position: relative;
+        }
+
+        .box div {
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/jquery-random.js"></script>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        $(function () {
+            // 生成子标签
+            for (let i = 0; i < 30; i++) {
+                // 生成子标签
+                let itme = $(`<div>${i + 1}</div>`);
+                itme.addClass("itme");
+                // 设置样式
+                itme.css("background", $.getRandomColor());
+                // 插入页面
+                $(".box").append(itme);
+            };
+
+            // 设置  top left  的值
+            let margin = 10;
+            let oItme = $(".itme");
+            let itmeWidth = oItme.width();
+            let itmeHeight = oItme.height();
+
+            // 封装方法
+            function Waterfall() {
+
+                // 当前页面行能够容纳都少个标签(标签宽度和margin)
+                let len = Math.floor($(window).width() / (itmeWidth + margin));
+                oItme.each(function (i, ele) {
+                    // 标签所在的行和列
+                    let itmeLine = Math.floor(i / len);
+                    let itmeColumn = i % len;
+                    // top left计算公式
+                    let itmeTop = margin + itmeLine * (margin + itmeHeight);
+                    let itmeLeft = margin + itmeColumn * (margin + itmeWidth);
+                    // 设置top left 可用css样式，或者自定义动画
+                    $(this).css({
+                        "left": itmeLeft + "px",
+                        "top": itmeTop + "px"
+                    });
+                    // $(ele).animate({left:itmeLeft,top:itmeTop},20);   
+                })
+            };
+
+            // 调用方法
+            Waterfall();
+
+            // 监听页面变化时做出改变
+            $(window).resize(function () {
+                Waterfall();
+            })
+        })
+    </script>
+</body>
+
+</html>

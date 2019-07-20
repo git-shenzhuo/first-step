@@ -1,0 +1,46 @@
+事件知识点复习
+[1] 给标签绑定(注册|添加)事件
+    (1) 直接在标签上面通过属性节点的方式绑定 <button onclick=""></button>
+    (2) 先获取标签，然后通过事件属性来绑定  oBtn.onclick = handle
+    (3) 先获取标签，然后addEventListener(type,handle,isCapture)
+
+[2] 事件流：事件的传递方向(具体的标签<---->根节点)
+    (1) 事件冒泡流 具体的标签---->根节点         IE
+    (2) 事件捕获流 具体的标签<----根节点         网景
+    (3) 现代浏览器DOM标准事件流：事件捕获阶段 处于目标阶段  事件冒泡阶段
+
+[3] 事件类型：
+    UI事件：load unload resize scroll
+    焦点事件：onfocus onblur  输入框     input.focus();
+    鼠标事件：
+      click
+      dblclick
+      mousedown
+      mouseup
+      mouseenter / mouseleave
+      mouseover  / mouseout
+      mousemove
+    文本事件：
+      input  输入框内容发生变化(实时)
+      change 输入框内容发生变化
+    键盘事件：
+      keydown
+      keyup
+      keypress 按下了字符
+
+
+[4] 事件对象：保存的是事件的详细信息
+    获取事件对象：事件处理函数中通过第一个参数来获取 兼容 var event = event || window.event;
+    事件对象成员：
+      button   0/1/2 左/滚/右
+      type     事件类型
+      坐标相关   pageX/Y clientX/Y offsetX/Y screenX/screenY
+      keyCode  检测键盘输入
+
+
+
+[1]正则表达式
+[2]ES6新特性(2 let 剪头函数 ....)
+[3]面向对象(Object )
+
+EcmaScript(变量 类型 控制语句 Object Array Function Date Math) + BOM(window) + DOM(... 事件)

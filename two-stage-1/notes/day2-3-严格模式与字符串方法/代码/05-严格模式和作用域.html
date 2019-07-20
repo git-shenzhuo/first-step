@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*在代码作用域顶端(最开始的位置)
+  * [1] 全局作用域  对整个作用域都开启严格模式
+  * [2] 局部作用域  对局部作用域开启严格模式
+  * */
+  function f() {
+    "use strict";
+
+     a = 123;
+    console.log(a);
+  }
+
+  f();
+
+  b = 234;
+  console.log(b);
+
+</script>
+</body>
+</html>

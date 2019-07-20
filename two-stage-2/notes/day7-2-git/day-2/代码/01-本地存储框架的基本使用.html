@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/store.min.js"></script>
+
+</head>
+<body>
+<script>
+    // localStorage.setItem("name","zs");
+    // localStorage.setItem("age",18);
+    //
+    var dataArr = [{name:"zs",className:"H5"},{name:"ls",className:"IOS"},{name:"wq",className:"java"}];
+    // localStorage.setItem("key",JSON.stringify(dataArr));
+
+    /*01-保存数据*/
+    store.set("name","lw");
+    store.set("age",19);
+    store.set("key",dataArr);
+
+    /*02-读取数据*/
+    console.log(store.get("name"));
+    console.log(store.get("key"));
+
+    /*03-删除数据*/
+    store.remove("name");
+
+    /*04-清空数据*/
+    store.clear();
+</script>
+</body>
+</html>

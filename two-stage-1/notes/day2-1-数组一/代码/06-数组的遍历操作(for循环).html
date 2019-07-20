@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*数组的遍历操作
+  * [1] for循环遍历数组(性能)  建议
+  * [2] for...in循环遍历数组  不建议 会把数组原型对象上面的成员枚举出来。
+  * [3] forEach()           建议
+  * */
+
+  /*01-for*/
+  // Array.prototype.des = "描述";
+  // Array.prototype.info = "信息";
+
+ var arr = ["C罗", "卡卡", "萨拉赫", 2015, "英超","曼联"];
+ for (var i = 0 ,len = arr.length;i < len;i++)
+  {
+    console.log("数组当前的索引：" + i + "  数组当前的元素 " + arr[i]);
+  }
+
+  /*1 i = 0 ; i < arr.搜索内部的length 6*/
+  /*2 i = 1 ; i < arr.搜索内部的length 6*/
+
+
+  /*02-for..in*/
+  /*数组是一种特殊的对象(key-value) 数组(index-ele)*/
+  console.log("_________");
+  var obj = {name:"zs",age:18};
+  for (var key in obj)
+  {
+    console.log(key, obj[key]);
+  }
+
+  console.log("_____________");
+  for (var index in arr)
+  {
+    console.log("数组当前的索引：" + index + "  数组当前的元素 " + arr[index]);
+  }
+
+  console.log("_____________");
+
+  /*03-forEach*/
+  /*value 当前循环对应的元素*/
+  /*index 当前循环对应的索引*/
+  /*arrT  数组本身 arrT === arr*/
+  arr.forEach(function (value,index,arrT) {
+    console.log("数组当前的索引：" + index + "  数组当前的元素 " + value);
+    console.log(arrT === arr);
+
+    /*this--window*/
+    console.log(this);
+  });
+
+</script>
+</body>
+</html>

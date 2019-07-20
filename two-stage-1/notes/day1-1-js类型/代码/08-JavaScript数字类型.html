@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 数字(number)类型基本情况
+  * [1] 种类：整数(整型) | 小数(浮点数)  支持科学计数法 4
+  * [2] 进制：
+  *     十进制(默认) 二进制(0b|0B) 八进制(0o|0O) 十六进制(0x|0X)
+  * [3] 转换 toString(基数)
+  * [4] 四舍五入
+  * [5] NaN not a number不是一个数字(当我们需要一个数字但是本身却不是一个数字的时候就会得到NaN)
+  *     a NaN参与任何的计算得到的结果都是NaN
+  *     b NaN连自己都不认
+  *     isNaN() 检查某个数据是否是NaN
+  * */
+
+  /*整数示例*/
+  var numInt1 = 18;
+  var numInt2 = 4.0076e7;
+
+  /*小数示例*/
+  var numFloat1 = 1.73;
+  var numFloat2 = 163.5;
+  var numFloat3 = 1.23832749847397593;
+  var numFloat4 = 1.2383e-6;
+
+  /*特殊的情况*/
+  var numFloat5 = .5;
+
+  /*如果小数点对该数据没有意义，那么会转化为整数*/
+  var test1     = 10.0;   //10
+  var test2     = -0.0;   //-0
+
+
+  console.log(numInt1);
+  console.log(numInt2);
+
+  console.log(numFloat3);
+  console.log(numFloat4);
+  console.log(numFloat5);
+
+  console.log(test1);
+  console.log(test2);
+
+  /*世界上只有10种人*/
+  /*02-进制*/
+  var num1 = 0b101;       //1 * 2的0次方 + 0 * 2的1次方 + 1 * 2的2次方 = 1 + 0 + 4 = 5
+  var num2 = 0B100011;
+  console.log(num1);      //5
+  console.log(num2);      //35
+
+  var num3 = 0o171;       //1 + 7 * 8 + 1 * 64 = 121
+  var num4 = 0O104;       //4 + 0  + 1 * 64 = 68
+  console.log(num3);      //121
+  console.log(num4);      //68
+
+  var num5 = 0x12a;       //10 + 2 * 16 + 1 * 16 *16 = 298
+  var num6 = 0X10F;
+  console.log(num5);
+  console.log(num6);
+
+  /*03-进制转换*/
+  console.log(1101);              //1101
+  console.log((1101).toString()); //1101
+  console.log((1101).toString(2));//10001001101  把1101这个数字转换为二进制的格式
+  console.log((1101).toString(8));//2115
+  console.log((1101).toString(16));//44d 13 + 4 * 16 + 4 * 16 * 16
+
+  console.log((1101).toString(3));//1111210
+
+  /*04-精确到某位*/
+  console.log((12.3484535).toFixed(2)); //12.35
+
+  /*05-NaN*/
+  console.log("red" * 3);               //NaN
+  console.log(console.log(1 + 2 + NaN));
+
+  console.log(1 == 1);        //true
+  console.log(NaN == NaN);    //false
+
+  console.log(isNaN(NaN));    //true
+
+  /*其他类型：是否不是一个数字，如果不是数字那么就返回true,否则返回false*/
+  console.log(isNaN(123));    //false
+  console.log(isNaN("---"));  //true
+
+  console.log(isNaN(true));   //false 注意点：内部存在隐式的类型转换 true-1
+  console.log(isNaN(""));     //false ""先尝试着转换为数字类型，可以被转换为0
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        div {
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 60px;
+            line-height: 400px;
+        }
+
+        div:nth-child(4n-3) {
+            background-color: pink;
+        }
+
+        div:nth-child(4n-2) {
+            background-color: blue;
+        }
+
+        div:nth-child(4n-1) {
+            background-color: green;
+        }
+
+        div:nth-child(4n) {
+            background-color: red;
+        }
+
+        ul {
+            width: 50px;
+            height: 600px;
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+
+        li {
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            text-align: center;
+            font-size: 20px;
+            line-height: 50px;
+        }
+
+        .class-color {
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>一楼商品区</div>
+    <div>二楼商品区</div>
+    <div>三楼商品区</div>
+    <div>四楼商品区</div>
+    <div>五楼商品区</div>
+    <div>六楼商品区</div>
+    <div>七楼商品区</div>
+    <div>八楼商品区</div>
+    <div>九楼商品区</div>
+    <div>十楼商品区</div>
+    <ul>
+        <li>F1</li>
+        <li>F2</li>
+        <li>F3</li>
+        <li>F4</li>
+        <li>F5</li>
+        <li>F6</li>
+        <li>F7</li>
+        <li>F8</li>
+        <li>F9</li>
+        <li>F10</li>
+    </ul>
+    <script>
+        window.onload = function () {
+            //抓标签；
+            var oDiv = document.getElementsByTagName("div");
+            var oLi = document.getElementsByTagName("li");
+            var len1 = oDiv.length;
+            var len2 = oLi.length;
+            //设置每楼高度为一屏；
+            for (var i = 0; i < len1; i++) {
+                oDiv[i].style.height = window.innerHeight + "px";
+            }
+            //
+            for (var j = 0; j < len2; j++) {
+                oLi[j].num = j;
+                oLi[j].onclick = function () {
+                    var hei = oDiv[this.num].offsetTop;  //每次点击滚动的距离
+                    window.scrollTo(0, hei);
+                    for (var n = 0; n < len2; n++) {
+                        oLi[n].className = "";  //清空样式，li标签样式为原本颜色
+                    }
+                    this.className = "class-color";  //添加样式，li标签变色
+                }
+
+            }
+            //滚动到相应楼层，按钮点亮
+            window.onscroll = function(){
+                var hei = window.scrollY;
+                for(var i = 0;i < len1;i++){
+                    if(hei >= oDiv[i].offsetTop){
+                        for(var j = 0;j < len2;j++){
+                            oLi[j].className = "";
+                        }
+                        oLi[i].className = "class-color";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /**/
+  var o = {
+    name:"zs",
+    age:18,
+    car:{
+      type:"校车",
+      number:"粤A66666",
+      color:"yellow",
+      des:{
+        info:"开往幼儿园的车",
+        persons:["顶顶","文婧","你"]
+      }
+    }
+  }
+
+  var t = {};
+  // t.name      = o.name;
+  // t.age       = o.age;
+  // t.car       = o.car;   /*之前的做法*/
+  //
+  // t.car       = {};      /*现在的做法*/
+  // t.car.type  = o.car.type;
+  // t.car.num   = o.car.number;
+  // t.car.color = o.car.color;
+  // t.car.des   = {};
+  // t.car.des.info = o.car.des.info;
+  // t.car.des.persons = [];
+  // t.car.des.persons.push(...o.car.des.persons);
+  //
+  // t.car.color = "red";
+  // console.log(t);
+  // console.log(o);
+
+  /*01-深拷贝实现方案1*/
+  let deepCopy = (target,source) =>{
+
+    /*遍历source这个要拷贝的对象*/
+    for (let key in source)
+    {
+      /*过滤 只拷贝source对象的实例对象*/
+      if (source.hasOwnProperty(key))
+      {
+        /*source[key] 可能是值类型的，也可能是引用类型的*/
+        if (!(typeof source[key] === "object"))
+        {
+          /*值类型的数据直接复制*/
+          target[key] = source[key];
+        }else
+        {
+          /*引用类型的数据 继续循环遍历*/
+          target[key] = Array.isArray(source[key]) ? [] : {};
+          deepCopy(target[key],source[key])
+        }
+      }
+    }
+  }
+
+  // deepCopy(t, o);
+  // console.log(t);
+  // console.log(o);
+
+  /*02-深拷贝实现方案2*/
+  /*02-1 先把对象转换为JSON字符串  序列化*/
+  let json = JSON.stringify(o);
+  console.log(json);
+  /*02-2 把json字符串转换为JavaScript对象 反序列化*/
+  t       = JSON.parse(json);
+  console.log(t);
+
+
+</script>
+</body>
+</html>

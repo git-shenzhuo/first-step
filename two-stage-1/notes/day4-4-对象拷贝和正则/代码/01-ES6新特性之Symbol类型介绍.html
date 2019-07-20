@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*ES6新特性之Symbol类型介绍*/
+  /* JavaScript原始数据类型：
+   * undefined   未定义
+   * null        空(对象指针)
+   * string      字符串
+   * number      数字
+   * boolean     布尔值
+   * Object      对象类型  Function Array Date Math String Number ...都是Object
+   * Symbol      符号类型
+   */
+
+  /*Symbol类型：独一无二的，不能被修改，类似于字符串，用于作为对象的私有属性*/
+  /*01-Symbol类型数据的创建*/
+  let s1 =  Symbol();
+  let s2 =  Symbol();
+  console.log(s1, s2 , s1 === s2);   //Symbol() Symbol() false
+
+  /*02-Symbol类型数据的创建(标识符)*/
+  let s3 = Symbol("李寻欢");
+  let s4 = Symbol("西门吹雪");
+  console.log(s3, s4);              //Symbol(李寻欢) Symbol(西门吹雪)
+
+  let s5 = Symbol("des");
+  let s6 = Symbol("me_des");
+
+  /*03-Symbol类型数据用于对象中*/
+  let o = {
+    name:"文静",
+    age:18,
+    [s5]:"文静年芳18，貌美如花",
+    [s6]:"我也年方18，我还没对象"
+  }
+
+  Object.defineProperty(o, "className",{
+    value:"H5",
+    writable:true,
+    configurable:true,
+    enumerable:false
+  })
+
+  console.log(o);       //{name: "文静", age: 18, Symbol(): "文静年芳18，貌美如花"}
+  console.log(o.s5);    //undefined   错误演示
+  console.log(o[s5]);   //文静年芳18，貌美如花
+  console.log(o[s6]);   //我也年方18，我还没对象
+
+  /*04-Symbol类型数据作为对象的key不可被枚举 - 私有 - 被隐藏*/
+  for (let key in o)
+  {
+    console.log(key, o[key]);
+  }
+
+  /*05-获取对象中符号类型属性的方法*/
+  /*获取对象中所有的属性，返回属性数组*/
+  console.log(Object.getOwnPropertyNames(o));  /*所有属性*/
+  console.log(Object.keys(o));                 /*仅仅获取可枚举的属性*/
+  console.log(Object.getOwnPropertySymbols(o));/*[Symbol(des), Symbol(me_des)]*/
+
+  /*06-Symbol.for方法会先在全局查找是否存在指定的Symbol数据，如果存在那么就直接使用该数据，如果不存在那么会创建对应的符号类型数据并且在全局登记*/
+  let s7 = Symbol.for("test");
+  let s8 = Symbol.for("test");
+  console.log(s7 === s8);     //true
+</script>
+</body>
+</html>

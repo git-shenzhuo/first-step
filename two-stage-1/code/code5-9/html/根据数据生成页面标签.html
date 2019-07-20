@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var oDiv = document.getElementsByTagName("div")[0];
+        var arr = [{
+            label: "用户名",
+            name: "username",
+            type: "text"
+        }, {
+            label: "密码",
+            name: "password",
+            type: "password"
+        }, {
+            label: "性别",
+            name: "gender",
+            type: "select",
+            value: ['男', '女', '不男', '不女', 'Gay', '妖王']
+        }, {
+            label: "爱好",
+            name: "hobby",
+            type: "checkbox",
+            value: ['篮球', '足球', '羽毛球', '兵乓球', '爬山', '购物', '旅游', '看美女']
+        }, {
+            label: '是否已婚',
+            name: 'married',
+            type: 'radio',
+            value: ['已婚', '未婚']
+        }, {
+            label: '简介',
+            name: 'resume',
+            type: 'textarea'
+        }];
+        var input = "";
+        arr.forEach(function (value, index) {
+            if (arr[index].value == undefined) {
+                // 生成input标签
+                var oInput = document.createElement("input");
+                // 生成type属性
+                var oType = document.createAttribute("type");
+                // 给type属性赋值
+                oType.nodeValue = value.type;
+                // 生成name属性
+                var oName = document.createAttribute("name");
+                // 给name属性赋值
+                oName.nodeValue = value.name;
+                // 把属性插入标签
+                oInput.setAttributeNode(oType);
+                oInput.setAttributeNode(oName);
+                // console.log(oInput);
+                 
+
+            } else if (arr[index].type == "select") {
+                var arr1 = arr[index].value;
+                // console.log(arr1);
+                // 生成select标签
+                var oInput = document.createElement("select");
+                // 生成name属性
+                var oSeleName = document.createAttribute("name");
+                oSeleName.nodeValue = value.name;
+                oInput.setAttributeNode(oSeleName);
+                // var Select = document.getElementsByTagName("select")[0];
+                // console.log(oSele);    
+                arr1.forEach(function (value, index) {
+                    var Option = document.createElement("option");
+                    var Value = document.createAttribute("value");
+                    Value.nodeValue = arr1[index];
+                    var oText1 = document.createTextNode(arr1[index]);
+                    Option.appendChild(oText1);
+                    Option.setAttributeNode(Value);
+                    // 把option插入select中
+                    oInput.appendChild(Option);
+                    // console.log(Option);
+                })
+                // console.log(oInput);               
+            } else {
+                // var oInput = "";
+                var arr2 = arr[index].value;  
+                arr2.forEach(function (value) {
+                    var oInput = "";
+                    // 生成type属性
+                    var oType = document.createAttribute("type");
+                    // 给type属性赋值
+                    oType.nodeValue = arr[index].type;
+                    // 生成name属性
+                    var oName = document.createAttribute("name");
+                    // 给name属性赋值
+                    oName.nodeValue = arr[index].name;
+                    // 生成input标签
+                    var oInput = document.createElement("input");
+                    var oText  = document.createTextNode(value);
+                    // 把属性插入标签
+                    oInput.setAttributeNode(oType);
+                    oInput.setAttributeNode(oName);
+                    // 把文本插入标签
+                    oInput.appendChild(oText);
+                    console.log(oInput);    
+                                    
+                })
+                // oDiv.appendChild(oInput);
+            }
+            console.log(oInput);
+            oDiv.appendChild(oInput);
+        })
+        // oDiv.appendChild(oInput);
+        
+        
+    </script>
+</body>
+
+</html>

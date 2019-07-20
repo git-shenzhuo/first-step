@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="下拉菜单">
+    <div></div>
+    <script>
+        var oInput = document.getElementsByTagName("input")[0];
+        var oDiv   = document.getElementsByTagName("div")[0];
+        var istrue = true;
+        oInput.onclick = function(){
+            if(istrue){
+                oDiv.style.display = "block";
+            }else{
+                oDiv.style.display = "none";
+            }
+            istrue = !istrue;
+        }
+        var date = new Date();
+        var week = date.getDay()
+        console.log(week);
+        
+    </script>
+</body>
+</html>

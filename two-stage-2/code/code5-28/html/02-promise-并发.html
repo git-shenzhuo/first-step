@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onload = () => {
+            // 并发任务，等前面的所有执行完在执行下面的
+            Promise.all([
+                new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log("tsak-----1");
+                        resolve();
+                    }, 2000)
+                }),
+                new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log("tsak-----2");
+                        resolve();
+                    }, 3000)
+                }),
+                new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log("tsak-----3");
+                        resolve();
+                    }, 4000)
+                })
+            ]).then(()=>{
+                new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log("then-----");
+                    }, 4000)
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>

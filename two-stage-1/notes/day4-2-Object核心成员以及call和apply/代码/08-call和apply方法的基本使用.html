@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+   /* call - apply 的基本使用
+    * 作用： 借用其他对象的方法并且绑定方法中的this
+    * 语法： Other.fn.call(o,arg1,arg2...) | Other.fn.apply(o,[arg1,arg2...])
+    * 区别：
+    *   [1] 如果调用函数的时候需要给函数传递参数，那么call方法以参数列表的方式处理，apply以数组处理
+    *   [2] 形参个数不同 call(1) apply(2)
+    * Function.prototype.call/apply
+    * */
+
+   var o1 = {
+     name:"老张",
+     showName:function () {
+       console.log("姓名 ",this.name);
+       console.log(this);
+     },
+     sum:function (a,b,c) {
+       return a + b + c;
+     }
+   }
+
+   var o2 = {
+     name:"老王"
+   }
+
+   o1.showName();           //姓名  老张
+   //o2.showName();         //报错 Uncaught TypeError: o2.showName is not a function
+
+   o1.showName.call(o2);    //老王向老张借了个锤子|o2借用o1对象的方法
+   o1.showName.apply(o2);   //姓名 老王
+   o1.showName.apply({});   //函数内部的this绑定给call或者是apply方法的第一个参数
+
+   console.log(o1.sum(1, 2,3));
+   console.log(o1.sum.call(o2,2,23,5));     //30  o2.sum()
+   console.log(o1.sum.apply(o2,[2,23,5]));  //30
+
+  function f() {}
+  console.dir(f);
+
+   console.log(Function.prototype.call.length);     //1 期望你调用的时候传递1个参数
+   console.log(Function.prototype.apply.length);    //2 期望你调用的时候传递2个参数
+
+  /*建议：如果借用对象的方法没有参数建议使用call,如果需要传参建议使用apply*/
+</script>
+</body>
+</html>

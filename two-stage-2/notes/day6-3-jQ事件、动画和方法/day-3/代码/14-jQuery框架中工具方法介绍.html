@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+
+<script>
+
+  $(function () {
+
+    /*01-jQuery工具方法-each*/
+    //var oDivs = $("div");
+    // for (var i = 0;i < oDivs.length ;i++)
+    // {
+    //   console.log(oDivs[i]);
+    // }
+
+    /*each方法用来遍历jquery实例对象，每循环一次就执行一次回调，在回调函数中可以获取当前循环的key-value*/
+    $("div").each(function (index,value) {
+      if (index == 1) return false;
+      console.log(index, value);
+    })
+
+    /*each方法回调函数中的this被绑定给了当前的标签，可以直接通过this来访问*/
+    // $("div").each(function () {
+    //   console.log(this);
+    // })
+
+
+    /*[1] each方法可以用来遍历jQuery对象*/
+    /*[2] each方法回调函数中的this指向当前正在被遍历的当前标签*/
+    /*[3] each方法可以退出。return false*/
+    /*[4] each方法其实有两个 $().each(fn) | $.each(target,fn) */
+
+    var arr = ["demoA","demoB",12,34,43];
+    $.each(arr, function (index,ele) {
+      console.log(index, ele);
+    })
+
+  })
+
+</script>
+</body>
+</html>

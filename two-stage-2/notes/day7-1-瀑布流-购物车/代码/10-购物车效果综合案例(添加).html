@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box
+    {
+      width: 100%;
+      background: #eee;
+    }
+
+    .item{
+      width: 180px;
+      /*height: 200px;*/
+      border: 1px solid #ccc;
+      padding: 10px;
+      background: #fff;
+      position: absolute;
+    }
+
+    .item-img{
+      width: 180px;
+      height: 200px;
+    }
+
+    .item-price
+    {
+      color: red;
+      font-size: 25px;
+    }
+
+    .item-name{
+      color: #888;
+    }
+
+    .item-press{
+      color: #999;
+      font-size: 14px;
+    }
+
+    .item-discuss{
+      font-size: 14px;
+      color: #2f6fad;
+    }
+
+    .item-cart{
+      height: 30px;
+      line-height: 30px;
+      position: relative;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+    .item-cart img{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 5px;
+    }
+    .item-cart span
+    {
+      position: absolute;
+      left: 40px;
+      height: 30px;
+      line-height: 30px;
+      width: 100px;
+      display: inline-block;
+      background: #fff;
+      padding: 0 10px;
+      font-size: 14px;
+    }
+
+    .item-cart:hover{
+      border: 1px solid #ff0088;
+    }
+
+  </style>
+  <script src="src/jquery-3.4.1.js"></script>
+  <script src="src/jquery.tools.js"></script>
+</head>
+<body>
+<div class="box"></div>
+<script>
+  $(function () {
+    /*准备数据*/
+
+    var data = [
+      {
+        id:"1904-1",
+        name:"Java编程思想（第4版）",
+        price:"99.4",
+        src:"1.jpg",
+        press:"机械工业出版社",
+        discuss:"11万+条评价"
+      },
+      {
+        id:"1904-2",
+        name:"深入理解计算机系统",
+        price:"127.9",
+        src:"2.jpg",
+        press:"机械工业出版社",
+        discuss:"3万+条评价"
+      },
+      {
+        id:"1904-3",
+        name:"算法导论",
+        price:"117.8",
+        src:"3.jpg",
+        press:"机械工业出版社",
+        discuss:"11万+条评价"
+      },
+      {
+        id:"1904-4",
+        name:"复盘",
+        price:"48.7",
+        src:"4.jpg",
+        press:"机械工业出版社",
+        discuss:"4.2万+条评价"
+      },
+      {
+        id:"1904-5",
+        name:"TCP/IP详解",
+        price:"222.600",
+        src:"5.jpg",
+        press:"机械工业出版社",
+        discuss:"2.8万+条评价"
+      },
+      {
+        id:"1904-6",
+        name:"Python学习手册",
+        price:"201.50",
+        src:"6.jpg",
+        press:"机械工业出版社",
+        discuss:"1.2万+条评价"
+      },
+      {
+        id:"1904-7",
+        name:"机器学习实战",
+        price:"109.50",
+        src:"7.jpg",
+        press:"机械工业出版社",
+        discuss:"8200+条评价"
+      },
+      {
+        id:"1904-8",
+        name:"JavaScript权威指南",
+        price:"127.90",
+        src:"8.jpg",
+        press:"机械工业出版社",
+        discuss:"2.2万+条评价"
+      },
+      {
+        id:"1904-9",
+        name:"编译原理",
+        price:"81.90",
+        src:"9.jpg",
+        press:"机械工业出版社",
+        discuss:"1.1万+条评价"
+      },
+      {
+        id:"1904-10",
+        name:"设计模式",
+        price:"32.20",
+        src:"10.jpg",
+        press:"机械工业出版社",
+        discuss:"1.4万+条评价"
+      }
+    ];
+    let oBox = $(".box");
+    let margin = 10;
+
+    /*创建标签并且插入到页面中*/
+    data.forEach(function (item,i) {
+      let product = `<div class="item" data-index=${i}>
+                        <img class="item-img" src="img/${item.src}" alt="">
+                        <div><span class="item-price">￥ ${item.price}</span></div>
+                        <div class="item-name">${item.name}</div>
+                        <div class="item-discuss">${item.discuss}</div>
+                        <div class="item-press">出版社:${item.press}</div>
+                        <div class="item-cart">
+                          <img src="img/cart.png" alt="">
+                          <span>| 添加到购物车</span>
+                        </div>
+                    </div>`;
+      oBox.append(product);
+    })
+
+    let oItem      = $(".item");
+    let itemWidth  = oItem.width() + 20;
+
+    /*设置标签的位置信息(left top)*/
+    computedOffset();
+    $(window).resize(computedOffset);
+
+    function computedOffset(){
+      /*计算没行可以显示多少列*/
+      let len = Math.floor(($(window).width() - margin)/(itemWidth + margin));
+      let itemList = [];
+
+      oItem.each(function (i,ele) {
+        /*获取当前标签的高度*/
+        let itemHeight = $(this).height() + 20;
+        let currentRow = Math.floor(i / len);   /*当前第几行*/
+        let currentCol = i % len;               /*当前第几列*/
+
+        /*计算当前标签的left值和top值*/
+        let offsetLeft = margin + currentCol * (itemWidth + margin);
+        let offsetTop  = margin + currentRow * (itemHeight + margin);
+
+        if (currentRow == 0)
+        {
+          itemList.push({left:offsetLeft,offsetTop:margin + itemHeight});
+          $(this).stop(true).animate({left:offsetLeft,top:offsetTop},20);
+        }else
+        {
+          let minIndex = $.getMinIndexWithArr(itemList);
+
+          let left = itemList[minIndex].left;
+          let top  = itemList[minIndex].offsetTop + margin;
+
+          $(this).stop(true).animate({left:left,top:top},20);
+          /*最核心步骤：更新数据*/
+          itemList[minIndex].offsetTop = top + itemHeight;
+        }
+      })
+    }
+
+  })
+</script>
+</body>
+</html>

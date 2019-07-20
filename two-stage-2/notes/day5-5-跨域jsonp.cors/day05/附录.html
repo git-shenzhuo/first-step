@@ -1,0 +1,47 @@
+<!-- 
+01-知识点复习和课程内容说明
+02-Cookie的基本使用和注意点       
+03-Cookie操作的封装             
+04-Cookie应用(保存图片拖拽位置)    
+05-Cookie应用(七天内免密码登录)  
+
+06-sessionStorage存储技术
+07-localStorage的基本使用
+
+08-网络通信协议补充(了解)
+09-Ajax请求的同源访问策略
+10-跨域网络请求方案介绍
+
+11-jsonP的实现原理说明
+12-jsonP的应用综合案例
+    https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=%E6%96%87%E9%A1%B6%E9%A1%B6
+
+13-CORS跨域实现原理说明
+    header("Access-Control-Allow-Origin: http://www.wendingding.com");
+    header('Access-Control-Allow-Methods:POST');  
+    header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
+
+14-CORS跨域应用综合案例
+    http://wthrcdn.etouch.cn/weather_mini?city=%E5%B9%BF%E5%B7%9E
+
+练习和作业
+
+01-Cookie应用(用户商品浏览记录)
+02-Cookie应用(商品添加到购物车)
+03-使用localStorage来实现1-2两个案例
+04-天气预报案例
+
+
+
+网络通信协议
+IP Internet Protocol（网络之间互连的协议），规定了计算机在因特网上进行通信时应当遵守的规则
+    IP地址：4个字节, 一共32位 ，用来标识设备在网络中的位置
+    子网掩码: 255.255.255.0 确认两台计算机是否处于同一网段
+
+TCP Transmission Control Protocol（传输控制协议）TCP是面向连接字节流协议通信之前必须先建立连接，TCP相对可靠，它建立连接的过程称为3次握手，经历3次握手，才能建立连接
+    //所有的消息传送，需要对方确认送达
+    //如果对方没回应，则不断重复发送当前消息，直至对方收到回应为止,因此可以确保数据的准确送达
+
+UDP 是面向数据报的协议 (不可靠的协议)，如果TCP比作是打电话，那么UDP就是在发短信，无需建立连接，发送消息也无需对方确认，无法保证数据的发送顺序，以及准确率，UDP通常用于视频、语音等通信（丢掉了一帧画面是无所谓的）
+socket 是一种通信模式，客户端与服务端一直保持着连接，用于随时传输数据 
+-->

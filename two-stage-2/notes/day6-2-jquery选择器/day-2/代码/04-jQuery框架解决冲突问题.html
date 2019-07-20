@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+  <script src="src/NB.js"></script>
+
+</head>
+<body>
+  <script>
+
+    /*01-jQuery等价于$ 本身是函数*/
+    // console.log($);
+    // console.log(jQuery);
+    // console.log($ == jQuery);
+
+    /*02-开发中需要考虑冲突的问题*/
+    /*页面中可能使用多个框架，$这个变量可能在其它框架中被定义，冲突*/
+    /*解决方案：jQuery框架在使用的时候都用jQuery函数来处理，放弃使用$*/
+    /*解决方案：包装一层 即时函数*/
+    /*解决方案：给jQuery重新命名*/
+    // (function ($) {
+    //
+    //   console.log($);  //jQuery框架中的函数
+    //
+    // })(jQuery)
+    //
+    // console.log($);
+
+    var j = jQuery.noConflict();
+    j(function () {
+      console.log(j == jQuery);
+    })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+网络请求方法
+GET请求：  http://localhost:8888/code/day02/server/04-ajax-get.php?username=lw&password=12345&phone=18689429781&email=123@126.com
+POST请求： http://localhost:8888/code/day02/server/04-ajax-get.php
+
+GET请求安全性很差，如果需要把敏感数据提交到服务器端那么不能使用GET请求，建议使用POST请求。
+但是POST请求也不是绝对安全，因为我们可以使用很多的抓包工具或者是服务器代理软件来拦截网络请求，这样能够看到HTTP报文所有的内容。
+
+开发中存在具体场景：注册和登录 支付 P2P理财确实需要处理敏感数据。
+
+方案
+[1] 对参数(数据)加密处理
+[2] HTTPS(加密)
+
+说明：安全(逆向工程 SQL注入 XSS攻击 中间人攻击)

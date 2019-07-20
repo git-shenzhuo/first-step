@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        #tab {
+            width: 600px;
+            height: 400px;
+            margin: 50px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li {
+            float: left;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #119955;
+            box-sizing: border-box;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .bright {
+            border: 5px solid red;
+            background-color: yellow;
+            color: #000;
+            line-height: 30px;
+        }
+
+        .news {
+            width: 9999px;
+            height: 300px;
+            position: absolute;
+            bottom: 0;
+        }
+
+        #tab .news div {
+            width: 600px;
+            height: 300px;
+            box-sizing: border-box;
+            border: 2px solid #000;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tab">
+        <ul>
+            <li class="bright">篮球</li>
+            <li>足球</li>
+            <li>乒乓球</li>
+            <li>羽毛球</li>
+            <li>台球</li>
+        </ul>
+        <div class="news">
+            <div>篮球</div>
+            <div>足球</div>
+            <div>乒乓球</div>
+            <div>羽毛球</div>
+            <div>台球</div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            // 拿到标签
+            list = document.querySelectorAll("li");
+            news = document.querySelector(".news");
+            divs = news.querySelectorAll("div");
+            // 向左移动的距离基数
+            left = divs[0].offsetWidth;
+            // 函数封装
+            function click() {
+                for (let i = 0, len = list.length; i < len; i++) {
+                    // 点击事件
+                    list[i].onclick = function () {
+                        // 清空li标签的样式
+                        for (let j = 0; j < len; j++) {
+                            list[j].className = "";
+                        }
+                        // 給li标签添加class名
+                        list[i].className = "bright";
+                        // 点击的同时div移动
+                        news.style.left = -left * i + "px";
+                    }
+                }
+            }
+            click();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num1ID">
+    <input type="text" id="num2ID">
+    <button id="btn1ID">+</button>
+    <button id="btn2ID">-</button>
+    <button id="btn3ID">*</button>
+    <button id="btn4ID">/</button>
+    <button id="btn5ID">%</button>
+    <div id="divID">输出结果为：</div>
+    <script>
+        var num1 = document.getElementById('num1ID');
+        var num2 = document.getElementById('num2ID');
+        var btn1  = document.getElementById('btn1ID');
+        var btn2  = document.getElementById('btn2ID');
+        var btn3  = document.getElementById('btn3ID');
+        var btn4  = document.getElementById('btn4ID');
+        var btn5  = document.getElementById('btn5ID');
+        var div   = document.getElementById('divID');
+        console.log(num1);
+        console.log(num2);
+        console.log(btn1);
+
+        btn1.onclick = function(){
+            var result = Number(num1.value) + Number(num2.value);  
+            div.innerHTML = "输出结果为：" + result;  
+        }
+        btn2.onclick = function(){
+            var result = num1.value - num2.value;
+            div.innerHTML = "输出结果为：" + result;
+        }
+        btn3.onclick = function(){
+            var result = num1.value * num2.value;
+            div.innerHTML = "输出结果为：" + result;
+        }
+        btn4.onclick = function(){
+            var result = num1.value / num2.value;
+            div.innerHTML = "输出结果为：" + result;
+        }
+        btn5.onclick = function(){
+            var result = num1.value % num2.value;
+            div.innerHTML = "输出结果为：" + result;
+        }
+        
+    </script>
+
+</body>
+</html>

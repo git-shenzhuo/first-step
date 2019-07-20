@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*ES6新特性之字符串模板和扩展*/
+  /*01-提供更多的操作字符串的方法*/
+  let name  = "牛大姐";
+  let anstr = true;
+  let str   = "I like you ! ";
+
+  /*01-1 重复N次*/
+  //console.log(str.repeat(10000));
+
+  /*01-2 查找返回布尔值*/
+  console.log(str.includes("like"));  //true
+  console.log(str.includes("love"));  //false
+  console.log(str.includes("like",2));//false
+
+  /*01-3 匹配字符串开始和结尾*/
+  console.log(str.startsWith("i"));   //true
+  console.log(str.endsWith("u ! "));  //true
+
+  /*02-字符串模板*/
+  // if (anstr)
+  // {
+  //   console.log(str + name + " ，你...觉得如何？" + "：回答：我愿意丫");
+  // }else
+  // {
+  //   console.log(str + name + " ，你...觉得如何？" + "：回答：被拒绝了");
+  // }
+
+  let res = `${str} ${name} ，你...觉得如何？ ：回答：${anstr ? "我愿意丫" : "被拒绝了"}`;
+  console.log(res);
+
+</script>
+</body>
+</html>

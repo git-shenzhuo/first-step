@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*字符串的切割
+  * 语法：str.split(分隔符)
+  *
+  * */
+
+  /*01-split方法的基本使用*/
+  // var str = "苹果,香蕉,西瓜";
+  // var arr = str.split(",");
+  // console.log(arr);
+  // console.log(arr.join(","));
+
+  /*02-在切割字符串的时候，通常按照特定的字符来切割*/
+  // var str = "标题 | 商品 | 价格 | 地址";
+  // var arr = str.split(" | ");
+  // console.log(arr);
+
+  /*03-切割单词 分词*/
+  // var str = "hi ! nice to meet u !";
+  // var arr = str.split(" ");
+  // console.log(arr);
+
+  /*04-切割字符*/
+  // var str = "hi ! nice to meet u !";
+  // var arr = str.split("");
+  // console.log(arr);
+
+  /*05-补充：分隔符如果出现在字符串的开头或者是结尾*/
+  var str = "hello ! 哈哈哈哈";
+  // var arr = str.split("ll");
+  // console.log(arr);
+
+  var arr = str.split("he");
+  console.log(arr);               //["", "llo ! 哈哈哈哈"]
+</script>
+</body>
+</html>

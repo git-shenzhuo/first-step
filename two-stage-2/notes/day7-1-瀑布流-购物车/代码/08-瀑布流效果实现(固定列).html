@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    .box
+    {
+      width: 100%;
+      background: #eee;
+    }
+
+    .item{
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      position: absolute;
+      margin: 10px;
+    }
+
+  </style>
+  <script src="src/jquery-3.4.1.js"></script>
+  <script src="src/jquery.tools.js"></script>
+</head>
+
+<body>
+<div class="box"></div>
+<script>
+  $(function () {
+      let oBox = $(".box");
+      let margin = 10;
+
+      /*创建标签并且插入到页面中*/
+      for(var i = 0; i < 100; i++)
+      {
+        let item = $(`<div>${i + 1}</div>`);
+        item.addClass("item");
+        item.css("background",$.getRandomColor());
+        oBox.append(item);
+      }
+
+      let oItem      = $(".item");
+      let itemWidth  = oItem.width();
+      let itemHeight = oItem.height();
+
+
+      /*设置标签的位置信息(left top)*/
+      computedOffset();
+
+      function computedOffset(){
+
+        /*计算没行可以显示多少列*/
+        let len = Math.floor(($(window).width() - margin)/(itemWidth + margin));
+
+        oItem.each(function (i,ele) {
+          console.log("+++", i);
+          //1 (margin,margin)
+          //2 (margin + 1 *(width + margin),margin)
+          //3 (margin + 2 *(width + margin),margin)
+          //console.log("行数="+Math.floor(i / len),"列数="+i % len);
+
+          let currentRow = Math.floor(i / len);   /*当前第几行*/
+          let currentCol = i % len;               /*当前第几列*/
+
+          /*left = margin + 当前列 * (宽度 + margin)*/
+          /*top  = margin + 当前行 * (高度 + margin)*/
+
+          let offsetLeft = margin + currentCol * (itemWidth + margin);
+          let offsetTop  = margin + currentRow * (itemHeight + margin);
+          $(this).stop(true).animate({left:offsetLeft,top:offsetTop},20);
+        })
+      }
+
+      $(window).resize(function () {
+        console.log("---");
+        computedOffset();
+      })
+  })
+</script>
+</body>
+</html>

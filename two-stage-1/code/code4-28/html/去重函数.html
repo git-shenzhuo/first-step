@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 编写一个norepeat(arr)去重函数，去掉数组中的重复项，并返回一个新的数组 -->
+    <script>
+        function norepeat(arr){
+            var res = [];
+            arr.sort(function(a,b){
+                return a - b;
+            })
+            for(var i = 0;i < arr.length;i++){
+                if (arr[i] != arr[i + 1]) {
+                    res.push(arr[i])
+                }
+            }
+            console.log(arr);
+            console.log(res);
+        }
+        var arr = [2,3,6,7,98,6,4,3,1,4,6,7,7,45,89,3,211,21,2,3];
+        norepeat(arr);
+    
+    </script>
+</body>
+</html>

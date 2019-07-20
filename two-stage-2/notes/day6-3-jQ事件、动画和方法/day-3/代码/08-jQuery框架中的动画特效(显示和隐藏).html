@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+  <style>
+    div{
+      width: 400px;
+      height: 100px;
+      background: #007fff;
+    }
+  </style>
+</head>
+<body>
+
+<div>我是div</div>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+
+<script>
+
+  /*显示和隐藏动画实现原理：修改标签的样式(高度 宽度 透明度)*/
+  /*方法：$().show(speed,fn)  $().hide(speed,fn) $().toggle(speed,fn)*/
+  /*参数：speed 动画的速度(单位是毫秒) fn 当动画执行完毕就调用*/
+  /*速度：我们的第一个参数可以传递 “slow” “normal” “fast” 对应0.6 - 0.4 - 0.2*/
+  $(function () {
+
+    let oDiv = $("div");
+    /*01-显示*/
+    $("button").first().click(function () {
+      oDiv.show("slow",function () {
+        console.log("标签显示--");
+      });
+    })
+
+    /*02-隐藏*/
+    $("button").eq(1).click(function () {
+     oDiv.hide(2000,function () {
+       console.log("标签隐藏--");
+     });
+    })
+
+    /*03-切换*/
+    $("button").last().click(function () {
+      oDiv.toggle(3000,function () {
+        console.log("标签切换");
+      });
+    })
+
+    /*04-备注：
+    $().eq(index)   获取指定索引对应的标签并且包装成一个JQuery对象返回
+    $().get(index)  获取指定索引对应的标签直接返回
+    $().first()     获取所有选中标签中的第一个标签并且包装成JQ对象返回
+    $().last()      获取所有选中标签中的最后一个标签并且包装成JQ对象返回
+    */
+  })
+
+</script>
+</body>
+</html>

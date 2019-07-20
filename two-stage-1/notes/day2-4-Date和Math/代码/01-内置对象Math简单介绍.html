@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 内置对象：JavaScript内部默认为我们提供的对象，譬如Array Function String RegExp
+  * Math对象：数学计算的对象，为我们提供了很多和数学计算相关的方法。
+  * */
+
+  var str = new String("节日快乐");
+  console.log(str);
+
+  console.log(str.length);
+  console.log(str.substring(1, 3));
+  console.log(str.concat("哈哈"));
+
+  var o = {
+    name:"zs",
+    age:18,
+    showName:function () {
+      console.log(this.name);
+    },
+    showAge:function () {
+      console.log(this.age);
+    }
+  }
+
+  o.showAge();
+  o.showName();
+
+  console.log(Math);
+</script>
+</body>
+</html>

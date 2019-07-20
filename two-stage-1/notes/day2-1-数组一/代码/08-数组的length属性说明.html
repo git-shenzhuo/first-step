@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * length属性：
+  * [1] 所有的数组都有length属性，通常该值记录的是数组的长度(元素的个数)
+  * [2] length属性是一个可读可写的属性(表达式的左值和右值)。
+  * [3] 数组中元素索引的范围[0,length-1]
+  *
+  * */
+
+  var arr = [1, 2, 3, 4, "光头强", "叮当猫"];
+  console.log(arr.length);
+
+  /*01-如果修改length的值 > 原本的长度值   扩展数组的长度，被扩展的元素用undefined填充*/
+  arr.length = 8;
+  console.log(arr);           // [1, 2, 3, 4, "光头强", "叮当猫", empty × 2]
+  console.log(arr.length);    //8
+  console.log(arr[6], arr[7]);//undefined undefined
+
+  /*02-如果修改length的值 < 原本的长度值  缩减数组的长度，删除数组中超出的元素*/
+  arr.length = 5;
+  console.log(arr);          //[1, 2, 3, 4, "光头强"]
+  console.log(arr.length);   //5
+
+  /*03-可以利用length来添加元素*/
+  var arr1 = ["梅西", "鲁尼", "内马尔"];
+
+  console.log(arr1.length);       //3
+  arr1[arr1.length] = "姆巴佩";    //arr[3] = "姆巴佩";
+  console.log(arr1);              //["梅西", "鲁尼", "内马尔", "姆巴佩"]
+  console.log(arr1.length);       //4
+
+  arr1[arr1.length] = "苏亚雷斯";   //arr[4] = "苏亚雷斯";
+  console.log(arr1);
+
+</script>
+</body>
+</html>

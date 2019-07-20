@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*字符串的搜索
+  * [1] indexOf       从左向右
+  * [2] lastIndexOf   从右向左
+  *
+  * 特点：查找字符串中是否存在指定的字符(子串)，如果存在那么就返回找到的第一个索引位置，如果不存在就返回-1
+  * 语法：
+  *     str.indexOf(subString,[start])
+  *     str.lastIndexOf(subString,[start])
+  * */
+
+  /*01-indexOf*/
+  var str = "曾嘿虑多情损梵行，又恐入山别倾嘿城；"
+  console.log(str.indexOf("梵"));      //6
+  console.log(str.indexOf("哈"));      //-1
+  console.log(str.indexOf("梵",7));    //限定字符串查找的范围
+
+  console.log(str.indexOf("嘿"));      //1
+  console.log(str.indexOf("多情"));    //3
+
+  /*02-lastIndexOf*/
+  console.log(str.lastIndexOf("梵"));  //6
+  console.log(str.lastIndexOf("嘿"));  //15
+
+  console.log(str.lastIndexOf("嘿",3));
+
+</script>
+</body>
+</html>

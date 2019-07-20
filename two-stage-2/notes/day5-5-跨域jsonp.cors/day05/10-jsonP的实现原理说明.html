@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <script>
+        //Ajax本身不能跨域发送网络请求，但是在开发中我们有时候确实需要请求其它服务器上面的资源
+        //跨域的方案：jsonP and CORS 都需要前端和后端一起配合
+        //jsonP json padding 简单说就是json填充模式。
+        //json实现原理：虽然Ajax网络请求不能跨域，但是我们可以借助某些标签来实现跨域，script标签和img
+        function f() {
+            console.log("f");
+        }
+    </script> -->
+
+    <!-- <script src="./src/demo.js">
+        把demo.js文件的内容拷贝到此处
+    </script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <img src="./img/cookie.png" alt="">
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558951982141&di=e1efa844aec9cf85298f6dc6e9e5ded7&imgtype=0&src=http%3A%2F%2Fpic45.nipic.com%2F20140805%2F7447430_145220850000_2.jpg" alt="">
+    <script>
+        console.log($);
+    </script> -->
+
+    <script>
+        //01-先在页面中提供一个script，并且在该标签中提供函数声明,该函数接受一个参数
+        //02-在页面中仔提供一个script，设置该标签的src属性为对应远程服务器的路径
+        //03-在设置src的时候，需要提供回调函数名字给远程服务器
+        //04-远程服务器返回特定格式的json数据 callBack("{name:"zs"""}")
+        function callBack(obj) {
+            console.log(obj);
+        }
+    </script>
+
+    <script src="http://localhost:8888/code/day05/server/api/03-ajax.php?fn=callBack">
+        callBack({
+            "name": "zs",
+            "age": 18
+        })
+    </script>
+    <!-- <script>
+        //http://127.0.0.1:8888/code/day05/10-json.html
+        //http://localhost:8888/code/day05/10-jsoE.html
+        //http://localhost:8888/code/day05/server/api/03-ajax.php
+        let xhr = new XMLHttpRequest();
+        xhr.open("get", "http://localhost:8888/code/day05/server/api/03-ajax.php", true);
+        xhr.send();
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                console.log("成功", xhr.responseText);
+            }
+        }
+    </script> -->
+</body>
+
+</html>

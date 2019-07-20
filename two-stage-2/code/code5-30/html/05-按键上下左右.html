@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+        .aj{
+            width: 160px;
+            height: 160px;
+            position: relative;
+            position: fixed;
+            top: calc(50% - 80px);
+            left: calc(50% - 80px);
+            border-radius: 50%;
+            background-color: yellow;
+        }
+        button{
+            background-color: #ccc;
+            position: absolute;
+            outline: none;
+        }
+        button:nth-child(1){
+            width: 80px;
+            height: 40px;
+            top: 0;
+            left: 40px;
+            border-radius: 40px 40px 0 0 / 40px 40px 0 0;
+        }
+        button:nth-child(2){
+            width: 80px;
+            height: 40px;
+            bottom: 0;
+            left: 40px;
+            border-radius: 0 0 40px 40px / 0 0 40px 40px;
+        }
+        button:nth-child(3){
+            width: 40px;
+            height: 80px;
+            left: 0;
+            top: 40px;
+            border-radius: 40px 0 0 40px / 40px 0 0 40px;
+        }
+        button:nth-child(4){
+            width: 40px;
+            height: 80px;
+            right: 0;
+            top: 40px;
+            border-radius: 0 40px 40px 0 / 0 40px 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="aj">
+        <button>上</button>
+        <button>下</button>
+        <button>左</button>
+        <button>右</button>
+    </div>
+    <script>
+        $(function(){
+            
+        })
+    </script>
+</body>
+</html>

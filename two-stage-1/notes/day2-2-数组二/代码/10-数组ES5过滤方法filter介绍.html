@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*数组过滤*/
+
+  var arr = [1,"光头强",34,true,"毛毛","吉吉","熊大",18,2019];
+
+  /*要求：获取数组中的字符串，把它们保存到新数组返回*/
+  /*01-第一种实现方法*/
+  var temp = [];
+  for (var i = 0 ;i <arr.length;i++)
+  {
+    if (typeof arr[i] == "string")
+    {
+      temp.push(arr[i])
+    }
+  }
+  console.log(temp);
+
+  /*02-第二种实现方式*/
+  var t = arr.filter(function (value,index,array) {
+
+    /*遍历数组，拿到当前的元素，检查当前元素是否满足过滤的条件，如果满足那么就添加到新数组中，最后返回*/
+    /*过滤的条件*/
+    return typeof value == "string";
+  })
+  console.log(t);
+
+</script>
+</body>
+</html>

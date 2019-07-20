@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Cookie产生的原因是什么？
+        //HTTP协议本身是无状态的，需要解决客户端身份标识(验证)
+        //Cookie工作的原理：
+        //(1)当客户端第一次发起请求给服务器的时候
+        //服务器端会生成一个cookie数据并且把该数据附加在响应中返回
+        //(2)当客户端发起第二次网络请求的时候，会自动把自己的cookie附加在请求中提交。
+        //(3)服务器接受到请求后获取cookie数据，就能识别出当前的客户端
+
+        //Cookie的作用：广告的精准投放 + 免密登录
+        //Cookie基本情况：
+        //[1] 每次发送网络请求给服务器的时候，都会把当前的Cookie数据带上
+        //[2] Cookie用于存储数据，但是有限制(大小限制 <4KB | 个数限制 网页<50  网站<200)
+        //[3] Cookie数据在相同的域(源)中是可以共享的 
+        //相同的域：协议 + 主机地址相同(域名和端口号)
+        //http://baidu.com/123.html  http://baidu.com/345.html    相同的域
+        //http://baidu.com/123.html  https://baidu.com/345.html   不同的域
+        //http://jd.com/123.html     http://baidu.com/345.html    不同的域
+
+        //http://localhost:8888/code/day04/09-Cookie%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html
+        //http://localhost:80/code/day04/09-Cookie%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html
+        //http://127.0.0.1:8888/code/day04/09-Cookie%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html
+        //file:///Applications/MAMP/htdocs/code/day04/09-Cookie基本使用.html
+
+        //01-获取当前页面的Cookie数据
+        console.log(document.cookie);
+
+        //02-存储一些数据到Cookie中
+        // document.cookie = "name=zs&age=19";   //错误的演示
+        // document.cookie = "name=zs;age=19";   //错误的演示
+
+        document.cookie = "name=zs";
+        document.cookie = "age=18";
+        document.cookie = "className=h5";
+        console.log(document.cookie);
+    </script>
+</body>
+
+</html>

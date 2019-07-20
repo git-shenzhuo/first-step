@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .bird-class{
+      position: absolute;
+      left: 0;
+      width: 206px;
+    }
+  </style>
+</head>
+<body>
+<img src="img/bird.gif" class="bird-class">
+<script>
+
+  /*匀速运动案例的实现原理：定时器 + 修改标签的样式 + 临界值检查*/
+  /*01-先获取页面中的标签*/
+  var oBird = document.querySelector(".bird-class");
+  var speed = 5;
+  var target= window.innerWidth - oBird.offsetWidth;
+
+  /*02-设置让标签运动*/
+  var timer = setInterval(function () {
+
+    /*获取标签left值*/
+    var left = oBird.offsetLeft;
+        left = left + speed;
+    console.log(left);
+
+    /*临界值判断(检查)*/
+    if (left >= target)
+    {
+      left = target;
+      clearInterval(timer);
+    }
+
+    oBird.style.left = left + "px";
+  },30);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="className" placeholder="请输入班级名称">
+        <input type="text" name="type" placeholder="请输入专业">
+        <input type="text" name="color" placeholder="请输入喜欢的颜色">
+    </form>
+    <button>发送请求</button>
+    <script src="./src/jquery-3.4.1.js"></script>
+    <script>
+        /*01-先获取页面的标签*/
+        let oBtn = document.querySelector("button");
+
+        // let oClassName = document.getElementsByTagName("input")[0];
+        // let oType = document.getElementsByTagName("input")[1];
+        // let oColor = document.getElementsByTagName("input")[2];
+
+        oBtn.onclick = function() {
+            /*02-获取表单的数据*/
+
+            /*03-发送网络请求*/
+            $.ajax({
+                url: "http://localhost:8888/code/day03/server/05-ajax.php",
+                //data: `className=${oClassName.value}&type=${oType.value}&color=${oColor.value}`,
+                data: $("form").serialize(),
+                success(text) {
+                    console.log(text);
+                }
+            })
+
+            //获取表单的数据并且转换为查询字符串
+            console.log($("form").serialize())
+                //className=SD%20&type=%E5%A4%96%E8%AF%AD&color=%23195
+
+            console.log($("form").serializeArray())
+                // [{…}, {…}, {…}]
+                /*[1] 把表单数据转换为查询字符串的方法 $().serialize()*/
+                /*[2] 把表单数据转换为对象数组        $().serializeArray()*/
+                /*[3] 把对象转换为查询字符串的方法     $.param()*/
+            var o = {
+                name: "zs",
+                age: 19
+            };
+
+
+            //name=zs&age=19;
+            // var arr = [];
+            // for (var key in o) {
+            //     arr.push(key + "=" + o[key]);
+            // }
+            // var res = arr.join("&");
+            console.log($.param(o), "++++");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>发送请求1</button>
+    <button>发送请求2</button>
+    <script>
+        /*01-先获取页面的标签，给它们注册点击事件*/
+        let oBtn1 = document.querySelector("button");
+        let oBtn2 = document.querySelectorAll("button")[1];
+
+        oBtn1.onclick = function() {
+            get("http://localhost:8888/code/day03/server/011-ajax.php", xhr => {
+                let span = document.createElement("span");
+                span.innerText = xhr.responseText;
+                document.body.appendChild(span);
+            }, function(xhr) {
+                let span = document.createElement("span");
+                span.innerText = `错误信息：${xhr.statusText}`;
+                document.body.appendChild(span);
+            });
+        }
+
+        oBtn2.onclick = function() {
+            get("http://localhost:8888/code/day03/server/022-ajax.php", xhr => {
+                alert(xhr.responseText);
+            }, function(xhr) {
+                alert(xhr.statusText);
+            });
+        }
+
+        function get(url, success, error) {
+            let xmlhttp = new XMLHttpRequest;
+            xmlhttp.open("get", url, true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status == 200) {
+                        //console.log("success", xmlhttp.responseText);
+                        success(xmlhttp);
+                    } else {
+                        //console.log("error", xmlhttp.statusText);
+                        error(xmlhttp);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="demoID" class="box" xxx="测试">我是div</div>
+<script>
+  /*标签的属性  | 标签的属性节点*/
+
+  /*标签(元素) - 标签对象|元素对象    理解：所有的节点本质上都是对象。*/
+  var oDiv = document.getElementById("demoID");
+  // console.log(typeof oDiv);                          //object
+  // console.log(Object.prototype.toString.call(oDiv)); //[object HTMLDivElement]
+  //
+  // // new HTMLDivElement();
+  // var o = {name:"张三"};                             //new Object()
+  // console.log(typeof o);
+  // console.log(o.toString());                        //[object Object]
+  //
+  // console.log(o);
+  // console.dir(oDiv);
+  // oDiv.a = "我是a";
+  // oDiv["b"] = "我是b";
+  // oDiv.showInfo = function () {
+  //   console.log("我是详细信息----");
+  // }
+  // oDiv.showInfo();
+
+
+  /*标签的属性：标签作为对象来说，本身存在一些属性和方法的   属性直接保存到标签上面*/
+  /*标签的属性节点：保存到标签的attributes属性对象中*/
+
+  /*属性的操作：同普通对象一致，可以使用点语法和[]语法来添加|修改|查询|删除 标签的属性*/
+  /*属性节点的操作：读取标签中指定的属性节点 xxx   添加属性节点 修改属性节点 删除属性节点*/
+
+  console.log(oDiv.className);
+  console.log(oDiv.id);
+
+  console.dir(oDiv);
+</script>
+</body>
+</html>

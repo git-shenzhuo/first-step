@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*01-ES6特性：默认参数*/
+  // function test(str1,str2) {
+  //   str2 = str2 || "夏天";      /*设置参数的默认值*/
+  //   console.log(str1 + str2);
+  // }
+  //
+  // test("Hello ");
+  // test("Hello ","春天");
+
+
+  function test(str1,str2 = "夏天") {
+    console.log(str1 + str2);
+  }
+
+  test("你好 ");
+  test("你好 ","春天");
+
+  function sum(x = 100,y = 200) {
+    console.log(x + y);
+  }
+  sum();      //100 + 200 == 300
+  sum(1);     //1   + 200 == 201
+  sum(10,20); //10  + 20 == 30
+
+
+  /*默认参数：如果调用函数的时候传递了实参，那么就实用该实参，如果没有传递实参那么就使用默认值*/
+  /*注意点：如果函数的形参中只有部分有默认值，需要把有默认值的形参总是写在参数列表的最后*/
+
+  /*02-rest参数  剩余参数*/
+  // function add() {
+  //   /*arguments接受函数调用时传递的实参  伪数组*/
+  //   var sum = 0 ;
+  //   for (var i = 0;i < arguments.length;i++)
+  //   {
+  //     sum += arguments[i];
+  //   }
+  //   console.log(sum);
+  // }
+
+  /*
+  function add(a,b,...rest)在调用函数的时候，第一个实参传递给a，第二个实参传递b,剩余的实参传递给rest,它是一个数组
+  function add(...rest)    在调用的时候，把所有的实参都放到一个数组中传递给rest
+  * */
+  function add(...args){
+    console.log(args);
+    var sum = 0;
+    args.forEach(function (value) {
+      sum += value;
+    })
+    console.log(sum);
+  }
+
+  add(1,2,3);         //6
+  add(1,2,3,4);       //10
+  add(1,2,3,4,5,6);   //21
+
+
+  /*注意点说明：默认参数和剩余参数会影响函数的length属性值*/
+  /*默认：函数.length 形参的个数*/
+  console.log(test.length);   //1 不会把设置了默认值的参数计算在内
+  console.log(add.length);    //0 不会把设置的剩余参数计算在内
+
+</script>
+</body>
+</html>

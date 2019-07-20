@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*数组的复制
+  * [1] slice()
+  * [2] 循环迭代
+  *
+  * 浅拷贝----深拷贝(!)
+  * */
+
+  /*01-直接赋值存在共享的问题*/
+  var arr1 = ["余华","王小波","王朔",{name:"zs"}];
+  var arr2 = arr1;
+
+  console.log(arr1);
+  console.log(arr2);
+  console.log(arr1 == arr2);
+  arr1.push("莫言");
+  console.log(arr1);
+  console.log(arr2);
+
+
+  /*02-截取整个数组的内容：返回新的数组*/
+  var arr3 = arr1.slice();
+  console.log(arr3);
+  console.log(arr1);
+  console.log(arr1 == arr3);  //false
+  arr3.push("普希金");
+  console.log(arr1);
+
+  /*03-遍历目标数组*/
+  var arr4 = [];
+  for(var  i = 0 ,len = arr1.length;i<len;i++)
+  {
+    arr4.push(arr1[i]);
+  }
+
+  console.log(arr4);
+  console.log(arr1 == arr4);
+  console.log(arr1[3] == arr4[3]);    //true
+  arr1[3].name = "ls";
+  console.log(arr4[3]);
+</script>
+</body>
+</html>

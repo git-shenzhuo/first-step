@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*ES6新特性之Object.is方法 进行全等比较(===)
+   * 相等(==)    值相同
+   * 全等(===)   值相同 && 类型相同
+   * Object.is   99%全等(-0和+0 NaN)
+   * */
+
+  console.log(5 == "5", 5 === "5", Object.is(5, "5"));    //true false false
+  console.log(1 == true, 1 === true, Object.is(1, true)); //true false false
+  console.log({} == {}, {} === {}, Object.is({}, {}));    //alse false false
+
+  console.log(-0 == +0);            //true
+  console.log(-0 === +0);           //true
+  console.log(Object.is(-0, +0));   //false  [!]
+  console.log(NaN == NaN);          //false
+  console.log(NaN === NaN);         //false
+  console.log(Object.is(NaN, NaN)); //true   [!]
+
+  console.log("___");
+  console.log(0.1 + 0.2 == 0.3);      //false  0.30000000000000004
+  console.log(0.2 + 0.3 == 0.5);      //true
+  console.log(0.7 + 0.4 == 1.1);      //true
+
+  console.log(0.1 + 0.7);             //0.7999999999999999
+  /*大部分情况相等，特殊情况不等 0.1 + 0.2 ！= 0.3 0.2 + 0.4 ！=0.6*/
+</script>
+</body>
+</html>

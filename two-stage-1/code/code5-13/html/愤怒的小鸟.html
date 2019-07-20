@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 180px;
+            height: 150px;
+            position: relative;
+        }
+        .top{
+            transform: rotateZ(45deg);
+        }
+        .bottom{
+            transform: rotateZ(-45deg);
+        }
+        .right{
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/bird.jpg" alt="">
+    <script>
+        window.onload = function(){
+            var img = document.querySelector("img");
+            document.onkeydown = function(event){
+                var event = event || window.event;
+                var key   = event.which || event.keyCode;
+                var left  = img.offsetLeft;
+                var top   = img.offsetTop;
+                var num   = 20;
+                switch(key){
+                    case 37 :
+                    left -= num;
+                    img.className = "";
+                    break;
+                    case 38 :
+                    top -= num;
+                    img.className = "top";
+                    break;
+                    case 39 :
+                    left += num;
+                    img.className = "right";
+                    break;
+                    case 40 :
+                    top += num;
+                    img.className = "bottom";
+                    break; 
+                }
+                if(left >= window.innerWidth){
+                    left = -img.offsetWidth;
+                }else if(left <= -img.offsetWidth){
+                    left = window.innerWidth;
+                }
+                if(top >= window.innerHeight){
+                    top = -img.offsetHeight;
+                }else if(top <= -img.offsetHeight){
+                    top = window.innerHeight;
+                }
+                img.style.left = left + "px";
+                img.style.top  = top  + "px";
+                
+            }
+        }    
+    </script>
+</body>
+</html>

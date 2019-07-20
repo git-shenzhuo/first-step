@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*ES6新特性之Object.assign方法 对象扩展的方法(MiXin) 混合，合并*/
+  var o = {name:"zs"};
+  var a = {age:18};
+  var b = {color:"red"};
+  var c = {number:"A666",des:{type:"开往幼儿园的车",d:"黄林芳"},name:"ls",color:"green"};
+
+
+  Object.assign(o, a, b,c);  /*把a和b\c这两个对象的成员拷贝一份添加到o对象上面*/
+  console.log(o);
+  console.log(a);
+  console.log(b);
+
+  /*01-深拷贝还是浅拷贝？ 浅拷贝(共享)*/
+  c.des.type = "开往大山深处的车";
+  console.log(c);
+  console.log(o);
+
+  /*02-Object.assign 覆盖*/
+
+</script>
+</body>
+</html>

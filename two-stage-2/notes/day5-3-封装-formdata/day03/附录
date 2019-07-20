@@ -1,0 +1,19 @@
+00-知识点回顾和课程内容说明
+01-Ajax网络请求的封装(一)
+02-Ajax网络请求的封装(二)
+03-jQuery框架简单介绍
+04-jQuery框架中的Ajax模块(GET 请求)
+05-jQuery框架中的Ajax模块(POST请求)
+06-jQuery框架中的Ajax模块(Ajax请求)
+07-jQuery框架中的Ajax模块(序列化处理)
+
+08-Ajax2.0-简单介绍   
+09-formData基本使用   
+10-formData发送请求  
+11-formData文件上传  
+12-formData上传进度
+
+13-网络请求综合案例(JSON数据的解析)
+14-网络请求综合案例(JSON数据进阶补充)
+15-网络请求综合案例(XML 数据的解析)
+16-抓包工具fiddler的使用介绍

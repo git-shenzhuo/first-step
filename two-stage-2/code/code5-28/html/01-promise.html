@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onload = () => {
+            /*
+            // 01------------promise基本使用（一）
+            new Promise(function(resolve,reject){
+
+            }).then(function(success){
+
+            },function(error){
+                
+            })
+
+
+            // 02-------------promise基本使用（二）
+            new Promise(function(resolve,reject){
+
+            }).then(function(success){
+                // 调用resolve（）执行
+            }).catch(function(error){
+                // 调用reject（）执行
+            })
+
+            // 03-------------promise基本使用（三）
+            new Promise((resolve,reject)=>{
+
+            }).then(success=>{
+
+            }).catch(error=>{
+
+            })
+            */
+
+            // error分支可以不写
+            new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("tsak-----1");
+                    resolve("第一步");
+                }, 2000)
+            }).then(success => {
+                console.log("then------1", success);
+
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log("tsak-----2");
+                        resolve("第二步");
+                    },3000)
+                })
+            }, error => {
+
+            }).then(success => {
+                console.log("then------2", success);
+
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log("tsak-----2");
+                        resolve("第二步");
+                    },4000)
+                })
+            }, error => {
+
+            }).then(success => {
+                console.log("then------3", success);
+
+            }, error => {
+
+            })
+
+        }
+    </script>
+</body>
+
+</html>

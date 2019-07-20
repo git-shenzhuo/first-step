@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputID">
+    <button id="btnID">翻译</button>
+    <script>
+        var oInput = document.getElementById("inputID");
+        var oBtn   = document.getElementById("btnID");
+        oBtn.onclick = function(){  
+            var num   = oInput.value * 1;                      //拿到input里面的数字。
+            var one   = (parseInt(num / 1000) + 5) % 10;       //得到数字的第一位数,并换算。
+            var two   = (parseInt(num / 100) % 10 + 5) % 10;   //得到数字的第二位数。
+            var three = (parseInt(num / 10) % 10 + 5) % 10;    //得到数字的第三位数。
+            var four  = (num % 10 + 5) % 10;                   //得到数字的第四位数。   
+            console.log(num);
+            console.log(one);
+            console.log(two);
+            console.log(three);
+            console.log(four);   
+            alert(""+four+three+two+one) ; 
+        }
+    </script>
+</body>
+</html>

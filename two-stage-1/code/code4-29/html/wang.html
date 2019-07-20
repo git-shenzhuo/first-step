@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       table{
+           border-collapse: collapse;
+       }
+        td,th{
+            border:1px solid #000000;
+            width: 100px;
+            height:30px;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<script>
+var data=[
+    {StudentNumber:1,Chinese:105,Math:62,English:118,TotalScore:"",Comment:"优"},
+    {StudentNumber:2,Chinese:89,Math:78,English:120,TotalScore:"",Comment:"优"},
+    {StudentNumber:3,Chinese:86,Math:64,English:80,TotalScore:"",Comment:"优"},
+    {StudentNumber:4,Chinese:78,Math:99,English:91,TotalScore:"",Comment:"优"},
+    {StudentNumber:5,Chinese:107.5,Math:97,English:70,TotalScore:"",Comment:"优"},
+    {StudentNumber:6,Chinese:112,Math:61,English:92,TotalScore:"",Comment:"优"},
+    {StudentNumber:7,Chinese:101,Math:79,English:104,TotalScore:"",Comment:"优"},
+    {StudentNumber:8,Chinese:71,Math:72,English:105,TotalScore:"",Comment:"优"},
+    {StudentNumber:9,Chinese:56,Math:68,English:61,TotalScore:"",Comment:"优"},
+    {StudentNumber:10,Chinese:98,Math:83,English:77,TotalScore:"",Comment:"优"},
+];
+//总成绩求和
+data.map(function (t){
+    t.TotalScore=t.Chinese+t.Math+t.English;
+});
+//总成绩排序
+data.sort(function (pre,next) {
+    return pre.TotalScore-next.TotalScore;
+});
+//各单科成绩排名
+data.sort(function (pre,next) {
+    return next.Chinese-pre.Chinese;
+});
+data.sort(function (pre,next) {
+    return next.Math-pre.Math;
+});
+data.sort(function (pre,next) {
+    return next.English-pre.English;
+});
+var table="<table>";
+table+="<tr>";
+for(var prop in data[1]){
+    table+="<th>"+prop+"</th>";
+}
+table+="</tr>";
+for(var i=0;i<data.length;i++){
+    table+="<tr>";
+    for(var key in data[i] ){
+        table+="<td>"+data[i][key]+"</td>";
+    }
+        table+="</tr>";
+}
+
+
+
+document.write(table);
+
+</script>
+</body>
+</html>

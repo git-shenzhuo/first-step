@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      list-style: none;
+      margin: 0;
+      padding-bottom: 0;
+    }
+
+    .slider{
+      margin: 50px auto;
+      border: 1px solid #000;
+      width: 700px;
+      height: 350px;
+      border-radius: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider-box{
+      background: #dddddd;
+      width: 10000px;
+      height: 350px;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+    }
+
+    .slider-box-item{
+      width: 700px;
+      height: 350px;
+      float: left;
+      font-size: 40px;
+      text-align: center;
+      line-height: 350px;
+    }
+  </style>
+
+  <script src="src/jquery-3.4.1.js"></script>
+  <script src="src/jquery.tools.js"></script>
+
+</head>
+<body>
+
+<div class="slider">
+  <ul class="slider-box">
+    <span class="slider-box-item">1</span>
+    <span class="slider-box-item">2</span>
+    <span class="slider-box-item">3</span>
+    <span class="slider-box-item">4</span>
+  </ul>
+  <div class="slider-control"></div>
+  <ol class="slider-nav"></ol>
+</div>
+<script>
+  /*监听DOM的加载*/
+  $(function () {
+
+    let oSliderBoxItem = $(".slider-box-item");
+    let oSliderBox     = $(".slider-box");
+
+    oSliderBoxItem.each(function (i,ele) {
+      console.log(i, ele);
+      $(this).css("background",$.getRandomColor())
+    })
+
+    let index = 0;
+    let oSliderBoxLeft = 0;
+    let oSliderBoxItemCount = oSliderBoxItem.length - 1;
+    let oSliderBoxItemWidth = oSliderBoxItem.width();
+
+
+    /*实现自动播放的功能*/
+    setInterval(function () {
+      index++;
+      /*临界值检查*/
+      if(index > oSliderBoxItemCount)
+      {
+        index = 0;
+      }
+      oSliderBoxLeft = index *  oSliderBoxItemWidth;
+      oSliderBox.css("left",- oSliderBoxLeft + "px");
+
+    },2000);
+
+  })
+</script>
+</body>
+</html>

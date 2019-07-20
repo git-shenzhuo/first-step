@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<ul>
+  <li id="first">1</li>
+  <li>2</li>
+  <li>3sad</li>
+  <li>4少得瑟</li>
+  <li>5</li>
+</ul>
+<script>
+
+  /*事件委托：把事件委托位其它的标签(祖先元素)来处理 , 内部实现机制(事件冒泡)*/
+  /*给li标签添加点击事件*/
+
+  /*方式一：绑定的事件太多了(5-5)，性能不好 + 只能给已经存在的标签注册事件*/
+  var ul  = document.getElementsByTagName("ul")[0];
+  // var lis = document.getElementsByTagName("li");
+  // for (var i = 0; i<lis.length;i++)
+  // {
+  //   (function (i) {
+  //     lis[i].onclick = function () {
+  //       console.log(i, this.innerText);
+  //     }
+  //   })(i)
+  // }
+  // //
+  // var li = document.createElement("li");
+  // li.innerText = "6";
+  // ul.appendChild(li);
+
+  /*方式二：通过事件委托的方式来处理*/
+  /*优点：提升程序的性能，可以为尚未存在的标签来注册事件*/
+  /*重点：如果我们使用了事件委托，那么我们在事件处理程序中如何区分到底是哪个标签的事件被触发了吗？ event*/
+  /*属性：target 目标(永远不变的，永远指向事件真正触发的那个标签)*/
+  ul.onclick = function (e) {
+    var e = e || window.event;
+
+    console.log("ul----",e.target);
+
+    /*需求：点击了li1标签，那么就弹出提示框，点击其它的标签，那么就打印内容*/
+    if (e.target.id == "first")
+    {
+      alert("我是li1标签");
+    }else
+    {
+      console.log("打印--",e.target.innerHTML)
+    }
+
+  }
+
+  document.body.onclick = function (e) {
+    var e = e || window.event;
+    console.log("body----",e.target);
+  }
+
+  var li = document.createElement("li");
+  li.innerText = "7";
+  ul.appendChild(li);
+
+
+
+</script>
+</body>
+</html>

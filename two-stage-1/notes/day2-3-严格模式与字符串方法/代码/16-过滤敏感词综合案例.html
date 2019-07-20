@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input id="inputID" type="text"><button>发送</button>
+<div id="outID">
+  <ul id="ulID">
+
+  </ul>
+</div>
+<script>
+  /*01-先拿到标签*/
+  var oBtn    = document.getElementsByTagName("button")[0];
+  var oInuput = document.getElementById("inputID");
+  var oOut    = document.getElementById("outID");
+  var oUL    = document.getElementById("ulID");
+
+  var datas = [];
+  /*02-给按钮添加事件*/
+  oBtn.onclick = function () {
+    /*03-对用户输入的消息进行过滤*/
+    var text = oInuput.value.trim();
+    if (text.length == 0){
+      alert("没有任何内容");
+      return;
+    }
+    var res = "";
+    var targets = ["fuck","sb","反清复明","金三胖","垃圾","辣鸡","牛逼"];
+
+    /*04-把结果显示在页面中*/
+    // "你很厉害啊 垃圾 ！垃圾 ！垃圾" => "你很厉害啊 ** !"
+
+    // targets.forEach(function (value,index) {
+    //
+    //   // value 数组中当前的敏感词
+    //    var reg = new RegExp(value,"g");
+    //    res = text.replace(reg,"**");
+    //   console.log(res);
+    //    if(res == "**")
+    //    {
+    //      return;
+    //    }
+    // })
+
+    for (var i = 0;i<targets.length;i++)
+    {
+      var reg = new RegExp(targets[i],"g");
+      res = text.replace(reg,"**");
+      if (res == '**')
+      {
+        break;
+      }
+    }
+
+    datas.push(res);
+
+    /*根据数据来更新UI*/
+    var eleString = "";
+    datas.map(function (value) {
+      eleString += "<li>" + value + "</li>"
+    })
+
+    console.log(eleString);
+
+    oUL.innerHTML = eleString;
+  }
+
+  console.log(datas);
+</script>
+</body>
+</html>

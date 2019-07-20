@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      width: 400px;
+      height: 200px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+<div id="demoID"></div>
+<script>
+
+  /*01-获取页面的标签*/
+  var oDiv = document.getElementById("demoID");
+
+  /*02-给标签添加点击事件*/
+  oDiv.onclick = handle;
+
+  /*03-事件处理函数*/
+  function handle() {
+
+    oDiv.style.backgroundColor = getColor();
+  }
+
+  /*04-封装生成随机颜色*/
+  function getColor() {
+    /*"三原色red-green-blue(0~255,0~255,0~255)"*/
+    /*生成三个随机数 0 ~ 255*/
+    /*Math.random();用于生成随机数，默认的范围是0~1*/
+    var r = parseInt(Math.random() * 256);
+    var g = parseInt(Math.random() * 256);
+    var b = parseInt(Math.random() * 256);
+
+    return "rgb("+r+","+g+","+b+")";
+  }
+
+</script>
+</body>
+</html>

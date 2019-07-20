@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .container{width:800px;margin:0 auto;padding-bottom:10px;background-color:#dfdfdf;}
+    #barrage{position:relative;height:300px;margin-bottom:10px;background-color:#000;overflow:hidden;}
+    #barrage .bar-item{position:absolute;left:100%;white-space:nowrap;}
+    #msg{margin-left:10px;width:400px;height:30px;border:1px solid #999;border-right:none;box-sizing:border-box;vertical-align:middle;}
+    #msg+button{padding:0 10px;height:30px;vertical-align:middle;}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div id="barrage"></div>
+  <input type="text" id="msg"><button id="btn">发送</button>
+</div>
+<script>
+
+  var page = {
+      input:"#msg",
+      button:"#btn",
+      view:"#barrage",
+      init:function () {
+        /*获取和操作页面中必要的标签*/
+        this.input   = document.querySelector(this.input);
+        this.view    = document.querySelector(this.view);
+        this.button  = document.querySelector(this.button);
+
+        var self = this;
+        /*按钮的点击事件*/
+        this.button.onclick = function () {
+           /*获取输入框的内容*/
+          var msg = self.input.value;
+          /*发射弹幕*/
+          /*.....*/
+          (new Barrage()).init(msg);
+
+          self.input.value = "";
+          self.input.focus();
+        }
+      }
+  }
+  page.init();
+
+  function getNumber(min,max) {
+    return Math.random() * (max - min + 1) + min;
+  }
+
+  /*提供构造函数-处理弹幕相关的功能*/
+  function Barrage() {
+
+    /*设置当前弹幕的样式*/
+    var r = Math.random() * 256;
+    var g = Math.random() * 256;
+    var b = Math.random() * 256;
+
+    this.color    = "rgb("+r+","+g+","+b+")";
+    this.fontSize = getNumber(10,30);
+    this.top      = getNumber(10,250);
+    this.speed    = getNumber(-10,-1);
+    this.ele      = null;
+  }
+  Barrage.prototype = {
+    constructor:Barrage,
+    init:function (msg) {
+        /*创建弹幕并且设置样式*/
+      var item = document.createElement("span");
+      item.className = "bar-item";
+      item.innerText = msg;
+      item.style.color    = this.color;
+      item.style.fontSize = this.fontSize + "px";
+      item.style.top      = this.top + "px";
+      page.view.appendChild(item);
+      this.ele            = item;
+      this.move();
+    },
+    move:function () {
+      var self  = this;
+      var timer = setInterval(function () {
+        var left            = self.ele.offsetLeft + self.speed;
+        self.ele.style.left = left + "px";
+        if (left <= -self.ele.offsetWidth)
+        {
+          self.remove();
+          clearInterval(timer);
+        }
+      },30);
+    },
+    remove:function () {
+        this.ele.parentNode.removeChild(this.ele);
+    }
+  }
+
+</script>
+</body>
+</html>

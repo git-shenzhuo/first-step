@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <div id="demoID">我拥有id
+        <span>哈哈哈哈</span>
+        <div>div1</div>
+        <div class="box3">div2
+            <span>spanD</span>
+            <div>我是div------</div>
+            <div class="box4">我也是div+++++</div>
+        </div>
+        <span>特殊的哪一个</span>
+        <div>div3</div>
+        <div>div4</div>
+        <p>我是p</p>
+        <div>div5</div>
+    </div>
+    <div class="box">我拥有class-box1</div>
+    <div class="box1">我拥有class-box1</div>
+    <div class="box2">我拥有class-box2</div>
+    <span>spanA</span>
+    <span>spanB</span>
+    <span>spanC</span>
+    <p>我是段落标签</p>
+    <script>
+        $(function(){
+            // 01------------父子
+            // 获取父节点             parent()
+            console.log($(".box4").parent());
+            
+            // 获取所有相关的祖宗节点      parents()
+            console.log($(".box4").parents());
+
+            // 获取所有相关的祖宗节点，直到（）为止       parentUntil()
+            console.log($(".box4").parentsUntil("body"));
+            console.log($(".box4").parentsUntil($("#demoID")));
+
+            // 获取子节点     children()
+            console.log($(".box3").children());
+            
+            // 02-------------兄弟
+            // 获取所有兄弟元素    sibling() ,可指定类型
+            console.log($(".box2").siblings());
+            console.log($(".box2").siblings("div"));    
+
+            // 后面的第一个兄弟节点    next()
+            console.log($(".box").next());
+
+            // 后面的所有兄弟节点    nextAll()
+            console.log($(".box").nextAll());
+
+            // 后面的所有兄弟节点 到（）为止    nextUntil()
+            console.log($(".box").nextUntil("span"));
+            
+            // 前面的兄弟节点         
+            console.log($(".box2").prev());
+            console.log($(".box2").prevAll());
+            console.log($(".box2").prevUntil($("#demoID")));
+            
+        })
+    </script>
+</body>
+
+</html>

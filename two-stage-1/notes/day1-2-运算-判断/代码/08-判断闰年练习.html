@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" id="inputID">
+<button id="btnID">判断时闰年还是平年</button>
+<span id="spanID"></span>
+
+<script>
+  /*判断条件：能被4整除但不能被100整除 或者 能被400整除的年份为闰年*/
+  /*实现思路
+  * 01-先获取页面指定得标签 输入框 + 按钮
+  * 02-给按钮添加事件
+  * 03-获取用户输入得值
+  * 04-判断该值时闰年还是平年，并且输出
+  * */
+
+  var oInput = document.getElementById("inputID");
+  var oBtn   = document.getElementById("btnID");
+  var oSpan  = document.getElementById("spanID");
+
+  oBtn.onclick = function () {
+    var year = Number(oInput.value);
+    var res  = "您输入得年份为：";
+
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+      res = res + "闰年";
+    }else {
+      res = res + "平年";
+    }
+
+    oSpan.innerHTML = res;
+  }
+
+</script>
+</body>
+</html>

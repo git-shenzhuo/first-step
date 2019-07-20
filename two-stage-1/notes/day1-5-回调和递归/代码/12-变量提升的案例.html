@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  console.log(a);       //undefined
+  var a = 123;
+  console.log(b);       //undefined
+  var b = 234;
+  var a = "我是字符串";
+  console.log(a);       //"我是字符串"
+  function f() {
+    a = 222;
+    console.log("--f--",a);
+  }
+  f();                  //--f--?222  f++++333
+  function f() {
+    var a = 333;
+    console.log('f++++',a);
+  }
+  console.log(a);     //"我是字符串";
+
+
+  /*
+  * var a;
+  * var b;
+    function f() {
+      var a;
+      a = 333;
+      console.log('f++++',a);
+    }
+  *
+  * console.log(a);     //undefined
+  * a = 123;
+  * console.log(b);     //undefined
+  * b = 234;
+  * a = "我是字符串";
+  * console.log(a);     //"我是字符串";
+  * f();                //console.log('f++++',a); f++++ 333
+  * console.log(a);     //"我是字符串";
+  * */
+
+
+  /*补充：在使用变量之前都需要使用var来声明
+  * 注意：如果在使用变量之前我们没有用var声明，那么这个变量默认时全局变量
+  * */
+  var c = "我是c";
+  console.log(c);
+
+  function test() {
+    var x = "我是x";
+    y = "我是y";     //没有使用var来声明，那么就是全局变量
+  }
+
+  test();
+  //console.log(x);
+  console.log(y);
+
+
+</script>
+</body>
+</html>

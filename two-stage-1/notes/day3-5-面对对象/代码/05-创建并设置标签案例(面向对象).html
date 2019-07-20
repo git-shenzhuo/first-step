@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<p>我是p1</p>
+<p>我是p2</p>
+
+<span>spanA</span>
+<span>spanB</span>
+<div class="box">div1</div>
+<div class="box">div2</div>
+
+<a href="" class="box">我是a</a>
+<script>
+
+  var $ = {
+    getEles:{
+      tageName:function (tagName) {
+        return document.getElementsByTagName(tagName);
+      },
+      className:function (className) {
+        return document.getElementsByClassName(className);
+      },
+    },
+    setStyle:{
+      setBackground:function (eles,background) {
+          for (var i = 0 ; i<eles.length;i++)
+          {
+            var  ele             = eles[i];
+            ele.style.background = background;
+
+          }
+  },
+      setBorder:function (eles,border) {
+          for (var i = 0 ; i<eles.length;i++)
+          {
+            var  ele             = eles[i];
+            ele.style.border     = border;
+          }
+      }
+    }
+  }
+
+  // var spans = $.getEles.tageName("span");
+  // var boxs  = $.getEles.className("box");
+
+  $.setStyle.setBackground($.getEles.tageName("p"), "#195");
+  $.setStyle.setBorder($.getEles.tageName("p"), "2px solid #ccc");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todolist</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="box"></div>
+
+
+    <script type="text/babel">
+
+        // 组件
+        class Todolist extends React.Component{
+            constructor(){
+                super();
+                this.state = {
+                    title:['#','事件','时间','是否完成','操作'],
+                    data:[{
+                        text:'夏雨来，回家收衣服啦',
+                        time:'2099-09-12',
+                        isok:false
+                    },{
+                        text:'在异乡的路上',
+                        time:'2049-12-02',
+                        isok:true
+                    },{
+                        text:'我站在这里',
+                        time:'2009-09-22',
+                        isok:true
+                    },{
+                        text:'你站在人群中间那么孤单',
+                        time:'2019-08-15',
+                        isok:false
+                    }]
+                }
+            }
+
+            remove(e) {
+            console.log(e);
+            e = !e
+            }
+
+
+            render() {
+                return <div>
+                    <TodoInput/>
+                    <TodoTable state={this.state} />
+                    </div>
+            }
+        }
+
+        // 输入框
+        function TodoInput(props) {
+            return <div>
+            <input type='text' />
+            <TodoButton>添加事件</TodoButton>
+            </div>
+        }
+        // 按钮
+        function TodoButton(props) {
+            return <button>{props.children}</button>
+        }
+        // 表格
+        function  TodoTable(props) {
+            return <table>
+                <TodoThead data={props.state.title}/>
+                <TodoTbody data={props.state.data} isok={false}/>
+                <TodoThead data={props.state.title}/>
+                <TodoTbody data={props.state.data} isok={true}/>
+                </table>
+        }
+        // 表头
+        function TodoThead(props) {
+            return <thead>
+            <tr>
+                {props.data.map(item=>{
+                    return <th>{item}</th>
+                })}
+                </tr></thead>
+        }
+        // 表体
+        
+        function TodoTbody(props){
+            
+            return <tbody>
+                {props.data.map(item=>{
+                    item.id = (new Date()).getTime(); 
+                    if(item.isok == props.isok){
+                        return <tr>
+                        <td>{item.id}</td>
+                        <td>{item.text}</td>
+                        <td>{item.time}</td>
+                        <td>{item.isok?'是':'否'}</td>                        
+                        <td>
+                            {item.isok?<TodoButton>再办</TodoButton>:''}
+                            <TodoButton>删除</TodoButton>   
+                        </td>
+                    </tr>
+                    } 
+                })}
+                </tbody>
+        }
+
+        // td
+        // function TodoTd(props) {
+        //     // console.log(123,props.data);
+        //     return <div>{props.data.map(item=>{
+        //         console.log(item,123);
+        //         return <td>{item}</td>
+        //     })}</div>
+        // }
+
+
+
+
+
+        ReactDOM.render(
+            // 渲染
+            <div>
+                <h1>React Todolist</h1>
+                <Todolist/>    
+            </div>
+            ,
+            // 挂载
+            document.querySelector('#box')
+        )
+    </script>
+</body>
+
+</html>

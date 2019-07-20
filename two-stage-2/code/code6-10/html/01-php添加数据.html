@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <input type="text">
+    <input type="text">
+    <button>提交</button>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                let name = $("input").eq(0).val();
+                let word = $("input").eq(1).val();
+                $.ajax({
+                    url:"../php/01-one.php",
+                    data:{
+                        "user":name,
+                        "pass":word
+                    },
+                    success(xhr){
+                        alert("成功",xhr);
+                    }
+                })
+            })
+
+        })
+    </script>
+</body>
+    
+</html>

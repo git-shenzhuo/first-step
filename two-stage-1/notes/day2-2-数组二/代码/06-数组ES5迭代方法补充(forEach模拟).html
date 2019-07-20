@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  var arr = ["小明",18,"嘿嘿","呵呵"];
+
+  /*总结：遍历数组并且每循环一次就调用回调函数并且把当前的索引|元素|数组本身传递给回调函数*/
+
+  arr.forEach(function t(value,index,arrT) {
+    console.log(index, value, arrT);
+  })
+
+
+
+  /*封装forEach方法*/
+  function forEach(callBack) {
+    for (var i = 0 ,len = arr.length ;i<len;i++)
+    {
+      callBack(arr[i],i, arr);
+    }
+  }
+
+  forEach(function t(value,index,arrT) {
+    console.log(index, value, arrT);
+  })
+
+
+</script>
+</body>
+</html>

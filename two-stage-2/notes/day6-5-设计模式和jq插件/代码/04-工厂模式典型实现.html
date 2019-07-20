@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  特点：
+  富土康：生产不同品牌的手机(iphone | vivo | xiaomi |oppo)   huawei 三星 锤子
+  共同点：
+        地址：深圳富土康生产。
+        打电话：
+        发短信：
+
+  不同点：
+      价格：
+        iphone：1000
+        vivo：  2000
+        xiaomi：10000
+        oppo:200
+      颜色：
+        iphone：黑色
+        vivo：  白色
+        xiaomi：金色
+        oppo:绿色
+      广告词：
+        iphone：没有最好只有更好
+        vivo：  照亮你的美
+        xiaomi：为发烧而生
+        oppo：充电两小时，通话五分钟
+
+
+代码：
+  iphone1: ID 价格 颜色 广告词 (地址 打电话 发短信)
+  iphone2: ID 价格 颜色 广告词 (地址 打电话 发短信)
+  oppo1:价格 颜色 广告词 (地址 打电话 发短信)
+  vivo1:价格 颜色 广告词 (地址 打电话 发短信)
+  */
+
+  /*01-提供构造函数*/
+  function MakePhone() {}
+  /*02-设置构造函数的原型对象*/
+  MakePhone.prototype = {
+    constructor:MakePhone,
+    address:"深圳市富土康生产基地",
+    callPhone:function () {
+      console.log("打电话");
+    },
+    sendMsg:function () {
+      console.log("发短信");
+    }
+  }
+
+  /*03-给构造函数添加方法-和工厂有合作协议的品牌*/
+  MakePhone.iphone = function (options) {
+    this.id = options.id || "默认的id";
+    this.color = "黑色";
+    this.desc  = "没有最好，只有最嗨";
+    this.price = 1000;
+  }
+  MakePhone.vivo = function (options) {
+    this.color = "白色";
+    this.desc  = "2000万像素，照亮你的黑";
+    this.price = 2000;
+  }
+  MakePhone.oppo = function (options) {
+    this.color = "绿色";
+    this.desc  = "充电五小时，通话两分钟";
+    this.price = 200;
+  }
+  MakePhone.xiaoMi = function (options) {
+    this.color = "金色";
+    this.desc  = "为了发傻卫生";
+    this.price = 10000;
+  }
+
+  /*04-给构造函数添加工厂方法*/
+  MakePhone.factory = function (type,options) {
+    /*检查工厂是否和当前品牌有合作关系，如果没有那么就提示*/
+    if (!MakePhone[type])
+    {
+      console.log("对不起，我们和该品牌暂没有"+type+"建立合作关系");
+      return;
+    }
+    MakePhone[type].prototype = MakePhone.prototype;
+    return new MakePhone[type](options);
+  }
+
+  var iphone1 = MakePhone.factory("iphone",{id:"0001"});
+  var iphone2 = MakePhone.factory("iphone",{id:"0002"});
+  var vivo    = MakePhone.factory("vivo");
+  var huawei  = MakePhone.factory("huawei");
+
+
+  /*总结工厂模式*/
+  /*01-提供构造函数*/
+  /*02-设置构造函数的原型对象，公共的属性和方法*/
+  /*03-设置构造函数静态方法-工厂方法，在工厂方法内部具体的处理对象创建细节*/
+  /*03-1 检查是否能够生成对应的产品 */
+  /*03-2 通过原型式继承的方式设置原型对象共享*/
+  /*03-3 调用构造函数返回对应的对象*/
+  /*04-设置构造函数静态方法-建立合作关系*/
+  /*05-调用构造函数的工厂方法，传递具体信息(品牌-配置参数)*/
+</script>
+</body>
+</html>

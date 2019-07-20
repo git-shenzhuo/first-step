@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="">百度</a>
+    <a href="">京东</a>
+    <img src="" alt="">
+    <img src="" alt="">
+    <form name="item-form">
+        <input type="file" name="fileName">
+    </form>
+    <button>上传</button>
+    <script>
+        let btn = document.getElementsByTagName("button")[0];
+        btn.onclick = function() {
+
+            let data = new FormData(document.forms.namedItem("item-form"));
+            // data.forEach((value, key) => {
+            //     console.log(key, value);
+            // })
+            let xhr = new XMLHttpRequest();
+            xhr.open("post", "http://localhost:8888/code/day03/server/07-upload.php", true);
+            xhr.send(data);
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    console.log("success", xhr.responseText);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

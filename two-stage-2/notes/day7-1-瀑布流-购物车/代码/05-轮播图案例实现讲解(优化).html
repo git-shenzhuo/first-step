@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      list-style: none;
+      margin: 0;
+      padding-bottom: 0;
+    }
+
+    body{
+      -webkit-user-select:none;
+      -moz-user-select:none;
+      -ms-user-select:none;
+      user-select:none;
+    }
+
+    .slider{
+      margin: 50px auto;
+      border: 1px solid #000;
+      width: 700px;
+      height: 350px;
+      border-radius: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider-box{
+      background: #dddddd;
+      width: 10000px;
+      height: 350px;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+    }
+
+    .slider-box-item{
+      width: 700px;
+      height: 350px;
+      float: left;
+      font-size: 40px;
+      text-align: center;
+      line-height: 350px;
+    }
+
+    .slider-control
+    {
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      line-height: 100px;
+      /*background: #ff0088;*/
+      top: 50%;
+      margin-top: -50px;
+      font-size: 60px;
+    }
+
+    .prev{
+      margin-left: 20px;
+    }
+
+    .next{
+      float: right;
+      margin-right: 20px;
+    }
+  </style>
+
+  <script src="src/jquery-3.4.1.js"></script>
+  <script src="src/jquery.tools.js"></script>
+
+</head>
+<body>
+
+<div class="slider">
+  <ul class="slider-box">
+    <span class="slider-box-item">1</span>
+    <span class="slider-box-item">2</span>
+    <span class="slider-box-item">3</span>
+    <span class="slider-box-item">4</span>
+    <span class="slider-box-item">5</span>
+    <span class="slider-box-item">6</span>
+    <span class="slider-box-item">1</span>
+  </ul>
+  <div class="slider-control">
+    <span class="prev">&lt;</span>
+    <span class="next">&gt;</span>
+  </div>
+  <ol class="slider-nav"></ol>
+</div>
+<script>
+
+  /*监听DOM的加载*/
+  $(function () {
+
+    /*00-获取页面标签，封装工具函数*/
+    let oSlider        = $(".slider");
+    let oSliderBoxItem = $(".slider-box-item");
+    let oSliderBox     = $(".slider-box");
+    let oPrev          = $(".prev");
+    let oNext          = $(".next");
+    let timer;
+    let index = 0;
+    let oSliderBoxLeft = 0;
+    let oSliderBoxItemCount = oSliderBoxItem.length;
+    let oSliderBoxItemWidth = oSliderBoxItem.width();
+    let next = ()=>{
+      index++;
+      /*临界值检查*/
+      if(index >= oSliderBoxItemCount)
+      {
+        index = 1;
+        oSliderBox.css("left",0);
+      }
+      oSliderBoxLeft = index *  oSliderBoxItemWidth;
+      oSliderBox.stop(true).animate({"left":- oSliderBoxLeft + "px"});
+    }
+    let prev = ()=>{
+      index--;
+      /*临界值检查*/
+      if(index < 0)
+      {
+        index = oSliderBoxItemCount - 2;
+        oSliderBox.css("left",-(oSliderBoxItemCount - 1) * oSliderBoxItemWidth);
+      }
+      oSliderBoxLeft = index *  oSliderBoxItemWidth;
+      oSliderBox.stop(true).animate({"left":- oSliderBoxLeft + "px"});
+    }
+    let autoPlay = ()=>{
+      timer = setInterval(next,2000);
+    }
+
+
+    /*01-设置标签样式*/
+    oSliderBoxItem.each(function (i,ele) {
+      $(this).css("background",$.getRandomColor())
+    })
+
+    /*02-设置自动播放*/
+    autoPlay();
+
+    /*03-设置鼠标移入的时候停止自动播放，移开的时候重新播放*/
+    oSlider.hover(()=>clearInterval(timer),autoPlay);
+
+    /*04-点击切换*/
+    oNext.click(next);
+    oPrev.click(prev)
+  })
+</script>
+</body>
+</html>

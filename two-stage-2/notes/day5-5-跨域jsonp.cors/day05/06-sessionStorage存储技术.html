@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>添加</button>
+    <button>修改</button>
+    <button>查询</button>
+    <button>删除</button>
+    <button>清空</button>
+    <script>
+        //基本特点：H5新特性 2M-5M 有效期(当前会话)
+        //会话存储技术的操作：增加 修改 查询 删除 清空
+        //因为sessionStorage本身就是一个对象，因此可以直接以对象的方式来操作内容 建议使用API操作
+
+        let oBtns = document.querySelectorAll("button");
+        window.sessionStorage.setItem("className", "H5");
+
+        oBtns[0].onclick = function() {
+            window.sessionStorage.setItem("name", "zs");
+            window.sessionStorage.setItem("age", 199);
+            sessionStorage.setItem("age", 199);
+        }
+        oBtns[1].onclick = function() {
+            window.sessionStorage.setItem("className", "HTML5从入门到放弃");
+        }
+        oBtns[2].onclick = function() {
+            console.log(window.sessionStorage.getItem("className"));
+        }
+        oBtns[3].onclick = function() {
+            window.sessionStorage.removeItem("age");
+        }
+        oBtns[4].onclick = function() {
+            window.sessionStorage.clear();
+        }
+    </script>
+</body>
+
+</html>

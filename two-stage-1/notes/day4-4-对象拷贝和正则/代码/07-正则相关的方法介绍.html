@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*01-字符串相关的方法：str.replace 替换*/
+  let str = "金三胖真牛8，金三胖是我的偶像！真牛";
+  let reg = /金三胖/g;
+  console.log(str.replace(reg, "顶顶"));
+
+  /*02-字符串相关的方法：str.search 搜索*/
+  /*search方法返回第一个匹配文本的索引，如果匹配不到，那么就返回-1*/
+  console.log(str.search(/真牛/g));    //3
+  console.log(str.search(/真的牛/));   //-1
+
+  /*03-字符串相关的方法：str.match 获取所有匹配的文本，返回数组*/
+  /*03-1 默认匹配(没有应用全局匹配模式的情况)*/
+  console.log(str.match(/真牛/));
+  //["真牛", index: 3, input: "金三胖真牛，金三胖是我的偶像！真牛", groups: undefined]
+
+  /*03-2 全局匹配 把所有匹配到的数据都放到数组中返回*/
+  console.log(str.match(reg));                   //["金三胖", "金三胖"]
+  console.log("1234 321 8888".match(/\d{4}/g));  //["1234", "8888"]
+
+  /*03-3 没有匹配到任何数据*/
+  console.log(str.match(/真的牛/));               //null
+
+
+  /*04-字符串相关的方法：str.split 切割字符串为数组*/
+  let tempStr = "a-b-c-  d- e";
+  console.log(tempStr.split("-"));             //["a", "b", "c", "d", "e"]
+  console.log(tempStr.split(/-\s*/g));         //["a", "b", "c", "d", "e"]
+
+  /*05-正则表达式自己的方法：reg.test 测试字符串是否匹配正则，如果匹配返回true,否则返回false*/
+  console.log(/\d{6}/.test('abcdef'));        //false
+  console.log(/\d{6}/.test('123456'));        //true
+  console.log(/\d{6}/.test('1234567'));       //true
+  console.log(/[abc]123/.test('a123'));       //true
+  console.log(/[abc]123/.test('b123'));       //true
+  console.log(/[abc]123/.test('c123'));       //true
+  console.log(/[abc]123/.test('x123'));       //false
+
+  /*06-正则表达式自己的方法：reg.exec*/
+  console.log(reg.exec(str));
+  //["金三胖", index: 0, input: "金三胖真牛8，金三胖是我的偶像！真牛", groups: undefined]
+</script>
+</body>
+</html>

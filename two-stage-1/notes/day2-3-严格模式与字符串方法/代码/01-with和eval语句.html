@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*说明：了解即可，在开发不要使用 (1) 很容易出错 (2) 在严格模式下已经被禁用 (3) 性能不好。*/
+  window.name = "哈哈";
+  /*01-eval函数 把字符串转换为js的代码并且马上执行*/
+  // alert("1" + "2" + 3);
+
+  eval("var a = 123;");   //var a = 123;
+  console.log(a);     //报错：a not defined
+
+
+  /*02-with语句*/
+  var o = {
+    name:"光头强",
+    car:{
+      id:"粤A 77344",
+      color:"red",
+      desc:{
+        age:20,
+        type:"B"
+      }
+    }
+  }
+
+  console.log(o.car.desc.age);
+  console.log(o.car.desc.type);
+
+  // with (o) {
+  //   console.log(name);
+  //   console.log(car);
+  // }
+
+  /*表示在{}中访问变量的时候会优先去o.car.desc这个对象中查找*/
+  with (o.car.desc) {
+    console.log(age);
+    console.log(type);
+
+    /*因为o.car.desc对象没有name，所以它会向上一层作用域超找 直到全局作用域  window.name = ""*/
+    console.log(name);
+  }
+
+
+  var obj = {"_id":{"$oid":"5caaf3243290dfad654895c5"},"typeList":[{"title":"基础词汇","child_list":[{"title":"高考大纲词汇","class_id":538486,"word_num":3874,"src":"../../src/img/list/list_01.png"},{"title":"新概念英语1","class_id":32040,"word_num":801,"src":"../../src/img/list/list_02.png"},{"title":"新概念英语2","class_id":39401,"word_num":961,"src":"../../src/img/list/list_02.png"},{"title":"新概念英语3","class_id":67620,"word_num":1610,"src":"../../src/img/list/list_02.png"},{"title":"新概念英语4","class_id":65059,"word_num":1513,"src":"../../src/img/list/list_02.png"},{"title":"牛津3000词汇（上）","class_id":306771,"word_num":1047,"src":"../../src/img/list/list_03.png"},{"title":"牛津3000词汇（下）","class_id":1762940,"word_num":2435,"src":"../../src/img/list/list_03.png"}]},{"title":"大学英语四六级","child_list":[{"class_id":45090,"title":"四级必备词汇","word_num":4509,"src":"../../src/img/list/list_04.png"},{"class_id":83369,"title":"四级救命词汇","word_num":689,"src":"../../src/img/list/list_04.png"},{"class_id":22957,"title":"六级必备词汇","word_num":2087,"src":"../../src/img/list/list_05.png"},{"class_id":60268,"title":"六级救命词汇","word_num":494,"src":"../../src/img/list/list_05.png"}]},{"title":"考研词汇","child_list":[{"class_id":65700,"title":"考研必备词汇","word_num":5475,"src":"../../src/img/list/list_06.png"},{"class_id":8378,"title":"考研大纲新增词汇","word_num":59,"src":"../../src/img/list/list_06.png"}]}]}
+
+  console.log(obj);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * do-while循环执行顺序
+  * [1] 先执行一次循环体
+  * [2] 检查循环条件是否成立(成立|不成立)
+  * [3] 如果不成立，那么就结束循环，如果成立那么就继续执行一次循环体
+  * [4] 当循环体执行完之后，继续判断条件是否成立，重复这个过程。
+  * [5] 如果发现循环条件不成立的时候，那么就结束整个循环。
+  *
+  * 对比while循环
+  * do..while至少会执行一次循环体
+  * while    可能一次都不会执行
+  * */
+  var i = 20;
+  do {
+    console.log(i);
+    i++;
+  }while (i <= 10 );
+
+  console.log("---end---");
+</script>
+</body>
+</html>

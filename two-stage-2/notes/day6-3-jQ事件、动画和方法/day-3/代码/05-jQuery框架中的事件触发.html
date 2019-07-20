@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<script>
+
+  $(function () {
+
+    /*data:外界传递给事件处理函数的数据*/
+    // $("button").on("mouseenter",{name:"zs",age:19},function (e) {
+    //
+    //   /*jQuery事件处理机制中：回调函数的第一个参数也是事件对象*/
+    //   //console.log(e.data);  //获取传入的参数数据
+    //   console.log(e.target);  //获取目标对象
+    //   console.log(e.type);
+    // })
+
+    $("button").click(function (e) {
+      console.log("btn-click1",e.target,e);
+    })
+
+    /*自动触发事件：区别(作用的对象  是否会阻止事件的冒泡和默认行为)*/
+    /*01-trigger*/
+    /*02-triggerHandler*/
+   // setInterval(function () {
+   //   $("button").trigger("click");
+   // },1);
+
+    /*触发所有选中标签中指定(click)的事件*/
+    //$("button").trigger("click");
+
+    /*触发所有选中标签中第一个标签的指定(click)的事件*/
+    $("button").triggerHandler("click");
+
+    /*JavaScript事件中阻止事件冒泡 e.stopPa()*/
+    /*jQ事件中阻止事件冒泡  e.stopPropagation() + retrun false*/
+  })
+
+</script>
+</body>
+</html>

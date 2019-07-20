@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box{
+      background: red;
+      padding: 50px;
+      width: 100px;
+      height: 100px;
+      position: relative;
+    }
+
+    span{
+      background: yellow;
+      padding: 10px;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+<div class="box"><span>神功</span></div>
+<script>
+  /*拖拽效果的实现 (onmousedown onmousemove) onmouseup*/
+  var oBox = document.getElementsByClassName("box")[0];
+  oBox.onmousedown = function (e) {
+
+    var offsetX = e.offsetX;
+    var offsetY = e.offsetY;
+
+    /*鼠标按在了当前标签的身上*/
+    document.onmousemove = function (event) {
+      console.log("移动");
+
+      var pageX = event.pageX;
+      var pageY = event.pageY;
+      oBox.style.left = pageX - offsetX + "px";
+      oBox.style.top  = pageY - offsetY + "px";
+    }
+
+    /*公式： offsetLeft + offsetX = pageX*/
+    /*推导： offsetLeft = pageX - offsetX*/
+  }
+
+
+  document.onmouseup = function () {
+    document.onmousemove = null;
+  }
+
+</script>
+</body>
+</html>

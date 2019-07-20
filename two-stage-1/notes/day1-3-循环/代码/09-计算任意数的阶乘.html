@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" id="inputID">
+<button id="btn">计算阶乘</button>
+
+<script>
+
+  /*说明
+  * 输入一个数字，计算该数字的阶乘并且打印出来
+  * 阶乘(n!)
+  * 3! = 1 * 2 * 3
+  * 5! = 1 * 2 * 3 * 4 *5
+  * */
+
+  /*01-获取标签*/
+  var oInuput = document.getElementById("inputID");
+  var oBtn    = document.getElementById("btn");
+
+  /*02-添加事件*/
+  oBtn.onclick = function () {
+
+    /*03-计算阶乘*/
+    var n      = oInuput.value * 1;
+    var result = 1;
+    for (var i = 1;i<=n;i++)
+    {
+      result = result * i;
+    }
+
+    /*
+    * i = 1 result = 1  1
+    * i = 2 result = 1 * 2;
+    * i = 3 result = 2 * 3;
+    * i = 4 result = 2 * 3 * 4;
+    * */
+
+    /*04-打印结果*/
+    console.log(result);
+  }
+
+  var s = "哈哈";
+  s = s + "5201314";
+  var t = 123;
+  t = s + t;
+  console.log(t);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*订阅者：*/
+  let tom  = {
+    name:"tom",
+    response_task:function () {
+      console.log("我已经帮你订好一份外卖，五分钟到门口---tom");
+    },
+    response_task_lucy:function () {
+      console.log("我已经帮你订好10份外卖，五分钟到门口，需不需要一起吃---tom");
+    },
+  }
+  let jack = {
+    name:"jack",
+    response_task:function () {
+      console.log("我已经做好了一桌满汉全席---等你哟---jack");
+    }
+  }
+
+  /*发布者：订阅者列表  注册订阅者  取消订阅  发布状态*/
+  function Publisher(name,user){
+    this.name = name;
+    this.user = user || [];
+  }
+  Publisher.prototype = {
+    constructor:Publisher,
+    addObserver(observer){
+      this.user.push(observer);
+      console.log("说明：注册了订阅者");
+    },
+    removeObserver(observer){
+      var index = this.user.indexOf(observer);
+      if (index != -1)
+      {
+        this.user.splice(index,1);
+        console.log("说明：取消了订阅者");
+      }
+    },
+    eat(){
+      console.log("宝宝饿了----"+this.name);
+      for (let observer of this.user)
+      {
+        observer();
+      }
+    },
+  }
+
+  /*创建发布者对象*/
+  let rose = new Publisher("rose");
+  let lucy = new Publisher("lucy");
+
+  /*注册订阅者*/
+  rose.addObserver(tom.response_task);
+  rose.addObserver(jack.response_task);
+  lucy.addObserver(tom.response_task_lucy);
+
+  /*发布者发布状态*/
+  rose.eat();
+  lucy.eat();
+
+
+</script>
+</body>
+</html>

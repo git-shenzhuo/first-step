@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box
+    {
+      width: 200px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+<div class="box" style="background: red">
+  <span>spanA</span>
+  <span>spanB</span>
+</div>
+<div id="divID">我是div标签</div>
+<script>
+
+  /*元素的复制*/
+  var oDiv = document.getElementsByClassName("box")[0];
+  // var oEle = oDiv.children[0].cloneNode(true);
+  // // oDiv.appendChild(oEle);
+  //
+  // /*元素的删除*/
+  // var oDivID = document.getElementById("divID");
+  // // oDivID.parentElement.removeChild(oDivID);
+  //
+  // console.log(oDivID);
+  // console.log(oDivID.parentElement);
+  // console.log(oDivID.parentNode);
+  // oDivID.parentElement.removeChild(oDivID);
+  //
+  // /*检查是否存在子节点*/
+  // console.log(oDivID.hasChildNodes());
+  //
+  // /*替换元素*/
+  // oDiv.replaceChild(oEle,oDiv.lastElementChild)
+
+
+  console.log(oDiv.style.background);
+  console.log(oDiv.style.width);
+  console.log(window.getComputedStyle(oDiv).background);
+  console.log(window.getComputedStyle(oDiv).width);
+  console.log(oDiv.currentStyle);
+</script>
+</body>
+</html>

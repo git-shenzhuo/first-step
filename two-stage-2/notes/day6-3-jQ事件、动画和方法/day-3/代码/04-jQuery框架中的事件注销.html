@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<div>当点击我的时候就注销按钮的点击事件</div>
+<script>
+
+  $(function () {
+
+    /*获取页面中所有的按钮注册点击事件*/
+    $("button").on("click",function () {
+      console.log("click--1",this);
+    })
+
+    function handle() {
+      console.log("click--2",this);
+    }
+    $("button").on("click",handle);
+
+    // $("button").on("mouseenter",function () {
+    //   console.log("mouseenter",this);
+    // })
+
+    /*事件的注销*/
+    $("div").click(function () {
+      console.log("按钮的点击事件被注销");
+
+      /*$().off(type) 获取页面中所有的按钮并且注销这些按钮身上所有的点击事件*/
+      /*$().off(type,handle) 获取页面中所有的按钮并且注销这些按钮身上指定的点击事件，事件处理函数要对应*/
+      // $("button").off("click");
+      $("button").off("click",handle);
+
+    })
+
+  })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+知识点
+[1] 数组基本情况 Array 核心概念(元素 | 索引 | 下[角]标-index)
+[2] 数组的创建
+    (1) var arr = [123,"string"];
+    (2) var arr = new Array()    []
+        var arr = new Array(4)    [] 长度为4的空数组
+        var arr = new Array("demo","tt")    ["demo"]
+        var arr = Array("demo","tt");
+        var arr = new Array
+
+[3] 数组的基本操作
+    (1) 访问：arr[index]
+    (2) 长度：length属性 数组中元素的个数
+    (3) 添加：arr.push(ele1,ele2....)
+    (4) 移除：arr.pop()
+    (5) 修改：arr[index] = value;
+    (6) 添加：unshift(ele1,ele2....)  添加到数组的最前面
+    (7) 移除：shift()                 数组开始位置的元素
+
+[4] 数组的合并 concat
+    arr.concat([array] | ele)
+
+[5] 数组的截取
+    arr.slice(start,end)
+
+[6] 数组的删除|替换|插入
+    arr.splice(start,deleteCount,value)
+    删除：arr.splice(start,deleteCount)
+    替换：arr.splice(start,1,value1,value2....)
+    插入：arr.splice(start,0,value1,value2....)
+
+[7] 数组的遍历(迭代)
+    (1) for循环              建议
+    (2) for..in循环          主要迭代对象
+    (3) forEach方法 - ES5    建议
+
+[8] 数组的length补充
+    (1) 可读可写的属性。
+    (2) 设置length的值让数组变长(undefined)或者是变短(删除)。
+    (3) arr[arr.length] = "123";
+
+[9] 数组转换为字符串
+    toString() toLocaleString() join("---")
+
+[10] 排序(sort)和翻转
+

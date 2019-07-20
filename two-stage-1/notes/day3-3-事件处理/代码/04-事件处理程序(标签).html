@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="demo.js"></script>
+
+</head>
+<body>
+
+<button onclick="alert('点击了按钮')">按钮</button>
+<button onclick="logMsg2()">打印消息</button>
+<button onclick="alert(event.type)">获取事件类型1</button>
+<button onmouseenter="alert(event.type)">获取事件类型2</button>
+<div onclick="alert(this.innerHTML)">我是div标签</div>
+
+<script>
+
+  /*事件处理程序第一种方式：在标签身上直接通过onclick=""写*/
+  /*01-可以直接访问全局作用域 alert()*/
+  /*02-可以调用外部js文件中声明的函数  logMsg2()*/
+  /*03-在事件函数中可以直接通过event变量来访问事件对象*/
+  /*04-在事件函数中this指向的是标签本身 可以直接通过this.的方法来操作标签本身*/
+
+  /*备注：在写代码的时候不要这样写(不方便维护 | 违背HTML标签和JavaScript分离的原则)*/
+  function logMsg() {
+    console.log("老司机 带带我");
+  }
+
+</script>
+</body>
+</html>

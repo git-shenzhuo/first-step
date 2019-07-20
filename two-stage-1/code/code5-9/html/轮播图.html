@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        div {
+            width: 750px;
+            height: 315px;
+            border: 1px solid #000;
+            position: relative;
+            margin: 100px auto;
+        }
+
+        ul {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 150px;
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        li {
+            width: 30px;
+            height: 30px;
+            background-color: #666;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .dianji {
+            color: #000;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../images/1.jpg" alt="">
+        <ul>
+            <li class="dianji">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <script>
+        var img = document.getElementsByTagName("img")[0];
+        var oLi = document.getElementsByTagName("li");
+        var arr = ["../images/1.jpg", "../images/2.jpg", "../images/3.jpg", "../images/4.jpg"];
+        var num = 0;
+        var temp = "";
+        // 定时器自动轮播
+        function seleave() {
+            temp = setInterval(function () {
+                num++;
+                if (num >= arr.length) {
+                    num = 0;
+                }
+                img.src = arr[num];
+                for (var j = 0; j < len; j++) {
+                    oLi[j].className = "";
+                }
+                oLi[num].className = "dianji";
+            }, 2000);
+        }
+        seleave();
+        // 点击li标签，调到对应图片；
+        for (var i = 0, len = oLi.length; i < len; i++) {
+            oLi[i].index = i;  //添加一个属性为index，值为i，为后面找到对应图片和div做准备；
+            oLi[i].onclick = function () {
+                for (var j = 0; j < len; j++) {
+                    oLi[j].className = "";
+                }
+                this.className = "dianji";
+                img.src = arr[this.index];
+            }
+        }
+        // 鼠标在img上时停止轮播
+        img.onmouseenter = function () {
+            clearInterval(temp);
+        }
+        // 鼠标离开img时继续轮播
+        img.onmouseleave = function () {
+           seleave();
+        }
+    </script>
+</body>
+
+</html>

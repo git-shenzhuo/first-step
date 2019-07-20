@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" id="inputID">
+<button id="btnID">判断奇数还是偶数</button>
+<script>
+  var oInput = document.getElementById("inputID");
+  var oBtn   = document.getElementById("btnID");
+  oBtn.onclick = function () {
+    var num = oInput.value * 1;
+    var res = "";
+
+    /*奇数(odd)还是偶数(even)*/
+    if (num % 2 == 0){
+      res = "结果为：偶数";
+    } else
+    {
+      res = "结果为：奇数";
+    }
+
+    /*创建新的标签*/
+    var oDiv = document.createElement("div");
+    /*设置标签得内容*/
+    oDiv.innerHTML = res;
+    /*把标签插入到页面中*/
+    document.body.appendChild(oDiv);
+  }
+</script>
+</body>
+</html>

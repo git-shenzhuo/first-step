@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*正则表达式：RegExp() */
+
+  /*ES5 trim() 清空字符串前面和后面的N个空格*/
+  var str = "  abc test    ";
+  console.log(str.trim());
+
+  /*简单替换*/
+  console.log(str.replace("abc", "--"));
+  console.log(str.replace(" ", ""));            /*局限性：只替换1次*/
+
+  /*正则替换*/
+  console.log(str.replace(/^\s+|\s+$/g, ""));  /*参数如果是正则，功能逆天*/
+
+  /*字符串中很多方法都可以接受正则表达式作为参数*/
+  /*
+  * str.replace()
+  * str.search()
+  * str.match()
+  * str.split()  切割
+  * */
+
+  console.log("1908-08-08".split("-"));
+</script>
+</body>
+</html>

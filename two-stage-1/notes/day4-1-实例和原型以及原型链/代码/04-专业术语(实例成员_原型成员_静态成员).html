@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+   * 【1】 专业术语掌握
+   * 成员     对象的属性和方法，我们统称为对象的成员。
+   *
+   * 实例对象(p1) | 原型对象(Person.prototype/p1.__proto__)|构造函数(Person)
+   *
+   * 实例成员  实例对象的属性和方法(name age showName showAge)
+   * 原型成员  原型对象的属性和方法(info showInfo)
+   * 静态成员  构造函数的属性(静态属性)和方法(静态方法)  (des showDes)
+   *         构造函数本身是函数，函数是特殊的对象，因此函数也可以有属性和方法
+   *
+   *  【2】访问规则
+   *   实例对象  访问  实例成员 + 原型成员
+   *   原型对象  访问  原型成员
+   *   构造函数  访问  静态成员
+   */
+
+  function Person(name,age) {
+    this.name = name;
+    this.age  = age;
+    this.showAge = function () {
+      console.log("年龄 " + this.age);
+    }
+    this.showName = function () {
+      console.log("姓名 " + this.name);
+    }
+  }
+
+  Person.prototype.info     = "我是信息";
+  Person.prototype.showInfo = function () {
+    console.log("姓名 " + this.name + "年龄 " + this.age);
+  }
+
+
+  Person.des = "我是Person构造函数的属性";
+  Person.showDes = function () {
+    console.log(this.des);
+  }
+
+  var p1 = new Person("老张",12);
+
+
+  console.log(p1.name);
+  console.log(p1.age);
+  p1.showAge();
+  p1.showName();
+
+  console.log(p1.info);
+  p1.showInfo();
+
+  /*错误的演示*/
+  //console.log(p1.des);
+  //p1.showDes();         //Uncaught TypeError: p1.showDes is not a function
+
+  /*错误的演示*/
+  // console.log(Person.prototype.age);
+  // console.log(Person.prototype.showAge());
+  // console.log(Person.prototype.des);
+  // console.log(Person.prototype.showDes());
+
+  console.log(Person.prototype.info);
+
+  /*错误的演示*/
+  // console.log(Person.age);
+  // console.log(Person.info);
+  console.log(Person.des);
+</script>
+</body>
+</html>

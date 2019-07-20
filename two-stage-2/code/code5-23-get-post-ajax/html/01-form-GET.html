@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 200px;
+            text-align: right;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="../php/01-php-GET.php" method="GET">
+        <label for="username">用户名:</label>
+        <input type="text" placeholder="请输入用户名" id="username" name="user">
+        <br>
+        <label for="passnum">密码:</label>
+        <input type="password" placeholder="请输入密码" id="passnum" name="word">
+        <br>
+        <label for="phonenum">手机号码:</label>
+        <input type="tel" placeholder="请输入手机号码" id="phonenum" name="phone">
+        <br>
+        <label for="emailnum">邮箱地址:</label>
+        <input type="email" placeholder="请输入邮箱地址" id="emailnum" name="enum">
+        <br>
+        <label for=""></label>
+        <input type="submit">
+
+    </form>
+    <!-- 
+        01：客户端请求报文：
+        01-1：请求首部：
+        01-1-1：请求行：GET /second%20stage/code/code5-23/php/01-php-GET.php?user=test&word=&                      phone=13412345678&enum=123%40345.com HTTP/1.1
+        01-1-2：请求头：对客户端以及本身的描述
+            Host（主机地址）: localhost
+            Connection（连接方式）: keep-alive
+            Upgrade-Insecure-Requests: 1
+            User-Agent（用户代理，客户端的类型）: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36
+            Accept（支持的数据类型）: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+            Referer（请求的地址）: http://localhost/second%20stage/code/code5-23/html/01-form-GET.html
+            Accept-Encoding: gzip, deflate, br
+            Accept-Language（中英文字体）: zh-CN,zh;q=0.9,en;q=0.8
+        01-2：请求体：没有
+
+        02：服务器响应报文：
+        02-1：响应首部：
+        02-2-1：响应行（状态行）:HTTP/1.1 200 OK
+        02-1-2:响应头：
+            Date: Thu, 23 May 2019 09:03:54 GMT
+            Server: Apache/2.2.21 (Win32) PHP/5.3.10
+            X-Powered-By: PHP/5.3.10
+            Content-Length: 661
+            Keep-Alive: timeout=5, max=100
+            Connection: Keep-Alive
+            Content-Type: text/html;charset=utf-8
+        02-2：响应体：
+            用 户 名：test<br>密    码：12345<br>手机号码：13412345678<br>邮箱地址：123@345.com<br>
+     -->    
+</body>
+
+</html>

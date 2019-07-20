@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  function Car(type,name) {
+    this.type = type;
+  }
+
+  Car.prototype.run = function () {
+    console.log("汽车跑路了");
+  }
+  var c = new Car("奥迪");
+
+  /*in关键字 ： 检查对象中是否存在指定的属性(实例对象 + 原型对象)*/
+  /*in关键字在使用的时候，检查实例成员和原型成员*/
+  console.log("type" in c);     //true
+  console.log("id"   in c);     //false
+  console.log("run"  in c);     //true
+
+  /*hasOwnProperty方法在使用的时候，仅仅检查实例成员*/
+  console.log(c.hasOwnProperty("type"));  //true
+  console.log(c.hasOwnProperty("id"));    //false
+  console.log(c.hasOwnProperty("run"));   //false
+
+  // function onlyPrototypeProperty(o,property) {
+  // }
+  //
+  // onlyPrototypeProperty(c, "type");   //false
+  // onlyPrototypeProperty(c, "run");    //true
+  // onlyPrototypeProperty(c, "name");   //false
+</script>
+</body>
+</html>

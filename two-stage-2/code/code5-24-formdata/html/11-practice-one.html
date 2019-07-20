@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="itme-form">
+        <input type="file" name="fileName">
+    </form>
+    <button>上传文件</button>
+    <script>
+        window.onload = function(){
+            let btn = document.querySelector("button");
+            btn.onclick= function(){
+                let url = "http://localhost/second%20stage/code/code5-24/php/11-file-ajax.php";
+                let data = new FormData(document.forms.namedItem("itme-form"));
+                let xhr  = new XMLHttpRequest();
+                xhr.upload.onprogress=(e)=>{
+                    console.log(((e.loaded / e.total) * 100).toFixed(2) + "%");   
+                }
+                xhr.open("post",url,true);
+                
+                xhr.send(data);
+                xhr.onload = function() {
+                    if(xhr.status == 200){
+                        console.log(xhr.responseText);
+                        
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

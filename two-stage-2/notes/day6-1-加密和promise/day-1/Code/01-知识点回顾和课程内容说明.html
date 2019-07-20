@@ -1,0 +1,41 @@
+课程内容：
+数据安全 + Promise
+知识点复习：
+[1] 数据存储技术
+    001-Cookie
+        (1) Cookie特点
+            [1] 每次网络请求Cookie数据都会被提交到服务器端
+            [2] Cookie身份的识别和数据存储
+        (2) Cookie注意
+            [1] 个数限制 <200 <50 建议<20
+            [2] 大小限制 4KB
+            [3] 跨域不能共享
+            [4] 跨浏览器不能共享
+            [5] 有效期（session）可以通过expires设置有效期
+        (3) Cookie操作
+            [1] 读取 document.cookie string
+            [2] 设置
+
+    002-会话存储
+        (1) sessionStorage特点
+            [1] 仅仅用来保存数据，发请求的时候不会像Cookie一样提交，保存在浏览器，有效期是当前会话
+            [2] 大小限制 2M~5M
+        (2) sessionStorage特点
+            [1] window.sessionStorage Object
+            [2] getItem() setItem() removeItem() clear()
+            [3] 支持对象的操作
+
+    003-本地存储
+        (1) localStorage特点
+            [1] 仅仅用来保存数据，发请求的时候不会像Cookie一样提交 ，保存到硬盘，没有过期时间
+            [2] 大小限制 20M
+        (2) localStorage特点
+            [1] window.localStorage Object
+            [2] getItem() setItem() removeItem() clear()
+            [3] 支持对象的操作：
+    004-应用缓存
+
+[2] 跨域网络请求
+    001-同源访问策略：浏览器内部的安全策略(同源|域)
+    002-跨域网络请求(JSONP)
+    003-跨域网络请求(CORS)    服务器配置(设置响应头)

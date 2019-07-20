@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <script>
+        /*给网络请求限定时间：规定要在10s的时间内获取响应数据，如果时间到了那么就取消网络请求并且提示用户！*/
+        let oBtn = document.getElementsByTagName("button")[0];
+        oBtn.onclick = function() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("get", "http://localhost:8888/code/day02/server/06-ajax-timeout.php", true);
+            xhr.send();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    clearTimeout(timer); /*如果拿到了数据，那么就清空延迟函数*/
+                    if (xhr.status == 200) {
+                        console.log("成功", xhr.responseText);
+                    } else {
+                        console.log("失败", xhr.statusText);
+                    }
+                }
+            }
+
+            /*超时处理*/
+            let timer = setTimeout(() => {
+                /*0001 取消网络请求*/
+                xhr.abort();
+                /*0002 提示用户*/
+                alert("你的面前似乎站着一个文顶顶，请检查网络！");
+            }, 100);
+        }
+    </script>
+</body>
+
+</html>

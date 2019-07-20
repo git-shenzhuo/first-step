@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*开发：处理数据 | 处理UI */
+  /*01-商品列表(对象数组)*/
+  var bookList = [
+    {name:"玻璃球游戏",price:"39.00",author:"赫尔曼·黑塞"},
+    {name:"你好忧愁",price:"1.0",author:"弗朗索瓦丝·萨冈"},
+    {name:"人间失格",price:"29.3",author:"太宰治"},
+    {name:"双城记",price:"30.5",author:"查尔斯·狄更斯"},
+  ]
+
+  /*02-查询操作 name*/
+  for (var i = 0 ;i <bookList.length; i++)
+  {
+    var book = bookList[i];
+    if (book.name == "人间失格")
+    {
+      console.log(book);
+      break;
+    }
+  }
+
+  /*03-修改操作*/
+  for (var i = 0 ;i <bookList.length; i++)
+  {
+    var book = bookList[i];
+    if (book.name == "你好忧愁")
+    {
+      book.price = "41.30";
+      console.log(book);
+      break;
+    }
+  }
+
+  /*04-添加操作*/
+  bookList.push({name:"西游记",price:"3.5",author:"吴承恩"})
+  console.log(bookList);
+
+  /*05-删除操作*/
+  for (var i = 0 ;i <bookList.length; i++)
+  {
+    var book = bookList[i];
+    if (book.name == "你好忧愁")
+    {
+      bookList.splice(i,1)
+      break;
+    }
+  }
+
+  console.log(bookList);
+</script>
+</body>
+</html>

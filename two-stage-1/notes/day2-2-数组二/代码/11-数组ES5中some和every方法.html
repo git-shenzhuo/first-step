@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * some()和every()函数返回的都是布尔类型的值，true / false
+  * every() 如果数组中每个元素都满足断言函数，那么就返回true
+  * some()  只要数组中有1个元素满足断言函数，那么就返回true
+  * */
+
+  var arr1 = [8,2,6,8,4,12,24];
+  /*检查数组中是否所有的元素都是偶数*/
+  var res1 = arr1.every(function (value,index,array) {
+    return value % 2 == 0;
+  })
+
+  console.log(res1);
+
+  var arr2 = [2,1,3,5,7,9];
+  var res2 = arr2.some(function (value,index,array) {
+    return value % 2 == 0;
+  })
+  console.log(res2);
+
+</script>
+</body>
+</html>

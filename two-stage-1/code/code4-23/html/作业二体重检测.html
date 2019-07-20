@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    label{
+        display: inline-block;
+        width: 200px;
+        text-align: right;
+    }
+    </style>
+</head>
+<body>
+    <label for="">身高(cm)：</label>
+    <input type="text" id="input1ID">
+    <br>
+    <label for="">体重(斤)：</label>
+    <input type="text" id="input2ID">
+    <br>
+    <button id="btnID">检测</button>
+    <script>
+        var oInput1 = document.getElementById("input1ID");
+        var oInput2 = document.getElementById("input2ID");
+        var oBtn    = document.getElementById("btnID");
+        oBtn.onclick = function () {
+            var height = oInput1.value;
+            var weight = oInput2.value;
+            var result = (height - 108) * 2 - weight;            
+            if (result == 0) {
+                alert('完美身材，你可以当健身教练了');
+            }else if(result >= -10 && result <= 10){
+                alert('你的身材还行，继续保持');
+            }else if(result < -10){
+                alert('哈哈，胖纸，你能不能少吃点');
+            }else if(result > 10){
+                alert('小可爱，你太瘦了，多吃肉');
+            }
+        } 
+    </script>
+
+
+</body>
+</html>

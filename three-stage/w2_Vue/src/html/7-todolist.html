@@ -1,0 +1,250 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简版代办事项</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+        h3{
+            text-align: center;
+        }
+        #box{
+            width: 400px;
+            height: 300px;
+            margin: 30px auto;
+            overflow: auto;
+            border: 1px solid red;
+        }
+        input{
+            width: 300px;
+            height: 20px;
+            margin: 5px;
+        }
+        span{
+            display: inline-block;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Todolist</h3>
+    <div id="box">
+        <input type="text" v-model='text' ref='input'>
+        <button @click='add'>添加记录</button>
+        <hr>
+        <ul>
+            <li v-for='tab,idx in tabs'>
+                <span>{{idx + 1}}-{{tab}}</span>
+                <button @click='complete(idx)'>完成</button>
+                <button @click='del1(idx)'>删除</button>
+            </li>
+            <hr>
+            <hr>
+            <li v-for='tab,idx in comps'>
+                <span>{{idx + 1}}.{{tab}}</span>
+                <button @click='del2(idx)'>删除</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let box = new Vue({
+            el:'#box',
+            data:{
+                tabs:['早上记得吃早餐','然后该干嘛干嘛'],
+                comps:[],
+                text:''
+            },
+            methods:{
+                add(){
+                    if(this.text==''){
+                        return this.$refs.input.focus();
+                    }
+                    this.tabs.unshift(this.text);
+                    this.text = '';
+                    this.$refs.input.focus();
+                },
+                complete(idx){
+                    this.comps.unshift(this.tabs[idx]);
+                    this.tabs.splice(idx,1);
+                },
+                del1(idx){
+                    return this.tabs.splice(idx,1)
+                },
+                del2(idx){
+                    return this.comps.splice(idx,1)
+                }
+            }
+        })
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>精装版代办事项</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .container-fluid{
+            width: 700px;
+            height: 300px;
+            overflow: auto;
+        }
+        h3{
+            text-align: center;
+        }
+        #box{
+            width: 100%;
+
+        }
+        li{
+            display: flex;
+            height: 30px;
+            margin-top: 5px;
+            /* padding-top: 5px; */
+            border-top: 1px solid red;
+            text-align: center;
+            line-height: 30px;
+            justify-content: space-around;
+        }
+        li p{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h3>精装版代办事项</h3>
+        <div id="box">
+            <div class="input-group">
+                <input type="text" class="form-control" v-model='text' ref='input'>
+                <div class="input-group-append">
+                    <input type="date" class="border" v-model='time'>
+                    <button class="btn btn-success" type="button" @click='add'>添加事项</button>
+                </div>
+            </div>
+            <ul>
+                <li v-for='(tab,index) in uncomplist'>
+                    <span>{{index + 1}}</span>
+                    <p>{{tab.title}}</p>
+                    <span>{{tab.date}}</span>
+                    <span>否</span>
+                    <button @click='complete(tab.id)'>完成</button>
+                    <button @click='del(tab.id)'>删除</button>
+                </li>
+                <hr>
+                <hr>
+                <li v-for='(tab,index) in complist'>
+                    <span>{{index + 1}}</span>
+                    <p>{{tab.title}}</p>
+                    <span>{{tab.date}}</span>
+                    <span>是</span>
+                    <button @click='complete(tab.id)'>再办</button>
+                    <button @click='del(tab.id)'>删除</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let box = new Vue({
+            el:'#box',
+            data:{
+                todolist:[{
+                    id:Date.now(),
+                    title:'起床记得吃饭',
+                    done:true,
+                    date:'2019-4-23'
+                // },{
+                //     id:Date.now(),
+                //     title:'吃完饭就去上课',
+                //     done:false,
+                //     date:'2019-4-23'
+                // },{
+                //     id:Date.now(),
+                //     title:'上完课再去吃饭',
+                //     done:false,
+                //     date:'2019-4-23'
+                }],
+                text:'',
+                time:new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+new Date().getDate()
+            },
+            // 方法
+            methods:{
+                // 添加
+                add(){
+                    if(this.text == ''){
+                        // 如果input框为空，则获取焦点，结束函数
+                        return this.$refs.input.focus();
+                    }
+                    if(this.time == ''){
+                        this.time = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()+7}`
+                    }
+                    let data = {
+                        id:Date.now(),
+                        title: this.text,
+                        done:false,
+                        date: this.time
+                    }
+                    this.todolist.unshift(data);
+                    // 清空输入框，获取焦点
+                    this.text = '';
+                    this.time = '';
+                    this.$refs.input.focus();
+                },
+                // 完成
+                complete(id){
+                    for(let i = 0;i < this.todolist.length;i++){
+                        if(this.todolist[i].id == id){
+                            this.todolist[i].done = !this.todolist[i].done; 
+                        }
+                    } 
+                },
+                // 删除
+                del(id){  
+                    // 遍历todolist数组，找到id，删除
+                    for(let i = 0;i < this.todolist.length;i++){
+                        if(this.todolist[i].id == id){
+                            this.todolist.splice(i,1);
+                            break;
+                        }
+                    }
+                }
+            },
+            // 计算
+            computed:{
+                // 过滤选出完成和未完成的，分别渲染
+                complist(){
+                    // 已完成
+                    return this.todolist.filter(itme=>itme.done);
+                },
+                uncomplist(){
+                    // 未完成
+                    return this.todolist.filter(itme=>!itme.done);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

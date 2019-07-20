@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>发送请求1</button>
+    <button>发送请求2</button>
+    <button>发送请求3</button>
+    <script>
+        /*01-先获取页面的标签，给它们注册点击事件*/
+        let oBtn1 = document.querySelector("button");
+        let oBtn2 = document.querySelectorAll("button")[1];
+        let oBtn3 = document.querySelectorAll("button")[2];
+
+        oBtn1.onclick = function() {
+            get(
+                "http://localhost:8888/code/day03/server/03-ajax.php", {
+                    name: "zs",
+                    age: 1
+                },
+                xhr => {
+                    let span = document.createElement("span");
+                    span.innerText = xhr.responseText;
+                    document.body.appendChild(span);
+                },
+                xhr => {
+                    let span = document.createElement("span");
+                    span.innerText = `错误信息：${xhr.statusText}`;
+                    document.body.appendChild(span);
+                });
+        }
+
+        oBtn2.onclick = function() {
+            get(
+                "http://localhost:8888/code/day03/server/04-ajax.php", {
+                    name: "ls",
+                    age: 100
+                },
+                xhr => {
+                    alert(xhr.responseText);
+                },
+                xhr => {
+                    alert(xhr.statusText);
+                });
+        }
+
+
+        oBtn3.onclick = function() {
+            get(
+                "http://localhost:8888/code/day03/server/01-ajax.php", {},
+                xhr => {
+                    let span = document.createElement("span");
+                    span.innerText = xhr.responseText;
+                    document.body.appendChild(span);
+                },
+                function(xhr) {
+                    let span = document.createElement("span");
+                    span.innerText = `错误信息：${xhr.statusText}`;
+                    document.body.appendChild(span);
+                });
+        }
+
+        function get(url, data, success, error) {
+            let xmlhttp = new XMLHttpRequest;
+            /*考虑中文转码的问题*/
+            url = encodeURI(url);
+
+            /*缓存的问题 GET请求没有参数*/
+            let queryString = ""; //"name=zs&age=123"
+            let arr = [];
+            for (key in data) {
+                arr.push(`${key}=${data[key]}`);
+            }
+            queryString = arr.join("&");
+            if (queryString.length == 0) {
+                queryString = "t=" + Math.random();
+            }
+
+            url = url + "?" + queryString;
+            console.log(url);
+
+            xmlhttp.open("get", url, true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status == 200) {
+                        //console.log("success", xmlhttp.responseText);
+                        success(xmlhttp);
+                    } else {
+                        //console.log("error", xmlhttp.statusText);
+                        error(xmlhttp);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

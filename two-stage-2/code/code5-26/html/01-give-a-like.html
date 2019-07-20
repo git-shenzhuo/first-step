@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 50px;
+            background: #000;
+        }
+
+        li {
+            list-style: none;
+            background: #fff;
+            width: 600px;
+            height: 100px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        li .title {
+            padding: 5px;
+            font-size: 14px;
+            /* font-weight: lighter; */
+            color: #666
+        }
+
+        li .name {
+            color: #ccc;
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+
+        li .good {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 12px
+        }
+
+        li .good span {
+            display: block;
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+            color: #fff;
+            margin-right: 10px;
+            float: left;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        li .good span:nth-child(1) {
+            background: lightblue;
+        }
+
+        li .good span:nth-child(2) {
+            background: lightcoral;
+        }
+    </style>
+    <script src="../php/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <ul id="list">
+        <!-- <li data-id="">
+            <h3 class="title">说三条支撑你活下去的理由？因为我胡三六条，可是六条被人杠了……</h3>
+            <p class="name">malin</p>
+            <p class="good">
+                <span class="dianzan">点赞 15</span>
+                <span class="dis">评论 22</span>
+            </p>
+        </li> -->
+    </ul>
+    
+    <script>
+        window.onload = () => {
+            // 拿到标签
+            let list = document.querySelector("ul");
+            // 加载页面完成，评论显现
+            $.get({
+                url: "http://localhost/second%20stage/code/code5-26/php/weibo.json",
+                cache:false,
+                success(data) {
+                    let html = "";
+                    data.forEach(element => {
+                        html += `<li data-id="${element.id}">
+                                    <h3 class="title">${element.content}</h3>
+                                    <p class="name">${element.username}</p>
+                                    <p class="good">
+                                        <span class="top">点赞 ${element.top}</span>
+                                        <span class="down">踩 ${element.down}</span>
+                                    </p>
+                                </li>`
+                    });
+                    list.innerHTML = html;
+                }
+            });
+            // 实现点赞和踩功能
+            // 1.通过事件委托来绑定点击事件
+            list.onclick = (e)=>{
+                // 得到点击的标签
+                let target = e.target;
+                // 通过标签拿到li标签的id,父元素的父元素的自定义名
+                // let index = target.parentElement.parentElement.getAttribute("data-id");
+                let index = target.parentElement.parentElement.dataset.id;
+                // 判断是否点击的是点赞按钮
+                if(target.className == "top"){
+                    $.get({
+                        url:"http://localhost/second%20stage/code/code5-26/php/01-give-a-like-top.php",
+                        data:{id:index},
+                        success(num){
+                            target.innerHTML = "点赞  " + num;
+                        }
+                    })     // 判断是否点击的是踩按钮
+                }else if(target.className == "down"){
+                    $.get({
+                        url:"http://localhost/second%20stage/code/code5-26/php/02-give-a-like-down.php",
+                        data:{id:index},
+                        success(num){
+                            target.innerHTML = "踩  " + num;
+                        }
+                    })
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

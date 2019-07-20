@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" class="text-class" placeholder="请输入内容" size="30">
+<script>
+  /*
+  * 键盘事件：
+  *   keydown   按下键盘的按键
+  *   keyup     释放键盘的按键
+  *   keypress  按下键盘的按键(字符 数字-字母)
+  *
+  * 文本事件：
+  *   input     输入框内容变化的时候触发(实时)
+  *   change    检测到输入框value值发生变化的时候触发(失去焦点)
+  *
+  * 焦点事件：
+  *   获得焦点 | 失去焦点
+  *
+  * */
+
+  /*01-键盘事件演示*/
+  /*触发的顺序：ex(按下了Q) keydown-keypress-keyup*/
+  // document.onkeydown = function () {
+  //   console.log("keydown");
+  // }
+  //
+  // document.onkeyup = function () {
+  //   console.log("keyup");
+  // }
+  //
+  // document.onkeypress = function () {
+  //   console.log("keypress");
+  // }
+
+
+  var oInput = document.getElementsByClassName("text-class")[0];
+
+  /*02-文本事件演示：input - change*/
+  oInput.onchange = function () {
+    console.log("change",this.value);
+  }
+
+  oInput.oninput = function () {
+    console.log("input",this.value);
+  }
+
+  /*03-焦点事件演示 focus->input(N)->change->blur*/
+  oInput.onblur = function () {
+    console.log("blur--失去焦点");
+  }
+
+  oInput.onfocus = function () {
+    console.log("focus--获得焦点");
+  }
+
+  oInput.focus();                 /*该方法的作用：输入框自动获取焦点*/
+
+  window.onload = function () {
+    console.log("页面加载完毕");
+  }
+
+  document.addEventListener("DOMContentLoaded",function () {
+    console.log("DOM部分加载完毕，其它资源我不关心");
+  })
+  
+  document.addEventListener("readystatechange",function () {
+    console.log("readystatechange");
+    console.log(document.readyState);
+  })
+
+</script>
+</body>
+</html>

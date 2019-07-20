@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*对象(复杂-复合数据类型)-Object*/
+  /*对象是什么：*/
+
+  /*对象:一堆变量组合在一起，具体特定的意义*/
+  /*对象：属性和方法(成员)  属性就是变量，方法就是函数，对象其实是对变量和函数的封装。
+  * 对象：键值对(key-value)的集合。
+  * */
+  var obj = {
+    name:"活着",
+    author:"余华",
+    age:54,
+    address:"北京",
+    phone:"123264323493",
+    car:{
+      color:"red",
+      num:"23324",
+    },
+    show:function () {
+      console.log("--show---");
+    }
+  }
+
+  console.log(obj.name);
+  console.log(obj["name"]);
+
+  obj.show();
+  obj["show"]();
+
+  console.log(typeof obj);    //object
+
+  /*for..in*/
+  /*遍历obj这个对象*/
+  for (var key in obj)
+  {
+    console.log(key,obj[key]);
+  }
+
+</script>
+</body>
+</html>

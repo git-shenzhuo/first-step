@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 700px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            display: flex;
+            justify-content: space-around;
+            align-content: space-around;
+            flex-wrap: wrap;
+            background-color: #eee;
+        }
+
+        dl {
+            width: 200px;
+            height: 230px;
+            /* background-color: pink; */
+        }
+
+        img {
+            width: 160px;
+            height: 180px;
+            margin-left: 20px;
+        }
+
+        h2 {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .price {
+            text-align: center;
+        }
+
+        .original {
+            font-size: 12px;
+            text-decoration: line-through;
+        }
+
+        .discount {
+            font-size: 14px;
+            font-weight: 900;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <!-- <dl>
+            <dt>
+                <img src="https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/107028/2019/0506/83/8d1ced07-912a-490d-8faf-d0e23260ba29.jpg"
+                    alt="">
+            </dt>
+            <dd>
+                <h2>佰草集 肌活新颜组</h2>
+                <div class="price">
+                    <span class="original">原价：￥540</span>
+                    <span class="discount">现价：￥229</span>
+                </div>
+            </dd>
+        </dl>
+        <dl></dl>
+        <dl></dl>
+        <dl></dl>
+        <dl></dl>
+        <dl></dl> -->
+    </div>
+    <script>
+        window.onload = () => {
+            let box = document.querySelector("#box");
+            let url = "http://localhost/code/code5-23/php/07-parctice-mall.php";
+            let xhr = new XMLHttpRequest;
+            xhr.open("get", url, true);
+            xhr.send();
+            xhr.onload = () => {
+                if (xhr.status == 200) {
+                    let a = JSON.parse(xhr.responseText);
+                    let html = "";
+                    console.log(a);
+                    for (let i = 0; i < a.length; i++) {
+                        html += `<dl>
+                        <dt><img src=${a[i]["src"]} alt=""></dt>
+                        <dd>
+                            <h2>${a[i]["name"]}</h2>
+                            <div class="price">
+                                <span class="original">原价：￥${a[i]["priceA"]}</span>
+                                <span class="discount">现价：￥${a[i]["priceB"]}</span>
+                            </div>
+                        </dd>
+                    </dl>`;
+                    };
+                    box.innerHTML = html;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

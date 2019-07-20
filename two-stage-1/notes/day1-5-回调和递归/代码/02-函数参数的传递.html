@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*01-函数的参数是值类型*/
+
+  // var i = 123;
+  // function f1(a) {
+  //   console.log("函数内a=",a);
+  //   a++;
+  //   console.log("函数内a=",a);
+  // }
+  //
+  // f1(i);
+  // console.log(i);     //123
+
+  // var a = 1;
+  // function f1(a) {
+  //   console.log("函数内a=",a);   //1
+  //   a++;
+  //   console.log("函数内a=",a);   //2
+  // }
+  //
+  // f1(a);   /*把a1保存的内容(具体的值)拷贝一份给a2*/
+  // console.log(a);             //1
+
+
+  /*02-函数的参数是引用类型*/
+  var obj = {name:"zs"};
+
+  function f(o) {
+    console.log(o.name);                //zs
+    o.name = "巧虎";
+    console.log(o.name);                //巧虎
+  }
+
+  f(obj);  /*把obj保存的内容(地址-引用)拷贝一份给o*/
+  console.log("obj.name=",obj.name);    //巧虎
+
+
+  /*总结：如果函数的参数是引用类型的，那么在函数体内修改了参数，外部的实参也会被修改。*/
+
+</script>
+</body>
+</html>

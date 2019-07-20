@@ -1,0 +1,29 @@
+复习
+BOM：Browser Object Model 浏览器对象模型
+范围：EcmaScript + BOM + DOM
+window核心对象
+[1] JavaScript所有的全局变量都是window
+[2] BOM->document
+[3] window自己核心成员(属性|属性对象)
+    属性对象：
+      history    length  go() back() forward()
+      location   href地址(完整路径) search(查询字符串) | 可以读也可以写 reload() replace()
+      navigator  了解(地理位置)
+    主要属性：
+      window.innerWidth   页面的宽度(可视区域)
+      window.innerHeight  页面的高度(可视区域)
+      window.outerHeight  窗口的高度
+      window.outerWidth   窗口的宽度
+
+      window.scrollX      水平滚动条的位置(only Read)
+      window.scrollY      垂直滚动条的位置(only Read)
+      window.scrollTo(x,y)
+      window.scrollBy(x,y)
+
+    弹窗相关的方法
+      alert()
+      confirm()  取消 确定        返回值 true false
+      prompt()   输入框 取消 确定  返回值 文本框的内容
+      open()     打开新的页面
+      close()    关闭页面
+      print()    打印

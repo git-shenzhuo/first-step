@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*01-Date的创建 获取当前的时间*/
+  /*备注：没有参数的情况[3]*/
+  var date1 = new Date();
+  /*时间内包含的信息：年份 月份 日 小时 分钟 秒钟 星期 标明时区*/
+  console.log(date1);       //Sun May 05 2019 14:05:47 GMT+0800 (中国标准时间)
+
+  var date2 = new Date;
+  console.log(date2);       //Sun May 05 2019 14:10:13 GMT+0800 (中国标准时间)
+
+  var date3 = Date();
+  console.log(date3);       //Sun May 05 2019 14:10:50 GMT+0800 (中国标准时间)
+
+  /*02-Date的创建*/
+  /*备注：传递参数的情况*/
+  /*02-1 参数是参数列表，年月日*/
+  var date4 = new Date(2019,5,10,20,30,0,10);
+  console.log(date4);     //Mon Jun 10 2019 20:30:00 GMT+0800 (中国标准时间)
+
+  var date5 = new Date(2019,5,10);
+  console.log(date5);     //Mon Jun 10 2019 00:00:00 GMT+0800 (中国标准时间)
+
+  /*02-2 参数是字符串 注意格式*/
+  var date6 = new Date("2019-5-6");  /*建议*/
+  console.log(date6);     //Mon May 06 2019 00:00:00 GMT+0800 (中国标准时间)
+
+  console.log("----");
+  var date7 = new Date("2019#4#23");
+  console.log(date7);     //Mon May 06 2019 00:00:00 GMT+0800 (中国标准时间)
+
+  /*02-3 参数是时间戳 时间戳：用当前的时间 - 1970 1 1 得到的毫秒*/
+  /*如何得到时间戳 getTime()*/
+  var time = date1.getTime();
+  console.log(time);    //1557037359914
+
+  var date8 = new Date(1557037359914);
+  console.log(date8);   //Sun May 05 2019 14:22:39 GMT+0800 (中国标准时间)
+
+
+  /*时间戳：*/
+  var time1 = new Date();
+  console.log(time1, time1.getTime());
+  //Sun May 05 2019 14:25:56 GMT+0800 (中国标准时间) 1557037556956
+  //Sun May 05 2019 14:26:15 GMT+0800 (中国标准时间) 1557037575455
+
+  var res = 1557037575455 - 1557037556956
+  console.log(res);   //18499    时间差19s
+  /*1天 = 24小时*/
+  /*1小时 = 60分钟*/
+  /*1分钟 = 60秒*/
+  /*1秒 = 1000毫秒*/
+
+  console.log(res / 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,body {
+            height: 100%;
+            /* background-image: url(../images/bg.gif) */
+        }
+
+        .box1 {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-image: url(../images/bg.gif);
+        }
+        .box2{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-image: url(../images/bg1.jpg);
+        }
+        .frame1 {
+            width: 600px;
+            height: 400px;
+            border: 5px solid #fff;
+            margin: 50px auto;
+            background-color: #669999;
+            opacity: .7;
+        }
+        .frame2{
+            width: 400px;
+            height: 400px;
+            border: 3px solid #666666;
+            margin: 50px auto;
+            background-color: #FFFFCC;
+            opacity: .7;
+        }
+        .inframe1 {
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            margin: 20px;
+        }
+
+        .skin1 {
+            font-size: 20px;
+            color: #fff;
+            margin-left: 10px;
+            line-height: 30px;
+            font-weight: 900;
+        }
+        .skin2{
+            font-size: 20px;
+            color: green;
+            margin-left: 10px;
+            line-height: 30px;
+            font-weight: 900;
+        }
+        .btn {
+            width: 50px;
+            text-align: center;
+        }
+
+        hr {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        p{
+            margin-bottom: 10px;
+        }
+
+        .inputBox {
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        .enterName1,
+        .enterPass1 {
+            width: 450px;
+            height: 30px;
+        }
+        .enterName2,
+        .enterPass2{
+            width: 250px;
+            height: 30px;
+        } 
+        .message1{
+            width: 450px;
+            height: 150px;
+        }
+        .message2{
+            width: 250px;
+            height: 150px;
+        }
+        .submit{
+            display: block;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box1">
+        <div id="frame" class="frame1">
+            <div class="inframe1">
+                <label for="" class="skin1">可以换肤的提交框：</label>
+                <button class="btn">皮肤1</button>
+                <button class="btn">皮肤2</button>
+                <hr>
+                <p>
+                    <label for="enterName" class="inputBox">输入姓名：</label>
+                    <input type="text" name="enterName" class="enterName1">
+                </p>
+                <p>
+                    <label for="enterPass" class="inputBox">输入密码：</label>
+                    <input type="password" name="enterPass" class="enterPass1">
+                </p>
+                <p>
+                    <label for="message" class="inputBox">请您留言：</label>
+                    <input type="text" name="message" class="message1">
+                </p>
+                <button class="submit">提交</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function(){
+            var oBox   = document.getElementById("box");
+            var oDiv   = document.getElementById("frame");
+            var oSkin  = document.getElementsByTagName("label")[0];
+            var oInput = document.getElementsByTagName("input");
+            var oBtn   = document.getElementsByTagName("button");
+            oBtn[1].onclick = function(){
+                oBox.className  = "box1";
+                oDiv.className  = "frame1";
+                oSkin.className = "skin1";
+                oInput[0].className = "enterName1";
+                oInput[1].className = "enterPass1";
+                oInput[2].className = "message1";
+            }
+            oBtn[0].onclick = function(){
+                oBox.className  = "box2";
+                oDiv.className  = "frame2";
+                oSkin.className = "skin2";
+                oInput[0].className = "enterName2";
+                oInput[1].className = "enterPass2";
+                oInput[2].className = "message2";
+            }
+        }
+    </script>
+</body>
+
+</html>

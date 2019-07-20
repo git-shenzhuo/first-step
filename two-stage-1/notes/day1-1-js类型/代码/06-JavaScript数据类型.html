@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 01-数据类型
+  * [1] 基本(简单)数据类型 string number boolean null undefined
+  * [2] 复合(复杂)数据类型p
+  *
+  * 02-类型检查 typeof
+  * 语法：typeof 变量名    |   typeof(变量名)
+  * 返回值：返回的是一个字符串
+  *
+  * */
+
+  /*string-字符串*/
+  var str1 = "老虎，老虎！";
+  var str2 = "你好，忧愁！";
+
+  /*number-数字*/
+  var num1 = 18;
+  var num2 = 1.73;
+
+  /*boolean-布尔类型*/
+  var bool1 = true;
+  var bool2 = false;
+
+  /*null-空(空对象 | 指针)*/
+  var test1 = null;
+
+  /*undefined-未定义*/
+  var test2;
+  console.log(str2);
+  console.log(test1);
+  console.log(test2);
+
+  console.log(str1);
+  str1 = "老鼠-老鼠";
+  console.log(str1);
+
+
+  /*类型检查*/
+  console.log(typeof str1);       //string
+  console.log(typeof num1);       //number
+  console.log(typeof bool1);      //boolean
+  console.log(typeof test1);      //object           /*记住：特殊*/
+  console.log(typeof test2);      //undefined
+  console.log(typeof (str2));     //string
+  console.log(typeof (num2));     //number
+
+  console.log(typeof typeof num1);//检查num1的返回值number是什么类型的  string
+
+  if (typeof test2 == undefined)
+  {
+    console.log("test2的值未定义")
+  }
+
+</script>
+</body>
+</html>

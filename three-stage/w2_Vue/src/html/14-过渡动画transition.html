@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition</title>
+    <link rel="stylesheet" href="../css/animate.css">
+    <style>
+        img{width: 300px;}
+
+        /* 给动画设置效果 */
+        /* 默认--------------------------------------------------------- */
+        /* 显示 -------------------*/
+        /* 开始显示时的状态 */
+        .v-enter{width: 0;}
+        /* 显示完成的状态 */
+        .v-enter-to{width: 300px;}
+        /* 显示过程 */
+        .v-enter-active{transition:width 3s}
+
+        /* 隐藏 --------------------- */
+        /* 开始隐藏时的状态 */
+        .v-leave{width: 300px;}
+        /* 隐藏结束的状态 */
+        .v-leave-to{width: 0;}
+        /* 隐藏过程 */
+        .v-leave-active{transition:width 3s} 
+        
+
+        /* 自定义名字--------------------------------------------------- */
+         /* 显示 -------------------*/
+        /* 开始显示时的状态 */
+        .fade-enter{width: 0;}
+        /* 显示完成的状态 */
+        .fade-enter-to{width: 300px;}
+        /* 显示过程 */
+        .fade-enter-active{transition:width 3s}
+
+        /* 隐藏 --------------------- */
+        /* 开始隐藏时的状态 */
+        .fade-leave{width: 300px;}
+        /* 隐藏结束的状态 */
+        .fade-leave-to{width: 0;}
+        /* 隐藏过程 */
+        .fade-leave-active{transition:width 3s}
+    </style>
+</head>
+<body>
+    <h1>transition</h1>
+    <div id="box">
+        <button @click='isokfunc'>切换状态</button>
+        <div>
+            <!-- <transition>
+                <img src="../img/t1.jpg" alt="" v-show='isok'>
+            </transition> -->
+            <!-- <transition name = 'fade' enter-active-class="fadeInDown"
+            leave-active-class="fadeOutDown">
+                <img src="../img/t1.jpg" alt="" v-show='isok' class="animated">
+            </transition> -->
+
+            <!-- 多个元素一起动画 -->
+            <transition-group enter-active-class="fadeInDown" leave-active-class="fadeOutDown">
+                <img src="../img/g1.jpg" :key="1" v-show='isok' alt="" class="animated">
+                <img src="../img/g2.jpg" :key="2" v-show='isok' alt="" class="animated">
+            </transition-group>
+        </div>
+        
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:'#box',
+            data:{
+                isok:true
+            },
+            methods: {
+                isokfunc(){
+                    this.isok = !this.isok
+                }
+            },
+        })
+    </script>
+</body>
+</html>

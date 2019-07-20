@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      padding: 50px;
+      border: 1px solid #555;
+    }
+  </style>
+</head>
+<body>
+<div class="box" style="background: mediumvioletred">
+  <div class="father" style="background: #eee">
+    <div class="son" style="background: yellow"></div>
+  </div>
+</div>
+<script>
+
+  var son     = document.querySelector(".son");
+  var father  = document.querySelector(".father");
+  var box     = document.querySelector(".box");
+  var timer;
+  /*事件捕获：根节点-->具体的目标节点  反冒泡*/
+  /*语法：ele.addEventListener(type,handle,isCapture)
+  * 参数：isCapture是否捕获 (true / false)  默认值是false,表示不捕获
+  *
+  * 如果参数是false,  表示把事件添加到冒泡流
+  * 如果参数是true ,  表示把事件添加到捕获流
+  * */
+
+
+  // father.addEventListener("click",function () {
+  //   console.log("father--click-捕获");
+  // },true)
+  //
+  // box.addEventListener("click",function () {
+  //   console.log("box--click-捕获");
+  // },true)
+
+
+  /*给冒泡流注册了N个点击事件*/
+  // son.addEventListener("click",function () {
+  //   console.log("son--click-冒泡");
+  //   // timer = setInterval(function () {
+  //   //   console.log("son--click-捕获---");
+  //   // },1000);
+  // })
+
+  // son.addEventListener("click",function () {
+  //   console.log("son--click-捕获");
+  //   /*拦截点击事件*/
+  //   // clearInterval(timer);
+  // },true)
+
+  // father.addEventListener("click",function () {
+  //   console.log("father--click-冒泡");
+  // })
+  //
+  // box.addEventListener("click",function () {
+  //   console.log("box--click-冒泡");
+  // })
+
+
+  /*DOM标准事件流的三个阶段*/
+  /*
+  box--click-捕获
+  father--click-捕获
+  son--click-捕获
+  ----处于目标阶段----
+  son--click-冒泡
+  father--click-冒泡
+  box--click-冒泡
+  */
+
+  /*addEventListener方法支持捕获流和冒泡流 onclick和attachEvent方法仅仅支持事件冒泡*/
+
+
+  /*事件的执行和代码的顺序是逻辑无关的(绑定多个同类型事件这种情况出外)*/
+  son.addEventListener("click",function () {
+    console.log("click2");
+  })
+  son.addEventListener("click",function () {
+    console.log("click1");
+  })
+  son.addEventListener("mouseenter",function () {
+    console.log("mouseenter");
+  })
+
+
+</script>
+</body>
+</html>

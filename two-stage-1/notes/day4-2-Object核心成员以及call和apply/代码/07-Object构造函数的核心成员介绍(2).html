@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*讨论的是Object的静态成员(构造函数身上的属性和方法) 只有Object构造函数自己可以访问*/
+  console.dir(Object);
+  /*
+    length: 1               期望传递的形参的个数
+    name: "Object"          函数的名
+    create:                 创建对象并且设置该对象的原型对象
+
+    isExtensible            检查该对象是否是可扩展的 添加
+    preventExtensions：      禁止对象扩展
+    isSealed：               检查该对象是否是可配置的/
+    seal:                    禁止对象配置
+    isFrozen:                检查该对象是否被冻结    不能添加|不能修改|不能删除 |不能枚举
+    freeze：                 冻结对象
+
+    getOwnPropertyDescriptor: 获取对象中指定属性的描述信息(对象)
+    getOwnPropertyDescriptors:获取对象中所有属性的描述信息(对象)
+    defineProperties:       定义对象的多个属性
+    defineProperty:         定义对象的属性
+
+    getOwnPropertyNames:      获取所有的属性名(数组)
+    keys：                     获取所有的属性名(数组)
+
+    values：                   获取所有的属性值(数组)
+    getPrototypeOf:           获取原型对象
+    setPrototypeOf：          设置原型对象
+
+    is:                       比较两个值是否全等(===) ES6
+    assign:                   混合对象(MiXin)-把多个对象合并成一个新对象  ES6
+   */
+
+  var o = {name:"张思睿",age:18};
+
+  /*给o对象定义age和className两个属性*/
+  Object.defineProperties(o, {
+    "age":{
+        configurable:true,
+        enumerable:true,
+        value:"18",
+        writable:true
+    },
+    "className":{
+      configurable:true,
+      enumerable:false,
+      value:"一年一班",
+      writable:true
+    }
+  })
+
+  /*isExtensible 扩展*/
+  // console.log(Object.isExtensible(o));  //true
+  // Object.preventExtensions(o);          //不可扩展  不能添加
+  // console.log(Object.isExtensible(o));  //false
+  // o.address = "北京市";                  //没有效果
+  // console.log(o);
+
+  /*isSealed 密封*/
+  // console.log(Object.isSealed(o));     //false  是否被密封
+  // console.log(Object.seal(o));         //密封    不能添加 && 不能删除
+  // console.log(Object.isSealed(o));
+  // o.address = "南京市";                 //不能添加
+  // delete o.age;                        //不能删除
+  // o.name = "光头强";                    //能修改
+  // console.log(o);
+
+  /*isFrozen 冻结*/
+  console.log(Object.isFrozen(o));        //false
+  Object.freeze(o);                       //冻结 不能添加 && 不能删除 && 不能修改
+  console.log(Object.isFrozen(o));        //false
+  o.xxx = "哈哈哈";                        // 不能添加
+  delete o.name;                          // 不能删除
+  o.name = "小龙";                         // 不能修改
+  console.log(o);
+</script>
+</body>
+</html>

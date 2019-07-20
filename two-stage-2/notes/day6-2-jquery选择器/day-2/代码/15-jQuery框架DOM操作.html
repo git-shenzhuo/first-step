@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<div id="demoID">
+  内容
+</div>
+<ul>
+  <li>li1</li>
+  <li>li2</li>
+  <li>li3</li>
+</ul>
+<script>
+  $(function () {
+
+    /*01-创建标签*/
+    // console.log($("<div>我是新创建的标签</div>")[0]);
+    // console.log($("<div>我是新创建的标签</div>").get(0));
+
+    var oDiv = $("<div></div>");
+    oDiv.text("标签的内容");
+    console.log(oDiv[0]);
+
+    /*02-插入标签*/
+    //$("#demoID").append(oDiv);
+    $("#demoID").prepend(oDiv);
+
+    /*03-删除标签*/
+    //$("#demoID").remove();
+
+    /*04-清空标签*/
+    $("#demoID").empty();
+
+    /*05-复制标签*/
+    //$("ul").append($("li").clone(true));
+
+    /*06-标签的下标(角标)*/
+    $("li").click(function () {
+      console.log(this);
+      console.log($(this).index(),$(this).text());
+    })
+
+  })
+
+</script>
+</body>
+</html>

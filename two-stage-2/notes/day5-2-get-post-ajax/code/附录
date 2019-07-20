@@ -1,0 +1,217 @@
+01-知识点回顾和课程内容说明
+02-网络请求的方法介绍
+03-表单发送POST请求
+04-HTTP报文的结构(请求和响应)
+05-表单实现文件上传请求
+06-Ajax网络请求简单介绍 
+07-同步任务和异步任务说明
+
+08-Ajax发送GET网络请求
+09-Ajax发送GET网络请求(缓存数据处理)
+10-Ajax发送GET网络请求(中文参数处理)
+
+11-Ajax发送GET网络请求(请求超时处理)
+12-Ajax发送POST网络请求
+13-Ajax网络请求的封装
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+需求分析文档(产品文档)   产品经理 1
+高保真图片             设计师   1
+接口文档               后台开发 1-2
+写代码                 前端开发 2
+测试                  测试工程师 1
+状态码：我们在开发中很多时间都需要参考接口文档来编写代码和服务器端交互-接口调试。
+出现错误，很可能拿不到服务器返回的数据。
+解决问题：这到底是客户端的错误(4开头)还是服务器端(5)的错误。
+
+
+01-知识点回顾和课程内容说明
+知识点复习
+[1] 网络请求基本概念
+    客户端：客户使用的设备或者是软件。
+    服务器：为客户端提供数据，提供资源，提供服务设备，主机。
+    请求：客户端向服务器索要资源的行为。
+    响应：服务器把资源提供给客户端的行为。
+    协议：TCP/IP协议簇-集合(TCP UDP IP DNS HTTP HTTPS SSL) 规则
+    URL: 统一资源定位符(互联网上资源的身份证)，唯一的。
+         基本格式：协议 + 主机地址(域名|IP) + 资源路径
+
+[2] 表单发送网络请求
+    （1）在form表单标签上面设置action，设置的请求的路径
+    （2）如果需要把表单数据提交给服务器端，那么需要以键（key）值（value）对方式提交，通过name来设置key
+    （3）在服务端通过$_GET来获取提交的数据(参数)
+
+[3] PHP基础语法
+    注释：// # /**/
+    变量：$变量名  区分大小写，但是函数不区分大小写
+    语句：必须要加上；
+    类型：
+        整型   int 
+        浮点型 float
+        字符串 string
+        布尔值 boolean
+        数组   array 
+                索引数组       array(1,2,4)
+                关联数组(字典)  array("name"=>"zs","age"=>18)        
+        类    class 
+    函数：声明和调用  作用域
+    流程控制结构：顺序 | 分支 | 循环(遍历数组，count())
+    控制输出语句：echo print() printf() print_r() var_dump() 类型和数据
+    JSON转换：json_encode() json_decode()
+
+
+# GET请求和POST区别
+GET  http://localhost:8888/code/day02/server/01-form-get.php?usm=ZS&pwd=12345&phoneText=18689429781&emailText=123%40126.com
+POST http://localhost:8888/code/day02/server/01-form-get.php
+
+HTTP报文(消息)的结构：
+HTTP报文：首部 + 主体
+请求报文： 请求首部(请求行 + 请求头) + 请求主体
+响应报文： 响应首部(状态行 + 响应头) + 响应主体
+
+请求首部
+请求行 GET /code/day02/server/01-form-get.php?usm=lw&pwd=12345&phoneText=18689429781&emailText=123%40126.com HTTP/1.1
+
+请求头：对客户端以及请求本身的描述。
+Host: localhost:8888
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+Referer: http://localhost:8888/code/day02/01-from-GET.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: Webstorm-3a38ae08=092b9319-a94f-4faa-9e80-31e328c62dfa
+
+请求体
+GET: 没有
+POST:usm=lw&pwd=12345&phoneText=18689429781&emailText=123%40126.com
+
+响应首部
+状态行 HTTP/1.1 200 OK
+
+响应头 对服务器端以及对响应本身的描述信息。
+Date: Thu, 23 May 2019 02:18:31 GMT
+Server: Apache/2.2.34 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.3.1 mod_ssl/2.2.34 OpenSSL/1.0.2o DAV/2 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.9 Perl/v5.24.0
+X-Powered-By: PHP/7.3.1
+Content-Length: 84
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: text/html; charset=UTF-8
+
+响应体信息
+用户名lw<br>密码12345<br>手机号码18689429781<br>电子邮箱123@126.com<br>
+
+
+同步和异步：执行多个任务的方式。
+同步：一个接着一个的处理，必须要等当前任务执行完毕，才能开始执行下一个任务。  上厕所 和 吃饭
+异步：可以不用等待当前任务执行完毕就开始执行下一个任务                     边听课 边睡觉 边聊天
+
+去银行办理业务:取20W
+柜员 [你：1分钟][4] [5] [6][2：开户 填写10张单][7]    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+练习题：
+[1] 练习使用表单发送GET和POST网络请求，并整理列出两种网络请求的以下要素：
+    (1) 请求路径和请求的参数
+    (2) 请求头信息
+    (3) 请求体信息
+    (4) 响应头信息
+    (5) 响应体信息
+
+[2] 练习使用表单发送网络请求实现登录的功能。
+    要求：自己提供php后台文件，编写php的代码检查客户端提交的参数是否匹配。
+    先检查用户名是否存在，如果用户名不存在那么就返回用户名不存在的JSON数据
+    如果用户名存在，那么就继续检查密码是否正确，如果不正确则返回密码不正确的JSON数据
+    如果密码正确，则返回登录成功。
+    前端页面拿到返回值后需要弹框提示用户(使用取消-确定的弹框)，具体的提示消息为用户名不正确、
+    密码不正确或者是登录成功 (需要从返回值中获取)。
+
+    返回的JSON格式示例：
+    {code:"100",msg:"用户名不正确"}
+    {code:"101",msg:"密码不正确"}
+    {code:"102",msg:"登录成功"}
+
+
+[3] 作业
+    把下面的数据放到php后台，要求当页面加载完毕后对服务器发起一个网络请求
+    获取商品数据后解析为JavaScript对象数组，并渲染到页面中。
+    数据：
+    let dataList = [
+        {
+                "name":"佰草集 肌活新颜组",
+                "src":"https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/107028/2019/0506/83/8d1ced07-912a-490d-8faf-d0e23260ba29.jpg",
+                "priceA":"540",
+                "priceB":"229",
+         },
+          {
+                  "name":"NEO运动休闲时尚",
+                  "src":"https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/2019/01/18/73/f7f8a0ec-afe9-4af4-bbfc-19ff60462f52.jpg"
+                  "priceA":"629",
+                  "priceB":"307",
+         },
+          {
+                  "name":"大1匹变频冷暖壁",
+                  "src":"https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcpos/1100000044/2019/0522/116/1a8abba9-fb9b-4d57-9e58-0a42c1360d5e.jpg",
+                  "priceA":"2999",
+                  "priceB":"2138",
+         },
+         {
+                  "name":"蓝月亮精选薰衣草",
+                  "src":"https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcpos/1100001647/2019/0422/82/bcebf8a7-7dbd-4510-b853-8a1789ea8897.jpg",
+                  "priceA":"310",
+                  "priceB":"89",
+         },
+        {
+                  "name":"贝德玛 舒妍多效卸",
+                  "src":"https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcimg/2019/04/19/190/45479821555636766200.jpg",
+                  "priceA":"518",
+                  "priceB":"159",
+         },
+         {
+                  "name":"高洁丝臻选纯棉超",
+                  "src":"https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/605400/2019/0417/29/0744a39e-c630-4d4a-a3c0-bff907fa3b82.jpg",
+                  "priceA":"140",
+                  "priceB":"49",
+         }, 
+    ]
+    

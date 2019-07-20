@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            function Parson(name,age){
+                this.name = name;
+                this.age  = age;
+                this.showinfo = function(){};
+            }
+            console.log(Parson.prototype);
+            console.log(Parson.prototype.constructor);
+            Parson.prototype.showname = function(){
+                console.log(Parson.prototype.showname);               
+            };
+            Parson.prototype.showage  = function(){
+                console.log(Parson.prototype.showage);                
+            };
+            var p1 = new Parson("王五",38);
+            var p2 = new Parson("赵大",23)
+            console.log(p1.showage,p1.showname,p1.name,p1.age);
+            console.log(p1.__proto__);
+            console.log(p2.__proto__);
+            console.log(Parson.prototype.constructor == Parson);
+            console.log(p1.__proto__ == Parson.prototype);    
+        }    
+    </script>
+</body>
+</html>

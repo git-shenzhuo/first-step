@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      width: 100px;
+      height: 50px;
+      background: #fff;
+      border: 1px solid #ccc;
+      text-align: center;
+      line-height: 50px;
+    }
+  </style>
+</head>
+<body>
+<div id="divID">测试</div>
+<input type="text" id="inputID">
+<div id="totalID"></div>
+<script>
+  /*
+  * 函数执行的两种方式
+  * [1] 通过代码来调用 f();
+  * [2] 通过外部用户触发来调用-事件
+  *
+  * 常见的事件(DOM事件)
+  * onclick   点击事件
+  * ondclick  双击事件
+  * onmouseenter
+  * onmouseleave
+  * onchange
+  * oninput
+  * onkeydown
+  * onkeyup
+  * ....
+  * */
+
+  var price = 5999;
+  var oDiv = document.getElementById("divID");
+  var oInput = document.getElementById("inputID");
+  var oTotal = document.getElementById("totalID");
+
+  /*有两种方式：直接写 | 把函数声明单独拿出去*/
+  // function handleClick() {
+  //   console.log("点击了div标签");
+  // }
+  //
+  // oDiv.onclick = handleClick;
+  // console.log(oDiv.onclick);
+
+  oDiv.ondblclick = function () {
+    console.log("--ondblclick--");
+  }
+
+  oDiv.onmouseenter = function () {
+    console.log("--onmouseenter--");
+  }
+
+  oDiv.onmouseleave = function () {
+    console.log("--onmouseleave--");
+  }
+
+  oInput.oninput = function () {
+    console.log("--oninput--");
+    oTotal.innerHTML = "总价：" + oInput.value * 1 * price;
+  }
+</script>
+</body>
+</html>

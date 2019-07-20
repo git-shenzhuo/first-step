@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 180px;
+            height: 150px;
+            border: 1px solid red;
+            position: relative;
+        }
+        img{
+            width: 180px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div><img src="../images/bird.jpg" alt=""></div>
+    <script>
+        window.onload = function(){
+            // 取得标签
+            var div = document.querySelector("div");           
+            // 按下取得控制权
+            div.onmousedown = function(evenr){
+                var evenr = evenr || window.evenr;
+                // 得到鼠标到盒子距离offset
+                var offsetX = evenr.offsetX;
+                var offsetY = evenr.offsetY;    
+                document.onmousemove = function(evenr){
+                    var evenr = evenr || window.evenr;
+                    // 得到滑动的时候鼠标到页面的距离page
+                    var pageX = evenr.pageX;
+                    var pageY = evenr.pageY;
+                    // 根据距离差设置盒子的left和top
+                    div.style.left = pageX - offsetX + "px";
+                    div.style.top  = pageY - offsetY + "px";
+                }
+            }
+            div.onmouseup = function(){
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+</html>

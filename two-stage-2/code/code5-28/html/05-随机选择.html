@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <script>
+        window.onload=()=>{
+            let a = randomColor(16);
+            console.log(a);
+            let b = randomColor("rgb");
+            console.log(b);
+            let c = randomCode();
+            console.log(c);
+            let d = toDb(4);
+            console.log(d);
+            let e = setTime(3600);
+            console.log(e);
+            let str = "name=malin&psw=456123";
+            let f = strToObj(str);
+            console.log(f);
+            let g = checkReg.trim("    qwer www   ");
+            console.log(g);
+            
+        }    
+    </script>
+</body>
+</html>

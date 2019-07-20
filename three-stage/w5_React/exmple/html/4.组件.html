@@ -1,0 +1,118 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React组件</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+<body>
+    <h1>React组件</h1>
+    <div id="box">
+        
+    </div>
+
+    <script type="text/babel">
+
+
+        // let name = '函数组件';
+    //     let data = [
+    //        {
+    //            username:'laoxie',
+    //            content:'商品很好，老婆很喜欢。好评'
+    //        },
+    //        {
+    //            username:'jingjing',
+    //            content:'衣服不错，老公穿了很难看，好评'
+    //        },
+    //        {
+    //            username:'dingding',
+    //            content:'第二来了，帽子不错，顶！'
+    //        }
+    //    ]
+
+    //     // 函数组件
+    //     function Comment() {
+    //         return <div>
+    //             <h4>{name}</h4>
+    //             <p>hello Word！</p>
+    //             <CommetnList/>
+    //             </div>
+    //     }
+
+        function CommetnList(props) {
+            return <div>
+                    <ul>
+                        {props.data.map(item=>{
+                            // return <li>
+                            //     <h4>{item.username}</h4>
+                            //     <p>{item.content}</p>
+                            //     </li>
+                            return <CommentLi data={item}/>
+                        })}
+                    </ul>
+                </div>
+        }
+
+        function CommentLi({data}) {
+            return <li>
+                    <h4>{data.username}</h4>
+                    <p>{data.content}</p>
+                    <CommentButton>回复</CommentButton>
+                    </li>
+        }
+
+        function CommentButton(props){
+            return <button>{props.children}</button>
+        }
+
+
+        // 类组件
+        class Comment extends React.Component{
+            constructor(){
+                super();
+                this.state = {
+                    data:[
+                        {
+                            username:'laoxie',
+                            content:'商品很好，老婆很喜欢。好评'
+                        },
+                        {
+                            username:'jingjing',
+                            content:'衣服不错，老公穿了很难看，好评'
+                        },
+                        {
+                            username:'dingding',
+                            content:'第二来了，帽子不错，顶！'
+                        }
+                    ]
+                }
+            }
+            render(){
+                return <div>
+                    <h4>{name}</h4>
+                    <p>hello Word！</p>
+                    <CommetnList data={this.state.data}/>
+                    </div>
+            }
+        }
+
+
+
+        ReactDOM.render(
+            // 渲染内容
+            <div>
+                <Comment/>
+            </div>
+            ,
+            // 挂载目标
+            document.getElementById('box')
+            );
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //http://asdadhsdfbjhbg.php？city=beijing&city=guangzhou
+
+        /*formData的基本使用*/
+        /*01-先创建一个formData实例对象*/
+        let data = new FormData();
+
+        /*02-添加数据*/
+        data.set("name", "zs");
+        data.set("age", 18);
+        data.set("address", "广州市");
+        data.set("city", "北京");
+
+        /* 追加数据*/
+        data.append("city", "上海");
+        data.append("city", "杭州");
+        data.append("city", "深圳");
+
+        /*03-修改数据*/
+        data.set("address", "北京市");
+
+        /*04-查询数据*/
+        console.log(data.get("city")); //北京
+
+        /*05-查询指定key对应的所有数据*/
+        console.log(data.getAll("city")); //["北京", "上海", "杭州", "深圳"]
+
+        /*06-检查是否有某个数据*/
+        console.log(data.has("name"), data.has("color")); //true false
+
+        /*07-删除数据*/
+        data.delete("city");
+
+        console.log(data);
+
+
+        data.forEach(function(value, key) {
+            console.log(key, value);
+        })
+    </script>
+</body>
+
+</html>

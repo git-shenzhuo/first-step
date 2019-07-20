@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <div id="demoID">我拥有id
+        <div>div1</div>
+        <div class="box3">div2
+            <span>spanD</span>
+            <div>我是div------</div>
+            <div>我也是div+++++</div>
+        </div>
+        <div>div3</div>
+        <div>div4</div>
+    </div>
+    <div class="box1">我拥有class-box1</div>
+    <div class="box1">我拥有class-box1</div>
+    <div class="box2">我拥有class-box2</div>
+    <span>spanA</span>
+    <span>spanB</span>
+    <span>spanC</span>
+    <p>我是段落标签</p>
+    <script>
+        $(function(){
+
+            // 01-------基本选择器
+            // id选择器
+            console.log($("#demoID")[0]);
+            $("#demoID").css("background","pink");
+
+            // class选择器
+            console.log($(".box1"));
+            $(".box1").css("background","#ccc");
+
+            // 标签选择器
+            console.log($("span"));
+            $("span").css("background","yellow");
+
+            // 并级选择器
+            console.log($(".box2,p"));
+            $(".box2,p").css("background","green");
+
+            // 通配选择器
+            console.log($("*"));
+            $("*").css("background","red");
+
+
+
+            
+            // 02------层级选择器
+            // 获取所有的子标签    " "
+            $("#demoID div").css("background","pink");
+
+            // 一级子节点          ">"
+            $("#demoID>div").css("background","#ccc");
+
+            // 后面第一个兄弟节点   "+"
+            $(".box2+span").css("background","yellow");
+
+            // 后面所有的兄弟节点
+            $(".box3~div").css("background","green");
+        })
+    </script>
+</body>
+
+</html>

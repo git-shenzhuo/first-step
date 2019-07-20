@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>发送请求GET</button>
+    <button>发送请求POST</button>
+    <script>
+        // 拿到标签
+        let but1 = document.querySelectorAll("button")[0];
+        let but2 = document.querySelectorAll("button")[1];
+        let url1 = "http://localhost/second%20stage/code/code5-24/php/03-ajax2-1.php";
+        let url2 = "http://localhost/second%20stage/code/code5-24/php/04-ajax2-2.php";
+       
+        // 封装三，有数据传输。并且可以get和post一起操作
+        function ajax(type,url,data,success,error) {
+            let xhr = new XMLHttpRequest();
+            // 判断是“get”
+            if(type == "get"){
+                 // 中文转码????有问题
+            // url = encodeURI(url);
+            let querys = "";
+            let arr = [];
+            for(key in data){
+                arr.push(`${key}=${data[key]}`);
+            }
+            querys = arr.join("&");
+            url = `${url}?${querys}`;
+            xhr.open("get", url, true);
+            xhr.send();
+            }else if(type == "post"){
+                xhr.open("post",url,true);
+                // 添加请求头
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                let querys = "";
+                let arr = [];
+                for(key in data){
+                    arr.push(`${key}=${data[key]}`);
+                }
+                querys = arr.join("&");
+                xhr.send(querys);
+            } 
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        // console.log("success   " + xhr.responseText);
+                        success(xhr);
+                    }else{
+                        // console.log("error   " + xhr.statusText);
+                        error(xhr);
+                    }
+                }
+            }
+        }
+        but1.onclick = function(){
+            ajax("get",
+            url1,
+            {
+            "name":"ww",
+            "age":33
+            },
+            xhr=>{
+                let span = document.createElement("span");
+                span.innerText = xhr.responseText;
+                document.body.appendChild(span);
+            },
+            xhr=>{
+                let span = document.createElement("span");
+                span.innerText = xhr.statusText;
+                document.body.appendChild(span);
+            });
+        }
+        but2.onclick = function(){
+            ajax("post",
+            url2,
+            {
+            "name":"王五",
+            "age":55
+            },
+            xhr=>{
+                let span = document.createElement("span");
+                span.innerText = xhr.responseText;
+                document.body.appendChild(span);
+            },
+            xhr=>{
+                let span = document.createElement("span");
+                span.innerText = xhr.statusText;
+                document.body.appendChild(span);
+            });
+        }
+    </script>
+</body>
+
+</html>

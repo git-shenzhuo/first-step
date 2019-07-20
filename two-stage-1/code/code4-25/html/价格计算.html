@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1ID">
+    <input type="text" id="input2ID">
+    <button id="btnID">算了吧</button>
+    <script>
+        var oInput1 = document.getElementById("input1ID");
+        var oInput2 = document.getElementById("input2ID");
+        var oBtn    = document.getElementById("btnID");
+        oBtn.onclick = function(){
+           var a = oInput1.value * 1;
+           var b = oInput2.value * 1;
+           function result(a,b){
+               return [a + b , a - b , a * b , a / b ,a % b]
+           } 
+           var num = result(a,b);
+           alert(num);
+        }
+
+    </script>
+</body>
+</html>

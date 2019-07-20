@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="server/02-form-post.php" method="POST">
+        <label for="username">用户名</label>
+        <input type="text" placeholder="请输入用户名" id="username" name="usm">
+        <label for="password">密码</label>
+        <input type="text" placeholder="请输入密码" id="password" name="pwd">
+        <label for="phone">手机号码</label>
+        <input type="text" placeholder="请输入手机号码" id="phone" name="phoneText">
+        <label for="email">电子邮箱</label>
+        <input type="text" placeholder="请输入电子邮箱" id="email" name="emailText">
+        <input type="submit" value="提交">
+    </form>
+    <script>
+        /*GET请求参数以查询字符串的格式跟在URL的后面*/
+        //Request URL: http: //localhost:8888/code/day02/server/01-form-get.php?usm=lw&pwd=12345&phoneText=18689429781&emailText=123%40126.com
+        //Request Method: GET
+
+        /*POST请求参数保存在请求体中进行提交*/
+        //Request URL: http: //localhost:8888/code/day02/server/02-form-post.php
+        //Request Method: POST
+
+        /*
+        01-参数处理方式不同
+        02-GET请求安全性很差，POST请求相对安全。
+        03-浏览器对URL路径有长度和大小限制(2kb),GET请求有限制，文件上传只能使用POST请求。
+        */
+
+        /*对参数进行加密处理 MD5 对称加密AES | HTTPS*/
+    </script>
+</body>
+
+</html>

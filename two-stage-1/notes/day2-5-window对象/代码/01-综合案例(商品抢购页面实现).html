@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .product
+    {
+      width: 200px;
+    }
+
+    .price
+    {
+      font-size: 25px;
+      color: red;
+    }
+
+    .view
+    {
+      height: 160px;
+      /*background: rebeccapurple;*/
+      position: relative;
+    }
+
+
+
+    .active{
+      position: absolute;
+      top: 50%;
+      height: 106px;
+      margin-top: -53px;
+
+    }
+
+    .count-down
+    {
+      width: 200px;
+      /*background: red;*/
+      height: 60px;
+      line-height: 60px;
+      position: absolute;
+      top: 50%;
+      margin-top: -30px;
+      left: 50px;
+    }
+  </style>
+</head>
+<body>
+<img src="./秒杀商品图片/1.png" alt="" class="product">
+<div>兰蔻（LANCOME）明眸大眼5件套装礼盒</div>
+<div >
+  <span>原价：1080.00</span>
+  <span class="price">活动价：99.8</span>
+</div>
+<div class="view">
+  <img src="./秒杀商品图片/4.jpg" alt="" class="active">
+  <div  class="count-down">倒计时</div>
+</div>
+<script>
+
+  /*实现思路
+  * [1] 写标签设置样式
+  * [2] 通过JavaScript来写业务逻辑相关的代码
+  * */
+
+  /*00-获取页面中指定的标签*/
+  var oDiv = document.getElementsByClassName("count-down")[0];
+  var oProduct = document.getElementsByClassName("product")[0];
+  var oImg     = document.getElementsByClassName("active")[0];
+
+  /*01-给定开始抢购的时间*/
+  var time = new Date(2019,4,6,10,02,0).getTime();
+  console.log(time);
+
+  /*02-通过定时器实现倒计时*/
+  var timer = setInterval(function () {
+
+    /*03-通过计算获取当前距离开抢还有多少时间 1天2小时34分钟23秒*/
+    var current = new Date().getTime();
+
+    var offset  = parseInt((time - current) /1000);
+    if (offset <=0)
+    {
+      /*04-换掉页面中商品的图片*/
+      oProduct.src = "./秒杀商品图片/2.png";
+
+      /*05-倒计时取消并且隐藏*/
+      clearInterval(timer);
+      oDiv.style.display = "none";
+
+      /*06-换掉页面中购买的图片*/
+      oImg.src = "./秒杀商品图片/3.jpg"
+    }
+
+    console.log(offset);    //122882  两个时间之间的差值(毫秒)
+
+    var d  = Math.floor(offset / 60 / 60  /24);
+    var h  = Math.floor(offset / 60 / 60 % 24);
+    var m  = Math.floor(offset / 60 % 60);
+    var s  = Math.floor(offset % 60);
+    console.log(d, h,m, s);
+
+    var r  = d + "天" + h +"小时"+m+"分钟"+s+"秒";
+    oDiv.innerHTML = r;
+
+  },1000);
+
+</script>
+</body>
+</html>

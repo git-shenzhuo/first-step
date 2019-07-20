@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" manifest="xx.appcache">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>添加</button>
+    <button>修改</button>
+    <button>查询</button>
+    <button>删除</button>
+    <button>清空</button>
+    <script>
+        //基本特点：H5新特性 20M 数据保存在本地 没有过期时间
+        //本地存储技术的操作：增加 修改 查询 删除 清空
+        //因为localStorage本身就是一个对象，因此可以直接以对象的方式来操作内容 建议使用API操作
+
+        let oBtns = document.querySelectorAll("button");
+        window.localStorage.setItem("className", "H5");
+
+        oBtns[0].onclick = function() {
+            window.localStorage.setItem("name", "zs");
+            window.localStorage.setItem("age", 199);
+            localStorage.setItem("age", 199);
+        }
+        oBtns[1].onclick = function() {
+            window.localStorage.setItem("className", "HTML5从入门到放弃");
+        }
+        oBtns[2].onclick = function() {
+            console.log(window.localStorage.getItem("className"));
+        }
+        oBtns[3].onclick = function() {
+            window.localStorage.removeItem("age");
+        }
+        oBtns[4].onclick = function() {
+            window.localStorage.clear();
+        }
+    </script>
+</body>
+
+</html>

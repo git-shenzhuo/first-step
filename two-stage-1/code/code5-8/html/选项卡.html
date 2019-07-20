@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        div{
+            width: 500px;
+            height: 400px;
+            border: 1px solid red;
+            margin: 100px auto;
+        }
+        div img{
+            width: 450px;
+            height: 300px;
+            margin-left: 25px;
+            margin-top: 25px;
+        }
+        li{
+            width: 50px;
+            height: 30px;
+            float: left;
+            margin-left: 10px;
+            background-color: #666666;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+        }
+        .color{
+            background-color: pink;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/mn1.jpg" alt="">
+        <ul>
+            <li class="color">时光1</li>
+            <li>时光2</li>
+            <li>时光3</li>
+            <li>时光4</li>
+            <li>时光5</li>
+            <li>时光6</li>
+            <li>时光7</li>
+            <li>时光8</li>
+        </ul>
+    </div>
+    <script>
+        var oImg = document.getElementsByTagName("img")[0];
+        var oLi  = document.getElementsByTagName("li");
+        var arr  = ["../images/mn1.jpg","../images/mn2.jpg","../images/mn3.jpg","../images/mn4.jpg","../images/mn5.jpg","../images/mn6.jpg","../images/mn7.jpg","../images/mn8.jpg"];
+        var len  = oLi.length;
+        for(var i = 0; i < len; i++){
+            oLi[i].index = i;           
+            oLi[i].onclick = function(){ 
+                for(var j = 0; j < len; j++){
+                    oLi[j].className = "";
+                }
+                this.className = "color";
+                // console.log(this.index);
+                // console.log(arr[this.index]);
+                oImg.src = arr[this.index];
+            }
+        }
+    </script>
+</body>
+</html>

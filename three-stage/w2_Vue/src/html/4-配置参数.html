@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>配置参数</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+    <!-- v-show 指令配合 v-on:click 指令调用methods里面的 sh 方法控制图片是否显示 -->
+    <!-- <div class="container-fluid">
+        <h3>配置参数</h3>
+        <div id="box">
+            <img src="../img/g1.jpg" alt="" v-show='isok'>
+            <button class="btn btn-success" v-on:click='sh'>躲猫猫</button>
+        </div>
+    </div> -->
+
+    <!-- v-show 指令配合 v-on:click 指令调用methods里面的 sh 方法控制哪一张图片显示，隐藏的图片的标签依然存在 -->
+    <!-- <div class="container-fluid">
+        <h3>配置参数</h3>
+        <div id="box">
+            <img src="../img/g2.jpg" alt="" v-show='isok'>
+            <img src="../img/t1.jpg" alt="" v-show='!isok'>
+            <button class="btn btn-success" v-on:click='sh'>换图</button>
+        </div>
+    </div> -->
+
+    <!-- v-if 和 v-else 指令配合 v-on:click 指令调用 methods里面的 sh 方法控制图片显示，不显示的图片所在标签会删除，显示的图片所在标签会写入 -->
+    <div class="container-fluid">
+        <h3>配置参数</h3>
+        <div id="box">
+            <img src="../img/g2.jpg" alt="" v-if='isok'>
+            <img src="../img/t1.jpg" alt="" v-else>
+            <button class="btn btn-success" v-on:click='sh'>换图</button>
+        </div>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        // 调用方法创建Vue作用域
+        let box = new Vue({
+            el:'#box',
+            data:{
+                isok:true
+            },
+            methods:{
+                sh(){
+                    this.isok = !this.isok
+                }
+            }
+        })
+    </script>
+</body>
+</html>

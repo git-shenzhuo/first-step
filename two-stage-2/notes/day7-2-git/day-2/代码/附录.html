@@ -1,0 +1,110 @@
+01-jQuery插件(放大镜和轮播图)
+02-jQuery插件(本地存储)
+03-常用的命令行操作简单介绍
+
+04-版本管理工具简单介绍
+05-Git的简单介绍
+06-Git本地仓库初始配置
+07-Git命令行的基本操作
+08-Git工作原理和三大区概念
+----------------------
+09-Git版本信息和回退演示
+10-Git分支和HEAD说明
+12-Git多人开发场景演练和冲突的处理
+11-Git分支的创建和合并
+13-第三方代码托管平台介绍
+14-GitHub简单介绍
+15-Github  托管Git仓库
+16-OSChina 托管Git仓库
+
+
+
+
+服务器远程仓库(项目)
+本地仓库的初始化：git init
+
+配置账户信息(本地仓库)：
+$ git config user.name xiaoxiao
+$ git config user.email xiaoxiao@qq.com
+
+配置账户信息(默认全局配置)
+$ git config  --global user.name xiaoxiao
+$ git config  --global user.email xiaoxiao@qq.com
+
+在操作Git仓库的时候：
+优先检查是否存在本地的账户信息如果存在那么就直接使用不存在则检查是否存在全局的账户信息，如果不存在那么就报错
+
+查看版本的状态：
+$ git status
+$ git add 具体的文件   | $ git add .     //把修改纳入到版本库管理中
+$ git commit -m "注释"                  //把修改提交到版本库
+
+git仓库的三个大区
+工作区(存放你的代码的地方)  操作：创建文件 修改文件
+暂缓区()                 git add .
+版本库()                 git commit -m "注释"
+
+建议每完成一个功能之后就commit提交，每次提交之后git版本库中都会生成一条记录(版本信息)
+$ git log
+
+
+<script>
+
+/*
+[1] 项目经理在局域网服务器上面部署了远程的Git仓库(初始化)
+    $ git init --bare
+[2] 项目成员zs 链接并下载远程仓库到本地(它自己的电脑)
+    $ git clone 远程仓库的地址
+[3] 项目成员lw 链接并下载远程仓库到本地(它自己的电脑)
+    $ git clone 远程仓库的地址
+[4] 由项目成员zs初始化仓库
+    新创建很多的文件，资源文件等等
+    $ git add .
+    $ git commit -m ""初始化
+[5] 由项目成员zs把本地的仓库提交到远程共享的仓库
+    $ git push
+[6] 项目成员lw 获取远程最新的仓库信息(把本地的仓库更新到最新)
+    $ git pull
+[7] zs 在本地版本库开始实现功能
+    $ git add .
+    $ git commit -m "1"
+    $ git add .
+    $ git commit -m "2"
+    $ git add .
+    $ git commit -m "3"
+    $ git push
+[8] lw 获取最新的远程仓库信息
+    $ git pull
+
+冲突的处理
+    如果多个人修改了同一个文件，那么当push的时候可能会出现冲突。
+    解决方案：
+    [1] 先更新获取最新的远程仓库的信息 git pull
+    [2] 打开产生冲突的文件，修改(合并 | 覆盖)
+    [3] 重新提交
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+</script>
+
+

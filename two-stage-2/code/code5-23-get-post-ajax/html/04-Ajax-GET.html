@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="../php/02-php-POST.php" method="POST">
+        <label for="username">用户名:</label>
+        <input type="text" placeholder="请输入用户名" id="username" name="user">       
+        <label for="passnum">密码:</label>
+        <input type="password" placeholder="请输入密码" id="passnum" name="word">        
+        <label for="phonenum">手机号码:</label>
+        <input type="tel" placeholder="请输入手机号码" id="phonenum" name="phone">       
+        <label for="emailnum">邮箱地址:</label>
+        <input type="email" placeholder="请输入邮箱地址" id="emailnum" name="enum"> 
+    </form>
+    <button>发送GET请求</button> 
+    
+    <script>
+        window.onload=()=>{
+            // 01 拿到所有标签
+            let oBtn   = document.querySelector("button");
+            let oInput = document.querySelectorAll("input");
+            // 02 点击事件
+            oBtn.onclick = () => {
+                // 拿到文本
+                let username = oInput[0].value;
+                let passnum  = oInput[1].value;
+                let phonenum = oInput[2].value;
+                let emailnum = oInput[3].value;
+                let querys   =`?username=${username}&passnum=${passnum}&phonenum=${phonenum}&emailnum=${emailnum}`;
+                let url      = "http://localhost/second%20stage/code/code5-23/php/04-ajax-GET.php";
+                // 如果路径存在中文，需要转码后使用
+                // url = encodeURI(url);
+
+                // 03 发起Ajax网络请求
+                // 创建请求对象
+                let xhr = new XMLHttpRequest();
+                // 设置请求对象
+                xhr.open("get",url+querys,true);
+                // 发起请求
+                xhr.send();
+                // 监听请求的状态，当状态改变的时候执行
+                xhr.onreadystatechange=()=>{
+                    // readyState监听请求所处的状态
+                    // console.log(xhr.readyState);                    
+                    if(xhr.readyState == 4){
+                        // 如果拿到数据，停止延时执行函数
+                        clearTimeout(timeout);
+                        // console.log(xhr.status);
+                        if(xhr.statusText == 200){
+                            console.log(xhr.responseText);
+                        }
+                    }
+                }
+                // 网络请求超时处理，使用延迟执行函数
+                let timeout = setTimeout(()=>{
+                    //如果需要执行这一步，结束请求
+                    xhr.abort();
+                    // 提示用户网络超时，请检查网络连接
+                    alert("请检查您的网络连接情况！！！"); 
+                },10000)
+            }
+        }
+    </script>
+</body>
+</html>

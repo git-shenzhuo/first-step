@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<p>我是p1</p>
+<p>我是p2</p>
+<span>spanA</span>
+<span>spanB</span>
+
+
+<script>
+  /*[1] 创建标签设置样式并且插入*/
+  /*01-创建3个div并且设置内容分别是div1-2-3*/
+  /*02-给创建的标签设置样式：背景颜色 red 边框：1px solid #000*/
+  /*03-把创建好的标签插入到页面中*/
+  //
+  // for (var i = 0;i<3;i++)
+  // {
+  //   var oDiv = document.createElement("div");
+  //   oDiv.innerText = "div-"  + (i+1);
+  //   oDiv.style.background = "red";
+  //   oDiv.style.border     = "1px solid #000";
+  //   document.body.appendChild(oDiv);
+  // }
+
+  /*[2] 设置页面中所有p标签的样式 背景颜色 yellow 边框：1px solid #000*/
+  //var ps = document.getElementsByTagName("p");
+  // for (var i = 0 ; i<ps.length;i++)
+  // {
+  //   var  p =ps[i];
+  //   p.style.background = "yellow";
+  //   p.style.border     = "1px solid #000";
+  // }
+
+  /*[3] 设置页面中所有p标签的样式 背景颜色 #195 边框：2px solid #ccc*/
+  //var spans = document.getElementsByTagName("span");
+  // for (var i = 0 ; i<spans.length;i++)
+  // {
+  //   var  span =spans[i];
+  //   span.style.background = "#195";
+  //   span.style.border     = "2px solid #ccc";
+  // }
+
+
+  var ps    = getElesWithTageName("p");
+  var spans = getElesWithTageName("span")
+
+  setStyle(ps, "red","1px solid #000");
+  setStyle(spans, "#195","2px solid #ccc");
+
+
+  function getElesWithTageName(tagName) {
+    return document.getElementsByTagName(tagName);
+  }
+  function setStyle(eles,background,border) {
+    for (var i = 0 ; i<eles.length;i++)
+    {
+      var  ele             = eles[i];
+      ele.style.background = background;
+      ele.style.border     = border;
+    }
+  }
+
+</script>
+</body>
+</html>

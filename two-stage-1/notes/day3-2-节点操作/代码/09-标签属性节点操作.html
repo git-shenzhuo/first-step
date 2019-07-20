@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="demoID" class="box" xxx="测试">我是div</div>
+<script>
+  var oDiv = document.getElementById("demoID");
+
+  /*01-获取指定的属性节点*/
+  /*01-1*/
+  console.log(oDiv.getAttributeNode("xxx").nodeValue);      //测试
+  console.log(oDiv.getAttributeNode("class").nodeValue);    //box
+
+  /*01-2*/
+  console.log(oDiv.getAttribute("id"));                    //demoID
+
+  /*01-3*/
+  console.log(oDiv.attributes[2].nodeValue);               //测试
+  console.log(oDiv.attributes.getNamedItem("id").value);   //demoID
+
+
+  /*02-修改|添加*/
+  oDiv.setAttribute("xxx","呵呵");                         //修改
+  oDiv.setAttribute("ttt","嘿嘿");                         //添加
+
+  var attr = document.createAttribute("yyy");
+  attr.nodeValue = "哈哈";
+  oDiv.attributes.setNamedItem(attr);
+
+  /*03-删除*/
+  oDiv.removeAttribute("xxx");
+  oDiv.removeAttribute("ttt");
+  oDiv.removeAttribute("yyy");
+
+  oDiv.attributes.removeNamedItem("class");
+
+</script>
+</body>
+</html>

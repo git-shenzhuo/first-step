@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*ES6箭头函数的使用注意事项*/
+  /*01-箭头函数中的this   箭头函数没有this，在函数中this是从外层作用域获取的*/
+  /*02-因为箭头函数没有this，所以箭头函数不能够调用call apply bind*/
+  /*03-箭头函数中没有arguments参数，在箭头函数中获取的arguments是外层函数的*/
+  let fn = (a,b)=>console.log(a +b, this);   //this->window
+  fn(1,2);
+
+  setTimeout(function () {
+    console.log("----执行延迟执行函数----",this); //this->window
+  },1000);
+
+  setTimeout(()=>{
+    console.log("----执行延迟执行函数----",this); //this->window
+  },1000);
+
+  var o = {
+    name:"zs",
+    showName:function () {
+      console.log(this.name,this);
+      //
+      // let temp = ()=>{
+      //   console.log("箭头函数中的this", this);  /*取决于外层最近的那个this指向谁*/
+      //   console.log(arguments);
+      //
+      // }
+      // temp(1,2,3);
+
+      function f() {
+        console.log(this);
+      }
+
+      f();
+    }
+  }
+
+    o.showName();
+    o.showName.call({name:"wc"},"11","22");
+
+</script>
+</body>
+</html>

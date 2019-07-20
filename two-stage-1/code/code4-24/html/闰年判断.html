@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span{
+            width: 50px;
+            height: 30px;
+            display: inline-block;
+            background-color: red;
+            margin: 5px;
+            text-align: center;
+            line-height: 30px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        for(var year = 1000, i = 0; year <= 2020 ; year++){
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 ==0) {
+                    document.write("<span>" + year + "</span>")
+                    i++;
+                    if(i % 8 == 0){
+                        document.write("<br>")
+                    }   
+            }
+        }
+    </script>
+</body>
+</html>

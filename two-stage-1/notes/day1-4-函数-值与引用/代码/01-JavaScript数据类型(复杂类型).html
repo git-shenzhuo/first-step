@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * javaScript数据类型
+  * [1] 简单(基本)数据类型(5) string number boolean null undefined    typeof(null)
+  * [2] 复杂(复合)数据类型(N)
+  *     Object(对象类型)
+  *     Function(函数类型)
+  *     Error(错误类型)
+  *     RegExp(正则表达式)
+  *     Date(日期类型)
+  *     Array(数组)
+  *     ....
+  *     特点:复合数据类型的结构是由基本数据类型组成的。
+  * */
+
+  var person = {
+    name:"光头强",
+    age:3,
+    address:"狗熊岭",
+    work:"砍树",
+    firends:["熊大","熊二","吉吉","凯特"],
+    car:{
+      ID:"粤A 23424",
+      type:"A",
+      color:"黑色",
+      year:1997
+    }
+  }
+
+  console.log(typeof person);   //object
+
+  /*其它的复杂数据类型*/
+  var citys = ["茂名","清远","佛山","湛江"];
+  console.log(typeof citys);   //object
+
+  var date = new Date();
+  console.log(date);
+  console.log(typeof date);   //object
+
+  /*结论：对复杂数据类型执行typeof运算 得到的结果都是object，除函数(function)外*/
+  function fn() {}
+  console.log(typeof fn);     //function
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*01-构造函数和原型对象关系*/
+  /*[1] 所有的构造函数都有一个与之相关联的对象，这个对象默认是一个空对象，我们给它起个名字叫做原型对象*/
+  /*[2] 相互关联 (1)通过构造函数访问原型对象 构造函数.prototype  (2)通过原型对象也可以访问构造函数 原型对象.constructor*/
+
+  /*02-原型对象的性质(特点)*/
+  /*构造函数相关联的原型对象 上面的所有成员 都可以被该构造函数实例化出来的实例对象所共享*/
+
+  /*03-实例对象和原型对象关系*/
+  /*[1] 实例对象可以访问原型对象上面的成员*/
+  /*[2] 通过实例对象可以访问原型对象  实例对象.__proto__*/
+
+  /*04-总结 访问原型对象*/
+  /*[1] 构造函数.prototype*/
+  /*[2] 实例对象.__proto__*/
+
+  function Dog(name,age) {
+    this.name = name;
+    this.age  = age;
+  }
+  function Cat() {}
+
+  /*构造函数->原型对象 访问构造函数的原型对象*/
+  console.log(Dog.prototype);
+  console.log(Cat.prototype);
+
+  /*原型对象->构造函数*/
+  console.log(Dog.prototype.constructor);   //Dog
+  console.log(Cat.prototype.constructor);   //Cat
+
+  /*演示原型对象共享问题*/
+  /*des 和showInfo添加到原型对象*/
+  Dog.prototype.des = "描述我是一条狗";
+  Dog.prototype.showInfo = function () {
+    console.log(this.des);
+  }
+  var d1 = new Dog();
+  var d2 = new Dog();
+  console.log(d1.des,d1.showInfo());
+  console.log(d2.des,d2.showInfo());
+
+  console.log(d1.__proto__);
+  console.log(d2.__proto__);
+
+  console.log(d1.__proto__ == Dog.prototype);   //true
+</script>
+</body>
+</html>

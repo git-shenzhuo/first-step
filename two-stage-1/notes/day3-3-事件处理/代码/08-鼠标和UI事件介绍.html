@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #demoID{width: 400px;height: 200px;background: #58bc58}
+    .box{width: 100px;height: 100px;background: orangered};
+  </style>
+</head>
+<body>
+<div id="demoID">我是div标签
+  <div class="box">我是内部的标签</div>
+</div>
+<script>
+  /*
+  * UI事件(window)
+  *     load    页面加载完毕之后触发(重点)
+  *     unload  页面卸载的时候会触发(了解)
+  *     resize  页面大小调整的时候会触发
+  *     scroll  页面滚定的时候会触发(重点)
+  *
+  * 鼠标事件
+  *     click      单击事件
+  *     ondblclick 双击事件
+  *     mousedown  按下鼠标
+  *     mouseup    松开鼠标
+  *     mouseenter 鼠标进入
+  *     mouseleave 鼠标离开
+  *     mouseover  鼠标进入
+  *     mouseout   鼠标离开
+  * */
+
+  var oDiv = document.getElementById("demoID");
+
+  /*01-鼠标事件内在的关系*/
+  // oDiv.onclick = function () {
+  //   console.log("click");
+  // }
+  // oDiv.ondblclick = function () {
+  //   console.log("dbclick");
+  // }
+  // oDiv.onmousedown = function () {
+  //   console.log("mousedown");
+  // }
+  // oDiv.onmouseup = function () {
+  //   console.log("mouseup");
+  // }
+
+
+  /*click    == mousedown + mouseup */
+  /*dblclick == click + click*/
+
+  /*02-鼠标移入和移出事件*/
+  /*02-1 onmouseenter && onmouseleave 当进入到子标签的时候没有影响*/
+  oDiv.onmouseenter = function () {
+    console.log("mouseenter");
+  }
+  oDiv.onmouseleave = function () {
+    console.log("onmouseleave");
+  }
+
+
+  /*02-2 onmouseover && onmouseout  当进入到子标签的时候会触发out -> over*/
+  // oDiv.onmouseover = function () {
+  //   console.log("onmouseover");
+  // }
+  //
+  // oDiv.onmouseout = function () {
+  //   console.log("onmouseout");
+  // }
+
+</script>
+</body>
+</html>

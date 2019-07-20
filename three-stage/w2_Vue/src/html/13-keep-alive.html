@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>keep-alive</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+    <h1>keep-alive缓存</h1>
+    <div id="box">
+        <ul class="nav nav-tabs">
+            <li class="nav-item" v-for="item in navs" @click='activename(item.name)'>
+                <a class="nav-link" href="#" :class='{active:active==item.name}'>{{item.title}}</a>
+            </li>
+        </ul>
+        <keep-alive>
+            <component :is="active"></component>
+        </keep-alive>
+        <!-- 默认都缓存
+            include：指定缓存组件
+            exclude：指定不缓存组件 -->
+    </div>
+    <template>
+        <p>价格：{{price}}</p>
+        <button @click='delprice'>减价</button>
+        <button @click='addprice'>加价</button>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:'#box',
+            data:{
+                navs:[{
+                    title:'首页',
+                    name:'Home',
+                    path:'/home'
+                },{
+                    title:'发现',
+                    name:'Discover',
+                    path:'/discover'
+                },{
+                    title:'我的',
+                    name:'Mine',
+                    path:'/mine'
+                }],
+                active:'Home'
+            },
+            components:{
+
+            },
+            methods:{
+                // 设置方法，点击改变 active 的值，从而改变标签属性
+                activename(name){
+                    this.active = name
+                }
+            },
+            created(){
+                // 设置导航对应的组件
+                let components = {}
+                // 循环 navs ，遍历创建组件
+                this.navs.forEach(element => {
+                    components[element.name] = {
+                        data() {
+                            return {
+                                price:998
+                            }
+                        },
+                        template:`<div>${element.title}-${element.name}
+                                <p>价格：{{price}}</p>
+                                <button @click='delprice'>减价</button>
+                                <button @click='addprice'>加价</button></div>
+                                `,
+                        methods:{
+                            addprice(){
+                                this.price = this.price + 1
+                            },
+                            delprice(){
+                                this.price = this.price - 1
+                            }
+                        }
+                    }
+                });
+
+                // 后期设置Vue的配置参数
+                // 直接重置$options.components会导致报错，因为覆盖了原来的内置组件
+                // this.$options.components = components;
+                Object.assign(this.$options.components,components);
+                // this.$options.components = {...this.$options.components,...components}
+            }
+        })
+    </script>
+</body>
+</html>

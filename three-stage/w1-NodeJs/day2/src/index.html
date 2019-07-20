@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>跨域请求</h1>
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.open('get','http://localhost:1904/goods',true);
+        xhr.send();
+        xhr.onload = ()=>{
+            console.log(xhr.responseText);
+            
+        }
+    </script>
+</body>
+</html>

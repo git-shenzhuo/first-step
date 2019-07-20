@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form action="" method="POST">
+        <label for="">用户名</label>
+        <input type="text" placeholder="请输入用户名">
+        <label for="">密码</label>
+        <input type="text" placeholder="请输入密码">
+    </form>
+    <button>登录</button>
+    
+    <script>
+        window.onload=()=>{
+            // 拿到标签
+            let oBtn   = document.querySelector("button");
+            let oInput = document.querySelectorAll("input");
+            // 点击事件
+            oBtn.onclick=()=>{
+                // 拿到文本
+                let name = oInput[0].value;
+                let password = oInput[1].value;
+                let querys1   = `?name=${name}&password=${password}`;
+                let querys2   = `name=${name}&password=${password}`;
+                // 创建请求
+                let xhr = new XMLHttpRequest();
+                // 请求路径
+                let url = `http://localhost/second%20stage/code/code5-23/php/06-practice-login.php`;
+                // get
+                xhr.open("get",url+querys1,true);
+                xhr.send();
+                // post
+                // // 建立请求
+                // xhr.open("post",url,true);
+                // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                // // 发送请求
+                // xhr.send(querys);
+                // 监听
+                let a = "";
+                xhr.onreadystatechange=()=>{
+                    if(xhr.readyState == 4){
+                        if(xhr.status == 200){
+                            // 解析服务器返回的数据
+                            a = JSON.parse(xhr.responseText);
+                            console.log(a);
+                            confirm(a["msg"]);        
+                        }
+                    }
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>

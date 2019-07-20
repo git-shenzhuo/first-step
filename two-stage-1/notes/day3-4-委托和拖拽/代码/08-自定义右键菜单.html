@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    ul{list-style: none;padding:0;margin:0;}
+    .contextMenu{display:none;position:absolute;top:0;left:0;padding:2px;width:220px;border:1px solid #ddd;}
+    .contextMenu li{position:relative;padding-left:10px;border-bottom:1px dotted #ddd;line-height:2.2;}
+    .contextMenu li:hover{background-color:#efefef;}
+    .contextMenu li:last-child{border:none;}
+    .contextMenu li span{position:absolute;right:5px;top:0;color:#999;}
+  </style>
+</head>
+<body>
+<div class="contextMenu">
+  <ul>
+    <li>复制<span>Ctrl+C</span></li>
+    <li>粘贴<span>Ctrl+V</span></li>
+    <li>剪切<span>Ctrl+X</span></li>
+    <li>删除<span>Del</span></li>
+    <li>保存<span>Ctrl+S</span></li>
+  </ul>
+</div>
+
+<script>
+
+  /*案例：自定义右键菜单*/
+  /*00-获取自定义菜单*/
+  var contextMenu = document.getElementsByClassName("contextMenu")[0];
+
+  /*01-要阻止右键事件浏览器默认行为*/
+  document.oncontextmenu = function (e) {
+    console.log("----");
+    var e =  e || window.event;
+    e.preventDefault();   /*阻止右键菜单默认行为*/
+
+    /*显示自定义的菜单*/
+    contextMenu.style.display = "block";
+    contextMenu.style.left    = e.pageX + "px";
+    contextMenu.style.top     = e.pageY + "px";
+  }
+
+
+  /*事件冒泡*/
+  /*click = mousedown + mouseup*/
+  document.onmouseup = function () {
+    contextMenu.style.display = "none";
+  }
+
+  contextMenu.onmouseup = function (e) {
+    var e =  e || window.event;
+    e.stopPropagation();
+  }
+
+</script>
+</body>
+</html>

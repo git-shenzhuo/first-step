@@ -1,0 +1,31 @@
+原型链：顶点(Object.prototype) Object.prototype.__proto__ = null
+apply/call 借用其它对象的方法并且绑定函数中this
+bind       返回的新函数
+
+数组扩展：
+  ...arr 把数组展开为参数列表 ...[1,2,3]  1,2,3 [...arr1,...arr2,...arr3]
+
+for..of  (重点)
+  数组：for循环 | for..in | forEach | for..of
+
+函数的扩展
+  point(x=0,y=0,z=0){  }
+
+箭头函数
+  function a(){
+    return a;
+  }
+
+  let a = n =>a;
+
+注意点：
+  [1] 箭头函数中没有this ，call / apply /bind不能被使用
+  [2] 箭头函数中arguments
+  [3] 回调函数
+
+提取  var o = {name:"zs",age:18,className}
+     let {name,age} = o;   let name = o.name let age = o.age;
+
+JSON 本身就是有格式字符串 |
+  var o = {name:"zs",age:18};   <!--用json来创建对象|json对象-->
+  JSON.parse(json->obj)  JSON.stringify(obj->json)

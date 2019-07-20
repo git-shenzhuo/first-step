@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*闭包：封闭 包围|裹 - 特殊的结构*/
+  /*作用：提供一种访问局部作用域中私有数据方案*/
+  /*作用域访问规则：当我们在作用域中访问数据的时候，会先在当前作用域中查找，如果找到那么就直接使用，没有找到就向外层作用域搜索，重复这个过程，直到找到或者是全局作用域*/
+
+  /*全局变量：全局作用域中声明的变量，可以被任意作用域访问*/
+  /*局部变量：在函数创建的局部作用域中声明的变量，只允许局部作用域访问*/
+  // var i = "i";
+  // function f() {
+  //   var a = 123;
+  //   console.log("局部作用域中...",a,i);
+  // }
+  //
+  // f();
+  //
+  //
+  // console.log("全局作用域中...",i,a);
+
+
+  /*需求：访问局部作用域中a */
+  /*方案(1) 在函数中直接把外部需要访问的数据返回 - 不可行*/
+  // function f() {
+  //   var a = [1,23,45];
+  //   return a;
+  // }
+  // console.log(f()  == f());  //false
+
+  /*方案(2) 在函数内部新声明一个函数，通过该函数来访问局部变量，并最终把该函数返回*/
+  // function f() {
+  //   var a = [1,23,45];
+  //
+  //   var fn  = function () {
+  //     return a;
+  //   }
+  //   return fn;
+  // }
+
+  /*访问数据(读取|查询)*/
+  // function f() {
+  //   var a = 123;
+  //   return function (newVlaue) {
+  //     if (newVlaue)
+  //     {
+  //       a = newVlaue;
+  //     }
+  //     return a;
+  //   };
+  // }
+  // var f1 = f();
+  // console.log(f1() == f1());
+  // console.log(f1());
+  // console.log(f1());
+  // console.log(f1(333));
+  // console.log(f1());
+  // console.log(f1());
+
+
+  /*如果要访问局部作用域中多个私有数据*/
+  // function f() {
+  //   var a = 123;
+  //   var b = "我是另一个数据";
+  //
+  //   return [
+  //     function (newVlaue) {
+  //         if (newVlaue)
+  //         {
+  //           a = newVlaue;
+  //         }
+  //         return a;
+  //       },
+  //     function (newVlaue) {
+  //       if (newVlaue)
+  //       {
+  //         b = newVlaue;
+  //       }
+  //       return b;
+  //     }
+  //   ]
+  // }
+  //
+  // var fn = f();
+  // console.log(fn[0]());
+  // console.log(fn[1]());
+  // console.log(fn[0](111));
+  // console.log(fn[1](222));
+  // console.log(fn[0]());
+  // console.log(fn[1]());
+
+
+  // function f() {
+  //   var a = 123;
+  //   var b = "我是另一个数据";
+  //
+  //   return {
+  //     a:function(newVlaue) {
+  //       if (newVlaue) {
+  //         a = newVlaue;
+  //       }
+  //       return a;
+  //     },
+  //     b:function(newVlaue) {
+  //       if (newVlaue) {
+  //         b = newVlaue;
+  //       }
+  //       return b;
+  //     }
+  //   }
+  // }
+
+  // var fn = f();
+  // console.log(fn.a());
+  // fn.a(1314);
+  // console.log(fn.a());
+
+
+
+  /*闭包解决的终极方案*/
+  // function f() {
+  //   var age = 123;
+  //   var name = "张三";
+  //
+  //   return {
+  //     getAge:function() {
+  //       return age;
+  //     },
+  //     setAge:function(_age){
+  //       if (_age)
+  //       {
+  //         age = _age;
+  //       }
+  //     },
+  //     getName:function() {
+  //       return name;
+  //     },
+  //     setName:function(_name){
+  //       if (_name)
+  //       {
+  //         name = _name;
+  //       }
+  //     },
+  //   }
+  // }
+  //
+  // var obj = f();
+  // console.log(obj.getName());
+  // obj.setName("李四");
+  // console.log(obj.getName());
+
+
+  var obj = (function () {
+    var age = 123;
+    var name = "张三";
+
+    return {
+      getAge:function() {
+        return age;
+      },
+      setAge:function(_age){
+        if (_age)
+        {
+          age = _age;
+        }
+      },
+      getName:function() {
+        return name;
+      },
+      setName:function(_name){
+        if (_name)
+        {
+          name = _name;
+        }
+      },
+    }
+  })();
+
+  console.log(obj.getName());
+  obj.setName("李四");
+  console.log(obj.getName());
+</script>
+</body>
+</html>

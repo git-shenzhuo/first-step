@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*for...of 循环(遍历|迭代) 遍历数组和伪数组
+   * [1] for循环      优点：可以跳出或者是结束循环，缺点：如果要获取元素，需要通过索引获取  arr[i]
+   * [2] for..in循环  优点：可以跳出或者是结束循环，缺点：如果要获取元素，需要通过索引获取，还会打印原型成员
+   * [3] forEach循环  优点：功能更强大，专门为数组设计  缺点：不能跳出或者是结束循环
+   * [4] for..of循环  直接获取当前的元素
+   * */
+  var arr = ["光头强","毛毛","吉吉"];
+  var likeArray = {0:'zs',1:"18",2:"北京",length:3};
+
+  /*迭代方式1：for循环*/
+  for (let i = 0; i<arr.length;i++)
+  {
+    console.log(i, arr[i]);
+    if (arr[i] == "毛毛")
+    {
+      break;
+    }
+  }
+
+  console.log("________");
+  /*迭代方式2：for..in循环*/
+  for (let key in arr)
+  {
+    console.log(key, arr[key]);
+  }
+  console.log("________");
+
+  /*迭代方式3 forEach*/
+  arr.forEach(function (value, index, array) {
+    console.log(index, value);
+    // console.log(this);
+  },arr)
+
+  console.log("________");
+
+  /*迭代方式4 for...of*/
+  for (let value of arr)
+  {
+    console.log(value);
+    if (value == "毛毛"){
+      break;
+    }
+  }
+
+  for (let v of Array.from(likeArray).values())
+  {
+    console.log(v);
+  }
+</script>
+</body>
+</html>

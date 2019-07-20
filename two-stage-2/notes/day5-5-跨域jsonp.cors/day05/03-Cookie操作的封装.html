@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./src/Cookie.js"></script>
+    <script>
+        //思考：理想中操作Cookie的方法 
+        /*
+        获取Cookie数据            getItem()
+        添加|修改Cookie数据        setItem()
+        删除Cookie数据            removeItem()
+        清空Cookie数据            clear()
+        获取所有Cookie数据的key    keys()
+        */
+
+        // //01-读取Cookie中的数据
+        // console.log(COOKIE.getItem("name"));
+        // console.log(COOKIE.getItem("age"));
+
+        // //02-添加Cookie数据
+        COOKIE.setItem("className", "H5");
+        COOKIE.setItem("address", "广州市", 3);
+        COOKIE.setItem("age", "99", 3);
+
+        // //03-修改Cookie数据
+        COOKIE.setItem("className", "HTML-5");
+
+        // //04-删除Cookie数据
+        // COOKIE.removeItem("age");
+
+        // //05-清空所有的Cookie数据
+        // COOKIE.clear();
+    </script>
+</body>
+
+</html>

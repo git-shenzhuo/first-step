@@ -1,0 +1,58 @@
+@h:30px;
+@tw:100px;
+@color:red;
+.base(@w){
+  width: @w;
+  height: @h;
+  line-height: @h;
+}
+body{
+  background: #eee;
+  div{
+
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid #0a0a0a;
+    background: red;
+  }
+
+  div:nth-of-type(1){
+    .base(@tw);
+    background: lighten(@color / 5,10%);
+  }
+
+  div:nth-of-type(2){
+    .base(@tw * 2);
+    background: lighten(@color,20%);
+  }
+
+  div:nth-of-type(3){
+    .base(@tw + 200px);
+    background: lighten(@color,30%);
+  }
+
+  div:nth-of-type(4){
+    .base(@tw + 300px);
+    background: lighten(@color,40%);
+  }
+
+  div:nth-of-type(5){
+    .base(@tw * 5);
+    background: spin(@color,30);
+  }
+
+  div:nth-of-type(6){
+    background: spin(@color,180);
+  }
+
+}
+
+/*
+lighten(@color, 10%);      //变亮
+darken(@color, 10%);       //变暗
+saturate(@color, 10%);     //变浓
+desaturate(@color, 10%);   /变淡 
+spin(@color, 10);         //色相值增加
+spin(@color, -10);        //色相值减少  
+mix(@color1, @color2);    //混合两种颜色
+*/

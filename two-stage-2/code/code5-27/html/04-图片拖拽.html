@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/cookie-zsgc.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/163.jpg" alt="">
+    </div>
+    <script>
+        window.onload = function(){
+            // 拿到标签
+            let div = document.querySelector("div");
+            // 页面刷新提取之前的cookie值
+            div.style.left = (cookie.getitem("left") || 50) + "px";
+            div.style.top  = (cookie.getitem("top") || 50) + "px";
+            // 鼠标按下事件
+            div.onmousedown = function(e){
+                // 计算指针与div的相对位置
+                let distanceX = e.clientX - div.offsetLeft;
+                let distanceY = e.clientY - div.offsetTop;
+                // 鼠标在页面中滑动
+                document.onmousemove = function(event){
+                    div.style.left = event.clientX - distanceX + "px";
+                    div.style.top  = event.clientY - distanceY  + "px";
+                }                
+            }
+            // 鼠标松开，结束滑动事件
+            div.onmouseup = function(){
+                document.onmousemove = null;
+                // 把图片的最新位置存到cookie
+                cookie.setitem("left",div.offsetLeft);
+                cookie.setitem("top",div.offsetTop);
+            }
+        }
+    </script>
+</body>
+</html>

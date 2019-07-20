@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      padding: 50px;
+      border: 1px solid #555;
+    }
+  </style>
+</head>
+<body>
+<div class="box" style="background: mediumvioletred">
+  <div class="father" style="background: #eee">
+    <div class="son" style="background: yellow"></div>
+  </div>
+</div>
+<script>
+
+  /*事件冒泡：
+  * 当某个标签身上的事件被触发后，该事件会按照从内到外的顺序层层的向上级传递，直到根节点(document->window)
+  * 在事件向上传递的时候，如果遇到的标签注册了同类型的事件，那么该事件也会被触发。
+  *
+  * 事件冒泡很多时候是很有用的机制，但是在有些情况下我们不想要该事件往上冒泡。
+  * 如何事件冒泡？      event.stopPropagation()
+  *
+  * 兼容性问题：IE8-    event.cancelBubble = true
+  * */
+  var son     = document.querySelector(".son");
+  var father  = document.querySelector(".father");
+  var box     = document.querySelector(".box");
+
+
+  son.onclick = function (event) {
+    console.log("son--click");
+    var event = event || window.event;
+
+    /*阻止事件向上继续传播*/
+    event.stopPropagation()
+  }
+
+  father.onclick = function (event) {
+    var event = event || window.event;
+    event.stopPropagation()
+    console.log("father--click");
+  }
+
+  box.onclick = function () {
+    console.log("box--click");
+  }
+
+  document.body.onclick = function () {
+    console.log("document.body--click");
+  }
+</script>
+</body>
+</html>

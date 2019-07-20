@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    .box
+    {
+      width: 100%;
+      background: #eee;
+    }
+
+    .item{
+      width: 200px;
+      /*height: 50px;*/
+      /*line-height: 50px;*/
+      text-align: center;
+      position: absolute;
+      margin: 10px;
+    }
+
+  </style>
+  <script src="src/jquery-3.4.1.js"></script>
+  <script src="src/jquery.tools.js"></script>
+</head>
+
+<body>
+<div class="box"></div>
+<script>
+  $(function () {
+      let oBox = $(".box");
+      let margin = 10;
+
+      /*创建标签并且插入到页面中*/
+      for(var i = 0; i < 1000; i++)
+      {
+        let item = $(`<div>${i + 1}</div>`);
+        let temp = $.getRandomNumber(200,200);
+        item.addClass("item");
+        item.css("background",$.getRandomColor());
+        item.height(temp);
+        item.css("line-height",temp + "px");
+        oBox.append(item);
+      }
+
+      let oItem      = $(".item");
+      let itemWidth  = oItem.width();
+
+      /*设置标签的位置信息(left top)*/
+      computedOffset();
+      $(window).resize(computedOffset);
+
+      function computedOffset(){
+        /*计算没行可以显示多少列*/
+        let len = Math.floor(($(window).width() - margin)/(itemWidth + margin));
+        let itemList = [];
+
+        oItem.each(function (i,ele) {
+          /*获取当前标签的高度*/
+          let itemHeight = $(this).height();
+          let currentRow = Math.floor(i / len);   /*当前第几行*/
+          let currentCol = i % len;               /*当前第几列*/
+
+          /*计算当前标签的left值和top值*/
+          let offsetLeft = margin + currentCol * (itemWidth + margin);
+          let offsetTop  = margin + currentRow * (itemHeight + margin);
+
+          if (currentRow == 0)
+          {
+            itemList.push({left:offsetLeft,offsetTop:margin + itemHeight});
+            $(this).stop(true).animate({left:offsetLeft,top:offsetTop},20);
+          }else
+          {
+            let minIndex = $.getMinIndexWithArr(itemList);
+
+            let left = itemList[minIndex].left;
+            let top  = itemList[minIndex].offsetTop + margin;
+
+            $(this).stop(true).animate({left:left,top:top},20);
+            /*最核心步骤：更新数据*/
+            itemList[minIndex].offsetTop = top + itemHeight;
+          }
+        })
+      }
+
+  })
+</script>
+</body>
+</html>

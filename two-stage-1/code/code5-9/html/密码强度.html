@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            width: 200px;
+            height: 30px;
+            border-radius: 15px;
+            outline: none;
+        }
+
+        div {
+            display: inline-block;
+            border: 1px solid #aaaaaa;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        span {
+            display: inline-block;
+            width: 50px;
+            height: 10px;
+            margin: 10px 10px;
+            display: none;
+        }
+
+        span:nth-child(1) {
+            background-color: red;
+        }
+
+        span:nth-child(2) {
+            background-color: yellow;
+        }
+
+        span:nth-child(3) {
+            background-color: green;
+        }
+
+        p {
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="password" placeholder="请输入三种字符密码">
+    <br>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <p></p>
+    <script>
+        window.onload = function () {
+            var oInput = document.getElementsByTagName("input")[0];
+            var oSpan = document.getElementsByTagName("span");
+            var oP = document.getElementsByTagName("p")[0];
+            var str1 = "QWERTYUIOPASDFGHJKLZXCVBNM";
+            var len1 = str1.length;
+            var str2 = "qwertyuioplkjhgfdsazxcvbnm"
+            var len2 = str2.length;
+            var str3 = "1234567890";
+            var len3 = str3.length;
+            oInput.oninput = function () {
+                var str = oInput.value;           
+                var result = "";                   
+                for (var j = 0; j < len1; j++) {
+                    if (str.indexOf(str1[j]) != -1) {
+                        result++;
+                        break;
+                    }
+                }
+                for (var j = 0; j < len2; j++) {
+                    if (str.indexOf(str2[j]) != -1) {
+                        result++;
+                        break;
+                    }
+                }
+                for (var j = 0; j < len3; j++) {
+                    if (str.indexOf(str3[j]) != -1) {
+                        result++;
+                        break;
+                    }
+                }
+                // console.log(result);
+                if(result == 1){
+                    oSpan[0].style.display = "inline-block";
+                    oSpan[1].style.display = "none";
+                    oSpan[2].style.display = "none";
+                    oP.innerHTML = "弱";
+                }else if(result == 2){
+                    oSpan[0].style.display = "inline-block";
+                    oSpan[1].style.display = "inline-block";
+                    oSpan[2].style.display = "none";
+                    oP.innerHTML = "中";
+                }else if(result == 3){
+                    oSpan[0].style.display = "inline-block";
+                    oSpan[1].style.display = "inline-block";
+                    oSpan[2].style.display = "inline-block";
+                    oP.innerHTML = "强";
+                }else{
+                    oP.innerHTML = "请输入正确格式密码";
+                    oSpan[0].style.display = "none";
+                    oSpan[1].style.display = "none";
+                    oSpan[2].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

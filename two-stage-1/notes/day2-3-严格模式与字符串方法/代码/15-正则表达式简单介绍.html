@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /* 正则表达式简介
+   * 作用：对字符串进行模式匹配，主要用来进行表单验证
+   * 写法：
+   *     [1] 字面量写法  /^\s+|\s+$/g  规则/参数
+   *     [2] 通过构造函数来创建 new RegExp(规则,参数)
+   * */
+
+  /*需要我们自己来封装一个函数，作用是清空字符串前面和后面的N个空格*/
+
+  var temp = "  哈哈 嘿嘿  呵呵   ";
+  function t(str) {
+
+    /*匹配字符串前面和后面的1个或多个空格*/
+    var reg = new RegExp(/^\s+|\s+$/,"g");
+
+    // return str.replace(/^\s+|\s+$/g,"");
+
+    return str.replace(reg,"");
+  }
+
+  console.log(t(temp));
+</script>
+</body>
+</html>

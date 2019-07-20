@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 严格格式和非严格模式差异性(区别)
+  * [1] 在非严格模式下如果不使用var声明变量，不会报错，这个变量默认称为一个全局变量
+  *     在严格模式下直接报错
+  *
+  * [2] 在非严格模式下，函数的参数(形参)可以同名，后面的值会覆盖前面的值
+  *     在严格模式下直接报错
+  *
+  * [3] this的表现不同
+  *     在非严格模式下，以普通函数的方式调用函数，函数内部的this指向的是window
+  *     在严格模式下this指向的是undefined
+  *
+  * [4] 在非严格模式下可以使用八进制
+  *     在严格模式下禁止使用八进制
+  *     Uncaught SyntaxError: Octal literals are not allowed in strict mode.
+  *
+  * [5] 在严格模式下禁止使用with语句 Uncaught SyntaxError: Strict mode code may not include a with statement
+  *
+  * [6] 在严格模式下，eval不建议使用，不能作为变量名
+  * [7] arguments表现不同
+  *     (1) 不能使用 arguments作为参数 Uncaught SyntaxError: Unexpected eval or arguments in strict mode
+  *     (2) arguments和形参
+  *     (3) arguments的callee方法在严格模式下不能使用
+  * */
+
+   "use strict";
+
+  /*[1] 变量声明*/
+  //a = 123;
+  //console.log(a); //Uncaught ReferenceError: a is not defined
+
+  /*[2] 函数参数同名的情况*/
+
+  // function f(a,b,c,a) {
+  //   console.log(a + b + c + a);
+  //   /*(1) a = 1 b = 2 c = 3 a = 4
+  //   * (2) a = 1 b = 2 c = 3 a = 1
+  //   * (3) a = 4 b = 2 c = 3 a = 4   [√]
+  //   * */
+  // }
+  // console.log(f(1, 2, 3, 4));
+  //
+
+  /*[3] this指向不同*/
+  // function f() {
+  //   console.log("f");
+  //   console.log(this);
+  // }
+  // f();
+
+  /*[4] 八进制*/
+  // var num = 032;  //2 * 1 + 3 * 8 = 26
+  // console.log(num);
+
+  /*[5] with语句*/
+  // var o = {name:"zs",age:18};
+  // with (o) {
+  //   console.log(name);
+  //   console.log(age);
+  //   name = "ls";
+  // }
+  //
+  // console.log(o.name);
+
+  /*[6] eval*/
+  // var eval = "sddd";
+
+  /*[7] arguments表现不同*/
+  /*
+  * 备注：引用类型的 一致 值类型 一致
+  * */
+  // var  o ={name:"张三"};
+  // function f() {
+  //   console.log(arguments);
+  //   // arguments[0].name = "李四";
+  //   arguments = {name:"哈哈哈"};
+  // }
+  //
+  // f(o);
+  /*
+  * arguments = o;               ox233
+  * arguments = {name:"哈哈哈"};  arguments[ox234]  o[ox233]
+  * */
+  //console.log(o);
+
+  // var  o = 123;
+  // function f() {
+  //   console.log(arguments);
+  //   arguments[0] = 321;
+  // }
+  // f(o);
+  // console.log(o)
+
+  // var o1 = {name:"zs"};
+  // var o2 = o1;
+  // o2.name = "小红";
+  // console.log(o1);
+  // console.log(o2);
+  //
+  // o2 = {age:18};
+  // console.log(o1);
+  // console.log(o2);
+
+  // var o = {name:"ls"};
+  // function f(obj) {
+  //   // console.log(obj);
+  //   // console.log(arguments);
+  //   // obj.name = "zs";
+  //   // console.log(obj);
+  //   // console.log(arguments);
+  //
+  //   /*共享*/
+  //   // arguments[0].name = "敏敏";
+  //
+  //   /*如果在非严格模式：形参和arguments[0]是同一个*/
+  //   /*如果在严格模式下：形参被替换，arguments不会受到影响*/
+  //   obj = {age:19};
+  //
+  //   console.log(obj);
+  //   console.log(arguments);
+  // }
+  // f(o);
+
+
+  //
+  // function f(n) {
+  //   if (n == 1)
+  //   {
+  //     return 1;
+  //   }
+  //   return arguments.callee(n-1) * n;
+  // }
+  //
+  // console.log(f(51));
+
+  // var o = {name:"zs",name:"ls"};
+  // console.log(o.name);
+</script>
+</body>
+</html>

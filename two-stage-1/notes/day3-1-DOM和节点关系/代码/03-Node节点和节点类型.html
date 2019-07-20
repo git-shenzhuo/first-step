@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<span>我是span</span>
+<script>
+
+  /*在页面中所有的东西都是节点(node)，节点有很多种类型，不同类型的节点操作方式是不一样的*/
+  /*
+  * 掌握的node[3]
+  * [1] 元素(标签)节点  ElementNode
+  * [2] 属性节点       AttributeNode
+  * [3] 文本节点       TextNode
+  * */
+
+  /*可以通过nodeType来区分节点的类型
+  * ElementNode   1
+  * AttributeNode 2
+  * TextNode      3
+  * */
+  var oSpan = document.getElementsByTagName("span")[0];
+  console.log(oSpan.nodeType);   //1
+
+</script>
+</body>
+</html>

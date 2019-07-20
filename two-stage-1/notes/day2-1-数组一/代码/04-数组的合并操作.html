@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*数组的合并
+  * 方法：arr.concat(array | ele )
+  * */
+
+  /*01-合并两个数组*/
+  /*注意点：执行合并操作的时候原数组不会被修改*/
+  var arr1 = [1,2,3];
+  var arr2 = ["光头强","吉吉","凯特","熊大"];
+
+  var arr3 = arr1.concat(arr2);
+  console.log(arr1);            //[1, 2, 3]
+  console.log(arr2);            //["光头强", "吉吉", "凯特", "熊大"]
+  console.log(arr3);            //[1, 2, 3, "光头强", "吉吉", "凯特", "熊大"]
+
+  /*02-如果参数是数据*/
+  var arr4 = arr1.concat("熊二");
+  console.log(arr1);            // [1, 2, 3]
+  console.log(arr4);            // [1, 2, 3, "熊二"]
+
+  var arr5 = arr1.concat("萝卜头","大雁");
+  console.log(arr5);            // [1, 2, 3, "萝卜头", "大雁"]
+
+  /*03-如果参数中有数据也有数组*/
+  var arr6 = arr1.concat("熊二",41,["汽车","森林",true])
+  console.log(arr6);            //[1, 2, 3, "熊二", 41, "汽车", "森林", true]
+
+  var arr7 = arr1.concat("熊二",41,["汽车","森林",true,["柯南","叮当猫"]]);
+  console.log(arr7);            //[1, 2, 3, "熊二", 41, "汽车", "森林", true, Array(2)]
+</script>
+</body>
+</html>

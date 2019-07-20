@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="src/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<!--<div id="demoID">我拥有id-->
+  <!--<span>哈哈哈哈</span>-->
+  <!--<div>div1</div>-->
+  <!--<div class="box3">div2-->
+    <!--<span>spanD</span>-->
+    <!--<div>我是div&#45;&#45;&#45;&#45;&#45;&#45;</div>-->
+    <!--<div>我也是div+++++</div>-->
+  <!--</div>-->
+  <!--<span>特殊的哪一个</span>-->
+  <!--<div>div3</div>-->
+  <!--<div>div4</div>-->
+  <!--<p>我是p</p>-->
+  <!--<div>div5</div>-->
+<!--</div>-->
+<!--<div class="box1">我拥有class-box1</div>-->
+<!--<div class="box1">我拥有class-box1</div>-->
+<!--<div class="box2">我拥有class-box2</div>-->
+<!--<span>spanA</span>-->
+<!--<span>spanB</span>-->
+<!--<span>spanC</span>-->
+
+<!--<p>我是段落标签</p>-->
+
+
+<div class="box1">
+  <span>span1</span>
+  <span>span2</span>
+</div>
+<div class="box1">
+  <span>span3</span>
+  <span>span4</span>
+  <span>span5</span>
+</div>
+<div class="box1">
+  <span>span6</span>
+</div>
+<div class="box1">
+  <span>span7</span>
+  <span>span8</span>
+  <!--<span>span9</span>-->
+</div>
+
+<!--要求:获取有且拥有三个span子标签并且class=box1的div标签-->
+<script>
+
+  $(function () {
+    /*01-链式调用的方法 add back addBack*/
+    // $("#demoID")
+    //     .css("background","#eee")
+    //     .children("span")
+    //     .css("background","pink")
+    //     .add("p")
+    //     .css("border","1px solid #000")
+    //
+
+    //add() 合并
+    //end() 返回上一个实例对象
+    //addBack() 把当前的实例对象和前一个实例对象合并成一个新的对象
+    //console.log($("#demoID").children("span").add("p"));
+
+    /*02-过滤的方法*/
+    $(".box1").filter(function (index,ele) {
+
+      console.log(index, ele);
+      /*filter回调函数作用是设置过滤的条件*/
+      /*回调函数的执行原理：遍历JQ对象中所有的标签，没循环一次就拿到当前的标签来检查是否满足过滤条件*/
+      /*如果满足条件那么就保存到JQ对象中，如果不满足条件那么就不保存，最后把保存的这个JQ对象返回*/
+      //console.log(this);
+      return $("span",this).length == 3;
+    }).css("background","red");
+
+  })
+
+  /*$("span",document)  获取文档中所有的span*/
+
+</script>
+</body>
+</html>

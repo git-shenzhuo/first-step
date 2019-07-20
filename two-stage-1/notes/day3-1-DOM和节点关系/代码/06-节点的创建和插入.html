@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="divID" class="div-class box1 box2" xxx="自定义的属性节点"></div>
+<script>
+
+  /*
+  * 元素节点  1
+  * 属性节点  2
+  * 文本节点  3
+  * */
+
+  /*01-创建元素节点*/
+  var oDiv = document.createElement("div");
+  console.log(oDiv);
+
+  /*02-创建属性节点*/
+  var oAttr = document.createAttribute("title");
+  oAttr.nodeValue = "标题";
+
+  console.log(oAttr);
+  /*03-创建文本节点*/
+  var oText = document.createTextNode("转角遇见鬼");
+
+  /*04-把文本节点插入到标签中*/
+  oDiv.appendChild(oText);
+
+  /*05-把属性节点插入到标签中*/
+  oDiv.setAttributeNode(oAttr);
+  console.log(oDiv);
+
+  /*06-把元素节点插入到页面中*/
+  document.body.appendChild(oDiv);
+
+  /*补充：对于元素节点来说可能存在很多属性节点，而这些属性节点中有一些是常用的 比如id class img：src*/
+  console.log(oAttr.nodeType, oDiv.nodeType, oText.nodeType);
+
+  /*获取标签中指定的属性节点*/
+  var test = document.getElementById("divID");
+  var xxx  = test.getAttributeNode("xxx").nodeValue;
+  console.log(xxx);
+  var id   = test.getAttributeNode("id").nodeValue;
+  console.log(id);
+
+  /*更直接的方式来访问常用属性节点 id class img:src a:href*/
+  test.id = "newID";
+  test.className = "new-class";
+  console.log("test.id = ", test.id);
+  console.log("test.class = ", test.className);
+</script>
+
+</body>
+</html>

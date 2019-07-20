@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        var oDiv = document.getElementsByTagName("div")[0];
+        setInterval(function(){
+        var date = (new Date()).getTime();
+        // console.log(new Date());
+        
+        // console.log(date);
+        var end  = new Date(2019,7,8,8,8,0).getTime();
+        // console.log(new Date(2019,7,8,8,8,0));
+        
+        // console.log(end);
+        var num  = end - date;
+        // console.log(num);
+        var days  = parseInt((num / 1000) / 60 / 60 / 24);
+        var hours = parseInt((num / 1000) / 60 / 60 % 24);
+        var m     = parseInt((num / 1000) / 60 % 60);
+        var s     = parseInt((num / 1000) % 60);
+        var res   = "毕业倒计时：" + days + "天" + hours + "小时" + m + "分钟" + s + "秒";
+        oDiv.innerHTML = res;
+        },1000)
+         
+    
+    </script>
+</body>
+</html>

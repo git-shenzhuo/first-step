@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <a>啥也没有的a标签</a>
+    <br>
+    <a href="http://www.baidu.com">http://www.baidu.com</a>
+    <br>
+    <a href="http://www.jd.com">http://www.jd.com</a>
+    <br>
+    <a href="http://www.qq.com">http://www.qq.com</a>
+    <br>
+    <a href="http://www.baidu.cn">http://www.baidu.cn</a>
+    <br>
+    <a href="http://bbs.baidu.com">http://bbs.baidu.com</a>
+    <br>
+    <a href="http://bbs.baidu.com?t=3247945738923">http://bbs.baidu.com</a>
+    <br>
+    <a href="http://bbs.baidu.com?t=3247945738923" title="标题">http://bbs.baidu.com</a>
+    <script>
+        $(function(){
+            // 选择 href属性节点的标签
+            $("a[href]").css("background","#ccc");
+
+            // 拥有href属性节点，并且有指定属性值的标签
+            $("a[href = 'http://www.baidu.com']").css("background","pink");
+
+            // 拥有   属性节点，但不是指定属性值的标签
+            $("a[href != 'http://www.baidu.com']").css("background","yellow"); 
+
+            // 拥有   属性节点，且拥有特定字符串（子串）的标签
+            $("a[href *= jd]").css("background","blue");
+
+            // 拥有   属性节点，且以特定字符串（子串）开头的标签
+            $("a[href ^= 'http://bbs']").css("background","green");
+
+            // 拥有   属性节点，且以特定字符串（子串）结尾的标签
+            $("a[href $= 'com']").css("background","red");
+
+            // 用多个属性节点一起选择
+            $("a[href][title]").css("background","#195");
+        })
+    </script>
+</body>
+
+</html>

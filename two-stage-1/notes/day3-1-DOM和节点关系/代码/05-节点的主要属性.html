@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="divID" title="我是标题">我是文本</div>
+<script>
+  /*
+  * 节点主要属性  nodeType nodeName==tagName nodeValue
+  * [1] 元素(标签)节点  ElementNode      id className
+  * [2] 属性节点       AttributeNode
+  * [3] 文本节点       TextNode
+  */
+
+  /*01-元素节点的主要属性*/
+  var oDiv = document.getElementById("divID");
+  console.log("ElementNode.nodeType  = ",oDiv.nodeType);      //1
+  console.log("ElementNode.nodeValue = ",oDiv.nodeValue);     //null
+  console.log("ElementNode.nodeName  = ",oDiv.nodeName);      //DIV 全部大写
+  console.log("ElementNode.tagName   = ",oDiv.tagName);       //DIV
+
+  /*02-属性节点的主要属性*/
+  var oAttr = oDiv.getAttributeNode("title");
+  console.log("AttributeNode.nodeType  =",oAttr.nodeType);    //2
+  console.log("AttributeNode.nodeValue =",oAttr.nodeValue);   //我是标题
+  console.log("AttributeNode.nodeName  =",oAttr.nodeName);    //title
+  // console.log("AttributeNode.tagName=",oAttr.tagName);     //undefined
+
+  /*03-文本节点的主要属性*/
+  var oText = oDiv.childNodes[0];
+  console.log("TextNod.nodeType  =",oText.nodeType);        //3
+  console.log("TextNod.nodeValue =",oText.nodeValue);       //我是文本
+  console.log("TextNod.nodeName  =",oText.nodeName);        //#text
+</script>
+</body>
+</html>

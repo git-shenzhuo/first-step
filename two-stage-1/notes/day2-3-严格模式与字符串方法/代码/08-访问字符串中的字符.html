@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var str  = "你一会儿看我，你一会儿看云";
+
+  /*01-访问字符串中的字符
+  * [1] charAt(index)
+  * [2] [index]
+  *
+  * 02-charCodeAt(index)
+  *    获取字符串中指定索引对应字符的编码
+  * */
+
+  console.log(str.charAt(0));
+  console.log(str.charAt(str.length -1));
+  console.log("_______");
+  console.log(str[0]);
+  console.log(str[str.length -1]);
+
+  /*02-获取字符串中指定索引对应字符的编码*/
+  console.log(str.charCodeAt(0));    //你 20320
+  console.log("喜欢".charCodeAt(0));  //喜 21916
+  console.log("喜欢".charCodeAt(1));  //   27426
+  console.log("我".charCodeAt(0));    //  25105
+
+  /*03-转码*/
+  var res = String.fromCharCode(25105,21916,27426,20320);
+  console.log(res);
+
+
+</script>
+</body>
+</html>

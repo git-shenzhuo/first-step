@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" id="inputID">
+<button id="btnID">测试</button>
+<script>
+
+  /*01-给定具体得目标值*/
+  var target = 50;
+
+  /*02-先获取页面中得标签：按钮 输入框*/
+  var oBtn   = document.getElementById("btnID");
+  var oInput = document.getElementById("inputID");
+      
+  /*03-给按钮添加点击事件*/
+  oBtn.onclick = function () {
+    /*04-获取用户输入得值，拿到该值和目标值关系判断，提示用户*/
+    var value = Number(oInput.value);
+
+    if (value === target)
+    {
+      alert("恭喜你，猜对了！奖励棒棒糖一棵！");
+    }
+
+    if (value > target)
+    {
+      alert("数字有点大了");
+    }
+
+    if (value < target)
+    {
+      alert("数字有点小了");
+    }
+
+  }
+
+  /*程序员思维：10 小了 90 大了 10~90 40 ~ 90 40~60*/
+
+</script>
+</body>
+</html>

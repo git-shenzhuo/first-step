@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="box  box1 active" data-xxx="呵呵" data-index="1"></div>
+<script>
+
+  /*01-classList  H5新增的 操作标签的class*/
+  /*className  get|setAttribute("class")   classList*/
+
+  var oDiv = document.getElementsByClassName("box")[0];
+  console.log(oDiv.classList);
+
+  /*添加*/
+  oDiv.classList.add("box2");
+  oDiv.classList.add("box1");
+
+  /*检查*/
+  console.log(oDiv.classList.contains("box1")); //true
+  console.log(oDiv.classList.contains("box3")); //false
+
+  /*删除*/
+  oDiv.classList.remove("active");
+
+  /*切换 如果该样式在标签中已经存在那么就删除，否则就添加*/
+  oDiv.classList.toggle("box4")
+
+
+  /*02-自定义属性节点*/
+  /*DOM规范建议我们给标签添加自定义属性的时候 data-属性=  所有的自定义属性都会被保存到dataset*/
+  /*优点：(1)一眼看出这是自定义属性 (2)可以更方便的来操作它们*/
+  console.log(oDiv.dataset.index);
+  console.log(oDiv.dataset.xxx);
+
+  oDiv.dataset.yyy = "测试";
+</script>
+</body>
+</html>

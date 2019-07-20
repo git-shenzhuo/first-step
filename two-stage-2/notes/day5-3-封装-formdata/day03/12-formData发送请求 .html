@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="">百度</a>
+    <a href="">京东</a>
+    <img src="" alt="">
+    <img src="" alt="">
+    <form name="item-form">
+        <input type="text" name="className" placeholder="请输入班级名称" value="1904">
+        <input type="text" name="type" placeholder="请输入专业" value="h5">
+        <input type="text" name="color" placeholder="请输入喜欢的颜色" value="yellow">
+    </form>
+
+    <script>
+        /*01-创建新的formData对象实例      new FormData()*/
+        /*02-根据表单来创建formData对象实例*/
+        console.log(document.images); //获取页面中所有的图片标签
+        console.log(document.links); //获取页面中所有的a标签
+        console.log(document.forms); //获取页面中表单
+
+        console.log(document.forms[0]); //获取页面中所有表单中的第一个
+        console.log(document.forms.namedItem("item-form"));
+
+        let data = new FormData(document.forms.namedItem("item-form"));
+        data.set("age", 10);
+        data.set("city", "北京");
+        data.append("city", "上海");
+
+        /*03-发起网络请求(GET)*/
+        /*转换为查询字符串*/
+        // let arr = [];
+        // data.forEach((value, key) => {
+        //     console.log(key, value);
+        //     arr.push(key + "=" + value);
+        // })
+        // let queryString = arr.join("&");
+
+        // let xhr = new XMLHttpRequest();
+        // xhr.open("get", "http://localhost:8888/code/day03/server/06-formData.php?" + queryString, true);
+        // xhr.send();
+        // xhr.onload = function() {
+        //     if (xhr.status == 200) {
+        //         console.log("success", xhr.responseText);
+        //     }
+        // }
+
+        /*04-发送网络请求(POST)*/
+        let xhr = new XMLHttpRequest();
+        xhr.open("post", "http://localhost:8888/code/day03/server/06-formData.php", true);
+        xhr.send(data);
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                console.log("success", xhr.responseText);
+            }
+        }
+    </script>
+</body>
+
+</html>

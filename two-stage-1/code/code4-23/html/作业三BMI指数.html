@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">身高(m)：</label>
+    <input type="text" id="input1ID">
+    <br>
+    <label for="">体重(kg)：</label>
+    <input type="text" id="input2ID">
+    <br>
+    <button id="btnID">检测</button>
+    <script>
+        var oInput1 = document.getElementById("input1ID");
+        var oInput2 = document.getElementById("input2ID");
+        var oBtn = document.getElementById("btnID");
+        oBtn.onclick = function () {
+            var height = oInput1.value;
+            var weight = oInput2.value;
+            var result = weight / (height * height);
+            if(result < 18.5){
+                alert('过轻');
+            }else if(result >= 18.5 && result <= 24.99){
+                alert('正常');
+            }else if(result >= 25 && result <= 28){
+                alert('过重');
+            }else if(result >= 28 && result <= 32){
+                alert('肥胖');
+            }else if(result >32){
+                alert('非常肥胖');
+            }
+        }
+    </script>
+</body>
+
+</html>

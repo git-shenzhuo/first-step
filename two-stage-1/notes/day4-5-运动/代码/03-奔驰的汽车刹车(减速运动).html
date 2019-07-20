@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{
+      background: #000;
+    }
+    .car-class{
+      position: absolute;
+      right: 0;
+      bottom: 30px;
+      width: 200px;
+    }
+
+    .line{
+      position: absolute;
+      bottom: 25px;
+      height: 2px;
+      width: 100%;
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+<img src="img/car.png" class="car-class">
+<div class="line"></div>
+<script>
+  /*01-先获取标签*/
+  var oCar  = document.querySelector(".car-class");
+  var speed = 60;
+
+  /*02-设置运动效果*/
+  var timer = setInterval(function () {
+    var left = oCar.offsetLeft;
+        speed -= 2;
+        left  -= speed;
+
+        /*临界值检查*/
+        if (speed <= 0)
+        {
+          clearInterval(timer);
+        }
+
+    oCar.style.left = left + "px";
+  },30);
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  // var _pi = 3.14159;
+
+  /*ES6-变量和常量*/
+  /*01-不允许重复声明*/
+  /*02-不会进行声明提升*/
+  /*03-块级作用域*/
+
+  // console.log(personName);    //undefined
+  // var personName = "田维";
+  // /*let name = "张三";*/
+  // console.log(personName);    //田维
+
+  /*作用域：
+  * 全局作用域/局部作用域(函数)
+  * JavaScript本身是90%词法作用域(静态)-动态   eval() + this
+  * 块级作用域:C {} 代码块  函数体/if语句后面/for循环
+  * */
+  for (let i = 0;i<5;i++)
+  {
+    console.log("i = " + i);
+  }
+  //console.log(i);       //Uncaught ReferenceError: i is not defined
+
+  // console.log(i);
+  // i = "250";
+  // console.log(i);
+  //
+  // for (i;i<300;i++)
+  // {
+  //   console.log("i = " + i);
+  // }
+
+  /*常量：该常量被初始化后就不可以被修改*/
+  /*约定：约定常量名字全部大写*/
+  const PI = 3.14159;
+
+  // PI = "SADADJSALFK";  报错
+  console.log(PI);
+</script>
+</body>
+</html>

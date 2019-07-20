@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function arr(a, b) {
+            for (var damo = [],i = 1;i <= a;i++) {
+                if(i % b == 1){
+                    var temp = [];
+                    damo.push(temp);
+                }
+                temp.push(i);
+                // console.log(temp);
+                // console.log(damo);    
+            }
+            return damo;
+            // console.log(damo);
+            
+        }
+        // arr(49,5);
+        console.log(arr(25,5));
+
+        
+    </script>
+</body>
+
+</html>

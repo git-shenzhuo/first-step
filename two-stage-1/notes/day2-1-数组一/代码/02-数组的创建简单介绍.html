@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  /*数组的创建
+  * [1] 直接量(字面量)     var arr  = [18,21,"篮球","足球"];
+  * [2] 使用构造函数创建    var arr  = new Array()
+  *
+  * */
+
+  /*01-直接量创建数组*/
+  var temp = "临时";
+  var arr0 = [];                    //空数组
+  var arr1 = [1,2,3,4];
+  var arr2 = ["篮球","足球","排球"];
+  var arr3 = [18,"zs","北京市",true,[95,5,100],{name:"zs"},function () {}];
+  var arr4 = [18,temp,arr1, arr3,"end"];
+
+  console.log(arr0);
+  console.log(arr1);
+  console.log(arr2);
+  console.log(arr3);
+  console.log(arr4);
+
+  /*02-构造函数来创建数组*/
+  /*02-A 创建空数组*/
+  var arr5 = new Array();         //var arr = [];
+  console.log(arr5, arr5.length);
+
+  /*02-B 创建数组并且指定数组的元素*/
+  var arr6 = new Array("C罗","卡卡","罗纳尔多",2015);
+  console.log(arr6, arr6.length);
+
+  /*02-C 创建数组并且指定数组的长度*/
+  /*注意点：如果只有一个参数且该参数是数字那么表示创建一个指定长度(参数)的空数组*/
+  var arr7 = new Array(5);
+  var arr8 = new Array("哈哈");
+  var arr9 = new Array(5,10);
+  console.log(arr7, arr7.length);   //[empty x 5] 5
+  console.log(arr8, arr8.length);   //["哈哈"]     1
+  console.log(arr9, arr9.length);   //[5,10]      2
+
+  /*02-D 创建数组 省略new*/
+  var arr10 = Array("哈哈","嘿嘿","呵呵");
+  console.log(arr10, arr10.length);
+
+  /*02-E 创建数组 省略()*/
+  /*如果没有传递参数，那么()可以被省略*/
+  var arr11 = new Array;
+  console.log(arr11, arr11.length);
+
+  /*注意点：new 和()不能同时省略。*/
+
+</script>
+</body>
+</html>

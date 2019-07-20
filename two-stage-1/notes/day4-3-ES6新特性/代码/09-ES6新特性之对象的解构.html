@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*ES6对象的解构 提取*/
+  var o  ={
+    name:"zs",
+    height:"155",
+    color:"yellow",
+    age:18
+  }
+  var arr = ["王笑笑","胡大","刘珊珊"];
+
+  /*传统的处理方式*/
+  // var name = o.name;
+  // var age  = o.age;
+  // var color = o.color;
+  // console.log(name, age, color);
+
+  /*01-对象解构的典型形式*/
+  // let {name,age,color,height} = o;
+  // console.log(name, age, color,height);
+  //
+  // let [name1,name2,name3] = arr;
+  // console.log(name1, name2, name3);
+
+  /*02-如果要提取的内容对象中不存在？*/
+  // let {name,className} = o;
+  // console.log(name, className);   //zs undefined  如果不存在那么就默认是undefined
+
+  /*03-如果变量名和对象中的属性名不一致*/
+  let {name:_name,age:_age,color:backgroundColor} = o;
+  console.log(_name, _age,backgroundColor);         //zs 18 yellow
+
+  /*04-应用场景*/
+  /*04-1 交换两个变量的值*/
+  var a = 10 ;
+  var b = 200 ;
+
+  /*方案1 通过中间变量*/
+  // var t = a;
+  // a = b;
+  // b = t;
+
+  [a, b] = [b, a];
+  console.log(a, b);
+
+  /*04-2 如果函数返回的是对象|数组*/
+  function fn() {
+    return {des:"描写信息",car:"呵呵"};
+  }
+
+  let {des,car} = fn();
+  console.log(des, car);
+
+  /*04-3 在函数的形参中应用解构*/
+  // function tn({x,y,z}) {
+  //   console.log(x, y, z);  //let {x,y,z} =  {x:10,y:20,z:100}
+  // }
+
+  function tn(obj) {
+    var x = obj.x;
+    var y = obj.y;
+    var z = obj.z;
+    console.log(x, y, z);
+  }
+
+  tn({x:10,y:20,z:100});
+
+
+</script>
+</body>
+</html>

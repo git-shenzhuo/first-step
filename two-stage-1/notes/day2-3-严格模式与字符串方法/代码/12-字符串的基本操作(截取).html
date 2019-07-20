@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 字符串的截取
+  * [1] slice(start,end)
+  * [2] substr(start,length)
+  * [3] substring(from,to)
+  * */
+
+  /*01-基本使用 1个参数*/
+  var arr = [1,"demoA","demoB",34];
+  console.log(arr.slice(2));          //从2这个位置开始截取直到最后。   ["demoB", 34]
+
+  /*1个参数，从指定索引的位置开始截取字符直到字符串的末尾*/
+  var str = "曾嘿虑多情损梵行，又恐入山别倾嘿城；"
+  console.log(str.slice(4));
+  console.log(str.substr(4));
+  console.log(str.substring(4));
+
+  /*02-基本使用 2个参数*/
+  console.log(str.slice(4,6));        //情损
+  console.log(str.substr(4,6));       //情损梵行，又
+  console.log(str.substring(4,6));    //情损
+
+  /*03-基本使用 参数是负数 1个参数*/
+  console.log(str.slice(-3));       //嘿城；
+  console.log(str.substr(-3));      //嘿城；
+
+  /*substring参数不能是负数，如果是负数那么就设置为0*/
+  console.log(str.substring(-3));   //曾嘿虑多情损梵行，又恐入山别倾嘿城；
+
+  /*04-基本使用 第二个参数是负数*/
+  console.log(str.slice(4,-2));           //情损梵行，又恐入山别倾嘿
+  console.log(str.substr(4,-2));          //空字符串
+
+  /*如果参数是负数那么就设置为0，比较大小，重新排列 (4,0)=>(0,4)*/
+  console.log(str.substring(4,-2));       //曾嘿虑多(0,4)
+
+</script>
+</body>
+</html>

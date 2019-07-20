@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue初接触</title>
+</head>
+<body>
+    <div id="box">
+        <h1>Vue初接触</h1>
+        <p>{{title}}</p>
+        <p>
+            <span>用户名：{{username}}</span>
+            <span>密码：{{password}}</span>
+        </p>
+    </div>
+    <!-- 引入vue，成全局对象 -->
+    <script src="../js/vue.js"></script>
+    <script>
+        // 创建一个vue作用域
+        let vm = new Vue({
+            el:'#box',
+            data:{
+                title:'laoxie',
+                username:'laoyao',
+                password:'0987654321'
+            }
+        })
+    </script>
+</body>
+</html>

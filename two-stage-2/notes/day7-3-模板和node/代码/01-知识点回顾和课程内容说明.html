@@ -1,0 +1,32 @@
+Git版本管理工具的使用
+版本管理工具作用：版本备份 版本回退 代码冲突 责任追踪
+版本管理工具介绍：CVS SVN Git
+    SVN(集中式版本管理工具) Git(分布式版本管理工具 小而快 性能好 可以在本地对仓库操作)
+Git的基本使用：
+    使用场景：单人开发(本地仓库)  多人开发(远程仓库-本地仓库)
+    三大区域：工作区 暂缓(存)区 版本库
+    基本操作：
+        初始化本地仓库：    git init
+        初始化远程仓库：    git init --bare
+        查看Git仓库的状态： git status [颜色] 红色(更改在工作区) 绿色(更改在暂缓区) 正常
+        把更改添加到暂缓区： git add 1.txt 2.txt | git add .
+        把更改提交到版本库： git commit -m "注释"
+        查看版本的提交记录： git log     | 作者 时间 序列号(编号) 顺序
+        查看版本的提交记录： git reflog
+        版本回退：         git reset --hard 序列号
+        推送更新到远程仓库： git push
+        获取最新的仓库信息： git pull
+    Git工作流
+        主干和分支：       git branch 查看分支 切换分支 删除分支 合并分支
+
+代码托管到Github
+    [1] 先在Github创建空的仓库，git clone url下载到本地，在本地仓库中初始化项目，add . commit | git push
+        身份验证：用户名和密码 username  password
+        身份验证：SSH密钥对(自己配置-生成密钥对-把公钥信息拷贝放在Github网站上面)
+    [2] 在本地已有一个git仓库，需要把该仓库托管到Github
+        (1) 先在github创建空的仓库
+        (2) $ git remote add origin git@github.com:flowerField/Test.git
+            $ git push -u origin master
+
+图形界面工具：
+    github工具 | soureTree | 小乌龟
