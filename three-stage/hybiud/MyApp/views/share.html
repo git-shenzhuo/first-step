@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+			button{width: 100%;}
+		</style>
+	</head>
+
+	<body>
+		<h1>分享</h1>
+		<button type="button" class="mui-btn mui-btn-primary btnsimple">简单分享</button>
+		<button type="button" class="mui-btn mui-btn-success btnSystem">系统分享</button>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function () {
+			   let btnsimple = document.querySelector('.btnsimple')
+				 let btnSystem = document.querySelector('.btnSystem')
+				 
+				 // 点击开始简单分享
+				 btnsimple.onclick = ()=>{
+					 plus.share.getServices((services)=>{
+						 // 获取分享服务,成功的回调
+						 // 拿到分享列表
+						 let buttons = services.map(item=>{
+							 return {
+								title:item.description
+							}
+						 })
+						 
+						 // 调用系统UI菜单
+						 let actionstyle = {
+							 title:'分享方式',
+							 cancel:'取消分享',
+							 buttons
+						 }
+						 
+						 plus.nativeUI.actionSheet(actionstyle,(e)=>{
+							 // actionstyle —————— 弹出样式
+							 // e —————— 第一个参数对象
+							 let index = e.index   // 点击的元素索引值
+							 
+							 // 判断,如果inde为0,则表示点击的为取消分享,直接结束
+							 if(index == 0) return
+							 // 否则往下执行
+							 // 通过索引值拿到数据
+							 let current = services[index - 1]
+							 // 判断是否授权
+							 if(!current.authenticated){
+								 // 如果没有授权,进行授权操作
+								 // 第一个成功的回调,第二个失败的回调,第三个授权认证参数
+								 current.authorize(()=>{
+									 // 授权成功,进行分享
+									 // 第一个参数要发送的分享消息对象,第二个参数成功的回调
+									 current.send({
+											type:'image' ,// 分享数据的类型
+											pictures:['../'] // 图片路径
+									 },()=>{});
+									 
+								 },()=>{
+									 // 失败的回调
+								 },()=>{
+									 // 授权认证参数
+									 'appid':'xxx'
+								 })
+							 }; 
+						 }); 
+					 });
+				 } 
+				 
+				 // 点击系统分享
+				 btnSystem.onclick = ()=>{
+					 plus.share.sendWithSystem({
+						 type:'image' ,// 分享数据的类型
+						 pictures:['../'] // 图片路径
+					 },()=>{
+						 // 成功的回调
+					 });
+				 }
+				 
+				 
+			})
+		</script>
+	</body>
+
+</html>

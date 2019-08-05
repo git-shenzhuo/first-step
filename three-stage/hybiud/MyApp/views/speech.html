@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<input type="text" name="" id="keyword" value="" />
+		<button type="button" class="mui-btn mui-btn-warning btnBaidu">百度</button>
+		<button type="button" class="mui-btn mui-btn-royal btnIfly">讯飞</button> 
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function () {
+			    let btnBaidu = document.querySelector('.btnBaidu') 
+					let btnIfly = document.querySelector('.btnIfly')
+					let keyword = document.querySelector('#keyword')
+					// 点击打开百度语音
+					btnBaidu.onclick = ()=>{
+						plus.speech.startRecognize({
+							// 语音识别引擎内部识别参数
+							// 语音引擎类别
+							'engine':'baidu',
+							// 语音类型,默认中文	
+						},(res)=>{
+							// 成功的回调
+							// 把文字显示到输入框
+							keyword.value = res;
+						})
+					}
+					
+					// 点击打开讯飞语音
+					btnBaidu.onclick = ()=>{
+						plus.speech.startRecognize({
+							// 语音识别引擎内部识别参数
+							// 语音引擎类别
+							'engine':'iFly',
+							// 语音类型,默认中文	
+						},(res)=>{
+							// 成功的回调
+							// 把文字显示到输入框
+							keyword.value = res;
+						})
+					}
+			})
+		</script>
+	</body>
+
+</html>

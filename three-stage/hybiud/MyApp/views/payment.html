@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+			p{font-size: 24px;}
+			span{color: red;}
+			span::before,del::before{content:'￥'}
+			button{width:100%}
+		</style>
+	</head>
+
+	<body>
+		<h1>支付</h1>
+		<p><del>998</del><span>9.8</span></p>
+		<button type="button" class="mui-btn mui-btn-danger btnBuy">立即购买</button>
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady({
+				let btnBuy = document.querySelector('.btnBuy')
+				let price = document.querySelector('p span')
+				let title = document.querySelector('h1')
+				
+				// 后端接口
+				// 原始路径,payid 表示支付方式的 appid
+				let paymentApi = 'http://demo.dcloud.net.cn/payment/?payid=';
+				
+				// 点击按钮弹出支付
+				btnBuy.onclick = ()=>{
+					plus.payment.getChannels((channels)=>{
+						// 成功的回调
+						let buttons = channels.map(item=>{
+							return {title:item.description}
+						})
+						// 弹出UI
+						plus.nativeUI.actionSheet({
+							title:'支付方式',
+							cancel:'取消支付',
+							buttons
+						},(e)=>{
+							let index = e.index
+							// 如果index>0,表示有可支付方式
+							if(index>0){
+								let currentPay = channels[index - 1]
+								let id = currentPay.id
+								if(id == 'alipay' || id == 'wxpay'){
+									// 如果id符合,则拼接路径
+									paymentApi += currentPay.id
+								}else{
+									// 否则弹出提示窗
+									plus.nativeUI.alert('当前不支持' + currentPay.description + '通道');
+								}
+								
+								// 判断当前支付是否可用
+								if(currentPay.serviceReady){
+									 // 如果可用
+									 
+									 // 拼接商品价格和appid
+									 // paymentApi += '&total=' + price.innerText;
+									 // let appid = plus.runtime.appid
+									 // paymentApi += '&appid=' + appid
+									 paymentApi += '&total=' + price.innerText + '&appid=' + plus.runtime.appid
+									 
+									 // 发起请求
+									 let xhr = new XMLHttpRequest()
+									 xhr.onload = ()=>{
+										 // 拿到返回的数据
+										 var order = xhr.responseText
+										 
+										 // 后端返回订单信息后调用支付接口
+										  plus.payment.request(currentPay,order,()=>{
+												// 成功的回调,弹窗
+												plus.nativeUI.alert('支付成功：感谢你的支持，我们会继续努力完善产品。', function () {
+												    back();
+												}, '捐赠');
+											},()=>{
+												// 失败的回调,弹窗
+												plus.nativeUI.alert(
+												    '更多错误信息请参考支付(Payment)规范文档：http://www.html5plus.org/#specification#/specification/Payment.html',
+												    null, '支付失败：' + e.code);
+											})
+									 }
+									 
+									 
+								 }
+								
+							}
+						})
+						
+					});
+				}
+				
+				
+				
+			})
+		</script>
+	</body>
+
+</html>

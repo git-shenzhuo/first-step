@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=x4RLsqK9mFnB0Vf3QiNLvSMAVmuhWqPe"></script>
+		<style type="text/css">
+			#bdmap{height:100vh}
+		</style>
+	</head>
+
+	<body>
+		<div id="bdmap">
+			
+		</div>
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function () {
+			    // 创建map实例
+					var map = new BMap.Map("bdmap"); 
+					// 允许鼠标滚动缩放
+					map.enableScrollWheelZoom(true);
+					map.enableDragging();
+
+					// h5+API
+					// 定位当前位置
+					plus.geolocation.getCurrentPosition(position){
+						// longitude   经度
+						// latitude    纬度
+						let {longitude,latitude} = position.coords;
+						// 最高放大为19倍
+						map.centerAndZoom(new BMap.Point(longitude,latitude), 19);
+					}
+					// 监听位置移动
+					plus.geolocation.watchPosition(position=>{
+						let {longitude,latitude} = position.coords;
+						map.centerAndZoom(new BMap.Point(longitude,latitude), 19);
+					})
+			})
+		</script>
+	</body>
+
+</html>

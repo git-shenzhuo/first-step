@@ -23,15 +23,21 @@
     <canvas id="myCanvas" width="100px" height="40px"></canvas>
     <script>
         window.onload = function(){
-
+            let canvas = document.getElementById("myCanvas");
+            canvas.onclick = ()=>{
+                drawFill();
+            }
             
             function drawFill(){
                 // 拿到标签
-                let canvas = document.getElementById("myCanvas");
-                console.log(canvas);
+                // let canvas = document.getElementById("myCanvas");
+                // console.log(canvas);
                 
                 // 获取画布2D
                 let cantxt = canvas.getContext("2d");
+
+                // 清空画布
+                canvas.height = canvas.height
 
                 // 画布填充色
                 cantxt.fillStyle = "pink";
