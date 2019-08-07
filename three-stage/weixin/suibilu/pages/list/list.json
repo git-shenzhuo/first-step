@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "歌曲列表",
+  "backgroundTextStyle":"light",
+  "backgroundColor":"#f8c",
+  "enablePullDownRefresh":true
+}

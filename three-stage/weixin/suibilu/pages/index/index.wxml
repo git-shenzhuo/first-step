@@ -1,0 +1,47 @@
+<!-- 使用 import 标签引入模块 绝度路径-->
+<import src='/template.wxml' />
+
+<view>
+<!-- 轮播图 -->
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}">
+    <swiper-item wx:for="{{imgUrls}}" wx:key="song_id" data-songid="{{item.song_id}}" data-target="player" bind:tap="goto">
+      <image src="{{item.pic_s500}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </swiper>
+  <!-- 搜索 -->
+  <view class="weui-search-bar__form" bind:tap="goto" data-target="search">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}"/>
+      </view>
+      <label class="weui-search-bar__label">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">{{keyword}}</view>
+      </label>
+  </view>
+  <!-- tab 标签 -->
+  <view class="weui-tab">
+    <view class="weui-navbar">
+    <!-- block 标签不解析，与template等相当 -->
+      <block wx:for="{{tabs}}" wx:key="type">
+        <view data-index="{{index}}" data-type="{{item.type}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bind:tap="handlerTabChange">
+        <!-- tab  -->
+          <view class="weui-navbar__title">{{item.text}}</view>
+        </view>
+      </block>
+      <!-- 下方颜色条 -->
+      <view class="weui-navbar__slider" style="width: {{tabWidth}}px; transform: translateX({{sliderOffset}}px); "></view>
+    </view>
+    <view class="weui-tab__panel">
+      <view wx:for="{{tabs}}" wx:key="type" class="weui-tab__content" hidden="{{activeIndex != index}}">
+      <!-- 歌曲列表 -->
+        <template is="list" data="{{datalist:tabData[item.type]}}" />
+        <!-- 加载更多 -->
+        <template is="more" data="{{type:item.type}}" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 热门歌曲 -->
+  <template is="panel" data="{{title:'热门歌曲',more:true,type:2,datalist:hotlist}}" />
+</view>
